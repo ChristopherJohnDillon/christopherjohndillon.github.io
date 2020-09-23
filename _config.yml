@@ -1,7 +1,7 @@
 theme: jekyll-theme-minimal
 
 # Site settings
-	markdown: kramdown
+markdown: kramdown
 
  title: Christopher Dillon
  twitter_username: CJD2K
