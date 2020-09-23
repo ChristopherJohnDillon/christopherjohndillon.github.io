@@ -4,14 +4,16 @@
 			<title>{{ page.title }}</title>
 			<!-- link to main stylesheet -->
 			<!-- <base href="https://pantoboy.github.io/ChrisDillon.github.io/"> -->
-			<link rel="stylesheet" type="text/css" href="./css/main.css">
+			<!-- <link rel="stylesheet" type="text/css" href="./css/main.css"> -->
+			<link rel="stylesheet" href="{{'css/main.css'|absolute_url}}">
+
 		</head>
 		<body>
 			<nav>
 	    		<ul>
-	        		<li><a href="./">Home</a></li>
-		        	<li><a href="./about">About</a></li>
-	        		<li><a href="./cv">CV</a></li>
+	        		<li><a href="{{'/'|absolute_url}}">Home</a></li>
+		        	<li><a href="{{'/about'|absolute_url}}">About</a></li>
+	        		<li><a href="{{'/cv'|absolute_url}}">CV</a></li>
 <!-- 	        		<li><a href="/blog">Blog</a></li> -->
 	    		</ul>
 			</nav>
