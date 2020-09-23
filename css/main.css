@@ -1,33 +1,81 @@
+/* Remove any default padding and margin */
+*
+    {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
 body {
     margin: 60px auto;
     width: 70%;
-}
+
+  }
+
+
+
+  :root {
+      color-scheme: light dark;
+      --special-text-color: hsla(60, 100%, 50%, 0.5);
+      --border-color: black;
+      --header-txt-color: purple;
+      --a-txt-color: gray;
+  }
+  @media (prefers-color-scheme: dark) {
+      :root {
+          --special-text-color: hsla(60, 50%, 70%, 0.75);
+          --border-color: white;
+          --a-txt-color: blueviolet;
+
+      }
+  }
+  .special {
+      color: var(--special-text-color);
+      border: 1px solid var(--border-color);
+  } */
+
+
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
     list-style: none;
     font-weight: bold;
 }
+
+/* Nav Links */
+
 nav ul li, footer ul li {
     display: inline;
     margin-right: 20px;
 }
+/* default link formatting */
 a {
     text-decoration: none;
-    color: #999;
+    color: var(--a-txt-color);
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+
+
+
 }
 a:hover {
     text-decoration: underline;
 }
+
+/* The default Header Style */
 h1 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
+
+/* Default paragraph style */
 p {
     font-size: 1.5em;
     line-height: 1.4em;
-    color: #333;
+    /* color: #333; */
 }
+
+
 footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
@@ -41,28 +89,3 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
-
-
-
-
-
-.day   { background: #eee; color: black; }
-.night { background: #333; color: white; }
-
-@media (prefers-color-scheme: dark) {
-  .day.dark-scheme   { background:  #333; color: white; }
-  .night.dark-scheme { background: black; color:  #ddd; }
-}
-
-@media (prefers-color-scheme: light) {
-  .day.light-scheme   { background: white; color:  #555; }
-  .night.light-scheme { background:  #eee; color: black; }
-}
-/*
-.day, .night {
-  display: inline-block;
-  padding: 1em;
-  width: 7em;
-  height: 2em;
-  vertical-align: middle;
-} */
