@@ -1,37 +1,39 @@
 theme: jekyll-theme-minimal
 
-# # Site settings
-#  title: Christopher Dillon
-#  twitter_username: CJD2K
-#  name: Christopher Dillon
-#  #User specific content
-#  #Links that will appear in the navbar
-#  primarylinks:
-#  #  - title: Blog
-#  #    url: http://automateddeveloper.blogspot.com/
-#   - title: GitHub
-#     url: https://github.com/pantoboy
-#  #  - title: DZone
-#  #    url: https://dzone.com/users/899489/rhinds.html
-#  #Any buzzword skills you want to include
-#  skills:
-#   - IDL
-#   - Data Science
-#   - Big Data
-#  #Blogfeed is optional - including this will add JS to call the feed and populate blog list
-#  # blogfeed: http://automateddeveloper.blogspot.com/feeds/posts/default
-#  #Work experience is required
-#  roles:
-#   - title: Solar Physics With Biomedical Applications PhD
-#     start: 2017
-#     end: 2021
-#     instuite: Queen&apos;s University Belfast
-#     description: Multidiscplinary PhD, combining cutting-edge big-data noise and feature analysis of Solar and Stellar datasets with industrial applications in the Biomedical space
-#   - title: Seagate Process Engineer Intern
-#     start: 2014
-#     end: 2016
-#     employer: Seagate Technologies, Derry
-#     description: Worked in Process Engineering department,  
+# Site settings
+	markdown: kramdown
+
+ title: Christopher Dillon
+ twitter_username: CJD2K
+ name: Christopher Dillon
+ #User specific content
+ #Links that will appear in the navbar
+ primarylinks:
+ #  - title: Blog
+ #    url: http://automateddeveloper.blogspot.com/
+  - title: GitHub
+    url: https://github.com/pantoboy
+ #  - title: DZone
+ #    url: https://dzone.com/users/899489/rhinds.html
+ #Any buzzword skills you want to include
+ skills:
+  - IDL
+  - Data Science
+  - Big Data
+ #Blogfeed is optional - including this will add JS to call the feed and populate blog list
+ # blogfeed: http://automateddeveloper.blogspot.com/feeds/posts/default
+ #Work experience is required
+ roles:
+  - title: Solar Physics With Biomedical Applications PhD
+    start: 2017
+    end: 2021
+    instuite: Queen&apos;s University Belfast
+    description: Multidiscplinary PhD, combining cutting-edge big-data noise and feature analysis of Solar and Stellar datasets with industrial applications in the Biomedical space
+  - title: Seagate Process Engineer Intern
+    start: 2014
+    end: 2016
+    employer: Seagate Technologies, Derry
+    description: Worked in Process Engineering department,  
 
 
 #  #Education is required
