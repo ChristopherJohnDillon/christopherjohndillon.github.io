@@ -2,4 +2,4 @@
 
 # Site settings
 markdown: kramdown
-{% raw %}{% seo %}{% endraw %}
+# {% raw %}{% seo %}{% endraw %}
