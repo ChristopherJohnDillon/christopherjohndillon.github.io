@@ -3,3 +3,5 @@
 # Site settings
 markdown: kramdown
 # {% raw %}{% seo %}{% endraw %}
+plugins:
+  - jekyll-seo-tag
