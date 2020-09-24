@@ -1,40 +1,67 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			    <meta charset="UTF-8">
-			    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-			    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-			<title>{{ page.title }}</title>
-			<!-- link to main stylesheet -->
-			<!-- <base href="https://pantoboy.github.io/ChrisDillon.github.io/"> -->
-			<!-- <link rel="stylesheet" type="text/css" href="./css/main.css"> -->
-			<link rel="stylesheet" href="{{'css/main.css'|absolute_url}}">
+<html>
 
-		</head>
-		<body>
+	<head>
+
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>{{ page.title }}</title>
+	<!-- link to main stylesheet -->
+	<!-- <base href="https://pantoboy.github.io/ChrisDillon.github.io/"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="./css/main.css"> -->
+	<link rel="stylesheet" href="{{'css/main.css'|absolute_url}}">
+
+			<body>
+				<header>
+
+					<a style="display: inline;" href="">
+					<img
+					style="width: 80px; height: 80px; border-radius: 80px;" src="/images/Photo of Me.jpg" alt="A photograph of Christopher Dillon, wearing a blue shirt"
+					/>
+					</a>
+
+					<h1>
+					Chris Dillon
+					</h1>
+
 			<nav>
-	    		<ul>
-	        		<li><a href="{{'/'|absolute_url}}">Home</a></li>
-		        	<li><a href="{{'/about'|absolute_url}}">About</a></li>
-	        		<li><a href="{{'/cv'|absolute_url}}">CV</a></li>
-<!-- 	        		<li><a href="/blog">Blog</a></li> -->
-	    		</ul>
+
+					<ul>
+
+
+
+								<li><a href="{{'/'|absolute_url}}">Home</a></li>
+								<li><a href="{{'/about'|absolute_url}}">About</a></li>
+								<li><a href="{{'/cv'|absolute_url}}">CV</a></li>
+								<!-- 	        		<li><a href="/blog">Blog</a></li> -->
+
+
+					</ul>
+
 			</nav>
-			<div class="container">
-			{{ content }}
 
-			</div><!-- /.container -->
-		</div>
+		</header>
 
-			<footer>
-	    		<ul>
-	        		<li><a href="mailto:cdillon06@qub.ac.uk">cdillon06@qub.ac.uk</li>
-	        		<li><a href="https://github.com/pantoboy">github.com/pantoboy</a></li>
-				</ul>
-			</footer>
 
-				    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-				    <script src="aascript.js"></script> -->
 
-		</body>
+					<div class="container">
+
+						{{ content }}
+
+					</div><!-- /.container -->
+
+					<!-- </div> -->
+
+
+						<footer>
+				    		<ul>
+				        		<li><p> Send me an email at <a href="mailto:cdillon06@qub.ac.uk">cdillon06@qub.ac.uk</a> </p></li>
+				        		<li><p> Or check out my Github at <a href="https://github.com/pantoboy">github.com/pantoboy</a> </p> </li>
+							</ul>
+						</footer>
+
+			</body>
+
 	</html>
