@@ -29,7 +29,7 @@ body {
   margin-top: 100px;
   margin-left: 80px;
     /* margin: 60px auto; */
-    width: 60%;
+    width: 70%;
     padding: 10px;
     background-color:var(--Body_background-color)  ;
     color:var(--special-text-color)
@@ -81,7 +81,7 @@ header {
   height: 80px;
   display: flex;
   align-items: center;
-  padding-left: 20px ;
+  padding-left: 15px ;
   padding-top: 5px;
   box-shadow: 0 0 5px 0 black;
 
@@ -92,7 +92,7 @@ header * {
 }
 
 header li {
-margin: 10px;
+margin: 5px;
 }
 
 header li a {
