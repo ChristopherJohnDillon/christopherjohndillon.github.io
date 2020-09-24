@@ -6,6 +6,20 @@
     border: 0;
 }
 
+
+
+
+    :root {
+        --special-text-color: white;
+        --border-color: white;
+        --a-txt-color: lightslategray;
+        --Header_background-color: #202020 ;   /* Gray/Black */
+        --Body_background-color:darkslategray
+        }
+
+
+
+
 @viewport {
   width: device-width ;
   zoom: 1.0 ;
@@ -15,45 +29,43 @@ body {
   margin-top: 100px;
   margin-left: 80px;
     /* margin: 60px auto; */
-    width: 70%;
-    padding: 20px;
+    width: 60%;
+    padding: 10px;
     background-color:var(--Body_background-color)  ;
     color:var(--special-text-color)
   }
 
 
+    @media (prefers-color-scheme: light) {
+    :root {
+        color-scheme: light dark;
+        --special-text-color: black;
+        --border-color: black;
+        --header-txt-color:  hsla(60, 100%, 50%, 0.5);
+        --a-txt-color: #FFFFFF;
+        --Header_background-color: #404040 ;
+        --Body_background-color:lightslategray
+        /* lightslategray */
 
 
 
-
-  @media (prefers-color-scheme: light) {
-  :root {
-      color-scheme: light dark;
-      --special-text-color: black;
-      --border-color: black;
-      --header-txt-color:  hsla(60, 100%, 50%, 0.5);
-      --a-txt-color: #FFFFFF;
-      --Header_background-color: #404040 ;
-      --Body_background-color:lightslategray
-      /* lightslategray */
-
-
-
-        }
-                                        }
-  @media (prefers-color-scheme: dark) {
-      :root {
-          --special-text-color: white;
-          --border-color: white;
-          --a-txt-color: lightslategray;
-          --Header_background-color: #202020 ;   /* Gray/Black */
-          --Body_background-color:darkslategray
           }
-                                      }
-  .special {
-      color: var(--special-text-color);
-      border: 1px solid var(--border-color);
-  } */
+                                          }
+
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --special-text-color: white;
+            --border-color: white;
+            --a-txt-color: lightslategray;
+            --Header_background-color: #202020 ;   /* Gray/Black */
+            --Body_background-color:darkslategray
+            }
+                                        }
+    .special {
+        color: var(--special-text-color);
+        border: 1px solid var(--border-color);
+    } */
 
 
 header img {
