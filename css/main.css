@@ -21,12 +21,14 @@ body {
   @media (prefers-color-scheme: light) {
   :root {
       color-scheme: light dark;
-
+      --special-text-color: black;
       --border-color: black;
       --header-txt-color:  hsla(60, 100%, 50%, 0.5);
-      --a-txt-color: #734f96;
-      --Header_background-color: lavender ;
+      --a-txt-color: #FFFFFF;
+      --Header_background-color: #404040 ;
       --Body_background-color:lightslategray
+      /* lightslategray */
+
 
 
         }
@@ -35,7 +37,7 @@ body {
       :root {
           --special-text-color: white;
           --border-color: white;
-          --a-txt-color: lavender;
+          --a-txt-color: lightslategray;
           --Header_background-color: #202020 ;   /* Gray/Black */
           --Body_background-color:darkslategray
           }
