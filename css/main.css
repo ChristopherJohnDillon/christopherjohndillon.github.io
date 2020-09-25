@@ -6,6 +6,16 @@
     border: 0;
 }
 
+/*
+██████  ██   ██  ██████  ███    ██ ███████     ███████ ██ ███████ ███████     ██████  ██    ██ ██      ███████ ███████
+██   ██ ██   ██ ██    ██ ████   ██ ██          ██      ██    ███  ██          ██   ██ ██    ██ ██      ██      ██
+██████  ███████ ██    ██ ██ ██  ██ █████       ███████ ██   ███   █████       ██████  ██    ██ ██      █████   ███████
+██      ██   ██ ██    ██ ██  ██ ██ ██               ██ ██  ███    ██          ██   ██ ██    ██ ██      ██           ██
+██      ██   ██  ██████  ██   ████ ███████     ███████ ██ ███████ ███████     ██   ██  ██████  ███████ ███████ ███████
+*/
+
+
+
 
 
 
@@ -27,14 +37,21 @@
 
 body {
   margin-top: 100px;
-  margin-left: 80px;
+  margin-left: 20px;
     /* margin: 60px auto; */
-    width: 70%;
-    padding: 10px;
+    width: 80%;
+    padding: 0px;
     background-color:var(--Body_background-color)  ;
     color:var(--special-text-color)
   }
 
+  /*
+  ██████   █████  ██████  ██   ██      █████  ███    ██ ██████      ██      ██  ██████  ██   ██ ████████     ██████  ██    ██ ██      ███████ ███████
+  ██   ██ ██   ██ ██   ██ ██  ██      ██   ██ ████   ██ ██   ██     ██      ██ ██       ██   ██    ██        ██   ██ ██    ██ ██      ██      ██
+  ██   ██ ███████ ██████  █████       ███████ ██ ██  ██ ██   ██     ██      ██ ██   ███ ███████    ██        ██████  ██    ██ ██      █████   ███████
+  ██   ██ ██   ██ ██   ██ ██  ██      ██   ██ ██  ██ ██ ██   ██     ██      ██ ██    ██ ██   ██    ██        ██   ██ ██    ██ ██      ██           ██
+  ██████  ██   ██ ██   ██ ██   ██     ██   ██ ██   ████ ██████      ███████ ██  ██████  ██   ██    ██        ██   ██  ██████  ███████ ███████ ███████
+  */
 
     @media (prefers-color-scheme: light) {
     :root {
@@ -81,10 +98,10 @@ header {
   height: 80px;
   display: flex;
   align-items: center;
-  padding-left: 15px ;
+  padding-left: 10px ;
   padding-top: 5px;
   box-shadow: 0 0 5px 0 black;
-  width: 100vw;
+  /* width: 100vw; */
 }
 
 header * {
@@ -101,16 +118,16 @@ header li a {
 
 }
 header h1{
-  margin: 10px;
-  font-size: 2em;
+  margin: 5px;
+  font-size: 1.5em;
   font-family:'Helvetica', 'Arial', 'Sans-Serif';
   color: var(--a-txt-color);
-  display: flex;
+  /* display: flex; */
 
 }
 
 header ul {
-  display: flex;
+  /* display: flex; */
 }
 
 /*
