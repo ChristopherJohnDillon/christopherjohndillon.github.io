@@ -84,7 +84,7 @@ header {
   padding-left: 15px ;
   padding-top: 5px;
   box-shadow: 0 0 5px 0 black;
-
+  width: 100vw;
 }
 
 header * {
@@ -98,13 +98,19 @@ margin: 5px;
 header li a {
   color: var(--a-txt-color);
   text-decoration: none;
+
 }
 header h1{
   margin: 10px;
   font-size: 2em;
   font-family:'Helvetica', 'Arial', 'Sans-Serif';
-  color: var(--a-txt-color)
+  color: var(--a-txt-color);
+  display: flex;
 
+}
+
+header ul {
+  display: flex;
 }
 
 /*
