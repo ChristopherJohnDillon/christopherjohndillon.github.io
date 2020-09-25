@@ -83,6 +83,7 @@ header {
   align-items: center;
   padding-left: 15px ;
   padding-top: 5px;
+  padding-right 15px;
   box-shadow: 0 0 5px 0 black;
   width: 100vw;
 }
