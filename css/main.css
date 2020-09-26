@@ -161,6 +161,11 @@ h1 {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 
+h3{
+  color: var(--a-txt-color);
+
+}
+
 /* Default paragraph style */
 p {
     font-size: 1.0em;
