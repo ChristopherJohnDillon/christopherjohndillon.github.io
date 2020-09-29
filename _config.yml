@@ -4,6 +4,8 @@ markdown: kramdown
 # {% raw %}{% seo %}{% endraw %}
 plugins:
   - jekyll-seo-tag
-url: "https://christopherjohndillon.github.io" # the base hostname & protocol for your site
-plugins:
   - jekyll-sitemap
+
+
+
+url: "https://christopherjohndillon.github.io" # the base hostname & protocol for your site
