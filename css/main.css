@@ -43,14 +43,18 @@ body {
     @media (prefers-color-scheme: light) {
     :root {
         color-scheme: light dark;
-        --special-text-color: black;
+        /* --special-text-color: black;
         --border-color: black;
         --header-txt-color:  hsla(60, 100%, 50%, 0.5);
         --a-txt-color: #FFFFFF;
         --Header_background-color: #404040 ;
         --Body_background-color:lightslategray
         /* lightslategray */
-
+        --special-text-color: white;
+        --border-color: white;
+        --a-txt-color: lightslategray;
+        --Header_background-color: #202020 ;   /* Gray/Black */
+        --Body_background-color:darkslategray
 
 
           }
@@ -170,8 +174,23 @@ h3{
 p {
     font-size: 1.0em;
     line-height: 1.1em;
-    /* color: #333; */
+    text-align: justify;
+    text-justify: auto;    /* color: #333; */
 }
+
+.fulljustify {
+    	text-align:justify;
+    }
+    .fulljustify:after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+    }
+    #tagline {
+        height: 80px;
+        overflow: hidden;
+        line-height: 80px; /* vert-center */
+    }
 
 
 footer {
