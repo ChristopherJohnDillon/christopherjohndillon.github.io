@@ -10,6 +10,8 @@
         --special-text-color: white;
         --border-color: white;
         --a-txt-color: lightslategray;
+        --a-txt-color: lightslategray;
+
         --Header_background-color: #202020 ;   /* Gray/Black */
         --Body_background-color:darkslategray
         }
@@ -151,12 +153,14 @@ a {
     text-decoration: none;
     color: var(--a-txt-color);
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    text-decoration: underline;
 
 
 
 }
 a:hover {
     text-decoration: underline;
+
 }
 
 /* The default text heading Style */
