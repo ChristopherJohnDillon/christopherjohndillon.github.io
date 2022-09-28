@@ -9,8 +9,8 @@
     :root {
         --special-text-color: white;
         --border-color: white;
-        --a-txt-color: lightslategray;
-        --a-txt-color: lightslategray;
+/*         --a-txt-color: lightslategray; */
+        --a-txt-color: #4E2F4F;
 
         --Header_background-color: #202020 ;   /* Gray/Black */
         --Body_background-color:SeaGreen
@@ -54,7 +54,7 @@ body {
         /* lightslategray */
         --special-text-color: white;
         --border-color: white;
-        --a-txt-color: lightslategray;
+        --a-txt-color: 4E2F4F;
         --Header_background-color: #202020 ;   /* Gray/Black */
         --Body_background-color:darkslategray
 
@@ -67,7 +67,7 @@ body {
         :root {
             --special-text-color: white;
             --border-color: white;
-            --a-txt-color: lightslategray;
+            --a-txt-color: 4E2F4F;
             --Header_background-color: #202020 ;   /* Gray/Black */
             --Body_background-color:darkslategray
             }
