@@ -13,7 +13,7 @@
         --a-txt-color: lightslategray;
 
         --Header_background-color: #202020 ;   /* Gray/Black */
-        --Body_background-color:#7A8E8E
+        --Body_background-color:#597272
 
         }
 
@@ -57,7 +57,7 @@ body {
         --border-color: white;
         --a-txt-color: lightslategray;
         --Header_background-color: #202020 ;   /* Gray/Black */
-        --Body_background-color:#7A8E8E
+        --Body_background-color:#597272
 /*         --Body_background-color:darkslategray */
 
 
@@ -71,8 +71,7 @@ body {
             --border-color: white;
             --a-txt-color: lightslategray;
             --Header_background-color: #202020 ;   /* Gray/Black */
-        --
-            ground-color:#7A8E8E
+            --Body_background-color:#597272
             }
                                         }
     .special {
