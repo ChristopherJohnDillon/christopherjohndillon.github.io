@@ -1,34 +1,72 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-</head>
-<body>
-    <div id="Box">
-        <div id="Banner">
-            <a href="/">
-                <img src="/images/logo.png" alt="Logo" height="56"/>
-            </a>
-        </div>
+{% seo %}
+	<head>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
+	<!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>{{ page.title }}</title>
+	<!-- link to main stylesheet -->
+	<!-- <base href="https://pantoboy.github.io/ChrisDillon.github.io/"> -->
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<!-- <link rel="stylesheet" href="{{'css/main.css'|absolute_url}}"> -->
 
-        <div id="Sidebar">
-            <p>By <strong>Dr Chris Dillon</strong></p>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/cv">CV</a></li>
-                <li><a href="https://linkedin.com/in/drchrisdillon">LinkedIn</a></li>
-            </ul>
-        </div>
+			<body>
+				<header>
 
-        <div id="Main">
-            <dl class="linkedlist">
-                <dt><a href="#">Your main content here</a></dt>
-                <dd>{{ content }}</dd>
-            </dl>
-        </div>
-    </div>
-</body>
-</html>
+					<a style="display: inline;" href="">
+					<img
+					style="width: 80px; height: 80px; border-radius: 80px;" src="{{'/images/circle_me.png'|absolute_url}}" alt="A photograph of Christopher Dillon, wearing a blue shirt"
+					/>
+					</a>
+
+					<h1>
+					Dr Chris Dillon
+					</h1>
+
+			<nav>
+
+					<ul>
+
+
+
+								<li><a href="{{'/'|absolute_url}}">Home</a></li>
+								<li><a href="{{'/about'|absolute_url}}">About</a></li>
+								<li> <a href="https://www.linkedin.com/in/drchrisdillon/">Linkedin</a>  </li>
+								<li><a href="{{'/cv/Christopher_Dillon.pdf'|absolute_url}}">CV</a></li>
+
+								<!-- <li><a href="{{'/cv'|absolute_url}}">CV</a></li> -->
+								<!-- 	        		<li><a href="/blog">Blog</a></li> -->
+
+
+					</ul>
+
+			</nav>
+
+		</header>
+
+
+
+					<div class="container">
+
+						{{ content }}
+
+					</div><!-- /.container -->
+
+					<!-- </div> -->
+
+
+						<footer>
+				    		<ul>
+				        		<li><p> Send me an email at <a href="mailto:mail@christopherdillon.me">mail@christopherdillon.me</a> </p></li>
+										<li><p> Check out my Github at <a href="https://github.com/ChristopherJohnDillon">github.com/ChristopherJohnDillon</a> </p> </li>
+										<li><p> Have a look at my  <a href="https://www.linkedin.com/in/drchrisdillon/">Linkedin</a> </p> </li>
+										<li><p> Or follow me on <a rel="me" href="https://mastodon.ie/@DrChris">Mastodon</a>  </p> </li>
+							</ul>
+						</footer>
+
+			</body>
+
+	</html>
