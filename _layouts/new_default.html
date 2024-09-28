@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+{% seo %}
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+    <header>
+        <a href="">
+            <img style="width: 80px; height: 80px; border-radius: 80px;" src="{{'/images/circle_me.png'|absolute_url}}" alt="Christopher Dillon" />
+        </a>
+        <h1>Dr Chris Dillon</h1>
+    </header>
+
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="{{'/'|absolute_url}}">Home</a></li>
+                <li><a href="{{'/about'|absolute_url}}">About</a></li>
+                <li><a href="https://www.linkedin.com/in/drchrisdillon/">LinkedIn</a></li>
+                <li><a href="{{'/cv/Christopher_Dillon.pdf'|absolute_url}}">CV</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            {{ content }}
+        </main>
+    </div>
+
+    <footer>
+        <ul>
+            <li><a href="mailto:mail@christopherdillon.me">mail@christopherdillon.me</a></li>
+            <li><a href="https://github.com/ChristopherJohnDillon">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/drchrisdillon/">LinkedIn</a></li>
+            <li><a href="https://mastodon.ie/@DrChris">Mastodon</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
