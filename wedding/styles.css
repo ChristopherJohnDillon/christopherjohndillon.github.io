@@ -1,3 +1,24 @@
+
+.map-container {
+    margin: 0 auto; /* Center the map */
+    position: relative;
+    width: 80%; /* Adjust the width to 80% of the parent */
+    max-width: 600px; /* Set maximum width of the map */
+    padding-bottom: 40%; /* Adjust the aspect ratio to be wider (40%) */
+    height: 0;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
@@ -53,16 +74,22 @@ h1 {
     text-align: left;
 }
 
+
 button {
+    font-size: 1.2em;
+    padding: 15px 30px;
     background-color: #367C20;
     color: white;
-    padding: 15px 30px; /* Larger button size */
     border: none;
-    cursor: pointer;
     border-radius: 5px;
-    font-size: 1.5em; /* Bigger button text */
-    margin-top: 30px; /* Space above the button */
+    cursor: pointer;
+    margin-top: 20px;
 }
+
+button:hover {
+    background-color: #285d15; /* Slightly darker green on hover */
+}
+
 
 @media (max-width: 600px) {
     .content {
@@ -116,11 +143,28 @@ button {
         width: 100%; /* Full width for small screens */
         height: auto;
     }
+
+
+    body {
+      font-size: 1.1em;
+      line-height: 1.7;
+  }
+
+  h1, h2 {
+      font-size: 2.2em;
+  }
 }
 
 
 
-
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: rgba(255, 255, 255, 0.6); /* Light text with reduced opacity */
+    font-size: 0.9em; /* Slightly smaller text */
+    opacity: 0.8; /* Additional transparency for the entire footer */
+}
 .image-container {
     display: flex; /* Flexbox for easier alignment */
     justify-content: center; /* Center the image horizontally */
