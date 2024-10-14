@@ -1,30 +1,11 @@
-
-.map-container {
-    margin: 0 auto; /* Center the map */
-    position: relative;
-    width: 80%; /* Adjust the width to 80% of the parent */
-    max-width: 600px; /* Set maximum width of the map */
-    padding-bottom: 40%; /* Adjust the aspect ratio to be wider (40%) */
-    height: 0;
-}
-
-.map-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
     color: #333;
     margin: 0;
     padding: 0;
+    font-size: 1.1em;
+    line-height: 1.7;
 }
 
 .container {
@@ -74,7 +55,6 @@ h1 {
     text-align: left;
 }
 
-
 button {
     font-size: 1.2em;
     padding: 15px 30px;
@@ -89,36 +69,38 @@ button {
 button:hover {
     background-color: #285d15; /* Slightly darker green on hover */
 }
-
-
-@media (max-width: 600px) {
-    .content {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-    }
-
-    .content img {
-        width: 100%;
-        height: auto;
-        margin-bottom: 15px;
-    }
-
-    h1 {
-        font-size: 2em; /* Smaller font for mobile */
-    }
-
-    .section h2 {
-        font-size: 2em; /* Smaller heading for mobile */
-    }
-
-    button {
-        font-size: 1.2em; /* Smaller button text for mobile */
-    }
+.large-image-container {
+    width: 100%;
+    max-width: 1000px; /* Set a limit of 1000px for wider screens */
+    height: 600px; /* Define the banner height */
+    overflow: hidden; /* Hides parts of the image outside the container */
+    margin: 0 auto; /* Center the container on wider screens */
 }
 
+.large-image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures the image covers the container without distorting */
+    display: block;
+}
 
+.map-container {
+    margin: 0 auto; /* Center the map */
+    position: relative;
+    width: 80%; /* Adjust the width to 80% of the parent */
+    max-width: 600px; /* Set maximum width of the map */
+    padding-bottom: 40%; /* Adjust the aspect ratio to be wider (40%) */
+    height: 0;
+}
 
-
-
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
 
 .image-row {
     display: flex; /* Use flexbox to align items in a row */
@@ -133,38 +115,6 @@ button:hover {
     border-radius: 10px; /* Optional: Rounds the edges for a nicer look */
 }
 
-@media (max-width: 600px) {
-    .image-row {
-        flex-direction: column; /* Stack the images vertically on small screens */
-        align-items: center;
-    }
-
-    .image-row img {
-        width: 100%; /* Full width for small screens */
-        height: auto;
-    }
-
-
-    body {
-      font-size: 1.1em;
-      line-height: 1.7;
-  }
-
-  h1, h2 {
-      font-size: 2.2em;
-  }
-}
-
-
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-    color: rgba(255, 255, 255, 0.6); /* Light text with reduced opacity */
-    font-size: 0.9em; /* Slightly smaller text */
-    opacity: 0.8; /* Additional transparency for the entire footer */
-}
 .image-container {
     display: flex; /* Flexbox for easier alignment */
     justify-content: center; /* Center the image horizontally */
@@ -175,4 +125,50 @@ footer {
     max-width: 200px; /* Limits the image's width */
     height: auto; /* Keeps the aspect ratio */
     border-radius: 10px; /* Optional: Rounds the edges for a nicer look */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: rgba(255, 255, 255, 0.6); /* Light text with reduced opacity */
+    font-size: 0.9em; /* Slightly smaller text */
+    opacity: 0.8; /* Additional transparency for the entire footer */
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 600px) {
+    body {
+        transform: scale(0.5); /* Zoom out by 50% on small screens */
+        transform-origin: top left; /* Ensure it zooms from the top left corner */
+        width: 200%; /* Compensate for the smaller viewport size */
+    }
+
+    h1, h2 {
+        font-size: 2.2em;
+    }
+
+    .content {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .content img {
+        width: 100%; /* Full width for small screens */
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    .image-row {
+        flex-direction: column; /* Stack the images vertically on small screens */
+        align-items: center;
+    }
+
+    .image-row img {
+        width: 100%; /* Full width for small screens */
+        height: auto;
+    }
+
+    button {
+        font-size: 1.2em; /* Smaller button text for mobile */
+    }
 }
