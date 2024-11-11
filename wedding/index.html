@@ -93,74 +93,77 @@
     </section>
 
 
-  <section class="section">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menu Selection</title>
-<style>
-    /* Centering container div */
-    .frame-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        text-align: center;
-        padding: 20px;
-        width: 100%; /* Allow the container to stretch */
-        box-sizing: border-box; /* Include padding in the total width/height */
-    }
-
-    /* Frame styling */
-    iframe {
-        width: 80%; /* Adjust the width as a percentage of the container */
-        max-width: 1000px; /* Maximum width of iframe */
-        height: 2000px; /* Set a fixed height */
-        border: none;
-        resize: both; /* Allow manual resizing in some browsers */
-    }
-</style>
-
-    <h2>Menu</h2>
-    <div class="content">
-        <p>
-            See below for the menu options – please let us know your menu choices using this form. Please fill in one per guest, and let us know of any dietary requirements in the additional info box.
-        </p>
-        <br>
-        <iframe src="menu.pdf"></iframe>
-    </div>
-</section>
 
 
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centered Google Form</title>
+
     <style>
-        /* Centering container div */
+        /* Container for the Menu iframe */
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Full viewport height */
+            text-align: center;
+            width: 100%; /* Ensure container takes full width */
+            padding: 20px;
+        }
+
+        /* Menu iframe specific styling */
+        .menu-container iframe {
+            width: 80%; /* Menu iframe takes 80% of container width */
+            max-width: 600px; /* Optional maximum width */
+            height: 900px; /* Set a fixed height */
+            border: none;
+            resize: both; /* Allow resizing */
+            overflow: auto; /* Allow scrolling if necessary */
+        }
+
+        /* Container for the Google Form iframe */
         .form-container {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh; /* Full viewport height */
             text-align: center;
+            width: 100%; /* Ensure container takes full width */
+            padding: 20px;
         }
 
-        /* Center iframe itself */
-        iframe {
-            width: 900px;
-            height: 1400px;
+        /* Google Form iframe specific styling */
+        .form-container iframe {
+            width: 80%; /* Google Form iframe takes 80% of container width */
+            max-width: 1000px; /* Optional maximum width */
+            height: 1400px; /* Set a fixed height */
             border: none;
+            resize: both; /* Allow resizing */
+            overflow: auto; /* Allow scrolling if necessary */
         }
     </style>
-</head>
-<body>
-    <div class="form-container">
-      <iframe src="https://docs.google.com/forms/d/1d8w-mBq4n_JLL47xFDsXJrUisjg9D4zYC8CJdg0BjsM/viewform?embedded=true" width="640" height="1600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-    </div>
-</body>
-</html>
+
+    <!-- Menu Section -->
+    <section class="section">
+        <h2>Menu</h2>
+        <div class="content">
+            <p>
+                See below for the menu options – please let us know your menu choices using this form. Please fill in one per guest, and let us know of any dietary requirements in the additional info box.
+            </p>
+            <br>
+            <div class="menu-container">
+                <iframe src="menu.pdf"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Form Section -->
+    <section class="section">
+        <h2>RSVP</h2>
+        <div class="form-container">
+            <iframe src="https://docs.google.com/forms/d/1d8w-mBq4n_JLL47xFDsXJrUisjg9D4zYC8CJdg0BjsM/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+    </section>
 
 
-</section>
+
 
 
 
