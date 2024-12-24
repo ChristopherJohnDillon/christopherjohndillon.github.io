@@ -1,47 +1,36 @@
 /* Remove any default padding and margin */
-*
-    {
+* {
     margin: 0;
     padding: 0;
     border: 0;
 }
 
-    :root {
-        --special-text-color: white;
-        --border-color: white;
-/*         --a-txt-color: lightslategray; */
-        --a-txt-color: #DFD3E3;
+:root {
+    --special-text-color: white;
+    --border-color: white;
+    --a-txt-color: #DFD3E3; /* Light slate gray */
+    --Header_background-color: #202020; /* Gray/Black */
+    --Body_background-color: SeaGreen;
+}
 
-        --Header_background-color: #202020 ;   /* Gray/Black */
-        --Body_background-color:SeaGreen
-        }
-
-
-
-
-@viewport {
-  width: device-width ;
-  zoom: 1.0 ;
+@media (width: device-width) {
+    body {
+        zoom: 1.0;
+    }
 }
 
 body {
-  margin-top: 100px;
-  margin-left: 20px;
-    /* margin: 60px auto; */
+    margin-top: 100px;
+    margin-left: 20px;
     width: 80%;
     padding: 0px;
-    background-color:var(--Body_background-color)  ;
-    color:var(--special-text-color)
+    background-color: var(--Body_background-color);
+    color: var(--special-text-color);
     display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-
-
-  
-  }
-
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
   /*
   ██████   █████  ██████  ██   ██      █████  ███    ██ ██████      ██      ██  ██████  ██   ██ ████████     ██████  ██    ██ ██      ███████ ███████
   ██   ██ ██   ██ ██   ██ ██  ██      ██   ██ ████   ██ ██   ██     ██      ██ ██       ██   ██    ██        ██   ██ ██    ██ ██      ██      ██
