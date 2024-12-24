@@ -1,4 +1,3 @@
-
 /* Global Reset */
 * {
     margin: 0;
@@ -11,10 +10,9 @@
     --special-text-color: white;
     --border-color: white;
     --a-txt-color: #DFD3E3;
-    --Header_background-color: #202020; /* Gray/Black */
+    --Header_background-color: #202020;
     --Body_background-color: SeaGreen;
 }
-
 
 @media (prefers-color-scheme: dark) {
     :root {
@@ -24,60 +22,67 @@
 
 /* Body Styles */
 body {
-    margin: 100px 20px 0;
-    width: 80%;
+    margin: 100px 5%;
     background-color: var(--Body_background-color);
     color: var(--special-text-color);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    font-size: 1rem;  /* Responsive font size */
 }
 
-
-
-
-
-
 /* Header Styles */
+
+
+
 header {
     background-color: var(--Header_background-color);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 80px;
     display: flex;
-    justify-content: space-between; /* Align items dynamically */
+    justify-content: flex-start;  /* Align items to the left */
+    align-items: center;  /* Align items vertically centered */
     padding: 0 15px;
     box-shadow: 0 0 5px black;
+    height: 80px;  /* Set a fixed height */
 }
 
 header img {
     height: 80px;
-    border: none;
-}
-
-header ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-}
-
-header li {
-    margin: 0 10px;
-}
-
-header li a {
-    color: var(--a-txt-color);
-    text-decoration: none;
+    width: 80px;
+    border-radius: 50%;  /* Circular photo */
+    margin-right: 15px;  /* Space between photo and title */
 }
 
 header h1 {
     font-size: 1.5em;
     font-family: 'Helvetica', Arial, sans-serif;
     color: var(--a-txt-color);
+    margin-right: 15px;  /* Space between title and nav */
 }
+
+header nav {
+    display: flex;
+    margin-left: auto;  /* Push the navigation to the right side */
+}
+
+header nav ul {
+    display: flex;  /* Horizontal layout for nav links */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav li {
+    margin: 0 15px;  /* Space between navigation items */
+}
+
+header nav li a {
+    color: var(--a-txt-color);
+    text-decoration: none;
+}
+
 
 /* Footer Styles */
 footer {
