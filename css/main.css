@@ -35,16 +35,6 @@ body {
 }
 
 
-.container {
-    display: flex; /* Enable Flexbox */
-    flex-direction: column; /* Arrange children vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    height: 100vh; /* Full viewport height */
-    text-align: center; /* Center text alignment */
-    margin: 0 auto; /* Ensure horizontal centering */
-    padding: 0 20px; /* Add horizontal padding for better readability on smaller screens */
-}
 
 
 
