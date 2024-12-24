@@ -34,6 +34,21 @@ body {
     align-items: center;
 }
 
+
+.container {
+    display: flex; /* Enable Flexbox */
+    flex-direction: column; /* Arrange children vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 100vh; /* Full viewport height */
+    text-align: center; /* Center text alignment */
+    margin: 0 auto; /* Ensure horizontal centering */
+    padding: 0 20px; /* Add horizontal padding for better readability on smaller screens */
+}
+
+
+
+
 /* Header Styles */
 header {
     background-color: var(--Header_background-color);
@@ -44,7 +59,6 @@ header {
     height: 80px;
     display: flex;
     justify-content: space-between; /* Align items dynamically */
-    align-items: center;
     padding: 0 15px;
     box-shadow: 0 0 5px black;
 }
