@@ -15,12 +15,6 @@
     --Body_background-color: SeaGreen;
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --Body_background-color: lightgray;
-        --special-text-color: black;
-    }
-}
 
 @media (prefers-color-scheme: dark) {
     :root {
