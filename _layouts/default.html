@@ -50,8 +50,15 @@
     </script>
 
     <!-- Favicon + Styles -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | absolute_url }}" />
-    <link rel="stylesheet" type="text/css" href="{{ '/css/main.css' | absolute_url }}" />
+<!--     <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | absolute_url }}" />
+    <link rel="stylesheet" type="text/css" href="{{ '/css/main.css' | absolute_url }}" /> -->
+
+
+    <!-- Favicon + Styles -->
+<link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}">
+
+    
   </head>
 
   <body>
