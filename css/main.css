@@ -14,6 +14,8 @@
   --header-background: #202020;
   --max-width: 800px;
   --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --header-height-desktop: 80px;
+  --header-height-mobile: 70px;
 }
 
 /* Auto-switch to darkslategray in dark mode */
@@ -29,71 +31,132 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
-  padding-top: 100px; /* offset for fixed header */
+  padding-top: var(--header-height-desktop);
+  overflow-x: hidden; /* Prevent horizontal scroll issues */
 }
 
 /* Layout */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
+  width: 100%;
 }
 
-/* Header */
+/* Header - Completely redesigned for mobile */
 header {
   background-color: var(--header-background);
   color: var(--muted-text-color);
   position: fixed;
   top: 0;
   width: 100%;
-  height: 80px;
+  height: var(--header-height-desktop);
   display: flex;
   align-items: center;
-  padding: 0 1rem;
+  justify-content: space-between;
+  padding: 0 1.5rem;
   z-index: 1000;
-  box-shadow: 0 0 5px black;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Header content wrapper */
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
 }
 
 header img {
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
-  margin-right: 1rem;
+  flex-shrink: 0;
 }
 
 header h1 {
   font-size: 1.3rem;
-  margin-right: auto;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Desktop navigation */
+header nav {
+  flex-shrink: 0;
 }
 
 header nav ul {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   list-style: none;
+  margin: 0;
 }
 
 header nav a {
   color: var(--link-color);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  position: relative;
 }
 
 header nav a:hover {
-  text-decoration: underline;
+  color: white;
+  text-decoration: none;
+}
+
+header nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
+/* Mobile menu toggle button */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--muted-text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* Footer */
 footer {
   text-align: center;
   font-size: 0.9rem;
-  margin-top: 3rem;
-  padding: 2rem 1rem;
-  border-top: 1px solid var(--muted-text-color);
+  margin-top: 4rem;
+  padding: 2.5rem 1.5rem;
+  border-top: 1px solid rgba(223, 211, 227, 0.3);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 footer a {
   color: var(--link-color);
   text-decoration: underline;
+  transition: all 0.3s ease;
 }
 
 footer a:hover {
@@ -104,176 +167,315 @@ footer a:hover {
 /* Typography */
 h1, h2, h3 {
   color: var(--muted-text-color);
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
+  margin-top: 2rem;
 }
 
 h2 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   text-align: left;
+  line-height: 1.7;
 }
 
 a {
   color: var(--link-color);
   text-decoration: underline;
+  transition: all 0.3s ease;
 }
 
 a:hover {
   color: white;
+  text-decoration: none;
 }
 
 /* Lists */
 ul {
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
+  margin-left: 1.75rem;
+  margin-bottom: 1.25rem;
 }
 
 li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
 }
 
 /* Code */
 code {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-  font-family: monospace;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.3em 0.6em;
+  border-radius: 6px;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  font-size: 0.9em;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 pre {
   background: rgba(255, 255, 255, 0.1);
-  padding: 1rem;
+  padding: 1.5rem;
   overflow-x: auto;
-  border-radius: 4px;
-  margin-bottom: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  line-height: 1.4;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  border: none;
 }
 
 /* Section spacing */
 .Section {
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
-/* Mobile styles */
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+a:focus,
+button:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* Mobile styles - Major improvements */
 @media (max-width: 768px) {
+  :root {
+    --header-height-mobile: 70px;
+  }
+  
   body {
-    padding-top: 120px; /* Increase offset for taller mobile header */
-  }
-  
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-    height: auto;
-    min-height: 100px; /* Ensure minimum height */
-  }
-  
-  header img {
-    height: 50px;
-    width: 50px;
-    margin-right: 0.75rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  header h1 {
-    font-size: 1.2rem;
-    margin: 0.5rem 0 1rem 0; /* Better spacing around title */
-    margin-right: 0; /* Reset auto margin */
-  }
-  
-  header nav {
-    width: 100%;
-  }
-  
-  header nav ul {
-    flex-direction: column;
-    gap: 0.75rem; /* Slightly more space between nav items */
-    padding-left: 0;
-    width: 100%;
-    margin: 0;
-  }
-  
-  header nav li {
-    width: 100%;
-    margin-bottom: 0; /* Remove default li margin */
-  }
-  
-  header nav a {
-    font-size: 1rem;
-    display: block;
-    width: 100%;
-    padding: 0.25rem 0; /* Add some vertical padding for easier tapping */
+    padding-top: var(--header-height-mobile);
+    font-size: 16px; /* Prevent zoom on form inputs */
   }
   
   .container {
-    padding: 0 1.25rem; /* Slightly more horizontal padding on mobile */
+    padding: 0 1rem;
   }
   
-  /* Adjust typography margins for mobile */
+  /* Compact mobile header */
+  header {
+    height: var(--header-height-mobile);
+    padding: 0 1rem;
+  }
+  
+  .header-content {
+    gap: 0.75rem;
+    min-width: 0; /* Allow flexbox to shrink */
+  }
+  
+  header img {
+    height: 40px;
+    width: 40px;
+  }
+  
+  header h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  /* Hide desktop nav, show mobile toggle */
+  header nav {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  /* Mobile navigation overlay */
+  .mobile-nav {
+    position: fixed;
+    top: var(--header-height-mobile);
+    left: 0;
+    right: 0;
+    background: var(--header-background);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .mobile-nav.active {
+    transform: translateY(0);
+  }
+  
+  .mobile-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 1rem 0;
+  }
+  
+  .mobile-nav li {
+    margin: 0;
+  }
+  
+  .mobile-nav a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-nav a:hover,
+  .mobile-nav a:focus {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding-left: 2rem;
+  }
+  
+  .mobile-nav li:last-child a {
+    border-bottom: none;
+  }
+  
+  /* Better mobile typography */
   h1 {
-    font-size: 1.6rem;
-    margin-top: 1.5rem; /* Reduce top margin on mobile */
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
     margin-bottom: 1rem;
+    line-height: 1.2;
   }
   
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
     margin-top: 1.5rem;
     margin-bottom: 0.875rem;
   }
   
-  h3 {
-    font-size: 1.1rem;
-    margin-top: 1.25rem;
-    margin-bottom: 0.75rem;
-  }
-  
   p {
     font-size: 1rem;
-    margin-bottom: 1.125rem; /* Slightly more space between paragraphs */
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
   }
   
-  /* Adjust list spacing on mobile */
+  /* Better mobile list spacing */
   ul {
     margin-left: 1.25rem;
-    margin-bottom: 1.125rem;
+    margin-bottom: 1.25rem;
   }
   
   li {
-    margin-bottom: 0.625rem; /* Slightly more space between list items */
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
   }
   
-  /* Code blocks on mobile */
+  /* Mobile code blocks */
   pre {
-    padding: 0.875rem;
-    font-size: 0.9rem;
-    margin-bottom: 1.125rem;
+    padding: 1rem;
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
+    border-radius: 6px;
   }
   
   code {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    padding: 0.2em 0.4em;
   }
   
-  /* Section spacing on mobile */
+  /* Mobile section spacing */
   .Section {
-    margin-bottom: 2.5rem; /* Slightly less but still generous */
+    margin-bottom: 2.5rem;
   }
   
-  /* Footer adjustments */
+  /* Mobile footer */
   footer {
-    margin-top: 2.5rem;
-    padding: 1.5rem 1.25rem;
+    margin-top: 3rem;
+    padding: 2rem 1rem;
     font-size: 0.9rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  header {
+    padding: 0 0.75rem;
+  }
+  
+  header h1 {
+    font-size: 1rem;
+  }
+  
+  header img {
+    height: 35px;
+    width: 35px;
+  }
+  
+  h1 {
+    font-size: 1.6rem;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+  }
+  
+  h3 {
+    font-size: 1.1rem;
+  }
+  
+  .mobile-nav a {
+    padding: 0.875rem 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .mobile-nav a:hover,
+  .mobile-nav a:focus {
+    padding-left: 1.5rem;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+  
+  header {
+    padding: 0 2rem;
+  }
+  
+  header nav ul {
+    gap: 2rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
   }
 }
