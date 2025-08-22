@@ -509,3 +509,30 @@ button:focus {
     font-size: 2rem;
   }
 }
+
+
+
+
+
+/* Updated Footer Styles */
+footer.site-footer {
+    width: 100%;
+    background: var(--header-background);
+    color: var(--text-color);
+    margin-top: 4rem;
+    border-top: 1px solid rgba(223, 211, 227, 0.3);
+}
+
+footer.site-footer .container {
+    max-width: var(--max-width);
+    width: 100%;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+    border: 0;
+    background: none;
+    box-shadow: none;
+}
+
+/* ... rest of the footer styles from the artifact ... */
+
+
