@@ -149,25 +149,76 @@ header nav a:hover::after {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  font-size: 0.9rem;
+/* UPDATED FOOTER - Full width and proper styling */
+footer.site-footer {
+  width: 100vw; /* Full viewport width */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: var(--header-background);
+  color: var(--text-color);
   margin-top: 4rem;
-  padding: 2.5rem 1.5rem;
   border-top: 1px solid rgba(223, 211, 227, 0.3);
-  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
 }
 
-footer a {
+footer.site-footer .container {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  box-sizing: border-box;
+}
+
+footer.site-footer .footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+footer.site-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+footer.site-footer li {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+footer.site-footer li:first-child {
+  margin-bottom: 1rem;
+}
+
+footer.site-footer li strong {
+  color: var(--muted-text-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+footer.site-footer a {
   color: var(--link-color);
   text-decoration: underline;
   transition: all 0.3s ease;
 }
 
-footer a:hover {
+footer.site-footer a:hover {
   color: white;
   text-decoration: none;
+}
+
+footer.site-footer .copy {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.9rem;
+  color: var(--muted-text-color);
+  align-self: flex-end;
 }
 
 /* Typography */
@@ -339,45 +390,20 @@ button:focus {
     display: none;
   }
   
-  /* Remove mobile navigation overlay since not needed */
-  .mobile-nav {
-    display: none;
+  /* Mobile footer */
+  footer.site-footer .container {
+    padding: 2rem 1rem;
   }
   
-  .mobile-nav.active {
-    transform: translateY(0);
+  footer.site-footer .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1.5rem;
   }
   
-  .mobile-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 1rem 0;
-  }
-  
-  .mobile-nav li {
-    margin: 0;
-  }
-  
-  .mobile-nav a {
-    display: block;
-    padding: 1rem 1.5rem;
-    color: var(--link-color);
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-  }
-  
-  .mobile-nav a:hover,
-  .mobile-nav a:focus {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    padding-left: 2rem;
-  }
-  
-  .mobile-nav li:last-child a {
-    border-bottom: none;
+  footer.site-footer .copy {
+    align-self: flex-start;
   }
   
   /* Better mobile typography */
@@ -434,13 +460,6 @@ button:focus {
   .Section {
     margin-bottom: 2.5rem;
   }
-  
-  /* Mobile footer */
-  footer {
-    margin-top: 3rem;
-    padding: 2rem 1rem;
-    font-size: 0.9rem;
-  }
 }
 
 /* Extra small screens */
@@ -485,6 +504,10 @@ button:focus {
   h3 {
     font-size: 1.1rem;
   }
+  
+  footer.site-footer .container {
+    padding: 1.5rem 0.75rem;
+  }
 }
 
 /* Large screens */
@@ -508,31 +531,8 @@ button:focus {
   h2 {
     font-size: 2rem;
   }
+  
+  footer.site-footer .container {
+    padding: 3rem 2rem;
+  }
 }
-
-
-
-
-
-/* Updated Footer Styles */
-footer.site-footer {
-    width: 100%;
-    background: var(--header-background);
-    color: var(--text-color);
-    margin-top: 4rem;
-    border-top: 1px solid rgba(223, 211, 227, 0.3);
-}
-
-footer.site-footer .container {
-    max-width: var(--max-width);
-    width: 100%;
-    margin: 0 auto;
-    padding: 2.5rem 1.5rem;
-    border: 0;
-    background: none;
-    box-shadow: none;
-}
-
-/* ... rest of the footer styles from the artifact ... */
-
-
