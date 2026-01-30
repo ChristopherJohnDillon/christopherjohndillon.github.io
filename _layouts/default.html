@@ -2,29 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>{{ page.title | escape }} | Christopher Dillon</title>
-    <meta name="description" content="{{ page.description | default: 'Portfolio of Dr. Chris Dillon – Global Lead Data Scientist at Nexus Brands Group. View experience, publications, and education history.' }}" />
+    <title>{{ page.title | escape }}</title>
+    <meta name="description" content="{{ page.description | default: 'Portfolio of Dr. Chris Dillon – Global Lead Data Scientist at Nexus Brands Group.' }}" />
     <meta name="author" content="Christopher Dillon" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="{{ page.url | absolute_url }}" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ page.title | escape }} | Christopher Dillon" />
+    <meta property="og:title" content="{{ page.title | escape }}" />
     <meta property="og:description" content="{{ page.description | default: 'Portfolio of Dr. Chris Dillon – Global Lead Data Scientist at Nexus Brands Group.' }}" />
     <meta property="og:url" content="{{ page.url | absolute_url }}" />
-    <meta property="og:site_name" content="Chris Dillon" />
+    <meta property="og:site_name" content="Christopher Dillon" />
     <meta property="og:image" content="{{ '/images/circle_me.png' | absolute_url }}" />
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{ page.title | escape }} | Christopher Dillon" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{{ page.title | escape }}" />
     <meta name="twitter:description" content="{{ page.description | default: 'Portfolio of Dr. Chris Dillon – Global Lead Data Scientist at Nexus Brands Group.' }}" />
     <meta name="twitter:image" content="{{ '/images/circle_me.png' | absolute_url }}" />
 
@@ -55,44 +52,22 @@
   </head>
 
   <body>
-    <header>
-      <a style="display: inline;" href="{{ '/' | absolute_url }}">
-        <img
-          style="width: 80px; height: 80px; border-radius: 80px;"
-          src="{{ '/images/circle_me.png' | absolute_url }}"
-          alt="A photograph of Christopher Dillon, wearing a blue shirt"
-        />
-      </a>
-
-      <h1>Dr Chris Dillon</h1>
-
+    <div class="container">
       <nav>
         <ul>
-          <li><a href="{{ '/' | absolute_url }}">Home</a></li>
-          <li><a href="{{ '/about' | absolute_url }}">About</a></li>
+          <li><a href="{{ '/' | absolute_url }}"{% if page.url == "/" %} class="active"{% endif %}>Home</a></li>
+          <li><a href="{{ '/about' | absolute_url }}"{% if page.url contains "/about" %} class="active"{% endif %}>About</a></li>
           <li><a href="https://www.linkedin.com/in/drchrisdillon/">LinkedIn</a></li>
           <li><a href="{{ '/cv/Christopher_Dillon.pdf' | absolute_url }}">CV</a></li>
         </ul>
       </nav>
-    </header>
 
-    <div class="container">
       {{ content }}
-    </div>
 
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-inner">
-          <ul>
-            <li><strong>Contact</strong></li>
-            <li>Email: <a href="mailto:mail@christopherdillon.me">mail@christopherdillon.me</a></li>
-            <li>GitHub: <a href="https://github.com/ChristopherJohnDillon">ChristopherJohnDillon</a></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/drchrisdillon/">drchrisdillon</a></li>
-            <li>Mastodon: <a rel="me" href="https://mastodon.ie/@DrChris">@DrChris</a></li>
-          </ul>
-          <p class="copy">© 2025 Christopher Dillon</p>
-        </div>
-      </div>
-    </footer>
+      <footer>
+        <span>2025 Christopher Dillon</span>
+        <span>Ireland</span>
+      </footer>
+    </div>
   </body>
 </html>
