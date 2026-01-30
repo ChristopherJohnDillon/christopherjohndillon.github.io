@@ -60,15 +60,55 @@ title: CV - Christopher Dillon
       line-height: 1.5;
       max-width: 210mm;
       margin: 0 auto;
-      padding: 2rem;
-      padding-top: 5rem;
+      padding: 1.5rem;
+      padding-top: 4.5rem;
     }
 
     @media print {
       body {
-        padding: 1.5rem;
-        padding-top: 1.5rem;
+        padding: 0;
+        padding-top: 0;
       }
+    }
+
+    /* Two-column layout */
+    .cv-layout {
+      display: grid;
+      grid-template-columns: 1fr 160px;
+      gap: 1.5rem;
+    }
+
+    @media print {
+      .cv-layout {
+        grid-template-columns: 1fr 150px;
+        gap: 1.25rem;
+      }
+    }
+
+    .cv-main {
+      min-width: 0;
+    }
+
+    .cv-sidebar {
+      border-left: 1px solid var(--border);
+      padding-left: 1rem;
+    }
+
+    .cv-sidebar .cv-section-label {
+      margin-bottom: 0.5rem;
+    }
+
+    .cv-sidebar .cv-skill-group {
+      margin-bottom: 0.75rem;
+    }
+
+    .cv-sidebar .cv-skill-group h4 {
+      margin-bottom: 0.2rem;
+    }
+
+    .cv-sidebar .cv-skill-group li {
+      font-size: 0.8rem;
+      margin-bottom: 0.1rem;
     }
 
     /* Download button */
@@ -249,21 +289,15 @@ title: CV - Christopher Dillon
       color: var(--text-muted);
     }
 
-    /* Skills Grid */
-    .cv-skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-
+    /* Skills */
     .cv-skill-group h4 {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--text-muted);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.25rem;
     }
 
     .cv-skill-group ul {
@@ -273,7 +307,7 @@ title: CV - Christopher Dillon
     .cv-skill-group li {
       font-size: 0.85rem;
       color: var(--text-dim);
-      margin-bottom: 0.15rem;
+      margin-bottom: 0.1rem;
     }
 
     /* Links */
@@ -290,146 +324,121 @@ title: CV - Christopher Dillon
 <body>
   <a href="Christopher_Dillon.pdf" class="download-btn no-print" download>Download CV as PDF</a>
 
-  <header class="cv-header">
-    <div>
-      <h1>Dr. Christopher Dillon</h1>
-      <div class="title">Global Lead Data Scientist</div>
-    </div>
-    <div class="contact-info">
-      <div>07501 755 356</div>
-      <div><a href="mailto:mail@christopherdillon.me">mail@christopherdillon.me</a></div>
-      <div><a href="https://christopherdillon.me">christopherdillon.me</a></div>
-      <div><a href="https://linkedin.com/in/drchrisdillon">linkedin.com/in/drchrisdillon</a></div>
-      <div>Northern Ireland</div>
-    </div>
-  </header>
+  <div class="cv-layout">
+    <!-- Left Column: Main Content -->
+    <div class="cv-main">
+      <header class="cv-header">
+        <div>
+          <h1>Dr. Christopher Dillon</h1>
+          <div class="title">Global Lead Data Scientist</div>
+        </div>
+        <div class="contact-info">
+          <div>07501 755 356</div>
+          <div><a href="mailto:mail@christopherdillon.me">mail@christopherdillon.me</a></div>
+          <div><a href="https://christopherdillon.me">christopherdillon.me</a></div>
+          <div><a href="https://linkedin.com/in/drchrisdillon">linkedin.com/in/drchrisdillon</a></div>
+          <div>Northern Ireland</div>
+        </div>
+      </header>
 
-  <section class="cv-section">
-    <div class="cv-section-label">Experience</div>
+      <section class="cv-section">
+        <div class="cv-section-label">Experience</div>
 
-    <article class="cv-item">
-      <div class="cv-item-header">
-        <span class="cv-role">Global Lead Data Scientist</span>
-        <span class="cv-date">Jan 2025 - Present</span>
-      </div>
-      <div class="cv-company">Nexus Brands Group</div>
-      <p class="cv-description">Operating across all 18 businesses within the group. Core role in the formation of the Global Finance and Data Analytics Department, centralizing finance and data operations globally.</p>
-      <ul class="cv-list">
-        <li><strong>Team Leadership:</strong> Building and managing a high-performing global data team</li>
-        <li><strong>Standardization:</strong> Designing universal data and reporting architecture to replace fragmented legacy systems</li>
-        <li><strong>Self-Service Analytics:</strong> Developing Streamlit dashboards with Entra SSO across dashboards and BI</li>
-        <li><strong>Operational Reporting:</strong> Supply chain reporting including:
+        <article class="cv-item">
+          <div class="cv-item-header">
+            <span class="cv-role">Global Lead Data Scientist</span>
+            <span class="cv-date">Jan 2025 - Present</span>
+          </div>
+          <div class="cv-company">Nexus Brands Group</div>
+          <p class="cv-description">Operating across all 18 businesses within the group. Core role in the formation of the Global Finance and Data Analytics Department, centralizing finance and data operations globally.</p>
           <ul class="cv-list">
-            <li>OTIF performance tracking - increased by <span class="metric">25%</span></li>
-            <li>E&O Stock management - identified <span class="metric">millions</span> in excess inventory</li>
-            <li>OOS monitoring - detecting <span class="metric">~1% revenue</span> in sales loss</li>
+            <li><strong>Team Leadership:</strong> Building and managing a high-performing global data team</li>
+            <li><strong>Standardization:</strong> Designing universal data and reporting architecture to replace fragmented legacy systems</li>
+            <li><strong>Self-Service Analytics:</strong> Developing Streamlit dashboards with Entra SSO across dashboards and BI</li>
+            <li><strong>Operational Reporting:</strong> OTIF increased by <span class="metric">25%</span>, identified <span class="metric">millions</span> in E&O inventory, detecting <span class="metric">~1% revenue</span> in OOS sales loss</li>
+            <li><strong>KPI Strategy:</strong> Implemented EOS Level 10 executive scorecard</li>
           </ul>
-        </li>
-        <li><strong>KPI Strategy:</strong> Implemented EOS Level 10 executive scorecard</li>
-        <li><strong>Advanced Analytics:</strong> Customer behavior, margin improvement, strategic growth initiatives</li>
-      </ul>
-    </article>
+        </article>
 
-    <article class="cv-item">
-      <div class="cv-item-header">
-        <span class="cv-role">European Data Scientist</span>
-        <span class="cv-date">Apr 2023 - Jan 2025</span>
-      </div>
-      <div class="cv-company">Nexus Brands Group</div>
-      <p class="cv-description">Transformed data function for 5 European businesses across tattoo, beauty, and pet grooming supply. Consolidated fragmented data sources into universal data warehouse. Promoted to Global Lead based on this work.</p>
-    </article>
+        <article class="cv-item">
+          <div class="cv-item-header">
+            <span class="cv-role">European Data Scientist</span>
+            <span class="cv-date">Apr 2023 - Jan 2025</span>
+          </div>
+          <div class="cv-company">Nexus Brands Group</div>
+          <p class="cv-description">Transformed data function for 5 European businesses. Consolidated fragmented data into universal data warehouse. Promoted to Global Lead.</p>
+        </article>
 
-    <article class="cv-item">
-      <div class="cv-item-header">
-        <span class="cv-role">Data Scientist</span>
-        <span class="cv-date">May 2022 - Apr 2023</span>
-      </div>
-      <div class="cv-company">Christies Direct</div>
-      <p class="cv-description">Built Data Science function from scratch at one of the world's largest pet-grooming supply companies. Created unified reporting across Christies and Transgroom. Promoted to European Data Scientist.</p>
-    </article>
+        <article class="cv-item">
+          <div class="cv-item-header">
+            <span class="cv-role">Data Scientist</span>
+            <span class="cv-date">May 2022 - Apr 2023</span>
+          </div>
+          <div class="cv-company">Christies Direct</div>
+          <p class="cv-description">Built Data Science function from scratch. Created unified reporting. Promoted to European Data Scientist.</p>
+        </article>
 
-    <article class="cv-item">
-      <div class="cv-item-header">
-        <span class="cv-role">Research Fellow</span>
-        <span class="cv-date">Jan 2022 - Apr 2022</span>
-      </div>
-      <div class="cv-company">Randox Laboratories</div>
-      <p class="cv-description">Developed bespoke image feature recognition software for biochip designs. Created technical documentation for biomedical colleagues.</p>
-    </article>
+        <article class="cv-item">
+          <div class="cv-item-header">
+            <span class="cv-role">Astrophysics PhD</span>
+            <span class="cv-date">Sep 2017 - Feb 2022</span>
+          </div>
+          <div class="cv-company">Queen's University Belfast</div>
+          <p class="cv-description">Joint venture with Randox Laboratories. Developed algorithms for large-scale statistical analysis of below-noise-floor signals. Created image recognition achieving <span class="metric">98.8%</span> reduction in processing times, key component in <span class="metric">$12B</span> biochip diagnostics industry.</p>
+        </article>
+      </section>
 
-    <article class="cv-item">
-      <div class="cv-item-header">
-        <span class="cv-role">Astrophysics PhD</span>
-        <span class="cv-date">Sep 2017 - Feb 2022</span>
-      </div>
-      <div class="cv-company">Queen's University Belfast</div>
-      <p class="cv-description">Joint venture with Randox Laboratories developing statistical techniques for astrophysical and biomedical analysis. Developed algorithms for large-scale statistical analysis of below-noise-floor signals. Created image feature recognition software achieving <span class="metric">98.8%</span> reduction in processing times (saving <span class="metric">600+ seconds</span>), key component of biochip diagnostics pipeline in <span class="metric">$12B</span> industry.</p>
-    </article>
+      <section class="cv-section">
+        <div class="cv-section-label">Publications</div>
+        <div class="cv-pub">
+          <span class="cv-pub-year">2023</span>
+          <div>
+            <div class="cv-pub-title">Nanoflare Activity on Fully Convective M-dwarf Stars</div>
+            <div class="cv-pub-meta">Grant et al. The Astrophysical Journal</div>
+          </div>
+        </div>
+        <div class="cv-pub">
+          <span class="cv-pub-year">2020</span>
+          <div>
+            <div class="cv-pub-title">Statistical Evidence for Stellar Nanoflare Signals in M-type Lightcurves</div>
+            <div class="cv-pub-meta">Dillon et al. The Astrophysical Journal</div>
+          </div>
+        </div>
+        <div class="cv-pub">
+          <span class="cv-pub-year">2019</span>
+          <div>
+            <div class="cv-pub-title">Monte Carlo Techniques for Nanoflare Detection in Solar Active Regions</div>
+            <div class="cv-pub-meta">Jess et al. The Astrophysical Journal</div>
+          </div>
+        </div>
+      </section>
 
-    <article class="cv-item">
-      <div class="cv-item-header">
-        <span class="cv-role">Process Engineering Intern</span>
-        <span class="cv-date">Jun 2015 - Sep 2016</span>
-      </div>
-      <div class="cv-company">Seagate Technology</div>
-      <p class="cv-description">Led investigation into manufacturing defect. Presented findings to management. Experience with R and Six Sigma methodology.</p>
-    </article>
-  </section>
-
-  <section class="cv-section">
-    <div class="cv-section-label">Publications</div>
-
-    <div class="cv-pub">
-      <span class="cv-pub-year">2023</span>
-      <div>
-        <div class="cv-pub-title">Nanoflare Activity on Fully Convective M-dwarf Stars</div>
-        <div class="cv-pub-meta">Grant et al. The Astrophysical Journal</div>
-      </div>
+      <section class="cv-section">
+        <div class="cv-section-label">Education</div>
+        <article class="cv-item">
+          <div class="cv-item-header">
+            <span class="cv-role">MSci Physics, First Class Honours</span>
+            <span class="cv-date">Sep 2013 - Jun 2017</span>
+          </div>
+          <div class="cv-company">Queen's University Belfast</div>
+          <p class="cv-description">Seagate bursary recipient. Head of peer mentor scheme.</p>
+        </article>
+      </section>
     </div>
 
-    <div class="cv-pub">
-      <span class="cv-pub-year">2020</span>
-      <div>
-        <div class="cv-pub-title">Statistical Evidence for Stellar Nanoflare Signals in M-type Lightcurves</div>
-        <div class="cv-pub-meta">Dillon et al. The Astrophysical Journal</div>
-      </div>
-    </div>
+    <!-- Right Column: Skills Sidebar -->
+    <aside class="cv-sidebar">
+      <div class="cv-section-label">Skills</div>
 
-    <div class="cv-pub">
-      <span class="cv-pub-year">2019</span>
-      <div>
-        <div class="cv-pub-title">Monte Carlo Techniques for Nanoflare Detection in Solar Active Regions</div>
-        <div class="cv-pub-meta">Jess et al. The Astrophysical Journal</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cv-section">
-    <div class="cv-section-label">Education</div>
-
-    <article class="cv-item">
-      <div class="cv-item-header">
-        <span class="cv-role">MSci Physics, First Class Honours</span>
-        <span class="cv-date">Sep 2013 - Jun 2017</span>
-      </div>
-      <div class="cv-company">Queen's University Belfast</div>
-      <p class="cv-description">Seagate bursary recipient. Head of peer mentor scheme coordinating 14 mentors supporting 100 students.</p>
-    </article>
-  </section>
-
-  <section class="cv-section">
-    <div class="cv-section-label">Skills</div>
-
-    <div class="cv-skills-grid">
       <div class="cv-skill-group">
         <h4>Languages</h4>
         <ul>
           <li>Python</li>
           <li>SQL</li>
           <li>R</li>
-          <li>IDL</li>
         </ul>
       </div>
+
       <div class="cv-skill-group">
         <h4>Data</h4>
         <ul>
@@ -439,44 +448,44 @@ title: CV - Christopher Dillon
           <li>ETL Pipelines</li>
         </ul>
       </div>
+
       <div class="cv-skill-group">
         <h4>Tools</h4>
         <ul>
           <li>Streamlit</li>
           <li>Power BI</li>
-          <li>Git</li>
-          <li>Docker</li>
+          <li>Git / Docker</li>
         </ul>
       </div>
+
       <div class="cv-skill-group">
         <h4>Leadership</h4>
         <ul>
           <li>Building Data Teams</li>
           <li>Function Development</li>
           <li>Stakeholder Management</li>
-          <li>Cross-functional Delivery</li>
         </ul>
       </div>
+
       <div class="cv-skill-group">
         <h4>Domain</h4>
         <ul>
           <li>E-commerce Analytics</li>
           <li>Customer Segmentation</li>
           <li>Supply Chain / OTIF</li>
-          <li>Inventory Optimisation</li>
         </ul>
       </div>
+
       <div class="cv-skill-group">
         <h4>Industry</h4>
         <ul>
           <li>Retail / Wholesale</li>
           <li>Biomedical Diagnostics</li>
-          <li>Manufacturing</li>
           <li>Astrophysics Research</li>
         </ul>
       </div>
-    </div>
-  </section>
+    </aside>
+  </div>
 
 </body>
 </html>
