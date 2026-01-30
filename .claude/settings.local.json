@@ -5,7 +5,13 @@
       "Bash(bundler:*)",
       "Bash(bundle install:*)",
       "Bash(bundle exec jekyll serve:*)",
-      "Bash(python scripts/generate_cv_pdf.py:*)"
+      "Bash(python scripts/generate_cv_pdf.py:*)",
+      "Bash(git push)",
+      "Bash(git fetch:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)"
     ]
   }
 }
