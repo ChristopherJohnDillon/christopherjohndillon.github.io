@@ -1,0 +1,467 @@
+---
+layout: none
+title: CV - Christopher Dillon
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Dr. Christopher Dillon</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-dim: #4a4a4a;
+      --text-muted: #6a6a6a;
+      --orange: #ff4f00;
+      --border: #e0e0e0;
+    }
+
+    @media print {
+      :root {
+        --border: #cccccc;
+      }
+      body {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+      .no-print {
+        display: none !important;
+      }
+      @page {
+        margin: 0.5in;
+        size: A4;
+      }
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 11px;
+    }
+
+    body {
+      font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 1.5rem;
+    }
+
+    /* Print button */
+    .print-btn {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      padding: 0.5rem 1rem;
+      background: var(--orange);
+      color: white;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+
+    .print-btn:hover {
+      background: #e64600;
+    }
+
+    /* Header */
+    .cv-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.25rem;
+    }
+
+    .cv-header h1 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .cv-header .title {
+      font-size: 1rem;
+      color: var(--text-dim);
+      margin-bottom: 0.5rem;
+    }
+
+    .cv-header .contact-info {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: right;
+    }
+
+    .cv-header .contact-info a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .cv-header .contact-info div {
+      margin-bottom: 0.2rem;
+    }
+
+    /* Section */
+    .cv-section {
+      margin-bottom: 1.25rem;
+    }
+
+    .cv-section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Experience */
+    .cv-item {
+      margin-bottom: 1rem;
+      page-break-inside: avoid;
+    }
+
+    .cv-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .cv-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.1rem;
+    }
+
+    .cv-role {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .cv-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .cv-company {
+      font-size: 0.9rem;
+      color: var(--orange);
+      margin-bottom: 0.35rem;
+    }
+
+    .cv-description {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      line-height: 1.55;
+      margin-bottom: 0.35rem;
+    }
+
+    .cv-list {
+      list-style: none;
+      margin: 0.35rem 0;
+    }
+
+    .cv-list li {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      line-height: 1.5;
+      padding-left: 0.75rem;
+      position: relative;
+      margin-bottom: 0.2rem;
+    }
+
+    .cv-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 3px;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .cv-list .cv-list {
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .metric {
+      color: var(--orange);
+      font-weight: 500;
+    }
+
+    /* Publications */
+    .cv-pub {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      page-break-inside: avoid;
+    }
+
+    .cv-pub-year {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .cv-pub-title {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .cv-pub-meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Skills Grid */
+    .cv-skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .cv-skill-group h4 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .cv-skill-group ul {
+      list-style: none;
+    }
+
+    .cv-skill-group li {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-bottom: 0.15rem;
+    }
+
+    /* Links */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="no-print" style="position: fixed; top: 1rem; right: 1rem; display: flex; gap: 0.5rem;">
+    <a href="Christopher_Dillon.pdf" class="print-btn" download>Download PDF</a>
+    <button class="print-btn" onclick="window.print()">Print</button>
+  </div>
+
+  <header class="cv-header">
+    <div>
+      <h1>Dr. Christopher Dillon</h1>
+      <div class="title">Global Lead Data Scientist</div>
+    </div>
+    <div class="contact-info">
+      <div><a href="mailto:mail@christopherdillon.me">mail@christopherdillon.me</a></div>
+      <div><a href="https://christopherdillon.me">christopherdillon.me</a></div>
+      <div><a href="https://linkedin.com/in/drchrisdillon">linkedin.com/in/drchrisdillon</a></div>
+      <div>Ireland</div>
+    </div>
+  </header>
+
+  <section class="cv-section">
+    <div class="cv-section-label">Experience</div>
+
+    <article class="cv-item">
+      <div class="cv-item-header">
+        <span class="cv-role">Global Lead Data Scientist</span>
+        <span class="cv-date">Jan 2025 - Present</span>
+      </div>
+      <div class="cv-company">Nexus Brands Group</div>
+      <p class="cv-description">Operating across all 18 businesses within the group. Core role in the formation of the Global Finance and Data Analytics Department, centralizing finance and data operations globally.</p>
+      <ul class="cv-list">
+        <li><strong>Team Leadership:</strong> Building and managing a high-performing global data team</li>
+        <li><strong>Standardization:</strong> Designing universal data and reporting architecture to replace fragmented legacy systems</li>
+        <li><strong>Self-Service Analytics:</strong> Developing Streamlit dashboards with Entra SSO across dashboards and BI</li>
+        <li><strong>Operational Reporting:</strong> Supply chain reporting including:
+          <ul class="cv-list">
+            <li>OTIF performance tracking - increased by <span class="metric">25%</span></li>
+            <li>E&O Stock management - identified <span class="metric">millions</span> in excess inventory</li>
+            <li>OOS monitoring - detecting <span class="metric">~1% revenue</span> in sales loss</li>
+          </ul>
+        </li>
+        <li><strong>KPI Strategy:</strong> Implemented EOS Level 10 executive scorecard</li>
+        <li><strong>Advanced Analytics:</strong> Customer behavior, margin improvement, strategic growth initiatives</li>
+      </ul>
+    </article>
+
+    <article class="cv-item">
+      <div class="cv-item-header">
+        <span class="cv-role">European Data Scientist</span>
+        <span class="cv-date">Apr 2023 - Jan 2025</span>
+      </div>
+      <div class="cv-company">Nexus Brands Group</div>
+      <p class="cv-description">Transformed data function for 5 European businesses across tattoo, beauty, and pet grooming supply. Consolidated fragmented data sources into universal data warehouse. Promoted to Global Lead based on this work.</p>
+    </article>
+
+    <article class="cv-item">
+      <div class="cv-item-header">
+        <span class="cv-role">Data Scientist</span>
+        <span class="cv-date">May 2022 - Apr 2023</span>
+      </div>
+      <div class="cv-company">Christies Direct</div>
+      <p class="cv-description">Built Data Science function from scratch at one of the world's largest pet-grooming supply companies. Created unified reporting across Christies and Transgroom. Promoted to European Data Scientist.</p>
+    </article>
+
+    <article class="cv-item">
+      <div class="cv-item-header">
+        <span class="cv-role">Research Fellow</span>
+        <span class="cv-date">Jan 2022 - Apr 2022</span>
+      </div>
+      <div class="cv-company">Randox Laboratories</div>
+      <p class="cv-description">Developed bespoke image feature recognition software for biochip designs. Created technical documentation for biomedical colleagues.</p>
+    </article>
+
+    <article class="cv-item">
+      <div class="cv-item-header">
+        <span class="cv-role">Astrophysics PhD</span>
+        <span class="cv-date">Sep 2017 - Feb 2022</span>
+      </div>
+      <div class="cv-company">Queen's University Belfast</div>
+      <p class="cv-description">Joint venture with Randox Laboratories developing statistical techniques for astrophysical and biomedical analysis. Developed algorithms for large-scale statistical analysis of below-noise-floor signals. Created image feature recognition software achieving <span class="metric">98.8%</span> reduction in processing times (saving <span class="metric">600+ seconds</span>), key component of biochip diagnostics pipeline in <span class="metric">$12B</span> industry.</p>
+    </article>
+
+    <article class="cv-item">
+      <div class="cv-item-header">
+        <span class="cv-role">Process Engineering Intern</span>
+        <span class="cv-date">Jun 2015 - Sep 2016</span>
+      </div>
+      <div class="cv-company">Seagate Technology</div>
+      <p class="cv-description">Led investigation into manufacturing defect. Presented findings to management. Experience with R and Six Sigma methodology.</p>
+    </article>
+  </section>
+
+  <section class="cv-section">
+    <div class="cv-section-label">Publications</div>
+
+    <div class="cv-pub">
+      <span class="cv-pub-year">2023</span>
+      <div>
+        <div class="cv-pub-title">Nanoflare Activity on Fully Convective M-dwarf Stars</div>
+        <div class="cv-pub-meta">Grant et al. The Astrophysical Journal</div>
+      </div>
+    </div>
+
+    <div class="cv-pub">
+      <span class="cv-pub-year">2020</span>
+      <div>
+        <div class="cv-pub-title">Statistical Evidence for Stellar Nanoflare Signals in M-type Lightcurves</div>
+        <div class="cv-pub-meta">Dillon et al. The Astrophysical Journal</div>
+      </div>
+    </div>
+
+    <div class="cv-pub">
+      <span class="cv-pub-year">2019</span>
+      <div>
+        <div class="cv-pub-title">Monte Carlo Techniques for Nanoflare Detection in Solar Active Regions</div>
+        <div class="cv-pub-meta">Jess et al. The Astrophysical Journal</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cv-section">
+    <div class="cv-section-label">Education</div>
+
+    <article class="cv-item">
+      <div class="cv-item-header">
+        <span class="cv-role">MSci Physics, First Class Honours</span>
+        <span class="cv-date">Sep 2013 - Jun 2017</span>
+      </div>
+      <div class="cv-company">Queen's University Belfast</div>
+      <p class="cv-description">Seagate bursary recipient. Head of peer mentor scheme coordinating 14 mentors supporting 100 students.</p>
+    </article>
+  </section>
+
+  <section class="cv-section">
+    <div class="cv-section-label">Skills</div>
+
+    <div class="cv-skills-grid">
+      <div class="cv-skill-group">
+        <h4>Languages</h4>
+        <ul>
+          <li>Python</li>
+          <li>SQL</li>
+          <li>R</li>
+          <li>IDL</li>
+        </ul>
+      </div>
+      <div class="cv-skill-group">
+        <h4>Data</h4>
+        <ul>
+          <li>Statistical Analysis</li>
+          <li>Machine Learning</li>
+          <li>Data Warehousing</li>
+          <li>ETL Pipelines</li>
+        </ul>
+      </div>
+      <div class="cv-skill-group">
+        <h4>Tools</h4>
+        <ul>
+          <li>Streamlit</li>
+          <li>Power BI</li>
+          <li>Git</li>
+          <li>Docker</li>
+        </ul>
+      </div>
+      <div class="cv-skill-group">
+        <h4>Leadership</h4>
+        <ul>
+          <li>Building Data Teams</li>
+          <li>Function Development</li>
+          <li>Stakeholder Management</li>
+          <li>Cross-functional Delivery</li>
+        </ul>
+      </div>
+      <div class="cv-skill-group">
+        <h4>Domain</h4>
+        <ul>
+          <li>E-commerce Analytics</li>
+          <li>Customer Segmentation</li>
+          <li>Supply Chain / OTIF</li>
+          <li>Inventory Optimisation</li>
+        </ul>
+      </div>
+      <div class="cv-skill-group">
+        <h4>Industry</h4>
+        <ul>
+          <li>Retail / Wholesale</li>
+          <li>Biomedical Diagnostics</li>
+          <li>Manufacturing</li>
+          <li>Astrophysics Research</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

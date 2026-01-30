@@ -1,0 +1,39 @@
+name: Generate CV PDF
+
+on:
+  push:
+    paths:
+      - 'cv/index.html'
+      - 'index.html'
+      - '.github/workflows/generate-cv-pdf.yml'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install playwright
+          playwright install chromium
+          playwright install-deps chromium
+
+      - name: Generate PDF
+        run: python scripts/generate_cv_pdf.py
+
+      - name: Commit and push PDF
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add cv/Christopher_Dillon.pdf
+          git diff --staged --quiet || git commit -m "Update CV PDF [skip ci]"
+          git push
