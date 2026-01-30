@@ -416,12 +416,12 @@ footer span {
 
 /* Links */
 a {
-  color: var(--text);
+  color: var(--orange);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--orange);
+  color: var(--text);
 }
 
 /* Code */

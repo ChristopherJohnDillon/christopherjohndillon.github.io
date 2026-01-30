@@ -11,7 +11,10 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git pull:*)",
-      "Bash(git stash:*)"
+      "Bash(git stash:*)",
+      "Bash(bundle exec jekyll build:*)",
+      "Bash(open:*)",
+      "Bash(pdfinfo:*)"
     ]
   }
 }
