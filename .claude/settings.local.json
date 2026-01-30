@@ -15,7 +15,8 @@
       "Bash(bundle exec jekyll build:*)",
       "Bash(open:*)",
       "Bash(pdfinfo:*)",
-      "Bash(gh run view:*)"
+      "Bash(gh run view:*)",
+      "Bash(CI=true python scripts/generate_cv_pdf.py:*)"
     ]
   }
 }

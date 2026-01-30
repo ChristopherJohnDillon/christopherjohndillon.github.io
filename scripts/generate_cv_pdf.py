@@ -24,7 +24,7 @@ except ImportError:
     exit(1)
 
 # Live site URL
-LIVE_CV_URL = "https://christopherjohndillon.com/cv/"
+LIVE_CV_URL = "https://christopherjohndillon.github.io/cv/"
 
 
 async def generate_pdf():
