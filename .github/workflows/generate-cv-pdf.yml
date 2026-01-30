@@ -1,7 +1,13 @@
 name: Generate CV PDF
 
 on:
-  workflow_dispatch:  # Manual trigger only - run locally for automatic updates
+  push:
+    paths:
+      - 'cv/index.html'
+      - 'index.html'
+    branches:
+      - gh-pages
+  workflow_dispatch:
 
 jobs:
   generate-pdf:
@@ -12,6 +18,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: gh-pages
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -27,10 +35,16 @@ jobs:
       - name: Generate PDF
         run: python scripts/generate_cv_pdf.py
 
+      - name: Check for changes
+        id: check
+        run: |
+          git diff --quiet cv/Christopher_Dillon.pdf || echo "changed=true" >> $GITHUB_OUTPUT
+
       - name: Commit and push PDF
+        if: steps.check.outputs.changed == 'true'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add cv/Christopher_Dillon.pdf
-          git diff --staged --quiet || git commit -m "Update CV PDF"
+          git commit -m "Update CV PDF [skip ci]"
           git push
