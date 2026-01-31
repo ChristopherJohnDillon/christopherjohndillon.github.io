@@ -16,7 +16,9 @@
       "Bash(open:*)",
       "Bash(pdfinfo:*)",
       "Bash(gh run view:*)",
-      "Bash(CI=true python scripts/generate_cv_pdf.py:*)"
+      "Bash(CI=true python scripts/generate_cv_pdf.py:*)",
+      "Bash(convert:*)",
+      "Bash(ls:*)"
     ]
   }
 }
