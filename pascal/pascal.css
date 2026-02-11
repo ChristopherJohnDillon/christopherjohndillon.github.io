@@ -178,6 +178,10 @@ body.pascal nav {
     max-height: 420px;
 }
 
+.screenshot-item .watch {
+    max-height: 320px;
+}
+
 .screenshot-label {
     font-size: 10px;
     letter-spacing: 2px;
