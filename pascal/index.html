@@ -1,0 +1,233 @@
+---
+layout: default
+title: Pascal - Barometric Pressure Monitor
+description: Track atmospheric pressure to monitor weather-related migraine triggers. Aerospace-grade telemetry for iOS and Apple Watch.
+---
+
+<link rel="stylesheet" href="pascal.css">
+
+<body class="pascal">
+<div class="container">
+
+<header class="pascal-header">
+    <div class="system-label">ATMOSPHERIC TELEMETRY SYSTEM</div>
+    <h1>PASCAL</h1>
+    <div class="tagline">BAROMETRIC PRESSURE MONITOR</div>
+    <div class="status-badge">
+        <span class="status-dot"></span>
+        iOS + APPLE WATCH
+    </div>
+    <br>
+    <a href="#" class="app-store-btn">DOWNLOAD ON APP STORE</a>
+</header>
+
+<div class="screenshots">
+    <div class="device-mockups">
+        <!-- Replace with actual screenshots -->
+        <img src="iphone-screenshot.png" alt="Pascal on iPhone" class="iphone" onerror="this.style.display='none'">
+        <img src="watch-screenshot.png" alt="Pascal on Apple Watch" class="watch" onerror="this.style.display='none'">
+    </div>
+</div>
+
+<section>
+    <div class="section-header">MISSION BRIEF</div>
+    <div class="card">
+        <p>
+            Pascal tracks atmospheric pressure using your device's barometer to help monitor weather changes that may trigger migraines.
+        </p>
+        <p>
+            The core challenge: a 6-meter elevation change (two flights of stairs) shifts pressure by ~0.7 hPa—the same magnitude as a meaningful weather change over 3 hours.
+        </p>
+        <p>
+            Pascal uses a hybrid calibration system to filter movement noise and surface the signal you care about.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div class="section-header">CAPABILITIES</div>
+    <div class="features-grid">
+        <div class="feature">
+            <div class="feature-icon">📊</div>
+            <h3>12-HOUR TREND ANALYSIS</h3>
+            <p>Real-time pressure visualization with interactive charts. Pan, zoom, and explore your atmospheric history.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🎯</div>
+            <h3>HYBRID CALIBRATION</h3>
+            <p>Two-layer system: movement compensation + GPS sea-level reduction. Aerospace-grade accuracy.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">⌚</div>
+            <h3>APPLE WATCH</h3>
+            <p>Glanceable complications and full app. Data syncs from iPhone for optimal accuracy.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🔋</div>
+            <h3>BACKGROUND SAMPLING</h3>
+            <p>Continuous monitoring without draining battery. Samples every 15-30 minutes automatically.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">📱</div>
+            <h3>HOME SCREEN WIDGETS</h3>
+            <p>Multiple sizes for iPhone. Current pressure, trend arrows, and mini charts at a glance.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🧠</div>
+            <h3>MOVEMENT FILTER</h3>
+            <p>Intelligent rate-of-change detection separates weather signals from human activity.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="section-header">TECHNICAL SPECIFICATIONS</div>
+    <div class="card">
+        <table class="specs-table">
+            <tr>
+                <td>SENSOR</td>
+                <td>Bosch BMP280 Barometer</td>
+            </tr>
+            <tr>
+                <td>RESOLUTION</td>
+                <td>~0.18 Pa (1.5 cm altitude)</td>
+            </tr>
+            <tr>
+                <td>ACCURACY</td>
+                <td>±1 hPa</td>
+            </tr>
+            <tr>
+                <td>PRESSURE LAPSE RATE</td>
+                <td>~0.12 hPa / meter</td>
+            </tr>
+            <tr>
+                <td>STORM THRESHOLD</td>
+                <td>6+ hPa / 3 hours</td>
+            </tr>
+            <tr>
+                <td>MIGRAINE THRESHOLD</td>
+                <td>~5 hPa / 24 hours</td>
+            </tr>
+            <tr>
+                <td>CALIBRATION</td>
+                <td>Hypsometric + Relative Altitude</td>
+            </tr>
+            <tr>
+                <td>DATA RETENTION</td>
+                <td>48 hours rolling</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section>
+    <div class="section-header">CALIBRATION SYSTEM</div>
+    <div class="card">
+        <h3>LAYER 1 // MOVEMENT COMPENSATION</h3>
+        <p>
+            Uses the barometer's relative altitude tracking to detect and remove pressure changes from stairs, elevators, and floor changes. More accurate than GPS for short-term movements.
+        </p>
+        <p>
+            <code>compensated = raw + (relativeAltitude × 0.12)</code>
+        </p>
+    </div>
+    <div class="card">
+        <h3>LAYER 2 // SEA-LEVEL REDUCTION</h3>
+        <p>
+            Uses GPS altitude to convert station pressure to sea-level pressure (QNH). Enables comparison with weather forecasts and removes absolute elevation bias.
+        </p>
+        <p>
+            <code>P_sea = P_station × (1 - (L × h) / T₀)^(-g / (R × L))</code>
+        </p>
+    </div>
+</section>
+
+<section>
+    <div class="section-header">CALIBRATION BADGES</div>
+    <div class="card">
+        <p>Each reading shows its calibration quality:</p>
+        <table class="specs-table" style="margin-top: 16px;">
+            <tr>
+                <td>FULL</td>
+                <td>Both layers applied (best quality)</td>
+            </tr>
+            <tr>
+                <td>GPS</td>
+                <td>Fresh GPS altitude (&lt; 1 hour)</td>
+            </tr>
+            <tr>
+                <td>GPS*</td>
+                <td>Recent GPS (1-6 hours)</td>
+            </tr>
+            <tr>
+                <td>REL</td>
+                <td>Movement compensation only</td>
+            </tr>
+            <tr>
+                <td>CACHE</td>
+                <td>Cached GPS (&gt; 6 hours)</td>
+            </tr>
+            <tr>
+                <td>RAW</td>
+                <td>Uncalibrated station pressure</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section>
+    <div class="section-header">NOISE REDUCTION</div>
+    <div class="card">
+        <h3>RATE-OF-CHANGE FILTERING</h3>
+        <p>
+            Detects movement vs weather based on pressure change rate:
+        </p>
+        <table class="specs-table" style="margin-top: 12px;">
+            <tr>
+                <td>&lt; 0.3 hPa/min</td>
+                <td>Weather (trusted)</td>
+            </tr>
+            <tr>
+                <td>&gt; 0.3 hPa/min</td>
+                <td>Movement (filtered)</td>
+            </tr>
+        </table>
+        <p style="margin-top: 12px;">
+            Elevators, stairs, and driving are automatically filtered from trend calculations.
+        </p>
+    </div>
+    <div class="card">
+        <h3>GPS ALTITUDE SMOOTHING</h3>
+        <p>
+            Rolling median filter (7 samples) rejects GPS jitter. Sudden jumps &gt;10m rejected unless 5+ minutes pass.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div class="section-header">REFERENCES</div>
+    <div class="card">
+        <p>
+            — Barometric Formula (Wikipedia)<br>
+            — Zaliva & Franchetti (CMU): GPS/Barometer Sensor Fusion<br>
+            — ICAO Standard Atmosphere<br>
+            — Bosch BMP280 Datasheet<br>
+            — Apple CMAltimeter Documentation
+        </p>
+    </div>
+</section>
+
+<footer class="pascal-footer">
+    <div class="links">
+        <a href="privacy.html">PRIVACY POLICY</a>
+        <a href="mailto:pascal@christopherdillon.me">SUPPORT</a>
+        <a href="/">BACK TO SITE</a>
+    </div>
+    <div class="copyright">
+        DESIGNED WITH INTERNATIONAL ORANGE<br>
+        <span>© 2025 CHRISTOPHER DILLON</span>
+    </div>
+</footer>
+
+</div>
+</body>
