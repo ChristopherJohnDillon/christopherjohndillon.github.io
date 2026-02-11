@@ -160,8 +160,28 @@ body.pascal nav {
     max-height: 520px;
 }
 
-.device-mockups .watch {
-    max-height: 280px;
+.device-mockups.three-up {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.screenshot-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.screenshot-item .iphone {
+    max-height: 420px;
+}
+
+.screenshot-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--io-muted);
 }
 
 /* Section headers - matching app's section style */
@@ -425,6 +445,14 @@ body.pascal .container {
 
     .device-mockups .iphone {
         max-height: 400px;
+    }
+
+    .screenshot-item .iphone {
+        max-height: 320px;
+    }
+
+    .device-mockups.three-up {
+        gap: 16px;
     }
 
     .pascal-footer .links a {
