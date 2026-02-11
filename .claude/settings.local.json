@@ -18,7 +18,11 @@
       "Bash(gh run view:*)",
       "Bash(CI=true python scripts/generate_cv_pdf.py:*)",
       "Bash(convert:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(git rev-list:*)",
+      "Bash(git cat-file:*)",
+      "Bash(sort:*)",
+      "Bash(git config:*)"
     ]
   }
 }
