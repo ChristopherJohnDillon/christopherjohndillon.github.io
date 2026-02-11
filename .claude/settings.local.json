@@ -22,7 +22,9 @@
       "Bash(git rev-list:*)",
       "Bash(git cat-file:*)",
       "Bash(sort:*)",
-      "Bash(git config:*)"
+      "Bash(git config:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)"
     ]
   }
 }
