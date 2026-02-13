@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Pascal - Barometric Pressure Monitor
-description: Track atmospheric pressure to monitor weather-related migraine triggers. Aerospace-grade telemetry for iOS and Apple Watch.
+description: Track local atmospheric pressure trends to detect weather changes. Aerospace-style telemetry for iOS and Apple Watch.
 ---
 
 <link rel="stylesheet" href="pascal.css">
@@ -12,7 +12,7 @@ description: Track atmospheric pressure to monitor weather-related migraine trig
 <header class="pascal-header">
     <div class="system-label">ATMOSPHERIC TELEMETRY SYSTEM</div>
     <h1>PASCAL</h1>
-    <div class="tagline">BAROMETRIC PRESSURE MONITOR</div>
+    <div class="tagline">LOCAL AIR PRESSURE TREND MONITOR</div>
     <div class="status-badge">
         <span class="status-dot"></span>
         iOS + APPLE WATCH
@@ -42,13 +42,16 @@ description: Track atmospheric pressure to monitor weather-related migraine trig
     <div class="section-header">MISSION BRIEF</div>
     <div class="card">
         <p>
-            Pascal tracks atmospheric pressure using your device's barometer to help monitor weather changes that may trigger migraines.
+            Pascal tracks local atmospheric pressure using your device's barometer to detect weather changes and pressure fronts as they happen.
+        </p>
+        <p>
+            For people susceptible to barometric pressure headaches, monitoring pressure trends can help identify potential triggers before symptoms begin.
         </p>
         <p>
             The core challenge: a 6-meter elevation change (two flights of stairs) shifts pressure by ~0.7 hPa—the same magnitude as a meaningful weather change over 3 hours.
         </p>
         <p>
-            Pascal uses a hybrid calibration system to filter movement noise and surface the signal you care about.
+            Pascal uses a hybrid calibration system to filter movement noise and surface the weather signal you care about.
         </p>
     </div>
 </section>
@@ -93,7 +96,7 @@ description: Track atmospheric pressure to monitor weather-related migraine trig
                 </svg>
             </div>
             <h3>APPLE WATCH</h3>
-            <p>Glanceable complications and full app. Data syncs from iPhone for optimal accuracy.</p>
+            <p>Glanceable complications and full app. Watch displays iPhone data synced via WatchConnectivity for GPS-calibrated accuracy.</p>
         </div>
         <div class="feature">
             <div class="icon-frame">
@@ -157,7 +160,7 @@ description: Track atmospheric pressure to monitor weather-related migraine trig
                 <td>6+ hPa / 3 hours</td>
             </tr>
             <tr>
-                <td>MIGRAINE THRESHOLD</td>
+                <td>SENSITIVITY REFERENCE</td>
                 <td>~5 hPa / 24 hours</td>
             </tr>
             <tr>
