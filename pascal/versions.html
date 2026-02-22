@@ -35,7 +35,8 @@ description: Pascal version history and changelog
 </div>
 
 <script>
-const CHANGELOG_URL = 'https://raw.githubusercontent.com/ChristopherJohnDillon/Pascal/master/docs/CHANGELOG.md';
+// Fetch from same domain (copied from Pascal repo)
+const CHANGELOG_URL = 'CHANGELOG.md';
 
 fetch(CHANGELOG_URL)
     .then(response => {
