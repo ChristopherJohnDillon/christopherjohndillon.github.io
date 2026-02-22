@@ -1,0 +1,126 @@
+---
+layout: default
+title: Pascal - Version History
+description: Pascal version history and changelog
+---
+
+<link rel="stylesheet" href="pascal.css">
+
+<body class="pascal">
+<div class="container">
+
+<header class="pascal-header" style="padding: 40px 0;">
+    <a href="index.html" class="back-link">← BACK TO PASCAL</a>
+    <h1 style="font-size: 2rem; margin-top: 20px;">VERSION HISTORY</h1>
+    <div class="tagline">CHANGELOG</div>
+</header>
+
+<div id="changelog-content">
+    <div class="card">
+        <p style="text-align: center; color: rgba(255,255,255,0.5);">Loading changelog...</p>
+    </div>
+</div>
+
+<footer class="pascal-footer">
+    <div class="links">
+        <a href="index.html">PASCAL HOME</a>
+        <a href="privacy.html">PRIVACY POLICY</a>
+        <a href="/">BACK TO SITE</a>
+    </div>
+    <div class="copyright">
+        <span>© 2026 CHRISTOPHER DILLON</span>
+    </div>
+</footer>
+
+</div>
+
+<script>
+const CHANGELOG_URL = 'https://raw.githubusercontent.com/ChristopherJohnDillon/Pascal/master/CHANGELOG.md';
+
+fetch(CHANGELOG_URL)
+    .then(response => {
+        if (!response.ok) throw new Error('Not found');
+        return response.text();
+    })
+    .then(markdown => {
+        const container = document.getElementById('changelog-content');
+        container.innerHTML = '';
+
+        // Split by version headers
+        const versions = markdown.split(/^## \[/gm).slice(1);
+
+        versions.forEach(versionBlock => {
+            const lines = versionBlock.split('\n');
+            const headerLine = lines[0];
+
+            // Parse version and date
+            const match = headerLine.match(/^([\d.]+)\]\s*-\s*(.+)/);
+            if (!match) return;
+
+            const version = match[1];
+            const date = match[2].trim();
+
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.style.marginBottom = '20px';
+
+            let html = `<h3 style="color: #FF4500; margin-bottom: 16px;">v${version} — ${date}</h3>`;
+
+            let currentSection = '';
+            lines.slice(1).forEach(line => {
+                if (line.startsWith('### ')) {
+                    const sectionName = line.replace('### ', '').trim();
+                    html += `<h4 style="color: rgba(255,255,255,0.7); font-size: 12px; margin: 16px 0 8px 0; letter-spacing: 1px;">${sectionName.toUpperCase()}</h4>`;
+                } else if (line.startsWith('- **')) {
+                    // Bold item: - **Feature**: Description
+                    const cleaned = line.replace(/^- \*\*/, '• <strong style="color: #FF4500;">').replace(/\*\*:?\s*/, '</strong>: ');
+                    html += `<p style="margin: 4px 0; color: rgba(255,255,255,0.8);">${cleaned}</p>`;
+                } else if (line.startsWith('- ')) {
+                    // Regular item
+                    html += `<p style="margin: 4px 0; color: rgba(255,255,255,0.8);">• ${line.slice(2)}</p>`;
+                } else if (line.startsWith('`') && line.endsWith('`')) {
+                    // Code/file reference
+                    html += `<p style="margin: 4px 0; color: rgba(255,255,255,0.5); font-family: monospace; font-size: 11px;">${line}</p>`;
+                }
+            });
+
+            card.innerHTML = html;
+            container.appendChild(card);
+        });
+    })
+    .catch(error => {
+        console.error('Failed to load changelog:', error);
+        document.getElementById('changelog-content').innerHTML = `
+            <div class="card">
+                <h3 style="color: #FF4500;">v1.2 — February 2026</h3>
+                <p>• Storm Alerts — Push notifications for rapid pressure drops</p>
+                <p>• Live Activities — Dynamic Island and Lock Screen display</p>
+                <p>• Flight Mode — Cabin pressure tracking</p>
+                <p>• Prediction Accuracy — Feedback for ML improvement</p>
+            </div>
+            <div class="card">
+                <h3 style="color: #FF4500;">v1.1 — February 2026</h3>
+                <p>• Weather Forecasting — On-device Zambretti algorithm</p>
+                <p>• Confidence indicators and trend classification</p>
+            </div>
+            <div class="card">
+                <h3 style="color: #FF4500;">v1.0 — February 2026</h3>
+                <p>• Initial release with pressure monitoring and widgets</p>
+            </div>
+        `;
+    });
+</script>
+
+<style>
+.back-link {
+    color: #FF4500;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+.back-link:hover {
+    text-decoration: underline;
+}
+</style>
+</body>

@@ -287,61 +287,6 @@ description: Track local atmospheric pressure trends to detect weather changes. 
 </section>
 
 <section>
-    <div class="section-header">VERSION HISTORY</div>
-    <div id="version-history">
-        <!-- Loaded from CHANGELOG.md -->
-    </div>
-</section>
-
-<script>
-// Fetch changelog from GitHub raw content
-fetch('https://raw.githubusercontent.com/ChristopherJohnDillon/Pascal/master/CHANGELOG.md')
-    .then(response => response.ok ? response.text() : Promise.reject('Not found'))
-    .then(markdown => {
-        const container = document.getElementById('version-history');
-        // Parse markdown versions
-        const versions = markdown.split(/^## \[/gm).slice(1);
-        versions.forEach(version => {
-            const lines = version.split('\n');
-            const header = lines[0].replace(']', '').replace(' - ', ' — ');
-            const card = document.createElement('div');
-            card.className = 'card';
-
-            let content = '<h3>v' + header + '</h3><p>';
-            let inList = false;
-            lines.slice(1).forEach(line => {
-                if (line.startsWith('### ')) {
-                    if (inList) content += '</p><p>';
-                    inList = true;
-                } else if (line.startsWith('- ')) {
-                    content += '• ' + line.slice(2) + '<br>';
-                }
-            });
-            content += '</p>';
-            card.innerHTML = content;
-            container.appendChild(card);
-        });
-    })
-    .catch(() => {
-        // Fallback to static content
-        document.getElementById('version-history').innerHTML = `
-            <div class="card">
-                <h3>v1.2 — February 2026</h3>
-                <p>• Storm Alerts, Live Activities, Flight Mode, Prediction Tracking</p>
-            </div>
-            <div class="card">
-                <h3>v1.1 — February 2026</h3>
-                <p>• Weather Forecasting with Zambretti algorithm</p>
-            </div>
-            <div class="card">
-                <h3>v1.0 — February 2026</h3>
-                <p>• Initial release</p>
-            </div>
-        `;
-    });
-</script>
-
-<section>
     <div class="section-header">REFERENCES</div>
     <div class="card">
         <p>
@@ -359,13 +304,33 @@ fetch('https://raw.githubusercontent.com/ChristopherJohnDillon/Pascal/master/CHA
     <div class="links">
         <a href="privacy.html">PRIVACY POLICY</a>
         <a href="mailto:pascal@christopherdillon.me">SUPPORT</a>
+        <a href="versions.html">VERSION HISTORY</a>
         <a href="/">BACK TO SITE</a>
     </div>
     <div class="copyright">
+        <a href="versions.html" class="version-badge">v1.2</a><br>
         DESIGNED WITH INTERNATIONAL ORANGE<br>
         <span>© 2026 CHRISTOPHER DILLON</span>
     </div>
 </footer>
+
+<style>
+.version-badge {
+    display: inline-block;
+    color: #FF4500;
+    font-family: monospace;
+    font-size: 11px;
+    padding: 4px 10px;
+    border: 1px solid #FF4500;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+.version-badge:hover {
+    background: rgba(255, 69, 0, 0.15);
+}
+</style>
 
 </div>
 </body>
