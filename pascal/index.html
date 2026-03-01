@@ -25,16 +25,16 @@ description: Track local atmospheric pressure trends to detect weather changes. 
 <div class="screenshots">
     <div class="device-mockups three-up">
         <div class="screenshot-item">
-            <img src="iphone-main.png" alt="Pascal main screen showing pressure trend" class="iphone">
-            <span class="screenshot-label">TREND ANALYSIS</span>
+            <img src="iphone-main.png" alt="Pascal pressure view with falling trend" class="iphone">
+            <span class="screenshot-label">PRESSURE TREND</span>
+        </div>
+        <div class="screenshot-item">
+            <img src="iphone-alt.png" alt="Pascal altitude tracking view" class="iphone">
+            <span class="screenshot-label">ALTITUDE MODE</span>
         </div>
         <div class="screenshot-item">
             <img src="widget.png" alt="Pascal widget" class="widget">
             <span class="screenshot-label">HOME WIDGET</span>
-        </div>
-        <div class="screenshot-item">
-            <img src="watch-main.png" alt="Pascal on Apple Watch" class="watch">
-            <span class="screenshot-label">APPLE WATCH</span>
         </div>
     </div>
 </div>
@@ -43,16 +43,10 @@ description: Track local atmospheric pressure trends to detect weather changes. 
     <div class="section-header">MISSION BRIEF</div>
     <div class="card">
         <p>
-            Pascal tracks local atmospheric pressure using your device's barometer to detect weather changes and pressure fronts as they happen.
+            <strong>Know when weather is coming before it arrives.</strong> Pascal turns your iPhone's barometer into a personal weather station that detects pressure fronts in real-time.
         </p>
         <p>
-            For people sensitive to weather changes, monitoring pressure trends can help you stay ahead of incoming weather fronts.
-        </p>
-        <p>
-            The core challenge: a 6-meter elevation change (two flights of stairs) shifts pressure by ~0.7 hPa—the same magnitude as a meaningful weather change over 3 hours.
-        </p>
-        <p>
-            Pascal uses a hybrid calibration system to filter movement noise and surface the weather signal you care about.
+            Perfect for migraines, outdoor planning, or just understanding why you feel "off" today. The challenge? Walking upstairs creates the same pressure shift as a storm front. Pascal's hybrid calibration system filters out your movement to reveal the true weather signal.
         </p>
     </div>
 </section>
@@ -60,55 +54,29 @@ description: Track local atmospheric pressure trends to detect weather changes. 
 <section>
     <div class="section-header">WEATHER FORECASTING</div>
     <div class="card">
-        <h3>ON-DEVICE PREDICTION</h3>
+        <h3>PREDICT RAIN BEFORE IT HAPPENS</h3>
         <p>
-            Pascal predicts weather changes using only your pressure history—no internet required. Based on the Zambretti Forecaster (1915), a meteorological standard still used by professionals today.
+            No internet required. Pascal uses the Zambretti Forecaster—a 110-year-old meteorological algorithm still trusted by professionals—combined with on-device ML that learns your local patterns.
         </p>
         <table class="specs-table" style="margin-top: 16px;">
             <tr>
-                <td>FALLING PRESSURE</td>
-                <td>Approaching low pressure system</td>
-            </tr>
-            <tr>
-                <td>RISING PRESSURE</td>
-                <td>High pressure building</td>
-            </tr>
-            <tr>
-                <td>RAPID DROP (&gt;2 hPa/3h)</td>
+                <td>RAPID DROP</td>
                 <td>Storm likely within 6-12 hours</td>
             </tr>
-        </table>
-        <p style="margin-top: 16px;">
-            Each prediction includes condition (Sunny, Rain, Storm...), confidence level, plain-English reasoning, and timeframe. All computed on-device—works in airplane mode.
-        </p>
-    </div>
-    <div class="card">
-        <h3>LEARNS YOUR LOCAL WEATHER</h3>
-        <p>
-            Pascal's Bayesian ML model learns automatically from your pressure history. No user feedback required—predictions improve silently in the background.
-        </p>
-        <table class="specs-table" style="margin-top: 16px;">
             <tr>
-                <td>INSTANT BOOTSTRAP</td>
-                <td>Seeds model with Zambretti archetypes on first launch</td>
+                <td>STEADY FALL</td>
+                <td>Rain approaching</td>
             </tr>
             <tr>
-                <td>AUTO-EVALUATION</td>
-                <td>Checks what actually happened after 6 hours</td>
-            </tr>
-            <tr>
-                <td>PERSONALIZATION</td>
-                <td>~25 predictions to become localized to your area</td>
+                <td>RISING</td>
+                <td>Clear weather building</td>
             </tr>
         </table>
-        <p style="margin-top: 16px;">
-            If you have a week of pressure history, Pascal is personalized immediately. The model combines 110-year-old meteorological wisdom with modern machine learning.
-        </p>
     </div>
     <div class="card">
-        <h3>ZAMBRETTI-ALIGNED CONFIDENCE</h3>
+        <h3>GETS SMARTER OVER TIME</h3>
         <p>
-            Confidence levels follow classical meteorological research. Rapid pressure changes produce high-confidence predictions (clear signal), while slow changes appropriately lower confidence. Predictions are boosted when pressure level confirms the forecast.
+            After ~25 predictions, Pascal becomes personalized to your exact location. Coastal, mountain, or city—the ML model learns what pressure patterns mean <em>where you live</em>.
         </p>
     </div>
 </section>
@@ -124,8 +92,8 @@ description: Track local atmospheric pressure trends to detect weather changes. 
                     <line x1="3" y1="20" x2="3" y2="6" stroke-opacity="0.3" />
                 </svg>
             </div>
-            <h3>12-HOUR TREND ANALYSIS</h3>
-            <p>Real-time pressure visualization with interactive charts. Pan, zoom, and explore your atmospheric history.</p>
+            <h3>12-HOUR TRENDS</h3>
+            <p>Interactive pressure charts with 3h/6h delta indicators. See exactly how fast pressure is changing.</p>
         </div>
         <div class="feature">
             <div class="icon-frame">
@@ -138,22 +106,19 @@ description: Track local atmospheric pressure trends to detect weather changes. 
                     <line x1="19" y1="12" x2="22" y2="12" />
                 </svg>
             </div>
-            <h3>HYBRID CALIBRATION</h3>
-            <p>Two-layer system: movement compensation + GPS sea-level reduction. Aerospace-grade accuracy.</p>
+            <h3>GPS CALIBRATION</h3>
+            <p>Converts to sea-level pressure for accurate forecasting. Compare with official weather stations.</p>
         </div>
         <div class="feature">
             <div class="icon-frame">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#FF4500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="6" y="3" width="12" height="18" rx="3" />
-                    <line x1="9" y1="3" x2="9" y2="2" />
-                    <line x1="15" y1="3" x2="15" y2="2" />
-                    <line x1="9" y1="21" x2="9" y2="22" />
-                    <line x1="15" y1="21" x2="15" y2="22" />
-                    <polyline points="9,14 11,11 13,13 15,10" stroke-opacity="0.7" stroke-width="1" />
+                    <path d="M5,17 L5,9 C5,6 7,4 10,4 L14,4 C17,4 19,6 19,9 L19,17" />
+                    <line x1="12" y1="4" x2="12" y2="1" />
+                    <polyline points="8,13 10,10 12,12 14,9 16,11" stroke-opacity="0.7" stroke-width="1" />
                 </svg>
             </div>
-            <h3>APPLE WATCH</h3>
-            <p>Glanceable complications and full app. Watch displays iPhone data synced via WatchConnectivity for GPS-calibrated accuracy.</p>
+            <h3>ALTITUDE MODE</h3>
+            <p>Track elevation changes in real-time. Perfect for hiking, cycling, or elevator spotting.</p>
         </div>
         <div class="feature">
             <div class="icon-frame">
@@ -162,8 +127,8 @@ description: Track local atmospheric pressure trends to detect weather changes. 
                     <circle cx="22" cy="12" r="1.5" fill="#FF4500" stroke="none" opacity="0.5" />
                 </svg>
             </div>
-            <h3>BACKGROUND SAMPLING</h3>
-            <p>Continuous monitoring without draining battery. Samples every 15-30 minutes automatically.</p>
+            <h3>ALWAYS RUNNING</h3>
+            <p>Background sampling every 15-30 minutes. Zero battery impact—your trend is always ready.</p>
         </div>
         <div class="feature">
             <div class="icon-frame">
@@ -175,8 +140,8 @@ description: Track local atmospheric pressure trends to detect weather changes. 
                     <polyline points="6,18 9,16 12,17.5 15,15 18,16.5" stroke-opacity="0.5" stroke-width="1" />
                 </svg>
             </div>
-            <h3>HOME SCREEN WIDGETS</h3>
-            <p>Multiple sizes for iPhone. Current pressure, trend arrows, and mini charts at a glance.</p>
+            <h3>WIDGETS</h3>
+            <p>Home screen widgets in multiple sizes. Glance at pressure, trend, and forecast instantly.</p>
         </div>
         <div class="feature">
             <div class="icon-frame">
@@ -187,146 +152,40 @@ description: Track local atmospheric pressure trends to detect weather changes. 
                 </svg>
             </div>
             <h3>MOVEMENT FILTER</h3>
-            <p>Intelligent rate-of-change detection separates weather signals from human activity.</p>
+            <p>Stairs, elevators, and driving automatically filtered. Only true weather changes shown.</p>
         </div>
     </div>
 </section>
 
 <section>
-    <div class="section-header">TECHNICAL SPECIFICATIONS</div>
+    <div class="section-header">HOW IT WORKS</div>
     <div class="card">
+        <h3>TWO-LAYER CALIBRATION</h3>
+        <p>
+            <strong>Layer 1:</strong> Movement compensation filters stairs, elevators, and driving using barometer's relative altitude.<br>
+            <strong>Layer 2:</strong> GPS converts to sea-level pressure so you can compare with weather stations.
+        </p>
+    </div>
+    <div class="card">
+        <h3>SPECS</h3>
         <table class="specs-table">
             <tr>
                 <td>SENSOR</td>
-                <td>Bosch BMP280 Barometer</td>
+                <td>Bosch BMP280 (±1 hPa accuracy)</td>
             </tr>
             <tr>
                 <td>RESOLUTION</td>
-                <td>~0.18 Pa (1.5 cm altitude)</td>
-            </tr>
-            <tr>
-                <td>ACCURACY</td>
-                <td>±1 hPa</td>
-            </tr>
-            <tr>
-                <td>PRESSURE LAPSE RATE</td>
-                <td>~0.12 hPa / meter</td>
+                <td>1.5 cm altitude equivalent</td>
             </tr>
             <tr>
                 <td>STORM THRESHOLD</td>
-                <td>6+ hPa / 3 hours</td>
+                <td>6+ hPa drop in 3 hours</td>
             </tr>
             <tr>
-                <td>SENSITIVITY REFERENCE</td>
-                <td>~5 hPa / 24 hours</td>
-            </tr>
-            <tr>
-                <td>CALIBRATION</td>
-                <td>Hypsometric + Relative Altitude</td>
-            </tr>
-            <tr>
-                <td>DATA RETENTION</td>
+                <td>HISTORY</td>
                 <td>48 hours rolling</td>
             </tr>
         </table>
-    </div>
-</section>
-
-<section>
-    <div class="section-header">CALIBRATION SYSTEM</div>
-    <div class="card">
-        <h3>LAYER 1 // MOVEMENT COMPENSATION</h3>
-        <p>
-            Uses the barometer's relative altitude tracking to detect and remove pressure changes from stairs, elevators, and floor changes. More accurate than GPS for short-term movements.
-        </p>
-        <p>
-            <code>compensated = raw + (relativeAltitude × 0.12)</code>
-        </p>
-    </div>
-    <div class="card">
-        <h3>LAYER 2 // SEA-LEVEL REDUCTION</h3>
-        <p>
-            Uses GPS altitude to convert station pressure to sea-level pressure (QNH). Enables comparison with weather forecasts and removes absolute elevation bias.
-        </p>
-        <p>
-            <code>P_sea = P_station × (1 - (L × h) / T₀)^(-g / (R × L))</code>
-        </p>
-    </div>
-</section>
-
-<section>
-    <div class="section-header">CALIBRATION BADGES</div>
-    <div class="card">
-        <p>Each reading shows its calibration quality:</p>
-        <table class="specs-table" style="margin-top: 16px;">
-            <tr>
-                <td>FULL</td>
-                <td>Both layers applied (best quality)</td>
-            </tr>
-            <tr>
-                <td>GPS</td>
-                <td>Fresh GPS altitude (&lt; 1 hour)</td>
-            </tr>
-            <tr>
-                <td>GPS*</td>
-                <td>Recent GPS (1-6 hours)</td>
-            </tr>
-            <tr>
-                <td>REL</td>
-                <td>Movement compensation only</td>
-            </tr>
-            <tr>
-                <td>CACHE</td>
-                <td>Cached GPS (&gt; 6 hours)</td>
-            </tr>
-            <tr>
-                <td>RAW</td>
-                <td>Uncalibrated station pressure</td>
-            </tr>
-        </table>
-    </div>
-</section>
-
-<section>
-    <div class="section-header">NOISE REDUCTION</div>
-    <div class="card">
-        <h3>RATE-OF-CHANGE FILTERING</h3>
-        <p>
-            Detects movement vs weather based on pressure change rate:
-        </p>
-        <table class="specs-table" style="margin-top: 12px;">
-            <tr>
-                <td>&lt; 0.3 hPa/min</td>
-                <td>Weather (trusted)</td>
-            </tr>
-            <tr>
-                <td>&gt; 0.3 hPa/min</td>
-                <td>Movement (filtered)</td>
-            </tr>
-        </table>
-        <p style="margin-top: 12px;">
-            Elevators, stairs, and driving are automatically filtered from trend calculations.
-        </p>
-    </div>
-    <div class="card">
-        <h3>GPS ALTITUDE SMOOTHING</h3>
-        <p>
-            Rolling median filter (7 samples) rejects GPS jitter. Sudden jumps &gt;10m rejected unless 5+ minutes pass.
-        </p>
-    </div>
-</section>
-
-<section>
-    <div class="section-header">REFERENCES</div>
-    <div class="card">
-        <p>
-            — Barometric Formula (Wikipedia)<br>
-            — Zambretti Forecaster (1915)<br>
-            — Zaliva & Franchetti (CMU): GPS/Barometer Sensor Fusion<br>
-            — ICAO Standard Atmosphere<br>
-            — Bosch BMP280 Datasheet<br>
-            — Apple CMAltimeter Documentation
-        </p>
     </div>
 </section>
 
