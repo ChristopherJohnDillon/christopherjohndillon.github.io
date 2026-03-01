@@ -17,6 +17,7 @@ description: Track local atmospheric pressure trends to detect weather changes. 
         <span class="status-dot"></span>
         iOS + APPLE WATCH
     </div>
+    <div class="version-tag">v1.3</div>
     <br>
     <a href="#" class="app-store-btn">DOWNLOAD ON APP STORE</a>
 </header>
@@ -79,6 +80,35 @@ description: Track local atmospheric pressure trends to detect weather changes. 
         </table>
         <p style="margin-top: 16px;">
             Each prediction includes condition (Sunny, Rain, Storm...), confidence level, plain-English reasoning, and timeframe. All computed on-device—works in airplane mode.
+        </p>
+    </div>
+    <div class="card">
+        <h3>LEARNS YOUR LOCAL WEATHER</h3>
+        <p>
+            Pascal's Bayesian ML model learns automatically from your pressure history. No user feedback required—predictions improve silently in the background.
+        </p>
+        <table class="specs-table" style="margin-top: 16px;">
+            <tr>
+                <td>INSTANT BOOTSTRAP</td>
+                <td>Seeds model with Zambretti archetypes on first launch</td>
+            </tr>
+            <tr>
+                <td>AUTO-EVALUATION</td>
+                <td>Checks what actually happened after 6 hours</td>
+            </tr>
+            <tr>
+                <td>PERSONALIZATION</td>
+                <td>~25 predictions to become localized to your area</td>
+            </tr>
+        </table>
+        <p style="margin-top: 16px;">
+            If you have a week of pressure history, Pascal is personalized immediately. The model combines 110-year-old meteorological wisdom with modern machine learning.
+        </p>
+    </div>
+    <div class="card">
+        <h3>ZAMBRETTI-ALIGNED CONFIDENCE</h3>
+        <p>
+            Confidence levels follow classical meteorological research. Rapid pressure changes produce high-confidence predictions (clear signal), while slow changes appropriately lower confidence. Predictions are boosted when pressure level confirms the forecast.
         </p>
     </div>
 </section>
@@ -308,7 +338,7 @@ description: Track local atmospheric pressure trends to detect weather changes. 
         <a href="/">BACK TO SITE</a>
     </div>
     <div class="copyright">
-        <a href="versions.html" class="version-badge">v1.2</a><br>
+        <a href="versions.html" class="version-badge">v1.3</a><br>
         DESIGNED WITH INTERNATIONAL ORANGE<br>
         <span>© 2026 CHRISTOPHER DILLON</span>
     </div>
@@ -329,6 +359,17 @@ description: Track local atmospheric pressure trends to detect weather changes. 
 }
 .version-badge:hover {
     background: rgba(255, 69, 0, 0.15);
+}
+.version-tag {
+    display: inline-block;
+    color: #FF4500;
+    font-family: monospace;
+    font-size: 11px;
+    padding: 4px 10px;
+    border: 1px solid rgba(255, 69, 0, 0.5);
+    border-radius: 4px;
+    margin-top: 12px;
+    letter-spacing: 1px;
 }
 </style>
 
