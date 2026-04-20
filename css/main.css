@@ -80,32 +80,54 @@ body {
   content: ""; position: absolute;
   width: 1px; height: 1px; background: transparent;
   box-shadow:
-    12vw 8vh var(--instrument), 28vw 18vh rgba(232,236,242,0.6),
-    44vw 72vh var(--instrument), 58vw 12vh rgba(232,236,242,0.45),
-    71vw 38vh var(--instrument), 82vw 62vh rgba(232,236,242,0.7),
-    3vw  52vh rgba(232,236,242,0.5), 18vw 88vh var(--instrument),
-    33vw 44vh rgba(232,236,242,0.4), 49vw 26vh rgba(232,236,242,0.8),
-    63vw 82vh rgba(232,236,242,0.55),77vw 8vh  rgba(232,236,242,0.9),
-    88vw 28vh rgba(232,236,242,0.4), 6vw  22vh rgba(232,236,242,0.6),
-    24vw 62vh rgba(232,236,242,0.5), 39vw 14vh rgba(232,236,242,0.7),
-    54vw 54vh rgba(232,236,242,0.45),68vw 24vh rgba(232,236,242,0.85),
-    84vw 82vh rgba(232,236,242,0.55),94vw 48vh rgba(232,236,242,0.65),
-    16vw 95vh rgba(232,236,242,0.4), 52vw 3vh  rgba(232,236,242,0.6),
-    75vw 48vh rgba(232,236,242,0.5), 8vw  35vh rgba(232,236,242,0.35),
-    46vw 88vh rgba(232,236,242,0.7), 92vw 15vh rgba(232,236,242,0.45);
+    /* Layer 1 — bright stars */
+    12vw 8vh var(--instrument), 28vw 18vh rgba(232,236,242,0.7),
+    44vw 72vh var(--instrument), 58vw 12vh rgba(232,236,242,0.5),
+    71vw 38vh var(--instrument), 82vw 62vh rgba(232,236,242,0.8),
+    3vw  52vh rgba(232,236,242,0.6), 18vw 88vh var(--instrument),
+    33vw 44vh rgba(232,236,242,0.5), 49vw 26vh rgba(232,236,242,0.9),
+    63vw 82vh rgba(232,236,242,0.6), 77vw 8vh  var(--instrument),
+    88vw 28vh rgba(232,236,242,0.5), 6vw  22vh rgba(232,236,242,0.7),
+    24vw 62vh rgba(232,236,242,0.55),39vw 14vh rgba(232,236,242,0.8),
+    54vw 54vh rgba(232,236,242,0.5), 68vw 24vh rgba(232,236,242,0.9),
+    84vw 82vh rgba(232,236,242,0.6), 94vw 48vh rgba(232,236,242,0.7),
+    /* Layer 2 — medium stars */
+    16vw 95vh rgba(232,236,242,0.45),52vw 3vh  rgba(232,236,242,0.65),
+    75vw 48vh rgba(232,236,242,0.55),8vw  35vh rgba(232,236,242,0.4),
+    46vw 88vh rgba(232,236,242,0.75),92vw 15vh rgba(232,236,242,0.5),
+    2vw  14vh rgba(232,236,242,0.6), 35vw 68vh rgba(232,236,242,0.45),
+    57vw 42vh rgba(232,236,242,0.7), 81vw 91vh rgba(232,236,242,0.5),
+    14vw 76vh rgba(232,236,242,0.55),43vw 7vh  rgba(232,236,242,0.65),
+    66vw 56vh rgba(232,236,242,0.4), 97vw 33vh rgba(232,236,242,0.55),
+    /* Layer 3 — faint fill */
+    22vw 31vh rgba(232,236,242,0.35),48vw 79vh rgba(232,236,242,0.3),
+    73vw 18vh rgba(232,236,242,0.4), 11vw 58vh rgba(232,236,242,0.35),
+    59vw 91vh rgba(232,236,242,0.3), 86vw 5vh  rgba(232,236,242,0.4),
+    31vw 47vh rgba(232,236,242,0.35),79vw 72vh rgba(232,236,242,0.3),
+    4vw  85vh rgba(232,236,242,0.4), 41vw 21vh rgba(232,236,242,0.45),
+    65vw 65vh rgba(232,236,242,0.3), 90vw 42vh rgba(232,236,242,0.35),
+    19vw 3vh  rgba(232,236,242,0.5), 53vw 36vh rgba(232,236,242,0.4);
 }
 .starfield::after {
   box-shadow:
-    9vw 34vh rgba(232,236,242,0.35), 21vw 76vh rgba(232,236,242,0.3),
-    36vw 30vh rgba(232,236,242,0.4), 47vw 92vh rgba(232,236,242,0.3),
-    61vw 50vh rgba(232,236,242,0.35),74vw 76vh rgba(232,236,242,0.4),
-    88vw 16vh rgba(232,236,242,0.3), 2vw  68vh rgba(232,236,242,0.35),
-    15vw 10vh rgba(232,236,242,0.25),30vw 58vh rgba(232,236,242,0.3),
-    42vw 4vh  rgba(232,236,242,0.45),55vw 68vh rgba(232,236,242,0.25),
-    67vw 34vh rgba(232,236,242,0.3), 79vw 52vh rgba(232,236,242,0.35),
-    91vw 74vh rgba(232,236,242,0.3), 5vw  94vh rgba(232,236,242,0.2),
-    20vw 42vh rgba(232,236,242,0.4), 60vw 8vh  rgba(232,236,242,0.5),
-    85vw 70vh rgba(232,236,242,0.35),37vw 22vh rgba(232,236,242,0.45);
+    /* Twinkling layer — offset from ::before */
+    9vw 34vh rgba(232,236,242,0.4),  21vw 76vh rgba(232,236,242,0.35),
+    36vw 30vh rgba(232,236,242,0.45),47vw 92vh rgba(232,236,242,0.35),
+    61vw 50vh rgba(232,236,242,0.4), 74vw 76vh rgba(232,236,242,0.45),
+    88vw 16vh rgba(232,236,242,0.35),2vw  68vh rgba(232,236,242,0.4),
+    15vw 10vh rgba(232,236,242,0.3), 30vw 58vh rgba(232,236,242,0.35),
+    42vw 4vh  rgba(232,236,242,0.5), 55vw 68vh rgba(232,236,242,0.3),
+    67vw 34vh rgba(232,236,242,0.35),79vw 52vh rgba(232,236,242,0.4),
+    91vw 74vh rgba(232,236,242,0.35),5vw  94vh rgba(232,236,242,0.25),
+    20vw 42vh rgba(232,236,242,0.45),60vw 8vh  rgba(232,236,242,0.55),
+    85vw 70vh rgba(232,236,242,0.4), 37vw 22vh rgba(232,236,242,0.5),
+    /* Extra twinklers */
+    26vw 85vh rgba(232,236,242,0.35),50vw 15vh rgba(232,236,242,0.5),
+    72vw 60vh rgba(232,236,242,0.4), 13vw 45vh rgba(232,236,242,0.35),
+    44vw 53vh rgba(232,236,242,0.45),95vw 25vh rgba(232,236,242,0.3),
+    7vw  72vh rgba(232,236,242,0.4), 62vw 88vh rgba(232,236,242,0.35),
+    33vw 12vh rgba(232,236,242,0.5), 83vw 38vh rgba(232,236,242,0.4),
+    17vw 62vh rgba(232,236,242,0.35),56vw 28vh rgba(232,236,242,0.45);
   animation: twinkle 6s ease-in-out infinite;
 }
 @keyframes twinkle { 0%,100% { opacity: 1; } 50% { opacity: 0.55; } }
