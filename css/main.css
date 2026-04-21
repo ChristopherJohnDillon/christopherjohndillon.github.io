@@ -688,6 +688,126 @@ pre code { background: none; padding: 0; }
   color: var(--mute);
 }
 
+/* Compose (new post) */
+.compose { margin-bottom: 3rem; }
+.compose-intro {
+  font-size: 0.9rem;
+  color: var(--read);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+  max-width: 640px;
+}
+.compose-intro strong { color: var(--instrument); font-weight: 500; }
+.compose-intro em { color: var(--nanoflare); font-style: normal; }
+.compose-form { display: flex; flex-direction: column; gap: 1.1rem; }
+.compose-field { display: flex; flex-direction: column; gap: 0.35rem; }
+.compose-label {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+.compose-hint {
+  color: var(--dim);
+  letter-spacing: 0.08em;
+  text-transform: none;
+  font-size: 0.65rem;
+  margin-left: 0.4em;
+}
+.compose-form input[type="text"],
+.compose-form textarea {
+  background: var(--deep);
+  border: 1px solid var(--rule-strong);
+  color: var(--instrument);
+  font-family: var(--f-mono);
+  font-size: 0.9rem;
+  padding: 0.7rem 0.9rem;
+  line-height: 1.6;
+  border-radius: 0;
+  width: 100%;
+  transition: border-color 0.15s, background 0.15s;
+}
+.compose-form textarea {
+  min-height: 260px;
+  resize: vertical;
+  line-height: 1.65;
+}
+.compose-form input[type="text"]:focus,
+.compose-form textarea:focus {
+  outline: none;
+  border-color: var(--nanoflare);
+  background: var(--observatory);
+}
+.compose-preview {
+  border: 1px solid var(--rule);
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background: rgba(232, 236, 242, 0.02);
+}
+.compose-preview-row {
+  display: flex;
+  gap: 0.8rem;
+  align-items: baseline;
+  font-size: 0.75rem;
+}
+.compose-preview-label {
+  font-family: var(--f-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--dim);
+  flex-shrink: 0;
+  min-width: 80px;
+}
+.compose-preview code {
+  background: none;
+  padding: 0;
+  color: var(--read);
+  font-size: 0.8rem;
+  word-break: break-all;
+}
+.compose-actions {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.compose-submit {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.8rem 1.3rem;
+  border: 1px solid var(--nanoflare);
+  background: var(--nanoflare);
+  color: var(--void);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.compose-submit:hover { background: var(--flare-hot); border-color: var(--flare-hot); }
+.compose-clear {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--rule-strong);
+  background: transparent;
+  color: var(--mute);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.compose-clear:hover { color: var(--instrument); border-color: var(--instrument); }
+.compose-note {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  color: var(--dim);
+  line-height: 1.6;
+  margin-top: 0.35rem;
+}
+
 /* Focus */
 :focus-visible { outline: 2px solid var(--nanoflare); outline-offset: 2px; }
 

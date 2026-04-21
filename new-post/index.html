@@ -1,0 +1,174 @@
+---
+layout: default
+title: New post
+permalink: /new-post/
+sitemap: false
+---
+
+<section class="compose">
+  <div class="section-label">New post</div>
+  <p class="compose-intro">
+    Fill in the fields, then hit <strong>Open in GitHub</strong>. A new commit page will open with
+    the filename and frontmatter pre-filled — press <em>Commit changes</em> on GitHub to publish.
+  </p>
+
+  <form id="compose-form" class="compose-form" autocomplete="off">
+    <label class="compose-field">
+      <span class="compose-label">Title</span>
+      <input type="text" id="f-title" required placeholder="e.g. Thoughts on Polars" />
+    </label>
+
+    <label class="compose-field">
+      <span class="compose-label">Tags <span class="compose-hint">comma-separated, optional</span></span>
+      <input type="text" id="f-tags" placeholder="data, polars" />
+    </label>
+
+    <label class="compose-field">
+      <span class="compose-label">Summary <span class="compose-hint">one line, optional</span></span>
+      <input type="text" id="f-summary" placeholder="Shown on the blog index below the title." />
+    </label>
+
+    <label class="compose-field">
+      <span class="compose-label">Body <span class="compose-hint">markdown</span></span>
+      <textarea id="f-body" rows="14" required placeholder="Write the post in markdown. ## headings, **bold**, links, lists, etc."></textarea>
+    </label>
+
+    <div class="compose-preview">
+      <div class="compose-preview-row"><span class="compose-preview-label">Filename</span><code id="p-filename">_posts/YYYY-MM-DD-title.md</code></div>
+      <div class="compose-preview-row"><span class="compose-preview-label">URL</span><code id="p-url">/blog/YYYY/MM/DD/title/</code></div>
+    </div>
+
+    <div class="compose-actions">
+      <button type="submit" class="compose-submit">Open in GitHub &rarr;</button>
+      <button type="button" id="f-clear" class="compose-clear">Clear draft</button>
+    </div>
+
+    <p class="compose-note">
+      Drafts are autosaved in this browser. You stay in control — nothing hits the repo until you commit on GitHub.
+    </p>
+  </form>
+</section>
+
+<script>
+(function () {
+  var REPO = "ChristopherJohnDillon/christopherjohndillon.github.io";
+  var BRANCH = "gh-pages";
+  var STORAGE_KEY = "compose-draft-v1";
+
+  var $title = document.getElementById("f-title");
+  var $tags = document.getElementById("f-tags");
+  var $summary = document.getElementById("f-summary");
+  var $body = document.getElementById("f-body");
+  var $filename = document.getElementById("p-filename");
+  var $url = document.getElementById("p-url");
+  var $form = document.getElementById("compose-form");
+  var $clear = document.getElementById("f-clear");
+
+  function pad(n) { return String(n).padStart(2, "0"); }
+
+  function slugify(s) {
+    return (s || "")
+      .toLowerCase()
+      .trim()
+      .replace(/['"`]+/g, "")
+      .replace(/[^a-z0-9\s-]+/g, " ")
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  }
+
+  function today() {
+    var d = new Date();
+    return {
+      y: d.getFullYear(),
+      m: pad(d.getMonth() + 1),
+      d: pad(d.getDate()),
+      hh: pad(d.getHours()),
+      mm: pad(d.getMinutes()),
+      ss: pad(d.getSeconds()),
+      tz: (function () {
+        var off = -d.getTimezoneOffset();
+        var sign = off >= 0 ? "+" : "-";
+        var abs = Math.abs(off);
+        return sign + pad(Math.floor(abs / 60)) + pad(abs % 60);
+      })()
+    };
+  }
+
+  function compose() {
+    var t = today();
+    var slug = slugify($title.value) || "untitled";
+    var filename = t.y + "-" + t.m + "-" + t.d + "-" + slug + ".md";
+    var url = "/blog/" + t.y + "/" + t.m + "/" + t.d + "/" + slug + "/";
+
+    var tagsList = ($tags.value || "")
+      .split(",").map(function (x) { return x.trim(); }).filter(Boolean);
+    var fm = [];
+    fm.push("---");
+    fm.push('title: "' + ($title.value || "").replace(/"/g, '\\"') + '"');
+    fm.push("date: " + t.y + "-" + t.m + "-" + t.d + " " + t.hh + ":" + t.mm + ":" + t.ss + " " + t.tz);
+    if (tagsList.length) {
+      fm.push("tags:");
+      tagsList.forEach(function (tag) { fm.push("  - " + tag); });
+    }
+    if ($summary.value.trim()) {
+      fm.push('summary: "' + $summary.value.trim().replace(/"/g, '\\"') + '"');
+    }
+    fm.push("---");
+    fm.push("");
+    fm.push($body.value);
+    return { filename: filename, url: url, content: fm.join("\n") };
+  }
+
+  function refreshPreview() {
+    var c = compose();
+    $filename.textContent = "_posts/" + c.filename;
+    $url.textContent = c.url;
+  }
+
+  function saveDraft() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        title: $title.value, tags: $tags.value,
+        summary: $summary.value, body: $body.value
+      }));
+    } catch (e) {}
+  }
+
+  function loadDraft() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      var d = JSON.parse(raw);
+      $title.value = d.title || "";
+      $tags.value = d.tags || "";
+      $summary.value = d.summary || "";
+      $body.value = d.body || "";
+    } catch (e) {}
+  }
+
+  [$title, $tags, $summary, $body].forEach(function (el) {
+    el.addEventListener("input", function () { saveDraft(); refreshPreview(); });
+  });
+
+  $clear.addEventListener("click", function () {
+    if (confirm("Clear the draft from this browser?")) {
+      localStorage.removeItem(STORAGE_KEY);
+      $title.value = $tags.value = $summary.value = $body.value = "";
+      refreshPreview();
+    }
+  });
+
+  $form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var c = compose();
+    var u = "https://github.com/" + REPO + "/new/" + BRANCH + "/_posts"
+      + "?filename=" + encodeURIComponent(c.filename)
+      + "&value=" + encodeURIComponent(c.content);
+    window.open(u, "_blank", "noopener");
+  });
+
+  loadDraft();
+  refreshPreview();
+})();
+</script>
