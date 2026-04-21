@@ -66,6 +66,8 @@ body {
 .starfield::after {
   content: ""; position: absolute;
   width: 1px; height: 1px; background: transparent;
+  transform: translateY(var(--star-drift, 0px));
+  will-change: transform;
   box-shadow:
     /* Layer 1 — bright stars */
     12vw 8vh var(--instrument), 28vw 18vh rgba(232,236,242,0.7),
@@ -93,7 +95,32 @@ body {
     31vw 47vh rgba(232,236,242,0.35),79vw 72vh rgba(232,236,242,0.3),
     4vw  85vh rgba(232,236,242,0.4), 41vw 21vh rgba(232,236,242,0.45),
     65vw 65vh rgba(232,236,242,0.3), 90vw 42vh rgba(232,236,242,0.35),
-    19vw 3vh  rgba(232,236,242,0.5), 53vw 36vh rgba(232,236,242,0.4);
+    19vw 3vh  rgba(232,236,242,0.5), 53vw 36vh rgba(232,236,242,0.4),
+    /* Layer 4 — extra density */
+    10vw 16vh rgba(232,236,242,0.5), 25vw 40vh rgba(232,236,242,0.35),
+    38vw 60vh rgba(232,236,242,0.55),51vw 20vh rgba(232,236,242,0.4),
+    64vw 44vh rgba(232,236,242,0.3), 76vw 70vh rgba(232,236,242,0.5),
+    89vw 10vh rgba(232,236,242,0.45),7vw  78vh rgba(232,236,242,0.35),
+    29vw 52vh rgba(232,236,242,0.4), 45vw 34vh rgba(232,236,242,0.55),
+    60vw 76vh rgba(232,236,242,0.35),78vw 22vh rgba(232,236,242,0.6),
+    93vw 58vh rgba(232,236,242,0.3), 15vw 46vh rgba(232,236,242,0.45),
+    34vw 84vh rgba(232,236,242,0.35),56vw 10vh rgba(232,236,242,0.5),
+    70vw 52vh rgba(232,236,242,0.4), 85vw 36vh rgba(232,236,242,0.3),
+    5vw  30vh rgba(232,236,242,0.55),42vw 68vh rgba(232,236,242,0.4),
+    /* Layer 5 — deep scatter */
+    1vw  6vh  rgba(232,236,242,0.45),17vw 33vh rgba(232,236,242,0.3),
+    32vw 74vh rgba(232,236,242,0.5), 47vw 11vh rgba(232,236,242,0.35),
+    62vw 29vh rgba(232,236,242,0.4), 80vw 55vh rgba(232,236,242,0.5),
+    91vw 80vh rgba(232,236,242,0.35),13vw 64vh rgba(232,236,242,0.45),
+    27vw 86vh rgba(232,236,242,0.3), 40vw 42vh rgba(232,236,242,0.5),
+    55vw 64vh rgba(232,236,242,0.35),69vw 86vh rgba(232,236,242,0.4),
+    83vw 14vh rgba(232,236,242,0.5), 96vw 68vh rgba(232,236,242,0.3),
+    8vw  48vh rgba(232,236,242,0.4), 23vw 10vh rgba(232,236,242,0.55),
+    37vw 28vh rgba(232,236,242,0.3), 50vw 46vh rgba(232,236,242,0.45),
+    74vw 32vh rgba(232,236,242,0.35),87vw 92vh rgba(232,236,242,0.4),
+    20vw 72vh rgba(232,236,242,0.3), 58vw 84vh rgba(232,236,242,0.45),
+    44vw 50vh rgba(232,236,242,0.35),99vw 20vh rgba(232,236,242,0.5),
+    36vw 96vh rgba(232,236,242,0.3), 66vw 2vh  rgba(232,236,242,0.55);
 }
 .starfield::after {
   box-shadow:
@@ -114,7 +141,25 @@ body {
     44vw 53vh rgba(232,236,242,0.45),95vw 25vh rgba(232,236,242,0.3),
     7vw  72vh rgba(232,236,242,0.4), 62vw 88vh rgba(232,236,242,0.35),
     33vw 12vh rgba(232,236,242,0.5), 83vw 38vh rgba(232,236,242,0.4),
-    17vw 62vh rgba(232,236,242,0.35),56vw 28vh rgba(232,236,242,0.45);
+    17vw 62vh rgba(232,236,242,0.35),56vw 28vh rgba(232,236,242,0.45),
+    /* Extra density twinklers */
+    11vw 24vh rgba(232,236,242,0.4), 27vw 48vh rgba(232,236,242,0.3),
+    40vw 70vh rgba(232,236,242,0.45),53vw 32vh rgba(232,236,242,0.35),
+    69vw 14vh rgba(232,236,242,0.5), 80vw 84vh rgba(232,236,242,0.3),
+    96vw 44vh rgba(232,236,242,0.4), 18vw 56vh rgba(232,236,242,0.35),
+    32vw 20vh rgba(232,236,242,0.45),48vw 62vh rgba(232,236,242,0.3),
+    63vw 40vh rgba(232,236,242,0.5), 75vw 6vh  rgba(232,236,242,0.35),
+    87vw 54vh rgba(232,236,242,0.4), 3vw  38vh rgba(232,236,242,0.45),
+    23vw 90vh rgba(232,236,242,0.3), 46vw 18vh rgba(232,236,242,0.5),
+    /* Deep scatter twinklers */
+    4vw  16vh rgba(232,236,242,0.35),19vw 80vh rgba(232,236,242,0.4),
+    35vw 38vh rgba(232,236,242,0.3), 52vw 74vh rgba(232,236,242,0.45),
+    66vw 18vh rgba(232,236,242,0.35),81vw 46vh rgba(232,236,242,0.4),
+    94vw 64vh rgba(232,236,242,0.3), 10vw 92vh rgba(232,236,242,0.35),
+    28vw 6vh  rgba(232,236,242,0.5), 41vw 82vh rgba(232,236,242,0.3),
+    58vw 38vh rgba(232,236,242,0.45),71vw 72vh rgba(232,236,242,0.35),
+    86vw 26vh rgba(232,236,242,0.4), 14vw 54vh rgba(232,236,242,0.3),
+    39vw 16vh rgba(232,236,242,0.45),73vw 90vh rgba(232,236,242,0.35);
   animation: twinkle 6s ease-in-out infinite;
 }
 @keyframes twinkle { 0%,100% { opacity: 1; } 50% { opacity: 0.55; } }
@@ -128,7 +173,6 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
-nav .nav-mark { flex-shrink: 0; }
 nav ul {
   list-style: none;
   display: flex;
@@ -164,6 +208,34 @@ nav a.active {
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid var(--rule-strong);
+}
+
+/* Name row — h1 + nanoflare mark */
+.name-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.flare-mark {
+  width: 72px;
+  flex-shrink: 0;
+  margin-bottom: 0.2rem;
+}
+.flare-mark .curve {
+  fill: none;
+  stroke: var(--nanoflare);
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dashoffset: 0;
+}
+.flare-mark.is-animating .curve {
+  animation: flare-draw 1.4s cubic-bezier(0.2, 0.7, 0.25, 1) forwards;
+}
+@keyframes flare-draw {
+  from { stroke-dashoffset: var(--flare-len, 250); opacity: 0.2; }
+  15%  { opacity: 1; }
+  to   { stroke-dashoffset: 0; opacity: 1; }
 }
 .header-content h1 {
   font-family: var(--f-display);
@@ -481,6 +553,8 @@ pre code { background: none; padding: 0; }
     gap: 1rem; margin-bottom: 2rem;
   }
   .header-image { width: 90px; height: 90px; }
+  .name-row { gap: 8px; }
+  .flare-mark { width: 52px; }
   .header-content h1 { font-size: 1.4rem; }
   .header-content .title { font-size: 0.75rem; }
   .header-content .bio { font-size: 0.85rem; }
