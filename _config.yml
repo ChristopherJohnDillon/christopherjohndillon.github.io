@@ -13,6 +13,10 @@ url: "https://christopherdillon.me" # the base hostname & protocol for your site
 # Posts live at /blog/YYYY/MM/DD/title/
 permalink: /blog/:year/:month/:day/:title/
 
+# Render posts even if their frontmatter date is ahead of the build
+# clock — dodges timezone / scheduling surprises.
+future: true
+
 defaults:
   - scope:
       path: ""
