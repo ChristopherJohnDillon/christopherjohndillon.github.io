@@ -1,0 +1,54 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+description: Blog posts from Dr. Christopher Dillon.
+---
+
+{% assign latest = site.posts.first %}
+
+{% if latest %}
+<section class="blog-latest">
+  <div class="section-label">Latest post</div>
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a href="{{ latest.url | relative_url }}">{{ latest.title }}</a>
+      </h1>
+      <div class="post-meta">
+        <time datetime="{{ latest.date | date_to_xmlschema }}">{{ latest.date | date: "%B %-d, %Y" }}</time>
+        {% if latest.tags and latest.tags.size > 0 %}
+          <span class="post-meta-sep">&middot;</span>
+          <span class="post-tags">{% for tag in latest.tags %}{{ tag }}{% unless forloop.last %}, {% endunless %}{% endfor %}</span>
+        {% endif %}
+      </div>
+      {% if latest.summary %}<p class="post-summary">{{ latest.summary }}</p>{% endif %}
+    </header>
+    <div class="post-body">
+      {{ latest.content }}
+    </div>
+  </article>
+</section>
+
+{% if site.posts.size > 1 %}
+<section class="blog-archive">
+  <div class="section-label">Older posts</div>
+  <ul class="blog-archive-list">
+    {% for post in site.posts offset:1 %}
+      <li class="blog-archive-item">
+        <a href="{{ post.url | relative_url }}">
+          <span class="blog-archive-title">{{ post.title }}</span>
+          <time class="blog-archive-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+{% else %}
+<section class="blog-empty">
+  <div class="section-label">Blog</div>
+  <p class="blog-empty-note">No posts yet.</p>
+</section>
+{% endif %}

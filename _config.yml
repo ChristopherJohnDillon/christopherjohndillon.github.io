@@ -9,3 +9,13 @@ plugins:
 
 
 url: "https://christopherdillon.me" # the base hostname & protocol for your site
+
+# Posts live at /blog/YYYY/MM/DD/title/
+permalink: /blog/:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
