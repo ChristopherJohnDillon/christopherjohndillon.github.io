@@ -55,18 +55,18 @@
     <div class="container">
       <nav>
         <ul>
-          <li><a href="{{ '/' | absolute_url }}"{% if page.url == "/" %} class="active"{% endif %}>Home</a></li>
-          <li><a href="{{ '/about' | absolute_url }}"{% if page.url contains "/about" %} class="active"{% endif %}>About</a></li>
-          <li><a href="{{ '/pascal' | absolute_url }}"{% if page.url contains "/pascal" %} class="active"{% endif %}>Pascal</a></li>
+          <li><a href="{{ '/' | relative_url }}"{% if page.url == "/" %} class="active"{% endif %}>Home</a></li>
+          <li><a href="{{ '/about' | relative_url }}"{% if page.url contains "/about" %} class="active"{% endif %}>About</a></li>
+          <li><a href="{{ '/pascal' | relative_url }}"{% if page.url contains "/pascal" %} class="active"{% endif %}>Pascal</a></li>
           <li><a href="https://www.linkedin.com/in/drchrisdillon/">LinkedIn</a></li>
-          <li><a href="{{ '/cv/' | absolute_url }}">CV</a></li>
+          <li><a href="{{ '/cv/' | relative_url }}">CV</a></li>
         </ul>
       </nav>
 
       {{ content }}
 
       <footer>
-        <span>2025 Christopher Dillon</span>
+        <span>2026 Christopher Dillon</span>
         <span>Northern Ireland</span>
       </footer>
     </div>
