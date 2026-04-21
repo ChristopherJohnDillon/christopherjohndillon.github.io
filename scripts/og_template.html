@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --void:        #05070D;
+    --observatory: #0B0F1A;
+    --deep:        #0F1422;
+    --mute:        #8792A6;
+    --read:        #B8C0D0;
+    --instrument:  #E8ECF2;
+    --nanoflare:   #FF4F00;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+    background:
+      radial-gradient(900px 600px at 78% -10%, rgba(61, 139, 255, 0.14), transparent 60%),
+      radial-gradient(900px 600px at 10% 115%, rgba(255, 79, 0, 0.10), transparent 55%),
+      var(--observatory);
+    color: var(--instrument);
+    position: relative;
+  }
+  .stars {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 30px 40px,   rgba(255,255,255,0.85), transparent 60%),
+      radial-gradient(1px 1px at 110px 190px, rgba(255,255,255,0.70), transparent 60%),
+      radial-gradient(1.5px 1.5px at 220px 90px, rgba(255,255,255,0.95), transparent 60%),
+      radial-gradient(1px 1px at 340px 260px, rgba(255,255,255,0.60), transparent 60%),
+      radial-gradient(1px 1px at 70px 340px,  rgba(255,255,255,0.75), transparent 60%),
+      radial-gradient(2px 2px at 180px 20px,  rgba(255,255,255,0.95), transparent 60%),
+      radial-gradient(1px 1px at 260px 150px, rgba(255,255,255,0.55), transparent 60%),
+      radial-gradient(1.5px 1.5px at 10px 240px, rgba(255,255,255,0.85), transparent 60%);
+    background-repeat: repeat;
+    background-size: 380px 380px;
+    opacity: 0.55;
+  }
+  .content {
+    position: relative; z-index: 2;
+    padding: 72px 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .eyebrow {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 18px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+  .eyebrow .sigma { color: var(--nanoflare); }
+  .hero { display: flex; align-items: center; gap: 40px; }
+  .flare-mark { width: 220px; flex-shrink: 0; }
+  .flare-mark .curve {
+    fill: none;
+    stroke: var(--nanoflare);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 0 14px rgba(255, 79, 0, 0.35));
+  }
+  h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    color: var(--instrument);
+    white-space: nowrap;
+  }
+  .subtitle {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 24px;
+    color: var(--read);
+    margin-top: 18px;
+    letter-spacing: 0.01em;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 18px;
+    color: var(--mute);
+    letter-spacing: 0.06em;
+  }
+  .footer .url { color: var(--nanoflare); }
+</style>
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="content">
+    <div class="eyebrow"><span class="sigma">&sigma;</span> &middot; Observatory</div>
+    <div class="hero">
+      <svg class="flare-mark" viewBox="0 2 48 36" aria-hidden="true">
+        <path class="curve" d="M 2 30 L 16.5 30 L 18 6 L 18.5 7.92 L 19 9.68 L 19.5 11.31 L 20 12.8 L 20.5 14.18 L 21 15.44 L 21.5 16.61 L 22 17.68 L 22.5 18.66 L 23 19.57 L 23.5 20.4 L 24 21.17 L 24.5 21.88 L 25 22.53 L 25.5 23.12 L 26 23.67 L 26.5 24.18 L 27 24.64 L 27.5 25.07 L 28 25.47 L 28.5 25.83 L 29 26.16 L 29.5 26.47 L 30 26.75 L 30.5 27.01 L 31 27.25 L 31.5 27.47 L 32 27.67 L 32.5 27.86 L 33 28.03 L 33.5 28.19 L 34 28.33 L 34.5 28.47 L 35 28.59 L 35.5 28.7 L 36 28.81 L 36.5 28.9 L 37 28.99 L 37.5 29.07 L 38 29.14 L 38.5 29.21 L 39 29.28 L 39.5 29.33 L 40 29.39 L 40.5 29.44 L 41 29.48 L 41.5 29.52 L 42 29.56 L 42.5 29.6 L 43 29.63 L 43.5 29.66 L 44 29.69 L 44.5 29.71 L 45 29.73 L 45.5 29.75 L 46 29.77"/>
+      </svg>
+      <div>
+        <h1>Dr. Christopher&nbsp;Dillon</h1>
+        <div class="subtitle">Global Lead Data Scientist &mdash; Nexus Brands Group</div>
+      </div>
+    </div>
+    <div class="footer">
+      <span>PhD astrophysicist &middot; Data leader &middot; Indie dev</span>
+      <span class="url">christopherdillon.me</span>
+    </div>
+  </div>
+</body>
+</html>
