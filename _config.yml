@@ -10,16 +10,16 @@ plugins:
 
 url: "https://christopherdillon.me" # the base hostname & protocol for your site
 
-# Posts live at /blog/YYYY/MM/DD/title/
-permalink: /blog/:year/:month/:day/:title/
-
 # Render posts even if their frontmatter date is ahead of the build
 # clock — dodges timezone / scheduling surprises.
 future: true
 
+# Post permalinks only — scoped via defaults so page .html files keep
+# their default file-path URLs (e.g. /pascal/privacy.html stays intact).
 defaults:
   - scope:
       path: ""
       type: posts
     values:
       layout: post
+      permalink: /blog/:year/:month/:day/:title/
