@@ -27,7 +27,21 @@
       "Bash(git push:*)",
       "Bash(kill:*)",
       "Bash(unzip:*)",
-      "Bash(git:*)"
+      "Bash(git:*)",
+      "WebSearch",
+      "WebFetch(domain:api.anthropic.com)",
+      "Read(//private/tmp/**)",
+      "Bash(cp /Users/christopher/.claude/projects/-Users-christopher-christopherjohndillon-github-io/c8a7a4d1-e7b0-4e25-b37f-10466adc3b89/tool-results/webfetch-1776684831736-0t9h3f.bin design_file.gz)",
+      "Bash(gunzip -f design_file.gz)",
+      "Bash(tar -tf design_file)",
+      "Bash(tar -xf design_file)",
+      "Bash(pkill -f jekyll)",
+      "Bash(node:*)",
+      "Bash(bundle exec:*)",
+      "WebFetch(domain:127.0.0.1)",
+      "Bash(curl -s http://127.0.0.1:4000)",
+      "Bash(curl:*)",
+      "Bash(pkill -f \"jekyll serve\")"
     ]
   }
 }
