@@ -1,34 +1,51 @@
-[
-  {
-    "year": 2019,
-    "count": 4
-  },
-  {
-    "year": 2020,
-    "count": 3
-  },
-  {
-    "year": 2021,
-    "count": 27
-  },
-  {
-    "year": 2022,
-    "count": 41
-  },
-  {
-    "year": 2023,
-    "count": 20
-  },
-  {
-    "year": 2024,
-    "count": 25
-  },
-  {
-    "year": 2025,
-    "count": 46
-  },
-  {
-    "year": 2026,
-    "count": 13
+{
+  "per_year": [
+    {
+      "year": 2019,
+      "count": 4
+    },
+    {
+      "year": 2020,
+      "count": 3
+    },
+    {
+      "year": 2021,
+      "count": 27
+    },
+    {
+      "year": 2022,
+      "count": 41
+    },
+    {
+      "year": 2023,
+      "count": 20
+    },
+    {
+      "year": 2024,
+      "count": 25
+    },
+    {
+      "year": 2025,
+      "count": 46
+    },
+    {
+      "year": 2026,
+      "count": 13
+    }
+  ],
+  "fun": {
+    "total_books": 192,
+    "total_pages": 71029,
+    "avg_pages": 369,
+    "shortest": {
+      "title": "Foster",
+      "author": "Claire Keegan",
+      "pages": 101
+    },
+    "longest": {
+      "title": "Invincible Compendium Volume 2:",
+      "author": "Robert Kirkman",
+      "pages": 1707
+    }
   }
-]
+}

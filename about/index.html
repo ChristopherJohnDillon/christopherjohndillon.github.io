@@ -105,10 +105,10 @@ title: About
     {% if site.data.reading_stats %}
     <div class="reading-chart">
       {% assign max_count = 0 %}
-      {% for s in site.data.reading_stats %}
+      {% for s in site.data.reading_stats.per_year %}
         {% if s.count > max_count %}{% assign max_count = s.count %}{% endif %}
       {% endfor %}
-      {% for s in site.data.reading_stats %}
+      {% for s in site.data.reading_stats.per_year %}
       <div class="reading-bar-col">
         <span class="reading-count">{{ s.count }}</span>
         <div class="reading-bar" style="height: {{ s.count | times: 100 | divided_by: max_count }}%"></div>
@@ -116,6 +116,15 @@ title: About
       </div>
       {% endfor %}
     </div>
+    {% assign fun = site.data.reading_stats.fun %}
+    {% if fun %}
+    <div class="reading-fun-stats">
+      <span><strong>{{ fun.total_pages | divided_by: 1000 }}k+</strong> pages</span>
+      <span><strong>{{ fun.avg_pages }}</strong> avg</span>
+      <span>shortest: <strong>{{ fun.shortest.title }}</strong> ({{ fun.shortest.pages }}pp)</span>
+      <span>longest: <strong>{{ fun.longest.title }}</strong> ({{ fun.longest.pages }}pp)</span>
+    </div>
+    {% endif %}
     {% endif %}
   </article>
 </section>

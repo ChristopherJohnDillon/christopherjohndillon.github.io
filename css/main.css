@@ -469,6 +469,19 @@ nav a.active {
   color: var(--dim);
   margin-top: 0.2rem;
 }
+.reading-fun-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  margin-top: 0.6rem;
+  font-family: var(--f-mono);
+  font-size: 0.65rem;
+  color: var(--dim);
+}
+.reading-fun-stats strong {
+  color: var(--mute);
+  font-weight: 500;
+}
 
 /* Publications */
 .publications-section { margin-bottom: 3rem; }

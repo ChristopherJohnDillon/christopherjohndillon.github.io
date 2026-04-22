@@ -63,6 +63,7 @@ def recent_books(root):
 def yearly_stats(root):
     from collections import Counter
     years = Counter()
+    all_books = []
     for item in root.findall(".//item"):
         read_at = clean(item.findtext("user_read_at", ""))
         m = re.search(r"(\d{4})", read_at)
@@ -70,15 +71,32 @@ def yearly_stats(root):
             y = int(m.group(1))
             if y >= MIN_YEAR:
                 years[y] += 1
-    return [{"year": y, "count": years[y]} for y in sorted(years)]
+        title = clean(item.findtext("title", ""))
+        title = re.sub(r"\s*\(.+?\)\s*$", "", title)
+        author = clean(item.findtext("author_name", ""))
+        pages_el = item.find(".//book/num_pages")
+        pages = int(pages_el.text) if pages_el is not None and pages_el.text and pages_el.text != "0" else 0
+        if pages >= 100:
+            all_books.append({"title": title, "author": author, "pages": pages})
+    per_year = [{"year": y, "count": years[y]} for y in sorted(years)]
+    all_books.sort(key=lambda b: b["pages"])
+    total_pages = sum(b["pages"] for b in all_books)
+    fun_stats = {
+        "total_books": len(all_books),
+        "total_pages": total_pages,
+        "avg_pages": total_pages // len(all_books) if all_books else 0,
+        "shortest": all_books[0] if all_books else None,
+        "longest": all_books[-1] if all_books else None,
+    }
+    return per_year, fun_stats
 
 
 if __name__ == "__main__":
     root = fetch_feed()
     books = recent_books(root)
-    stats = yearly_stats(root)
+    per_year, fun_stats = yearly_stats(root)
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(books, indent=2) + "\n")
-    STATS_OUT.write_text(json.dumps(stats, indent=2) + "\n")
+    STATS_OUT.write_text(json.dumps({"per_year": per_year, "fun": fun_stats}, indent=2) + "\n")
     print(f"Wrote {len(books)} books to {OUT}")
-    print(f"Wrote {len(stats)} years to {STATS_OUT}")
+    print(f"Wrote stats to {STATS_OUT}")
