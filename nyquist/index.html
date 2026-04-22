@@ -22,18 +22,45 @@ description: Visualize your music in real time. Metal-rendered spectrum analyzer
     <a href="https://apps.apple.com/app/id6759973894" class="app-store-btn">DOWNLOAD ON MAC APP STORE</a>
 </header>
 
-<div class="screenshots">
-    <div class="screenshot-item">
-        <img src="nyquist_main.png" alt="Nyquist spectrum analyzer main window" style="width:100%; border-radius:4px;">
-        <span class="screenshot-label">SPECTRUM ANALYZER</span>
-    </div>
-    <div class="screenshot-grid">
-        <div class="screenshot-item">
-            <img src="nyquist_mini.png" alt="Nyquist mini player mode" style="width:100%; border-radius:4px;">
-            <span class="screenshot-label">MINI MODE</span>
+<div class="nyquist-live-demo">
+    <div class="nyquist-app-frame">
+        <div class="nyquist-app-header">
+            <div class="nyquist-app-title">NYQUIST</div>
+            <div class="nyquist-app-subtitle">SPECTRUM ANALYZER</div>
+        </div>
+        <canvas id="nyquist-spectrum"></canvas>
+        <div class="nyquist-freq-axis">
+            <span style="left:0%">20</span>
+            <span style="left:13%">50</span>
+            <span style="left:26%">100</span>
+            <span style="left:39%">200</span>
+            <span style="left:52%">500</span>
+            <span style="left:65%">1K</span>
+            <span style="left:74%">2K</span>
+            <span style="left:83%">5K</span>
+            <span style="left:91%">10K</span>
+            <span style="left:100%">20K</span>
+        </div>
+        <div class="nyquist-bottom-bar">
+            <span class="nyquist-pill" id="spectrum-label">DEMO</span>
+            <span class="nyquist-pill nyquist-pill-dim">BANDS 64</span>
         </div>
     </div>
+    <div class="nyquist-mini-frame">
+        <canvas id="nyquist-mini"></canvas>
+        <div class="nyquist-mini-np">
+            <span class="nyquist-mini-controls">
+                <span class="nyquist-mini-btn">&#9664;&#9664;</span>
+                <span class="nyquist-mini-btn nyquist-mini-play">&#9654;</span>
+                <span class="nyquist-mini-btn">&#9654;&#9654;</span>
+            </span>
+            <span class="nyquist-mini-track">Lateralus &mdash; Tool</span>
+        </div>
+        <span class="screenshot-label">MINI MODE</span>
+    </div>
 </div>
+
+<script src="nyquist-live.js"></script>
 
 <section>
     <div class="section-header">SIGNAL BRIEF</div>
