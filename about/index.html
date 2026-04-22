@@ -102,6 +102,21 @@ title: About
       </a>
     </div>
     {% endif %}
+    {% if site.data.reading_stats %}
+    <div class="reading-chart">
+      {% assign max_count = 0 %}
+      {% for s in site.data.reading_stats %}
+        {% if s.count > max_count %}{% assign max_count = s.count %}{% endif %}
+      {% endfor %}
+      {% for s in site.data.reading_stats %}
+      <div class="reading-bar-col">
+        <span class="reading-count">{{ s.count }}</span>
+        <div class="reading-bar" style="height: {{ s.count | times: 100 | divided_by: max_count }}%"></div>
+        <span class="reading-year">{{ s.year | slice: 2, 2 }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
   </article>
 </section>
 

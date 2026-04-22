@@ -5,9 +5,11 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-FEED_URL = "https://www.goodreads.com/review/list_rss/17038700?shelf=read"
+FEED_URL = "https://www.goodreads.com/review/list_rss/17038700?shelf=read&per_page=200"
 OUT = Path(__file__).resolve().parent.parent / "_data" / "books.json"
+STATS_OUT = Path(__file__).resolve().parent.parent / "_data" / "reading_stats.json"
 N_BOOKS = 5
+MIN_YEAR = 2019
 
 
 def clean(text):
@@ -28,11 +30,14 @@ def parse_date(raw):
     return ""
 
 
-def fetch():
+def fetch_feed():
     req = urllib.request.Request(FEED_URL, headers={"User-Agent": "Mozilla/5.0"})
     with urllib.request.urlopen(req, timeout=30) as resp:
         xml = resp.read()
-    root = ET.fromstring(xml)
+    return ET.fromstring(xml)
+
+
+def recent_books(root):
     books = []
     for item in root.findall(".//item")[:N_BOOKS]:
         title = clean(item.findtext("title", ""))
@@ -55,8 +60,25 @@ def fetch():
     return books
 
 
+def yearly_stats(root):
+    from collections import Counter
+    years = Counter()
+    for item in root.findall(".//item"):
+        read_at = clean(item.findtext("user_read_at", ""))
+        m = re.search(r"(\d{4})", read_at)
+        if m:
+            y = int(m.group(1))
+            if y >= MIN_YEAR:
+                years[y] += 1
+    return [{"year": y, "count": years[y]} for y in sorted(years)]
+
+
 if __name__ == "__main__":
-    books = fetch()
+    root = fetch_feed()
+    books = recent_books(root)
+    stats = yearly_stats(root)
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(books, indent=2) + "\n")
+    STATS_OUT.write_text(json.dumps(stats, indent=2) + "\n")
     print(f"Wrote {len(books)} books to {OUT}")
+    print(f"Wrote {len(stats)} years to {STATS_OUT}")

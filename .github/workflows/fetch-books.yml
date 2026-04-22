@@ -28,13 +28,13 @@ jobs:
       - name: Check for changes
         id: check
         run: |
-          git diff --quiet _data/books.json || echo "changed=true" >> $GITHUB_OUTPUT
+          git diff --quiet _data/ || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push
         if: steps.check.outputs.changed == 'true'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add _data/books.json
+          git add _data/books.json _data/reading_stats.json
           git commit -m "Update reading list [skip ci]"
           git push
