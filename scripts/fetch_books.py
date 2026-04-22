@@ -9,7 +9,7 @@ FEED_URL = "https://www.goodreads.com/review/list_rss/17038700?shelf=read&per_pa
 OUT = Path(__file__).resolve().parent.parent / "_data" / "books.json"
 STATS_OUT = Path(__file__).resolve().parent.parent / "_data" / "reading_stats.json"
 N_BOOKS = 5
-MIN_YEAR = 2019
+MIN_YEAR = 2021
 
 
 def clean(text):
