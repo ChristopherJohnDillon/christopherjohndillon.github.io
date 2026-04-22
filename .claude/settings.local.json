@@ -42,7 +42,9 @@
       "Bash(curl -s http://127.0.0.1:4000)",
       "Bash(curl:*)",
       "Bash(pkill -f \"jekyll serve\")",
-      "Bash(xxd /Users/christopher/christopherjohndillon.github.io/_posts/2026-04-22-powerbi-is-a-tax-on-competence.md)"
+      "Bash(xxd /Users/christopher/christopherjohndillon.github.io/_posts/2026-04-22-powerbi-is-a-tax-on-competence.md)",
+      "WebFetch(domain:iopscience.iop.org)",
+      "Bash(python3:*)"
     ]
   }
 }

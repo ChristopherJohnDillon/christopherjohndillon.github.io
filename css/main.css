@@ -335,6 +335,7 @@ nav a.active {
   margin-bottom: 0.6rem;
 }
 .experience-description:last-child { margin-bottom: 0; }
+.experience-item:first-child { border-top: none; }
 .metric {
   color: var(--nanoflare);
   font-weight: 500;
@@ -357,6 +358,82 @@ nav a.active {
   left: 0;
   color: var(--nanoflare);
   font-size: 0.9rem;
+}
+
+/* Nanoflare Figure */
+.nanoflare-figure {
+  margin: 1.5rem 0;
+  padding: 0;
+}
+.nanoflare-triptych {
+  display: flex;
+  gap: 0.5rem;
+}
+.nanoflare-panel {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nanoflare-panel canvas {
+  display: block;
+  width: 100%;
+  height: 140px;
+  cursor: pointer;
+}
+.nanoflare-label {
+  font-family: var(--f-mono);
+  font-size: 0.65rem;
+  color: var(--mute);
+  letter-spacing: 0.06em;
+  margin-top: 0.3rem;
+}
+.nanoflare-caption {
+  font-size: 0.8rem;
+  color: var(--dim);
+  line-height: 1.55;
+  margin-top: 0.6rem;
+}
+
+/* Reading List */
+.reading-list {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-direction: column;
+}
+.book-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--rule);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.15s;
+  gap: 1rem;
+}
+.book-item:hover {
+  background: rgba(232, 236, 242, 0.03);
+  margin: 0 -0.75rem;
+  padding: 0.5rem 0.75rem;
+}
+.book-title {
+  font-size: 0.92rem;
+  color: var(--instrument);
+}
+.book-author {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  color: var(--mute);
+  white-space: nowrap;
+}
+.book-more .book-title {
+  color: var(--mute);
+  font-size: 0.8rem;
+}
+.book-more .book-author {
+  color: var(--nanoflare);
 }
 
 /* Publications */

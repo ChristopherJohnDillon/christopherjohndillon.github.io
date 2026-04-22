@@ -8,7 +8,7 @@ title: About
   <img src="{{ '/images/circle_me.png' | relative_url }}" alt="Christopher Dillon" class="header-image" />
   <div class="header-content">
     <h1>About Me</h1>
-    <p class="bio">Scientist from Derry. I like building things that automate problems away, and reading when I'm not.</p>
+    <p class="bio">Scientist from Derry. I build things that automate problems away, and read when I'm not.</p>
   </div>
 </div>
 
@@ -17,8 +17,8 @@ title: About
   <div class="section-label">Background</div>
 
   <article class="experience-item">
-    <p class="experience-description">I'm from Derry, in the northwest of Ireland. I did my astrophysics PhD at Queen's University Belfast in 2022, then worked as a Research Fellow building image recognition software for Randox Laboratories.</p>
-    <p class="experience-description">Now I'm the Global Lead Data Scientist at <a href="https://nexusbrands.com">Nexus Brands Group</a>, building data systems and analytics across 18 businesses in the beauty, tattoo, and pet grooming industries. Different domain from stars, same satisfaction in solving problems.</p>
+    <p class="experience-description">Astrophysics PhD from Queen's University Belfast, 2022. After that I built image recognition software as a Research Fellow at Randox Laboratories.</p>
+    <p class="experience-description">Now I'm Global Lead Data Scientist at <a href="https://nexusbrands.com">Nexus Brands Group</a>, building data systems and analytics across 18 businesses in the beauty, tattoo, and pet grooming industries.</p>
   </article>
 </section>
 
@@ -27,8 +27,27 @@ title: About
   <div class="section-label">Research</div>
 
   <article class="experience-item">
-    <p class="experience-description">My PhD was on <a href="https://pureadmin.qub.ac.uk/ws/portalfiles/portal/317087355/REDACTED_Thesis_Final_40099745_Christopher_Dillon.pdf">nanoflares</a> - tiny explosions on the sun, about a billionth the energy of a normal flare. Individually insignificant, but hundreds or thousands might be happening every second across a star's surface. That adds up, and they might explain why the sun's atmosphere is so mysteriously hot.</p>
-    <p class="experience-description">You can't see them directly, so I built simulations and statistical models to extract their signals from noisy data. Later I adapted those techniques for biomedical imaging - finding faint signals in noise turns out to be useful whether you're looking at stars or cells.</p>
+    <p class="experience-description">My PhD was on <a href="https://pureadmin.qub.ac.uk/ws/portalfiles/portal/317087355/REDACTED_Thesis_Final_40099745_Christopher_Dillon.pdf">nanoflares</a> — tiny explosions on the sun, about a billionth the energy of a normal flare. Individually nothing, but hundreds might be going off every second across a star's surface. Collectively they could explain why the sun's atmosphere is millions of degrees hotter than its surface.</p>
+
+    <figure class="nanoflare-figure" aria-label="Nanoflare signal detection">
+      <div class="nanoflare-triptych">
+        <div class="nanoflare-panel">
+          <canvas id="nf-signal"></canvas>
+          <span class="nanoflare-label">nanoflare signal</span>
+        </div>
+        <div class="nanoflare-panel">
+          <canvas id="nf-noisy"></canvas>
+          <span class="nanoflare-label">signal + noise</span>
+        </div>
+        <div class="nanoflare-panel">
+          <canvas id="nf-hist"></canvas>
+          <span class="nanoflare-label">intensity distribution</span>
+        </div>
+      </div>
+      <figcaption class="nanoflare-caption">Exaggerated for clarity — real nanoflares are far smaller relative to the noise. Each has a sharp impulsive rise then a slow exponential decay. Bury them in noise and individual events vanish, but the asymmetry survives statistically, pulling the median negative relative to the mean. That offset was the basis for the detection method in my PhD.</figcaption>
+    </figure>
+
+    <p class="experience-description">You can't see them directly, so I built simulations and statistical models to pull their signals out of noisy data. I later adapted those techniques for biomedical imaging at Randox — turns out finding faint signals in noise is basically the same problem regardless of what you're pointing the detector at.</p>
   </article>
 </section>
 
@@ -66,9 +85,23 @@ title: About
   <div class="section-label">Personal</div>
 
   <article class="experience-item">
-    <p class="experience-description">I like writing code that solves problems - the kind of thing where you build something once and it saves you hours forever after. Most of my spare time goes into little automation projects or tinkering with whatever's caught my interest.</p>
-    <p class="experience-description">I built <a href="/pascal">Pascal</a>, an iOS app that tracks barometric pressure to predict weather changes. It uses on-device machine learning that learns your local weather patterns automatically - no cloud, no internet required.</p>
-    <p class="experience-description">When I'm not at a keyboard, I'm usually reading. Check out my <a href="https://www.goodreads.com/user/show/17038700-chris-dillon">Goodreads</a> to see what's on the pile.</p>
+    <p class="experience-description">I built <a href="/pascal">Pascal</a>, an iOS app that tracks barometric pressure to predict weather changes. It uses on-device machine learning that learns your local patterns — no cloud, no internet required.</p>
+    <p class="experience-description">I also built <a href="/nyquist">Nyquist</a>, a real-time audio spectrum analyser for macOS. Metal-rendered, captures system audio from any app — mostly an excuse to watch music.</p>
+    <p class="experience-description">When I'm not coding I'm reading. Here's my latest:</p>
+    {% if site.data.books %}
+    <div class="reading-list">
+      {% for book in site.data.books %}
+      <a href="{{ book.url }}" class="book-item">
+        <span class="book-title">{{ book.title }}</span>
+        <span class="book-author">{{ book.author }}</span>
+      </a>
+      {% endfor %}
+      <a href="https://www.goodreads.com/user/show/17038700-chris-dillon" class="book-item book-more">
+        <span class="book-title">See more on Goodreads</span>
+        <span class="book-author">&rsaquo;</span>
+      </a>
+    </div>
+    {% endif %}
   </article>
 </section>
 
