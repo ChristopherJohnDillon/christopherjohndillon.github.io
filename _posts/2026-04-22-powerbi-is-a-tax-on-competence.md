@@ -1,6 +1,6 @@
 ---
 layout: post
-title: “The Case For Code”
+title: “PowerBI Is a Tax on Competence”
 date: 2026-04-22
 tags: [data, tooling, opinion]
 summary: “Why plain text, version-controlled analytics is a categorically different thing from drag-and-drop BI — and why LLMs have widened the gap permanently.”
