@@ -10,23 +10,23 @@
 
       function playFlare() {
         svg.classList.remove('is-animating');
-        path.style.strokeDashoffset = len;
         requestAnimationFrame(function () {
-          svg.classList.add('is-animating');
+          requestAnimationFrame(function () {
+            svg.classList.add('is-animating');
+          });
         });
       }
 
       var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var alreadyPlayed = sessionStorage.getItem('flareAnimated') === '1';
 
-      if (reduced || alreadyPlayed) {
+      if (reduced) {
         path.style.strokeDashoffset = '0';
       } else {
         path.style.strokeDashoffset = len;
         requestAnimationFrame(function () {
           svg.classList.add('is-animating');
-          sessionStorage.setItem('flareAnimated', '1');
         });
+        setInterval(playFlare, 30000);
       }
 
       svg.style.cursor = 'pointer';

@@ -230,11 +230,11 @@ nav a.active {
   stroke-dashoffset: 0;
 }
 .flare-mark.is-animating .curve {
-  animation: flare-draw 1.4s cubic-bezier(0.2, 0.7, 0.25, 1) forwards;
+  animation: flare-draw 2.4s cubic-bezier(0.02, 0.8, 0.85, 1) forwards;
 }
 @keyframes flare-draw {
-  from { stroke-dashoffset: var(--flare-len, 250); opacity: 0.2; }
-  15%  { opacity: 1; }
+  from { stroke-dashoffset: var(--flare-len, 250); opacity: 0.3; }
+  8%   { stroke-dashoffset: calc(var(--flare-len, 250) * 0.25); opacity: 1; }
   to   { stroke-dashoffset: 0; opacity: 1; }
 }
 .header-content h1 {
