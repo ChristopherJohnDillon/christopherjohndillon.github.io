@@ -403,7 +403,7 @@ section {
 
 /* Narrow container override for Pascal */
 body.pascal .container {
-    max-width: 800px;
+    max-width: 960px;
 }
 
 /* Back link */
