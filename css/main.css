@@ -947,4 +947,6 @@ pre code { background: none; padding: 0; }
   .post-nav-link { flex: 1 1 auto; }
   .post-nav-newer { text-align: left; margin-left: 0; }
   .blog-archive-item a:hover { margin: 0 -0.5rem; padding: 0.85rem 0.5rem; }
+  .nanoflare-triptych { flex-direction: column; }
+  .nanoflare-panel canvas { height: 100px; }
 }
