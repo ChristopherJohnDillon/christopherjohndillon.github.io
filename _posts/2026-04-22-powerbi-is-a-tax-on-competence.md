@@ -1,16 +1,16 @@
 ---
 layout: post
-title: “PowerBI Is a Tax on Competence”
+title: PowerBI Is a Tax on Competence
 date: 2026-04-22
 tags: [data, tooling, opinion]
-summary: “Why plain text, version-controlled analytics is a categorically different thing from drag-and-drop BI — and why LLMs have widened the gap permanently.”
+description: Why plain text, version-controlled analytics is a categorically different thing from drag-and-drop BI — and why LLMs have widened the gap permanently.
 ---
 
-There’s a category of business software that exists specifically to let people who don’t want to write code pretend to do something technical. PowerBI is the canonical example. Tableau, Alteryx, Qlik, most “no-code” data platforms — they all share a founding assumption: that writing code is a barrier to getting work done, and that the right response is to wrap every operation in a drag-and-drop interface.
+There’s a category of business software that exists specifically to let people who don’t want to write code pretend to do something technical. PowerBI is the canonical example. Tableau, Alteryx, Qlik, most no-code data platforms — they all share a founding assumption: that writing code is a barrier to getting work done, and that the right response is to wrap every operation in a drag-and-drop interface.
 
 I think this assumption is wrong. I think it’s been wrong for twenty years, and I think the arrival of useful LLMs has made it so wrong that continuing to believe it is now actively negligent.
 
-Ludic’s [“PowerBI Is A Human Rights Violation”](https://ludic.mataroa.blog/blog/powerbi-is-a-human-rights-violation/) is the definitive takedown of the product itself. Read it. I won’t rehash his points on usage stats, bullshit jobs, or the technical horrors of an unzippable XML BLOB. What I want to argue instead is the positive case — why plain text, version-controlled, code-first analytics is a categorically different thing, and why the gap is widening.
+Ludic’s [PowerBI Is A Human Rights Violation](https://ludic.mataroa.blog/blog/powerbi-is-a-human-rights-violation/) is the definitive takedown of the product itself. Read it. I won’t rehash his points on usage stats, bullshit jobs, or the technical horrors of an unzippable XML BLOB. What I want to argue instead is the positive case — why plain text, version-controlled, code-first analytics is a categorically different thing, and why the gap is widening.
 
 ## Git is not a feature. Git is the governance layer.
 
