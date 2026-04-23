@@ -435,54 +435,20 @@ nav a.active {
 .book-more .book-author {
   color: var(--nanoflare);
 }
-.reading-chart {
-  display: flex;
-  align-items: flex-end;
-  gap: 0.4rem;
-  height: 80px;
+.reading-charts {
   margin-top: 1rem;
-  position: relative;
-  padding-left: 1.2rem;
-}
-.reading-axis-label {
-  position: absolute;
-  left: -0.4rem;
-  top: 40%;
-  transform: rotate(-90deg);
-  transform-origin: center center;
-  font-family: var(--f-mono);
-  font-size: 0.5rem;
-  color: var(--dim);
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-}
-.reading-bar-col {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  height: 100%;
-  justify-content: flex-end;
+  gap: 0.8rem;
 }
-.reading-count {
-  font-family: var(--f-mono);
-  font-size: 0.6rem;
-  color: var(--mute);
-  margin-bottom: 0.2rem;
-}
-.reading-bar {
+.reading-chart {
   width: 100%;
-  background: var(--nanoflare);
-  opacity: 0.5;
-  border-radius: 1px 1px 0 0;
-  min-height: 2px;
 }
-.reading-year {
-  font-family: var(--f-mono);
-  font-size: 0.6rem;
-  color: var(--dim);
-  margin-top: 0.2rem;
+.reading-chart svg {
+  display: block;
+  width: 100%;
 }
+.reading-chart circle { cursor: default; }
 .reading-fun-stats {
   display: flex;
   flex-wrap: wrap;
