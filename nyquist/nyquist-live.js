@@ -11,16 +11,11 @@
 
   /* State */
   var heights = new Float32Array(nBands);
-  var peaks = new Float32Array(nBands);
-  var peakDecay = new Float32Array(nBands);
   var analyser = null;
   var audioCtx = null;
   var audioStream = null;
   var freqData = null;
   var isLive = false;
-
-  /* Colours — matching Nyquist app exactly */
-  var barR = 1.0, barG = 0.31, barB = 0.0;
 
   function fitCanvas(cv) {
     var r = cv.getBoundingClientRect();
@@ -96,26 +91,6 @@
         ctx.fillStyle = col;
         ctx.fillRect(x0, Math.round(h - barH), x1 - x0, Math.round(barH));
       }
-
-      /* Peak hold line */
-      if (!compact && peaks[i] > 0.01) {
-        var peakY = Math.round(h - peaks[i] * plotH);
-        ctx.fillStyle = col;
-        ctx.fillRect(x0, peakY, x1 - x0, 2);
-      }
-    }
-
-    /* Update peaks — gravity-style fall matching the app */
-    if (!compact) {
-      for (var i = 0; i < nBands; i++) {
-        if (heights[i] > peaks[i]) {
-          peaks[i] = heights[i];
-          peakDecay[i] = 0;
-        } else {
-          peakDecay[i] += 0.015;
-          peaks[i] = Math.max(0, peaks[i] - peakDecay[i]);
-        }
-      }
     }
 
     /* Vignette — matching shader: color *= 1.0 - dot(vc,vc) * 0.25 */
@@ -128,24 +103,6 @@
     }
 
     /* Film grain omitted — too expensive on canvas, handled by CSS instead */
-  }
-
-  /* Frequency axis labels — log scale matching the app */
-  var axisFreqs = [
-    [20, '20'], [50, '50'], [100, '100'], [200, '200'], [500, '500'],
-    [1000, '1K'], [2000, '2K'], [5000, '5K'], [10000, '10K'], [20000, '20K']
-  ];
-  var logMin = Math.log10(20), logMax = Math.log10(20000);
-  function drawAxis(cv, ctx) {
-    var r = cv.getBoundingClientRect();
-    var w = r.width;
-    ctx.font = '9px monospace';
-    ctx.fillStyle = 'rgba(255,255,255,0.5)';
-    ctx.textAlign = 'center';
-    for (var a = 0; a < axisFreqs.length; a++) {
-      var pos = (Math.log10(axisFreqs[a][0]) - logMin) / (logMax - logMin);
-      ctx.fillText(axisFreqs[a][1], pos * w, 12);
-    }
   }
 
   /* Animation loop */

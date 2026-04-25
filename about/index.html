@@ -146,7 +146,7 @@ title: About
         // y gridlines + labels
         for (var t = 0; t <= yMax; t += 400) {
           var ty = yPos(t);
-          svg += '<line x1="'+pad.left+'" y1="'+ty+'" x2="'+(W-pad.right)+'" y2="'+ty+'" stroke="'+dim+'" stroke-opacity="0.15" stroke-width="0.5"/>';
+          svg += '<line x1="'+pad.left+'" y1="'+ty+'" x2="'+(W-pad.right)+'" y2="'+ty+'" stroke="'+dim+'" stroke-opacity="0.3" stroke-width="0.5"/>';
           svg += '<text x="'+(pad.left-6)+'" y="'+(ty+3)+'" text-anchor="end" font-size="8" font-family="'+mono+'" fill="'+dim+'">'+t+'</text>';
         }
         // y-axis label
@@ -156,7 +156,7 @@ title: About
         for (var yr = minYear; yr <= maxYear; yr++) {
           var xd = xPos(new Date(yr, 0, 1).getTime());
           if (xd >= pad.left && xd <= W - pad.right) {
-            svg += '<line x1="'+xd+'" y1="'+pad.top+'" x2="'+xd+'" y2="'+(H-pad.bottom)+'" stroke="'+dim+'" stroke-opacity="0.1" stroke-width="0.5"/>';
+            svg += '<line x1="'+xd+'" y1="'+pad.top+'" x2="'+xd+'" y2="'+(H-pad.bottom)+'" stroke="'+dim+'" stroke-opacity="0.25" stroke-width="0.5"/>';
             svg += '<text x="'+xd+'" y="'+(H-pad.bottom+12)+'" text-anchor="middle" font-size="9" font-family="'+mono+'" fill="'+dim+'">'+yr+'</text>';
           }
         }
@@ -166,7 +166,7 @@ title: About
         for (var i = 0; i < timeline.length; i++) {
           var cx = xPos(dates[i]), cy = yPos(timeline[i].p);
           var r = 1.5 + Math.sqrt(timeline[i].p / maxP) * 3;
-          svg += '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="'+accent+'" opacity="0.55"><title>'+timeline[i].n+' ('+timeline[i].p+'pp)</title></circle>';
+          svg += '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="'+accent+'" opacity="0.85"><title>'+timeline[i].n+' ('+timeline[i].p+'pp)</title></circle>';
         }
         svg += '</svg>';
         el.innerHTML = svg;
@@ -183,7 +183,7 @@ title: About
         // y gridlines
         for (var t = 0; t <= yMax; t += 10) {
           var ty = pad.top + ph - (t / yMax * ph);
-          svg += '<line x1="'+pad.left+'" y1="'+ty+'" x2="'+(W-pad.right)+'" y2="'+ty+'" stroke="'+dim+'" stroke-opacity="0.15" stroke-width="0.5"/>';
+          svg += '<line x1="'+pad.left+'" y1="'+ty+'" x2="'+(W-pad.right)+'" y2="'+ty+'" stroke="'+dim+'" stroke-opacity="0.3" stroke-width="0.5"/>';
           svg += '<text x="'+(pad.left-6)+'" y="'+(ty+3)+'" text-anchor="end" font-size="8" font-family="'+mono+'" fill="'+dim+'">'+t+'</text>';
         }
         // y-axis label
@@ -193,7 +193,7 @@ title: About
           var bx = pad.left + i * barW;
           var bh = perYear[i].count / yMax * ph;
           var by = pad.top + ph - bh;
-          svg += '<rect x="'+(bx+2)+'" y="'+by+'" width="'+(barW-4)+'" height="'+bh+'" fill="'+accent+'" opacity="0.45" rx="1"/>';
+          svg += '<rect x="'+(bx+2)+'" y="'+by+'" width="'+(barW-4)+'" height="'+bh+'" fill="'+accent+'" opacity="0.75" rx="1"/>';
           svg += '<text x="'+(bx+barW/2)+'" y="'+(by-4)+'" text-anchor="middle" font-size="8" font-family="'+mono+'" fill="'+mute+'">'+perYear[i].count+'</text>';
           svg += '<text x="'+(bx+barW/2)+'" y="'+(H-pad.bottom+12)+'" text-anchor="middle" font-size="9" font-family="'+mono+'" fill="'+dim+'">\''+String(perYear[i].year).slice(2)+'</text>';
         }
@@ -224,7 +224,7 @@ title: About
         // y gridlines (0, 0.2, 0.4, 0.6, 0.8, 1.0)
         for (var t = 0; t <= 1.001; t += 0.2) {
           var ty = pad.top + ph - (t * ph);
-          svg += '<line x1="'+pad.left+'" y1="'+ty+'" x2="'+(W-pad.right)+'" y2="'+ty+'" stroke="'+dim+'" stroke-opacity="0.15" stroke-width="0.5"/>';
+          svg += '<line x1="'+pad.left+'" y1="'+ty+'" x2="'+(W-pad.right)+'" y2="'+ty+'" stroke="'+dim+'" stroke-opacity="0.3" stroke-width="0.5"/>';
           svg += '<text x="'+(pad.left-6)+'" y="'+(ty+3)+'" text-anchor="end" font-size="8" font-family="'+mono+'" fill="'+dim+'">'+t.toFixed(1)+'</text>';
         }
         // y-axis label
@@ -236,7 +236,7 @@ title: About
           var bh = norm * ph;
           var by = pad.top + ph - bh;
           if (bins[i].count > 0) {
-            svg += '<rect x="'+(bx+1)+'" y="'+by+'" width="'+(barW-2)+'" height="'+bh+'" fill="'+accent+'" opacity="0.45" rx="1"/>';
+            svg += '<rect x="'+(bx+1)+'" y="'+by+'" width="'+(barW-2)+'" height="'+bh+'" fill="'+accent+'" opacity="0.75" rx="1"/>';
           }
           svg += '<text x="'+(bx+barW/2)+'" y="'+(H-pad.bottom+12)+'" text-anchor="middle" font-size="8" font-family="'+mono+'" fill="'+dim+'">'+bins[i].label+'</text>';
         }

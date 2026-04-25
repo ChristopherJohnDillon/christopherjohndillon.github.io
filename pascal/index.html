@@ -18,22 +18,104 @@ description: Track local atmospheric pressure trends to detect weather changes. 
         iOS + APPLE WATCH
     </div>
     <div class="version-tag">v1.3</div>
-    <br>
     <a href="https://apps.apple.com/app/id6759335896" class="app-store-btn">DOWNLOAD ON APP STORE</a>
 </header>
 
-<div class="screenshots">
-    <div class="device-mockups two-up">
-        <div class="screenshot-item">
-            <img src="iphone-main.png" alt="Pascal pressure view with falling trend" class="iphone">
-            <span class="screenshot-label">PRESSURE TREND</span>
+<div class="pascal-live-demo">
+    <div class="pascal-app-frame">
+        <div class="pascal-app-nav">
+            <div class="pascal-nav-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#FF4F00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+                    <path d="M21 12a9 9 0 1 1-3-6.7"/>
+                    <polyline points="21 3 21 9 15 9"/>
+                </svg>
+            </div>
+            <div class="pascal-app-title">PASCAL</div>
+            <div class="pascal-nav-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#FF4F00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                </svg>
+            </div>
         </div>
-        <div class="screenshot-item">
-            <img src="iphone-alt.png" alt="Pascal altitude tracking view" class="iphone">
-            <span class="screenshot-label">ALTITUDE MODE</span>
+        <canvas id="pascal-chart"></canvas>
+        <div class="pascal-chart-controls">
+            <span class="pascal-chart-meta">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" width="12" height="12"><circle cx="8" cy="8" r="6"/><polyline points="8 4 8 8 11 8"/></svg>
+                12H
+            </span>
+            <span class="pascal-chart-meta pascal-chart-reset">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" width="12" height="12"><path d="M14 8a6 6 0 1 1-2-4.5"/><polyline points="14 2 14 5.5 10.5 5.5"/></svg>
+                RESET
+            </span>
+        </div>
+        <div class="pascal-readout">
+            <div class="pascal-readout-main">
+                <span class="pascal-readout-value" id="pascal-reading">1014.4</span><span class="pascal-readout-unit" id="pascal-unit">HPA</span>
+            </div>
+            <div class="pascal-readout-deltas">
+                <span><span class="pascal-delta-label" id="pascal-d3h-label">&Delta;3H</span> <span class="pascal-delta-val" id="pascal-d3h">&minus;1.5</span></span>
+                <span><span class="pascal-delta-label" id="pascal-d6h-label">&Delta;6H</span> <span class="pascal-delta-val" id="pascal-d6h">&minus;4.5</span> <span class="pascal-delta-warn" id="pascal-d6h-warn">&#9650;</span></span>
+            </div>
+        </div>
+        <div class="pascal-forecast-card">
+            <div class="pascal-forecast-header">
+                <span class="pascal-forecast-label">FORECAST</span>
+                <span class="pascal-forecast-range">NEXT 6&ndash;12 HOURS</span>
+            </div>
+            <div class="pascal-forecast-body">
+                <div class="pascal-forecast-icon">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <ellipse cx="20" cy="14" rx="11" ry="7" fill="#FF4F00" opacity="0.85"/>
+                        <ellipse cx="13" cy="15" rx="7" ry="5.5" fill="#FF4F00"/>
+                        <ellipse cx="27" cy="15" rx="7" ry="5.5" fill="#FF4F00"/>
+                        <line x1="12" y1="23" x2="12" y2="31" stroke="#FF4F00" stroke-width="1.5" stroke-dasharray="2 3"/>
+                        <line x1="17" y1="23" x2="17" y2="33" stroke="#FF4F00" stroke-width="1.5" stroke-dasharray="2 3"/>
+                        <line x1="22" y1="23" x2="22" y2="30" stroke="#FF4F00" stroke-width="1.5" stroke-dasharray="2 3"/>
+                        <line x1="27" y1="23" x2="27" y2="32" stroke="#FF4F00" stroke-width="1.5" stroke-dasharray="2 3"/>
+                    </svg>
+                </div>
+                <div class="pascal-forecast-detail">
+                    <div class="pascal-forecast-condition">RAIN</div>
+                    <div class="pascal-forecast-confidence">
+                        <span class="pascal-conf-sq filled"></span>
+                        <span class="pascal-conf-sq filled"></span>
+                        <span class="pascal-conf-sq filled"></span>
+                        <span class="pascal-conf-sq filled"></span>
+                        <span class="pascal-conf-text">High confidence</span>
+                    </div>
+                </div>
+                <div class="pascal-forecast-trend">
+                    <svg viewBox="0 0 20 24" fill="none" width="20" height="24">
+                        <path d="M10 4 L10 18" stroke="#FF4F00" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M5 13 L10 18 L15 13" stroke="#FF4F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="pascal-trend-val">&minus;2.8</span>
+                </div>
+            </div>
+            <div class="pascal-forecast-text">
+                Pressure falling steadily from high level. Rain likely within 12 hours. Prediction personalized based on local patterns.
+            </div>
+            <div class="pascal-forecast-stats">
+                <span><span class="pascal-stat-label">NOW</span><br><span class="pascal-stat-val">1008.2</span></span>
+                <span><span class="pascal-stat-label">&Delta;3H</span><br><span class="pascal-stat-val">&minus;2.8</span></span>
+                <span><span class="pascal-stat-label">&Delta;6H</span><br><span class="pascal-stat-val">&minus;5.4</span></span>
+            </div>
+        </div>
+        <div class="pascal-tabs">
+            <span class="pascal-tab active" id="pascal-tab-pressure">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polyline points="2,12 5,7 8,10 11,4 14,8"/></svg>
+                PRESSURE
+            </span>
+            <span class="pascal-tab" id="pascal-tab-altitude">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="8" y1="2" x2="8" y2="14"/><polyline points="5,5 8,2 11,5"/><polyline points="5,11 8,14 11,11"/></svg>
+                ALTITUDE
+            </span>
         </div>
     </div>
 </div>
+
+<script src="pascal-live.js"></script>
 
 <section>
     <div class="section-header">MISSION BRIEF</div>
@@ -54,7 +136,7 @@ description: Track local atmospheric pressure trends to detect weather changes. 
         <p>
             No internet required. Pascal uses the Zambretti Forecaster—a 110-year-old meteorological algorithm—combined with on-device ML that learns your local patterns.
         </p>
-        <table class="specs-table" style="margin-top: 16px;">
+        <table class="specs-table">
             <tr>
                 <td>RAPID DROP</td>
                 <td>Storm likely within 6-12 hours</td>
@@ -185,9 +267,9 @@ description: Track local atmospheric pressure trends to detect weather changes. 
     </div>
 </section>
 
-<div class="bottom-cta" style="text-align: center; margin: 80px 0 0;">
+<section class="pascal-cta">
     <a href="https://apps.apple.com/app/id6759335896" class="app-store-btn">DOWNLOAD ON APP STORE</a>
-</div>
+</section>
 
 <footer class="pascal-footer">
     <div class="links">
@@ -203,34 +285,6 @@ description: Track local atmospheric pressure trends to detect weather changes. 
     </div>
 </footer>
 
-<style>
-.version-badge {
-    display: inline-block;
-    color: #FF4F00;
-    font-family: monospace;
-    font-size: 11px;
-    padding: 4px 10px;
-    border: 1px solid #FF4F00;
-    border-radius: 4px;
-    text-decoration: none;
-    margin-bottom: 12px;
-    letter-spacing: 1px;
-}
-.version-badge:hover {
-    background: rgba(255, 69, 0, 0.15);
-}
-.version-tag {
-    display: inline-block;
-    color: #FF4F00;
-    font-family: monospace;
-    font-size: 11px;
-    padding: 4px 10px;
-    border: 1px solid rgba(255, 69, 0, 0.5);
-    border-radius: 4px;
-    margin-top: 12px;
-    letter-spacing: 1px;
-}
-</style>
 
 </div>
 </body>

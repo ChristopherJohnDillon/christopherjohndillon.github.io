@@ -10,8 +10,8 @@
     --io-dim: rgba(255, 79, 0, 0.15);
     --io-bright: #FF6A26;
 
-    /* Background - matching TelemetryColors */
-    --bg-primary: #0B0D10;
+    /* Background - pure black matching the real app */
+    --bg-primary: #000000;
     --bg-card: rgba(255, 255, 255, 0.03);
     --bg-hover: rgba(255, 255, 255, 0.06);
 
@@ -135,59 +135,272 @@ body.pascal nav {
     transform: translateY(-1px);
 }
 
-/* Screenshots area */
-.screenshots {
-    margin: 60px 0;
-    padding: 40px 0;
-    text-align: center;
+/* Interactive demo — app frame */
+.pascal-live-demo {
+    margin: 60px auto;
+    max-width: 400px;
 }
 
-.screenshots img {
-    max-width: 100%;
-    height: auto;
-    margin: 0 16px;
+.pascal-app-frame {
+    background: #000;
+    border: 1px solid var(--grid-line);
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 0 16px 0;
 }
 
-.device-mockups {
+/* Nav bar — refresh (left), title (center), settings (right) */
+.pascal-app-nav {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0 10px;
+}
+
+.pascal-nav-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: flex-end;
-    gap: 32px;
-    flex-wrap: wrap;
 }
 
-.device-mockups .iphone {
-    max-height: 520px;
+.pascal-app-title {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: var(--text-primary);
 }
 
-.device-mockups.three-up {
+.pascal-app-frame canvas {
+    display: block;
+    width: 100%;
+    height: 180px;
+}
+
+/* Below chart — "12H" left, "RESET" right */
+.pascal-chart-controls {
     display: flex;
-    justify-content: center;
-    gap: 24px;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 0 0;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--text-dim);
 }
 
-.screenshot-item {
+.pascal-chart-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.pascal-chart-reset {
+    color: var(--text-dim);
+}
+
+/* Big pressure readout */
+.pascal-readout {
+    padding: 14px 0 6px;
+}
+
+.pascal-readout-main {
     display: flex;
-    flex-direction: column;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.pascal-readout-value {
+    font-size: 52px;
+    font-weight: 200;
+    letter-spacing: 3px;
+    color: var(--io-primary);
+    line-height: 1;
+}
+
+.pascal-readout-unit {
+    font-size: 13px;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+}
+
+.pascal-readout-deltas {
+    display: flex;
+    gap: 20px;
+    margin-top: 4px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.pascal-delta-label {
+    color: var(--text-dim);
+}
+
+.pascal-delta-val {
+    color: var(--io-primary);
+    font-weight: 600;
+}
+
+.pascal-delta-warn {
+    color: var(--io-primary);
+    font-size: 9px;
+}
+
+/* Forecast card */
+.pascal-forecast-card {
+    margin: 16px 0 0;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 14px;
+}
+
+.pascal-forecast-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.pascal-forecast-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--text-dim);
+}
+
+.pascal-forecast-range {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--text-dim);
+}
+
+.pascal-forecast-body {
+    display: flex;
     align-items: center;
     gap: 12px;
 }
 
-.screenshot-item .iphone {
-    max-height: 420px;
+.pascal-forecast-icon svg {
+    width: 40px;
+    height: 40px;
 }
 
-.screenshot-item .watch {
-    max-height: 200px;
-    border-radius: 40px;
+.pascal-forecast-detail {
+    flex: 1;
 }
 
-.screenshot-item .widget {
-    max-height: 160px;
-    border-radius: 24px;
+.pascal-forecast-condition {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: 1px;
 }
 
+.pascal-forecast-confidence {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-top: 3px;
+}
+
+/* Square confidence indicators — matching the real app */
+.pascal-conf-sq {
+    width: 8px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 1px;
+}
+
+.pascal-conf-sq.filled {
+    background: var(--io-primary);
+}
+
+.pascal-conf-text {
+    font-size: 10px;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    margin-left: 4px;
+}
+
+.pascal-forecast-trend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.pascal-trend-val {
+    font-size: 13px;
+    color: var(--io-primary);
+    font-weight: 600;
+}
+
+.pascal-forecast-text {
+    font-size: 11px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.pascal-forecast-stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pascal-stat-label {
+    font-size: 9px;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+}
+
+.pascal-stat-val {
+    font-size: 13px;
+    color: var(--io-primary);
+    font-weight: 500;
+}
+
+/* Tabs — matching real app bottom bar */
+.pascal-tabs {
+    display: flex;
+    gap: 8px;
+    padding: 14px 0 16px;
+}
+
+.pascal-tab {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--text-dim);
+    padding: 7px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid transparent;
+}
+
+.pascal-tab:hover {
+    color: var(--text-secondary);
+}
+
+.pascal-tab.active {
+    background: rgba(255, 79, 0, 0.12);
+    color: var(--io-primary);
+    border-color: rgba(255, 79, 0, 0.25);
+}
+
+.pascal-tab svg {
+    flex-shrink: 0;
+}
+
+/* Legacy screenshot styles kept for other pages */
 .screenshot-label {
     font-size: 10px;
     letter-spacing: 2px;
@@ -396,6 +609,42 @@ body.pascal nav {
     color: var(--io-primary);
 }
 
+/* Bottom CTA */
+.pascal-cta {
+    text-align: center;
+    margin: 80px 0 0;
+}
+
+/* Version badges */
+.version-badge {
+    display: inline-block;
+    color: var(--io-primary);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 4px 10px;
+    border: 1px solid var(--io-primary);
+    border-radius: 4px;
+    text-decoration: none;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.version-badge:hover {
+    background: var(--io-dim);
+}
+
+.version-tag {
+    display: inline-block;
+    color: var(--io-primary);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 4px 10px;
+    border: 1px solid rgba(255, 79, 0, 0.5);
+    border-radius: 4px;
+    margin-top: 12px;
+    letter-spacing: 1px;
+}
+
 /* Content sections */
 section {
     margin: 60px 0;
@@ -476,21 +725,12 @@ body.pascal .container {
         padding: 0 20px;
     }
 
-    .device-mockups {
-        flex-direction: column;
-        align-items: center;
+    .pascal-live-demo {
+        margin: 40px auto;
     }
 
-    .device-mockups .iphone {
-        max-height: 400px;
-    }
-
-    .screenshot-item .iphone {
-        max-height: 320px;
-    }
-
-    .device-mockups.three-up {
-        gap: 16px;
+    .pascal-readout-value {
+        font-size: 36px;
     }
 
     .pascal-footer .links a {
