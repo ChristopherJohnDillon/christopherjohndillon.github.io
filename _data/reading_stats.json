@@ -2,7 +2,7 @@
   "per_year": [
     {
       "year": 2021,
-      "count": 27
+      "count": 26
     },
     {
       "year": 2022,
@@ -22,7 +22,7 @@
     },
     {
       "year": 2026,
-      "count": 13
+      "count": 14
     }
   ],
   "fun": {
@@ -46,12 +46,6 @@
       "author": "John Boyne",
       "pages": 384,
       "read_at": "2021-01-24"
-    },
-    {
-      "title": "The Secret History",
-      "author": "Donna Tartt",
-      "pages": 559,
-      "read_at": "2021-04-26"
     },
     {
       "title": "Chronicles of Narnia: The Magican's Nephew",
@@ -889,7 +883,7 @@
     },
     {
       "title": "Everything Is Tuberculosis: The History and Persistence of Our Deadliest Infection",
-      "author": "John Green",
+      "author": "John  Green",
       "pages": 198,
       "read_at": "2025-08-09"
     },
@@ -1042,6 +1036,12 @@
       "author": "Jennette McCurdy",
       "pages": 288,
       "read_at": "2026-03-28"
+    },
+    {
+      "title": "The Secret History",
+      "author": "Donna Tartt",
+      "pages": 559,
+      "read_at": "2026-04-26"
     }
   ]
 }

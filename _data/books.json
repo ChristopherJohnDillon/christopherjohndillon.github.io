@@ -1,5 +1,12 @@
 [
   {
+    "title": "The Secret History",
+    "author": "Donna Tartt",
+    "rating": 5,
+    "read_at": "2026-04-26",
+    "url": "https://www.goodreads.com/book/show/29044"
+  },
+  {
     "title": "A Soul Full of Shadows",
     "author": "Derek Landy",
     "rating": 4,
@@ -26,12 +33,5 @@
     "rating": 5,
     "read_at": "2026-03-17",
     "url": "https://www.goodreads.com/book/show/238328226"
-  },
-  {
-    "title": "Impulse",
-    "author": "Steven Gould",
-    "rating": 4,
-    "read_at": "2026-03-15",
-    "url": "https://www.goodreads.com/book/show/13614730"
   }
 ]
