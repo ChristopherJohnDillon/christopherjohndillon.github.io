@@ -51,13 +51,10 @@ description: Visualize your music in real time. Metal-rendered spectrum analyzer
 
         <div class="mac-menubar">
             <div class="mac-menubar-side">
-                <span class="mac-apple">&#63743;</span>
-                <span class="mac-menu-item mac-menu-app">Music</span>
+                <span class="mac-menu-item mac-menu-app">Player</span>
                 <span class="mac-menu-item">File</span>
                 <span class="mac-menu-item">Edit</span>
-                <span class="mac-menu-item">Song</span>
                 <span class="mac-menu-item">View</span>
-                <span class="mac-menu-item">Controls</span>
                 <span class="mac-menu-item">Window</span>
                 <span class="mac-menu-item">Help</span>
             </div>
@@ -84,115 +81,36 @@ description: Visualize your music in real time. Metal-rendered spectrum analyzer
             </div>
         </div>
 
-        <div class="mac-window mac-music">
+        <div class="mac-window mac-player">
             <div class="mac-window-bar">
                 <span class="mac-traffic mac-traffic-close"></span>
                 <span class="mac-traffic mac-traffic-min"></span>
                 <span class="mac-traffic mac-traffic-max"></span>
-                <div class="mac-music-playback">
-                    <span class="mac-pb-btn" aria-hidden="true">
-                        <svg viewBox="0 0 16 16" fill="white"><path d="M11 4 L5 8 L11 12 Z M4 4 H5 V12 H4 Z"/></svg>
-                    </span>
-                    <span class="mac-pb-btn mac-pb-play" aria-hidden="true">
-                        <svg viewBox="0 0 16 16" fill="white"><rect x="4" y="3.5" width="2.5" height="9" rx="0.5"/><rect x="9.5" y="3.5" width="2.5" height="9" rx="0.5"/></svg>
-                    </span>
-                    <span class="mac-pb-btn" aria-hidden="true">
-                        <svg viewBox="0 0 16 16" fill="white"><path d="M5 4 L11 8 L5 12 Z M11 4 H12 V12 H11 Z"/></svg>
-                    </span>
-                </div>
-                <div class="mac-pb-display">
-                    <div class="mac-pb-title">Won&rsquo;t Ever Let You Go</div>
-                    <div class="mac-pb-meta">Crystal Ike &mdash; Long Way Home</div>
-                    <div class="mac-pb-progress">
-                        <div class="mac-pb-progress-fill"></div>
-                    </div>
-                </div>
-                <div class="mac-music-search">
-                    <svg viewBox="0 0 16 16" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.3" stroke-linecap="round">
-                        <circle cx="6.5" cy="6.5" r="4"/>
-                        <line x1="9.6" y1="9.6" x2="13" y2="13"/>
-                    </svg>
-                    <span class="mac-music-search-placeholder"></span>
-                </div>
+                <span class="mac-window-title">Player</span>
             </div>
-            <div class="mac-music-body">
-                <div class="mac-music-sidebar">
-                    <div class="mac-sidebar-section">Library</div>
-                    <div class="mac-sidebar-row mac-sidebar-active">
-                        <span class="mac-sidebar-dot" style="background:#ff4f00"></span>
-                        <span class="mac-sidebar-text"></span>
+            <div class="mac-player-body">
+                <div class="mac-album-art"><span class="mac-album-glow"></span></div>
+                <div class="mac-player-info">
+                    <div class="mac-player-tag">Now Playing</div>
+                    <div class="mac-player-title">Won&rsquo;t Ever Let You Go</div>
+                    <div class="mac-player-artist">Crystal Ike &mdash; Long Way Home</div>
+                    <div class="mac-player-progress">
+                        <div class="mac-player-progress-fill"></div>
                     </div>
-                    <div class="mac-sidebar-row">
-                        <span class="mac-sidebar-dot"></span>
-                        <span class="mac-sidebar-text"></span>
+                    <div class="mac-player-times">
+                        <span>1:24</span>
+                        <span>3:42</span>
                     </div>
-                    <div class="mac-sidebar-row">
-                        <span class="mac-sidebar-dot"></span>
-                        <span class="mac-sidebar-text"></span>
-                    </div>
-                    <div class="mac-sidebar-row">
-                        <span class="mac-sidebar-dot"></span>
-                        <span class="mac-sidebar-text"></span>
-                    </div>
-                    <div class="mac-sidebar-section">Playlists</div>
-                    <div class="mac-sidebar-row">
-                        <span class="mac-sidebar-dot"></span>
-                        <span class="mac-sidebar-text"></span>
-                    </div>
-                    <div class="mac-sidebar-row">
-                        <span class="mac-sidebar-dot"></span>
-                        <span class="mac-sidebar-text"></span>
-                    </div>
-                </div>
-                <div class="mac-music-main">
-                    <div class="mac-music-header">
-                        <div class="mac-album-art"><span class="mac-album-glow"></span></div>
-                        <div class="mac-album-meta">
-                            <div class="mac-album-tag">Album</div>
-                            <div class="mac-album-name">Long Way Home</div>
-                            <div class="mac-album-artist">Crystal Ike &middot; 2024 &middot; 12 songs, 47 min</div>
-                        </div>
-                    </div>
-                    <div class="mac-track-headers">
-                        <span class="mac-th-num">#</span>
-                        <span class="mac-th-title">Title</span>
-                        <span class="mac-th-time">Time</span>
-                    </div>
-                    <div class="mac-track-list">
-                        <div class="mac-track-row mac-track-playing">
-                            <span class="mac-track-num">
-                                <svg viewBox="0 0 12 12" fill="currentColor"><path d="M3 2 L10 6 L3 10 Z"/></svg>
-                            </span>
-                            <div class="mac-track-meta">
-                                <div class="mac-track-title-text">Won&rsquo;t Ever Let You Go</div>
-                                <div class="mac-track-artist">Crystal Ike</div>
-                            </div>
-                            <span class="mac-track-time">3:42</span>
-                        </div>
-                        <div class="mac-track-row">
-                            <span class="mac-track-num">2</span>
-                            <div class="mac-track-meta">
-                                <div class="mac-track-title-text mac-skel"></div>
-                                <div class="mac-track-artist mac-skel mac-skel-sm"></div>
-                            </div>
-                            <span class="mac-track-time">4:08</span>
-                        </div>
-                        <div class="mac-track-row">
-                            <span class="mac-track-num">3</span>
-                            <div class="mac-track-meta">
-                                <div class="mac-track-title-text mac-skel mac-skel-md"></div>
-                                <div class="mac-track-artist mac-skel mac-skel-sm"></div>
-                            </div>
-                            <span class="mac-track-time">3:21</span>
-                        </div>
-                        <div class="mac-track-row">
-                            <span class="mac-track-num">4</span>
-                            <div class="mac-track-meta">
-                                <div class="mac-track-title-text mac-skel mac-skel-lg"></div>
-                                <div class="mac-track-artist mac-skel mac-skel-sm"></div>
-                            </div>
-                            <span class="mac-track-time">5:14</span>
-                        </div>
+                    <div class="mac-player-controls">
+                        <span class="mac-pc-btn" aria-hidden="true">
+                            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M11 3 L5 8 L11 13 Z"/><rect x="3.5" y="3" width="1.5" height="10" rx="0.4"/></svg>
+                        </span>
+                        <span class="mac-pc-btn mac-pc-play" aria-hidden="true">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><rect x="5" y="4" width="3" height="12" rx="0.6"/><rect x="12" y="4" width="3" height="12" rx="0.6"/></svg>
+                        </span>
+                        <span class="mac-pc-btn" aria-hidden="true">
+                            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M5 3 L11 8 L5 13 Z"/><rect x="11" y="3" width="1.5" height="10" rx="0.4"/></svg>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -217,47 +135,9 @@ description: Visualize your music in real time. Metal-rendered spectrum analyzer
         </div>
 
         <div class="mac-dock">
-            <span class="mac-dock-icon mac-dock-finder">
-                <svg viewBox="0 0 32 32">
-                    <defs>
-                        <linearGradient id="finderGrad" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0" stop-color="#a9c8e8"/>
-                            <stop offset="1" stop-color="#3870b0"/>
-                        </linearGradient>
-                    </defs>
-                    <rect width="32" height="32" rx="7" fill="url(#finderGrad)"/>
-                    <ellipse cx="11" cy="13" rx="1.6" ry="3" fill="#1a1a1a"/>
-                    <ellipse cx="21" cy="13" rx="1.6" ry="3" fill="#1a1a1a"/>
-                    <path d="M10 21 Q16 25 22 21" stroke="#1a1a1a" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-                </svg>
-            </span>
-            <span class="mac-dock-icon mac-dock-safari">
-                <svg viewBox="0 0 32 32">
-                    <defs>
-                        <radialGradient id="safariGrad" cx="0.5" cy="0.4" r="0.6">
-                            <stop offset="0" stop-color="#ffffff"/>
-                            <stop offset="1" stop-color="#a4b5c8"/>
-                        </radialGradient>
-                    </defs>
-                    <circle cx="16" cy="16" r="13" fill="url(#safariGrad)"/>
-                    <circle cx="16" cy="16" r="9" fill="#0a4a8a"/>
-                    <path d="M16 7 L18 16 L16 25 L14 16 Z" fill="#ff3b30"/>
-                    <path d="M16 7 L14 16 L16 25 L18 16 Z" fill="#ffffff" opacity="0.85"/>
-                    <circle cx="16" cy="16" r="1" fill="#ffffff"/>
-                </svg>
-            </span>
-            <span class="mac-dock-icon mac-dock-music">
-                <svg viewBox="0 0 32 32">
-                    <defs>
-                        <linearGradient id="musicGrad" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0" stop-color="#ff5e8a"/>
-                            <stop offset="1" stop-color="#ed1f5d"/>
-                        </linearGradient>
-                    </defs>
-                    <rect width="32" height="32" rx="7" fill="url(#musicGrad)"/>
-                    <path d="M13 9.5 L22 7.5 V19 Q22 21 19.5 21.4 Q17 21.8 17 19.7 Q17 17.6 19.5 17.2 Q21 17 21 18 V11 L14 12.5 V21 Q14 23 11.5 23.4 Q9 23.8 9 21.7 Q9 19.6 11.5 19.2 Q13 19 13 20 V9.5 Z" fill="white"/>
-                </svg>
-            </span>
+            <span class="mac-dock-icon mac-dock-tile-blue"></span>
+            <span class="mac-dock-icon mac-dock-tile-pink"></span>
+            <span class="mac-dock-icon mac-dock-tile-cyan"></span>
             <span class="mac-dock-icon mac-dock-nyquist">
                 <svg viewBox="0 0 32 32">
                     <defs>
@@ -279,50 +159,8 @@ description: Visualize your music in real time. Metal-rendered spectrum analyzer
                     </g>
                 </svg>
             </span>
-            <span class="mac-dock-icon mac-dock-settings">
-                <svg viewBox="0 0 32 32">
-                    <defs>
-                        <linearGradient id="setGrad" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0" stop-color="#a8a8ac"/>
-                            <stop offset="1" stop-color="#5e5e62"/>
-                        </linearGradient>
-                    </defs>
-                    <rect width="32" height="32" rx="7" fill="url(#setGrad)"/>
-                    <g fill="#2a2a2c">
-                        <circle cx="16" cy="16" r="4.5"/>
-                        <circle cx="16" cy="16" r="2.2" fill="#a8a8ac"/>
-                    </g>
-                    <g fill="#2a2a2c">
-                        <rect x="15" y="4" width="2" height="4" rx="0.5"/>
-                        <rect x="15" y="24" width="2" height="4" rx="0.5"/>
-                        <rect x="4" y="15" width="4" height="2" rx="0.5"/>
-                        <rect x="24" y="15" width="4" height="2" rx="0.5"/>
-                        <rect x="6.5" y="6.5" width="2" height="4" rx="0.5" transform="rotate(-45 7.5 8.5)"/>
-                        <rect x="23.5" y="6.5" width="2" height="4" rx="0.5" transform="rotate(45 24.5 8.5)"/>
-                        <rect x="6.5" y="21.5" width="2" height="4" rx="0.5" transform="rotate(45 7.5 23.5)"/>
-                        <rect x="23.5" y="21.5" width="2" height="4" rx="0.5" transform="rotate(-45 24.5 23.5)"/>
-                    </g>
-                </svg>
-            </span>
-            <span class="mac-dock-divider"></span>
-            <span class="mac-dock-icon mac-dock-trash">
-                <svg viewBox="0 0 32 32">
-                    <defs>
-                        <linearGradient id="trashGrad" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0" stop-color="#e8e8ec"/>
-                            <stop offset="1" stop-color="#9c9ca0"/>
-                        </linearGradient>
-                    </defs>
-                    <rect width="32" height="32" rx="7" fill="url(#trashGrad)"/>
-                    <g fill="none" stroke="#3a3a3c" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M9 11 H23"/>
-                        <path d="M13 11 V8.5 Q13 7.5 14 7.5 H18 Q19 7.5 19 8.5 V11"/>
-                        <path d="M10.5 11 L11.5 24.5 Q11.5 25.5 12.5 25.5 H19.5 Q20.5 25.5 20.5 24.5 L21.5 11"/>
-                        <path d="M14 14 V22"/>
-                        <path d="M18 14 V22"/>
-                    </g>
-                </svg>
-            </span>
+            <span class="mac-dock-icon mac-dock-tile-violet"></span>
+            <span class="mac-dock-icon mac-dock-tile-green"></span>
         </div>
     </div>
 </div>
