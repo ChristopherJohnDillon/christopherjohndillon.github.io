@@ -46,57 +46,112 @@ description: Visualize your music in real time. Metal-rendered spectrum analyzer
             <span class="nyquist-pill nyquist-pill-dim">BANDS 64</span>
         </div>
     </div>
-    <div class="mac-desktop">
-        <div class="mac-menu-bar">
-            <span class="mac-menu-apple">&#63743;</span>
-            <span class="mac-menu-item mac-menu-app">Nyquist</span>
-            <span class="mac-menu-item">File</span>
-            <span class="mac-menu-item">Edit</span>
-            <span class="mac-menu-item">View</span>
-            <span class="mac-menu-item">Window</span>
-            <span class="mac-menu-item">Help</span>
-            <span class="mac-menu-spacer"></span>
-            <span class="mac-menu-status">&#9775;</span>
-            <span class="mac-menu-status">&#127769;</span>
-            <span class="mac-menu-clock">Mon 9:41 AM</span>
+    <div class="mac-screen">
+        <div class="mac-wallpaper"></div>
+
+        <div class="mac-menubar">
+            <div class="mac-menubar-side">
+                <span class="mac-apple">&#63743;</span>
+                <span class="mac-menu-item mac-menu-app">Music</span>
+                <span class="mac-menu-item">File</span>
+                <span class="mac-menu-item">Edit</span>
+                <span class="mac-menu-item">Song</span>
+                <span class="mac-menu-item">View</span>
+                <span class="mac-menu-item">Controls</span>
+                <span class="mac-menu-item">Window</span>
+                <span class="mac-menu-item">Help</span>
+            </div>
+            <div class="mac-menubar-side mac-menubar-status">
+                <span class="mac-menu-icon" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.4" stroke-linecap="round">
+                        <path d="M2 5h10M2 8h10M2 11h10"/>
+                    </svg>
+                </span>
+                <span class="mac-menu-icon" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.3">
+                        <rect x="1" y="5" width="11" height="6" rx="1.2"/>
+                        <rect x="2.5" y="6.5" width="7" height="3" fill="white"/>
+                        <rect x="13" y="7" width="1.5" height="2" fill="white" stroke="none"/>
+                    </svg>
+                </span>
+                <span class="mac-menu-icon" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.4" stroke-linecap="round">
+                        <circle cx="6.5" cy="6.5" r="4"/>
+                        <line x1="9.6" y1="9.6" x2="13" y2="13"/>
+                    </svg>
+                </span>
+                <span class="mac-menu-clock">Mon 26 Jan&nbsp;&nbsp;9:41 AM</span>
+            </div>
         </div>
-        <div class="mac-bg-window">
-            <div class="mac-bg-titlebar">
+
+        <div class="mac-window mac-music">
+            <div class="mac-window-bar">
                 <span class="mac-traffic mac-traffic-close"></span>
                 <span class="mac-traffic mac-traffic-min"></span>
                 <span class="mac-traffic mac-traffic-max"></span>
-                <span class="mac-bg-title">Safari &mdash; christopherdillon.me</span>
+                <span class="mac-window-title">Music</span>
             </div>
-            <div class="mac-bg-content">
-                <div class="mac-bg-line" style="width:72%"></div>
-                <div class="mac-bg-line" style="width:54%"></div>
-                <div class="mac-bg-line" style="width:88%"></div>
-                <div class="mac-bg-line mac-bg-line-dim" style="width:40%"></div>
-                <div class="mac-bg-line" style="width:66%"></div>
-                <div class="mac-bg-line mac-bg-line-dim" style="width:78%"></div>
-                <div class="mac-bg-line" style="width:48%"></div>
+            <div class="mac-music-body">
+                <div class="mac-music-sidebar">
+                    <div class="mac-sidebar-row mac-sidebar-active"></div>
+                    <div class="mac-sidebar-row"></div>
+                    <div class="mac-sidebar-row"></div>
+                    <div class="mac-sidebar-row"></div>
+                    <div class="mac-sidebar-row"></div>
+                </div>
+                <div class="mac-music-main">
+                    <div class="mac-album-art">
+                        <span class="mac-album-glow"></span>
+                    </div>
+                    <div class="mac-track-list">
+                        <div class="mac-track-row mac-track-playing">
+                            <span class="mac-track-num">&#9654;</span>
+                            <span class="mac-track-title">Won't Ever Let You Go</span>
+                        </div>
+                        <div class="mac-track-row">
+                            <span class="mac-track-num">2</span>
+                            <span class="mac-track-title"></span>
+                        </div>
+                        <div class="mac-track-row">
+                            <span class="mac-track-num">3</span>
+                            <span class="mac-track-title"></span>
+                        </div>
+                        <div class="mac-track-row">
+                            <span class="mac-track-num">4</span>
+                            <span class="mac-track-title"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="nyquist-mini-frame" title="Floats above every window">
-            <span class="nyquist-mini-pin" aria-hidden="true">&#9679; ALWAYS ON TOP</span>
-            <canvas id="nyquist-mini"></canvas>
-            <div class="nyquist-mini-np">
-                <span class="nyquist-mini-controls">
-                    <span class="nyquist-mini-btn">&#9664;&#9664;</span>
-                    <span class="nyquist-mini-btn nyquist-mini-play">&#9646;&#9646;</span>
-                    <span class="nyquist-mini-btn">&#9654;&#9654;</span>
-                </span>
-                <span class="nyquist-mini-track">Won't Ever Let You Go &mdash; Crystal Ike</span>
+
+        <div class="nyquist-mini-frame">
+            <div class="nyquist-mini-pin">
+                <span class="nyquist-mini-pin-dot"></span>
+                ALWAYS ON TOP
+            </div>
+            <div class="nyquist-mini-window">
+                <canvas id="nyquist-mini"></canvas>
+                <div class="nyquist-mini-np">
+                    <span class="nyquist-mini-controls">
+                        <span class="nyquist-mini-btn">&#9664;&#9664;</span>
+                        <span class="nyquist-mini-btn nyquist-mini-play">&#9646;&#9646;</span>
+                        <span class="nyquist-mini-btn">&#9654;&#9654;</span>
+                    </span>
+                    <span class="nyquist-mini-track">Won't Ever Let You Go &mdash; Crystal Ike</span>
+                </div>
             </div>
         </div>
+
         <div class="mac-dock">
-            <span class="mac-dock-icon mac-dock-nyquist" title="Nyquist"></span>
-            <span class="mac-dock-icon"></span>
-            <span class="mac-dock-icon"></span>
-            <span class="mac-dock-icon"></span>
-            <span class="mac-dock-icon"></span>
+            <span class="mac-dock-icon mac-dock-finder"></span>
+            <span class="mac-dock-icon mac-dock-safari"></span>
+            <span class="mac-dock-icon mac-dock-music"></span>
+            <span class="mac-dock-icon mac-dock-nyquist"></span>
+            <span class="mac-dock-icon mac-dock-settings"></span>
+            <span class="mac-dock-divider"></span>
+            <span class="mac-dock-icon mac-dock-trash"></span>
         </div>
-        <div class="mac-desktop-caption">MINI PLAYER &mdash; ALWAYS ON TOP</div>
     </div>
 </div>
 
