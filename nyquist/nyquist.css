@@ -310,68 +310,193 @@ body.nyquist nav {
 .mac-window-bar {
     display: flex;
     align-items: center;
-    gap: 0.7cqw;
-    padding: 0.9cqw 1.2cqw;
-    background: rgba(50, 48, 56, 0.92);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    gap: 1cqw;
+    padding: 0.7cqw 1.2cqw;
+    background: linear-gradient(180deg, rgba(58, 56, 62, 0.95) 0%, rgba(46, 44, 50, 0.95) 100%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    min-height: 4cqw;
 }
 .mac-traffic {
     width: clamp(7px, 1.2cqw, 12px);
     height: clamp(7px, 1.2cqw, 12px);
     border-radius: 50%;
     display: inline-block;
-    box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.25) inset;
+    box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.3) inset;
 }
 .mac-traffic-close { background: #ff5f57; }
 .mac-traffic-min { background: #febc2e; }
 .mac-traffic-max { background: #28c840; }
-.mac-window-title {
-    flex: 1;
-    text-align: center;
-    margin-right: 4cqw;
-    font-size: clamp(8px, 1.3cqw, 12px);
-    color: rgba(255, 255, 255, 0.75);
-    font-weight: 500;
+
+/* Music app integrated playback controls in titlebar */
+.mac-music-playback {
+    display: flex;
+    align-items: center;
+    gap: 0.4cqw;
+    margin-left: 0.6cqw;
 }
+.mac-pb-btn {
+    display: inline-flex;
+    width: clamp(12px, 1.8cqw, 18px);
+    height: clamp(12px, 1.8cqw, 18px);
+    align-items: center;
+    justify-content: center;
+    opacity: 0.85;
+}
+.mac-pb-btn svg {
+    width: 100%;
+    height: 100%;
+}
+.mac-pb-play {
+    width: clamp(14px, 2.1cqw, 22px);
+    height: clamp(14px, 2.1cqw, 22px);
+}
+.mac-pb-display {
+    flex: 1;
+    max-width: 36%;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 0.5cqw;
+    padding: 0.35cqw 0.9cqw;
+    text-align: center;
+    line-height: 1.2;
+    overflow: hidden;
+}
+.mac-pb-title {
+    font-size: clamp(8px, 1.2cqw, 12px);
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.mac-pb-meta {
+    font-size: clamp(6px, 0.95cqw, 10px);
+    color: rgba(255, 255, 255, 0.55);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 0.05cqw;
+}
+.mac-pb-progress {
+    margin-top: 0.3cqw;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1px;
+    overflow: hidden;
+}
+.mac-pb-progress-fill {
+    width: 38%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 1px;
+}
+.mac-music-search {
+    display: flex;
+    align-items: center;
+    gap: 0.4cqw;
+    width: 14%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 0.5cqw;
+    padding: 0.35cqw 0.7cqw;
+    height: 2.4cqw;
+    min-height: 16px;
+}
+.mac-music-search svg {
+    width: clamp(8px, 1.2cqw, 12px);
+    height: clamp(8px, 1.2cqw, 12px);
+    flex-shrink: 0;
+}
+.mac-music-search-placeholder {
+    flex: 1;
+    height: 0.6cqw;
+    min-height: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 1px;
+}
+
 .mac-music-body {
     display: flex;
-    height: 22cqw;
+    height: 26cqw;
+    min-height: 160px;
 }
 .mac-music-sidebar {
-    width: 18%;
-    padding: 1.2cqw 0.8cqw;
-    background: rgba(20, 18, 24, 0.6);
+    width: 22%;
+    padding: 1cqw 0.8cqw;
+    background: rgba(20, 18, 24, 0.55);
     display: flex;
     flex-direction: column;
-    gap: 1cqw;
+    gap: 0.35cqw;
     border-right: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+}
+.mac-sidebar-section {
+    font-size: clamp(7px, 1cqw, 10px);
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.05cqw;
+    font-weight: 600;
+    padding: 0.5cqw 0.5cqw 0.2cqw;
+    margin-top: 0.4cqw;
+}
+.mac-sidebar-section:first-child {
+    margin-top: 0;
 }
 .mac-sidebar-row {
-    height: 0.9cqw;
+    display: flex;
+    align-items: center;
+    gap: 0.6cqw;
+    padding: 0.4cqw 0.5cqw;
+    border-radius: 0.4cqw;
+    min-height: 1.6cqw;
+}
+.mac-sidebar-row.mac-sidebar-active {
+    background: rgba(255, 255, 255, 0.08);
+}
+.mac-sidebar-dot {
+    width: 1.2cqw;
+    height: 1.2cqw;
+    min-width: 7px;
+    min-height: 7px;
+    border-radius: 0.25cqw;
+    background: rgba(255, 255, 255, 0.35);
+    flex-shrink: 0;
+}
+.mac-sidebar-text {
+    flex: 1;
+    height: 0.7cqw;
     min-height: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 1px;
 }
-.mac-sidebar-active {
-    background: var(--io-primary);
+.mac-sidebar-active .mac-sidebar-text {
+    background: rgba(255, 255, 255, 0.5);
 }
+
 .mac-music-main {
     flex: 1;
-    padding: 1.2cqw;
+    padding: 1.2cqw 1.4cqw;
     display: flex;
-    gap: 1.4cqw;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.9cqw;
+    min-width: 0;
+    overflow: hidden;
+}
+.mac-music-header {
+    display: flex;
+    gap: 1.2cqw;
+    align-items: flex-end;
 }
 .mac-album-art {
-    width: 9cqw;
-    height: 9cqw;
-    min-width: 50px;
-    min-height: 50px;
-    border-radius: clamp(4px, 0.6cqw, 8px);
-    background:
-        radial-gradient(circle at 30% 30%, #ff8a3d 0%, #ff4f00 50%, #8a2200 100%);
-    box-shadow: 0 0.6cqw 1.4cqw rgba(255, 79, 0, 0.35),
-                0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+    width: 7.5cqw;
+    height: 7.5cqw;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: clamp(3px, 0.5cqw, 7px);
+    background: radial-gradient(circle at 30% 30%, #ff8a3d 0%, #ff4f00 55%, #6e1c00 100%);
+    box-shadow: 0 0.6cqw 1.4cqw rgba(255, 79, 0, 0.4),
+                0 0 0 1px rgba(0, 0, 0, 0.3) inset;
     position: relative;
     flex-shrink: 0;
     overflow: hidden;
@@ -379,53 +504,131 @@ body.nyquist nav {
 .mac-album-glow {
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(ellipse at 70% 80%, rgba(255, 220, 180, 0.45) 0%, transparent 50%);
+    background: radial-gradient(ellipse at 70% 80%, rgba(255, 220, 180, 0.45) 0%, transparent 50%);
 }
+.mac-album-meta {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+.mac-album-tag {
+    font-size: clamp(6px, 0.95cqw, 10px);
+    color: var(--io-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1cqw;
+    font-weight: 700;
+    margin-bottom: 0.2cqw;
+}
+.mac-album-name {
+    font-size: clamp(11px, 1.9cqw, 19px);
+    color: white;
+    font-weight: 700;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.3cqw;
+}
+.mac-album-artist {
+    font-size: clamp(7px, 1.1cqw, 11px);
+    color: rgba(255, 255, 255, 0.55);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mac-track-headers {
+    display: flex;
+    gap: 1cqw;
+    padding: 0.4cqw 0.8cqw 0.3cqw;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: clamp(6px, 0.95cqw, 10px);
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.05cqw;
+    font-weight: 600;
+}
+.mac-th-num { width: 2cqw; min-width: 12px; text-align: center; }
+.mac-th-title { flex: 1; }
+.mac-th-time { width: 4cqw; min-width: 24px; text-align: right; }
+
 .mac-track-list {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.7cqw;
-    padding-top: 0.5cqw;
+    gap: 0.15cqw;
     min-width: 0;
+    overflow: hidden;
 }
 .mac-track-row {
     display: flex;
     align-items: center;
     gap: 1cqw;
-    padding: 0.55cqw 0.8cqw;
+    padding: 0.5cqw 0.8cqw;
     border-radius: 0.4cqw;
-    font-size: clamp(8px, 1.25cqw, 12px);
-    color: rgba(255, 255, 255, 0.7);
-    min-height: 1.6cqw;
+    color: rgba(255, 255, 255, 0.85);
 }
 .mac-track-row.mac-track-playing {
     background: rgba(255, 79, 0, 0.18);
-    color: var(--io-primary);
 }
 .mac-track-num {
-    width: 1.6cqw;
-    min-width: 10px;
+    width: 2cqw;
+    min-width: 12px;
     text-align: center;
     font-size: clamp(7px, 1.1cqw, 11px);
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.4);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
-.mac-track-playing .mac-track-num {
+.mac-track-num svg {
+    width: clamp(8px, 1.2cqw, 13px);
+    height: clamp(8px, 1.2cqw, 13px);
     color: var(--io-primary);
 }
-.mac-track-title {
+.mac-track-meta {
     flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+.mac-track-title-text {
+    font-size: clamp(8px, 1.2cqw, 12px);
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 500;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    line-height: 1.25;
+}
+.mac-track-playing .mac-track-title-text {
+    color: var(--io-primary);
+}
+.mac-track-artist {
+    font-size: clamp(6px, 1cqw, 10px);
+    color: rgba(255, 255, 255, 0.5);
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 0.05cqw;
 }
-.mac-track-row:not(.mac-track-playing) .mac-track-title {
-    height: 0.7cqw;
-    min-height: 4px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 2px;
+.mac-track-time {
+    width: 4cqw;
+    min-width: 24px;
+    text-align: right;
+    font-size: clamp(7px, 1.1cqw, 11px);
+    color: rgba(255, 255, 255, 0.5);
+    font-variant-numeric: tabular-nums;
 }
+.mac-skel {
+    height: 0.8cqw;
+    min-height: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1px;
+    width: 60%;
+}
+.mac-skel-sm { width: 35%; height: 0.6cqw; min-height: 4px; }
+.mac-skel-md { width: 50%; }
+.mac-skel-lg { width: 75%; }
 
 /* Floating mini player (always on top) */
 .nyquist-mini-frame {
@@ -530,43 +733,31 @@ body.nyquist nav {
     box-shadow: 0 0.6cqw 1.6cqw rgba(0, 0, 0, 0.3);
 }
 .mac-dock-icon {
-    width: 3.6cqw;
-    height: 3.6cqw;
-    min-width: 22px;
-    min-height: 22px;
+    width: 4cqw;
+    height: 4cqw;
+    min-width: 26px;
+    min-height: 26px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 0.25cqw 0.5cqw rgba(0, 0, 0, 0.35));
+}
+.mac-dock-icon svg {
+    width: 100%;
+    height: 100%;
     border-radius: 22%;
-    box-shadow: 0 0.3cqw 0.7cqw rgba(0, 0, 0, 0.3),
-                0 0 0 0.5px rgba(255, 255, 255, 0.1) inset;
-}
-.mac-dock-finder {
-    background: linear-gradient(180deg, #5ba8e0 0%, #2d6fa8 100%);
-}
-.mac-dock-safari {
-    background: radial-gradient(circle at 50% 50%, #f5f5f7 0%, #cfd5dc 70%, #6c7a89 100%);
-}
-.mac-dock-music {
-    background: linear-gradient(180deg, #ff5e8a 0%, #ff2d75 50%, #c11b5e 100%);
+    overflow: visible;
 }
 .mac-dock-nyquist {
-    background: linear-gradient(135deg, #FF6A26 0%, #FF4F00 50%, #c33d00 100%);
-    box-shadow: 0 0.3cqw 0.7cqw rgba(255, 79, 0, 0.45),
-                0 0 0 1px rgba(255, 79, 0, 0.4) inset,
-                0 0 1.2cqw rgba(255, 79, 0, 0.35);
-}
-.mac-dock-settings {
-    background: radial-gradient(circle at 50% 50%, #909096 0%, #5a5a60 60%, #2c2c30 100%);
-}
-.mac-dock-trash {
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: none;
+    filter: drop-shadow(0 0.25cqw 0.5cqw rgba(255, 79, 0, 0.5))
+            drop-shadow(0 0 0.8cqw rgba(255, 79, 0, 0.3));
 }
 .mac-dock-divider {
     width: 1px;
-    height: 2.8cqw;
-    min-height: 18px;
+    height: 3cqw;
+    min-height: 20px;
     background: rgba(255, 255, 255, 0.25);
-    margin: 0 0.2cqw;
+    margin: 0 0.3cqw;
     border-radius: 1px;
 }
 
