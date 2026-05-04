@@ -2,7 +2,7 @@
   "per_year": [
     {
       "year": 2021,
-      "count": 26
+      "count": 25
     },
     {
       "year": 2022,
@@ -22,13 +22,13 @@
     },
     {
       "year": 2026,
-      "count": 14
+      "count": 15
     }
   ],
   "fun": {
     "total_books": 192,
-    "total_pages": 71029,
-    "avg_pages": 369,
+    "total_pages": 71114,
+    "avg_pages": 370,
     "shortest": {
       "title": "Foster",
       "author": "Claire Keegan",
@@ -46,12 +46,6 @@
       "author": "John Boyne",
       "pages": 384,
       "read_at": "2021-01-24"
-    },
-    {
-      "title": "Chronicles of Narnia: The Magican's Nephew",
-      "author": "C.S. Lewis",
-      "pages": 251,
-      "read_at": "2021-04-27"
     },
     {
       "title": "The Lion, the Witch and the Wardrobe",
@@ -1042,6 +1036,12 @@
       "author": "Donna Tartt",
       "pages": 559,
       "read_at": "2026-04-26"
+    },
+    {
+      "title": "Few and Far Between",
+      "author": "Jan Carson",
+      "pages": 336,
+      "read_at": "2026-05-03"
     }
   ]
 }
