@@ -44,7 +44,14 @@
       "Bash(pkill -f \"jekyll serve\")",
       "Bash(xxd /Users/christopher/christopherjohndillon.github.io/_posts/2026-04-22-powerbi-is-a-tax-on-competence.md)",
       "WebFetch(domain:iopscience.iop.org)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(gem install *)",
+      "Bash(brew list *)",
+      "Bash(brew install *)",
+      "Bash(export PATH=\"/opt/homebrew/opt/ruby/bin:$PATH\")",
+      "Bash(ruby -e 'puts Gem.user_dir')",
+      "Bash(export PATH=\"$\\(ruby -e 'puts Gem.user_dir'\\)/bin:$PATH\")",
+      "Bash(ruby --version)"
     ]
   }
 }
