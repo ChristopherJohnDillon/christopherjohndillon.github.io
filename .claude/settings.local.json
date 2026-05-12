@@ -51,7 +51,8 @@
       "Bash(export PATH=\"/opt/homebrew/opt/ruby/bin:$PATH\")",
       "Bash(ruby -e 'puts Gem.user_dir')",
       "Bash(export PATH=\"$\\(ruby -e 'puts Gem.user_dir'\\)/bin:$PATH\")",
-      "Bash(ruby --version)"
+      "Bash(ruby --version)",
+      "Bash(/usr/bin/python3 *)"
     ]
   }
 }

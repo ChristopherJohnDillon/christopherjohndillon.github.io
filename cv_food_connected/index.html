@@ -1,0 +1,331 @@
+---
+layout: none
+title: CV - Christopher Dillon (Foods Connected)
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Dr. Christopher Dillon — Director of Data</title>
+  <link rel="icon" type="image/svg+xml" href="{{ '/images/favicon.svg' | relative_url }}?v=1" />
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32.png' | relative_url }}?v=3" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16.png' | relative_url }}?v=3" />
+  <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}?v=3" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/apple-touch-icon.png' | relative_url }}?v=3" />
+  <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}?v=3" />
+  <meta name="theme-color" content="#0B0F1A" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-dim: #4a4a4a;
+      --text-muted: #6a6a6a;
+      --orange: #ff4f00;
+      --border: #e0e0e0;
+    }
+
+    @media print {
+      :root { --border: #cccccc; }
+      body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .no-print { display: none !important; }
+      @page { margin: 0.5in; size: A4; }
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 13px; }
+    @media print { html { font-size: 11px; } }
+
+    body {
+      font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 1.5rem;
+      padding-top: 4.5rem;
+    }
+    @media print { body { padding: 0; padding-top: 0; } }
+
+    .cv-layout { display: grid; grid-template-columns: 1fr 160px; gap: 1.5rem; }
+    @media print { .cv-layout { grid-template-columns: 1fr 150px; gap: 1.25rem; } }
+
+    .cv-main { min-width: 0; }
+    .cv-sidebar { border-left: 1px solid var(--border); padding-left: 1rem; }
+    .cv-sidebar .cv-section-label { margin-bottom: 0.5rem; }
+    .cv-sidebar .cv-skill-group { margin-bottom: 0.75rem; }
+    .cv-sidebar .cv-skill-group h4 { margin-bottom: 0.2rem; }
+    .cv-sidebar .cv-skill-group li { font-size: 0.8rem; margin-bottom: 0.1rem; }
+
+    .download-btn {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: var(--orange); color: white;
+      padding: 1rem 2rem; text-align: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 1rem; font-weight: 500;
+      text-decoration: none; z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .download-btn:hover { background: #e64600; }
+
+    .cv-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      padding-bottom: 1rem; border-bottom: 1px solid var(--border);
+      margin-bottom: 1.25rem;
+    }
+    .cv-header h1 { font-size: 1.6rem; font-weight: 600; margin-bottom: 0.15rem; }
+    .cv-header .title { font-size: 1rem; color: var(--text-dim); margin-bottom: 0.25rem; }
+    .cv-header .tech-line {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--orange);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+    .cv-header .contact-info {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem; color: var(--text-muted); text-align: right;
+    }
+    .cv-header .contact-info a { color: var(--text-muted); text-decoration: none; }
+    .cv-header .contact-info div { margin-bottom: 0.2rem; }
+
+    .cv-section { margin-bottom: 0.6rem; }
+    .cv-section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem; padding-bottom: 0.2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cv-summary {
+      font-size: 0.92rem; color: var(--text-dim);
+      line-height: 1.55; margin-bottom: 0.6rem;
+    }
+
+    .cv-item { margin-bottom: 0.5rem; page-break-inside: avoid; }
+    .cv-item:last-child { margin-bottom: 0; }
+    .cv-item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.1rem; }
+    .cv-role { font-size: 1rem; font-weight: 600; }
+    .cv-date { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; color: var(--text-muted); }
+    .cv-company { font-size: 0.9rem; color: var(--orange); margin-bottom: 0.35rem; }
+    .cv-description { font-size: 0.9rem; color: var(--text-dim); line-height: 1.55; margin-bottom: 0.35rem; }
+
+    .cv-list { list-style: none; margin: 0.35rem 0; }
+    .cv-list li {
+      font-size: 0.9rem; color: var(--text-dim); line-height: 1.45;
+      padding-left: 0.75rem; position: relative; margin-bottom: 0.15rem;
+    }
+    .cv-list li::before {
+      content: ''; position: absolute; left: 0; top: 0.55em;
+      width: 3px; height: 1px; background: var(--border);
+    }
+    .cv-list .cv-list { margin-top: 0.2rem; margin-bottom: 0.2rem; }
+
+    .metric { color: var(--orange); font-weight: 500; }
+
+    .cv-pub { display: grid; grid-template-columns: 40px 1fr; gap: 0.5rem; margin-bottom: 0.5rem; page-break-inside: avoid; }
+    .cv-pub-year { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; color: var(--text-muted); }
+    .cv-pub-title { font-size: 0.9rem; font-weight: 500; }
+    .cv-pub-meta { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; color: var(--text-muted); }
+
+    .cv-skill-group h4 {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--text-muted); margin-bottom: 0.25rem;
+    }
+    .cv-skill-group ul { list-style: none; }
+    .cv-skill-group li { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 0.1rem; }
+
+    a { color: inherit; text-decoration: none; }
+    strong { font-weight: 600; }
+  </style>
+</head>
+<body>
+  <a href="{{ '/cv_food_connected/Christopher_Dillon_Foods_Connected.pdf' | relative_url }}" class="download-btn no-print" download>Download CV as PDF</a>
+
+  <div class="cv-layout">
+    <div class="cv-main">
+      <header class="cv-header">
+        <div>
+          <h1>Dr. Christopher Dillon</h1>
+          <div class="title">Director of Data · Strategic Data Leader (PE-backed, multi-brand e-commerce &amp; retail)</div>
+          <div class="tech-line">Deep hands-on technical depth: <strong>SQL</strong> · <strong>Python</strong> · data modelling · ELT · cloud warehousing · LLMs in production</div>
+        </div>
+        <div class="contact-info">
+          <div>07501 755 356</div>
+          <div><a href="mailto:mail@christopherdillon.me">mail@christopherdillon.me</a></div>
+          <div><a href="https://christopherdillon.me">christopherdillon.me</a></div>
+          <div><a href="https://linkedin.com/in/drchrisdillon">linkedin.com/in/drchrisdillon</a></div>
+          <div>Northern Ireland</div>
+        </div>
+      </header>
+
+      <section class="cv-section">
+        <div class="cv-section-label">Profile</div>
+        <p class="cv-summary">
+          Senior data leader inside a <strong>PE-backed (TA Associates)</strong> group of <strong>18 B2B and e-commerce businesses</strong>. Advocated for the role, then built the strategy, platform and a small, high-performance team from scratch — now the evidence base for a group-wide restructuring programme. Influence-led: embedded with the <strong>commercial team</strong>, longstanding partner to <strong>Finance</strong> on reporting and forecasting models, and deep cross-functional experience with <strong>Operations</strong> (OTIF, inventory, supply). Comfortable setting technical direction, growing capability without growing the org chart, and translating data into board- and exec-level decisions.
+        </p>
+      </section>
+
+      <section class="cv-section">
+        <div class="cv-section-label">Experience</div>
+
+        <article class="cv-item">
+          <div class="cv-item-header">
+            <span class="cv-role">Head of Data · Global Lead Data Scientist</span>
+            <span class="cv-date">Jan 2025 - Present</span>
+          </div>
+          <div class="cv-company">Nexus Brands Group — PE-backed (TA Associates), 18 businesses</div>
+          <p class="cv-description">Made the case for a Global Head of Data role — arguing the group needed someone whose remit was to lift <strong>data literacy and decision-making maturity across every function</strong>, not just produce reports — then built the strategy, architecture and team into it. The function has been central to a major global restructuring and optimisation programme, with governance expectations appropriate for a PE-backed business preparing for further growth.</p>
+          <ul class="cv-list">
+            <li><strong>Strategic leadership:</strong> Owned the enterprise data strategy end-to-end and positioned data insights as a core differentiator. Built ROI cases for data infrastructure investment that were approved at group level, and defined the metrics for data quality, accessibility, and utilisation across the business.</li>
+            <li><strong>Cross-functional enablement:</strong> Worked directly with <strong>heads of department across all 18 Nexus businesses</strong> — sitting with each to understand the actual problems they were trying to solve before building anything. Embedded in the commercial team today; previously partnered directly with <strong>Finance</strong> on reporting, <strong>forecasting models</strong>, and business performance analytics; extensive work with <strong>Operations</strong> on OTIF, inventory, and supply visibility; supported Sales, customer success and people functions with self-service analytics. Delivered <strong>executive dashboards</strong> including <strong>EOS L10 scorecards</strong> at the leadership-team level.</li>
+            <li><strong>Adoption &amp; utilisation:</strong> Tracked dashboard adoption and reporting usage as first-class metrics — not just "is the data correct" but "is it actually changing decisions." Used those signals to retire low-value reports, double down on high-impact ones, and lift data literacy.</li>
+            <li><strong>Architecture &amp; pipelines:</strong> Designed and built a centralised cloud data warehouse with hourly ELT pipelines from multiple NetSuite instances, Shopify, and Google. Replaced all legacy reporting with a single modern stack — <span class="metric">20+</span> dashboards, Entra SSO and role-based access, retired multiple incumbent BI tools.</li>
+            <li><strong>Governance, GDPR &amp; access:</strong> Established the group's data governance posture — RBAC via Entra, data classification and self-service patterns appropriate for GDPR compliance, and lightweight metadata management so colleagues can find and trust data without going through the data team. Got the unified view into the hands of <strong>every employee at zero cost per seat</strong>.</li>
+            <li><strong>AI / ML in production:</strong> Drove AI adoption group-wide and embedded LLM-assisted development inside the data team (Claude Code) for faster pipeline and dashboard delivery. Stood up self-hosted local LLMs for privacy-preserving, zero-marginal-cost workloads — review sentiment, SEO copy analysis, product description harmonisation — with prompts tuned per task.</li>
+            <li><strong>Analytics depth:</strong> CAC modelling and optimisation, discount dependency analysis, basket &amp; bundle intelligence, pricing and shipping margin modelling with statistical significance testing, vendor spend analysis.</li>
+            <li><strong>People leadership:</strong> Hired and now lead a small team of PhD-level data scientists and engineers supporting senior leadership across the group. Focused on developing the individuals on the team and building deliberate capability — not padding the org chart.</li>
+            <li><strong>Business impact:</strong> <span class="metric">+25%</span> OTIF; identified <span class="metric">£Xm (figure withheld)</span> in excess &amp; obsolete inventory; recovered <span class="metric">~1% of revenue</span> previously lost to out-of-stock; directly informed the group's global restructuring.</li>
+          </ul>
+        </article>
+
+        <article class="cv-item">
+          <div class="cv-item-header">
+            <span class="cv-role">European Data Scientist</span>
+            <span class="cv-date">Apr 2023 - Jan 2025</span>
+          </div>
+          <div class="cv-company">Nexus Brands Group</div>
+          <p class="cv-description">Stood up the data function for 5 European businesses spanning supply-chain trading and distribution. Consolidated fragmented source systems into a unified warehouse and delivered consistent automated reporting across all entities — promoted to Global Lead based on this work.</p>
+        </article>
+
+        <article class="cv-item">
+          <div class="cv-item-header">
+            <span class="cv-role">Data Scientist</span>
+            <span class="cv-date">May 2022 - Apr 2023</span>
+          </div>
+          <div class="cv-company">Christies Direct (now part of Nexus Brands Group)</div>
+          <p class="cv-description">Established the data function from scratch at a global B2B distribution business. Unified reporting across Christies and sister supply-chain operation Transgroom. Promoted as the business was acquired into Nexus Brands Group.</p>
+        </article>
+
+        <article class="cv-item">
+          <div class="cv-item-header">
+            <span class="cv-role">Research Fellow</span>
+            <span class="cv-date">Jan 2022 - Apr 2022</span>
+          </div>
+          <div class="cv-company">Queen's University Belfast &amp; Randox Laboratories</div>
+          <p class="cv-description">Post-doctoral position handing my PhD ML image-recognition work into Randox's production diagnostics pipeline — a heavily regulated, quality-managed environment, with Randox's food-supply-chain testing division (residue, contaminant and food-safety diagnostics) operating alongside the clinical side I worked on.</p>
+        </article>
+
+        <article class="cv-item">
+          <div class="cv-item-header">
+            <span class="cv-role">Astrophysics PhD</span>
+            <span class="cv-date">Sep 2017 - Feb 2022</span>
+          </div>
+          <div class="cv-company">Queen's University Belfast</div>
+          <p class="cv-description">PhD project: <em>Observations and Modelling of Intensity Time series for Biomedical and Astrophysical Applications</em> — joint venture with Randox. Developed statistical techniques for below-noise-floor signals, applied to both stellar lightcurves and biochip diagnostics. Led to novel discoveries of stellar nanoflares (published in ApJ) and to ML-based image feature recognition now embedded in Randox's production biochip pipeline — <span class="metric">98.8%</span> reduction in downstream processing time in a <span class="metric">$12B</span> diagnostics market. <a href="https://pureadmin.qub.ac.uk/ws/portalfiles/portal/317087355/REDACTED_Thesis_Final_40099745_Christopher_Dillon.pdf">Redacted thesis</a>.</p>
+        </article>
+      </section>
+
+      <section class="cv-section">
+        <div class="cv-section-label">Publications</div>
+        <div class="cv-pub">
+          <span class="cv-pub-year">2023</span>
+          <div>
+            <div class="cv-pub-title">Nanoflare Activity on Fully Convective M-dwarf Stars</div>
+            <div class="cv-pub-meta">Grant et al. The Astrophysical Journal</div>
+          </div>
+        </div>
+        <div class="cv-pub">
+          <span class="cv-pub-year">2020</span>
+          <div>
+            <div class="cv-pub-title">Statistical Evidence for Stellar Nanoflare Signals in M-type Lightcurves</div>
+            <div class="cv-pub-meta">Dillon et al. The Astrophysical Journal</div>
+          </div>
+        </div>
+        <div class="cv-pub">
+          <span class="cv-pub-year">2019</span>
+          <div>
+            <div class="cv-pub-title">Monte Carlo Techniques for Nanoflare Detection in Solar Active Regions</div>
+            <div class="cv-pub-meta">Jess et al. The Astrophysical Journal</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cv-section">
+        <div class="cv-section-label">Education</div>
+        <article class="cv-item">
+          <div class="cv-item-header">
+            <span class="cv-role">MSci Physics, First Class Honours</span>
+            <span class="cv-date">Sep 2013 - Jun 2017</span>
+          </div>
+          <div class="cv-company">Queen's University Belfast</div>
+          <p class="cv-description">Seagate bursary recipient. Head of peer mentor scheme.</p>
+        </article>
+      </section>
+    </div>
+
+    <aside class="cv-sidebar">
+      <div class="cv-section-label">Skills</div>
+
+      <div class="cv-skill-group">
+        <h4>Strategy &amp; Leadership</h4>
+        <ul>
+          <li>Enterprise data strategy</li>
+          <li>PE-backed governance</li>
+          <li>Exec stakeholder management</li>
+          <li>Cross-functional delivery</li>
+          <li>Hiring &amp; team development</li>
+          <li>ROI &amp; business cases</li>
+        </ul>
+      </div>
+
+      <div class="cv-skill-group">
+        <h4>Data &amp; Platform</h4>
+        <ul>
+          <li>SQL &amp; data modelling</li>
+          <li>ELT / ETL pipelines</li>
+          <li>Cloud data warehousing</li>
+          <li>Lakehouse patterns</li>
+          <li>BI: Power BI, Streamlit, custom (fit-for-purpose)</li>
+          <li>Self-service analytics</li>
+          <li>Entra SSO / RBAC</li>
+          <li>GDPR &amp; metadata management</li>
+        </ul>
+      </div>
+
+      <div class="cv-skill-group">
+        <h4>Build</h4>
+        <ul>
+          <li>Python</li>
+          <li>Polars / DuckDB</li>
+          <li>Streamlit</li>
+          <li>Docker / Git</li>
+          <li>Claude Code</li>
+          <li>Self-hosted &amp; cloud LLMs</li>
+          <li>Prompt engineering</li>
+        </ul>
+      </div>
+
+      <div class="cv-skill-group">
+        <h4>Domain</h4>
+        <ul>
+          <li>Supply chain analytics</li>
+          <li>OTIF / inventory</li>
+          <li>Commercial &amp; pricing</li>
+          <li>Finance partnering</li>
+          <li>Regulated diagnostics (PhD)</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+</body>
+</html>
