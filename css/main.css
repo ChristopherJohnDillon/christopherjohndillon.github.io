@@ -1006,6 +1006,19 @@ pre code { background: none; padding: 0; }
   color: var(--nanoflare);
   font-weight: 600;
 }
+.pitch-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 0 0 0.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--mute);
+}
+.pitch-stats .metric { margin-right: 0.35rem; }
 .pitch-points {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
