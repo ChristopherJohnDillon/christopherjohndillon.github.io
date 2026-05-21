@@ -6,9 +6,9 @@ tags: [data, tooling, opinion]
 description: Why most data governance is sin-eating with a job title, and what the work looks like when the person doing it actually has the buy-in to care.
 ---
 
-Somewhere between the seventeenth and nineteenth centuries, in bits of Wales, Scotland, and the English border counties, a destitute man might be summoned to a funeral to perform a peculiar service. A piece of bread, or in some parishes a baked potato (the menu varied with how seriously the village was taking it), would be placed on the chest of the corpse. The bread was believed to absorb the unconfessed sins of the deceased. The sin-eater would eat it, take the metaphysical burden onto his own soul, mutter something solemn, and pocket the four or six pence he was paid for the trouble.
+Somewhere between the seventeenth and nineteenth centuries, in bits of Wales, Scotland, and the English border counties, a destitute man might be summoned to a funeral to perform a peculiar service. Typically a piece of bread would be placed on the chest of the corpse. The bread was believed to absorb the unconfessed sins of the deceased. The sin-eater would eat it, take the metaphysical burden onto his own soul, mutter something solemn, and pocket the four or six pence he was paid for the trouble.
 
-He would then be driven from the house with sticks, never to be invited back until the next funeral. Flexible hours, in fairness, but the benefits package was poor. *(The last documented sin-eater, a Shropshire farmer called Richard Munslow, died in 1906. His grave at Ratlinghope was restored with some ceremony in 2010, which is presumably the closest the profession has come to a pension.)*
+He would then be driven from the house with sticks, never to be invited back until the next funeral. In the context of the modern gig-economy this would be considered one of the better roles.
 
 The deal was elegantly transactional. The family did not have to grieve any sins their loved one might still be carrying. The community did not have to look its own dirty laundry in the face. A desperate man took on the burden, was paid a pittance, and was then shunned. Everyone got what they wanted, except, fairly obviously, the sin-eater.
 
@@ -30,7 +30,7 @@ Data, sadly, is real.
 
 A Data Owner with no domain knowledge cannot fix a wrong category, because they have no way of knowing what the right category looks like. A Data Owner without the authority to refuse a non-compliant item being entered into NetSuite (or Salesforce, or any of the other source systems that have made grown adults cry) cannot maintain a standard, because the standard will be politely escalated around them by the first person with a deadline. A Data Owner who has had the role bolted onto an already full job will skip the quarterly audit, because there has never in the history of the working week been a quarter in which a person had spare capacity for a quarterly audit.
 
-The role becomes ceremonial. The data stays filthy. The reports continue to lie to one another in increasingly elaborate ways. The only thing that has actually changed is that there is now a designated name to point at when the next reconciliation goes sideways, which is, on reflection, exactly what the village wanted from the sin-eater in the first place.
+The role becomes ceremonial. The data stays filthy. The reports continue to lie to one another in increasingly elaborate ways. The only thing that has actually changed is that there is now a designated name to point at when the next reconciliation goes sideways, the village has appointed a sin-eater.
 
 ## Governance is not a job title. It is a set of conditions.
 
@@ -44,4 +44,4 @@ Good data governance is much less mysterious than the volume of consultancy spen
 
 ## Stop hiring sin-eaters.
 
-The Welsh sin-eater walked away with sixpence and a soul full of other people's misdeeds, and was driven from the house with a stick. It is a poor model. The version worth building is the other one, where the person who owns the data has the knowledge and the authority to look after it, and gets a clearer view of their own work in return. Nobody has to get hit with a stick. Nobody has to eat the potato.
+The Welsh sin-eater walked away with sixpence and a soul full of other people's misdeeds, and was driven from the house with a stick. It is a poor model for data governance. The version worth building is where the person who owns the data has the knowledge and the authority to look after it, and gets a clearer view of their own work in return. Nobody has to get hit with a stick. Nobody has to eat the potato.
