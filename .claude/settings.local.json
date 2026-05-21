@@ -52,7 +52,9 @@
       "Bash(ruby -e 'puts Gem.user_dir')",
       "Bash(export PATH=\"$\\(ruby -e 'puts Gem.user_dir'\\)/bin:$PATH\")",
       "Bash(ruby --version)",
-      "Bash(/usr/bin/python3 *)"
+      "Bash(/usr/bin/python3 *)",
+      "Bash(awk 'NR<=7{print; next} /^$/{print; next} {print; print \"\"}' /Users/chrisdillon/christopherjohndillon.github.io/_posts/2026-05-21-data-governance-is-not-sin-eating.md)",
+      "Bash(mv /tmp/post.md /Users/chrisdillon/christopherjohndillon.github.io/_posts/2026-05-21-data-governance-is-not-sin-eating.md)"
     ]
   }
 }
