@@ -18,7 +18,7 @@ I have a working theory that data governance, when done badly, is the exact same
 
 ## The Corporate Sin-Eater
 
-Every organization produces dirty data. It is a fundamental law of corporate entropy. Categories are missing, the same SKU somehow has three completely different descriptions across three different systems, and discounts are recorded against orphan line items rather than the actual products they apply to. At some point, the reporting layer begins to produce numbers that don't reconcile, the dashboards quietly start contradicting each other, and leadership asks the inevitable question: *whose mess is this?*
+Every organisation produces dirty data. It is a fundamental law of corporate entropy. Categories are missing, the same SKU somehow has three completely different descriptions across three different systems, and discounts are recorded against orphan line items rather than the actual products they apply to. At some point, the reporting layer begins to produce numbers that don't reconcile, the dashboards quietly start contradicting each other, and leadership asks the inevitable question: *whose mess is this?*
 
 The immediate corporate temptation is to find a sin-eater.
 
