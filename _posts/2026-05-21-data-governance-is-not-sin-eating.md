@@ -6,54 +6,50 @@ tags: [data, tooling, opinion]
 description: Why most data governance is sin-eating with a job title, and what the work looks like when the person doing it actually has the buy-in to care.
 ---
 
-Between roughly the seventeenth and nineteenth centuries, across parts of Wales, Scotland, and the English border counties, a destitute man might be summoned to a funeral to perform a peculiar service. A piece of bread—or, depending on the parish, a baked potato—would be placed on the chest of the corpse. The belief was that the food would absorb the unconfessed sins of the deceased. The sin-eater would eat it, take the metaphysical burden onto his own soul, mutter a quick blessing, and pocket a pittance of four or six pence.
+Somewhere between the seventeenth and nineteenth centuries, in bits of Wales, Scotland, and the English border counties, a destitute man might be summoned to a funeral and asked to perform a peculiar service. A piece of bread, or in some parishes a baked potato (the menu varied by how seriously the village was taking it), would be placed on the chest of the corpse. The bread was believed to absorb the unconfessed sins of the deceased. The sin-eater would eat it, take the metaphysical burden onto his own soul, mutter something appropriately solemn, and pocket the four or six pence he was paid for the trouble.
 
-He would then be promptly beaten out of the house with sticks, never to be invited back until the next funeral. *(Unfortunately for the profession, the last documented sin-eater, a Shropshire farmer named Richard Munslow, died in 1906).*
+He would then be driven from the house with sticks, never to be invited back until the next funeral. A flexible-hours role, in fairness, but the benefits package was poor. *(The last documented sin-eater, a Shropshire farmer called Richard Munslow, died in 1906; his grave at Ratlinghope was restored with some ceremony in 2010, which is presumably the closest the profession has come to a pension.)*
 
-It was a beautifully transactional absolution. The family didn't have to carry the grief of their loved one's lingering transgressions, the community avoided looking its dirty laundry in the face, and a desperate man took the fall. Everyone got what they wanted—except, fairly obviously, the sin-eater.
+The deal was elegantly transactional. The family did not have to grieve any sins their loved one might still be carrying. The community did not have to look its own dirty laundry in the face. A desperate man took on the burden, was paid a pittance, and was then shunned. Everyone got what they wanted, except, fairly obviously, the sin-eater.
 
-I have a working theory that data governance, when done badly, is the exact same transaction.
-
----
+I have a working theory that data governance, done badly, is the same transaction with worse bread.
 
 ## The Corporate Sin-Eater
 
-Every organisation produces dirty data. It is a fundamental law of corporate entropy. Categories are missing, the same SKU somehow has three completely different descriptions across three different systems, and discounts are recorded against orphan line items rather than the actual products they apply to. At some point, the reporting layer begins to produce numbers that don't reconcile, the dashboards quietly start contradicting each other, and leadership asks the inevitable question: *whose mess is this?*
+Every organisation produces dirty data. Categories are missing or contradictory, the same SKU has three different descriptions across three systems (each authored, presumably, by someone who had never met the other two), discounts are recorded against orphan line items rather than the actual products they apply to, and customers are tagged inconsistently or not at all. At some point the reporting layer starts producing numbers that don't reconcile, the dashboards quietly start contradicting each other, and somebody senior asks the inevitable question: *whose mess is this?*
 
-The immediate corporate temptation is to find a sin-eater.
+The temptation, at this point, is to find a sin-eater.
 
-You find someone—usually a junior analyst, or anyone currently lacking the political capital to say no—and slap the title **Data Owner** on them. You dump a sprawling spreadsheet of broken entries on their desk, declare them accountable, and the rest of the business carries on, blissfully absolved. It sets an entirely unreasonable expectation for a single person's work-rate, but it serves a vital bureaucratic purpose: you now have a name to put on a PowerPoint slide whenever executives ask if you have a data governance strategy. *(Yes. Look. We have a Data Owner.)*
+You pick someone, usually a junior analyst or whoever happened to be out of the room when the meeting started, and you give them the title **Data Owner**. You hand them a spreadsheet of broken entries, tell them they are now accountable, and the rest of the business carries on, absolved. It is a wildly unreasonable thing to ask of one person, but it serves a vital bureaucratic purpose: there is now a name to put on a slide when somebody asks whether you have data governance. *(Yes. Look. We have a Data Owner. Her name is Megan and she has not slept since March.)*
 
-### Why the Metaphor Breaks Down
+### Why the metaphor breaks down
 
-This setup fails for reasons that are no great mystery. The village ritual worked because the transaction was entirely symbolic; nobody actually believed the bread literally digested a crime, they just believed it transferred a spiritual burden.
+The village ritual worked because the transaction was symbolic. Nobody actually believed the bread was digesting a sin in any literal sense; they believed it transferred a spiritual burden, which is a much more flexible thing to transfer.
 
-Data, unfortunately, is stubbornly real.
+Data, sadly, is real.
 
-A Data Owner sat in a corner with no domain knowledge cannot fix a broken product category, because they have no way of knowing what the *right* category looks like. If they don't have the authority to block a non-compliant entry in NetSuite or Salesforce, they have no way to maintain the standard anyway. And when the role is tacked on as an unpaid extra to an already overflowing day job, they will invariably skip the quarterly audit, because nobody has space for bureaucratic chores on top of their actual work.
+A Data Owner with no domain knowledge cannot fix a wrong category, because they have no way of knowing what the right category looks like. A Data Owner without the authority to refuse a non-compliant item being entered into NetSuite (an experience I would not wish on anyone for any number of reasons) cannot maintain the standard. A Data Owner on whom the role has been bolted as an unpaid extra to an already full job will skip the quarterly audit, because there is no quarter in which a person has space for a quarterly audit on top of their actual work.
 
-The role becomes purely ceremonial. The data stays filthy, the reports continue to lie to each other, and the only thing that has actually changed is that management now has a designated name to point at when the next reconciliation fails—which is, on reflection, the exact part of the arrangement the village wanted from the sin-eater in the first place.
+The role becomes ceremonial. The data stays filthy. The reports continue to lie to one another. The only thing that has changed is that there is now a designated name to point at when the next reconciliation goes sideways, which is, on reflection, exactly the part of the arrangement the village wanted from the sin-eater in the first place.
 
----
+## What it actually looks like when it works
 
-## What Actual Governance Looks Like
+Good data governance is far less mysterious than the volume of consultancy spent on it would suggest. I would summarise it as three things, none of which require a framework deck.
 
-What good data governance looks like is much less mysterious than the sheer volume of consultancy fees spent on it would suggest. It can be over-simplified to three basic steps:
+### 1. Show people the point of it
 
-### 1. Show them the point of it
+People maintain data they can see the point of. "Because the data team asked us to" is not a reason; it is a sentence. If a buyer knows that the mandatory field they are tempted to fudge feeds directly into the out-of-stock report they look at every Monday morning, they will fill it in properly. If it reads like bureaucratic noise, they will type "n/a" and get on with their day, and frankly who could blame them.
 
-People only maintain data they see the practical purpose of. "Because the data team asked us to" falls entirely short of an incentive. If a buyer knows that filling out a tedious mandatory field directly feeds the out-of-stock report they rely on every Monday morning, they'll do it. If it reads like bureaucratic noise, they'll ignore it. Connect the inputs to the outcomes.
+### 2. Match knowledge to authority
 
-### 2. Match knowledge with authority
+The matter of who actually owns the data is where most organisations come unstuck. A Data Owner needs domain knowledge, so they know what good looks like and where the edge cases are. They need authority, so when they refuse a non-compliant record at the source the refusal sticks instead of being escalated around them by someone with a deadline. And they need capacity, which is to say the role is in their job description rather than added to it in a one-line email on a Friday afternoon.
 
-The matter of who actually "owns" the data is where most organisations come unstuck. A Data Owner needs domain knowledge to know what "good" looks like, the authority to reject a non-compliant entry at the source and make it stick, and the actual calendar capacity to do the work.
+> Where it makes sense, DAMA-DMBOK and assorted other people who have thought about this longer than I have recommend pairing an accountable Data Owner (senior, sets the standard) with a Data Steward (operational, does the work day to day). This is sensible, and exists in part precisely because the alternative is the sin-eater trap.
 
-> **The Best Practice:** Established frameworks like DAMA-DMBOK recommend pairing a senior Data Owner (who sets standards) with an operational Data Steward (who executes daily)—precisely to avoid the single-scapegoat trap.
+### 3. Let the owner keep something
 
-### 3. Make it a two-way street
-
-The biggest missing piece is what the Data Owner gets back for their trouble. When data is maintained properly, the people doing the cleaning should actually win. Buyers should see where they are losing margin. Account managers should see which customer segments are actually worth their time. Operations should flag stockouts with hard numbers instead of gut intuition.
+The bit most often forgotten is what the Data Owner gets back for the trouble. When the data is maintained properly, the person maintaining it ought to be the first to benefit from it. Buyers should see where they are losing margin. Account managers should see which customer segments are quietly worth more of their time than they realised. Operations should see where stockouts are actually costing money, in pounds rather than vibes. Insights stop being something handed down to the business by the data team and start being something the business gets out of its own discipline, which is rather more dignifying than being sent the bread.
 
 ---
 
-The Welsh sin-eater walked away with sixpence, a soul full of other people's misdeeds, and a village that despised him. It is a miserable system to replicate. Data governance shouldn't look like a punishment dressed up as a process; it should look like showing colleagues their contribution to something they themselves benefit from. The version worth building is the one where the person who owns the data has the tools to look after it, and gets a vastly clearer view of their own success in return.
+The Welsh sin-eater walked away with sixpence and a soul full of other people's misdeeds, and was hated for it. It is a poor model. The version worth building is the other one, where the person who owns the data has the knowledge and the authority to look after it, and gets a clearer view of their own work in return. Nobody has to get hit with a stick.
