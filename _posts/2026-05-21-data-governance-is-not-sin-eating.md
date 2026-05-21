@@ -12,7 +12,7 @@ He would then be driven from the house with sticks, never to be invited back unt
 
 The deal was elegantly transactional. The family did not have to grieve any sins their loved one might still be carrying. The community did not have to look its own dirty laundry in the face. A desperate man took on the burden, was paid a pittance, and was then shunned. Everyone got what they wanted, except, fairly obviously, the sin-eater.
 
-Most data governance, in my experience, is this. With worse bread.
+Most data governance, in my experience, is this. And you don't even get to eat any bread.
 
 ## The job is real. The role is fake.
 
