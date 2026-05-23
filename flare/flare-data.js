@@ -3,9 +3,14 @@
    All numbers seeded so visitors get identical figures on reload.
    ============================================================ */
 
-/* mulberry32 — fast deterministic RNG */
+/* Per-visit salt — rotates the seeded values on every page load so the
+   demo doesn't look frozen, while staying internally consistent for the
+   duration of a session (so switching businesses doesn't reshuffle). */
+const SESSION_SALT = ((Date.now() >>> 0) ^ Math.floor(Math.random() * 0xffffffff)) >>> 0;
+
+/* mulberry32 — fast deterministic RNG, seeded once per call site */
 function rng(seed) {
-  let a = seed >>> 0;
+  let a = ((seed >>> 0) + SESSION_SALT) >>> 0;
   return function () {
     a = (a + 0x6D2B79F5) >>> 0;
     let t = a;
@@ -304,4 +309,5 @@ const FlareData = {
   categories: (bizKey) => CATEGORIES[bizKey] || CATEGORIES.group,
 };
 
+FlareData.salt = SESSION_SALT;
 window.FlareData = FlareData;

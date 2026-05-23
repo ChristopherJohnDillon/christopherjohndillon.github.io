@@ -9,7 +9,7 @@ window.FlareDashboards = window.FlareDashboards || {};
 
 window.FlareDashboards.otif = function (main, businessKey) {
   const biz = FlareData.business(businessKey);
-  const r = (i) => { const x = Math.sin((biz.seed + i * 17.7)) * 43758.5; return x - Math.floor(x); };
+  const r = (i) => { const x = Math.sin((biz.seed + FlareData.salt * 0.0001 + i * 17.7)) * 43758.5; return x - Math.floor(x); };
 
   const overall = biz.otifTarget + (r(1) - 0.45) * 4;
   const target  = biz.otifTarget;
@@ -72,10 +72,10 @@ window.FlareDashboards.otif = function (main, businessKey) {
         </tr></thead>
         <tbody>
           ${FlareData.businesses.filter((b) => b.key !== "group").map((b, i) => {
-            const o = b.otifTarget + (Math.sin(b.seed + 1.3) * 2.5);
-            const orders = Math.floor(2000 + (Math.sin(b.seed) + 1) * 6000);
-            const otd = b.otifTarget + 1 + (Math.cos(b.seed) * 2);
-            const ifd = 95 + (Math.sin(b.seed * 1.7) * 3);
+            const o = b.otifTarget + (Math.sin(b.seed + FlareData.salt * 0.0001 + 1.3) * 2.5);
+            const orders = Math.floor(2000 + (Math.sin(b.seed + FlareData.salt * 0.0001) + 1) * 6000);
+            const otd = b.otifTarget + 1 + (Math.cos(b.seed + FlareData.salt * 0.0001) * 2);
+            const ifd = 95 + (Math.sin(b.seed + FlareData.salt * 0.0001 * 1.7) * 3);
             const vt = o - b.otifTarget;
             const cls = vt >= 0 ? "pos" : "neg";
             return `<tr>

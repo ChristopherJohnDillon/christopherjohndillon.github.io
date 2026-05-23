@@ -10,7 +10,7 @@ window.FlareDashboards = window.FlareDashboards || {};
 
 window.FlareDashboards.nps = function (main, businessKey) {
   const biz = FlareData.business(businessKey);
-  const r = (i) => { const x = Math.sin((biz.seed + i * 13.2)) * 43758.5; return x - Math.floor(x); };
+  const r = (i) => { const x = Math.sin((biz.seed + FlareData.salt * 0.0001 + i * 13.2)) * 43758.5; return x - Math.floor(x); };
 
   let region = "All";
   let vertical = "All";
@@ -82,10 +82,10 @@ window.FlareDashboards.nps = function (main, businessKey) {
           </tr></thead>
           <tbody>
             ${FlareData.businesses.filter((b) => b.key !== "group").map((b) => {
-              const nps = 6.8 + Math.abs(Math.sin(b.seed * 1.4)) * 2.5;
-              const n = Math.floor(80 + Math.abs(Math.sin(b.seed)) * 180);
-              const promPct = 0.55 + Math.sin(b.seed) * 0.15;
-              const detPct  = Math.max(0.05, 0.15 - Math.sin(b.seed) * 0.08);
+              const nps = 6.8 + Math.abs(Math.sin(b.seed + FlareData.salt * 0.0001 * 1.4)) * 2.5;
+              const n = Math.floor(80 + Math.abs(Math.sin(b.seed + FlareData.salt * 0.0001)) * 180);
+              const promPct = 0.55 + Math.sin(b.seed + FlareData.salt * 0.0001) * 0.15;
+              const detPct  = Math.max(0.05, 0.15 - Math.sin(b.seed + FlareData.salt * 0.0001) * 0.08);
               const passPct = 1 - promPct - detPct;
               const vt = nps - target;
               const cls = vt >= 0 ? "pos" : "neg";
