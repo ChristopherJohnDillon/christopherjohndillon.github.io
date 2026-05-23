@@ -1,0 +1,60 @@
+---
+layout: none
+title: FLARE — Public Demo
+description: An anonymised, fully interactive public demo of FLARE — the BI platform Chris Dillon built at Nexus Brands Group.
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLARE — Public Demo · Chris Dillon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="{{ '/flare/flare.css' | relative_url }}" />
+  <link rel="icon" type="image/svg+xml" href="{{ '/images/favicon.svg' | relative_url }}" />
+</head>
+<body class="landing">
+  <div class="landing-inner">
+
+    <header>
+      <a class="flare-wordmark" href="{{ '/flare/' | relative_url }}">
+        <svg class="glyph" viewBox="0 2 48 36" aria-hidden="true">
+          <path class="curve" d="M 2 30 L 16.5 30 L 18 6 L 18.5 7.92 L 19 9.68 L 19.5 11.31 L 20 12.8 L 20.5 14.18 L 21 15.44 L 21.5 16.61 L 22 17.68 L 22.5 18.66 L 23 19.57 L 23.5 20.4 L 24 21.17 L 24.5 21.88 L 25 22.53 L 25.5 23.12 L 26 23.67 L 26.5 24.18 L 27 24.64 L 27.5 25.07 L 28 25.47 L 28.5 25.83 L 29 26.16 L 29.5 26.47 L 30 26.75 L 30.5 27.01 L 31 27.25 L 31.5 27.47 L 32 27.67 L 32.5 27.86 L 33 28.03 L 33.5 28.19 L 34 28.33 L 34.5 28.47 L 35 28.59 L 35.5 28.7 L 36 28.81 L 36.5 28.9 L 37 28.99 L 37.5 29.07 L 38 29.14 L 38.5 29.21 L 39 29.28 L 39.5 29.33 L 40 29.39 L 40.5 29.44 L 41 29.48 L 41.5 29.52 L 42 29.56 L 42.5 29.6 L 43 29.63 L 43.5 29.66 L 44 29.69 L 44.5 29.71 L 45 29.73 L 45.5 29.75 L 46 29.77" />
+        </svg>
+        <span>FLARE</span>
+      </a>
+      <span class="eyebrow">Public demo · v1.0</span>
+    </header>
+
+    <h1>Self-hosted BI for <span class="accent">multi-business</span> retail groups.</h1>
+    <p class="lede">FLARE is the warehouse, dashboard, and analytics platform I designed and built at Nexus Brands Group — replacing legacy reporting across 18 businesses with a single self-hosted stack on Entra SSO, at zero per-seat cost. This is a fully interactive, anonymised public demo running entirely in your browser.</p>
+
+    <div class="cta-row">
+      <a href="{{ '/flare/login/' | relative_url }}" class="primary">Launch demo →</a>
+      <a href="{{ '/consultancy/' | relative_url }}" class="secondary">Back to consultancy</a>
+    </div>
+
+    <div class="landing-grid">
+      <div class="cell"><div class="num">01</div><h3>Exec overview</h3><p>KPI tiles per business plus a group rollup view. Revenue, GM%, OTIF, stockouts.</p></div>
+      <div class="cell"><div class="num">02</div><h3>Per-SKU analysis</h3><p>Sort, filter, drill into any SKU. Margin, velocity, days-cover, stockout history.</p></div>
+      <div class="cell"><div class="num">03</div><h3>Statistical analysis</h3><p>Promotion impact with 95% confidence intervals and significance testing.</p></div>
+      <div class="cell"><div class="num">04</div><h3>Warehouse heatmap</h3><p>Bin-level utilisation grid. Hover for stats, click to inspect contents.</p></div>
+      <div class="cell"><div class="num">05</div><h3>Bundle &amp; basket</h3><p>SKU affinity matrix and top co-purchased pairs ranked by lift.</p></div>
+      <div class="cell"><div class="num">06</div><h3>Entra SSO</h3><p>Real FLARE uses Microsoft Entra SSO with role-based access. Mocked here for the demo.</p></div>
+    </div>
+
+    <div class="behind">
+      <strong>This is a visual clone, not the real product.</strong> The real FLARE is a self-hosted Streamlit application running against a private data warehouse with Microsoft Entra SSO and role-based access — built and operated at Nexus Brands Group. This public demo is a static front-end built with vanilla HTML, CSS, and JavaScript: same design language, invented data, no backend. The fictional parent here is <strong>Helios Brands Co.</strong> with four invented sister brands (Trailcraft, Hearthline, Quill &amp; Press, Velora). Nothing in this demo represents real Nexus data, customers, or warehouse layouts.
+    </div>
+
+    <footer>
+      <span>FLARE · Public demo</span>
+      <span>© {{ site.time | date: '%Y' }} Chris Dillon</span>
+    </footer>
+
+  </div>
+</body>
+</html>
