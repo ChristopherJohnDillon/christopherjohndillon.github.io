@@ -9,9 +9,9 @@ window.FlareDashboards.home = function (main) {
     <div class="main-inner">
       <h1 class="page-title" style="margin-bottom: 2rem;">Welcome to FLARE</h1>
 
-      <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 2rem;">
+      <div style="display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 2rem;">
+        <img src="/flare/flare-logo.svg" alt="" style="width: 80px; height: 70px; flex: 0 0 auto;" />
         <div>
-          <div style="font-size: 2.5rem; color: var(--accent); line-height: 1; margin-bottom: 0.6rem;">◢</div>
           <h2 style="font-size: 1.7rem; margin-bottom: 0.3rem;">FLARE</h2>
           <div style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mute); margin-bottom: 1rem;">Flexible, Lightweight Analytics &amp; Reporting Engine</div>
           <p style="color: var(--instrument); font-size: 0.98rem; line-height: 1.7; max-width: 75ch;">FLARE is the analytics and reporting platform for Helios Brands Co. It provides real-time dashboards covering sales performance, supply chain operations, customer sentiment, e-commerce marketing, and executive scorecards. All data is refreshed automatically via scheduled ETL pipelines so teams always have the latest numbers without manual intervention.</p>
@@ -39,10 +39,12 @@ window.FlareDashboards.home = function (main) {
       { name: "Pricing &amp; Shipping", desc: "Analyse pricing and shipping margin impacts, model price-change scenarios, and test statistical significance.", route: "#/stats" },
     ] },
     { name: "Operations", icon: "settings", items: [
+      { name: "OTIF Tracker", desc: "Monitor on-time in-full delivery performance and fulfilment metrics.", route: "#/otif" },
       { name: "Warehouse Heatmap", desc: "Bin-level utilisation grid across aisles. Hover for live stats, click to inspect contents.", route: "#/warehouse" },
     ] },
     { name: "Customer", icon: "sentiment_satisfied", items: [
-      { name: "Customer Intelligence", desc: "Customer segmentation, cross-shopping, basket and bundle analysis across channels.", route: "#/bundle" },
+      { name: "Customer Intelligence", desc: "E-commerce &amp; phone customer segmentation, churn prevention, lifecycle, cross-shopping, basket analysis.", route: "#/bundle" },
+      { name: "Delighted NPS Tracker", desc: "Track Net Promoter Score and Delighted survey responses over time across all brands.", route: "#/nps" },
     ] },
     { name: "L10 EOS Scorecards", icon: "speed", items: [
       { name: "Executive Scorecard", desc: "Traffic-light KPI scorecard — company-wide revenue, margins, OTIF, and customer metrics.", route: "#/exec" },

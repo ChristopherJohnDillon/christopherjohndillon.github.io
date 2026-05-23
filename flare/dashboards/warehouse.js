@@ -27,17 +27,20 @@ window.FlareDashboards.warehouse = function (main, businessKey) {
       <div class="main-inner">
       <h1 class="page-title">Warehouse Heatmap</h1>
       <div class="page-subtitle">Bin-level utilisation across ${aisles.length} aisles — ${biz.name}.</div>
+      <div class="data-as-of">Live state · refreshed hourly</div>
 
-      <div class="filter-bar">
-        <select id="whAisle">
-          <option value="">All aisles</option>
-          ${aisles.map((a) => `<option value="${a}" ${a === filterAisle ? "selected" : ""}>Aisle ${a}</option>`).join("")}
-        </select>
-        <label style="display: flex; align-items: center; gap: 0.5rem; color: var(--read); font-size: 0.85rem;">
-          <span>Min utilisation</span>
-          <input type="range" id="whSlider" min="0" max="100" value="${Math.round(minUtil*100)}" />
-          <span id="whSliderVal" style="font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums;">${Math.round(minUtil*100)}%</span>
-        </label>
+      <div class="filter-row cols-2">
+        <div class="field">
+          <label class="field-label">Aisle filter</label>
+          <select class="st-select" id="whAisle">
+            <option value="">All aisles</option>
+            ${aisles.map((a) => `<option value="${a}" ${a === filterAisle ? "selected" : ""}>Aisle ${a}</option>`).join("")}
+          </select>
+        </div>
+        <div class="field">
+          <label class="field-label">Minimum utilisation: <span style="color: var(--accent); font-weight: 600;">${Math.round(minUtil*100)}%</span></label>
+          <input type="range" id="whSlider" min="0" max="100" value="${Math.round(minUtil*100)}" style="width: 100%; accent-color: var(--accent); margin-top: 0.55rem;" />
+        </div>
       </div>
 
       <div class="metric-row">
@@ -61,7 +64,7 @@ window.FlareDashboards.warehouse = function (main, businessKey) {
 
         <div class="dd-panel" id="binPanel">${binPanelHtml(selectedBin, biz)}</div>
       </div>
-      </div>
+      </div><!-- /main-inner -->
     `;
 
     wireGrid();

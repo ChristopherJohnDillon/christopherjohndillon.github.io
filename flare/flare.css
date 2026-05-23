@@ -419,15 +419,19 @@ a:hover { color: var(--accent-hot); }
   padding: 0 1rem;
   height: var(--topbar-h);
   border-bottom: 1px solid var(--rule);
+  overflow: hidden;
 }
 .sidebar .sb-toggle {
-  background: transparent; border: none; color: var(--mute);
+  background: transparent; border: none; color: var(--instrument);
   cursor: pointer; padding: 6px; border-radius: 6px;
-  display: inline-flex; align-items: center;
+  display: inline-flex; align-items: center; justify-content: center;
+  flex: 0 0 auto;
 }
-.sidebar .sb-toggle:hover { color: var(--instrument); background: var(--surface-alt); }
+.sidebar .sb-toggle:hover { color: var(--accent); background: var(--surface-alt); }
 .sidebar .sb-body { flex: 1; padding: 1rem 0; }
-.app-shell.collapsed .sidebar .sb-header .flare-wordmark span { display: none; }
+/* When collapsed: hide the wordmark entirely (image + text), only show the toggle */
+.app-shell.collapsed .sidebar .sb-header { padding: 0; justify-content: center; }
+.app-shell.collapsed .sidebar .sb-header .flare-wordmark { display: none; }
 
 .nav-group { margin-bottom: 0.5rem; }
 .nav-group .group-label {
@@ -800,6 +804,53 @@ select.st-select { appearance: none; -webkit-appearance: none; background-image:
   box-shadow: 0 1px 2px rgba(0,0,0,0.25);
 }
 
+/* Inline filter row — labels alongside pill radios (Customer Dashboard style) */
+.filter-inline { display: flex; align-items: center; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 1rem; }
+.inline-label { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mute); }
+
+/* Smaller pill option used in inline rows */
+.pill-radio .pill-opt.pill-sm { min-width: 80px; height: 40px; font-size: 0.9rem; padding: 0 16px; border-width: 2px; }
+.pill-radio .pill-opt.pill-sm.active { border-width: 2px; }
+
+/* View-picker grid — large outlined pills with icons (Customer Dashboard's "Choose a detailed view") */
+.view-grid {
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.85rem;
+}
+.view-grid .pill-view {
+  min-width: 0;
+  width: 100%;
+  border-radius: 10px;
+  height: auto;
+  min-height: 60px;
+  padding: 0.8rem 1rem;
+  display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 0.5rem;
+  border-width: 2px;
+  font-size: 0.9rem;
+  text-align: center;
+  white-space: normal;
+  line-height: 1.25;
+}
+.view-grid .pill-view .ms-sm { font-size: 18px; }
+
+/* Inline checkbox */
+.checkbox-inline {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.9rem; color: var(--read); cursor: pointer; font-weight: 500;
+}
+.checkbox-inline input[type="checkbox"] {
+  width: 18px; height: 18px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+/* Customer-dashboard summary table — accent column headers */
+.tbl-customer .accent-h { color: var(--accent); }
+.tbl-customer .yoy { font-size: 0.78rem; font-weight: 500; margin-top: 0.15rem; }
+.tbl-customer .yoy.pos { color: var(--positive); }
+.tbl-customer .yoy.neg { color: var(--critical); }
+
 /* Expander — Streamlit's collapsed-by-default section */
 .expander {
   background: var(--surface);
@@ -979,16 +1030,45 @@ select {
 /* ============================================================
    RESPONSIVE — desktop-first
    ============================================================ */
-@media (max-width: 1100px) {
-  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 1200px) {
+  .view-grid { grid-template-columns: repeat(3, 1fr); }
+  .filter-row { grid-template-columns: repeat(2, 1fr); }
+  .main { padding: 4rem 3rem 5rem; }
+}
+@media (max-width: 1000px) {
+  .kpi-grid, .kpi-grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
+  .metric-row { grid-template-columns: repeat(2, 1fr); }
   .two-col, .dd-layout, .warehouse-wrap, .bundle-layout, .stats-cmp, .home-intro, .dir-grid { grid-template-columns: 1fr; }
   .landing-grid { grid-template-columns: 1fr 1fr; }
+  .main h1.page-title { font-size: 2.6rem; }
+  .app-shell { grid-template-columns: var(--sidebar-collapsed-w) 1fr; }
+  .app-shell .sidebar .sb-header { padding: 0; justify-content: center; }
+  .app-shell .sidebar .sb-header .flare-wordmark { display: none; }
+  .app-shell .nav-item { justify-content: center; padding: 0.55rem 0; }
+  .app-shell .nav-item .item-label { display: none; }
+  .app-shell .group-label .label-text { display: none; }
+  .app-shell .sb-foot { display: none; }
 }
 @media (max-width: 760px) {
   .app-shell { grid-template-columns: 0 1fr; grid-template-areas: "topbar topbar" "main main"; }
   .sidebar { display: none; }
+  .topbar { padding: 0 0.85rem; }
+  .topbar .crumbs { font-size: 0.78rem; }
+  .topbar .user-badge { display: none; }
+  .business-switcher { padding: 0.35rem 0.6rem; font-size: 0.8rem; }
   .landing-grid { grid-template-columns: 1fr; }
-  .main { padding: 1.25rem 1rem 3rem; }
+  .main { padding: 1.5rem 1.1rem 3rem; }
   .landing-inner { padding: 2.5rem 1.25rem 4rem; }
   .landing h1 { font-size: 2.1rem; }
+  .main h1.page-title { font-size: 1.9rem; }
+  .kpi-grid, .kpi-grid.cols-4 { grid-template-columns: 1fr; }
+  .metric-row { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .metric .value { font-size: 2.1rem; }
+  .filter-row, .filter-row.cols-2 { grid-template-columns: 1fr; }
+  .view-grid { grid-template-columns: 1fr 1fr; }
+  .pill-radio .pill-opt { min-width: 70px; height: 40px; font-size: 0.85rem; padding: 0 14px; }
+  .kpi-card { min-height: 160px; padding: 18px 14px; }
+  .kpi-card h1 { font-size: 2rem; }
+  table.tbl, table.tbl-flare { font-size: 0.78rem; }
+  .tbl thead th, .tbl tbody td, .tbl-flare td { padding: 0.5rem 0.55rem; }
 }

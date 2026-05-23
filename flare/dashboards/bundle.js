@@ -1,166 +1,162 @@
 /* ============================================================
-   FLARE — Customer Intelligence
-   4 metrics + affinity matrix + top-pairs list.
+   FLARE — Customer Intelligence (was bundle.js)
+   Matches real Customer_Dashboard.py layout pattern.
    ============================================================ */
 window.FlareDashboards = window.FlareDashboards || {};
 
 window.FlareDashboards.bundle = function (main, businessKey) {
   const biz = FlareData.business(businessKey);
   const data = FlareData.bundle(biz);
-  let selectedI = 0, selectedJ = 1;
 
-  const topLift = Math.max(...data.topPairs.map((p) => p.lift));
-  const avgLift = data.topPairs.reduce((s, p) => s + p.lift, 0) / data.topPairs.length;
-  const crossShop = 0.34 + (data.skus.length % 9) / 100;
-  const avgBasket = 2.1 + (data.skus[0].avgBasket / 2);
+  let division = "All";
+  let subDiv = "All";
+  let view = "Overview";
 
   function render() {
+    const periodStart = "01 Apr 2026";
+    const periodEnd = "30 Apr 2026";
+
     main.innerHTML = `
       <div class="main-inner">
-      <h1 class="page-title">Customer Intelligence</h1>
-      <div class="page-subtitle">Basket affinity, cross-shopping, and bundle suggestions — ${biz.name}.</div>
-
-      <div class="metric-row">
-        ${mb("SKUs analysed", `${data.skus.length}`, "co-purchase pairs", "neutral")}
-        ${mb("Top lift", `${topLift.toFixed(2)}×`, "strongest pair", "positive")}
-        ${mb("Avg lift (top 10)", `${avgLift.toFixed(2)}×`, "across bundle list", "neutral")}
-        ${mb("Cross-shop rate", `${(crossShop*100).toFixed(0)}%`, "multi-category baskets", "positive")}
-      </div>
-
-      <hr class="divider" />
-
-      <div class="section-head">
-        <h2>Co-purchase affinity matrix</h2>
-        <div class="meta">Lift > 1.0 = bought together more often than chance. Click a cell to focus a pair.</div>
-      </div>
-
-      <div class="bundle-layout">
-        <div class="bundle-matrix">${matrixSvg(data)}</div>
-        <div class="bundle-pairs">
-          <div class="label" style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mute); margin-bottom: 0.6rem;">Top bundle suggestions</div>
-          <div id="topPairs">${data.topPairs.map(pairRow).join("")}</div>
-
-          <div class="label" style="margin-top: 1.25rem;">Focused pair</div>
-          <div id="focusedPair" style="margin-top: 0.4rem;">${focusedPairHtml(data, selectedI, selectedJ)}</div>
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; margin-bottom: 1rem;">
+          <div>
+            <h1 class="page-title">Customer Analysis Dashboard</h1>
+            <div class="page-subtitle">E-Commerce &amp; Phone customer segmentation, churn prevention &amp; acquisition analysis</div>
+          </div>
+          <div style="flex: 0 0 auto; padding-top: 0.6rem; display: flex; align-items: center; gap: 0.85rem;">
+            <img src="/flare/flare-logo.svg" alt="" style="width: 48px; height: 42px;" />
+            <div style="font-weight: 800; font-size: 1.4rem; letter-spacing: 0.06em; color: var(--white); line-height: 1.1;">
+              HELIOS
+              <div style="font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; color: var(--mute);">BRANDS CO.</div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="card" style="margin-top: 1rem; font-size: 0.9rem; color: var(--read);">
-        <strong style="color: var(--instrument);">How lift is read.</strong> Lift compares observed co-purchase frequency to what chance alone would predict. Real FLARE computes this per business on rolling 90-day baskets with minimum-support thresholds before publishing a recommendation.
-      </div>
+        <hr class="divider" />
+
+        <div class="filter-inline">
+          <span class="inline-label">DIVISION:</span>
+          <div class="pill-radio" id="divRadio">
+            ${["All", "EU", "US"].map((d) => `<button class="pill-opt pill-sm ${d === division ? "active" : ""}" data-d="${d}">${d}</button>`).join("")}
+          </div>
+          <span class="inline-label" style="margin-left: 1.5rem;">SUB-DIVISION:</span>
+          <div class="pill-radio" id="subRadio">
+            ${["All", "Outdoor", "Home", "Stationery", "Coffee"].map((d) => `<button class="pill-opt pill-sm ${d === subDiv ? "active" : ""}" data-d="${d}">${d}</button>`).join("")}
+          </div>
+          <label class="checkbox-inline" style="margin-left: 1.5rem;">
+            <input type="checkbox" /> Include pre-2024 in base
+          </label>
+        </div>
+
+        <div class="expander" style="margin: 1.25rem 0 1.5rem;">
+          <div class="expander-head"><span class="ms ms-sm">chevron_right</span> Filters</div>
+        </div>
+
+        <div style="margin-bottom: 1.2rem;"><strong style="color: var(--white);">Prior Month</strong> · ${periodStart} – ${periodEnd} · Channel: <strong style="color: var(--white);">Combined (E-Commerce &amp; Phone)</strong></div>
+
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+          <button class="pill-btn primary" style="padding: 1.1rem; font-size: 1.05rem; justify-content: center; border-radius: 10px;">
+            <span class="ms ms-sm">dashboard</span>
+            <span>Customer Analytics Overview</span>
+          </button>
+          <button class="pill-btn" style="padding: 1.1rem; font-size: 1.05rem; justify-content: center; border-radius: 10px;">
+            <span class="ms ms-sm">menu_book</span>
+            <span>Glossary &amp; Definitions</span>
+          </button>
+        </div>
+
+        <div style="color: var(--read); font-size: 0.92rem; margin-bottom: 0.7rem;">Choose a detailed view:</div>
+        <div class="pill-radio view-grid" style="margin-bottom: 2rem;">
+          ${[
+            { v: "Lifecycle", icon: "autorenew" },
+            { v: "Retention and Churn", icon: "person_add" },
+            { v: "Channel Attribution", icon: "share" },
+            { v: "Customers at Risk", icon: "shield" },
+            { v: "Cross-Shopping", icon: "swap_horiz" },
+            { v: "Basket Analysis", icon: "shopping_basket" },
+          ].map((it) => `
+            <button class="pill-opt pill-view ${view === it.v ? "active" : ""}" data-v="${it.v}">
+              <span class="ms ms-sm">${it.icon}</span>
+              <span>${it.v.includes("and") ? `Customer ${it.v}` : (it.v === "Lifecycle" ? "Customer Lifecycle" : it.v)}</span>
+            </button>
+          `).join("")}
+        </div>
+
+        <hr class="divider" />
+
+        <label class="checkbox-inline" style="margin-bottom: 0.85rem;">
+          <input type="checkbox" /> Show detailed segment breakdown
+        </label>
+
+        <div style="color: var(--read); font-size: 0.9rem; margin-bottom: 1rem;">
+          <strong style="color: var(--white);">${periodStart}</strong> — <strong style="color: var(--white);">${periodEnd}</strong>
+          vs same period ly: 01 Apr 2025 — 30 Apr 2025 ·
+          Values with <span style="color: var(--positive); font-weight: 600;">green</span>/<span style="color: var(--critical); font-weight: 600;">red</span> YoY % beneath
+        </div>
+
+        <h2 style="font-size: 1.4rem; margin-bottom: 0.4rem;">Summary <span style="color: var(--mute); font-weight: 400; font-size: 0.9rem; margin-left: 0.5rem;">Click any column header to view its historical trend</span></h2>
+
+        <table class="tbl tbl-flare tbl-customer" style="margin-top: 1rem;">
+          <thead><tr>
+            <th>Company</th>
+            <th>Segment</th>
+            <th class="num accent-h">Cust</th>
+            <th class="num">% Base</th>
+            <th class="num accent-h">Orders</th>
+            <th class="num accent-h">Revenue</th>
+            <th class="num accent-h">Margin</th>
+            <th class="num accent-h">Margin %</th>
+            <th class="num">SPC</th>
+            <th class="num">AOV</th>
+            <th class="num">Freq</th>
+          </tr></thead>
+          <tbody>
+            ${segmentRows()}
+          </tbody>
+        </table>
       </div>
     `;
 
-    wireMatrix();
+    document.querySelectorAll("#divRadio .pill-opt").forEach((b) => b.addEventListener("click", () => { division = b.getAttribute("data-d"); render(); }));
+    document.querySelectorAll("#subRadio .pill-opt").forEach((b) => b.addEventListener("click", () => { subDiv = b.getAttribute("data-d"); render(); }));
+    document.querySelectorAll(".view-grid .pill-opt").forEach((b) => b.addEventListener("click", () => { view = b.getAttribute("data-v"); render(); }));
   }
 
-  function matrixSvg(data) {
-    const n = data.skus.length;
-    const cellSize = 36, gap = 2, padX = 80, padY = 80;
-    const w = padX + n * (cellSize + gap);
-    const h = padY + n * (cellSize + gap);
-
-    let cells = "";
-    for (let i = 0; i < n; i++) {
-      for (let j = 0; j < n; j++) {
-        const v = data.matrix[i][j];
-        const x = padX + j * (cellSize + gap);
-        const y = padY + i * (cellSize + gap);
-        if (v === null) {
-          cells += `<rect x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" rx="3" fill="rgba(232,236,242,0.04)" />`;
-          continue;
-        }
-        const norm = Math.min(1, Math.max(0, (v - 0.6) / 2.8));
-        const a = 0.08 + norm * 0.92;
-        const fill = `rgba(255,79,0,${a.toFixed(2)})`;
-        const sel = (i === selectedI && j === selectedJ) || (i === selectedJ && j === selectedI);
-        const strokeAttr = sel ? `stroke="#FF7A2E" stroke-width="2"` : `stroke="rgba(255,255,255,0.04)"`;
-        cells += `<rect data-i="${i}" data-j="${j}" x="${x}" y="${y}" width="${cellSize}" height="${cellSize}" rx="3" fill="${fill}" ${strokeAttr} style="cursor:pointer" />`;
+  function segmentRows() {
+    const segments = ["New", "Reactivated", "Loyal", "Lapsing", "Churned"];
+    const out = [];
+    for (const b of FlareData.businesses.filter((x) => x.key !== "group")) {
+      out.push(`<tr><td colspan="11" class="cat-sep">${b.name.toUpperCase()}</td></tr>`);
+      for (const seg of segments) {
+        const r1 = Math.sin(b.seed + seg.length * 3.7) * 0.5 + 0.5;
+        const cust = Math.floor(800 + r1 * 8000);
+        const pct = Math.floor(8 + r1 * 22);
+        const orders = Math.floor(cust * (1.1 + r1 * 0.9));
+        const aov = 35 + r1 * 60;
+        const rev = orders * aov;
+        const marginPct = b.gmTarget + (r1 - 0.5) * 6;
+        const margin = rev * marginPct / 100;
+        const spc = rev / cust;
+        const freq = orders / cust;
+        const yoy = (r1 - 0.45) * 30;
+        const yoyCls = yoy >= 0 ? "pos" : "neg";
+        out.push(`<tr>
+          <td></td>
+          <td>${seg}</td>
+          <td class="num">${cust.toLocaleString()}<div class="yoy ${yoyCls}">${yoy >= 0 ? "+" : ""}${yoy.toFixed(1)}%</div></td>
+          <td class="num">${pct}%</td>
+          <td class="num">${orders.toLocaleString()}<div class="yoy ${yoyCls}">${yoy >= 0 ? "+" : ""}${(yoy * 0.9).toFixed(1)}%</div></td>
+          <td class="num">£${(rev/1000).toFixed(1)}k<div class="yoy ${yoyCls}">${yoy >= 0 ? "+" : ""}${(yoy * 0.8).toFixed(1)}%</div></td>
+          <td class="num">£${(margin/1000).toFixed(1)}k<div class="yoy ${yoyCls}">${yoy >= 0 ? "+" : ""}${(yoy * 0.7).toFixed(1)}%</div></td>
+          <td class="num">${marginPct.toFixed(1)}%<div class="yoy ${yoyCls}">${yoy >= 0 ? "+" : ""}${(yoy * 0.1).toFixed(1)}pp</div></td>
+          <td class="num">£${spc.toFixed(0)}</td>
+          <td class="num">£${aov.toFixed(0)}</td>
+          <td class="num">${freq.toFixed(2)}</td>
+        </tr>`);
       }
     }
-    let rowLabels = "";
-    for (let i = 0; i < n; i++) {
-      const y = padY + i * (cellSize + gap) + cellSize / 2 + 4;
-      rowLabels += `<text x="${padX - 8}" y="${y}" text-anchor="end" fill="#B8C0D0" font-family="Inter, sans-serif" font-weight="500" font-size="11">${data.skus[i].sku}</text>`;
-    }
-    let colLabels = "";
-    for (let j = 0; j < n; j++) {
-      const x = padX + j * (cellSize + gap) + cellSize / 2;
-      const y = padY - 8;
-      colLabels += `<text x="${x}" y="${y}" text-anchor="start" fill="#B8C0D0" font-family="Inter, sans-serif" font-weight="500" font-size="11" transform="rotate(-50 ${x} ${y})">${data.skus[j].sku}</text>`;
-    }
-    return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid meet">${cells}${rowLabels}${colLabels}</svg>`;
-  }
-
-  function wireMatrix() {
-    document.querySelectorAll(".bundle-matrix rect[data-i]").forEach((rect) => {
-      rect.addEventListener("mouseenter", (e) => {
-        const i = parseInt(rect.getAttribute("data-i"), 10);
-        const j = parseInt(rect.getAttribute("data-j"), 10);
-        const lift = data.matrix[i][j];
-        FlareTooltip.show(
-          `<span class="l">A</span>${data.skus[i].sku}<br>
-           <span class="l">B</span>${data.skus[j].sku}<br>
-           <span class="l">Lift</span>${lift.toFixed(2)}×`,
-          e.clientX, e.clientY
-        );
-      });
-      rect.addEventListener("mousemove", (e) => FlareTooltip.move(e.clientX, e.clientY));
-      rect.addEventListener("mouseleave", () => FlareTooltip.hide());
-      rect.addEventListener("click", () => {
-        selectedI = parseInt(rect.getAttribute("data-i"), 10);
-        selectedJ = parseInt(rect.getAttribute("data-j"), 10);
-        document.getElementById("focusedPair").innerHTML = focusedPairHtml(data, selectedI, selectedJ);
-        document.querySelectorAll(".bundle-matrix rect[data-i]").forEach((rr) => {
-          rr.setAttribute("stroke", "rgba(255,255,255,0.04)");
-          rr.removeAttribute("stroke-width");
-        });
-        document.querySelectorAll(`.bundle-matrix rect[data-i="${selectedI}"][data-j="${selectedJ}"], .bundle-matrix rect[data-i="${selectedJ}"][data-j="${selectedI}"]`).forEach((rr) => {
-          rr.setAttribute("stroke", "#FF7A2E");
-          rr.setAttribute("stroke-width", "2");
-        });
-      });
-    });
-  }
-
-  function pairRow(p) {
-    return `
-      <div class="pair-row">
-        <div class="skus">${p.a.sku} <span style="color: var(--dim);">+</span> ${p.b.sku}</div>
-        <div class="lift">${p.lift.toFixed(2)}× <span style="color: var(--mute); font-weight: 400; margin-left: 0.4rem;">${p.freq}/mo</span></div>
-      </div>
-    `;
-  }
-
-  function focusedPairHtml(data, i, j) {
-    if (i === j) return `<div class="meta">Pick a non-diagonal cell.</div>`;
-    const a = data.skus[i], b = data.skus[j];
-    const lift = data.matrix[i][j];
-    const baseFreq = Math.round((lift * (a.velocity + b.velocity)) / 2);
-    return `
-      <div style="background: var(--surface-alt); padding: 0.85rem 1rem; border-radius: 10px;">
-        <div style="font-size: 0.85rem; color: var(--read); line-height: 1.55;">
-          <strong style="color: var(--instrument);">${a.sku}</strong> ${a.name}<br>
-          <span style="color: var(--dim);">+</span> <strong style="color: var(--instrument);">${b.sku}</strong> ${b.name}
-        </div>
-        <div style="margin-top: 0.7rem; display: flex; gap: 1rem; font-size: 0.85rem;">
-          <span><span style="color: var(--mute);">Lift</span> <strong style="color: var(--accent); margin-left: 0.3rem;">${lift.toFixed(2)}×</strong></span>
-          <span><span style="color: var(--mute);">Est. baskets</span> <strong style="color: var(--instrument); margin-left: 0.3rem;">${baseFreq}/mo</strong></span>
-        </div>
-      </div>
-    `;
+    return out.join("");
   }
 
   render();
 };
-
-function mb(label, value, delta, cls) {
-  const arrow = cls === "positive" ? "▲" : cls === "negative" ? "▼" : "";
-  return `
-    <div class="metric">
-      <div class="label">${label}</div>
-      <div class="value">${value}</div>
-      <div class="delta ${cls || "neutral"}"><span class="arrow">${arrow}</span>${delta}</div>
-    </div>
-  `;
-}

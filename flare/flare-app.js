@@ -27,14 +27,16 @@
       group: "Operations",
       icon: "settings",
       items: [
-        { route: "#/warehouse", label: "Warehouse Heatmap", icon: "warehouse", mod: "warehouse" },
+        { route: "#/otif",      label: "OTIF Tracker",      icon: "local_shipping", mod: "otif" },
+        { route: "#/warehouse", label: "Warehouse Heatmap", icon: "warehouse",      mod: "warehouse" },
       ],
     },
     {
       group: "Customer",
       icon: "sentiment_satisfied",
       items: [
-        { route: "#/bundle", label: "Customer Intelligence", icon: "people_alt", mod: "bundle" },
+        { route: "#/bundle", label: "Customer Intelligence",   icon: "people_alt", mod: "bundle" },
+        { route: "#/nps",    label: "Delighted NPS Tracker",   icon: "thumb_up",   mod: "nps" },
       ],
     },
     {
@@ -62,7 +64,7 @@
   const state = {
     business: localStorage.getItem("flare:business") || "group",
     route: window.location.hash in ROUTES ? window.location.hash : DEFAULT_ROUTE,
-    collapsed: localStorage.getItem("flare:collapsed") !== "0",  /* default = collapsed, like real FLARE */
+    collapsed: localStorage.getItem("flare:collapsed") === "1",  /* default = expanded so visitors can see nav */
   };
 
   /* ============================================================
@@ -166,7 +168,8 @@
     renderSidebar();
     const meta = ROUTES[state.route];
     if (meta) {
-      document.getElementById("crumbSection").textContent = `${meta.group} · ${meta.label}`;
+      const crumb = meta.group === meta.label ? meta.label : `${meta.group} · ${meta.label}`;
+      document.getElementById("crumbSection").textContent = crumb;
     }
     const main = document.getElementById("main");
     main.innerHTML = "";

@@ -27,10 +27,11 @@ window.FlareDashboards.exec = function (main, businessKey) {
             <h1 class="page-title">Executive Scorecard</h1>
             <div class="page-subtitle">A concise overview of key business performance metrics. Click any card to view historical trends &amp; metric explanations.</div>
           </div>
-          <div style="flex: 0 0 auto; padding-top: 0.6rem;">
-            <div style="font-weight: 800; font-size: 1.4rem; letter-spacing: 0.06em; color: var(--white);">
-              <span style="color: var(--accent); margin-right: 0.5rem;">◢◣</span>HELIOS<br>
-              <span style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; color: var(--mute);">BRANDS CO.</span>
+          <div style="flex: 0 0 auto; padding-top: 0.6rem; display: flex; align-items: center; gap: 0.85rem;">
+            <img src="/flare/flare-logo.svg" alt="" style="width: 48px; height: 42px;" />
+            <div style="font-weight: 800; font-size: 1.4rem; letter-spacing: 0.06em; color: var(--white); line-height: 1.1;">
+              HELIOS
+              <div style="font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; color: var(--mute);">BRANDS CO.</div>
             </div>
           </div>
         </div>
