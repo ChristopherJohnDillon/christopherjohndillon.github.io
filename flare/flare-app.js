@@ -46,6 +46,24 @@
         { route: "#/exec", label: "Executive Scorecard", icon: "leaderboard", mod: "exec" },
       ],
     },
+    {
+      group: "AI",
+      icon: "auto_awesome",
+      items: [
+        { route: "#/ask",      label: "Ask FLARE",            icon: "forum",      mod: "ask" },
+        { route: "#/docintel", label: "Document Intelligence", icon: "psychology", mod: "docintel" },
+      ],
+    },
+    {
+      group: "Cross-Industry",
+      icon: "explore",
+      items: [
+        { route: "#/oee",   label: "Manufacturing OEE",   icon: "precision_manufacturing", mod: "oee" },
+        { route: "#/grid",  label: "Grid Load",           icon: "bolt",                    mod: "grid" },
+        { route: "#/trial", label: "Clinical Trial",      icon: "biotech",                 mod: "trial" },
+        { route: "#/fleet", label: "Fleet Operations",    icon: "local_shipping",          mod: "fleet" },
+      ],
+    },
   ];
 
   /* Flatten routes for lookup */

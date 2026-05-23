@@ -49,6 +49,16 @@ window.FlareDashboards.home = function (main) {
     { name: "L10 EOS Scorecards", icon: "speed", items: [
       { name: "Executive Scorecard", desc: "Traffic-light KPI scorecard — company-wide revenue, margins, OTIF, and customer metrics.", route: "#/exec" },
     ] },
+    { name: "AI", icon: "auto_awesome", items: [
+      { name: "Ask FLARE", desc: "Chat with your data. Self-hosted local LLM — nothing leaves the warehouse network.", route: "#/ask" },
+      { name: "Document Intelligence", desc: "Local-LLM classification, tagging, and routing for support tickets, contracts, and unstructured docs.", route: "#/docintel" },
+    ] },
+    { name: "Cross-Industry Demos", icon: "explore", items: [
+      { name: "Manufacturing OEE", desc: "Overall Equipment Effectiveness across production lines, downtime breakdown, scrap rate.", route: "#/oee" },
+      { name: "Grid Load &amp; Capacity", desc: "Regional substation telemetry, demand curve, renewable mix, outage tracking.", route: "#/grid" },
+      { name: "Clinical Trial Monitor", desc: "Enrolment funnel, site performance, adverse event tracking, protocol deviation review.", route: "#/trial" },
+      { name: "Fleet Operations", desc: "Live vehicle telemetry, route efficiency, fuel cost per mile, driver-hour compliance.", route: "#/fleet" },
+    ] },
   ];
 
   dir.innerHTML = groups.map((g) => `
