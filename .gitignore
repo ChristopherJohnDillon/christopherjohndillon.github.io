@@ -1,3 +1,7 @@
 _site/
 .DS_store
 .jekyll-cache/
+
+# Auto-generated main CV PDF — served from GitHub release "cv-latest" (see .github/workflows/generate-cv-pdf.yml)
+# The Foods Connected variant is NOT auto-generated and stays tracked.
+cv/Christopher_Dillon.pdf
