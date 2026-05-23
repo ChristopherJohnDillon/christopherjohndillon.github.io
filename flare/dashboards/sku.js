@@ -1,6 +1,12 @@
 /* ============================================================
    FLARE — Product Margin
-   Mirrors real Product_Margin.py: filter row + 4 metrics + table.
+   Matches real Product_Margin.py screenshot:
+   - Title + subtitle + data-as-of caption
+   - 4-col selectbox filter row (Currency / Period / Division / View)
+   - 2-col multiselect (Company / Channel)
+   - Date range line
+   - 4 metrics with green pill deltas (last one no delta)
+   - Section header + tracker table
    ============================================================ */
 window.FlareDashboards = window.FlareDashboards || {};
 
@@ -9,141 +15,236 @@ window.FlareDashboards.sku = function (main, businessKey) {
   const skus = FlareData.skus(biz);
   const cats = FlareData.categories(businessKey);
 
-  let sortKey = "revenueYTD";
-  let sortDir = "desc";
-  let searchText = "";
-  let selectedCat = "All";
+  // Local filter state
+  let currency = "GBP";
+  let period = "MTD";
+  let division = "All";
+  let view = "Totals";
+  let selectedCats = ["All"];
+  let selectedChans = ["All"];
 
   function filtered() {
-    let xs = skus.slice();
-    if (selectedCat && selectedCat !== "All") xs = xs.filter((s) => s.category === selectedCat);
-    if (searchText) {
-      const q = searchText.toLowerCase();
-      xs = xs.filter((s) => s.sku.toLowerCase().includes(q) || s.name.toLowerCase().includes(q));
-    }
-    xs.sort((a, b) => {
-      const av = a[sortKey], bv = b[sortKey];
-      if (typeof av === "string") return sortDir === "asc" ? av.localeCompare(bv) : bv.localeCompare(av);
-      return sortDir === "asc" ? av - bv : bv - av;
-    });
-    return xs;
+    if (selectedCats.includes("All")) return skus;
+    return skus.filter((s) => selectedCats.includes(s.category));
   }
 
-  function metrics() {
+  function totals() {
     const xs = filtered();
     const totalRev = xs.reduce((s, x) => s + x.revenueYTD, 0);
     const avgMargin = xs.length ? xs.reduce((s, x) => s + x.marginPct, 0) / xs.length : 0;
-    const avgVel = xs.length ? xs.reduce((s, x) => s + x.velocity, 0) / xs.length : 0;
-    const stockouts = xs.filter((x) => x.lastStockoutDaysAgo !== null && x.lastStockoutDaysAgo < 14).length;
-    return { totalRev, avgMargin, avgVel, stockouts, n: xs.length };
+    const marginPounds = totalRev * avgMargin / 100;
+    const budgetRev = totalRev * 0.93;
+    const budgetMarginPct = biz.gmTarget;
+    const revVsBudget = totalRev - budgetRev;
+    const marginVsBudget = marginPounds - (budgetRev * budgetMarginPct / 100);
+    const attainment = budgetRev ? (totalRev / budgetRev) * 100 : 100;
+    return { totalRev, avgMargin, marginPounds, budgetMarginPct, revVsBudget, marginVsBudget, attainment, n: xs.length };
   }
 
   function render() {
-    const m = metrics();
+    const t = totals();
+    const dataAsOf = new Date().toLocaleString("en-GB", { year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" }).replace(",", "");
     main.innerHTML = `
-      <h1 class="page-title">Product Margin</h1>
-      <div class="page-subtitle">Per-business, per-channel margin vs budget targets — ${biz.name}.</div>
+      <div class="main-inner">
+        <h1 class="page-title">Product Margin</h1>
+        <div class="page-subtitle">Per-business, per-channel margin vs budget targets</div>
+        <div class="data-as-of">Data as of ${dataAsOf}</div>
 
-      <div class="filter-bar">
-        <select id="catSel">
-          <option value="All">All categories</option>
-          ${cats.map((c) => `<option value="${c}" ${c === selectedCat ? "selected" : ""}>${c}</option>`).join("")}
-        </select>
-        <input class="search-input" id="skuSearch" placeholder="Search SKU code or name…" value="${escapeHtml(searchText)}" />
-      </div>
+        <div class="filter-row">
+          <div class="field">
+            <label class="field-label">Currency</label>
+            <select class="st-select" id="fCurrency">
+              <option ${currency === "GBP" ? "selected" : ""}>GBP</option>
+              <option ${currency === "USD" ? "selected" : ""}>USD</option>
+              <option ${currency === "EUR" ? "selected" : ""}>EUR</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label">Period</label>
+            <select class="st-select" id="fPeriod">
+              ${["MTD", "YTD", "Yesterday", "Last 30 Days", "Last 90 Days", "Last Month"].map((p) => `<option ${period === p ? "selected" : ""}>${p}</option>`).join("")}
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label">Division</label>
+            <select class="st-select" id="fDiv">
+              ${["All", ...FlareData.businesses.filter((b) => b.key !== "group").map((b) => b.name)].map((d) => `<option ${division === d ? "selected" : ""}>${d}</option>`).join("")}
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label">View</label>
+            <select class="st-select" id="fView">
+              ${["Totals", "Channels"].map((v) => `<option ${view === v ? "selected" : ""}>${v}</option>`).join("")}
+            </select>
+          </div>
+        </div>
 
-      <div class="metric-row">
-        ${metric("Revenue YTD",   `£${(m.totalRev/1000).toFixed(0)}k`, `${m.n} SKUs in view`, "neutral")}
-        ${metric("Avg margin",    `${m.avgMargin.toFixed(1)}%`,         `vs ${biz.gmTarget}% target`, m.avgMargin >= biz.gmTarget ? "positive" : "negative")}
-        ${metric("Avg velocity",  `${m.avgVel.toFixed(0)}/w`,           "units per SKU per week", "neutral")}
-        ${metric("Active stockouts", `${m.stockouts}`,                  m.stockouts === 0 ? "none in 14d" : "in last 14d", m.stockouts === 0 ? "positive" : "negative")}
-      </div>
+        <div class="filter-row cols-2">
+          <div class="field">
+            <label class="field-label">Company</label>
+            <div class="st-multi">
+              ${selectedCats.map(chipHtml).join("")}
+            </div>
+          </div>
+          <div class="field">
+            <label class="field-label">Channel</label>
+            <div class="st-multi">
+              ${selectedChans.map(chipHtml).join("")}
+            </div>
+          </div>
+        </div>
 
-      <hr class="divider" />
+        <div class="data-as-of">${periodDates(period)}</div>
 
-      <div class="section-head">
-        <h2>Product Margin Tracker</h2>
-        <div class="meta">Sortable — click any column header. <span style="color: var(--positive);">Green</span> over target · <span style="color: var(--critical);">red</span> under target.</div>
-      </div>
+        <div class="metric-row">
+          ${metric("Margin " + symbol(currency), fmtMoney(t.marginPounds, currency), `${arrow(t.marginVsBudget)} ${fmtMoney(Math.abs(t.marginVsBudget), currency)} vs budget`, t.marginVsBudget >= 0 ? "positive" : "negative")}
+          ${metric("Margin %", `${t.avgMargin.toFixed(1)}%`, `${arrow(t.avgMargin - t.budgetMarginPct)} ${(t.avgMargin - t.budgetMarginPct >= 0 ? "+" : "")}${(t.avgMargin - t.budgetMarginPct).toFixed(1)}% vs target`, t.avgMargin >= t.budgetMarginPct ? "positive" : "negative")}
+          ${metric("Revenue", fmtMoney(t.totalRev, currency), `${arrow(t.revVsBudget)} ${fmtMoney(Math.abs(t.revVsBudget), currency)} vs budget`, t.revVsBudget >= 0 ? "positive" : "negative")}
+          ${metric("Rev Attainment", `${t.attainment.toFixed(1)}%`, "", "neutral", false)}
+        </div>
 
-      <div class="card" style="padding: 0; overflow: hidden;">
-        <div style="max-height: 640px; overflow-y: auto;">
-          <table class="tbl">
+        <hr class="divider" />
+
+        <div style="margin-bottom: 1rem;">
+          <span style="font-size: 1.5rem; font-weight: 700; color: var(--white);">Product Margin Tracker</span>
+          <span style="color: var(--mute); font-size: 0.95rem; font-weight: 400;"> — Actual margin vs target by business &amp; channel</span>
+          <div style="margin-top: 0.45rem; font-size: 0.85rem;">
+            <span style="color: var(--positive); font-weight: 500;">Green = over target</span>
+            <span style="color: var(--mute); margin: 0 0.4rem;">·</span>
+            <span style="color: var(--critical); font-weight: 500;">Red = under target</span>
+          </div>
+        </div>
+
+        <div style="overflow-x: auto;">
+          <table class="tbl tbl-flare">
             <thead>
               <tr>
-                ${col("sku", "SKU")}
-                ${col("name", "Name")}
-                ${col("category", "Category")}
-                ${col("marginPct", "Margin")}
-                ${col("velocity", "Velocity")}
-                ${col("daysCover", "Cover")}
-                ${col("revenueYTD", "Rev YTD")}
-                <th>Status</th>
+                <th>Business</th>
+                <th>Channel</th>
+                <th class="num">Rev Actual</th>
+                <th class="num">Rev Budget</th>
+                <th class="num">Margin $ Actual</th>
+                <th class="num">Margin $ Budget</th>
+                <th class="num">Margin $ Var</th>
+                <th class="num">Margin % Actual</th>
+                <th class="num">Margin % Target</th>
+                <th class="num">Margin % Var</th>
               </tr>
             </thead>
-            <tbody id="skuBody">
-              ${filtered().map(rowHtml).join("")}
-            </tbody>
+            <tbody>${trackerRows(skus, biz, currency)}</tbody>
           </table>
         </div>
       </div>
     `;
 
-    document.getElementById("catSel").addEventListener("change", (e) => { selectedCat = e.target.value; render(); });
-    document.getElementById("skuSearch").addEventListener("input", (e) => { searchText = e.target.value; updateTable(); });
-    document.querySelectorAll("th[data-sort]").forEach((th) => {
-      th.addEventListener("click", () => {
-        const k = th.getAttribute("data-sort");
-        if (sortKey === k) sortDir = sortDir === "asc" ? "desc" : "asc";
-        else { sortKey = k; sortDir = "desc"; }
-        updateTable();
+    // Wire up selects
+    ["fCurrency", "fPeriod", "fDiv", "fView"].forEach((id, i) => {
+      document.getElementById(id).addEventListener("change", (e) => {
+        if (i === 0) currency = e.target.value;
+        if (i === 1) period = e.target.value;
+        if (i === 2) division = e.target.value;
+        if (i === 3) view = e.target.value;
+        render();
       });
     });
   }
 
-  function col(key, label) {
-    const ind = sortKey === key ? (sortDir === "asc" ? "▲" : "▼") : "";
-    return `<th data-sort="${key}">${label}<span class="sort-ind">${ind}</span></th>`;
-  }
+  function chipHtml(c) { return `<span class="st-chip">${c} <span class="x">×</span></span>`; }
 
-  function rowHtml(s) {
-    const marginCls = s.marginPct >= biz.gmTarget ? "pos" : s.marginPct < biz.gmTarget - 5 ? "neg" : "";
-    return `
-      <tr data-sku="${s.sku}">
-        <td class="mono">${s.sku}</td>
-        <td>${s.name}</td>
-        <td class="mono">${s.category}</td>
-        <td class="num ${marginCls}">${s.marginPct.toFixed(1)}%</td>
-        <td class="num">${s.velocity}/w</td>
-        <td class="num">${s.daysCover}d</td>
-        <td class="num">£${(s.revenueYTD/1000).toFixed(0)}k</td>
-        <td><span class="pill ${s.status}">${s.status}</span></td>
-      </tr>
-    `;
+  function trackerRows(skus, biz, currency) {
+    // Group by category for the "TATTOO/BEAUTY/PET"-style section breaks
+    const byCat = {};
+    for (const s of skus) {
+      if (!byCat[s.category]) byCat[s.category] = [];
+      byCat[s.category].push(s);
+    }
+    let out = "";
+    for (const cat of Object.keys(byCat)) {
+      out += `<tr><td colspan="10" class="cat-sep">${cat.toUpperCase()}</td></tr>`;
+      // Aggregate by business+channel within category — for the demo just show top 3 SKUs as rows
+      const top = byCat[cat].slice().sort((a, b) => b.revenueYTD - a.revenueYTD).slice(0, 3);
+      for (const s of top) {
+        const revActual = s.revenueYTD;
+        const revBudget = revActual * 0.94;
+        const marginActual = revActual * s.marginPct / 100;
+        const marginBudget = revBudget * biz.gmTarget / 100;
+        const marginVar = marginActual - marginBudget;
+        const marginPctVar = s.marginPct - biz.gmTarget;
+        const marginVarCls = marginVar >= 0 ? "pos" : "neg";
+        const pctVarCls = marginPctVar >= 0 ? "pos" : "neg";
+        out += `<tr>
+          <td>${s.name.split(" ").slice(0, 2).join(" ")}</td>
+          <td class="mono">Direct</td>
+          <td class="num">${fmtMoney(revActual, currency)}</td>
+          <td class="num">${fmtMoney(revBudget, currency)}</td>
+          <td class="num">${fmtMoney(marginActual, currency)}</td>
+          <td class="num">${fmtMoney(marginBudget, currency)}</td>
+          <td class="num ${marginVarCls}">${marginVar >= 0 ? "+" : ""}${fmtMoney(marginVar, currency)}</td>
+          <td class="num">${s.marginPct.toFixed(1)}%</td>
+          <td class="num">${biz.gmTarget.toFixed(1)}%</td>
+          <td class="num ${pctVarCls}">${marginPctVar >= 0 ? "+" : ""}${marginPctVar.toFixed(1)}%</td>
+        </tr>`;
+      }
+    }
+    return out;
   }
-
-  function updateTable() {
-    const m = metrics();
-    document.getElementById("skuBody").innerHTML = filtered().map(rowHtml).join("");
-    document.querySelectorAll("th[data-sort]").forEach((th) => {
-      const k = th.getAttribute("data-sort");
-      const ind = th.querySelector(".sort-ind");
-      ind.textContent = sortKey === k ? (sortDir === "asc" ? "▲" : "▼") : "";
-    });
-  }
-
-  function escapeHtml(s) { return s.replace(/[&<>"]/g, (c) => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c])); }
 
   render();
 };
 
-function metric(label, value, delta, cls) {
-  const arrow = cls === "positive" ? "▲" : cls === "negative" ? "▼" : "";
-  return `
-    <div class="metric">
+/* ============================================================
+   Shared metric helper — Streamlit st.metric style
+   ============================================================ */
+function metric(label, value, delta, cls, showDelta = true) {
+  if (!showDelta || !delta) {
+    return `<div class="metric">
       <div class="label">${label}</div>
       <div class="value">${value}</div>
-      <div class="delta ${cls || "neutral"}"><span class="arrow">${arrow}</span>${delta}</div>
-    </div>
-  `;
+    </div>`;
+  }
+  return `<div class="metric">
+    <div class="label">${label}</div>
+    <div class="value">${value}</div>
+    <div class="delta ${cls || "neutral"}">${delta}</div>
+  </div>`;
+}
+
+function symbol(c) { return c === "USD" ? "$" : c === "EUR" ? "€" : "£"; }
+function fmtMoney(v, c) {
+  const sym = symbol(c);
+  const a = Math.abs(v);
+  if (a >= 1e6) return `${sym}${(v/1e6).toFixed(1)}m`;
+  if (a >= 1e3) return `${sym}${(v/1e3).toFixed(1)}k`;
+  return `${sym}${v.toFixed(0)}`;
+}
+function arrow(v) { return v > 0 ? "↑" : v < 0 ? "↓" : ""; }
+function periodDates(p) {
+  const today = new Date();
+  const fmt = (d) => d.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+  if (p === "MTD") {
+    const start = new Date(today.getFullYear(), today.getMonth(), 1);
+    return `${fmt(start)} → ${fmt(today)}`;
+  }
+  if (p === "YTD") {
+    const start = new Date(today.getFullYear(), 0, 1);
+    return `${fmt(start)} → ${fmt(today)}`;
+  }
+  if (p === "Yesterday") {
+    const y = new Date(today); y.setDate(y.getDate() - 1);
+    return `${fmt(y)} → ${fmt(y)}`;
+  }
+  if (p === "Last 30 Days") {
+    const s = new Date(today); s.setDate(s.getDate() - 30);
+    return `${fmt(s)} → ${fmt(today)}`;
+  }
+  if (p === "Last 90 Days") {
+    const s = new Date(today); s.setDate(s.getDate() - 90);
+    return `${fmt(s)} → ${fmt(today)}`;
+  }
+  if (p === "Last Month") {
+    const start = new Date(today.getFullYear(), today.getMonth() - 1, 1);
+    const end = new Date(today.getFullYear(), today.getMonth(), 0);
+    return `${fmt(start)} → ${fmt(end)}`;
+  }
+  return "";
 }

@@ -16,6 +16,7 @@ window.FlareDashboards.bundle = function (main, businessKey) {
 
   function render() {
     main.innerHTML = `
+      <div class="main-inner">
       <h1 class="page-title">Customer Intelligence</h1>
       <div class="page-subtitle">Basket affinity, cross-shopping, and bundle suggestions — ${biz.name}.</div>
 
@@ -46,6 +47,7 @@ window.FlareDashboards.bundle = function (main, businessKey) {
 
       <div class="card" style="margin-top: 1rem; font-size: 0.9rem; color: var(--read);">
         <strong style="color: var(--instrument);">How lift is read.</strong> Lift compares observed co-purchase frequency to what chance alone would predict. Real FLARE computes this per business on rolling 90-day baskets with minimum-support thresholds before publishing a recommendation.
+      </div>
       </div>
     `;
 

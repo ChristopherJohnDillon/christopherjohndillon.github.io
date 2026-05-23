@@ -24,6 +24,7 @@ window.FlareDashboards.warehouse = function (main, businessKey) {
     const coldCount = visible.filter((b) => b.utilisation < 0.25).length;
 
     main.innerHTML = `
+      <div class="main-inner">
       <h1 class="page-title">Warehouse Heatmap</h1>
       <div class="page-subtitle">Bin-level utilisation across ${aisles.length} aisles — ${biz.name}.</div>
 
@@ -59,6 +60,7 @@ window.FlareDashboards.warehouse = function (main, businessKey) {
         </div>
 
         <div class="dd-panel" id="binPanel">${binPanelHtml(selectedBin, biz)}</div>
+      </div>
       </div>
     `;
 

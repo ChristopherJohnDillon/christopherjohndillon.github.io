@@ -62,7 +62,7 @@
   const state = {
     business: localStorage.getItem("flare:business") || "group",
     route: window.location.hash in ROUTES ? window.location.hash : DEFAULT_ROUTE,
-    collapsed: localStorage.getItem("flare:collapsed") === "1",
+    collapsed: localStorage.getItem("flare:collapsed") !== "0",  /* default = collapsed, like real FLARE */
   };
 
   /* ============================================================
