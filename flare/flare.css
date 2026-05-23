@@ -155,14 +155,7 @@ a:hover { color: var(--accent-hot); }
   color: var(--instrument);
   text-decoration: none;
 }
-.flare-wordmark .glyph { width: 30px; height: 24px; flex: 0 0 auto; }
-.flare-wordmark .glyph .curve {
-  fill: none;
-  stroke: var(--accent);
-  stroke-width: 2.4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
+.flare-wordmark .glyph { width: 32px; height: 28px; flex: 0 0 auto; }
 
 /* ============================================================
    LANDING PAGE (/flare/)
@@ -533,8 +526,43 @@ a:hover { color: var(--accent-hot); }
 .dir-item.live .ms-sm { color: var(--accent); }
 
 /* ============================================================
+   PLAIN ST.METRIC-STYLE TILE
+   Small label + value + delta, white text on dark surface.
+   This is the default used on most FLARE dashboards.
+   ============================================================ */
+.metric-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+.metric {
+  background: transparent;
+  padding: 0;
+}
+.metric .label {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--read);
+  margin-bottom: 0.25rem;
+}
+.metric .value {
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: var(--instrument);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+.metric .delta {
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+  font-variant-numeric: tabular-nums;
+}
+.metric .delta.positive { color: var(--positive); }
+.metric .delta.negative { color: var(--critical); }
+.metric .delta.neutral  { color: var(--mute); }
+.metric .delta .arrow { display: inline-block; margin-right: 0.2rem; }
+
+/* ============================================================
    ICONIC SCORECARD KPI CARDS — coloured backgrounds, white text
-   Lifted directly from real FLARE Scorecard.py
+   ONLY used on the Executive Scorecard (and L10 scorecards in real FLARE)
    ============================================================ */
 .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
 .kpi-card {

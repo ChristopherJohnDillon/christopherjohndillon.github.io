@@ -1,5 +1,6 @@
 /* ============================================================
-   FLARE — Statistical analysis dashboard
+   FLARE — Pricing & Shipping
+   Mirrors real pricing_impact_dash.py: filter row + 4 metrics + chart.
    ============================================================ */
 window.FlareDashboards = window.FlareDashboards || {};
 
@@ -10,57 +11,53 @@ window.FlareDashboards.stats = function (main, businessKey) {
 
   function render() {
     const test = FlareData.statTest(biz, promoIdx);
+    const liftPct = ((test.postMean - test.preMean) / test.preMean) * 100;
+
     main.innerHTML = `
       <h1 class="page-title">Pricing &amp; Shipping</h1>
-      <div class="page-subtitle">Promotion impact testing with 95% confidence intervals — ${biz.name}.</div>
+      <div class="page-subtitle">Analyse pricing impacts, model price-change scenarios, and test statistical significance — ${biz.name}.</div>
 
-      <div class="stats-promo">
-        <div>
-          <span class="l">Promotion under test</span><br/>
-          <select id="promoSel" style="margin-top: 0.4rem;">
-            ${promos.map((p, i) => `<option value="${i}" ${i === promoIdx ? "selected" : ""}>${p.label}</option>`).join("")}
-          </select>
-        </div>
-        <div style="display: flex; align-items: center; gap: 0.6rem;">
-          <span class="l">n = ${test.n.toLocaleString()}</span>
-          <span class="l">p = ${test.pValue.toFixed(4)}</span>
-          <span class="sig-flag ${test.sig ? "sig" : "nosig"}">${test.sig ? "SIGNIFICANT" : "NOT SIGNIFICANT"}</span>
-        </div>
+      <div class="filter-bar">
+        <select id="promoSel">
+          ${promos.map((p, i) => `<option value="${i}" ${i === promoIdx ? "selected" : ""}>${p.label}</option>`).join("")}
+        </select>
+        <span class="sig-flag ${test.sig ? "sig" : "nosig"}">${test.sig ? "p < 0.05 — Significant" : "Not significant"}</span>
       </div>
 
-      <div class="stats-cmp">
-        <div class="card">
-          <div class="label">Pre-period · mean basket value</div>
-          <div class="value">£${test.preMean.toFixed(2)}</div>
-          <div class="ci">95% CI: £${(test.preMean - test.preCi).toFixed(2)} – £${(test.preMean + test.preCi).toFixed(2)}</div>
-        </div>
-        <div class="card" style="border-left: 2px solid ${test.sig ? "var(--accent)" : "var(--mute)"};">
-          <div class="label">Post-period · mean basket value</div>
-          <div class="value">£${test.postMean.toFixed(2)} <span style="font-size: 0.85rem; color: ${test.postMean > test.preMean ? "var(--positive)" : "var(--critical)"}; margin-left: 0.4rem;">${test.postMean > test.preMean ? "+" : ""}${(((test.postMean - test.preMean) / test.preMean) * 100).toFixed(1)}%</span></div>
-          <div class="ci">95% CI: £${(test.postMean - test.postCi).toFixed(2)} – £${(test.postMean + test.postCi).toFixed(2)}</div>
-        </div>
+      <div class="metric-row">
+        ${m("Pre-period mean", `£${test.preMean.toFixed(2)}`, `95% CI ±£${test.preCi.toFixed(2)}`, "neutral")}
+        ${m("Post-period mean", `£${test.postMean.toFixed(2)}`, `95% CI ±£${test.postCi.toFixed(2)}`, "neutral")}
+        ${m("Lift", `${liftPct >= 0 ? "+" : ""}${liftPct.toFixed(1)}%`, "post vs pre", liftPct > 0 ? "positive" : "negative")}
+        ${m("p-value", test.pValue.toFixed(4), `n = ${test.n.toLocaleString()} baskets`, test.sig ? "positive" : "neutral")}
       </div>
 
-      <div class="section">
-        <div class="section-title">
-          <h2>Lift by category · with 95% confidence intervals</h2>
-          <div class="meta">Welch's t-test · two-sided · α = 0.05</div>
-        </div>
-        <div class="chart-card tall"><canvas id="statsLift"></canvas></div>
-      </div>
+      <hr class="divider" />
 
-      <div class="card" style="margin-top: 0.85rem; font-size: 0.8rem; color: var(--mute);">
-        <strong style="color: var(--read);">Methodology.</strong> Pre/post comparison uses a Welch's two-sample t-test on the basket-value distributions, with unequal variances assumed. CIs are derived from the t-distribution at α = 0.05. n shown reflects unique baskets matched to the promo window. Real FLARE pipes the same logic but on live warehouse data with daily refresh and per-cohort stratification.
+      <div class="section-head">
+        <h2>Lift by category · with 95% confidence intervals</h2>
+        <div class="meta">Welch's t-test · two-sided · α = 0.05</div>
+      </div>
+      <div class="chart-card tall"><canvas id="statsLift"></canvas></div>
+
+      <div class="card" style="margin-top: 1rem; font-size: 0.9rem; color: var(--read);">
+        <strong style="color: var(--instrument);">How to read this.</strong> Each bar is the per-category basket-value lift in the post-promotion window vs the pre-promotion baseline. Whiskers are the 95% confidence interval. Real FLARE runs this on daily-refreshed warehouse data with per-cohort stratification.
       </div>
     `;
 
     FlareCharts.categoryLiftBars("statsLift", test.perCat);
-
-    document.getElementById("promoSel").addEventListener("change", (e) => {
-      promoIdx = parseInt(e.target.value, 10);
-      render();
-    });
+    document.getElementById("promoSel").addEventListener("change", (e) => { promoIdx = parseInt(e.target.value, 10); render(); });
   }
 
   render();
 };
+
+function m(label, value, delta, cls) {
+  const arrow = cls === "positive" ? "▲" : cls === "negative" ? "▼" : "";
+  return `
+    <div class="metric">
+      <div class="label">${label}</div>
+      <div class="value">${value}</div>
+      <div class="delta ${cls || "neutral"}"><span class="arrow">${arrow}</span>${delta}</div>
+    </div>
+  `;
+}

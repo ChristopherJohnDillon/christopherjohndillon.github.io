@@ -19,10 +19,8 @@
       group: "Sales",
       icon: "trending_up",
       items: [
-        { route: "#/sku",   label: "Product Margin",  icon: "insights",     mod: "sku" },
+        { route: "#/sku",   label: "Product Margin",     icon: "insights",     mod: "sku" },
         { route: "#/stats", label: "Pricing & Shipping", icon: "price_change", mod: "stats" },
-        { route: null,      label: "Sales Tracker",   icon: "bar_chart",    mod: null, locked: true },
-        { route: null,      label: "Open Orders",     icon: "list_alt",     mod: null, locked: true },
       ],
     },
     {
@@ -30,9 +28,6 @@
       icon: "settings",
       items: [
         { route: "#/warehouse", label: "Warehouse Heatmap", icon: "warehouse", mod: "warehouse" },
-        { route: null, label: "OTIF Tracker",      icon: "local_shipping", mod: null, locked: true },
-        { route: null, label: "Out of Stock",      icon: "inventory_2",    mod: null, locked: true },
-        { route: null, label: "Excess & Obsolete", icon: "warning",        mod: null, locked: true },
       ],
     },
     {
@@ -40,7 +35,6 @@
       icon: "sentiment_satisfied",
       items: [
         { route: "#/bundle", label: "Customer Intelligence", icon: "people_alt", mod: "bundle" },
-        { route: null,       label: "Delighted NPS Tracker", icon: "thumb_up",   mod: null, locked: true },
       ],
     },
     {
@@ -48,16 +42,6 @@
       icon: "speed",
       items: [
         { route: "#/exec", label: "Executive Scorecard", icon: "leaderboard", mod: "exec" },
-        { route: null,     label: "GDC Scorecard",       icon: "shopping_cart", mod: null, locked: true },
-        { route: null,     label: "Ops L10 Scorecard",   icon: "monitor_heart", mod: null, locked: true },
-      ],
-    },
-    {
-      group: "Admin",
-      icon: "shield",
-      items: [
-        { route: null, label: "User Analytics", icon: "manage_accounts", mod: null, locked: true },
-        { route: null, label: "Server Monitor", icon: "dns",             mod: null, locked: true },
       ],
     },
   ];
