@@ -39,16 +39,14 @@ jobs:
       - name: Generate PDF
         run: python scripts/generate_cv_pdf.py
 
-      - name: Check for changes
-        id: check
+      - name: Upload PDF to cv-latest release
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          git diff --quiet cv/Christopher_Dillon.pdf || echo "changed=true" >> $GITHUB_OUTPUT
-
-      - name: Commit and push PDF
-        if: steps.check.outputs.changed == 'true'
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add cv/Christopher_Dillon.pdf
-          git commit -m "Update CV PDF [skip ci]"
-          git push
+          if gh release view cv-latest > /dev/null 2>&1; then
+            gh release upload cv-latest cv/Christopher_Dillon.pdf --clobber
+          else
+            gh release create cv-latest cv/Christopher_Dillon.pdf \
+              --title "Latest CV PDF" \
+              --notes "Auto-generated on every Pages deployment. Always reflects the current /cv/ page."
+          fi
