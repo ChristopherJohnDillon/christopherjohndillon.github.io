@@ -11,10 +11,8 @@ window.FlareDashboards.stats = function (main, businessKey) {
   function render() {
     const test = FlareData.statTest(biz, promoIdx);
     main.innerHTML = `
-      <div class="page-head">
-        <h1>Statistical analysis</h1>
-        <div class="crumbs">FLARE · <span class="accent">${biz.name}</span> · promo impact</div>
-      </div>
+      <h1 class="page-title">Pricing &amp; Shipping</h1>
+      <div class="page-subtitle">Promotion impact testing with 95% confidence intervals — ${biz.name}.</div>
 
       <div class="stats-promo">
         <div>

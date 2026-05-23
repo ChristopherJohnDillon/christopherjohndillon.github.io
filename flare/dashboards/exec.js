@@ -1,5 +1,6 @@
 /* ============================================================
-   FLARE — Exec overview dashboard
+   FLARE — Executive Scorecard
+   Iconic scorecard-style coloured KPI tiles (real FLARE pattern)
    ============================================================ */
 window.FlareDashboards = window.FlareDashboards || {};
 
@@ -11,73 +12,80 @@ window.FlareDashboards.exec = function (main, businessKey) {
   const statusRow = FlareData.statusRow();
 
   main.innerHTML = `
-    <div class="page-head">
-      <h1>Exec overview</h1>
-      <div class="crumbs">FLARE · <span class="accent">${biz.name}</span> · ${new Date().toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" })}</div>
+    <h1 class="page-title">Executive Scorecard</h1>
+    <div class="page-subtitle">Traffic-light KPIs for ${biz.name} — last 4 weeks vs prior period.</div>
+
+    <div class="kpi-grid">
+      ${kpis.map(scorecardCard).join("")}
     </div>
 
-    <div class="kpi-row">
-      ${kpis.map((k, i) => kpiCard(k, i)).join("")}
-    </div>
-
-    <div class="section">
-      <div class="section-title"><h2>By business — status</h2><div class="meta">Group rollup · weekly aggregate</div></div>
-      <div class="tl-row">
-        ${statusRow.map(statusCard).join("")}
+    <section class="section">
+      <div class="section-head">
+        <h2>Performance by business</h2>
+        <div class="meta">Group rollup · weekly aggregate</div>
       </div>
-    </div>
+      <div class="kpi-grid">
+        ${statusRow.map(businessCard).join("")}
+      </div>
+    </section>
+
+    <hr class="divider" />
 
     <div class="two-col">
-      <div class="section">
-        <div class="section-title"><h2>Revenue &amp; GM% · last 24 weeks</h2></div>
+      <section class="section" style="margin-bottom: 0;">
+        <div class="section-head">
+          <h2>Revenue &amp; gross margin · last 24 weeks</h2>
+        </div>
         <div class="chart-card tall"><canvas id="execRev"></canvas></div>
-      </div>
-      <div class="section">
-        <div class="section-title"><h2>Top movers · last 4 weeks</h2></div>
+      </section>
+
+      <section class="section" style="margin-bottom: 0;">
+        <div class="section-head"><h2>Top movers · last 4 weeks</h2></div>
         <div class="card">
-          <div class="label" style="color: var(--positive);">Up most</div>
+          <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--positive); margin-bottom: 0.4rem;">Up most</div>
           <table class="tbl">
             <tbody>${movers.up.map(moverRow("pos")).join("")}</tbody>
           </table>
-          <div class="label" style="margin-top: 0.9rem; color: var(--critical);">Down most</div>
+          <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--critical); margin: 1rem 0 0.4rem;">Down most</div>
           <table class="tbl">
             <tbody>${movers.down.map(moverRow("neg")).join("")}</tbody>
           </table>
         </div>
-      </div>
+      </section>
     </div>
   `;
 
-  // Sparkline canvases (one per KPI tile)
-  kpis.forEach((k, i) => {
-    const color = i === 1 ? FLARE_T.blue : i === 2 ? FLARE_T.green : i === 3 ? FLARE_T.warning : FLARE_T.accent;
-    FlareCharts.spark(`spark-${i}`, k.spark, color);
-  });
   FlareCharts.dualAxisRevenueGM("execRev", ts, biz.color);
 };
 
-function kpiCard(k, i) {
-  const sign = k.delta > 0.05 ? "positive" : k.delta < -0.05 ? "negative" : "neutral";
-  const arrow = k.delta > 0.05 ? "▲" : k.delta < -0.05 ? "▼" : "·";
-  const display = (k.sparkInvert ? -k.delta : k.delta);
-  const cls = (k.sparkInvert ? -k.delta : k.delta) > 0 ? "positive" : (k.sparkInvert ? -k.delta : k.delta) < 0 ? "negative" : "neutral";
+function scorecardCard(k) {
+  const delta = k.sparkInvert ? -k.delta : k.delta;
+  let cls = "neutral";
+  if (k.label.toLowerCase().includes("stockout")) {
+    cls = delta < -5 ? "positive" : delta > 5 ? "critical" : "warning";
+  } else if (k.label.toLowerCase().includes("gm") || k.label.toLowerCase().includes("margin")) {
+    cls = delta > 0 ? "positive" : delta < -1 ? "critical" : "warning";
+  } else if (k.label.toLowerCase().includes("otif")) {
+    cls = delta > 0 ? "positive" : delta < -0.5 ? "critical" : "warning";
+  } else {
+    cls = delta > 2 ? "positive" : delta < -2 ? "critical" : "warning";
+  }
+  const arrow = delta > 0.1 ? "▲" : delta < -0.1 ? "▼" : "·";
   return `
-    <div class="card">
-      <div class="label">${k.label}</div>
-      <div class="value">${k.value}</div>
-      <div class="delta ${cls}">${arrow} ${Math.abs(display).toFixed(1)}${k.label.toLowerCase().includes("stockout") ? "" : "%"} vs prior</div>
-      <div class="spark"><canvas id="spark-${i}"></canvas></div>
+    <div class="kpi-card ${cls}">
+      <h3>${k.label}</h3>
+      <h1>${k.value}</h1>
+      <p>${arrow} ${Math.abs(delta).toFixed(1)}${k.label.toLowerCase().includes("stockout") ? "" : "%"} vs prior</p>
     </div>
   `;
 }
 
-function statusCard(s) {
+function businessCard(s) {
   return `
-    <div class="tl-card ${s.status}">
-      <div class="bar"></div>
-      <div class="biz">${s.name}</div>
-      <div class="status">${s.statusText}</div>
-      <div class="sub">${s.sub}</div>
+    <div class="kpi-card ${s.status}">
+      <h3>${s.name}</h3>
+      <h1 style="font-size: 1.4rem;">${s.statusText}</h1>
+      <p>${s.sub}</p>
     </div>
   `;
 }

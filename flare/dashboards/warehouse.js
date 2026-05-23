@@ -23,10 +23,8 @@ window.FlareDashboards.warehouse = function (main, businessKey) {
     const coldCount = visible.filter((b) => b.utilisation < 0.25).length;
 
     main.innerHTML = `
-      <div class="page-head">
-        <h1>Warehouse heatmap</h1>
-        <div class="crumbs">FLARE · <span class="accent">${biz.name}</span> · ${wh.bins.length} bins across ${aisles.length} aisles</div>
-      </div>
+      <h1 class="page-title">Warehouse Heatmap</h1>
+      <div class="page-subtitle">${wh.bins.length} bins across ${aisles.length} aisles — ${biz.name}.</div>
 
       <div class="filter-bar">
         <select id="whAisle">

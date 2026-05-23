@@ -33,13 +33,11 @@ window.FlareDashboards.sku = function (main, businessKey) {
 
   function render() {
     main.innerHTML = `
-      <div class="page-head">
-        <h1>Per-SKU analysis</h1>
-        <div class="crumbs">FLARE · <span class="accent">${biz.name}</span> · ${skus.length} SKUs</div>
-      </div>
+      <h1 class="page-title">Product Margin</h1>
+      <div class="page-subtitle">Per-business, per-channel margin vs budget targets. ${biz.name} · ${skus.length} SKUs.</div>
 
       <div class="filter-bar">
-        <input class="search" id="skuSearch" placeholder="Search SKU code, name…" value="${escapeHtml(searchText)}" />
+        <input class="search-input" id="skuSearch" placeholder="Search SKU code, name…" value="${escapeHtml(searchText)}" />
         ${["All", ...cats].map((c) => {
           const isAll = c === "All";
           const active = (isAll && !selectedCat) || c === selectedCat;

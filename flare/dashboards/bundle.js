@@ -10,10 +10,8 @@ window.FlareDashboards.bundle = function (main, businessKey) {
 
   function render() {
     main.innerHTML = `
-      <div class="page-head">
-        <h1>Bundle &amp; basket intelligence</h1>
-        <div class="crumbs">FLARE · <span class="accent">${biz.name}</span> · ${data.skus.length}×${data.skus.length} affinity</div>
-      </div>
+      <h1 class="page-title">Customer Intelligence</h1>
+      <div class="page-subtitle">Basket affinity &amp; bundle analysis · ${data.skus.length}×${data.skus.length} matrix · ${biz.name}.</div>
 
       <div class="bundle-layout">
         <div class="bundle-matrix">

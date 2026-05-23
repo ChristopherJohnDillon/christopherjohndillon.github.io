@@ -1,24 +1,120 @@
 /* ============================================================
    FLARE — app shell controller
-   Routing, business switcher, render dispatch
+   Routing, grouped sidebar, business switcher, render dispatch
    ============================================================ */
 
 (function () {
-  const ROUTES = {
-    "#/exec":      { mod: "exec",      label: "Exec overview" },
-    "#/sku":       { mod: "sku",       label: "Per-SKU analysis" },
-    "#/stats":     { mod: "stats",     label: "Statistical analysis" },
-    "#/warehouse": { mod: "warehouse", label: "Warehouse heatmap" },
-    "#/bundle":    { mod: "bundle",    label: "Bundle & basket" },
-  };
-  const DEFAULT_ROUTE = "#/exec";
+  /* ============================================================
+     Navigation structure — mirrors real FLARE's PAGE_GROUPS
+     ============================================================ */
+  const NAV = [
+    {
+      group: "Home",
+      icon: "home",
+      items: [
+        { route: "#/home", label: "Home", icon: "home", mod: "home", default: true },
+      ],
+    },
+    {
+      group: "Sales",
+      icon: "trending_up",
+      items: [
+        { route: "#/sku",   label: "Product Margin",  icon: "insights",     mod: "sku" },
+        { route: "#/stats", label: "Pricing & Shipping", icon: "price_change", mod: "stats" },
+        { route: null,      label: "Sales Tracker",   icon: "bar_chart",    mod: null, locked: true },
+        { route: null,      label: "Open Orders",     icon: "list_alt",     mod: null, locked: true },
+      ],
+    },
+    {
+      group: "Operations",
+      icon: "settings",
+      items: [
+        { route: "#/warehouse", label: "Warehouse Heatmap", icon: "warehouse", mod: "warehouse" },
+        { route: null, label: "OTIF Tracker",      icon: "local_shipping", mod: null, locked: true },
+        { route: null, label: "Out of Stock",      icon: "inventory_2",    mod: null, locked: true },
+        { route: null, label: "Excess & Obsolete", icon: "warning",        mod: null, locked: true },
+      ],
+    },
+    {
+      group: "Customer",
+      icon: "sentiment_satisfied",
+      items: [
+        { route: "#/bundle", label: "Customer Intelligence", icon: "people_alt", mod: "bundle" },
+        { route: null,       label: "Delighted NPS Tracker", icon: "thumb_up",   mod: null, locked: true },
+      ],
+    },
+    {
+      group: "L10 EOS Scorecards",
+      icon: "speed",
+      items: [
+        { route: "#/exec", label: "Executive Scorecard", icon: "leaderboard", mod: "exec" },
+        { route: null,     label: "GDC Scorecard",       icon: "shopping_cart", mod: null, locked: true },
+        { route: null,     label: "Ops L10 Scorecard",   icon: "monitor_heart", mod: null, locked: true },
+      ],
+    },
+    {
+      group: "Admin",
+      icon: "shield",
+      items: [
+        { route: null, label: "User Analytics", icon: "manage_accounts", mod: null, locked: true },
+        { route: null, label: "Server Monitor", icon: "dns",             mod: null, locked: true },
+      ],
+    },
+  ];
+
+  /* Flatten routes for lookup */
+  const ROUTES = {};
+  const ROUTE_TO_NAV = {};
+  for (const g of NAV) {
+    for (const it of g.items) {
+      if (it.route && it.mod) {
+        ROUTES[it.route] = { mod: it.mod, label: it.label, group: g.group };
+        ROUTE_TO_NAV[it.route] = it;
+      }
+    }
+  }
+  const DEFAULT_ROUTE = "#/home";
 
   const state = {
     business: localStorage.getItem("flare:business") || "group",
     route: window.location.hash in ROUTES ? window.location.hash : DEFAULT_ROUTE,
+    collapsed: localStorage.getItem("flare:collapsed") === "1",
   };
 
-  /* ---- Business switcher ---- */
+  /* ============================================================
+     SIDEBAR RENDER
+     ============================================================ */
+  function renderSidebar() {
+    const body = document.getElementById("sbBody");
+    body.innerHTML = "";
+    for (const g of NAV) {
+      const wrap = document.createElement("div");
+      wrap.className = "nav-group";
+
+      const head = document.createElement("div");
+      head.className = "group-label";
+      head.innerHTML = `<span class="ms ms-sm">${g.icon}</span><span class="label-text">${g.group}</span>`;
+      wrap.appendChild(head);
+
+      for (const it of g.items) {
+        const a = document.createElement("a");
+        a.className = "nav-item" + (it.locked ? " locked" : "") + (it.route === state.route ? " active" : "");
+        a.setAttribute("data-route", it.route || "");
+        if (it.route && !it.locked) a.href = it.route;
+        a.innerHTML = `
+          <span class="ms ms-sm">${it.locked ? "lock" : it.icon}</span>
+          <span class="item-label">${it.label}</span>
+        `;
+        if (it.locked) a.addEventListener("click", (e) => e.preventDefault());
+        wrap.appendChild(a);
+      }
+      body.appendChild(wrap);
+    }
+  }
+
+  /* ============================================================
+     BUSINESS SWITCHER
+     ============================================================ */
   function renderSwitcher() {
     const menu = document.getElementById("bizMenu");
     const label = document.getElementById("bizLabel");
@@ -41,12 +137,9 @@
     swatch.style.background = biz.color;
   }
 
-  function toggleMenu() {
-    document.getElementById("bizMenu").classList.toggle("open");
-  }
-  function closeMenu() {
-    document.getElementById("bizMenu").classList.remove("open");
-  }
+  function toggleMenu() { document.getElementById("bizMenu").classList.toggle("open"); }
+  function closeMenu() { document.getElementById("bizMenu").classList.remove("open"); }
+
   function setBusiness(key) {
     state.business = key;
     localStorage.setItem("flare:business", key);
@@ -60,14 +153,24 @@
     else closeMenu();
   });
 
-  /* ---- Sidebar nav ---- */
-  function highlightNav() {
-    document.querySelectorAll(".sidebar .nav-item").forEach((el) => {
-      el.classList.toggle("active", el.getAttribute("data-route") === state.route);
-    });
+  /* ============================================================
+     SIDEBAR COLLAPSE TOGGLE
+     ============================================================ */
+  function applyCollapsed() {
+    const shell = document.getElementById("appShell");
+    shell.classList.toggle("collapsed", state.collapsed);
+    const ico = document.querySelector("#sbToggle .ms");
+    if (ico) ico.textContent = state.collapsed ? "menu" : "menu_open";
   }
+  document.getElementById("sbToggle").addEventListener("click", () => {
+    state.collapsed = !state.collapsed;
+    localStorage.setItem("flare:collapsed", state.collapsed ? "1" : "0");
+    applyCollapsed();
+  });
 
-  /* ---- Hash routing ---- */
+  /* ============================================================
+     ROUTING + RENDER DISPATCH
+     ============================================================ */
   window.addEventListener("hashchange", () => {
     const next = window.location.hash;
     state.route = next in ROUTES ? next : DEFAULT_ROUTE;
@@ -75,21 +178,26 @@
     render();
   });
 
-  /* ---- Render dispatch ---- */
   function render() {
-    highlightNav();
+    renderSidebar();
+    const meta = ROUTES[state.route];
+    if (meta) {
+      document.getElementById("crumbSection").textContent = `${meta.group} · ${meta.label}`;
+    }
     const main = document.getElementById("main");
     main.innerHTML = "";
-    const mod = ROUTES[state.route].mod;
-    const renderer = window.FlareDashboards && window.FlareDashboards[mod];
+    const mod = meta ? meta.mod : null;
+    const renderer = mod && window.FlareDashboards && window.FlareDashboards[mod];
     if (renderer) {
       renderer(main, state.business);
     } else {
-      main.innerHTML = `<div class="card"><div class="label">Not found</div><p>Dashboard module "${mod}" is not loaded.</p></div>`;
+      main.innerHTML = `<div class="card"><h2>Not found</h2><p>Dashboard module is not loaded.</p></div>`;
     }
   }
 
-  /* ---- Tooltip helper (shared) ---- */
+  /* ============================================================
+     TOOLTIP
+     ============================================================ */
   const tooltip = document.getElementById("flareTooltip");
   window.FlareTooltip = {
     show(html, x, y) {
@@ -105,14 +213,16 @@
     },
   };
 
-  /* ---- Boot ---- */
+  /* ============================================================
+     BOOT
+     ============================================================ */
   if (!(state.route in ROUTES)) {
     state.route = DEFAULT_ROUTE;
     window.location.hash = DEFAULT_ROUTE;
   }
+  applyCollapsed();
   renderSwitcher();
   render();
 })();
 
-/* Global dashboards registry — each dashboard module attaches itself here */
 window.FlareDashboards = window.FlareDashboards || {};
