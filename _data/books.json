@@ -1,5 +1,12 @@
 [
   {
+    "title": "Antihero",
+    "author": "Gregg Hurwitz",
+    "rating": 2,
+    "read_at": "2026-05-24",
+    "url": "https://www.goodreads.com/book/show/231127208"
+  },
+  {
     "title": "Few and Far Between",
     "author": "Jan Carson",
     "rating": 4,
@@ -26,12 +33,5 @@
     "rating": 4,
     "read_at": "2026-03-28",
     "url": "https://www.goodreads.com/book/show/240424526"
-  },
-  {
-    "title": "Exo",
-    "author": "Steven Gould",
-    "rating": 4,
-    "read_at": "2026-03-22",
-    "url": "https://www.goodreads.com/book/show/20518815"
   }
 ]

@@ -2,7 +2,7 @@
   "per_year": [
     {
       "year": 2021,
-      "count": 25
+      "count": 24
     },
     {
       "year": 2022,
@@ -22,13 +22,13 @@
     },
     {
       "year": 2026,
-      "count": 15
+      "count": 16
     }
   ],
   "fun": {
     "total_books": 192,
-    "total_pages": 71114,
-    "avg_pages": 370,
+    "total_pages": 71324,
+    "avg_pages": 371,
     "shortest": {
       "title": "Foster",
       "author": "Claire Keegan",
@@ -46,12 +46,6 @@
       "author": "John Boyne",
       "pages": 384,
       "read_at": "2021-01-24"
-    },
-    {
-      "title": "The Lion, the Witch and the Wardrobe",
-      "author": "C.S. Lewis",
-      "pages": 206,
-      "read_at": "2021-05-09"
     },
     {
       "title": "Dead or Alive",
@@ -1042,6 +1036,12 @@
       "author": "Jan Carson",
       "pages": 336,
       "read_at": "2026-05-03"
+    },
+    {
+      "title": "Antihero",
+      "author": "Gregg Hurwitz",
+      "pages": 416,
+      "read_at": "2026-05-24"
     }
   ]
 }
