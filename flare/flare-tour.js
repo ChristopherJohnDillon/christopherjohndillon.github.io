@@ -211,7 +211,7 @@
     renderStep();
   }
 
-  function exitTour(opts = {}) {
+  function exitTour() {
     state.active = false;
     const bd = $("#flare-tour-backdrop");
     const sp = $("#flare-tour-spotlight");
@@ -220,7 +220,10 @@
     if (sp) sp.classList.remove("visible");
     if (card) card.classList.remove("visible");
     document.body.classList.remove("tour-active");
-    if (opts.completed) localStorage.setItem(STORAGE_DISMISSED, "1");
+    /* Any close — × button, Esc, backdrop click, or completing — marks the
+       tour as dismissed so it doesn't auto-re-popup on next visit.
+       Visitor can still launch it manually from the pill. */
+    localStorage.setItem(STORAGE_DISMISSED, "1");
     if (window.FlareUrl) FlareUrl.set({ tour: null, step: null });
   }
 
@@ -256,16 +259,26 @@
     if (state.active && e.key === "Escape") exitTour();
   });
 
-  /* Wire the topbar pill once DOM ready */
+  /* Wire the topbar pill once DOM ready, and auto-start for first-time visitors. */
   function init() {
     const pill = document.getElementById("tourPill");
     if (pill) pill.addEventListener("click", () => startTour());
 
-    /* Auto-resume tour from URL */
+    /* Auto-resume tour from URL (deep link into a step) */
     const params = window.FlareUrl ? FlareUrl.read() : {};
     if (params.tour === "onboarding") {
       const startAt = parseInt(params.step || "1", 10) || 1;
       setTimeout(() => startTour({ startAt }), 250);
+      return;
+    }
+
+    /* Auto-start on first visit — once dismissed/completed, never auto-shows again.
+       Only triggers on the Home route so it doesn't hijack deep-links. */
+    const seen = localStorage.getItem(STORAGE_DISMISSED) === "1";
+    const onHome = !window.location.hash || window.location.hash === "#/home" || (window.FlareApp && window.FlareApp.bareRoute(window.location.hash) === "#/home");
+    if (!seen && onHome) {
+      /* Wait for the home dashboard to finish rendering before measuring targets */
+      setTimeout(() => startTour(), 600);
     }
   }
   if (document.readyState === "loading") {

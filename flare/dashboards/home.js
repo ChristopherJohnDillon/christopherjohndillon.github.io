@@ -27,7 +27,7 @@ window.FlareDashboards.home = function (main) {
       <hr class="divider" />
 
       <div style="padding: 1.25rem 1.5rem; background: var(--surface); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 12px; font-size: 0.92rem; color: var(--read);">
-        <strong style="color: var(--instrument);">About this demo.</strong> This is a static visual clone of FLARE — the real product is a self-hosted Streamlit application on a private warehouse with Microsoft Entra SSO. Numbers, SKUs, and warehouse layouts here are deterministically generated for a fictional Helios Brands Co. group (Trailcraft / Hearthline / Quill &amp; Press / Velora).
+        <strong style="color: var(--instrument);">About this demo.</strong> Numbers, SKUs, and warehouse layouts are deterministically generated for a fictional Helios Brands Co. group (Trailcraft / Hearthline / Quill &amp; Press / Velora). Nothing here represents a real company.
       </div>
     </div>
   `;
@@ -48,8 +48,8 @@ window.FlareDashboards.home = function (main) {
       { name: "Customer Intelligence", desc: "E-commerce &amp; phone customer segmentation, churn prevention, lifecycle, cross-shopping, basket analysis.", route: "#/bundle" },
       { name: "Delighted NPS Tracker", desc: "Track Net Promoter Score and Delighted survey responses over time across all brands.", route: "#/nps" },
     ] },
-    { name: "L10 EOS Scorecards", icon: "speed", items: [
-      { name: "Executive Scorecard", desc: "Traffic-light KPI scorecard — company-wide revenue, margins, OTIF, and customer metrics.", route: "#/exec" },
+    { name: "Scorecards", icon: "speed", items: [
+      { name: "Executive Scorecard", desc: "Traffic-light KPI scorecard — group revenue, margins, OTIF, and customer metrics.", route: "#/exec" },
     ] },
     { name: "AI", icon: "auto_awesome", items: [
       { name: "Ask FLARE", desc: "Chat with your data. Self-hosted local LLM — nothing leaves the warehouse network.", route: "#/ask" },

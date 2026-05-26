@@ -1,6 +1,6 @@
 /* ============================================================
    FLARE — Executive Scorecard
-   L10/EOS-style traffic-light KPI tiles. All values anchored to the
+   Traffic-light KPI scorecard. All values anchored to the
    business's annualRev/aov/gmTarget/otifTarget so the numbers reconcile
    with Sales Tracker, Product Margin, OTIF, and Open Orders.
    URL filters: ?division=Global|US|EU & ?subdivision=All|Pet|Beauty|Tattoo
@@ -10,32 +10,29 @@ window.FlareDashboards = window.FlareDashboards || {};
 window.FlareDashboards.exec = function (main, businessKey) {
   const biz = FlareData.business(businessKey);
 
-  const DIVS = ["Global", "US", "EU"];
-  const SUBS = ["All", "Pet", "Beauty", "Tattoo"];
+  const DIVS = ["Global", "Direct", "Wholesale"];
+  const CHANS = ["All", ...FlareData.channels];
 
   function readState() {
     const p = FlareUrl.read();
     return {
       division: DIVS.includes(p.division) ? p.division : "Global",
-      subdivision: SUBS.includes(p.subdivision) ? p.subdivision : "All",
+      channel: CHANS.includes(p.channel) ? p.channel : "All",
     };
   }
 
-  function divisionScale(div, sub) {
-    /* Tilt rev by division/subdivision so filters do something visible
-       without claiming a real-world geographical split. */
+  function divisionScale(div, chan) {
     let m = 1;
-    if (div === "US") m *= 0.58;
-    else if (div === "EU") m *= 0.42;
-    if (sub === "Pet") m *= 0.35;
-    else if (sub === "Beauty") m *= 0.30;
-    else if (sub === "Tattoo") m *= 0.18;
+    if (div === "Direct") m *= 0.62;
+    else if (div === "Wholesale") m *= 0.38;
+    const chanMix = { Shopify: 0.36, Amazon: 0.22, Wholesale: 0.28, eBay: 0.08, "Retail POS": 0.06, All: 1 };
+    m *= chanMix[chan] || 1;
     return m;
   }
 
   function render() {
-    const { division, subdivision } = readState();
-    const m = divisionScale(division, subdivision);
+    const { division, channel } = readState();
+    const m = divisionScale(division, channel);
     const today = new Date();
     const day = today.getDate();
     const daysInMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
@@ -50,7 +47,7 @@ window.FlareDashboards.exec = function (main, businessKey) {
     const monthlyBudget = annual / 12;
     const mtdBudget = monthlyBudget * monthFraction;
     /* Pull a deterministic "actual" close to budget */
-    const seed = biz.seed + (division.charCodeAt(0) || 0) + (subdivision.charCodeAt(0) || 0);
+    const seed = biz.seed + (division.charCodeAt(0) || 0) + (channel.charCodeAt(0) || 0);
     const r = ((Math.sin(seed) + 1) / 2);
     const mtdActual = mtdBudget * (0.91 + r * 0.14); /* between 91% and 105% of budget */
     const mtdLY = mtdBudget * (0.93 + ((Math.sin(seed + 1.7) + 1) / 2) * 0.10);
@@ -94,31 +91,23 @@ window.FlareDashboards.exec = function (main, businessKey) {
 
     main.innerHTML = `
       <div class="main-inner">
-        ${FlareUI.pageHeader("Executive Scorecard", "L10/EOS-style traffic-light KPIs. Click any tile to view the source dashboard.")}
+        ${FlareUI.pageHeader("Executive Scorecard", "Traffic-light KPIs. Click any tile to view the source dashboard.")}
 
-        <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.7rem;">
-          <img src="/flare/flare-logo.svg" alt="" style="width: 36px; height: 32px;" />
-          <div style="font-weight: 800; font-size: 1.1rem; letter-spacing: 0.06em; color: var(--white); line-height: 1.05;">
-            HELIOS BRANDS CO.
-            <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; color: var(--mute); margin-top: 1px;">${biz.name.toUpperCase()}</div>
-          </div>
-        </div>
-
-        <div class="data-as-of">Performance as of ${asOfStr} · analysis ran ${runAt}</div>
+        <div class="data-as-of">Performance as of ${asOfStr} · analysis ran ${runAt} · ${biz.name}</div>
 
         <h2 style="font-size: 1.4rem; margin: 0.4rem 0 1.2rem;">MTD · 1 – ${day} ${monthName}</h2>
 
         <div class="filter-row cols-2" style="margin-bottom: 1.75rem;">
           <div class="field">
-            <label class="field-label">Division</label>
+            <label class="field-label">Channel mix</label>
             <div class="pill-radio" id="divRadio">
               ${DIVS.map((d) => `<button class="pill-opt ${d === division ? "active" : ""}" data-d="${d}">${d}</button>`).join("")}
             </div>
           </div>
           <div class="field">
-            <label class="field-label">Subdivision</label>
+            <label class="field-label">Channel</label>
             <div class="pill-radio" id="subRadio">
-              ${SUBS.map((d) => `<button class="pill-opt ${d === subdivision ? "active" : ""}" data-d="${d}">${d}</button>`).join("")}
+              ${CHANS.map((d) => `<button class="pill-opt ${d === channel ? "active" : ""}" data-d="${d}">${d}</button>`).join("")}
             </div>
           </div>
         </div>
@@ -202,7 +191,7 @@ window.FlareDashboards.exec = function (main, businessKey) {
       b.addEventListener("click", () => FlareUrl.set({ division: b.getAttribute("data-d") === "Global" ? null : b.getAttribute("data-d") }));
     });
     main.querySelectorAll("#subRadio .pill-opt").forEach((b) => {
-      b.addEventListener("click", () => FlareUrl.set({ subdivision: b.getAttribute("data-d") === "All" ? null : b.getAttribute("data-d") }));
+      b.addEventListener("click", () => FlareUrl.set({ channel: b.getAttribute("data-d") === "All" ? null : b.getAttribute("data-d") }));
     });
   }
 

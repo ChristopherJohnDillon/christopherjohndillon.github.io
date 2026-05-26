@@ -1369,7 +1369,7 @@ select {
 #flare-tour-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(6, 28, 42, 0.78);
+  background: rgba(6, 28, 42, 0.30);
   z-index: 9500;
   pointer-events: auto;
   opacity: 0;
@@ -1380,9 +1380,9 @@ select {
   position: fixed;
   border-radius: 10px;
   box-shadow:
-    0 0 0 9999px rgba(6, 28, 42, 0.78),
+    0 0 0 9999px rgba(6, 28, 42, 0.30),
     0 0 0 2px var(--accent),
-    0 0 24px 4px rgba(255, 79, 0, 0.35);
+    0 0 24px 4px rgba(255, 79, 0, 0.55);
   z-index: 9600;
   pointer-events: none;
   transition: top 0.22s ease, left 0.22s ease, width 0.22s ease, height 0.22s ease, opacity 0.18s;

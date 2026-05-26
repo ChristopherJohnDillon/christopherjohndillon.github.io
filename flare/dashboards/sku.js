@@ -204,7 +204,7 @@ window.FlareDashboards.sku = function (main, businessKey) {
 };
 
 /* ============================================================
-   Shared metric helper — Streamlit st.metric style
+   Shared metric helper — KPI tile style
    ============================================================ */
 function metric(label, value, delta, cls, showDelta = true) {
   if (!showDelta || !delta) {

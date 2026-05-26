@@ -32,20 +32,20 @@ function rng(seed) {
    ============================================================ */
 const BUSINESSES = [
   { key: "group",      name: "Group rollup",   shortName: "Group",     seed: 1001, color: "#FF4F00", currency: "£",
-    annualRev: 77_000_000, aov: 54, ordersPerDay: 4150, skuCount: 1220, gmTarget: 42, otifTarget: 95,
-    scaleRev: 18.5, scaleOps: 1.0 },
+    annualRev: 100_000_000, aov: 58, ordersPerDay: 4720, skuCount: 1240, gmTarget: 40, otifTarget: 95,
+    scaleRev: 24.0, scaleOps: 1.0 },
   { key: "trailcraft", name: "Trailcraft",     shortName: "Trailcraft", seed: 2002, color: "#3D8BFF", currency: "£",
-    annualRev: 22_000_000, aov: 85, ordersPerDay: 700, skuCount: 380, gmTarget: 38, otifTarget: 94,
-    scaleRev: 5.2, scaleOps: 1.05 },
+    annualRev: 30_000_000, aov: 95, ordersPerDay: 865, skuCount: 380, gmTarget: 38, otifTarget: 94,
+    scaleRev: 7.2, scaleOps: 1.05 },
   { key: "hearthline", name: "Hearthline",     shortName: "Hearthline", seed: 3003, color: "#C97EFF", currency: "£",
-    annualRev: 17_000_000, aov: 55, ordersPerDay: 850, skuCount: 240, gmTarget: 44, otifTarget: 96,
-    scaleRev: 4.1, scaleOps: 1.0 },
+    annualRev: 24_000_000, aov: 62, ordersPerDay: 1060, skuCount: 240, gmTarget: 44, otifTarget: 96,
+    scaleRev: 5.8, scaleOps: 1.0 },
   { key: "quill",      name: "Quill & Press",  shortName: "Quill",      seed: 4004, color: "#FFC857", currency: "£",
-    annualRev: 14_000_000, aov: 38, ordersPerDay: 1000, skuCount: 310, gmTarget: 46, otifTarget: 95,
-    scaleRev: 3.4, scaleOps: 0.95 },
+    annualRev: 18_000_000, aov: 42, ordersPerDay: 1175, skuCount: 310, gmTarget: 46, otifTarget: 95,
+    scaleRev: 4.3, scaleOps: 0.95 },
   { key: "velora",     name: "Velora",         shortName: "Velora",     seed: 5005, color: "#16A34A", currency: "£",
-    annualRev: 24_000_000, aov: 42, ordersPerDay: 1600, skuCount: 290, gmTarget: 40, otifTarget: 95,
-    scaleRev: 5.8, scaleOps: 1.1 },
+    annualRev: 28_000_000, aov: 46, ordersPerDay: 1670, skuCount: 290, gmTarget: 40, otifTarget: 95,
+    scaleRev: 6.7, scaleOps: 1.1 },
 ];
 
 const SALES_CHANNELS = ["Shopify", "Amazon", "Wholesale", "eBay", "Retail POS"];

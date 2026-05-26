@@ -42,7 +42,7 @@
       ],
     },
     {
-      group: "L10 EOS Scorecards",
+      group: "Scorecards",
       icon: "speed",
       items: [
         { route: "#/exec", label: "Executive Scorecard", icon: "leaderboard", mod: "exec" },

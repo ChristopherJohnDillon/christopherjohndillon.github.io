@@ -20,14 +20,10 @@
             <span class="ms ms-sm">expand_more</span>
           </button>
           <div class="export-menu" data-export-menu>
-            <div class="em-label">As file</div>
             <button data-export="csv"><span class="ms ms-sm">description</span>CSV</button>
-            <button data-export="xlsx"><span class="ms ms-sm">table_chart</span>XLSX (Excel)</button>
-            <button data-export="pdf"><span class="ms ms-sm">picture_as_pdf</span>PDF report</button>
-            <div class="em-label">Send to</div>
-            <button data-export="email"><span class="ms ms-sm">mail</span>Schedule email digest</button>
-            <button data-export="slack"><span class="ms ms-sm">chat</span>Slack alert on threshold</button>
-            <div class="em-foot">Outputs are placeholders in the public demo.</div>
+            <button data-export="xlsx"><span class="ms ms-sm">table_chart</span>Excel (XLSX)</button>
+            <button data-export="pdf"><span class="ms ms-sm">picture_as_pdf</span>PDF</button>
+            <div class="em-foot">Placeholder in the public demo.</div>
           </div>
         </div>
       </div>
