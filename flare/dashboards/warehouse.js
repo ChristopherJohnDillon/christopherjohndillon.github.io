@@ -9,8 +9,15 @@ window.FlareDashboards.warehouse = function (main, businessKey) {
   const wh = FlareData.warehouse(biz);
   const aisles = [...new Set(wh.bins.map((b) => b.aisle))];
 
-  let filterAisle = "";
-  let minUtil = 0;
+  function readState() {
+    const p = FlareUrl.read();
+    const m = parseInt(p.util || "0", 10);
+    return {
+      aisle: aisles.includes(p.aisle) ? p.aisle : "",
+      minUtil: isNaN(m) ? 0 : Math.max(0, Math.min(100, m)) / 100,
+    };
+  }
+  let { aisle: filterAisle, minUtil } = readState();
   let selectedBin = null;
 
   function visibleBins() {
@@ -25,8 +32,7 @@ window.FlareDashboards.warehouse = function (main, businessKey) {
 
     main.innerHTML = `
       <div class="main-inner">
-      <h1 class="page-title">Warehouse Heatmap</h1>
-      <div class="page-subtitle">Bin-level utilisation across ${aisles.length} aisles — ${biz.name}.</div>
+      ${FlareUI.pageHeader("Warehouse Heatmap", "Bin-level utilisation across " + aisles.length + " aisles — " + biz.name + ".")}
       <div class="data-as-of">Live state · refreshed hourly</div>
 
       <div class="filter-row cols-2">
@@ -67,16 +73,19 @@ window.FlareDashboards.warehouse = function (main, businessKey) {
       </div><!-- /main-inner -->
     `;
 
+    FlareUI.mountHeader(main);
     wireGrid();
-    document.getElementById("whAisle").addEventListener("change", (e) => { filterAisle = e.target.value; render(); });
+    document.getElementById("whAisle").addEventListener("change", (e) => FlareUrl.set({ aisle: e.target.value || null }));
     const slider = document.getElementById("whSlider");
+    slider.addEventListener("change", (e) => {
+      const v = parseInt(e.target.value, 10);
+      FlareUrl.set({ util: v === 0 ? null : v });
+    });
+    /* During drag, update visible label live (without rerendering everything) */
     slider.addEventListener("input", (e) => {
-      minUtil = parseInt(e.target.value, 10) / 100;
-      document.getElementById("whSliderVal").textContent = e.target.value + "%";
-      const card = document.querySelector(".warehouse-grid");
-      card.querySelector("svg").remove();
-      card.insertAdjacentHTML("afterbegin", gridSvg(visibleBins(), wh));
-      wireGrid();
+      const v = parseInt(e.target.value, 10);
+      const lbl = document.querySelector(".field-label span");
+      if (lbl) lbl.textContent = v + "%";
     });
   }
 
@@ -164,6 +173,10 @@ window.FlareDashboards.warehouse = function (main, businessKey) {
     `;
   }
 
+  const off = FlareUrl.onChange((_p, route) => {
+    if (route === "#/warehouse") { ({ aisle: filterAisle, minUtil } = readState()); render(); }
+    else off();
+  });
   render();
 };
 

@@ -9,37 +9,61 @@ window.FlareDashboards = window.FlareDashboards || {};
 
 window.FlareDashboards.otif = function (main, businessKey) {
   const biz = FlareData.business(businessKey);
-  const r = (i) => { const x = Math.sin((biz.seed + FlareData.salt * 0.0001 + i * 17.7)) * 43758.5; return x - Math.floor(x); };
+  const WINDOWS = [
+    { key: "4w", label: "Last 4 weeks", days: 28 },
+    { key: "12w", label: "Last 12 weeks", days: 84 },
+    { key: "24w", label: "Last 24 weeks", days: 168 },
+  ];
+  const CHANNELS = ["All", ...FlareData.channels];
 
-  const overall = biz.otifTarget + (r(1) - 0.45) * 4;
-  const target  = biz.otifTarget;
-  const totalOrders = Math.floor(15000 + r(2) * 40000);
-  const onTime  = Math.min(99.9, target + 1 + (r(3) - 0.5) * 4);
-  const inFull  = Math.min(99.9, 96 + (r(4) - 0.5) * 4);
-  const inFullFT = Math.min(99.9, 90 + (r(5) - 0.5) * 6);
-  const otifFT  = Math.min(99.9, overall - 4 + (r(6) - 0.5) * 4);
-  const failures = Math.floor(totalOrders * (1 - overall / 100));
+  function readState() {
+    const p = FlareUrl.read();
+    return {
+      window: WINDOWS.find((w) => w.key === p.window) ? p.window : "12w",
+      channel: CHANNELS.includes(p.channel) ? p.channel : "All",
+    };
+  }
 
-  const overallCls = overall >= target ? "positive" : overall >= target - 1.5 ? "warning" : "critical";
+  function render() {
+    const { window: win, channel } = readState();
+    const winDays = WINDOWS.find((w) => w.key === win).days;
+    const r = (i) => { const x = Math.sin((biz.seed + FlareData.salt * 0.0001 + i * 17.7 + winDays * 0.013)) * 43758.5; return x - Math.floor(x); };
+
+    /* Channel filter pulls OTIF slightly — Amazon/Wholesale are tighter SLA, Shopify looser */
+    const chanAdj = ({ Shopify: -0.3, Amazon: +0.4, Wholesale: +0.5, eBay: -0.6, "Retail POS": +0.2, All: 0 }[channel]) || 0;
+
+    const overall = Math.min(99.4, biz.otifTarget + chanAdj + (r(1) - 0.45) * 2.4);
+    const target  = biz.otifTarget;
+    /* Total orders = ordersPerDay × window × (channel share if filtered) */
+    const mix = { Shopify: 0.36, Amazon: 0.22, Wholesale: 0.28, eBay: 0.08, "Retail POS": 0.06, All: 1 }[channel];
+    const totalOrders = Math.floor(biz.ordersPerDay * winDays * mix * (0.96 + r(2) * 0.08));
+    const onTime  = Math.min(99.9, overall + 1 + (r(3) - 0.5) * 2);
+    const inFull  = Math.min(99.9, 96.5 + (r(4) - 0.5) * 2);
+    const inFullFT = Math.min(99.9, 91.5 + (r(5) - 0.5) * 3);
+    const otifFT  = Math.min(99.9, overall - 3.5 + (r(6) - 0.5) * 2);
+    const failures = Math.floor(totalOrders * (1 - overall / 100));
+
+    const overallCls = overall >= target ? "positive" : overall >= target - 1.5 ? "warning" : "critical";
 
   main.innerHTML = `
     <div class="main-inner">
-      <h1 class="page-title">OTIF (On Time In Full) Dashboard</h1>
+      ${FlareUI.pageHeader("OTIF (On Time In Full)", "On-time-in-full delivery performance across orders we ship.")}
 
-      <div style="margin-top: 1rem; font-size: 1.05rem; color: var(--white); font-weight: 700; line-height: 1.65;">
-        <p style="margin-bottom: 0.5rem;"><span style="color: var(--accent);">On Time</span>: Order shipped on or before the promised SLA date, measured from payment date</p>
-        <p style="margin-bottom: 0.5rem;"><span style="color: var(--accent);">In Full</span>: All items in the order are shipped</p>
-        <p style="margin-bottom: 1.1rem;"><span style="color: var(--accent);">First Time</span>: Order is shipped in a single shipment</p>
-        <p style="margin-bottom: 0.5rem;">Orders with a future shipping deadline are excluded, unless they have already shipped OTIF</p>
-        <p style="margin-bottom: 0.5rem;">SLA details per business are shown at the bottom of this page</p>
-        <p style="margin-bottom: 1.5rem;">E-marketplace orders are excluded from this report, as they are not shipped by us.</p>
+      <div style="font-size: 0.95rem; color: var(--read); line-height: 1.6; max-width: 80ch; margin-bottom: 1.25rem;">
+        <p><span style="color: var(--accent); font-weight: 600;">On Time</span> — shipped on/before the promised SLA date, measured from payment date.
+        <span style="color: var(--accent); font-weight: 600;">In Full</span> — all items shipped.
+        <span style="color: var(--accent); font-weight: 600;">First Time</span> — single shipment.
+        Orders with a future SLA deadline are excluded unless already OTIF. Marketplace orders shipped by the platform are excluded.</p>
       </div>
 
-      <div class="expander" style="margin-bottom: 2rem;">
-        <div class="expander-head"><span class="ms ms-sm">chevron_right</span> Filter Options</div>
+      <div class="chip-rail" id="winRail">
+        ${WINDOWS.map((w) => `<button class="chip ${w.key === win ? "active" : ""}" data-window="${w.key}">${w.label}</button>`).join("")}
+      </div>
+      <div class="chip-rail" id="chanRail" style="margin-bottom: 1.25rem;">
+        ${CHANNELS.map((c) => `<button class="chip ${c === channel ? "active" : ""}" data-channel="${c}">${c}</button>`).join("")}
       </div>
 
-      <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem;">Key Performance Indicators</h2>
+      <h2 style="font-size: 1.4rem; margin-bottom: 1.25rem;">Key Performance Indicators</h2>
 
       <div style="display: grid; grid-template-columns: 1fr 3fr; gap: 1.5rem; align-items: stretch; margin-bottom: 2rem;">
         <div class="kpi-card ${overallCls}" style="min-height: 200px;">
@@ -72,10 +96,10 @@ window.FlareDashboards.otif = function (main, businessKey) {
         </tr></thead>
         <tbody>
           ${FlareData.businesses.filter((b) => b.key !== "group").map((b, i) => {
-            const o = b.otifTarget + (Math.sin(b.seed + FlareData.salt * 0.0001 + 1.3) * 2.5);
-            const orders = Math.floor(2000 + (Math.sin(b.seed + FlareData.salt * 0.0001) + 1) * 6000);
-            const otd = b.otifTarget + 1 + (Math.cos(b.seed + FlareData.salt * 0.0001) * 2);
-            const ifd = 95 + (Math.sin(b.seed + FlareData.salt * 0.0001 * 1.7) * 3);
+            const o = Math.min(99.4, b.otifTarget + chanAdj + (Math.sin(b.seed + FlareData.salt * 0.0001 + 1.3) * 1.6));
+            const orders = Math.floor(b.ordersPerDay * winDays * mix * (0.96 + ((Math.sin(b.seed + FlareData.salt * 0.0001) + 1) / 2) * 0.08));
+            const otd = Math.min(99.9, o + 1 + (Math.cos(b.seed + FlareData.salt * 0.0001) * 1.4));
+            const ifd = Math.min(99.9, 96.5 + (Math.sin(b.seed + FlareData.salt * 0.0001 * 1.7) * 2));
             const vt = o - b.otifTarget;
             const cls = vt >= 0 ? "pos" : "neg";
             return `<tr>
@@ -91,4 +115,12 @@ window.FlareDashboards.otif = function (main, businessKey) {
       </table>
     </div>
   `;
+
+    FlareUI.mountHeader(main);
+    main.querySelectorAll("#winRail .chip").forEach((b) => b.addEventListener("click", () => FlareUrl.set({ window: b.getAttribute("data-window") === "12w" ? null : b.getAttribute("data-window") })));
+    main.querySelectorAll("#chanRail .chip").forEach((b) => b.addEventListener("click", () => FlareUrl.set({ channel: b.getAttribute("data-channel") === "All" ? null : b.getAttribute("data-channel") })));
+  }
+
+  const off = FlareUrl.onChange((_p, route) => { if (route === "#/otif") render(); else off(); });
+  render();
 };

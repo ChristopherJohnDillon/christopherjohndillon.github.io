@@ -33,7 +33,21 @@ robots: noindex, nofollow
       </div>
 
       <div class="sb-foot">
-        <div class="accent">VISUAL CLONE · v1.1</div>
+        <div class="version-chip" id="versionChip" tabindex="0">
+          <span class="accent">VISUAL CLONE · v1.1</span>
+          <span class="ms ms-sm" style="color: var(--mute);">history</span>
+          <div class="version-pop" id="versionPop" aria-hidden="true">
+            <div class="vp-head">Recent commits</div>
+            <div class="vp-list">
+              <div class="vp-row"><span class="vp-sha">b210604</span><span class="vp-msg">feat(flare): add 6 new dashboards beyond Nexus's scope</span></div>
+              <div class="vp-row"><span class="vp-sha">579e38f</span><span class="vp-msg">fix(flare): wire view tabs to content, randomise values per visit</span></div>
+              <div class="vp-row"><span class="vp-sha">9665590</span><span class="vp-msg">feat(flare): add OTIF + NPS, rebuild Customer Intelligence</span></div>
+              <div class="vp-row"><span class="vp-sha">5b2bd3f</span><span class="vp-msg">feat(flare): match real FLARE layout from live screenshots</span></div>
+              <div class="vp-row"><span class="vp-sha">06a4758</span><span class="vp-msg">feat(flare): simplify dashboards, use real FLARE logo</span></div>
+            </div>
+            <div class="vp-foot">Every dashboard is a Git-versioned file.</div>
+          </div>
+        </div>
         Static demo · not the real Streamlit stack.<br/>
         <a href="{{ '/flare/' | relative_url }}" style="color: var(--mute); border-bottom: 1px dotted var(--mute);">About this demo</a>
       </div>
@@ -46,15 +60,20 @@ robots: noindex, nofollow
         <span class="current" id="crumbSection">Home</span>
       </div>
       <div class="right">
+        <button class="tour-pill" id="tourPill" title="Take a guided tour of FLARE">
+          <span class="ms ms-sm">play_circle</span>
+          <span>Take the tour</span>
+        </button>
         <div class="business-switcher" id="bizSwitcher" role="button" tabindex="0" aria-haspopup="true">
           <span class="swatch" id="bizSwatch"></span>
           <span id="bizLabel">Group rollup</span>
           <span class="ms ms-sm">expand_more</span>
           <div class="switcher-menu" id="bizMenu" role="menu"></div>
         </div>
-        <span class="user-badge">
+        <span class="user-badge" id="userBadge" title="Microsoft Entra SSO — role-based access">
           <span class="avatar">CD</span>
           <span>demo@flare.ops</span>
+          <span class="ms ms-sm" style="color: var(--positive); margin-left: 4px;" title="Entra SSO">verified_user</span>
         </span>
       </div>
     </header>
@@ -64,22 +83,23 @@ robots: noindex, nofollow
 
   <div class="flare-tooltip" id="flareTooltip"></div>
 
+  <script src="{{ '/flare/flare-url.js' | relative_url }}"></script>
   <script src="{{ '/flare/flare-data.js' | relative_url }}"></script>
   <script src="{{ '/flare/flare-charts.js' | relative_url }}"></script>
+  <script src="{{ '/flare/flare-ui.js' | relative_url }}"></script>
   <script src="{{ '/flare/dashboards/home.js' | relative_url }}"></script>
   <script src="{{ '/flare/dashboards/exec.js' | relative_url }}"></script>
+  <script src="{{ '/flare/dashboards/sales.js' | relative_url }}"></script>
   <script src="{{ '/flare/dashboards/sku.js' | relative_url }}"></script>
   <script src="{{ '/flare/dashboards/stats.js' | relative_url }}"></script>
+  <script src="{{ '/flare/dashboards/openorders.js' | relative_url }}"></script>
   <script src="{{ '/flare/dashboards/warehouse.js' | relative_url }}"></script>
   <script src="{{ '/flare/dashboards/otif.js' | relative_url }}"></script>
   <script src="{{ '/flare/dashboards/bundle.js' | relative_url }}"></script>
   <script src="{{ '/flare/dashboards/nps.js' | relative_url }}"></script>
   <script src="{{ '/flare/dashboards/ask.js' | relative_url }}"></script>
   <script src="{{ '/flare/dashboards/docintel.js' | relative_url }}"></script>
-  <script src="{{ '/flare/dashboards/oee.js' | relative_url }}"></script>
-  <script src="{{ '/flare/dashboards/grid.js' | relative_url }}"></script>
-  <script src="{{ '/flare/dashboards/trial.js' | relative_url }}"></script>
-  <script src="{{ '/flare/dashboards/fleet.js' | relative_url }}"></script>
   <script src="{{ '/flare/flare-app.js' | relative_url }}"></script>
+  <script src="{{ '/flare/flare-tour.js' | relative_url }}"></script>
 </body>
 </html>

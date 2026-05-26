@@ -19,6 +19,7 @@
       group: "Sales",
       icon: "trending_up",
       items: [
+        { route: "#/sales", label: "Sales Tracker",      icon: "monitoring",   mod: "sales" },
         { route: "#/sku",   label: "Product Margin",     icon: "insights",     mod: "sku" },
         { route: "#/stats", label: "Pricing & Shipping", icon: "price_change", mod: "stats" },
       ],
@@ -27,8 +28,9 @@
       group: "Operations",
       icon: "settings",
       items: [
-        { route: "#/otif",      label: "OTIF Tracker",      icon: "local_shipping", mod: "otif" },
-        { route: "#/warehouse", label: "Warehouse Heatmap", icon: "warehouse",      mod: "warehouse" },
+        { route: "#/otif",       label: "OTIF Tracker",        icon: "local_shipping", mod: "otif" },
+        { route: "#/openorders", label: "Open Order Pipeline", icon: "pending_actions", mod: "openorders" },
+        { route: "#/warehouse",  label: "Warehouse Heatmap",   icon: "warehouse",      mod: "warehouse" },
       ],
     },
     {
@@ -54,16 +56,6 @@
         { route: "#/docintel", label: "Document Intelligence", icon: "psychology", mod: "docintel" },
       ],
     },
-    {
-      group: "Cross-Industry",
-      icon: "explore",
-      items: [
-        { route: "#/oee",   label: "Manufacturing OEE",   icon: "precision_manufacturing", mod: "oee" },
-        { route: "#/grid",  label: "Grid Load",           icon: "bolt",                    mod: "grid" },
-        { route: "#/trial", label: "Clinical Trial",      icon: "biotech",                 mod: "trial" },
-        { route: "#/fleet", label: "Fleet Operations",    icon: "local_shipping",          mod: "fleet" },
-      ],
-    },
   ];
 
   /* Flatten routes for lookup */
@@ -79,9 +71,20 @@
   }
   const DEFAULT_ROUTE = "#/home";
 
+  /* Strip the query string off the hash to find the bare route. */
+  function bareRoute(hash) {
+    const h = hash || "";
+    const qIdx = h.indexOf("?");
+    return qIdx === -1 ? h : h.slice(0, qIdx);
+  }
+
+  const initialBare = bareRoute(window.location.hash);
+  /* URL ?biz= takes precedence over localStorage so shared links work. */
+  const urlBiz = window.FlareUrl ? window.FlareUrl.get("biz") : null;
+
   const state = {
-    business: localStorage.getItem("flare:business") || "group",
-    route: window.location.hash in ROUTES ? window.location.hash : DEFAULT_ROUTE,
+    business: urlBiz || localStorage.getItem("flare:business") || "group",
+    route: initialBare in ROUTES ? initialBare : DEFAULT_ROUTE,
     collapsed: localStorage.getItem("flare:collapsed") === "1",  /* default = expanded so visitors can see nav */
   };
 
@@ -147,6 +150,7 @@
   function setBusiness(key) {
     state.business = key;
     localStorage.setItem("flare:business", key);
+    if (window.FlareUrl) window.FlareUrl.set({ biz: key === "group" ? null : key });
     renderSwitcher();
     render();
   }
@@ -176,10 +180,20 @@
      ROUTING + RENDER DISPATCH
      ============================================================ */
   window.addEventListener("hashchange", () => {
-    const next = window.location.hash;
+    const next = bareRoute(window.location.hash);
+    const prev = state.route;
     state.route = next in ROUTES ? next : DEFAULT_ROUTE;
     if (!(next in ROUTES)) window.location.hash = DEFAULT_ROUTE;
-    render();
+    /* Pick up biz from URL params (e.g. someone shared a link) */
+    const urlBiz = window.FlareUrl ? window.FlareUrl.get("biz") : null;
+    if (urlBiz && urlBiz !== state.business && FlareData.business(urlBiz)) {
+      state.business = urlBiz;
+      localStorage.setItem("flare:business", urlBiz);
+      renderSwitcher();
+    }
+    /* Only re-render the body if we changed routes — filter changes within a route
+       are handled by each dashboard's own FlareUrl.onChange subscription. */
+    if (state.route !== prev) render();
   });
 
   function render() {
@@ -225,6 +239,8 @@
     state.route = DEFAULT_ROUTE;
     window.location.hash = DEFAULT_ROUTE;
   }
+  /* expose route lookup so dashboards can construct correct hashes for links */
+  window.FlareApp = { bareRoute };
   applyCollapsed();
   renderSwitcher();
   render();

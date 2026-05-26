@@ -35,11 +35,13 @@ window.FlareDashboards.home = function (main) {
   const dir = document.getElementById("dirGrid");
   const groups = [
     { name: "Sales", icon: "trending_up", items: [
+      { name: "Sales Tracker", desc: "Today vs forecast, WTD/MTD, channel split, by-brand attainment strip. The daily driver page.", route: "#/sales" },
       { name: "Product Margin", desc: "Per-business, per-channel margin vs budget targets — exec. team only.", route: "#/sku" },
       { name: "Pricing &amp; Shipping", desc: "Analyse pricing and shipping margin impacts, model price-change scenarios, and test statistical significance.", route: "#/stats" },
     ] },
     { name: "Operations", icon: "settings", items: [
       { name: "OTIF Tracker", desc: "Monitor on-time in-full delivery performance and fulfilment metrics.", route: "#/otif" },
+      { name: "Open Order Pipeline", desc: "Stage waterfall (placed → picking → packing → carrier → transit) with aging buckets and queue triage.", route: "#/openorders" },
       { name: "Warehouse Heatmap", desc: "Bin-level utilisation grid across aisles. Hover for live stats, click to inspect contents.", route: "#/warehouse" },
     ] },
     { name: "Customer", icon: "sentiment_satisfied", items: [
@@ -52,12 +54,6 @@ window.FlareDashboards.home = function (main) {
     { name: "AI", icon: "auto_awesome", items: [
       { name: "Ask FLARE", desc: "Chat with your data. Self-hosted local LLM — nothing leaves the warehouse network.", route: "#/ask" },
       { name: "Document Intelligence", desc: "Local-LLM classification, tagging, and routing for support tickets, contracts, and unstructured docs.", route: "#/docintel" },
-    ] },
-    { name: "Cross-Industry Demos", icon: "explore", items: [
-      { name: "Manufacturing OEE", desc: "Overall Equipment Effectiveness across production lines, downtime breakdown, scrap rate.", route: "#/oee" },
-      { name: "Grid Load &amp; Capacity", desc: "Regional substation telemetry, demand curve, renewable mix, outage tracking.", route: "#/grid" },
-      { name: "Clinical Trial Monitor", desc: "Enrolment funnel, site performance, adverse event tracking, protocol deviation review.", route: "#/trial" },
-      { name: "Fleet Operations", desc: "Live vehicle telemetry, route efficiency, fuel cost per mile, driver-hour compliance.", route: "#/fleet" },
     ] },
   ];
 

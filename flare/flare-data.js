@@ -20,13 +20,44 @@ function rng(seed) {
   };
 }
 
+/* ============================================================
+   ANCHORED P&L FOR HELIOS BRANDS CO. (fictional)
+   Every dashboard derives from these — keep internally consistent.
+   annualRev   : £ per year
+   aov         : £ average order value
+   ordersPerDay: round number ≈ annualRev / 365 / aov
+   skuCount    : active SKUs
+   gmTarget    : %
+   otifTarget  : %
+   ============================================================ */
 const BUSINESSES = [
-  { key: "group",      name: "Group rollup",   shortName: "Group",     seed: 1001, color: "#FF4F00", currency: "£", scaleRev: 18.5, scaleOps: 1.0,  gmTarget: 42, otifTarget: 95 },
-  { key: "trailcraft", name: "Trailcraft",     shortName: "Trailcraft", seed: 2002, color: "#3D8BFF", currency: "£", scaleRev: 5.2,  scaleOps: 1.05, gmTarget: 38, otifTarget: 94 },
-  { key: "hearthline", name: "Hearthline",     shortName: "Hearthline", seed: 3003, color: "#C97EFF", currency: "£", scaleRev: 4.1,  scaleOps: 1.0,  gmTarget: 44, otifTarget: 96 },
-  { key: "quill",      name: "Quill & Press",  shortName: "Quill",      seed: 4004, color: "#FFC857", currency: "£", scaleRev: 3.4,  scaleOps: 0.95, gmTarget: 46, otifTarget: 95 },
-  { key: "velora",     name: "Velora",         shortName: "Velora",     seed: 5005, color: "#16A34A", currency: "£", scaleRev: 5.8,  scaleOps: 1.1,  gmTarget: 40, otifTarget: 95 },
+  { key: "group",      name: "Group rollup",   shortName: "Group",     seed: 1001, color: "#FF4F00", currency: "£",
+    annualRev: 77_000_000, aov: 54, ordersPerDay: 4150, skuCount: 1220, gmTarget: 42, otifTarget: 95,
+    scaleRev: 18.5, scaleOps: 1.0 },
+  { key: "trailcraft", name: "Trailcraft",     shortName: "Trailcraft", seed: 2002, color: "#3D8BFF", currency: "£",
+    annualRev: 22_000_000, aov: 85, ordersPerDay: 700, skuCount: 380, gmTarget: 38, otifTarget: 94,
+    scaleRev: 5.2, scaleOps: 1.05 },
+  { key: "hearthline", name: "Hearthline",     shortName: "Hearthline", seed: 3003, color: "#C97EFF", currency: "£",
+    annualRev: 17_000_000, aov: 55, ordersPerDay: 850, skuCount: 240, gmTarget: 44, otifTarget: 96,
+    scaleRev: 4.1, scaleOps: 1.0 },
+  { key: "quill",      name: "Quill & Press",  shortName: "Quill",      seed: 4004, color: "#FFC857", currency: "£",
+    annualRev: 14_000_000, aov: 38, ordersPerDay: 1000, skuCount: 310, gmTarget: 46, otifTarget: 95,
+    scaleRev: 3.4, scaleOps: 0.95 },
+  { key: "velora",     name: "Velora",         shortName: "Velora",     seed: 5005, color: "#16A34A", currency: "£",
+    annualRev: 24_000_000, aov: 42, ordersPerDay: 1600, skuCount: 290, gmTarget: 40, otifTarget: 95,
+    scaleRev: 5.8, scaleOps: 1.1 },
 ];
+
+const SALES_CHANNELS = ["Shopify", "Amazon", "Wholesale", "eBay", "Retail POS"];
+
+/* Channel mix by brand — sums to 1.0 in the order above */
+const CHANNEL_MIX = {
+  group:      [0.36, 0.22, 0.28, 0.08, 0.06],
+  trailcraft: [0.30, 0.18, 0.40, 0.06, 0.06],
+  hearthline: [0.48, 0.20, 0.18, 0.06, 0.08],
+  quill:      [0.42, 0.30, 0.14, 0.08, 0.06],
+  velora:     [0.32, 0.18, 0.32, 0.10, 0.08],
+};
 
 const BUSINESS_BY_KEY = Object.fromEntries(BUSINESSES.map((b) => [b.key, b]));
 
@@ -292,6 +323,130 @@ function generateBundle(biz) {
   return { skus, matrix, topPairs: pairs.slice(0, 10) };
 }
 
+/* ============================================================
+   SALES TRACKER — today/yesterday/WTD/MTD, channel split
+   Numbers anchored to annualRev so they reconcile with Exec/SKU.
+   ============================================================ */
+function generateSales(biz, period, channelFilter) {
+  const r = rng(biz.seed + 99);
+  const dailyAvg = biz.annualRev / 365;
+  const days = { today: 0, yesterday: 1, wtd: new Date().getDay() || 7, mtd: new Date().getDate() }[period] || 0;
+  // For "today" / "yesterday" we want a single-day actual; for WTD/MTD a multi-day sum.
+  const span = period === "today" || period === "yesterday" ? 1 : days;
+  // Daily seasonality: weekdays > weekends; small day-of-week noise
+  let actual = 0;
+  for (let d = 0; d < Math.max(1, span); d++) {
+    const dow = (new Date().getDay() + 7 - d) % 7;
+    const dowMul = [0.78, 1.05, 1.10, 1.08, 1.06, 1.02, 0.91][dow]; // Sun..Sat
+    const noise = 0.92 + r() * 0.16;
+    actual += dailyAvg * dowMul * noise;
+  }
+  // Forecast = clean expected for the span (no noise)
+  let forecast = 0;
+  for (let d = 0; d < Math.max(1, span); d++) {
+    const dow = (new Date().getDay() + 7 - d) % 7;
+    forecast += dailyAvg * [0.78, 1.05, 1.10, 1.08, 1.06, 1.02, 0.91][dow];
+  }
+  const mix = CHANNEL_MIX[biz.key] || CHANNEL_MIX.group;
+  const channels = SALES_CHANNELS.map((c, i) => ({
+    channel: c,
+    revenue: actual * mix[i] * (0.93 + r() * 0.14),
+    orders: Math.floor(biz.ordersPerDay * span * mix[i] * (0.95 + r() * 0.1)),
+  }));
+  // Normalise channels back to total
+  const sum = channels.reduce((s, c) => s + c.revenue, 0);
+  channels.forEach((c) => (c.revenue *= actual / sum));
+  // Filter if requested
+  const filteredChans = channelFilter && channelFilter !== "All"
+    ? channels.filter((c) => c.channel === channelFilter)
+    : channels;
+  const filteredActual = filteredChans.reduce((s, c) => s + c.revenue, 0);
+  const filteredOrders = filteredChans.reduce((s, c) => s + c.orders, 0);
+  const filteredForecast = forecast * (filteredActual / actual || 1);
+  // Hourly profile (for "today" view)
+  const hourly = [];
+  for (let h = 0; h < 24; h++) {
+    const shape = h < 7 ? 0.1 : h < 10 ? 0.4 : h < 12 ? 0.7 : h < 14 ? 1.0 : h < 17 ? 0.9 : h < 20 ? 0.85 : h < 22 ? 0.55 : 0.25;
+    hourly.push({
+      hour: `${String(h).padStart(2, "0")}:00`,
+      revenue: (filteredActual / 24) * shape * 2.2 * (0.9 + r() * 0.2),
+    });
+  }
+  // Per-brand strip (group view)
+  const perBrand = BUSINESSES.filter((b) => b.key !== "group").map((b) => {
+    const br = rng(b.seed + 199);
+    const bDaily = b.annualRev / 365;
+    let bActual = 0, bForecast = 0;
+    for (let d = 0; d < Math.max(1, span); d++) {
+      const dow = (new Date().getDay() + 7 - d) % 7;
+      const dowMul = [0.78, 1.05, 1.10, 1.08, 1.06, 1.02, 0.91][dow];
+      bActual += bDaily * dowMul * (0.92 + br() * 0.16);
+      bForecast += bDaily * dowMul;
+    }
+    return { key: b.key, name: b.name, color: b.color, actual: bActual, forecast: bForecast, attainment: bActual / bForecast };
+  });
+  return { period, span, actual: filteredActual, forecast: filteredForecast,
+    orders: filteredOrders, channels, hourly, perBrand };
+}
+
+/* ============================================================
+   OPEN ORDER PIPELINE — stage waterfall + aging
+   ============================================================ */
+const ORDER_STAGES = ["Placed", "Picking", "Packing", "Awaiting carrier", "In transit"];
+
+function generateOrderPipeline(biz, stageFilter, agingFilter) {
+  const r = rng(biz.seed + 144);
+  // Open orders ≈ 2.4 days of throughput on average
+  const totalOpen = Math.floor(biz.ordersPerDay * 2.4 * (0.92 + r() * 0.16));
+  // Distribution across stages (sums to 1.0)
+  const stageDist = [0.32, 0.18, 0.16, 0.12, 0.22];
+  const stages = ORDER_STAGES.map((name, i) => ({
+    stage: name,
+    count: Math.floor(totalOpen * stageDist[i] * (0.92 + r() * 0.16)),
+  }));
+  // Aging buckets across the whole pipeline
+  const agingDist = [0.46, 0.28, 0.14, 0.08, 0.04]; // <1d, 1-2d, 2-4d, 4-7d, >7d
+  const agingLabels = ["<1d", "1–2d", "2–4d", "4–7d", ">7d"];
+  const aging = agingLabels.map((label, i) => ({
+    bucket: label,
+    count: Math.floor(totalOpen * agingDist[i] * (0.92 + r() * 0.16)),
+  }));
+  // Queue table — top 20 oldest orders
+  const queue = [];
+  const mix = CHANNEL_MIX[biz.key] || CHANNEL_MIX.group;
+  const cumMix = mix.reduce((acc, m, i) => { acc.push((acc[i - 1] || 0) + m); return acc; }, []);
+  for (let i = 0; i < 24; i++) {
+    const stageIdx = Math.floor(r() * 5);
+    const stage = ORDER_STAGES[stageIdx];
+    const ageDays = (4 + r() * 8) - i * 0.06; // older first
+    const cm = r();
+    const chanIdx = cumMix.findIndex((c) => c >= cm);
+    const channel = SALES_CHANNELS[chanIdx === -1 ? 0 : chanIdx];
+    const lines = Math.floor(1 + r() * 4);
+    const value = biz.aov * (0.6 + r() * 2.4);
+    queue.push({
+      id: `${biz.shortName.slice(0, 3).toUpperCase()}-${100000 + Math.floor(r() * 899999)}`,
+      stage, channel, ageDays, lines, value,
+    });
+  }
+  queue.sort((a, b) => b.ageDays - a.ageDays);
+  // Apply filters
+  let filteredQueue = queue;
+  if (stageFilter && stageFilter !== "All") filteredQueue = filteredQueue.filter((q) => q.stage === stageFilter);
+  if (agingFilter && agingFilter !== "All") {
+    filteredQueue = filteredQueue.filter((q) => {
+      const a = q.ageDays;
+      if (agingFilter === "<1d") return a < 1;
+      if (agingFilter === "1–2d") return a >= 1 && a < 2;
+      if (agingFilter === "2–4d") return a >= 2 && a < 4;
+      if (agingFilter === "4–7d") return a >= 4 && a < 7;
+      if (agingFilter === ">7d") return a >= 7;
+      return true;
+    });
+  }
+  return { totalOpen, stages, aging, queue: filteredQueue.slice(0, 20) };
+}
+
 /* Public API */
 const FlareData = {
   businesses: BUSINESSES,
@@ -306,6 +461,10 @@ const FlareData = {
   promos: generatePromos,
   statTest: generateStatTest,
   bundle: generateBundle,
+  sales: generateSales,
+  orderPipeline: generateOrderPipeline,
+  channels: SALES_CHANNELS,
+  orderStages: ORDER_STAGES,
   categories: (bizKey) => CATEGORIES[bizKey] || CATEGORIES.group,
 };
 

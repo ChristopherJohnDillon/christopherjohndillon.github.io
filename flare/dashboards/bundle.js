@@ -18,19 +18,7 @@ window.FlareDashboards.bundle = function (main, businessKey) {
 
     main.innerHTML = `
       <div class="main-inner">
-        <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; margin-bottom: 1rem;">
-          <div>
-            <h1 class="page-title">Customer Analysis Dashboard</h1>
-            <div class="page-subtitle">E-Commerce &amp; Phone customer segmentation, churn prevention &amp; acquisition analysis</div>
-          </div>
-          <div style="flex: 0 0 auto; padding-top: 0.6rem; display: flex; align-items: center; gap: 0.85rem;">
-            <img src="/flare/flare-logo.svg" alt="" style="width: 48px; height: 42px;" />
-            <div style="font-weight: 800; font-size: 1.4rem; letter-spacing: 0.06em; color: var(--white); line-height: 1.1;">
-              HELIOS
-              <div style="font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; color: var(--mute);">BRANDS CO.</div>
-            </div>
-          </div>
-        </div>
+        ${FlareUI.pageHeader("Customer Analysis", "E-commerce &amp; phone customer segmentation, churn prevention &amp; acquisition")}
 
         <hr class="divider" />
 
@@ -88,6 +76,7 @@ window.FlareDashboards.bundle = function (main, businessKey) {
       </div>
     `;
 
+    FlareUI.mountHeader(main);
     document.querySelectorAll("#divRadio .pill-opt").forEach((b) => b.addEventListener("click", () => { division = b.getAttribute("data-d"); render(); }));
     document.querySelectorAll("#subRadio .pill-opt").forEach((b) => b.addEventListener("click", () => { subDiv = b.getAttribute("data-d"); render(); }));
     document.querySelectorAll(".view-grid .pill-opt").forEach((b) => b.addEventListener("click", () => { view = b.getAttribute("data-v"); render(); }));

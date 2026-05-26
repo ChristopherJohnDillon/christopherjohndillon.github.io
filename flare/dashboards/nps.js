@@ -25,8 +25,7 @@ window.FlareDashboards.nps = function (main, businessKey) {
 
     main.innerHTML = `
       <div class="main-inner">
-        <h1 class="page-title">Delighted NPS Tracker</h1>
-        <p style="font-size: 1.25rem; font-weight: 700; color: var(--white); line-height: 1.5; margin: 1rem 0 1.5rem;">Delighted survey responses across all Helios brands. Data updates daily. Minimum 30 responses required for statistically significant NPS.</p>
+        ${FlareUI.pageHeader("Delighted NPS Tracker", "Net Promoter Score from Delighted across Helios brands. Min 30 responses for significance.")}
         <div class="data-as-of"><strong style="color: var(--white);">Data last refreshed:</strong> ${Math.floor(r(7) * 600 + 200)} minutes ago (${new Date().toLocaleDateString("en-CA")} ${new Date().toLocaleTimeString("en-GB").slice(0, 5)})</div>
 
         <div style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 2rem; margin-bottom: 1.5rem;">
@@ -104,6 +103,7 @@ window.FlareDashboards.nps = function (main, businessKey) {
       </div>
     `;
 
+    FlareUI.mountHeader(main);
     document.querySelectorAll("#regionRadio .pill-opt").forEach((b) => b.addEventListener("click", () => { region = b.getAttribute("data-r"); render(); }));
     document.querySelectorAll("#verticalRadio .pill-opt").forEach((b) => b.addEventListener("click", () => { vertical = b.getAttribute("data-v"); render(); }));
     document.querySelectorAll("#viewRadio .pill-opt").forEach((b) => b.addEventListener("click", () => { view = b.getAttribute("data-v"); render(); }));

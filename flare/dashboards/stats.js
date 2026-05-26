@@ -17,7 +17,7 @@ window.FlareDashboards.stats = function (main, businessKey) {
 
     main.innerHTML = `
       <div class="main-inner">
-        <h1 class="page-title">Pricing &amp; Shipping Analytics</h1>
+        ${FlareUI.pageHeader("Pricing & Shipping Analytics", "Promotion impact and shipping margin analysis")}
         <div class="data-as-of">Data as of ${dataAsOf} (8.5h ago)</div>
 
         <div class="expander" style="margin-bottom: 1.5rem;">
@@ -36,6 +36,7 @@ window.FlareDashboards.stats = function (main, businessKey) {
       </div>
     `;
 
+    FlareUI.mountHeader(main);
     document.querySelectorAll("#tabRadio .pill-opt").forEach((b) => {
       b.addEventListener("click", () => { tab = b.getAttribute("data-tab"); render(); });
     });

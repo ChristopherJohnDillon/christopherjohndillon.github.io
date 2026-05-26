@@ -1,196 +1,222 @@
 /* ============================================================
    FLARE — Executive Scorecard
-   Matches real Scorecard.py — big coloured KPI tiles with multi-
-   line details, pill radio filter rows.
+   L10/EOS-style traffic-light KPI tiles. All values anchored to the
+   business's annualRev/aov/gmTarget/otifTarget so the numbers reconcile
+   with Sales Tracker, Product Margin, OTIF, and Open Orders.
+   URL filters: ?division=Global|US|EU & ?subdivision=All|Pet|Beauty|Tattoo
    ============================================================ */
 window.FlareDashboards = window.FlareDashboards || {};
 
 window.FlareDashboards.exec = function (main, businessKey) {
   const biz = FlareData.business(businessKey);
-  const kpis = FlareData.kpis(biz);
 
-  let division = "Global";
-  let subdiv = "All";
+  const DIVS = ["Global", "US", "EU"];
+  const SUBS = ["All", "Pet", "Beauty", "Tattoo"];
+
+  function readState() {
+    const p = FlareUrl.read();
+    return {
+      division: DIVS.includes(p.division) ? p.division : "Global",
+      subdivision: SUBS.includes(p.subdivision) ? p.subdivision : "All",
+    };
+  }
+
+  function divisionScale(div, sub) {
+    /* Tilt rev by division/subdivision so filters do something visible
+       without claiming a real-world geographical split. */
+    let m = 1;
+    if (div === "US") m *= 0.58;
+    else if (div === "EU") m *= 0.42;
+    if (sub === "Pet") m *= 0.35;
+    else if (sub === "Beauty") m *= 0.30;
+    else if (sub === "Tattoo") m *= 0.18;
+    return m;
+  }
 
   function render() {
+    const { division, subdivision } = readState();
+    const m = divisionScale(division, subdivision);
     const today = new Date();
-    const dateStr = today.toLocaleDateString("en-GB", { year: "numeric", month: "2-digit", day: "2-digit" }).split("/").reverse().join("/");
+    const day = today.getDate();
+    const daysInMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+    const monthFraction = day / daysInMonth;
+    const monthName = today.toLocaleString("en-GB", { month: "long" });
     const asOf = new Date(today.getTime() - 24 * 3600 * 1000);
     const asOfStr = asOf.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
     const runAt = today.toLocaleString("en-GB", { day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" });
-    const monthName = today.toLocaleString("en-GB", { month: "long" });
+
+    /* === Anchored numbers === */
+    const annual = biz.annualRev * m;
+    const monthlyBudget = annual / 12;
+    const mtdBudget = monthlyBudget * monthFraction;
+    /* Pull a deterministic "actual" close to budget */
+    const seed = biz.seed + (division.charCodeAt(0) || 0) + (subdivision.charCodeAt(0) || 0);
+    const r = ((Math.sin(seed) + 1) / 2);
+    const mtdActual = mtdBudget * (0.91 + r * 0.14); /* between 91% and 105% of budget */
+    const mtdLY = mtdBudget * (0.93 + ((Math.sin(seed + 1.7) + 1) / 2) * 0.10);
+
+    const projection = monthlyBudget * (0.94 + r * 0.08);
+    const orderCount = Math.floor(biz.ordersPerDay * day * (0.96 + r * 0.08));
+    const openOrdersTotal = Math.floor(biz.ordersPerDay * 2.4 * m * (0.92 + r * 0.16));
+    const openOrdersWholesale = Math.floor(openOrdersTotal * 0.62);
+    const openOrdersDirect = openOrdersTotal - openOrdersWholesale;
+    const openOrdersValue = (openOrdersTotal * biz.aov) / 1e6;
+    const wholesaleValue = (openOrdersWholesale * biz.aov * 1.15) / 1e6;
+    const directValue = openOrdersValue - wholesaleValue;
+
+    const marginPct = biz.gmTarget + (r - 0.5) * 1.8;
+    const marginPctBudget = biz.gmTarget;
+    const marginMTD = mtdActual * marginPct / 100;
+    const marginMTDBudget = mtdBudget * biz.gmTarget / 100;
+
+    const cashWeeks = (1.5 + r * 1.4); /* £M */
+    const otif = biz.otifTarget + (r - 0.45) * 1.8;
+    const otifClass = otif >= biz.otifTarget ? "positive" : otif >= biz.otifTarget - 1.5 ? "warning" : "critical";
+    const invHealth = 76 + Math.floor(r * 18);
+    const stockDays = Math.floor(38 + r * 18);
+    const eoExposure = (biz.annualRev * 0.012 * m) / 1e6;
+    const activeStockouts = Math.max(2, Math.floor(8 + r * 18));
+    const topSellerOos = Math.floor(activeStockouts * 0.4);
+    const recoveryCostPerWeek = activeStockouts * 0.018;
+
+    const cls = (actualVal, target, tolerance = 0.025) => {
+      if (actualVal >= target) return "positive";
+      if (actualVal >= target * (1 - tolerance)) return "warning";
+      return "critical";
+    };
+
+    const mtdCls = cls(mtdActual, mtdBudget, 0.05);
+    const projCls = cls(projection, monthlyBudget, 0.04);
+    const marginPctCls = cls(marginPct, marginPctBudget, 0.01);
+    const cashCls = cashWeeks >= 3 ? "positive" : cashWeeks >= 2 ? "warning" : "critical";
+    const invCls = invHealth >= 85 ? "positive" : invHealth >= 78 ? "warning" : "critical";
+    const stockoutsCls = activeStockouts < 15 ? "positive" : activeStockouts < 25 ? "warning" : "critical";
 
     main.innerHTML = `
       <div class="main-inner">
-        <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; margin-bottom: 2rem;">
-          <div>
-            <h1 class="page-title">Executive Scorecard</h1>
-            <div class="page-subtitle">A concise overview of key business performance metrics. Click any card to view historical trends &amp; metric explanations.</div>
-          </div>
-          <div style="flex: 0 0 auto; padding-top: 0.6rem; display: flex; align-items: center; gap: 0.85rem;">
-            <img src="/flare/flare-logo.svg" alt="" style="width: 48px; height: 42px;" />
-            <div style="font-weight: 800; font-size: 1.4rem; letter-spacing: 0.06em; color: var(--white); line-height: 1.1;">
-              HELIOS
-              <div style="font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; color: var(--mute);">BRANDS CO.</div>
-            </div>
+        ${FlareUI.pageHeader("Executive Scorecard", "L10/EOS-style traffic-light KPIs. Click any tile to view the source dashboard.")}
+
+        <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.7rem;">
+          <img src="/flare/flare-logo.svg" alt="" style="width: 36px; height: 32px;" />
+          <div style="font-weight: 800; font-size: 1.1rem; letter-spacing: 0.06em; color: var(--white); line-height: 1.05;">
+            HELIOS BRANDS CO.
+            <div style="font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; color: var(--mute); margin-top: 1px;">${biz.name.toUpperCase()}</div>
           </div>
         </div>
 
-        <div class="field" style="max-width: 100%; margin-bottom: 1rem;">
-          <label class="field-label">Select KPI Date</label>
-          <div class="st-select" style="cursor: default;">${dateStr}</div>
-        </div>
+        <div class="data-as-of">Performance as of ${asOfStr} · analysis ran ${runAt}</div>
 
-        <div class="data-as-of">Performance metrics as of ${asOfStr} (Analysis ran at: ${runAt})</div>
-
-        <h2 style="font-size: 1.6rem; margin: 0.5rem 0 1.25rem;">MTD = 1 – ${today.getDate()} of ${monthName}</h2>
+        <h2 style="font-size: 1.4rem; margin: 0.4rem 0 1.2rem;">MTD · 1 – ${day} ${monthName}</h2>
 
         <div class="filter-row cols-2" style="margin-bottom: 1.75rem;">
           <div class="field">
             <label class="field-label">Division</label>
             <div class="pill-radio" id="divRadio">
-              ${["Global", "US", "EU"].map((d) => `<button class="pill-opt ${d === division ? "active" : ""}" data-d="${d}">${d}</button>`).join("")}
+              ${DIVS.map((d) => `<button class="pill-opt ${d === division ? "active" : ""}" data-d="${d}">${d}</button>`).join("")}
             </div>
           </div>
           <div class="field">
             <label class="field-label">Subdivision</label>
             <div class="pill-radio" id="subRadio">
-              ${["All", "Pet", "Beauty", "Tattoo"].map((d) => `<button class="pill-opt ${d === subdiv ? "active" : ""}" data-d="${d}">${d}</button>`).join("")}
+              ${SUBS.map((d) => `<button class="pill-opt ${d === subdivision ? "active" : ""}" data-d="${d}">${d}</button>`).join("")}
             </div>
           </div>
         </div>
 
         <div class="kpi-grid">
-          ${scoreTile(kpis[0], biz, "REVENUE MTD")}
-          ${scoreTile2(biz, "MONTH-END PROJECTION")}
-          ${scoreTile3(biz, "OPEN ORDERS (TOTAL)")}
+          <div class="kpi-card ${mtdCls}">
+            <h3>REVENUE MTD</h3>
+            <h1>${fmtM(mtdActual)}</h1>
+            <p>Budget MTD: ${fmtM(mtdBudget)}</p>
+            <p>LY MTD: ${fmtM(mtdLY)} (${pp(mtdActual / mtdLY - 1)})</p>
+            <p>${(mtdActual / monthlyBudget * 100).toFixed(0)}% of full-month budget (${fmtM(monthlyBudget)})</p>
+            <p class="detail">${pp(mtdActual / mtdBudget - 1)} vs MTD budget · ${(mtdActual / monthlyBudget * 100).toFixed(0)}% of full-month</p>
+          </div>
+          <div class="kpi-card ${projCls}">
+            <h3>MONTH-END PROJECTION</h3>
+            <h1>${fmtM(projection)}</h1>
+            <p>Run-rate forecast<br>Budget: ${fmtM(monthlyBudget)}</p>
+            <p>WD progress: ${day}/${daysInMonth} (${Math.round(monthFraction * 100)}%) · Avg/day: ${fmtK(mtdActual / day)}</p>
+            <p class="detail">${pp(projection / monthlyBudget - 1)} vs full-month budget</p>
+          </div>
+          <div class="kpi-card neutral">
+            <h3>OPEN ORDERS (TOTAL)</h3>
+            <h1>£${openOrdersValue.toFixed(2)}M (${openOrdersTotal.toLocaleString()})</h1>
+            <p>Wholesale £${wholesaleValue.toFixed(2)}M (${openOrdersWholesale.toLocaleString()})</p>
+            <p>Direct £${directValue.toFixed(2)}M (${openOrdersDirect.toLocaleString()})</p>
+            <p class="detail"><a href="#/openorders" style="color: var(--accent); border-bottom: 1px dotted var(--accent);">View pipeline →</a></p>
+          </div>
         </div>
         <div class="kpi-grid">
-          ${scoreTile4(kpis[1], biz, "PRODUCT MARGIN %")}
-          ${scoreTile5(kpis[1], biz, "MARGIN MTD")}
-          ${scoreTile6(biz, "CASH LIQUIDITY (PRIOR WEEK)")}
+          <div class="kpi-card ${marginPctCls}">
+            <h3>PRODUCT MARGIN %</h3>
+            <h1>${marginPct.toFixed(1)}%</h1>
+            <p>Budget: ${marginPctBudget.toFixed(1)}%</p>
+            <p>LY: ${(marginPctBudget - 0.8).toFixed(1)}%</p>
+            <p class="detail">${pp((marginPct - marginPctBudget) / 100)} vs budget</p>
+          </div>
+          <div class="kpi-card ${cls(marginMTD, marginMTDBudget, 0.05)}">
+            <h3>MARGIN MTD</h3>
+            <h1>${fmtM(marginMTD)}</h1>
+            <p>Budget: ${fmtM(marginMTDBudget)}</p>
+            <p>LY: ${fmtM(marginMTDBudget * 0.95)}</p>
+            <p class="detail">${marginMTD >= marginMTDBudget ? "+" : ""}${fmtM(marginMTD - marginMTDBudget)} vs budget</p>
+          </div>
+          <div class="kpi-card ${cashCls}">
+            <h3>CASH LIQUIDITY (PRIOR WEEK)</h3>
+            <h1>£${cashWeeks.toFixed(2)}M</h1>
+            <p>Operating cash position</p>
+            <p>Week ending ${new Date(Date.now() - 7 * 86400000).toLocaleDateString("en-GB", { day: "2-digit", month: "short" })}</p>
+            <p class="detail">${cashWeeks < 3 ? "Below £3.0M threshold" : "Above £3.0M threshold"}</p>
+          </div>
         </div>
         <div class="kpi-grid">
-          ${scoreTile7(kpis[2], biz, "OTIF MTD")}
-          ${scoreTile8(biz, "INVENTORY HEALTH")}
-          ${scoreTile9(kpis[3], biz, "ACTIVE STOCKOUTS")}
+          <div class="kpi-card ${otifClass}">
+            <h3>OTIF MTD</h3>
+            <h1>${otif.toFixed(1)}%</h1>
+            <p>Target: ${biz.otifTarget}%</p>
+            <p>LY MTD: ${(biz.otifTarget - 1.2).toFixed(1)}%</p>
+            <p class="detail">${pp((otif - biz.otifTarget) / 100)} vs target</p>
+          </div>
+          <div class="kpi-card ${invCls}">
+            <h3>INVENTORY HEALTH</h3>
+            <h1>${invHealth}%</h1>
+            <p>Stock cover days: ${stockDays}</p>
+            <p>E&amp;O exposure: £${eoExposure.toFixed(2)}M</p>
+            <p class="detail">${invHealth >= 85 ? "On target" : "Near target"}</p>
+          </div>
+          <div class="kpi-card ${stockoutsCls}">
+            <h3>ACTIVE STOCKOUTS</h3>
+            <h1>${activeStockouts}</h1>
+            <p>SKUs currently out of stock</p>
+            <p>Of which top sellers: ${topSellerOos}</p>
+            <p class="detail">Recovery cost ~£${recoveryCostPerWeek.toFixed(2)}M/week</p>
+          </div>
         </div>
       </div>
     `;
 
-    document.querySelectorAll("#divRadio .pill-opt").forEach((b) => b.addEventListener("click", () => { division = b.getAttribute("data-d"); render(); }));
-    document.querySelectorAll("#subRadio .pill-opt").forEach((b) => b.addEventListener("click", () => { subdiv = b.getAttribute("data-d"); render(); }));
+    FlareUI.mountHeader(main);
+
+    main.querySelectorAll("#divRadio .pill-opt").forEach((b) => {
+      b.addEventListener("click", () => FlareUrl.set({ division: b.getAttribute("data-d") === "Global" ? null : b.getAttribute("data-d") }));
+    });
+    main.querySelectorAll("#subRadio .pill-opt").forEach((b) => {
+      b.addEventListener("click", () => FlareUrl.set({ subdivision: b.getAttribute("data-d") === "All" ? null : b.getAttribute("data-d") }));
+    });
   }
+
+  const off = FlareUrl.onChange((_params, route) => {
+    if (route === "#/exec") render();
+    else off();
+  });
 
   render();
 };
 
-/* All scorecard tiles share the same shape. Each function picks
-   colour + values appropriate to the metric (deterministic from biz). */
-
-function scoreTile(k, biz, title) {
-  // REVENUE MTD — usually critical/red against MTD budget
-  const cls = parseInt(biz.seed) % 3 === 0 ? "warning" : "critical";
-  const val = "$" + (8 + (biz.seed % 5) + Math.random() * 0).toFixed(2).replace(".00", ".25") + "M";
-  return `
-    <div class="kpi-card ${cls}">
-      <h3>${title}</h3>
-      <h1>£${(biz.scaleRev * 0.6).toFixed(2)}M</h1>
-      <p>Budget MTD: £${(biz.scaleRev * 0.7).toFixed(2)}M</p>
-      <p>LY MTD: £${(biz.scaleRev * 0.62).toFixed(2)}M (-1.5%)</p>
-      <p>${Math.floor(60 + biz.seed % 20)}% of full-month budget (£${(biz.scaleRev * 0.9).toFixed(2)}M)</p>
-      <p class="detail">-10.6% vs MTD Budget | ${Math.floor(60 + biz.seed % 20)}% of Full-month Budget</p>
-    </div>
-  `;
-}
-function scoreTile2(biz, title) {
-  return `
-    <div class="kpi-card warning">
-      <h3>${title}</h3>
-      <h1>£${(biz.scaleRev * 0.82).toFixed(2)}M</h1>
-      <p>Commercial Team Forecast<br>Budget: £${(biz.scaleRev * 0.86).toFixed(2)}M</p>
-      <p>WD progress: 16/20 (80%) | Per-day: £${Math.floor(biz.scaleRev * 41)}K</p>
-      <p class="detail">-4.2% vs budget (-0.66M) [Manual]</p>
-    </div>
-  `;
-}
-function scoreTile3(biz, title) {
-  return `
-    <div class="kpi-card neutral">
-      <h3>${title}</h3>
-      <h1>Total £${(biz.scaleRev * 0.13).toFixed(2)}M (${Math.floor(biz.seed % 800 + 800)})</h1>
-      <p>Wholesale £${(biz.scaleRev * 0.11).toFixed(2)}M (${Math.floor(biz.seed % 400)})</p>
-      <p>Direct £${(biz.scaleRev * 0.02).toFixed(2)}M (${Math.floor(biz.seed % 600 + 400)})</p>
-    </div>
-  `;
-}
-function scoreTile4(k, biz, title) {
-  const cls = biz.gmTarget > 40 ? "positive" : "warning";
-  return `
-    <div class="kpi-card ${cls}">
-      <h3>${title}</h3>
-      <h1>${(biz.gmTarget + 18).toFixed(1)}%</h1>
-      <p>Budget: ${(biz.gmTarget + 17).toFixed(1)}%</p>
-      <p>LY: ${(biz.gmTarget + 15.5).toFixed(1)}%</p>
-      <p class="detail">+1.4pp vs budget · +2.7pp vs LY</p>
-    </div>
-  `;
-}
-function scoreTile5(k, biz, title) {
-  return `
-    <div class="kpi-card positive">
-      <h3>${title}</h3>
-      <h1>£${(biz.scaleRev * 0.42).toFixed(2)}M</h1>
-      <p>Budget: £${(biz.scaleRev * 0.4).toFixed(2)}M</p>
-      <p>LY: £${(biz.scaleRev * 0.39).toFixed(2)}M</p>
-      <p class="detail">+£0.4M vs budget</p>
-    </div>
-  `;
-}
-function scoreTile6(biz, title) {
-  return `
-    <div class="kpi-card critical">
-      <h3>${title}</h3>
-      <h1>£${(2.1 + (biz.seed % 5) / 10).toFixed(2)}M</h1>
-      <p>Operating cash position</p>
-      <p>Week ending ${new Date(Date.now() - 7*86400000).toLocaleDateString("en-GB", { day: "2-digit", month: "short" })}</p>
-      <p class="detail">Below £3.0M threshold</p>
-    </div>
-  `;
-}
-function scoreTile7(k, biz, title) {
-  const cls = biz.otifTarget >= 95 ? "positive" : "warning";
-  return `
-    <div class="kpi-card ${cls}">
-      <h3>${title}</h3>
-      <h1>${(biz.otifTarget + 0.3).toFixed(1)}%</h1>
-      <p>Target: ${biz.otifTarget}%</p>
-      <p>LY MTD: ${(biz.otifTarget - 1.2).toFixed(1)}%</p>
-      <p class="detail">On target · +1.5pp vs LY</p>
-    </div>
-  `;
-}
-function scoreTile8(biz, title) {
-  return `
-    <div class="kpi-card warning">
-      <h3>${title}</h3>
-      <h1>${(78 + biz.seed % 10).toFixed(0)}%</h1>
-      <p>Stock cover days: ${Math.floor(45 + biz.seed % 15)}</p>
-      <p>E&amp;O exposure: £${(biz.scaleRev * 0.05).toFixed(2)}M</p>
-      <p class="detail">Near target · +£0.2M E&amp;O vs prior</p>
-    </div>
-  `;
-}
-function scoreTile9(k, biz, title) {
-  const n = parseInt(k.value);
-  const cls = n < 15 ? "positive" : n < 25 ? "warning" : "critical";
-  return `
-    <div class="kpi-card ${cls}">
-      <h3>${title}</h3>
-      <h1>${k.value}</h1>
-      <p>SKUs currently out of stock</p>
-      <p>Of which top sellers: ${Math.floor(n * 0.4)}</p>
-      <p class="detail">Recovery cost ~£${(n * 0.02).toFixed(2)}M / week</p>
-    </div>
-  `;
+function fmtM(v) { return "£" + (v / 1e6).toFixed(2) + "M"; }
+function fmtK(v) { return "£" + (v / 1e3).toFixed(0) + "k"; }
+function pp(frac) {
+  const x = frac * 100;
+  return (x >= 0 ? "+" : "") + x.toFixed(1) + "%";
 }

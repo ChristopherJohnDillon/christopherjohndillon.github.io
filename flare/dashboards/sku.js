@@ -15,11 +15,16 @@ window.FlareDashboards.sku = function (main, businessKey) {
   const skus = FlareData.skus(biz);
   const cats = FlareData.categories(businessKey);
 
-  // Local filter state
-  let currency = "GBP";
-  let period = "MTD";
-  let division = "All";
-  let view = "Totals";
+  function readState() {
+    const p = FlareUrl.read();
+    return {
+      currency: ["GBP", "USD", "EUR"].includes(p.currency) ? p.currency : "GBP",
+      period: ["MTD", "YTD", "Yesterday", "Last 30 Days", "Last 90 Days", "Last Month"].includes(p.period) ? p.period : "MTD",
+      division: p.division || "All",
+      view: ["Totals", "Channels"].includes(p.view) ? p.view : "Totals",
+    };
+  }
+  let { currency, period, division, view } = readState();
   let selectedCats = ["All"];
   let selectedChans = ["All"];
 
@@ -46,8 +51,7 @@ window.FlareDashboards.sku = function (main, businessKey) {
     const dataAsOf = new Date().toLocaleString("en-GB", { year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" }).replace(",", "");
     main.innerHTML = `
       <div class="main-inner">
-        <h1 class="page-title">Product Margin</h1>
-        <div class="page-subtitle">Per-business, per-channel margin vs budget targets</div>
+        ${FlareUI.pageHeader("Product Margin", "Per-business, per-channel margin vs budget targets")}
         <div class="data-as-of">Data as of ${dataAsOf}</div>
 
         <div class="filter-row">
@@ -137,14 +141,17 @@ window.FlareDashboards.sku = function (main, businessKey) {
       </div>
     `;
 
-    // Wire up selects
-    ["fCurrency", "fPeriod", "fDiv", "fView"].forEach((id, i) => {
+    FlareUI.mountHeader(main);
+
+    // Wire up selects → URL (which triggers a re-render via onChange)
+    const keys = ["currency", "period", "division", "view"];
+    const ids  = ["fCurrency", "fPeriod", "fDiv", "fView"];
+    const defaults = { currency: "GBP", period: "MTD", division: "All", view: "Totals" };
+    ids.forEach((id, i) => {
       document.getElementById(id).addEventListener("change", (e) => {
-        if (i === 0) currency = e.target.value;
-        if (i === 1) period = e.target.value;
-        if (i === 2) division = e.target.value;
-        if (i === 3) view = e.target.value;
-        render();
+        const k = keys[i];
+        const v = e.target.value;
+        FlareUrl.set({ [k]: v === defaults[k] ? null : v });
       });
     });
   }
@@ -189,6 +196,10 @@ window.FlareDashboards.sku = function (main, businessKey) {
     return out;
   }
 
+  const off = FlareUrl.onChange((_p, route) => {
+    if (route === "#/sku") { ({ currency, period, division, view } = readState()); render(); }
+    else off();
+  });
   render();
 };
 
