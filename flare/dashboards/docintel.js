@@ -25,8 +25,7 @@ window.FlareDashboards.docintel = function (main, businessKey) {
 
   main.innerHTML = `
     <div class="main-inner">
-      <h1 class="page-title">Document Intelligence</h1>
-      <div class="page-subtitle">Local-LLM classification, tagging, and routing pipeline.</div>
+      ${FlareUI.pageHeader("Document Intelligence", "Local-LLM classification, tagging, and routing pipeline.")}
       <div class="data-as-of">Model: <strong style="color: var(--white);">flare-llm-13b</strong> · self-hosted · zero per-doc cloud cost</div>
 
       <div class="metric-row">
@@ -75,4 +74,5 @@ window.FlareDashboards.docintel = function (main, businessKey) {
       </table>
     </div>
   `;
+  FlareUI.mountHeader(main);
 };

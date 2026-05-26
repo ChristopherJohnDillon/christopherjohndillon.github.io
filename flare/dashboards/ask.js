@@ -32,8 +32,7 @@ window.FlareDashboards.ask = function (main, businessKey) {
 
   main.innerHTML = `
     <div class="main-inner">
-      <h1 class="page-title">Ask FLARE</h1>
-      <div class="page-subtitle">Chat with the data. Backed by your own private model — nothing leaves the network.</div>
+      ${FlareUI.pageHeader("Ask FLARE", "Chat with the data. Backed by your own private model — nothing leaves the network.")}
       <div class="data-as-of">Model: <strong style="color: var(--white);">flare-llm-13b</strong> · self-hosted · context: ${biz.name} (last 90 days)</div>
 
       <div class="ask-window">
@@ -80,6 +79,7 @@ window.FlareDashboards.ask = function (main, businessKey) {
   function escapeAttr(s) { return s.replace(/"/g, "&quot;"); }
 
   // Chip click prefills input
+  FlareUI.mountHeader(main);
   document.querySelectorAll(".ask-suggestions .chip").forEach((b) => {
     b.addEventListener("click", () => {
       const q = b.getAttribute("data-q");
