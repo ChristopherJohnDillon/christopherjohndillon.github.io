@@ -185,7 +185,7 @@ window.FlareDashboards.bundle = function (main, businessKey) {
   function crossShopView(biz) {
     return `
       <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Cross-Shopping</h2>
-      <p style="color: var(--read); font-size: 0.95rem; margin-bottom: 1.5rem;">Customers who purchased from multiple Helios brands in the period.</p>
+      <p style="color: var(--read); font-size: 0.95rem; margin-bottom: 1.5rem;">Customers who purchased from multiple group brands in the period.</p>
       <div class="metric-row">
         ${metric("Cross-shoppers", "18,432", "↑ +14% vs ly", "positive")}
         ${metric("Avg brands per customer", "1.34", "↑ +0.05 vs ly", "positive")}

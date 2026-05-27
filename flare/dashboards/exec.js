@@ -3,7 +3,7 @@
    Traffic-light KPI scorecard. All values anchored to the
    business's annualRev/aov/gmTarget/otifTarget so the numbers reconcile
    with Sales Tracker, Product Margin, OTIF, and Open Orders.
-   URL filters: ?division=Global|US|EU & ?subdivision=All|Pet|Beauty|Tattoo
+   URL filters: ?division=Global|Direct|Wholesale & ?channel=<channel name>
    ============================================================ */
 window.FlareDashboards = window.FlareDashboards || {};
 

@@ -25,7 +25,7 @@ window.FlareDashboards.nps = function (main, businessKey) {
 
     main.innerHTML = `
       <div class="main-inner">
-        ${FlareUI.pageHeader("Delighted NPS Tracker", "Net Promoter Score from Delighted across Helios brands. Min 30 responses for significance.")}
+        ${FlareUI.pageHeader("Delighted NPS Tracker", "Net Promoter Score from Delighted across all brands. Min 30 responses for significance.")}
         <div class="data-as-of"><strong style="color: var(--white);">Data last refreshed:</strong> ${Math.floor(r(7) * 600 + 200)} minutes ago (${new Date().toLocaleDateString("en-CA")} ${new Date().toLocaleTimeString("en-GB").slice(0, 5)})</div>
 
         <div style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 2rem; margin-bottom: 1.5rem;">

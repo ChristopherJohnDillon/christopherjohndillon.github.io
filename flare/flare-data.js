@@ -32,7 +32,7 @@ function rng(seed) {
    ============================================================ */
 const BUSINESSES = [
   { key: "group",      name: "Group rollup",   shortName: "Group",     seed: 1001, color: "#FF4F00", currency: "£",
-    annualRev: 100_000_000, aov: 58, ordersPerDay: 4720, skuCount: 1240, gmTarget: 40, otifTarget: 95,
+    annualRev: 100_000_000, aov: 58, ordersPerDay: 4770, skuCount: 1220, gmTarget: 40, otifTarget: 95,
     scaleRev: 24.0, scaleOps: 1.0 },
   { key: "trailcraft", name: "Trailcraft",     shortName: "Trailcraft", seed: 2002, color: "#3D8BFF", currency: "£",
     annualRev: 30_000_000, aov: 95, ordersPerDay: 865, skuCount: 380, gmTarget: 38, otifTarget: 94,
@@ -390,6 +390,78 @@ function generateSales(biz, period, channelFilter) {
 }
 
 /* ============================================================
+   SALES TRACKER — by-SKU detail
+   Top performers in the selected period & channel.
+   Numbers derived from the SKU catalogue + sales total so it reconciles.
+   ============================================================ */
+function generateSkuPerf(biz, period, channel) {
+  const skus = generateSkus(biz);
+  const sales = generateSales(biz, period, channel);
+  const r = rng(biz.seed + 211 + (period || "").charCodeAt(0) + (channel || "").charCodeAt(0));
+  /* Power-law distribution of revenue across SKUs */
+  const weights = skus.map((_, i) => 1 / Math.pow(i + 1, 0.65));
+  const weightSum = weights.reduce((s, w) => s + w, 0);
+  const rows = skus.map((s, i) => {
+    const noise = 0.7 + r() * 0.6;
+    const rev = sales.actual * (weights[i] / weightSum) * noise;
+    const aov = biz.aov * (0.7 + r() * 0.8);
+    const orders = Math.max(1, Math.floor(rev / aov));
+    const margin = s.marginPct + (r() - 0.5) * 4;
+    const status = s.lastStockoutDaysAgo !== null && s.lastStockoutDaysAgo < 14 ? "critical"
+                 : s.daysCover < 14 ? "warning" : margin < 30 ? "warning" : "positive";
+    const brand = biz.key === "group" ? "Group" : biz.shortName;
+    return {
+      sku: s.sku, name: s.name, category: s.category, brand,
+      revenue: rev, orders, aov: rev / orders, marginPct: margin, status,
+    };
+  });
+  rows.sort((a, b) => b.revenue - a.revenue);
+  return rows.slice(0, 40);
+}
+
+/* ============================================================
+   SALES TRACKER — by-customer detail
+   ============================================================ */
+const FIRST_NAMES = ["Alex", "Sam", "Jordan", "Casey", "Morgan", "Taylor", "Riley", "Avery", "Quinn", "Charlie", "Emerson", "Hayden", "Robin", "Sage", "Drew", "Reese", "Skyler", "Jamie", "Cameron", "Parker"];
+const LAST_NAMES = ["Adler", "Bishop", "Carter", "Delgado", "Ellis", "Fox", "Garner", "Hughes", "Ito", "Joshi", "Khan", "Lange", "Martins", "Nakamura", "Owens", "Patel", "Quigley", "Reyes", "Singh", "Tate", "Underwood", "Vega", "Wells", "Xu", "Yates", "Zhou"];
+function generateCustomers(biz, period, channel) {
+  const r = rng(biz.seed + 311 + (period || "").charCodeAt(0) + (channel || "").charCodeAt(0));
+  const sales = generateSales(biz, period, channel);
+  const mix = CHANNEL_MIX[biz.key] || CHANNEL_MIX.group;
+  const cumMix = mix.reduce((acc, m, i) => { acc.push((acc[i - 1] || 0) + m); return acc; }, []);
+  /* Top 40 customers in the period — power-law on revenue */
+  const n = 40;
+  const weights = Array.from({ length: n }, (_, i) => 1 / Math.pow(i + 1, 0.45));
+  const weightSum = weights.reduce((s, w) => s + w, 0);
+  /* Top customers concentrate ~22% of total revenue */
+  const topShare = 0.22;
+  const topPool = sales.actual * topShare;
+  const rows = [];
+  for (let i = 0; i < n; i++) {
+    const rev = topPool * (weights[i] / weightSum);
+    const aov = biz.aov * (0.9 + r() * 1.6);
+    const orders = Math.max(1, Math.round(rev / aov));
+    const fn = FIRST_NAMES[Math.floor(r() * FIRST_NAMES.length)];
+    const ln = LAST_NAMES[Math.floor(r() * LAST_NAMES.length)];
+    const email = `${fn[0].toLowerCase()}.${ln.toLowerCase()}@${["gmail.com", "outlook.com", "hey.com", "proton.me", "icloud.com"][Math.floor(r() * 5)]}`;
+    const cm = r();
+    const chanIdx = cumMix.findIndex((c) => c >= cm);
+    const chan = SALES_CHANNELS[chanIdx === -1 ? 0 : chanIdx];
+    const lastDays = Math.floor(r() * 28);
+    const firstYearsAgo = (0.2 + r() * 4.5);
+    const isNew = firstYearsAgo < 0.3;
+    rows.push({
+      id: `C-${Math.floor(100000 + r() * 899999)}`,
+      name: `${fn} ${ln}`, email, channel: chan,
+      orders, revenue: rev, aov: rev / orders,
+      lastDays, firstYearsAgo, status: isNew ? "new" : lastDays > 14 ? "returning" : "active",
+    });
+  }
+  rows.sort((a, b) => b.revenue - a.revenue);
+  return rows;
+}
+
+/* ============================================================
    OPEN ORDER PIPELINE — stage waterfall + aging
    ============================================================ */
 const ORDER_STAGES = ["Placed", "Picking", "Packing", "Awaiting carrier", "In transit"];
@@ -462,6 +534,8 @@ const FlareData = {
   statTest: generateStatTest,
   bundle: generateBundle,
   sales: generateSales,
+  skuPerf: generateSkuPerf,
+  customers: generateCustomers,
   orderPipeline: generateOrderPipeline,
   channels: SALES_CHANNELS,
   orderStages: ORDER_STAGES,

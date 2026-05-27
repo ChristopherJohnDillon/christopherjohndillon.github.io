@@ -12,15 +12,15 @@
       route: "#/home",
       target: ".main-inner .dir-grid",
       title: "Welcome to FLARE",
-      body: `<p>FLARE is the analytics platform I built for Helios Brands Co. — replacing legacy reporting across multiple businesses with a single self-hosted stack.</p>
-             <p>This tour walks through what makes it different. <em>~90 seconds.</em></p>`,
+      body: `<p>FLARE is a self-hosted analytics platform for multi-brand retail groups. This public demo runs against a fictional parent (Helios Brands Co.) with four invented brands so you can poke at every dashboard.</p>
+             <p>The tour walks through what makes the real platform different. <em>~90 seconds.</em></p>`,
       pos: "top",
     },
     {
       route: "#/home",
       target: "#bizSwitcher",
       title: "One codebase, every brand",
-      body: `<p>The same dashboards serve every Helios brand — switch context here and every page re-scopes its queries to that brand. No per-brand reports to maintain.</p>`,
+      body: `<p>The same dashboards serve every brand in the group — switch context here and every page re-scopes its queries to that brand. No per-brand reports to maintain.</p>`,
       pos: "bottom",
     },
     {
