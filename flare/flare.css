@@ -1367,11 +1367,11 @@ select {
   inset: 0;
   background: rgba(6, 28, 42, 0.30);
   z-index: 9500;
-  pointer-events: auto;
+  pointer-events: none;
   opacity: 0;
   transition: opacity 0.18s;
 }
-#flare-tour-backdrop.visible { opacity: 1; }
+#flare-tour-backdrop.visible { opacity: 1; pointer-events: auto; }
 #flare-tour-spotlight {
   position: fixed;
   border-radius: 10px;
@@ -1396,9 +1396,10 @@ select {
   z-index: 9700;
   color: var(--instrument);
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.18s, top 0.22s ease, left 0.22s ease;
 }
-#flare-tour-card.visible { opacity: 1; }
+#flare-tour-card.visible { opacity: 1; pointer-events: auto; }
 #flare-tour-card .tc-step {
   font-size: 0.7rem;
   letter-spacing: 0.14em;
