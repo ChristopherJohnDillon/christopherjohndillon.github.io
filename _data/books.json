@@ -1,5 +1,12 @@
 [
   {
+    "title": "The Disappearance of Josef Mengele",
+    "author": "Olivier Guez",
+    "rating": 3,
+    "read_at": "2026-05-31",
+    "url": "https://www.goodreads.com/book/show/46002075"
+  },
+  {
     "title": "Antihero",
     "author": "Gregg Hurwitz",
     "rating": 2,
@@ -26,12 +33,5 @@
     "rating": 4,
     "read_at": "2026-04-07",
     "url": "https://www.goodreads.com/book/show/179302510"
-  },
-  {
-    "title": "Half His Age",
-    "author": "Jennette McCurdy",
-    "rating": 4,
-    "read_at": "2026-03-28",
-    "url": "https://www.goodreads.com/book/show/240424526"
   }
 ]
