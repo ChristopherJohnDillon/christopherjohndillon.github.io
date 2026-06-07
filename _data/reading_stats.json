@@ -2,7 +2,7 @@
   "per_year": [
     {
       "year": 2021,
-      "count": 23
+      "count": 22
     },
     {
       "year": 2022,
@@ -22,13 +22,13 @@
     },
     {
       "year": 2026,
-      "count": 17
+      "count": 18
     }
   ],
   "fun": {
     "total_books": 192,
-    "total_pages": 70940,
-    "avg_pages": 369,
+    "total_pages": 70811,
+    "avg_pages": 368,
     "shortest": {
       "title": "Foster",
       "author": "Claire Keegan",
@@ -46,12 +46,6 @@
       "author": "John Boyne",
       "pages": 384,
       "read_at": "2021-01-24"
-    },
-    {
-      "title": "Thunderstruck",
-      "author": "Erik Larson",
-      "pages": 481,
-      "read_at": "2021-06-06"
     },
     {
       "title": "Prodigal Son",
@@ -1042,6 +1036,12 @@
       "author": "Olivier Guez",
       "pages": 224,
       "read_at": "2026-05-31"
+    },
+    {
+      "title": "One Yellow Eye",
+      "author": "Leigh  Radford",
+      "pages": 352,
+      "read_at": "2026-06-06"
     }
   ]
 }
