@@ -1,13 +1,16 @@
 (function () {
   var cvMain = document.getElementById('nyquist-spectrum');
   var cvMini = document.getElementById('nyquist-mini');
+  var cvBar = document.getElementById('nyquist-menubar');
   var label = document.getElementById('spectrum-label');
   if (!cvMain || !cvMini) return;
 
   var ctxMain = cvMain.getContext('2d');
   var ctxMini = cvMini.getContext('2d');
+  var ctxBar = cvBar ? cvBar.getContext('2d') : null;
   var dpr = window.devicePixelRatio || 1;
   var nBands = 64;
+  var menubarBands = 24; /* matching MenuBarSpectrumView barCount */
 
   /* State */
   var heights = new Float32Array(nBands);
@@ -16,6 +19,16 @@
   var audioStream = null;
   var freqData = null;
   var isLive = false;
+  var isPaused = false;
+
+  /* Fake track list — Previous/Next cycles through these */
+  var tracks = [
+    "Won't Ever Let You Go — Crystal Ike",
+    'Long Way Home — Crystal Ike',
+    'Parallel Lines — Vector North',
+    'Night Drive — Analog Heart'
+  ];
+  var trackIndex = 0;
 
   function fitCanvas(cv) {
     var r = cv.getBoundingClientRect();
@@ -34,6 +47,13 @@
     simFreqs.push(1.5 + Math.random() * 4);
   }
 
+  function reseedSim() {
+    for (var i = 0; i < nBands; i++) {
+      simPhases[i] = Math.random() * Math.PI * 2;
+      simFreqs[i] = 1.5 + Math.random() * 4;
+    }
+  }
+
   function simFrame() {
     simTime += 0.016;
     for (var i = 0; i < nBands; i++) {
@@ -49,6 +69,11 @@
       var diff = target - heights[i];
       heights[i] += diff * (diff > 0 ? 0.6 : 0.35);
     }
+  }
+
+  function pausedFrame() {
+    /* Decay to silence, like pausing the music */
+    for (var i = 0; i < nBands; i++) heights[i] *= 0.88;
   }
 
   function liveFrame() {
@@ -105,12 +130,35 @@
     /* Film grain omitted — too expensive on canvas, handled by CSS instead */
   }
 
+  /* Draw menubar strip — 24 peak-downsampled bars on a transparent
+     background, matching MenuBarSpectrumNSView (2px bars, 1px gaps) */
+  function drawMenubar() {
+    if (!cvBar || !ctxBar) return;
+    var r = fitCanvas(cvBar);
+    var w = r.width, h = r.height;
+    ctxBar.clearRect(0, 0, w, h);
+    ctxBar.fillStyle = 'rgb(255,79,0)';
+    var slot = w / menubarBands;
+    var barW = Math.max(1, slot * 0.66);
+    var chunk = Math.max(1, Math.floor(nBands / menubarBands));
+    for (var i = 0; i < menubarBands; i++) {
+      var peak = 0;
+      for (var j = i * chunk; j < (i + 1) * chunk && j < nBands; j++) {
+        if (heights[j] > peak) peak = heights[j];
+      }
+      var barH = Math.max(1, peak * h);
+      ctxBar.fillRect(Math.round(i * slot), Math.round(h - barH), barW, Math.round(barH));
+    }
+  }
+
   /* Animation loop */
   function tick() {
-    if (isLive) liveFrame();
+    if (isPaused) pausedFrame();
+    else if (isLive) liveFrame();
     else simFrame();
     drawSpectrum(cvMain, ctxMain, false);
     drawSpectrum(cvMini, ctxMini, true);
+    drawMenubar();
     requestAnimationFrame(tick);
   }
 
@@ -157,6 +205,97 @@
   cvMain.addEventListener('click', toggleMic);
   cvMini.addEventListener('click', toggleMic);
   if (label) label.addEventListener('click', toggleMic);
+
+  /* ---- Menu bar item + dropdown ---- */
+  var screen = document.querySelector('.mac-screen');
+  var statusItem = document.getElementById('nyquist-menubar-item');
+  var statusText = document.getElementById('nyquist-menubar-text');
+  var menu = document.getElementById('nyquist-menubar-menu');
+  var miniTrack = document.getElementById('nyquist-mini-track');
+  var miniPlay = document.getElementById('nyquist-mini-play');
+  var nyWindow = document.getElementById('nyquist-window');
+
+  function updateTrackLabels() {
+    var t = tracks[trackIndex];
+    var title = t.split(' — ')[0];
+    if (statusText) statusText.textContent = title;
+    if (miniTrack) miniTrack.textContent = t;
+  }
+
+  function setPaused(p) {
+    isPaused = p;
+    if (miniPlay) miniPlay.innerHTML = p ? '&#9654;' : '&#9646;&#9646;';
+  }
+
+  function changeTrack(dir) {
+    trackIndex = (trackIndex + dir + tracks.length) % tracks.length;
+    reseedSim();
+    setPaused(false);
+    updateTrackLabels();
+  }
+
+  function closeMenu() {
+    if (!menu || menu.hidden) return;
+    menu.hidden = true;
+    if (statusItem) statusItem.classList.remove('open');
+  }
+
+  function openMenu() {
+    if (!menu || !statusItem || !screen) return;
+    /* Left-align the menu with the status item, like macOS */
+    var itemR = statusItem.getBoundingClientRect();
+    var screenR = screen.getBoundingClientRect();
+    menu.hidden = false;
+    var left = itemR.left - screenR.left;
+    var maxLeft = screenR.width - menu.offsetWidth - 8;
+    menu.style.left = Math.min(left, maxLeft) + 'px';
+    menu.style.top = (itemR.bottom - screenR.top + 4) + 'px';
+    statusItem.classList.add('open');
+  }
+
+  function menuAction(action) {
+    if (action === 'playpause') {
+      setPaused(!isPaused);
+    } else if (action === 'prev') {
+      changeTrack(-1);
+    } else if (action === 'next') {
+      changeTrack(1);
+    } else if (action === 'show' || action === 'quit') {
+      /* Cosmetic: flash the app window */
+      if (nyWindow) {
+        nyWindow.classList.remove('flash');
+        void nyWindow.offsetWidth; /* restart animation */
+        nyWindow.classList.add('flash');
+      }
+    }
+    closeMenu();
+  }
+
+  if (statusItem && menu) {
+    statusItem.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (menu.hidden) openMenu();
+      else closeMenu();
+    });
+    menu.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var item = e.target.closest('.mac-dropdown-item');
+      if (item) menuAction(item.getAttribute('data-action'));
+    });
+    document.addEventListener('click', closeMenu);
+  }
+
+  /* Mini-player transport buttons */
+  document.querySelectorAll('.nyquist-mini-btn').forEach(function (btn) {
+    btn.style.cursor = 'pointer';
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var action = btn.getAttribute('data-action');
+      if (action === 'playpause') setPaused(!isPaused);
+      else if (action === 'prev') changeTrack(-1);
+      else if (action === 'next') changeTrack(1);
+    });
+  });
 
   tick();
 })();

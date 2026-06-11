@@ -23,35 +23,13 @@ description: Visualize your music in real time. Metal-rendered spectrum analyzer
 </header>
 
 <div class="nyquist-live-demo">
-    <div class="nyquist-app-frame">
-        <div class="nyquist-app-header">
-            <div class="nyquist-app-title">NYQUIST</div>
-            <div class="nyquist-app-subtitle">SPECTRUM ANALYZER</div>
-        </div>
-        <canvas id="nyquist-spectrum"></canvas>
-        <div class="nyquist-freq-axis">
-            <span style="left:0%">20</span>
-            <span style="left:13%">50</span>
-            <span style="left:26%">100</span>
-            <span style="left:39%">200</span>
-            <span style="left:52%">500</span>
-            <span style="left:65%">1K</span>
-            <span style="left:74%">2K</span>
-            <span style="left:83%">5K</span>
-            <span style="left:91%">10K</span>
-            <span style="left:100%">20K</span>
-        </div>
-        <div class="nyquist-bottom-bar">
-            <span class="nyquist-pill" id="spectrum-label">DEMO</span>
-            <span class="nyquist-pill nyquist-pill-dim">BANDS 64</span>
-        </div>
-    </div>
     <div class="mac-screen">
         <div class="mac-wallpaper"></div>
 
         <div class="mac-menubar">
             <div class="mac-menubar-side">
-                <span class="mac-menu-item mac-menu-app">Player</span>
+                <span class="mac-menu-item mac-apple">&#63743;</span>
+                <span class="mac-menu-item mac-menu-app">Nyquist</span>
                 <span class="mac-menu-item">File</span>
                 <span class="mac-menu-item">Edit</span>
                 <span class="mac-menu-item">View</span>
@@ -59,6 +37,10 @@ description: Visualize your music in real time. Metal-rendered spectrum analyzer
                 <span class="mac-menu-item">Help</span>
             </div>
             <div class="mac-menubar-side mac-menubar-status">
+                <span class="mac-nyquist-status" id="nyquist-menubar-item">
+                    <span class="mac-nyquist-status-text" id="nyquist-menubar-text">Won&rsquo;t Ever Let You Go</span>
+                    <canvas id="nyquist-menubar"></canvas>
+                </span>
                 <span class="mac-menu-icon" aria-hidden="true">
                     <svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.4" stroke-linecap="round">
                         <path d="M2 5h10M2 8h10M2 11h10"/>
@@ -81,38 +63,42 @@ description: Visualize your music in real time. Metal-rendered spectrum analyzer
             </div>
         </div>
 
-        <div class="mac-window mac-player">
-            <div class="mac-window-bar">
+        <div class="mac-dropdown" id="nyquist-menubar-menu" hidden>
+            <div class="mac-dropdown-item" data-action="playpause">Play / Pause</div>
+            <div class="mac-dropdown-item" data-action="prev">Previous Track</div>
+            <div class="mac-dropdown-item" data-action="next">Next Track</div>
+            <div class="mac-dropdown-sep"></div>
+            <div class="mac-dropdown-item" data-action="show">Show Nyquist</div>
+            <div class="mac-dropdown-sep"></div>
+            <div class="mac-dropdown-item" data-action="quit">Quit Nyquist</div>
+        </div>
+
+        <div class="mac-window mac-nyquist-window" id="nyquist-window">
+            <div class="mac-nyquist-lights">
                 <span class="mac-traffic mac-traffic-close"></span>
                 <span class="mac-traffic mac-traffic-min"></span>
                 <span class="mac-traffic mac-traffic-max"></span>
-                <span class="mac-window-title">Player</span>
             </div>
-            <div class="mac-player-body">
-                <div class="mac-album-art"><span class="mac-album-glow"></span></div>
-                <div class="mac-player-info">
-                    <div class="mac-player-tag">Now Playing</div>
-                    <div class="mac-player-title">Won&rsquo;t Ever Let You Go</div>
-                    <div class="mac-player-artist">Crystal Ike &mdash; Long Way Home</div>
-                    <div class="mac-player-progress">
-                        <div class="mac-player-progress-fill"></div>
-                    </div>
-                    <div class="mac-player-times">
-                        <span>1:24</span>
-                        <span>3:42</span>
-                    </div>
-                    <div class="mac-player-controls">
-                        <span class="mac-pc-btn" aria-hidden="true">
-                            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M11 3 L5 8 L11 13 Z"/><rect x="3.5" y="3" width="1.5" height="10" rx="0.4"/></svg>
-                        </span>
-                        <span class="mac-pc-btn mac-pc-play" aria-hidden="true">
-                            <svg viewBox="0 0 20 20" fill="currentColor"><rect x="5" y="4" width="3" height="12" rx="0.6"/><rect x="12" y="4" width="3" height="12" rx="0.6"/></svg>
-                        </span>
-                        <span class="mac-pc-btn" aria-hidden="true">
-                            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M5 3 L11 8 L5 13 Z"/><rect x="11" y="3" width="1.5" height="10" rx="0.4"/></svg>
-                        </span>
-                    </div>
-                </div>
+            <div class="nyquist-app-header">
+                <div class="nyquist-app-title">NYQUIST</div>
+                <div class="nyquist-app-subtitle">SPECTRUM ANALYZER</div>
+            </div>
+            <canvas id="nyquist-spectrum"></canvas>
+            <div class="nyquist-freq-axis">
+                <span style="left:0%">20</span>
+                <span style="left:13%">50</span>
+                <span style="left:26%">100</span>
+                <span style="left:39%">200</span>
+                <span style="left:52%">500</span>
+                <span style="left:65%">1K</span>
+                <span style="left:74%">2K</span>
+                <span style="left:83%">5K</span>
+                <span style="left:91%">10K</span>
+                <span style="left:100%">20K</span>
+            </div>
+            <div class="nyquist-bottom-bar">
+                <span class="nyquist-pill" id="spectrum-label">DEMO</span>
+                <span class="nyquist-pill nyquist-pill-dim">BANDS 64</span>
             </div>
         </div>
 
@@ -125,20 +111,80 @@ description: Visualize your music in real time. Metal-rendered spectrum analyzer
                 <canvas id="nyquist-mini"></canvas>
                 <div class="nyquist-mini-np">
                     <span class="nyquist-mini-controls">
-                        <span class="nyquist-mini-btn">&#9664;&#9664;</span>
-                        <span class="nyquist-mini-btn nyquist-mini-play">&#9646;&#9646;</span>
-                        <span class="nyquist-mini-btn">&#9654;&#9654;</span>
+                        <span class="nyquist-mini-btn" data-action="prev">&#9664;&#9664;</span>
+                        <span class="nyquist-mini-btn nyquist-mini-play" id="nyquist-mini-play" data-action="playpause">&#9646;&#9646;</span>
+                        <span class="nyquist-mini-btn" data-action="next">&#9654;&#9654;</span>
                     </span>
-                    <span class="nyquist-mini-track">Won't Ever Let You Go &mdash; Crystal Ike</span>
+                    <span class="nyquist-mini-track" id="nyquist-mini-track">Won't Ever Let You Go &mdash; Crystal Ike</span>
                 </div>
             </div>
         </div>
 
         <div class="mac-dock">
-            <span class="mac-dock-icon mac-dock-tile-blue"></span>
-            <span class="mac-dock-icon mac-dock-tile-pink"></span>
-            <span class="mac-dock-icon mac-dock-tile-cyan"></span>
-            <span class="mac-dock-icon mac-dock-nyquist">
+            <span class="mac-dock-icon mac-dock-running" title="Finder">
+                <svg viewBox="0 0 32 32">
+                    <defs>
+                        <linearGradient id="finderL" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#5fc7f5"/>
+                            <stop offset="1" stop-color="#2389e0"/>
+                        </linearGradient>
+                        <linearGradient id="finderR" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#2ba9f2"/>
+                            <stop offset="1" stop-color="#0f6fd0"/>
+                        </linearGradient>
+                    </defs>
+                    <rect width="32" height="32" rx="7" fill="url(#finderL)"/>
+                    <path d="M19.5 0 H25 a7 7 0 0 1 7 7 V25 a7 7 0 0 1 -7 7 H19.5 C18 24 18 8 19.5 0 Z" fill="url(#finderR)"/>
+                    <g stroke="#0a3d7a" stroke-width="1.6" stroke-linecap="round" fill="none">
+                        <line x1="10" y1="11" x2="10" y2="15"/>
+                        <line x1="24" y1="11" x2="24" y2="15"/>
+                        <path d="M8 20.5 Q16 25.5 26 20.5"/>
+                    </g>
+                </svg>
+            </span>
+            <span class="mac-dock-icon" title="Safari">
+                <svg viewBox="0 0 32 32">
+                    <defs>
+                        <radialGradient id="safariBg" cx="0.5" cy="0.35" r="0.8">
+                            <stop offset="0" stop-color="#3fd0f5"/>
+                            <stop offset="1" stop-color="#1a6fe8"/>
+                        </radialGradient>
+                    </defs>
+                    <rect width="32" height="32" rx="7" fill="#f4f5f7"/>
+                    <circle cx="16" cy="16" r="11.5" fill="url(#safariBg)"/>
+                    <g transform="rotate(-45 16 16)">
+                        <path d="M16 6.5 L18.4 16 L13.6 16 Z" fill="#ff3b30"/>
+                        <path d="M16 25.5 L13.6 16 L18.4 16 Z" fill="#ffffff"/>
+                    </g>
+                </svg>
+            </span>
+            <span class="mac-dock-icon" title="Messages">
+                <svg viewBox="0 0 32 32">
+                    <defs>
+                        <linearGradient id="msgGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#67e26b"/>
+                            <stop offset="1" stop-color="#27b33c"/>
+                        </linearGradient>
+                    </defs>
+                    <rect width="32" height="32" rx="7" fill="url(#msgGrad)"/>
+                    <path d="M16 7 C10.2 7 5.5 10.9 5.5 15.7 C5.5 18.6 7.2 21.2 9.9 22.8 C9.8 24 9.3 25.2 8.4 26.1 C10.2 25.9 11.8 25.2 13 24.2 C14 24.4 15 24.5 16 24.5 C21.8 24.5 26.5 20.6 26.5 15.7 C26.5 10.9 21.8 7 16 7 Z" fill="#fff"/>
+                </svg>
+            </span>
+            <span class="mac-dock-icon" title="Music">
+                <svg viewBox="0 0 32 32">
+                    <defs>
+                        <linearGradient id="musGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#fb5c74"/>
+                            <stop offset="1" stop-color="#fa233b"/>
+                        </linearGradient>
+                    </defs>
+                    <rect width="32" height="32" rx="7" fill="url(#musGrad)"/>
+                    <g fill="#fff">
+                        <path d="M22.5 6.5 L12.5 8.8 C12 8.9 11.7 9.3 11.7 9.8 V20.3 C11.2 20.1 10.6 20 10 20 C7.9 20 6.2 21.2 6.2 22.7 C6.2 24.2 7.9 25.4 10 25.4 C12.1 25.4 13.7 24.2 13.7 22.7 V13.2 L21.3 11.5 V18.2 C20.8 18 20.2 17.9 19.6 17.9 C17.5 17.9 15.8 19.1 15.8 20.6 C15.8 22.1 17.5 23.3 19.6 23.3 C21.7 23.3 23.3 22.1 23.3 20.6 V7.5 C23.3 6.8 22.9 6.4 22.5 6.5 Z"/>
+                    </g>
+                </svg>
+            </span>
+            <span class="mac-dock-icon mac-dock-nyquist mac-dock-running" title="Nyquist">
                 <svg viewBox="0 0 32 32">
                     <defs>
                         <linearGradient id="nyqGrad" x1="0" y1="0" x2="1" y2="1">
@@ -159,8 +205,40 @@ description: Visualize your music in real time. Metal-rendered spectrum analyzer
                     </g>
                 </svg>
             </span>
-            <span class="mac-dock-icon mac-dock-tile-violet"></span>
-            <span class="mac-dock-icon mac-dock-tile-green"></span>
+            <span class="mac-dock-icon" title="Photos">
+                <svg viewBox="0 0 32 32">
+                    <rect width="32" height="32" rx="7" fill="#f4f5f7"/>
+                    <g transform="translate(16,16)" opacity="0.9">
+                        <ellipse rx="2.8" ry="6.2" cy="-5.8" fill="#fbbc1f"/>
+                        <ellipse rx="2.8" ry="6.2" cy="-5.8" fill="#f88c1e" transform="rotate(45)"/>
+                        <ellipse rx="2.8" ry="6.2" cy="-5.8" fill="#f0473c" transform="rotate(90)"/>
+                        <ellipse rx="2.8" ry="6.2" cy="-5.8" fill="#d93f8b" transform="rotate(135)"/>
+                        <ellipse rx="2.8" ry="6.2" cy="-5.8" fill="#9355d8" transform="rotate(180)"/>
+                        <ellipse rx="2.8" ry="6.2" cy="-5.8" fill="#3a7de0" transform="rotate(225)"/>
+                        <ellipse rx="2.8" ry="6.2" cy="-5.8" fill="#36b2a8" transform="rotate(270)"/>
+                        <ellipse rx="2.8" ry="6.2" cy="-5.8" fill="#7ec341" transform="rotate(315)"/>
+                    </g>
+                </svg>
+            </span>
+            <span class="mac-dock-sep"></span>
+            <span class="mac-dock-icon mac-dock-trash" title="Trash">
+                <svg viewBox="0 0 32 32">
+                    <defs>
+                        <linearGradient id="trashGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="rgba(255,255,255,0.85)"/>
+                            <stop offset="1" stop-color="rgba(200,205,215,0.75)"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="M10 9 L22 9 L20.8 27 a2 2 0 0 1 -2 1.8 L13.2 28.8 a2 2 0 0 1 -2 -1.8 Z" fill="url(#trashGrad)"/>
+                    <ellipse cx="16" cy="9" rx="6.5" ry="1.8" fill="rgba(255,255,255,0.95)"/>
+                    <rect x="14.4" y="5.6" width="3.2" height="2" rx="1" fill="rgba(255,255,255,0.95)"/>
+                    <g stroke="rgba(110,118,132,0.55)" stroke-width="0.9">
+                        <line x1="12.5" y1="11.5" x2="13.3" y2="26.5"/>
+                        <line x1="16" y1="11.5" x2="16" y2="26.5"/>
+                        <line x1="19.5" y1="11.5" x2="18.7" y2="26.5"/>
+                    </g>
+                </svg>
+            </span>
         </div>
     </div>
 </div>

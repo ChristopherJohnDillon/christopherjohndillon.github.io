@@ -149,41 +149,31 @@ body.nyquist nav {
 .nyquist-live-demo {
     margin: 60px 0;
 }
-.nyquist-app-frame {
-    background: #000;
-    border: 1px solid var(--grid-line);
-    border-radius: 8px;
-    overflow: hidden;
-}
 .nyquist-app-header {
     text-align: center;
-    padding: 10px 0 6px;
+    padding: 1.2cqw 0 0.6cqw;
 }
 .nyquist-app-title {
-    font-size: 20px;
+    font-family: var(--font-mono);
+    font-size: clamp(11px, 1.8cqw, 20px);
     font-weight: 200;
-    letter-spacing: 6px;
+    letter-spacing: 0.6cqw;
     color: var(--io-primary);
 }
 .nyquist-app-subtitle {
-    font-size: 9px;
-    letter-spacing: 2px;
+    font-family: var(--font-mono);
+    font-size: clamp(6px, 0.85cqw, 9px);
+    letter-spacing: 0.2cqw;
     color: var(--text-secondary);
-}
-.nyquist-app-frame canvas {
-    display: block;
-    width: 100%;
-    height: 260px;
-    cursor: pointer;
 }
 .nyquist-freq-axis {
     position: relative;
-    height: 18px;
-    padding: 0 8px;
+    height: clamp(12px, 1.7cqw, 18px);
+    padding: 0 0.8cqw;
 }
 .nyquist-freq-axis span {
     position: absolute;
-    font-size: 9px;
+    font-size: clamp(6px, 0.85cqw, 9px);
     font-family: var(--font-mono);
     color: var(--text-dim);
     transform: translateX(-50%);
@@ -192,15 +182,15 @@ body.nyquist nav {
 .nyquist-bottom-bar {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 8px 14px;
+    gap: 0.6cqw;
+    padding: 0.7cqw 1.3cqw;
 }
 .nyquist-pill {
-    font-size: 9px;
+    font-size: clamp(6px, 0.85cqw, 9px);
     font-family: var(--font-mono);
     letter-spacing: 1px;
     color: var(--text-secondary);
-    padding: 3px 10px;
+    padding: 0.3cqw 0.9cqw;
     background: rgba(255,255,255,0.05);
     border-radius: 4px;
     cursor: pointer;
@@ -292,7 +282,71 @@ body.nyquist nav {
     font-weight: 500;
 }
 
-/* Background app window: Music */
+/* Nyquist menu-bar item — live mini spectrum + track text, like the real
+   NSStatusItem (text left, bars right) */
+.mac-nyquist-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6cqw;
+    padding: 0.25cqw 0.7cqw;
+    border-radius: clamp(3px, 0.45cqw, 5px);
+    cursor: pointer;
+}
+.mac-nyquist-status:hover,
+.mac-nyquist-status.open {
+    background: rgba(255, 255, 255, 0.2);
+}
+.mac-nyquist-status-text {
+    font-family: var(--font-mono);
+    font-size: clamp(7px, 1.15cqw, 11px);
+    font-weight: 500;
+    max-width: 17cqw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.mac-nyquist-status canvas {
+    display: block;
+    width: 7.5cqw;
+    min-width: 48px;
+    height: 2.1cqw;
+    min-height: 14px;
+}
+
+/* Status-item dropdown — macOS menu */
+.mac-dropdown {
+    position: absolute;
+    z-index: 20;
+    min-width: 17cqw;
+    padding: 0.5cqw;
+    border-radius: clamp(6px, 0.8cqw, 10px);
+    background: rgba(44, 42, 48, 0.88);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 1.2cqw 3cqw rgba(0, 0, 0, 0.5);
+    font-size: clamp(8px, 1.3cqw, 13px);
+    color: rgba(255, 255, 255, 0.95);
+}
+.mac-dropdown[hidden] {
+    display: none;
+}
+.mac-dropdown-item {
+    padding: 0.35cqw 1cqw;
+    border-radius: clamp(3px, 0.5cqw, 6px);
+    cursor: pointer;
+    white-space: nowrap;
+}
+.mac-dropdown-item:hover {
+    background: #0a60ff;
+}
+.mac-dropdown-sep {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 0.4cqw 1cqw;
+}
+
+/* Nyquist app window — black, full-bleed, floating traffic lights */
 .mac-window {
     position: absolute;
     z-index: 1;
@@ -307,14 +361,6 @@ body.nyquist nav {
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
 }
-.mac-window-bar {
-    display: flex;
-    align-items: center;
-    gap: 0.6cqw;
-    padding: 0.8cqw 1.2cqw;
-    background: linear-gradient(180deg, rgba(58, 56, 62, 0.95) 0%, rgba(46, 44, 50, 0.95) 100%);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-}
 .mac-traffic {
     width: clamp(7px, 1.2cqw, 12px);
     height: clamp(7px, 1.2cqw, 12px);
@@ -325,116 +371,33 @@ body.nyquist nav {
 .mac-traffic-close { background: #ff5f57; }
 .mac-traffic-min { background: #febc2e; }
 .mac-traffic-max { background: #28c840; }
-.mac-window-title {
-    flex: 1;
-    text-align: center;
-    margin-right: 5cqw;
-    font-size: clamp(8px, 1.3cqw, 13px);
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 500;
+.mac-nyquist-window {
+    top: 6.5cqw;
+    left: 4.5cqw;
+    width: 58cqw;
+    background: #000;
 }
-
-/* Generic player window body */
-.mac-player-body {
-    display: flex;
-    gap: 1.6cqw;
-    padding: 1.6cqw 1.8cqw;
-    align-items: center;
-    min-height: 14cqw;
-}
-.mac-album-art {
-    width: 11cqw;
-    height: 11cqw;
-    min-width: 64px;
-    min-height: 64px;
-    border-radius: clamp(4px, 0.7cqw, 9px);
-    background: radial-gradient(circle at 30% 30%, #ff8a3d 0%, #ff4f00 55%, #6e1c00 100%);
-    box-shadow: 0 0.6cqw 1.4cqw rgba(255, 79, 0, 0.4),
-                0 0 0 1px rgba(0, 0, 0, 0.3) inset;
-    position: relative;
-    flex-shrink: 0;
-    overflow: hidden;
-}
-.mac-album-glow {
+.mac-nyquist-lights {
     position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 70% 80%, rgba(255, 220, 180, 0.45) 0%, transparent 50%);
-}
-.mac-player-info {
-    flex: 1;
-    min-width: 0;
+    top: 1cqw;
+    left: 1.1cqw;
     display: flex;
-    flex-direction: column;
-    gap: 0.4cqw;
+    gap: 0.6cqw;
+    z-index: 2;
 }
-.mac-player-tag {
-    font-size: clamp(6px, 0.95cqw, 10px);
-    color: var(--io-primary);
-    text-transform: uppercase;
-    letter-spacing: 0.18cqw;
-    font-weight: 700;
-}
-.mac-player-title {
-    font-size: clamp(11px, 1.8cqw, 18px);
-    color: white;
-    font-weight: 600;
-    line-height: 1.15;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.mac-player-artist {
-    font-size: clamp(8px, 1.2cqw, 12px);
-    color: rgba(255, 255, 255, 0.6);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: 0.4cqw;
-}
-.mac-player-progress {
-    height: 0.4cqw;
-    min-height: 3px;
-    background: rgba(255, 255, 255, 0.12);
-    border-radius: 999px;
-    overflow: hidden;
-}
-.mac-player-progress-fill {
-    width: 38%;
-    height: 100%;
-    background: linear-gradient(90deg, var(--io-primary), var(--io-bright));
-    border-radius: 999px;
-}
-.mac-player-times {
-    display: flex;
-    justify-content: space-between;
-    font-size: clamp(6px, 0.95cqw, 10px);
-    color: rgba(255, 255, 255, 0.45);
-    font-variant-numeric: tabular-nums;
-    letter-spacing: 0.05cqw;
-}
-.mac-player-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.4cqw;
-    margin-top: 0.5cqw;
-    color: rgba(255, 255, 255, 0.85);
-}
-.mac-pc-btn {
-    display: inline-flex;
-    width: clamp(14px, 2cqw, 20px);
-    height: clamp(14px, 2cqw, 20px);
-    align-items: center;
-    justify-content: center;
-}
-.mac-pc-btn svg {
+.mac-nyquist-window canvas {
+    display: block;
     width: 100%;
-    height: 100%;
+    height: 24cqw;
+    min-height: 130px;
+    cursor: pointer;
 }
-.mac-pc-play {
-    width: clamp(20px, 3cqw, 30px);
-    height: clamp(20px, 3cqw, 30px);
-    color: var(--io-primary);
+.mac-nyquist-window.flash {
+    animation: nyquist-flash 0.6s ease-out;
+}
+@keyframes nyquist-flash {
+    0% { box-shadow: 0 1.4cqw 3cqw rgba(0, 0, 0, 0.45), 0 0 0 2px var(--io-primary) inset, 0 0 3cqw rgba(255, 79, 0, 0.7); }
+    100% { box-shadow: 0 1.4cqw 3cqw rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.08) inset; }
 }
 
 /* Floating mini player (always on top) */
@@ -540,40 +503,50 @@ body.nyquist nav {
     box-shadow: 0 0.6cqw 1.6cqw rgba(0, 0, 0, 0.3);
 }
 .mac-dock-icon {
+    position: relative;
     width: 4cqw;
     height: 4cqw;
     min-width: 26px;
     min-height: 26px;
-    border-radius: 22%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     filter: drop-shadow(0 0.25cqw 0.5cqw rgba(0, 0, 0, 0.35));
-    box-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.12) inset,
-                0 0 0 0.5px rgba(0, 0, 0, 0.25);
+    transform-origin: bottom center;
+    transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.3, 1.2);
+}
+/* Dock magnification — hovered icon grows, neighbors grow a little */
+.mac-dock-icon:hover {
+    transform: scale(1.5) translateY(-0.2cqw);
+}
+.mac-dock-icon:hover + .mac-dock-icon,
+.mac-dock-icon:has(+ .mac-dock-icon:hover) {
+    transform: scale(1.18);
 }
 .mac-dock-icon svg {
     width: 100%;
     height: 100%;
     overflow: visible;
 }
-.mac-dock-tile-blue {
-    background: linear-gradient(160deg, #6cc4ff 0%, #2a72d8 100%);
+/* Running-app indicator dot */
+.mac-dock-running::after {
+    content: '';
+    position: absolute;
+    bottom: -0.55cqw;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(2px, 0.4cqw, 4px);
+    height: clamp(2px, 0.4cqw, 4px);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.75);
 }
-.mac-dock-tile-pink {
-    background: linear-gradient(160deg, #ff8ab2 0%, #d83a78 100%);
-}
-.mac-dock-tile-cyan {
-    background: linear-gradient(160deg, #6ee7d8 0%, #1e9c9c 100%);
-}
-.mac-dock-tile-violet {
-    background: linear-gradient(160deg, #b08bff 0%, #6238cc 100%);
-}
-.mac-dock-tile-green {
-    background: linear-gradient(160deg, #95e07a 0%, #2d9446 100%);
+.mac-dock-sep {
+    align-self: stretch;
+    width: 1px;
+    margin: 0.2cqw 0.3cqw;
+    background: rgba(255, 255, 255, 0.28);
 }
 .mac-dock-nyquist {
-    box-shadow: none;
     filter: drop-shadow(0 0.25cqw 0.5cqw rgba(255, 79, 0, 0.5))
             drop-shadow(0 0 0.8cqw rgba(255, 79, 0, 0.3));
 }
@@ -589,6 +562,10 @@ body.nyquist nav {
     }
     .mac-menu-clock {
         font-size: clamp(7px, 1.5cqw, 11px);
+    }
+    /* Keep the live menubar spectrum, drop the track text */
+    .mac-nyquist-status-text {
+        display: none;
     }
 }
 
