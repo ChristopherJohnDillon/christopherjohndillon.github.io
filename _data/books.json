@@ -1,5 +1,19 @@
 [
   {
+    "title": "One Yellow Eye",
+    "author": "Leigh  Radford",
+    "rating": 5,
+    "read_at": "2026-06-06",
+    "url": "https://www.goodreads.com/book/show/220160134"
+  },
+  {
+    "title": "The Disappearance of Josef Mengele",
+    "author": "Olivier Guez",
+    "rating": 3,
+    "read_at": "2026-05-31",
+    "url": "https://www.goodreads.com/book/show/46002075"
+  },
+  {
     "title": "Antihero",
     "author": "Gregg Hurwitz",
     "rating": 2,
@@ -19,19 +33,5 @@
     "rating": 5,
     "read_at": "2026-04-26",
     "url": "https://www.goodreads.com/book/show/29044"
-  },
-  {
-    "title": "A Soul Full of Shadows",
-    "author": "Derek Landy",
-    "rating": 4,
-    "read_at": "2026-04-07",
-    "url": "https://www.goodreads.com/book/show/179302510"
-  },
-  {
-    "title": "Half His Age",
-    "author": "Jennette McCurdy",
-    "rating": 4,
-    "read_at": "2026-03-28",
-    "url": "https://www.goodreads.com/book/show/240424526"
   }
 ]

@@ -2,7 +2,7 @@
   "per_year": [
     {
       "year": 2021,
-      "count": 24
+      "count": 22
     },
     {
       "year": 2022,
@@ -22,13 +22,13 @@
     },
     {
       "year": 2026,
-      "count": 16
+      "count": 18
     }
   ],
   "fun": {
     "total_books": 192,
-    "total_pages": 71324,
-    "avg_pages": 371,
+    "total_pages": 70811,
+    "avg_pages": 368,
     "shortest": {
       "title": "Foster",
       "author": "Claire Keegan",
@@ -46,18 +46,6 @@
       "author": "John Boyne",
       "pages": 384,
       "read_at": "2021-01-24"
-    },
-    {
-      "title": "Dead or Alive",
-      "author": "Derek Landy",
-      "pages": 608,
-      "read_at": "2021-05-25"
-    },
-    {
-      "title": "Thunderstruck",
-      "author": "Erik Larson",
-      "pages": 481,
-      "read_at": "2021-06-06"
     },
     {
       "title": "Prodigal Son",
@@ -1042,6 +1030,18 @@
       "author": "Gregg Hurwitz",
       "pages": 416,
       "read_at": "2026-05-24"
+    },
+    {
+      "title": "The Disappearance of Josef Mengele",
+      "author": "Olivier Guez",
+      "pages": 224,
+      "read_at": "2026-05-31"
+    },
+    {
+      "title": "One Yellow Eye",
+      "author": "Leigh  Radford",
+      "pages": 352,
+      "read_at": "2026-06-06"
     }
   ]
 }
