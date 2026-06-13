@@ -27,7 +27,7 @@
   ],
   "fun": {
     "total_books": 192,
-    "total_pages": 70811,
+    "total_pages": 70793,
     "avg_pages": 368,
     "shortest": {
       "title": "Foster",
@@ -512,7 +512,7 @@
     {
       "title": "The Secret",
       "author": "Lee Child",
-      "pages": 304,
+      "pages": 295,
       "read_at": "2023-11-13"
     },
     {
@@ -674,7 +674,7 @@
     {
       "title": "In Too Deep",
       "author": "Lee Child",
-      "pages": 336,
+      "pages": 327,
       "read_at": "2024-12-27"
     },
     {
