@@ -1,5 +1,12 @@
 [
   {
+    "title": "Dancefloor",
+    "author": "Victor Jestin",
+    "rating": 4,
+    "read_at": "2026-06-14",
+    "url": "https://www.goodreads.com/book/show/221951178"
+  },
+  {
     "title": "One Yellow Eye",
     "author": "Leigh  Radford",
     "rating": 5,
@@ -26,12 +33,5 @@
     "rating": 4,
     "read_at": "2026-05-03",
     "url": "https://www.goodreads.com/book/show/242977777"
-  },
-  {
-    "title": "The Secret History",
-    "author": "Donna Tartt",
-    "rating": 5,
-    "read_at": "2026-04-26",
-    "url": "https://www.goodreads.com/book/show/29044"
   }
 ]

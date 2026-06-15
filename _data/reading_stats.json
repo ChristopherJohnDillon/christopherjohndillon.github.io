@@ -2,7 +2,7 @@
   "per_year": [
     {
       "year": 2021,
-      "count": 22
+      "count": 21
     },
     {
       "year": 2022,
@@ -22,13 +22,13 @@
     },
     {
       "year": 2026,
-      "count": 18
+      "count": 19
     }
   ],
   "fun": {
     "total_books": 192,
-    "total_pages": 70793,
-    "avg_pages": 368,
+    "total_pages": 70537,
+    "avg_pages": 367,
     "shortest": {
       "title": "Foster",
       "author": "Claire Keegan",
@@ -46,12 +46,6 @@
       "author": "John Boyne",
       "pages": 384,
       "read_at": "2021-01-24"
-    },
-    {
-      "title": "Prodigal Son",
-      "author": "Gregg Hurwitz",
-      "pages": 432,
-      "read_at": "2021-06-09"
     },
     {
       "title": "When the Wind Blows",
@@ -1042,6 +1036,12 @@
       "author": "Leigh  Radford",
       "pages": 352,
       "read_at": "2026-06-06"
+    },
+    {
+      "title": "Dancefloor",
+      "author": "Victor Jestin",
+      "pages": 176,
+      "read_at": "2026-06-14"
     }
   ]
 }
