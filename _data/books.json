@@ -1,5 +1,12 @@
 [
   {
+    "title": "We Have Always Lived in the Castle",
+    "author": "Shirley Jackson",
+    "rating": 4,
+    "read_at": "2026-06-21",
+    "url": "https://www.goodreads.com/book/show/89724"
+  },
+  {
     "title": "Dancefloor",
     "author": "Victor Jestin",
     "rating": 4,
@@ -26,12 +33,5 @@
     "rating": 2,
     "read_at": "2026-05-24",
     "url": "https://www.goodreads.com/book/show/231127208"
-  },
-  {
-    "title": "Few and Far Between",
-    "author": "Jan Carson",
-    "rating": 4,
-    "read_at": "2026-05-03",
-    "url": "https://www.goodreads.com/book/show/242977777"
   }
 ]

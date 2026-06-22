@@ -2,7 +2,7 @@
   "per_year": [
     {
       "year": 2021,
-      "count": 21
+      "count": 20
     },
     {
       "year": 2022,
@@ -22,13 +22,13 @@
     },
     {
       "year": 2026,
-      "count": 19
+      "count": 20
     }
   ],
   "fun": {
     "total_books": 192,
-    "total_pages": 70537,
-    "avg_pages": 367,
+    "total_pages": 70273,
+    "avg_pages": 366,
     "shortest": {
       "title": "Foster",
       "author": "Claire Keegan",
@@ -46,12 +46,6 @@
       "author": "John Boyne",
       "pages": 384,
       "read_at": "2021-01-24"
-    },
-    {
-      "title": "When the Wind Blows",
-      "author": "James  Patterson",
-      "pages": 416,
-      "read_at": "2021-06-13"
     },
     {
       "title": "The Holiday",
@@ -1042,6 +1036,12 @@
       "author": "Victor Jestin",
       "pages": 176,
       "read_at": "2026-06-14"
+    },
+    {
+      "title": "We Have Always Lived in the Castle",
+      "author": "Shirley Jackson",
+      "pages": 152,
+      "read_at": "2026-06-21"
     }
   ]
 }
