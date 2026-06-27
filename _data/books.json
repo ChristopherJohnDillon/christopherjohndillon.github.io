@@ -1,5 +1,12 @@
 [
   {
+    "title": "Time After Time",
+    "author": "Karl Alexander",
+    "rating": 3,
+    "read_at": "2026-06-26",
+    "url": "https://www.goodreads.com/book/show/2857588"
+  },
+  {
     "title": "We Have Always Lived in the Castle",
     "author": "Shirley Jackson",
     "rating": 4,
@@ -26,12 +33,5 @@
     "rating": 3,
     "read_at": "2026-05-31",
     "url": "https://www.goodreads.com/book/show/46002075"
-  },
-  {
-    "title": "Antihero",
-    "author": "Gregg Hurwitz",
-    "rating": 2,
-    "read_at": "2026-05-24",
-    "url": "https://www.goodreads.com/book/show/231127208"
   }
 ]

@@ -2,7 +2,7 @@
   "per_year": [
     {
       "year": 2021,
-      "count": 20
+      "count": 19
     },
     {
       "year": 2022,
@@ -22,13 +22,13 @@
     },
     {
       "year": 2026,
-      "count": 20
+      "count": 21
     }
   ],
   "fun": {
     "total_books": 192,
-    "total_pages": 70273,
-    "avg_pages": 366,
+    "total_pages": 70234,
+    "avg_pages": 365,
     "shortest": {
       "title": "Foster",
       "author": "Claire Keegan",
@@ -46,12 +46,6 @@
       "author": "John Boyne",
       "pages": 384,
       "read_at": "2021-01-24"
-    },
-    {
-      "title": "The Holiday",
-      "author": "T.M. Logan",
-      "pages": 380,
-      "read_at": "2021-07-11"
     },
     {
       "title": "Boy Parts",
@@ -1042,6 +1036,12 @@
       "author": "Shirley Jackson",
       "pages": 152,
       "read_at": "2026-06-21"
+    },
+    {
+      "title": "Time After Time",
+      "author": "Karl Alexander",
+      "pages": 341,
+      "read_at": "2026-06-26"
     }
   ]
 }
