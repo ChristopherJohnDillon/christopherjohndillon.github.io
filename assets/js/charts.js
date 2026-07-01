@@ -57,6 +57,8 @@
     var fullMin = Math.min.apply(null, points.map(function (p) { return p.t; }));
     var fullMax = Math.max.apply(null, points.map(function (p) { return p.t; }));
     var domain = { min: fullMin, max: fullMax };
+    var ctx = {};                 // current render context: {svgEl, band, pad, pw}
+    var drag = { on: false, startX: 0 };
 
     function render() {
       var W = el.offsetWidth || 320, H = 160;
@@ -66,14 +68,12 @@
       function xPos(t) { return pad.left + (t - domain.min) / span * pw; }
       function yPos(y) { return pad.top + ph - (y / yMax * ph); }
       var svg = '<svg width="' + W + '" height="' + H + '" xmlns="http://www.w3.org/2000/svg">';
-      // y gridlines + labels
       for (var t = 0; t <= yMax; t += (opts.yStep || Math.max(1, Math.round(yMax / 5)))) {
         var ty = yPos(t);
         svg += '<line x1="' + pad.left + '" y1="' + ty + '" x2="' + (W - pad.right) + '" y2="' + ty + '" stroke="' + DIM + '" stroke-opacity="0.3" stroke-width="0.5"/>';
         svg += '<text x="' + (pad.left - 6) + '" y="' + (ty + 3) + '" text-anchor="end" font-size="8" font-family="' + MONO + '" fill="' + DIM + '">' + t + '</text>';
       }
       svg += '<text x="6" y="' + (pad.top + ph / 2) + '" text-anchor="middle" font-size="8" font-family="' + MONO + '" fill="' + MUTE + '" transform="rotate(-90,6,' + (pad.top + ph / 2) + ')">' + (opts.yLabel || '') + '</text>';
-      // x-axis year ticks
       var minY = new Date(domain.min).getFullYear(), maxY = new Date(domain.max).getFullYear();
       for (var yr = minY; yr <= maxY; yr++) {
         var xd = xPos(new Date(yr, 0, 1).getTime());
@@ -82,7 +82,6 @@
           svg += '<text x="' + xd + '" y="' + (H - pad.bottom + 12) + '" text-anchor="middle" font-size="9" font-family="' + MONO + '" fill="' + DIM + '">' + yr + '</text>';
         }
       }
-      // dots (only those in domain)
       for (var i = 0; i < points.length; i++) {
         var p = points[i];
         if (p.t < domain.min || p.t > domain.max) continue;
@@ -92,63 +91,73 @@
       svg += '<rect class="chart-zoom-band" x="0" y="' + pad.top + '" width="0" height="' + ph + '" style="display:none"/>';
       svg += '</svg>';
       el.innerHTML = svg;
-      wire(el.querySelector('svg'), pad, pw, xPos);
+      var svgEl = el.querySelector('svg');
+      ctx.svgEl = svgEl;
+      ctx.band = svgEl.querySelector('.chart-zoom-band');
+      ctx.pad = pad;
+      ctx.pw = pw;
+      wireDots(svgEl);
+      wireDrag(svgEl);
     }
 
-    function wire(svgEl, pad, pw, xPos) {
-      // hover
+    function wireDots(svgEl) {
       svgEl.querySelectorAll('.chart-dot').forEach(function (dot) {
         dot.addEventListener('mouseenter', function (e) {
           dot.setAttribute('r', parseFloat(dot.getAttribute('r')) + 2);
           dot.setAttribute('opacity', '1');
-          var p = points[+dot.getAttribute('data-i')];
-          showCard(p, e.clientX, e.clientY);
+          showCard(points[+dot.getAttribute('data-i')], e.clientX, e.clientY);
         });
         dot.addEventListener('mousemove', function (e) {
           showCard(points[+dot.getAttribute('data-i')], e.clientX, e.clientY);
         });
         dot.addEventListener('mouseleave', function () {
-          dot.setAttribute('opacity', '0.85'); hideCard(); render();
+          dot.setAttribute('r', parseFloat(dot.getAttribute('r')) - 2);
+          dot.setAttribute('opacity', '0.85');
+          hideCard();
         });
-        // touch: tap shows card
         dot.addEventListener('click', function (e) {
           showCard(points[+dot.getAttribute('data-i')], e.clientX, e.clientY);
         });
       });
-      // drag-to-zoom
-      var band = svgEl.querySelector('.chart-zoom-band');
-      var dragging = false, startX = 0;
-      function localX(e) {
-        var rect = svgEl.getBoundingClientRect();
-        return e.clientX - rect.left;
-      }
+    }
+
+    function wireDrag(svgEl) {
+      function localX(e) { return e.clientX - svgEl.getBoundingClientRect().left; }
       svgEl.addEventListener('mousedown', function (e) {
         if (e.target.classList.contains('chart-dot')) return;
-        dragging = true; startX = localX(e); band.style.display = '';
-        band.setAttribute('x', startX); band.setAttribute('width', 0); hideCard();
+        drag.on = true; drag.startX = localX(e);
+        ctx.band.style.display = '';
+        ctx.band.setAttribute('x', drag.startX); ctx.band.setAttribute('width', 0);
+        hideCard();
       });
       svgEl.addEventListener('mousemove', function (e) {
-        if (!dragging) return;
-        var cx = localX(e), x0 = Math.min(startX, cx), w = Math.abs(cx - startX);
-        band.setAttribute('x', x0); band.setAttribute('width', w);
-      });
-      window.addEventListener('mouseup', function (e) {
-        if (!dragging) return;
-        dragging = false; band.style.display = 'none';
-        var cx = localX(e), x0 = Math.min(startX, cx), x1 = Math.max(startX, cx);
-        if (x1 - x0 < 6) return; // ignore tiny drags
-        function tAt(px) { return domain.min + (px - pad.left) / pw * (domain.max - domain.min); }
-        var nMin = Math.max(domain.min, tAt(x0)), nMax = Math.min(domain.max, tAt(x1));
-        if (nMax > nMin) { domain.min = nMin; domain.max = nMax; render(); }
+        if (!drag.on) return;
+        var cx = localX(e), x0 = Math.min(drag.startX, cx), w = Math.abs(cx - drag.startX);
+        ctx.band.setAttribute('x', x0); ctx.band.setAttribute('width', w);
       });
       svgEl.addEventListener('dblclick', function () {
         domain.min = fullMin; domain.max = fullMax; render();
       });
     }
 
+    function onUp(e) {
+      if (!drag.on) return;
+      drag.on = false;
+      if (ctx.band) ctx.band.style.display = 'none';
+      var svgEl = ctx.svgEl;
+      var cx = e.clientX - svgEl.getBoundingClientRect().left;
+      var x0 = Math.min(drag.startX, cx), x1 = Math.max(drag.startX, cx);
+      if (x1 - x0 < 6) return;
+      var pad = ctx.pad, pw = ctx.pw;
+      function tAt(px) { return domain.min + (px - pad.left) / pw * (domain.max - domain.min); }
+      var nMin = Math.max(domain.min, tAt(x0)), nMax = Math.min(domain.max, tAt(x1));
+      if (nMax > nMin) { domain.min = nMin; domain.max = nMax; render(); }
+    }
+
     render();
-    if (!el._rcResize) {
-      el._rcResize = true;
+    if (!el._rcWired) {
+      el._rcWired = true;
+      window.addEventListener('mouseup', onUp);
       window.addEventListener('resize', render);
     }
   }

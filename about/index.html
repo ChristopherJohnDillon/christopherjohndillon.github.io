@@ -92,7 +92,7 @@ title: About
     <div class="reading-list">
       {% for book in site.data.books %}
       <a href="{{ book.url }}" class="book-item">
-        <span class="book-title">{{ book.title }}</span>
+        <span class="book-title">{{ book.title | escape }}</span>
         <span class="book-author">{{ book.author }}</span>
       </a>
       {% endfor %}
@@ -107,7 +107,7 @@ title: About
     <div class="reading-list">
       {% for film in site.data.films %}
       <a href="{{ film.url }}" class="book-item film-item">
-        <span class="book-title">{{ film.title }}{% if film.year %} <span class="film-year">{{ film.year }}</span>{% endif %}</span>
+        <span class="book-title">{{ film.title | escape }}{% if film.year %} <span class="film-year">{{ film.year }}</span>{% endif %}</span>
         <span class="book-author film-rating">{% if film.rating %}{% assign full = film.rating | floor %}{% for i in (1..full) %}★{% endfor %}{% assign frac = film.rating | minus: full %}{% if frac >= 0.5 %}½{% endif %}{% endif %}</span>
       </a>
       {% endfor %}
