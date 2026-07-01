@@ -1,4 +1,4 @@
-name: Fetch Goodreads Books
+name: Fetch Reading & Watching
 
 on:
   schedule:
@@ -25,6 +25,9 @@ jobs:
       - name: Fetch books from Goodreads
         run: python scripts/fetch_books.py
 
+      - name: Fetch films from Letterboxd
+        run: python scripts/fetch_films.py
+
       - name: Check for changes
         id: check
         run: |
@@ -35,6 +38,6 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add _data/books.json _data/reading_stats.json
-          git commit -m "Update reading list [skip ci]"
+          git add _data/books.json _data/reading_stats.json _data/films.json _data/watching_stats.json
+          git commit -m "Update reading & watching lists [skip ci]"
           git push
