@@ -1,5 +1,26 @@
 [
   {
+    "title": "Time After Time",
+    "author": "Karl Alexander",
+    "rating": 3,
+    "read_at": "2026-06-26",
+    "url": "https://www.goodreads.com/book/show/2857588"
+  },
+  {
+    "title": "We Have Always Lived in the Castle",
+    "author": "Shirley Jackson",
+    "rating": 4,
+    "read_at": "2026-06-21",
+    "url": "https://www.goodreads.com/book/show/89724"
+  },
+  {
+    "title": "Dancefloor",
+    "author": "Victor Jestin",
+    "rating": 4,
+    "read_at": "2026-06-14",
+    "url": "https://www.goodreads.com/book/show/221951178"
+  },
+  {
     "title": "One Yellow Eye",
     "author": "Leigh  Radford",
     "rating": 5,
@@ -12,26 +33,5 @@
     "rating": 3,
     "read_at": "2026-05-31",
     "url": "https://www.goodreads.com/book/show/46002075"
-  },
-  {
-    "title": "Antihero",
-    "author": "Gregg Hurwitz",
-    "rating": 2,
-    "read_at": "2026-05-24",
-    "url": "https://www.goodreads.com/book/show/231127208"
-  },
-  {
-    "title": "Few and Far Between",
-    "author": "Jan Carson",
-    "rating": 4,
-    "read_at": "2026-05-03",
-    "url": "https://www.goodreads.com/book/show/242977777"
-  },
-  {
-    "title": "The Secret History",
-    "author": "Donna Tartt",
-    "rating": 5,
-    "read_at": "2026-04-26",
-    "url": "https://www.goodreads.com/book/show/29044"
   }
 ]
