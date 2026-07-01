@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss version="2.0">
+  <channel>
+    <title>Chris's bookshelf: read</title>
+    <item>
+      <title>Foster (Something)</title>
+      <book_id>12345</book_id>
+      <book_image_url><![CDATA[https://i.gr-assets.com/small.jpg]]></book_image_url>
+      <book_large_image_url><![CDATA[https://i.gr-assets.com/large.jpg]]></book_large_image_url>
+      <author_name>Claire Keegan</author_name>
+      <user_rating>5</user_rating>
+      <user_read_at>Mon, 24 Jan 2022 00:00:00 -0800</user_read_at>
+      <book id="12345"><num_pages>101</num_pages></book>
+    </item>
+  </channel>
+</rss>

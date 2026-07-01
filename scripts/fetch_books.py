@@ -78,8 +78,9 @@ def yearly_stats(root):
         author = clean(item.findtext("author_name", ""))
         pages_el = item.find(".//book/num_pages")
         pages = int(pages_el.text) if pages_el is not None and pages_el.text and pages_el.text != "0" else 0
+        cover = clean(item.findtext("book_large_image_url", "")) or clean(item.findtext("book_image_url", ""))
         if date_str and pages > 0 and m and int(m.group(1)) >= MIN_YEAR:
-            timeline.append({"title": title, "author": author, "pages": pages, "read_at": date_str})
+            timeline.append({"title": title, "author": author, "pages": pages, "read_at": date_str, "cover": cover})
         if pages >= 100:
             all_books.append({"title": title, "author": author, "pages": pages})
     per_year = [{"year": y, "count": years[y]} for y in sorted(years)]

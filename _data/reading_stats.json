@@ -2,7 +2,7 @@
   "per_year": [
     {
       "year": 2021,
-      "count": 22
+      "count": 19
     },
     {
       "year": 2022,
@@ -22,13 +22,13 @@
     },
     {
       "year": 2026,
-      "count": 18
+      "count": 21
     }
   ],
   "fun": {
     "total_books": 192,
-    "total_pages": 70811,
-    "avg_pages": 368,
+    "total_pages": 70234,
+    "avg_pages": 365,
     "shortest": {
       "title": "Foster",
       "author": "Claire Keegan",
@@ -45,1003 +45,1170 @@
       "title": "The Thief of Time",
       "author": "John Boyne",
       "pages": 384,
-      "read_at": "2021-01-24"
-    },
-    {
-      "title": "Prodigal Son",
-      "author": "Gregg Hurwitz",
-      "pages": 432,
-      "read_at": "2021-06-09"
-    },
-    {
-      "title": "When the Wind Blows",
-      "author": "James  Patterson",
-      "pages": 416,
-      "read_at": "2021-06-13"
-    },
-    {
-      "title": "The Holiday",
-      "author": "T.M. Logan",
-      "pages": 380,
-      "read_at": "2021-07-11"
+      "read_at": "2021-01-24",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1311981708l/48004.jpg"
     },
     {
       "title": "Boy Parts",
       "author": "Eliza  Clark",
       "pages": 304,
-      "read_at": "2021-07-19"
+      "read_at": "2021-07-19",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1575377405l/49083140._SY475_.jpg"
     },
     {
       "title": "Care of Wooden Floors",
       "author": "Will Wiles",
       "pages": 295,
-      "read_at": "2021-08-01"
+      "read_at": "2021-08-01",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1363720984l/12391599.jpg"
     },
     {
       "title": "The Perfect Lie",
       "author": "Jo Spain",
       "pages": 400,
-      "read_at": "2021-08-03"
+      "read_at": "2021-08-03",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1590617603l/53517005._SY475_.jpg"
     },
     {
       "title": "Falling",
       "author": "T.J. Newman",
       "pages": 304,
-      "read_at": "2021-08-04"
+      "read_at": "2021-08-04",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1625673562l/56614951._SY475_.jpg"
     },
     {
       "title": "Who Took Eden Mulligan?",
       "author": "Sharon Dempsey",
       "pages": 365,
-      "read_at": "2021-08-17"
+      "read_at": "2021-08-17",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1612227886l/56922403._SY475_.jpg"
     },
     {
       "title": "The Devil's Advocate",
       "author": "Steve Cavanagh",
       "pages": 403,
-      "read_at": "2021-08-20"
+      "read_at": "2021-08-20",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1622522673l/56075874._SY475_.jpg"
     },
     {
       "title": "Did Ye Hear Mammy Died? A Memoir",
       "author": "S\u00e9amas O'Reilly",
       "pages": 231,
-      "read_at": "2021-08-22"
+      "read_at": "2021-08-22",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1572262075l/52588525.jpg"
     },
     {
       "title": "What Lies Between Us",
       "author": "John Marrs",
       "pages": 363,
-      "read_at": "2021-08-22"
+      "read_at": "2021-08-22",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1576829724l/53142315._SX318_SY475_.jpg"
     },
     {
       "title": "The Nothing Man",
       "author": "Catherine Ryan Howard",
       "pages": 319,
-      "read_at": "2021-08-30"
+      "read_at": "2021-08-30",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1590827688l/53653285._SY475_.jpg"
     },
     {
       "title": "56 Days",
       "author": "Catherine Ryan Howard",
       "pages": 305,
-      "read_at": "2021-09-01"
+      "read_at": "2021-09-01",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1623124494l/57628810.jpg"
     },
     {
       "title": "Heatwave",
       "author": "Victor Jestin",
       "pages": 112,
-      "read_at": "2021-09-04"
+      "read_at": "2021-09-04",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1622654640l/55711633.jpg"
     },
     {
       "title": "Her Last Holiday",
       "author": "C.L. Taylor",
       "pages": 400,
-      "read_at": "2021-09-23"
+      "read_at": "2021-09-23",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1617707252l/55576877.jpg"
     },
     {
       "title": "Gideon the Ninth",
       "author": "Tamsyn Muir",
       "pages": 448,
-      "read_at": "2021-10-25"
+      "read_at": "2021-10-25",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1546870952l/42036538.jpg"
     },
     {
       "title": "Poison for Breakfast",
       "author": "Lemony Snicket",
       "pages": 158,
-      "read_at": "2021-10-27"
+      "read_at": "2021-10-27",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1613788183l/56769614.jpg"
     },
     {
       "title": "Better Off Dead",
       "author": "Lee Child",
       "pages": 336,
-      "read_at": "2021-11-01"
+      "read_at": "2021-11-01",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1610609548l/56663329.jpg"
     },
     {
       "title": "Rewind",
       "author": "Catherine Ryan Howard",
       "pages": 359,
-      "read_at": "2021-11-06"
+      "read_at": "2021-11-06",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1554816857l/44132255.jpg"
     },
     {
       "title": "December Stories",
       "author": "Ian Sansom",
       "pages": 128,
-      "read_at": "2021-11-18"
+      "read_at": "2021-11-18",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1542669192l/42868279._SY475_.jpg"
     },
     {
       "title": "Mother\u2019s Helper",
       "author": "Julia Crouch",
       "pages": 405,
-      "read_at": "2022-01-06"
+      "read_at": "2022-01-06",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1626742647l/58592323._SY475_.jpg"
     },
     {
       "title": "All Her Fault",
       "author": "Andrea Mara",
       "pages": 389,
-      "read_at": "2022-01-07"
+      "read_at": "2022-01-07",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1620075242l/57937453._SY475_.jpg"
     },
     {
       "title": "Termination Shock",
       "author": "Neal Stephenson",
       "pages": 708,
-      "read_at": "2022-01-17"
+      "read_at": "2022-01-17",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1621245328l/57094295.jpg"
     },
     {
       "title": "Genuine Fraud",
       "author": "E. Lockhart",
       "pages": 262,
-      "read_at": "2022-01-23"
+      "read_at": "2022-01-23",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1503003099l/33843362._SY475_.jpg"
     },
     {
       "title": "Star Wars: Revenge of the Sith",
       "author": "Matthew Woodring Stover",
       "pages": 418,
-      "read_at": "2022-01-24"
+      "read_at": "2022-01-24",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388228249l/35458.jpg"
     },
     {
       "title": "Fry's Ties",
       "author": "Stephen Fry",
       "pages": 255,
-      "read_at": "2022-01-29"
+      "read_at": "2022-01-29",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1648981240l/58603386._SX318_.jpg"
     },
     {
       "title": "Someone Like You",
       "author": "Roald Dahl",
       "pages": 355,
-      "read_at": "2022-02-02"
+      "read_at": "2022-02-02",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327896713l/13324169.jpg"
     },
     {
       "title": "Hostage",
       "author": "Clare Mackintosh",
       "pages": 357,
-      "read_at": "2022-02-02"
+      "read_at": "2022-02-02",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1612384147l/56628286.jpg"
     },
     {
       "title": "The Last Resort",
       "author": "Jan Carson",
       "pages": 101,
-      "read_at": "2022-02-26"
+      "read_at": "2022-02-26",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1617889889l/56322963._SY475_.jpg"
     },
     {
       "title": "The Raptures",
       "author": "Jan Carson",
       "pages": 336,
-      "read_at": "2022-02-27"
+      "read_at": "2022-02-27",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1636418609l/59573884._SY475_.jpg"
     },
     {
       "title": "The House of Ashes",
       "author": "Stuart Neville",
       "pages": 296,
-      "read_at": "2022-03-01"
+      "read_at": "2022-03-01",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1624384011l/57660446._SY475_.jpg"
     },
     {
       "title": "Killing Floor",
       "author": "Lee Child",
       "pages": 474,
-      "read_at": "2022-03-02"
+      "read_at": "2022-03-02",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1399313258l/78129._SY475_.jpg"
     },
     {
       "title": "Dark Horse",
       "author": "Gregg Hurwitz",
       "pages": 432,
-      "read_at": "2022-03-12"
+      "read_at": "2022-03-12",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1636367823l/57693476.jpg"
     },
     {
       "title": "Detransition, Baby",
       "author": "Torrey Peters",
       "pages": 337,
-      "read_at": "2022-03-21"
+      "read_at": "2022-03-21",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1587480347l/48890225.jpg"
     },
     {
       "title": "The Nurse",
       "author": "Claire Allan",
       "pages": 400,
-      "read_at": "2022-04-03"
+      "read_at": "2022-04-03",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1637247321l/58990978._SY475_.jpg"
     },
     {
       "title": "The Empty Room",
       "author": "Brian McGilloway",
       "pages": 323,
-      "read_at": "2022-04-06"
+      "read_at": "2022-04-06",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1677851266l/58311092._SY475_.jpg"
     },
     {
       "title": "The Goldfinch",
       "author": "Donna Tartt",
       "pages": 771,
-      "read_at": "2022-04-21"
+      "read_at": "2022-04-21",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1378710146l/17333223.jpg"
     },
     {
       "title": "Until the End",
       "author": "Derek Landy",
       "pages": 656,
-      "read_at": "2022-05-14"
+      "read_at": "2022-05-14",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1642631998l/59521966._SY475_.jpg"
     },
     {
       "title": "The Last to Disappear",
       "author": "Jo Spain",
       "pages": 400,
-      "read_at": "2022-06-05"
+      "read_at": "2022-06-05",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1639592503l/59008128._SY475_.jpg"
     },
     {
       "title": "Star Wars: Darth Vader - Dark Lord of the Sith, Vol. 1",
       "author": "Charles Soule",
       "pages": 267,
-      "read_at": "2022-06-24"
+      "read_at": "2022-06-24",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1552619833l/44433494._SY475_.jpg"
     },
     {
       "title": "Star Wars: Darth Vader - Dark Lord of the Sith, Vol. 2: Legacy's End",
       "author": "Charles Soule",
       "pages": 144,
-      "read_at": "2022-06-24"
+      "read_at": "2022-06-24",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1525359658l/36040437._SY475_.jpg"
     },
     {
       "title": "Batman: Year One",
       "author": "Frank Miller",
       "pages": 136,
-      "read_at": "2022-06-25"
+      "read_at": "2022-06-25",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1574630214l/59980.jpg"
     },
     {
       "title": "Batman: The Long Halloween",
       "author": "Jeph Loeb",
       "pages": 376,
-      "read_at": "2022-06-26"
+      "read_at": "2022-06-26",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1350137101l/106069.jpg"
     },
     {
       "title": "Girl A",
       "author": "Abigail Dean",
       "pages": 352,
-      "read_at": "2022-07-03"
+      "read_at": "2022-07-03",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1599562435l/55271524.jpg"
     },
     {
       "title": "Invisible Girl",
       "author": "Lisa Jewell",
       "pages": 403,
-      "read_at": "2022-07-17"
+      "read_at": "2022-07-17",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1610215290l/53176765._SY475_.jpg"
     },
     {
       "title": "Hannibal Rising",
       "author": "Thomas  Harris",
       "pages": 336,
-      "read_at": "2022-07-30"
+      "read_at": "2022-07-30",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1394208690l/32416.jpg"
     },
     {
       "title": "The Man in the Bunker",
       "author": "Rory Clements",
       "pages": 496,
-      "read_at": "2022-08-14"
+      "read_at": "2022-08-14",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1650318727l/60839740._SY475_.jpg"
     },
     {
       "title": "Corpus",
       "author": "Rory Clements",
       "pages": 352,
-      "read_at": "2022-08-28"
+      "read_at": "2022-08-28",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1478028349l/26859967.jpg"
     },
     {
       "title": "Project Hail Mary",
       "author": "Andy Weir",
       "pages": 476,
-      "read_at": "2022-08-31"
+      "read_at": "2022-08-31",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1764703833l/54493401._SY475_.jpg"
     },
     {
       "title": "Number 5",
       "author": "Glenn Patterson",
       "pages": 320,
-      "read_at": "2022-09-03"
+      "read_at": "2022-09-03",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347463948l/1022641.jpg"
     },
     {
       "title": "The Accomplice",
       "author": "Steve Cavanagh",
       "pages": 352,
-      "read_at": "2022-09-04"
+      "read_at": "2022-09-04",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1650659645l/60189904._SY475_.jpg"
     },
     {
       "title": "Factory Girls",
       "author": "Michelle Gallen",
       "pages": 294,
-      "read_at": "2022-09-11"
+      "read_at": "2022-09-11",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1637957532l/59130111._SY475_.jpg"
     },
     {
       "title": "Taste: My Life Through Food",
       "author": "Stanley Tucci",
       "pages": 291,
-      "read_at": "2022-10-04"
+      "read_at": "2022-10-04",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1626644825l/55360284.jpg"
     },
     {
       "title": "If We Were Villains",
       "author": "M.L. Rio",
       "pages": 354,
-      "read_at": "2022-10-26"
+      "read_at": "2022-10-26",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1480717682l/30319086._SY475_.jpg"
     },
     {
       "title": "No Plan B",
       "author": "Lee Child",
       "pages": 359,
-      "read_at": "2022-10-30"
+      "read_at": "2022-10-30",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1642656280l/60166014.jpg"
     },
     {
       "title": "The Catcher in the Rye",
       "author": "J.D. Salinger",
       "pages": 277,
-      "read_at": "2022-11-06"
+      "read_at": "2022-11-06",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1398034300l/5107.jpg"
     },
     {
       "title": "The Minotaur Takes a Cigarette Break",
       "author": "Steven Sherrill",
       "pages": 313,
-      "read_at": "2022-11-12"
+      "read_at": "2022-11-12",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442800369l/603260.jpg"
     },
     {
       "title": "The First Book of Swords",
       "author": "Fred Saberhagen",
       "pages": 309,
-      "read_at": "2022-11-21"
+      "read_at": "2022-11-21",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1283631887l/16509.jpg"
     },
     {
       "title": "At Bertram's Hotel",
       "author": "Agatha Christie",
       "pages": 223,
-      "read_at": "2022-11-30"
+      "read_at": "2022-11-30",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1375949033l/16333.jpg"
     },
     {
       "title": "Lying in Wait",
       "author": "Liz Nugent",
       "pages": 304,
-      "read_at": "2022-12-10"
+      "read_at": "2022-12-10",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1463433735l/27405729.jpg"
     },
     {
       "title": "Is Mother Dead",
       "author": "Vigdis Hjorth",
       "pages": 330,
-      "read_at": "2023-02-21"
+      "read_at": "2023-02-21",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1660057454l/60059857.jpg"
     },
     {
       "title": "Strange Sally Diamond",
       "author": "Liz Nugent",
       "pages": 384,
-      "read_at": "2023-03-12"
+      "read_at": "2023-03-12",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1677749819l/62322008._SY475_.jpg"
     },
     {
       "title": "Make Something Wonderful",
       "author": "Steve Jobs",
       "pages": 194,
-      "read_at": "2023-04-15"
+      "read_at": "2023-04-15",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1773602394l/128533513._SY475_.jpg"
     },
     {
       "title": "Lessons in Chemistry",
       "author": "Bonnie Garmus",
       "pages": 390,
-      "read_at": "2023-05-15"
+      "read_at": "2023-05-15",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1634748496l/58065033._SY475_.jpg"
     },
     {
       "title": "In the Dark",
       "author": "Claire Allan",
       "pages": 400,
-      "read_at": "2023-05-26"
+      "read_at": "2023-05-26",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1665444741l/61653446.jpg"
     },
     {
       "title": "The Last Passenger",
       "author": "Will Dean",
       "pages": 482,
-      "read_at": "2023-05-28"
+      "read_at": "2023-05-28",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1694518251l/67356448.jpg"
     },
     {
       "title": "I'm Glad My Mom Died",
       "author": "Jennette McCurdy",
       "pages": 320,
-      "read_at": "2023-05-31"
+      "read_at": "2023-05-31",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1649286799l/59364173._SY475_.jpg"
     },
     {
       "title": "The Future of Geography: How Power and Politics in Space Will Change Our World",
       "author": "Tim  Marshall",
       "pages": 256,
-      "read_at": "2023-07-03"
+      "read_at": "2023-07-03",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1666195524l/62675564._SY475_.jpg"
     },
     {
       "title": "A Wizard of Earthsea",
       "author": "Ursula K. Le Guin",
       "pages": 183,
-      "read_at": "2023-07-09"
+      "read_at": "2023-07-09",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1353424536l/13642.jpg"
     },
     {
       "title": "Dead Wake: The Last Crossing of the Lusitania",
       "author": "Erik Larson",
       "pages": 430,
-      "read_at": "2023-07-09"
+      "read_at": "2023-07-09",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1408923747l/22551730.jpg"
     },
     {
       "title": "Kill for Me Kill for You",
       "author": "Steve Cavanagh",
       "pages": 401,
-      "read_at": "2023-08-13"
+      "read_at": "2023-08-13",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1682983289l/123113649._SY475_.jpg"
     },
     {
       "title": "This Sweet Sickness",
       "author": "Patricia Highsmith",
       "pages": 288,
-      "read_at": "2023-08-15"
+      "read_at": "2023-08-15",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348037826l/768987.jpg"
     },
     {
       "title": "Starship Troopers",
       "author": "Robert A. Heinlein",
       "pages": 264,
-      "read_at": "2023-08-27"
+      "read_at": "2023-08-27",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1614054412l/17214.jpg"
     },
     {
       "title": "Eleanor Oliphant Is Completely Fine",
       "author": "Gail Honeyman",
       "pages": 390,
-      "read_at": "2023-09-19"
+      "read_at": "2023-09-19",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1557858891l/35900387._SY475_.jpg"
     },
     {
       "title": "The Last Orphan",
       "author": "Gregg Hurwitz",
       "pages": 300,
-      "read_at": "2023-09-23"
+      "read_at": "2023-09-23",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1690695691l/62897680._SY475_.jpg"
     },
     {
       "title": "A Gentleman in Moscow",
       "author": "Amor Towles",
       "pages": 495,
-      "read_at": "2023-10-02"
+      "read_at": "2023-10-02",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1718915012l/34066798._SY475_.jpg"
     },
     {
       "title": "Chip War: The Fight for the World's Most Critical Technology",
       "author": "Chris   Miller",
       "pages": 431,
-      "read_at": "2023-10-20"
+      "read_at": "2023-10-20",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1662566820l/60321447.jpg"
     },
     {
       "title": "The Secret",
       "author": "Lee Child",
-      "pages": 304,
-      "read_at": "2023-11-13"
+      "pages": 295,
+      "read_at": "2023-11-13",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1685363266l/123226695.jpg"
     },
     {
       "title": "Close to Home",
       "author": "Michael  Magee",
       "pages": 288,
-      "read_at": "2023-11-18"
+      "read_at": "2023-11-18",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1669911735l/62039294.jpg"
     },
     {
       "title": "Penance",
       "author": "Eliza  Clark",
       "pages": 336,
-      "read_at": "2023-11-21"
+      "read_at": "2023-11-21",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1682653172l/62898932._SY475_.jpg"
     },
     {
       "title": "The Long Way to a Small, Angry Planet",
       "author": "Becky Chambers",
       "pages": 518,
-      "read_at": "2024-01-22"
+      "read_at": "2024-01-22",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1405532474l/22733729.jpg"
     },
     {
       "title": "In the Blink of an Eye",
       "author": "Jo  Callaghan",
       "pages": 416,
-      "read_at": "2024-02-09"
+      "read_at": "2024-02-09",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1668617861l/62072146._SY475_.jpg"
     },
     {
       "title": "The Shining",
       "author": "Stephen  King",
       "pages": 497,
-      "read_at": "2024-02-12"
+      "read_at": "2024-02-12",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1353277730l/11588.jpg"
     },
     {
       "title": "The Ministry of Unladylike Activity",
       "author": "Robin Stevens",
       "pages": 416,
-      "read_at": "2024-02-25"
+      "read_at": "2024-02-25",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1677853658l/62084685._SY475_.jpg"
     },
     {
       "title": "Lone Wolf",
       "author": "Gregg Hurwitz",
       "pages": 389,
-      "read_at": "2024-04-03"
+      "read_at": "2024-04-03",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1686314822l/126919150.jpg"
     },
     {
       "title": "A Mind Full of Murder",
       "author": "Derek Landy",
       "pages": 379,
-      "read_at": "2024-04-04"
+      "read_at": "2024-04-04",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1696886966l/179302247._SY475_.jpg"
     },
     {
       "title": "A Game of Birds and Wolves: The Secret Game that Revolutionised the War",
       "author": "Simon  Parkin",
       "pages": 321,
-      "read_at": "2024-05-23"
+      "read_at": "2024-05-23",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1559433188l/46127746._SY475_.jpg"
     },
     {
       "title": "Brainwyrms",
       "author": "Alison Rumfitt",
       "pages": 304,
-      "read_at": "2024-05-25"
+      "read_at": "2024-05-25",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1683639959l/65212043.jpg"
     },
     {
       "title": "Invincible Compendium Volume 2:",
       "author": "Robert Kirkman",
       "pages": 1707,
-      "read_at": "2024-06-09"
+      "read_at": "2024-06-09",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1620805742l/58021519._SY475_.jpg"
     },
     {
       "title": "Invincible, Compendium One",
       "author": "Robert Kirkman",
       "pages": 1092,
-      "read_at": "2024-06-09"
+      "read_at": "2024-06-09",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1529797022l/11924046._SX318_.jpg"
     },
     {
       "title": "Invincible Compendium Volume 3:",
       "author": "Robert Kirkman",
       "pages": 1080,
-      "read_at": "2024-06-10"
+      "read_at": "2024-06-10",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1620805784l/58021522._SY475_.jpg"
     },
     {
       "title": "Foster",
       "author": "Claire Keegan",
       "pages": 101,
-      "read_at": "2024-07-03"
+      "read_at": "2024-07-03",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328146652l/8143909.jpg"
     },
     {
       "title": "Quickly, While They Still Have Horses: Stories",
       "author": "Jan Carson",
       "pages": 288,
-      "read_at": "2024-07-14"
+      "read_at": "2024-07-14",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1700075825l/199797939._SY475_.jpg"
     },
     {
       "title": "Forever Home",
       "author": "Graham Norton",
       "pages": 336,
-      "read_at": "2024-07-20"
+      "read_at": "2024-07-20",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1664905175l/60431085._SX318_.jpg"
     },
     {
       "title": "The guest",
       "author": "B.A. Paris",
       "pages": 368,
-      "read_at": "2024-08-01"
+      "read_at": "2024-08-01",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1721273097l/216604262._SY475_.jpg"
     },
     {
       "title": "The Affair",
       "author": "Claire Allan",
       "pages": 314,
-      "read_at": "2024-08-03"
+      "read_at": "2024-08-03",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1712965620l/203098345._SY475_.jpg"
     },
     {
       "title": "Recursion",
       "author": "Blake Crouch",
       "pages": 329,
-      "read_at": "2024-08-04"
+      "read_at": "2024-08-04",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1750526564l/42046112._SX318_.jpg"
     },
     {
       "title": "The Plot Against America",
       "author": "Philip Roth",
       "pages": 391,
-      "read_at": "2024-08-11"
+      "read_at": "2024-08-11",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1676325212l/114886364._SY475_.jpg"
     },
     {
       "title": "Sea of Tranquility",
       "author": "Emily St. John Mandel",
       "pages": 259,
-      "read_at": "2024-08-17"
+      "read_at": "2024-08-17",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1626710416l/58446227.jpg"
     },
     {
       "title": "Witness 8",
       "author": "Steve Cavanagh",
       "pages": 417,
-      "read_at": "2024-08-19"
+      "read_at": "2024-08-19",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1718865758l/209096547._SY475_.jpg"
     },
     {
       "title": "The It Girl",
       "author": "Ruth Ware",
       "pages": 423,
-      "read_at": "2024-09-15"
+      "read_at": "2024-09-15",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1671400977l/59345249._SY475_.jpg"
     },
     {
       "title": "The Elements of Marie Curie: How the Glow of Radium Lit a Path for Women in Science",
       "author": "Dava Sobel",
       "pages": 318,
-      "read_at": "2024-10-25"
+      "read_at": "2024-10-25",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1716500981l/208580608._SY475_.jpg"
     },
     {
       "title": "Leonard Cohen: A Novel",
       "author": "Jeffrey Lewis",
       "pages": 156,
-      "read_at": "2024-11-17"
+      "read_at": "2024-11-17",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1705072336l/199506238._SY475_.jpg"
     },
     {
       "title": "When We Cease to Understand the World",
       "author": "Benjam\u00edn Labatut",
       "pages": 193,
-      "read_at": "2024-12-22"
+      "read_at": "2024-12-22",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1661332705l/62069739._SX318_.jpg"
     },
     {
       "title": "In Too Deep",
       "author": "Lee Child",
-      "pages": 336,
-      "read_at": "2024-12-27"
+      "pages": 327,
+      "read_at": "2024-12-27",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1715293370l/204432624._SY475_.jpg"
     },
     {
       "title": "Wild Houses",
       "author": "Colin  Barrett",
       "pages": 272,
-      "read_at": "2025-01-18"
+      "read_at": "2025-01-18",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1696101850l/128714412._SY475_.jpg"
     },
     {
       "title": "The Island of Extraordinary Captives: A Painter, a Poet, an Heiress, and a Spy in a World War II British Internment Camp",
       "author": "Simon  Parkin",
       "pages": 448,
-      "read_at": "2025-01-19"
+      "read_at": "2025-01-19",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1666195595l/59364152._SY475_.jpg"
     },
     {
       "title": "A Serial Killer's Guide to Marriage",
       "author": "Asia Mackay",
       "pages": 352,
-      "read_at": "2025-01-26"
+      "read_at": "2025-01-26",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1727378164l/211399774._SY475_.jpg"
     },
     {
       "title": "She's Always Hungry",
       "author": "Eliza  Clark",
       "pages": 225,
-      "read_at": "2025-01-29"
+      "read_at": "2025-01-29",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1714600043l/201033505._SY475_.jpg"
     },
     {
       "title": "The Body in the Blitz",
       "author": "Robin Stevens",
       "pages": 464,
-      "read_at": "2025-02-02"
+      "read_at": "2025-02-02",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1697830312l/200338987._SY475_.jpg"
     },
     {
       "title": "Dark Matter",
       "author": "Blake Crouch",
       "pages": 342,
-      "read_at": "2025-02-03"
+      "read_at": "2025-02-03",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1472119680l/27833670._SY475_.jpg"
     },
     {
       "title": "Nemesis",
       "author": "Gregg Hurwitz",
       "pages": 456,
-      "read_at": "2025-02-25"
+      "read_at": "2025-02-25",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1716838441l/211492842._SY475_.jpg"
     },
     {
       "title": "A is for Arsenic: The Poisons of Agatha Christie",
       "author": "Kathryn Harkup",
       "pages": 320,
-      "read_at": "2025-03-02"
+      "read_at": "2025-03-02",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1422904883l/23848320.jpg"
     },
     {
       "title": "Upgrade",
       "author": "Blake Crouch",
       "pages": 352,
-      "read_at": "2025-03-09"
+      "read_at": "2025-03-09",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1643994317l/59838811.jpg"
     },
     {
       "title": "Beyond the Wall: East Germany, 1949-1990",
       "author": "Katja Hoyer",
       "pages": 496,
-      "read_at": "2025-03-09"
+      "read_at": "2025-03-09",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1677147473l/61403418._SY475_.jpg"
     },
     {
       "title": "Sociopath",
       "author": "Patric Gagne",
       "pages": 368,
-      "read_at": "2025-03-15"
+      "read_at": "2025-03-15",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1710615468l/176443093._SY475_.jpg"
     },
     {
       "title": "The Maniac",
       "author": "Benjam\u00edn Labatut",
       "pages": 368,
-      "read_at": "2025-04-05"
+      "read_at": "2025-04-05",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1679411721l/75665931.jpg"
     },
     {
       "title": "My Brilliant Friend",
       "author": "Elena Ferrante",
       "pages": 331,
-      "read_at": "2025-04-13"
+      "read_at": "2025-04-13",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1493655783l/35036409.jpg"
     },
     {
       "title": "Becoming Steve Jobs: The evolution of a reckless upstart into a visionary leader",
       "author": "Brent Schlender",
       "pages": 447,
-      "read_at": "2025-05-02"
+      "read_at": "2025-05-02",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1482674268l/33564299._SY475_.jpg"
     },
     {
       "title": "Death in the Air: The True Story of a Serial Killer, the Great London Smog, and the Strangling of a City",
       "author": "Kate Winkler Dawson",
       "pages": 352,
-      "read_at": "2025-05-04"
+      "read_at": "2025-05-04",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1503335127l/34219897._SY475_.jpg"
     },
     {
       "title": "The Man With the Golden Gun",
       "author": "Ian Fleming",
       "pages": 208,
-      "read_at": "2025-05-10"
+      "read_at": "2025-05-10",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1436053981l/177193._SY475_.jpg"
     },
     {
       "title": "The Remains of the Day",
       "author": "Kazuo Ishiguro",
       "pages": 258,
-      "read_at": "2025-05-18"
+      "read_at": "2025-05-18",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327128714l/28921.jpg"
     },
     {
       "title": "The One You Least Suspect",
       "author": "Brian McGilloway",
       "pages": 345,
-      "read_at": "2025-06-08"
+      "read_at": "2025-06-08",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1729589222l/201622837._SY475_.jpg"
     },
     {
       "title": "The Snack Hacker: Rule-Breaking Recipes for Cooks and Non-Cooks",
       "author": "George Egg",
       "pages": 396,
-      "read_at": "2025-06-21"
+      "read_at": "2025-06-21",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1718193801l/214560389._SY475_.jpg"
     },
     {
       "title": "All the Light We Cannot See",
       "author": "Anthony Doerr",
       "pages": 531,
-      "read_at": "2025-06-28"
+      "read_at": "2025-06-28",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1451445646l/18143977.jpg"
     },
     {
       "title": "Stoner",
       "author": "John  Williams",
       "pages": 292,
-      "read_at": "2025-06-30"
+      "read_at": "2025-06-30",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1742326950l/166997._SY475_.jpg"
     },
     {
       "title": "In Cold Blood",
       "author": "Truman Capote",
       "pages": 343,
-      "read_at": "2025-07-13"
+      "read_at": "2025-07-13",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1424931136l/168642.jpg"
     },
     {
       "title": "Me Talk Pretty One Day",
       "author": "David Sedaris",
       "pages": 272,
-      "read_at": "2025-07-19"
+      "read_at": "2025-07-19",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1431013639l/4137.jpg"
     },
     {
       "title": "Flesh & Blood",
       "author": "Andrew Shanahan",
       "pages": 245,
-      "read_at": "2025-07-20"
+      "read_at": "2025-07-20",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1640721692l/59962104._SY475_.jpg"
     },
     {
       "title": "Before and After",
       "author": "Andrew Shanahan",
       "pages": 234,
-      "read_at": "2025-07-20"
+      "read_at": "2025-07-20",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1578067873l/50262048._SY475_.jpg"
     },
     {
       "title": "Star Wars: The Rise and Fall of the Galactic Empire",
       "author": "Chris Kempshall",
       "pages": 395,
-      "read_at": "2025-07-26"
+      "read_at": "2025-07-26",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1708142709l/208713594._SY475_.jpg"
     },
     {
       "title": "The Talented Mr. Ripley",
       "author": "Patricia Highsmith",
       "pages": 271,
-      "read_at": "2025-07-27"
+      "read_at": "2025-07-27",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1746213953l/2247142._SY475_.jpg"
     },
     {
       "title": "Ripley Under Ground",
       "author": "Patricia Highsmith",
       "pages": 285,
-      "read_at": "2025-08-02"
+      "read_at": "2025-08-02",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327977334l/3845356.jpg"
     },
     {
       "title": "Ripley's Game",
       "author": "Patricia Highsmith",
       "pages": 272,
-      "read_at": "2025-08-03"
+      "read_at": "2025-08-03",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327977429l/3425503.jpg"
     },
     {
       "title": "Two Kinds of Stranger",
       "author": "Steve Cavanagh",
       "pages": 400,
-      "read_at": "2025-08-07"
+      "read_at": "2025-08-07",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1744695566l/216437528._SY475_.jpg"
     },
     {
       "title": "Everything Is Tuberculosis: The History and Persistence of Our Deadliest Infection",
       "author": "John  Green",
       "pages": 198,
-      "read_at": "2025-08-09"
+      "read_at": "2025-08-09",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1729825992l/220341389._SY475_.jpg"
     },
     {
       "title": "And Then? And Then? What Else?",
       "author": "Daniel Handler",
       "pages": 240,
-      "read_at": "2025-08-16"
+      "read_at": "2025-08-16",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1698195515l/200628690._SY475_.jpg"
     },
     {
       "title": "The Forbidden Garden of Leningrad: A True Story of Science and Sacrifice in a City under Siege",
       "author": "Simon Parkin",
       "pages": 454,
-      "read_at": "2025-08-26"
+      "read_at": "2025-08-26",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1718911416l/209693130._SY475_.jpg"
     },
     {
       "title": "Korolev: How One Man Masterminded the Soviet Drive to Beat America to the Moon",
       "author": "James Harford",
       "pages": 432,
-      "read_at": "2025-08-31"
+      "read_at": "2025-08-31",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1396226901l/213301.jpg"
     },
     {
       "title": "The Boy Who Followed Ripley",
       "author": "Patricia Highsmith",
       "pages": 348,
-      "read_at": "2025-09-12"
+      "read_at": "2025-09-12",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327977256l/3845354.jpg"
     },
     {
       "title": "Ripley Under Water",
       "author": "Patricia Highsmith",
       "pages": 304,
-      "read_at": "2025-09-13"
+      "read_at": "2025-09-13",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327977011l/3845355.jpg"
     },
     {
       "title": "Blackout",
       "author": "Simon Scarrow",
       "pages": 386,
-      "read_at": "2025-10-12"
+      "read_at": "2025-10-12",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1584599376l/48918693._SY475_.jpg"
     },
     {
       "title": "The Secret of Secrets",
       "author": "Dan    Brown",
       "pages": 677,
-      "read_at": "2025-11-04"
+      "read_at": "2025-11-04",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1761313537l/223889699._SY475_.jpg"
     },
     {
       "title": "Exit Strategy",
       "author": "Lee Child",
       "pages": 304,
-      "read_at": "2025-11-06"
+      "read_at": "2025-11-06",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1737694119l/223927256._SY475_.jpg"
     },
     {
       "title": "The Rose Field",
       "author": "Philip Pullman",
       "pages": 657,
-      "read_at": "2025-12-07"
+      "read_at": "2025-12-07",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1752160654l/228587642._SX318_.jpg"
     },
     {
       "title": "Children of Time",
       "author": "Adrian Tchaikovsky",
       "pages": 600,
-      "read_at": "2025-12-09"
+      "read_at": "2025-12-09",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1431014197l/25499718.jpg"
     },
     {
       "title": "Superior Spider-Man 01",
       "author": "Dan Slott",
       "pages": 70,
-      "read_at": "2025-12-14"
+      "read_at": "2025-12-14",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1516650697l/17844707._SX318_.jpg"
     },
     {
       "title": "A Heart Full of Hatred",
       "author": "Derek Landy",
       "pages": 417,
-      "read_at": "2025-12-20"
+      "read_at": "2025-12-20",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1734845197l/222868423._SY475_.jpg"
     },
     {
       "title": "Polostan",
       "author": "Neal Stephenson",
       "pages": 303,
-      "read_at": "2025-12-29"
+      "read_at": "2025-12-29",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1714031079l/199793426._SY475_.jpg"
     },
     {
       "title": "Apple in China: The Capture of the World's Greatest Company",
       "author": "Patrick  McGee",
       "pages": 448,
-      "read_at": "2026-01-01"
+      "read_at": "2026-01-01",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1740350739l/220161058._SY475_.jpg"
     },
     {
       "title": "Children of Ruin",
       "author": "Adrian Tchaikovsky",
       "pages": 597,
-      "read_at": "2026-01-05"
+      "read_at": "2026-01-05",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1693752895l/40376072._SY475_.jpg"
     },
     {
       "title": "Prestige Drama",
       "author": "S\u00e9amas O'Reilly",
       "pages": 154,
-      "read_at": "2026-01-18"
+      "read_at": "2026-01-18",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1770087704l/233026301._SY475_.jpg"
     },
     {
       "title": "Traction: Get a Grip on Your Business",
       "author": "Gino Wickman",
       "pages": 246,
-      "read_at": "2026-01-24"
+      "read_at": "2026-01-24",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1385141177l/18886376.jpg"
     },
     {
       "title": "The Count of Monte Cristo",
       "author": "Alexandre Dumas",
       "pages": 1276,
-      "read_at": "2026-02-15"
+      "read_at": "2026-02-15",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1724863997l/7126._SY475_.jpg"
     },
     {
       "title": "How the Irish Saved Civilization: The Untold Story of Ireland's Heroic Role from the Fall of Rome to the Rise of Medieval Europe",
       "author": "Thomas Cahill",
       "pages": 246,
-      "read_at": "2026-02-21"
+      "read_at": "2026-02-21",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1706145092l/25669._SY475_.jpg"
     },
     {
       "title": "Jumper",
       "author": "Steven Gould",
       "pages": 345,
-      "read_at": "2026-03-09"
+      "read_at": "2026-03-09",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1304981770l/47970.jpg"
     },
     {
       "title": "Reflex",
       "author": "Steven Gould",
       "pages": 380,
-      "read_at": "2026-03-11"
+      "read_at": "2026-03-11",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1634004517l/64818._SY475_.jpg"
     },
     {
       "title": "Impulse",
       "author": "Steven Gould",
       "pages": 368,
-      "read_at": "2026-03-15"
+      "read_at": "2026-03-15",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1342631587l/13614730.jpg"
     },
     {
       "title": "The Truth About Ruby Cooper",
       "author": "Liz Nugent",
       "pages": 369,
-      "read_at": "2026-03-17"
+      "read_at": "2026-03-17",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1763451712l/238328226._SY475_.jpg"
     },
     {
       "title": "Exo",
       "author": "Steven Gould",
       "pages": 464,
-      "read_at": "2026-03-22"
+      "read_at": "2026-03-22",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1403633075l/20518815.jpg"
     },
     {
       "title": "Half His Age",
       "author": "Jennette McCurdy",
       "pages": 288,
-      "read_at": "2026-03-28"
+      "read_at": "2026-03-28",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1765907278l/240424526._SY475_.jpg"
     },
     {
       "title": "The Secret History",
       "author": "Donna Tartt",
       "pages": 559,
-      "read_at": "2026-04-26"
+      "read_at": "2026-04-26",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1751820530l/29044._SY475_.jpg"
     },
     {
       "title": "Few and Far Between",
       "author": "Jan Carson",
       "pages": 336,
-      "read_at": "2026-05-03"
+      "read_at": "2026-05-03",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1760892711l/242977777._SY475_.jpg"
     },
     {
       "title": "Antihero",
       "author": "Gregg Hurwitz",
       "pages": 416,
-      "read_at": "2026-05-24"
+      "read_at": "2026-05-24",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1751384785l/231127208._SY475_.jpg"
     },
     {
       "title": "The Disappearance of Josef Mengele",
       "author": "Olivier Guez",
       "pages": 224,
-      "read_at": "2026-05-31"
+      "read_at": "2026-05-31",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1657883688l/46002075._SY475_.jpg"
     },
     {
       "title": "One Yellow Eye",
       "author": "Leigh  Radford",
       "pages": 352,
-      "read_at": "2026-06-06"
+      "read_at": "2026-06-06",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1729011609l/220160134._SY475_.jpg"
+    },
+    {
+      "title": "Dancefloor",
+      "author": "Victor Jestin",
+      "pages": 176,
+      "read_at": "2026-06-14",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1744040665l/221951178._SY475_.jpg"
+    },
+    {
+      "title": "We Have Always Lived in the Castle",
+      "author": "Shirley Jackson",
+      "pages": 152,
+      "read_at": "2026-06-21",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1746532708l/89724._SY475_.jpg"
+    },
+    {
+      "title": "Time After Time",
+      "author": "Karl Alexander",
+      "pages": 341,
+      "read_at": "2026-06-26",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1309640655l/2857588.jpg"
     }
   ]
 }
