@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Dog Day Afternoon",
+    "year": 1975,
+    "rating": 5.0,
+    "watched_at": "2026-06-30",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/1/9/5/51195-dog-day-afternoon-0-600-0-900-crop.jpg?v=dcce1e7cbb",
+    "url": "https://letterboxd.com/chrisdillon/film/dog-day-afternoon/"
+  },
+  {
+    "title": "Ripley's Game",
+    "year": 2002,
+    "rating": 5.0,
+    "watched_at": "2026-06-28",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/4/5/7/3/9/45739-ripley-s-game-0-600-0-900-crop.jpg?v=01c5cb53c6",
+    "url": "https://letterboxd.com/chrisdillon/film/ripleys-game/"
+  },
+  {
+    "title": "Dangerous Liaisons",
+    "year": 1988,
+    "rating": 3.0,
+    "watched_at": "2026-06-27",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/2/9/3/51293-dangerous-liaisons-0-600-0-900-crop.jpg?v=e67110dbfe",
+    "url": "https://letterboxd.com/chrisdillon/film/dangerous-liaisons/"
+  },
+  {
+    "title": "Mystic River",
+    "year": 2003,
+    "rating": 3.0,
+    "watched_at": "2026-06-20",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/7/3/7/51737-mystic-river-0-600-0-900-crop.jpg?v=7c4cbb89ba",
+    "url": "https://letterboxd.com/chrisdillon/film/mystic-river/"
+  },
+  {
+    "title": "The Batman",
+    "year": 2022,
+    "rating": 5.0,
+    "watched_at": "2026-06-14",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/3/4/8/9/1/4/348914-the-batman-0-600-0-900-crop.jpg?v=ec12a8b7ce",
+    "url": "https://letterboxd.com/chrisdillon/film/the-batman/"
+  }
+]
