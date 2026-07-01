@@ -102,6 +102,21 @@ title: About
       </a>
     </div>
     {% endif %}
+    {% if site.data.films %}
+    <p class="experience-description">…and here's what I've been watching:</p>
+    <div class="reading-list">
+      {% for film in site.data.films %}
+      <a href="{{ film.url }}" class="book-item film-item">
+        <span class="book-title">{{ film.title }}{% if film.year %} <span class="film-year">{{ film.year }}</span>{% endif %}</span>
+        <span class="book-author film-rating">{% if film.rating %}{% assign full = film.rating | floor %}{% for i in (1..full) %}★{% endfor %}{% assign frac = film.rating | minus: full %}{% if frac >= 0.5 %}½{% endif %}{% endif %}</span>
+      </a>
+      {% endfor %}
+      <a href="https://letterboxd.com/ChrisDillon/" class="book-item book-more">
+        <span class="book-title">See more on Letterboxd</span>
+        <span class="book-author">&rsaquo;</span>
+      </a>
+    </div>
+    {% endif %}
     {% if site.data.reading_stats %}
     <div class="reading-charts">
       <div class="reading-chart" id="scatter-chart"></div>
@@ -116,142 +131,49 @@ title: About
       <span><strong>{{ fun.avg_pages }}pp</strong> avg</span>
     </div>
     {% endif %}
+    {% endif %}
+    {% if site.data.watching_stats %}
+    <div class="reading-charts">
+      <div class="reading-chart" id="film-scatter-chart"></div>
+      <div class="reading-chart" id="film-yearly-chart"></div>
+      <div class="reading-chart" id="film-hist-chart"></div>
+    </div>
+    {% assign wfun = site.data.watching_stats.fun %}
+    {% if wfun %}
+    <div class="reading-fun-stats watching-fun-stats">
+      <span><strong>{{ wfun.total_films }}</strong> films</span>
+      <span><strong>{{ wfun.avg_rating }}</strong> avg rating</span>
+      {% if wfun.highest_rated %}<span>top: <strong>{{ wfun.highest_rated.title }}</strong></span>{% endif %}
+    </div>
+    {% endif %}
+    {% endif %}
+    <script src="{{ '/assets/js/charts.js' | relative_url }}"></script>
     <script>
-    (function() {
-      var timeline = [{% for b in site.data.reading_stats.timeline %}
-        {t:"{{ b.read_at }}",p:{{ b.pages }},n:"{{ b.title | escape }}"}{% unless forloop.last %},{% endunless %}{% endfor %}
+    (function () {
+      {% if site.data.reading_stats %}
+      var bookTimeline = [{% for b in site.data.reading_stats.timeline %}
+        {t:new Date("{{ b.read_at }}").getTime(), y:{{ b.pages }}, title:"{{ b.title | escape }}", sub:"{{ b.pages }}pp · {{ b.author | escape }}", date:"{{ b.read_at }}", img:"{{ b.cover }}"}{% unless forloop.last %},{% endunless %}{% endfor %}
       ];
-      var perYear = [{% for s in site.data.reading_stats.per_year %}
-        {year:{{ s.year }},count:{{ s.count }}}{% unless forloop.last %},{% endunless %}{% endfor %}
+      var bookPerYear = [{% for s in site.data.reading_stats.per_year %}
+        {label:"'{{ s.year | append: '' | slice: 2, 2 }}", count:{{ s.count }}}{% unless forloop.last %},{% endunless %}{% endfor %}
       ];
-      var cs = getComputedStyle(document.documentElement);
-      var dim = cs.getPropertyValue('--dim').trim();
-      var mute = cs.getPropertyValue('--mute').trim();
-      var accent = cs.getPropertyValue('--nanoflare').trim();
-      var rule = cs.getPropertyValue('--rule').trim();
-      var mono = 'var(--f-mono)';
-      function buildScatter() {
-        var el = document.getElementById('scatter-chart');
-        var W = el.offsetWidth || 320, H = 150;
-        var pad = {top: 14, right: 12, bottom: 28, left: 38};
-        var pw = W - pad.left - pad.right, ph = H - pad.top - pad.bottom;
-        var dates = timeline.map(function(b) { return new Date(b.t).getTime(); });
-        var minD = new Date(2021, 0, 1).getTime(), maxD = Math.max.apply(null, dates);
-        var pages = timeline.map(function(b) { return b.p; });
-        var maxP = Math.max.apply(null, pages);
-        var yMax = Math.ceil(maxP / 200) * 200;
-        function xPos(d) { return pad.left + (d - minD) / (maxD - minD) * pw; }
-        function yPos(p) { return pad.top + ph - (p / yMax * ph); }
-        var svg = '<svg width="'+W+'" height="'+H+'" xmlns="http://www.w3.org/2000/svg">';
-        // y gridlines + labels
-        for (var t = 0; t <= yMax; t += 400) {
-          var ty = yPos(t);
-          svg += '<line x1="'+pad.left+'" y1="'+ty+'" x2="'+(W-pad.right)+'" y2="'+ty+'" stroke="'+dim+'" stroke-opacity="0.3" stroke-width="0.5"/>';
-          svg += '<text x="'+(pad.left-6)+'" y="'+(ty+3)+'" text-anchor="end" font-size="8" font-family="'+mono+'" fill="'+dim+'">'+t+'</text>';
-        }
-        // y-axis label
-        svg += '<text x="6" y="'+(pad.top + ph/2)+'" text-anchor="middle" font-size="8" font-family="'+mono+'" fill="'+mute+'" transform="rotate(-90,6,'+(pad.top + ph/2)+')">pages</text>';
-        // x-axis year labels
-        var minYear = new Date(minD).getFullYear(), maxYear = new Date(maxD).getFullYear();
-        for (var yr = minYear; yr <= maxYear; yr++) {
-          var xd = xPos(new Date(yr, 0, 1).getTime());
-          if (xd >= pad.left && xd <= W - pad.right) {
-            svg += '<line x1="'+xd+'" y1="'+pad.top+'" x2="'+xd+'" y2="'+(H-pad.bottom)+'" stroke="'+dim+'" stroke-opacity="0.25" stroke-width="0.5"/>';
-            svg += '<text x="'+xd+'" y="'+(H-pad.bottom+12)+'" text-anchor="middle" font-size="9" font-family="'+mono+'" fill="'+dim+'">'+yr+'</text>';
-          }
-        }
-        // x-axis label
-        svg += '<text x="'+(pad.left + pw/2)+'" y="'+(H-2)+'" text-anchor="middle" font-size="8" font-family="'+mono+'" fill="'+mute+'">year</text>';
-        // scatter dots
-        for (var i = 0; i < timeline.length; i++) {
-          var cx = xPos(dates[i]), cy = yPos(timeline[i].p);
-          var r = 1.5 + Math.sqrt(timeline[i].p / maxP) * 3;
-          svg += '<circle cx="'+cx+'" cy="'+cy+'" r="'+r+'" fill="'+accent+'" opacity="0.85"><title>'+timeline[i].n+' ('+timeline[i].p+'pp)</title></circle>';
-        }
-        svg += '</svg>';
-        el.innerHTML = svg;
-      }
-      function buildYearly() {
-        var el = document.getElementById('yearly-chart');
-        var W = el.offsetWidth || 320, H = 110;
-        var pad = {top: 14, right: 12, bottom: 28, left: 38};
-        var pw = W - pad.left - pad.right, ph = H - pad.top - pad.bottom;
-        var maxC = Math.max.apply(null, perYear.map(function(d){return d.count;}));
-        var yMax = Math.ceil(maxC / 10) * 10 || 10;
-        var barW = pw / perYear.length;
-        var svg = '<svg width="'+W+'" height="'+H+'" xmlns="http://www.w3.org/2000/svg">';
-        // y gridlines
-        for (var t = 0; t <= yMax; t += 10) {
-          var ty = pad.top + ph - (t / yMax * ph);
-          svg += '<line x1="'+pad.left+'" y1="'+ty+'" x2="'+(W-pad.right)+'" y2="'+ty+'" stroke="'+dim+'" stroke-opacity="0.3" stroke-width="0.5"/>';
-          svg += '<text x="'+(pad.left-6)+'" y="'+(ty+3)+'" text-anchor="end" font-size="8" font-family="'+mono+'" fill="'+dim+'">'+t+'</text>';
-        }
-        // y-axis label
-        svg += '<text x="6" y="'+(pad.top + ph/2)+'" text-anchor="middle" font-size="8" font-family="'+mono+'" fill="'+mute+'" transform="rotate(-90,6,'+(pad.top + ph/2)+')">books</text>';
-        // bars + year labels
-        for (var i = 0; i < perYear.length; i++) {
-          var bx = pad.left + i * barW;
-          var bh = perYear[i].count / yMax * ph;
-          var by = pad.top + ph - bh;
-          svg += '<rect x="'+(bx+2)+'" y="'+by+'" width="'+(barW-4)+'" height="'+bh+'" fill="'+accent+'" opacity="0.75" rx="1"/>';
-          svg += '<text x="'+(bx+barW/2)+'" y="'+(by-4)+'" text-anchor="middle" font-size="8" font-family="'+mono+'" fill="'+mute+'">'+perYear[i].count+'</text>';
-          svg += '<text x="'+(bx+barW/2)+'" y="'+(H-pad.bottom+12)+'" text-anchor="middle" font-size="9" font-family="'+mono+'" fill="'+dim+'">\''+String(perYear[i].year).slice(2)+'</text>';
-        }
-        // x-axis label
-        svg += '<text x="'+(pad.left + pw/2)+'" y="'+(H-2)+'" text-anchor="middle" font-size="8" font-family="'+mono+'" fill="'+mute+'">year</text>';
-        svg += '</svg>';
-        el.innerHTML = svg;
-      }
-      function buildHist() {
-        var el = document.getElementById('hist-chart');
-        var W = el.offsetWidth || 320, H = 110;
-        var pad = {top: 14, right: 12, bottom: 28, left: 38};
-        var pw = W - pad.left - pad.right, ph = H - pad.top - pad.bottom;
-        var binSize = 100, maxBin = 1000;
-        var bins = [];
-        for (var b = 0; b < maxBin; b += binSize) bins.push({lo: b, hi: b + binSize, count: 0, label: b + ''});
-        bins.push({lo: maxBin, hi: Infinity, count: 0, label: maxBin + '+'});
-        for (var i = 0; i < timeline.length; i++) {
-          var p = timeline[i].p;
-          for (var j = 0; j < bins.length; j++) {
-            if (p >= bins[j].lo && p < bins[j].hi) { bins[j].count++; break; }
-          }
-        }
-        // normalize to 0-1
-        var total = timeline.length || 1;
-        var barW = pw / bins.length;
-        var svg = '<svg width="'+W+'" height="'+H+'" xmlns="http://www.w3.org/2000/svg">';
-        // y gridlines (0, 0.2, 0.4, 0.6, 0.8, 1.0)
-        for (var t = 0; t <= 1.001; t += 0.2) {
-          var ty = pad.top + ph - (t * ph);
-          svg += '<line x1="'+pad.left+'" y1="'+ty+'" x2="'+(W-pad.right)+'" y2="'+ty+'" stroke="'+dim+'" stroke-opacity="0.3" stroke-width="0.5"/>';
-          svg += '<text x="'+(pad.left-6)+'" y="'+(ty+3)+'" text-anchor="end" font-size="8" font-family="'+mono+'" fill="'+dim+'">'+t.toFixed(1)+'</text>';
-        }
-        // y-axis label
-        svg += '<text x="6" y="'+(pad.top + ph/2)+'" text-anchor="middle" font-size="8" font-family="'+mono+'" fill="'+mute+'" transform="rotate(-90,6,'+(pad.top + ph/2)+')">density</text>';
-        // bars
-        for (var i = 0; i < bins.length; i++) {
-          var bx = pad.left + i * barW;
-          var norm = bins[i].count / total;
-          var bh = norm * ph;
-          var by = pad.top + ph - bh;
-          if (bins[i].count > 0) {
-            svg += '<rect x="'+(bx+1)+'" y="'+by+'" width="'+(barW-2)+'" height="'+bh+'" fill="'+accent+'" opacity="0.75" rx="1"/>';
-          }
-          svg += '<text x="'+(bx+barW/2)+'" y="'+(H-pad.bottom+12)+'" text-anchor="middle" font-size="8" font-family="'+mono+'" fill="'+dim+'">'+bins[i].label+'</text>';
-        }
-        // x-axis label
-        svg += '<text x="'+(pad.left + pw/2)+'" y="'+(H-2)+'" text-anchor="middle" font-size="8" font-family="'+mono+'" fill="'+mute+'">pages</text>';
-        svg += '</svg>';
-        el.innerHTML = svg;
-      }
-      buildScatter();
-      buildYearly();
-      buildHist();
-      window.addEventListener('resize', function() { buildScatter(); buildYearly(); buildHist(); });
+      ReadingCharts.scatter('scatter-chart', bookTimeline, {yLabel:'pages', yStep:400});
+      ReadingCharts.bars('yearly-chart', bookPerYear, {yLabel:'books', yStep:10});
+      ReadingCharts.histogram('hist-chart', bookTimeline, {key:'y', edges:[0,100,200,300,400,500,600,700,800,900,1000], xLabels:['0','100','200','300','400','500','600','700','800','900','1000+'], xLabel:'pages'});
+      {% endif %}
+      {% if site.data.watching_stats %}
+      var filmTimeline = [{% for f in site.data.watching_stats.timeline %}
+        {t:new Date("{{ f.watched_at }}").getTime(), y:{{ f.rating }}, title:"{{ f.title | escape }}", sub:"{% assign ff = f.rating | floor %}{% for i in (1..ff) %}★{% endfor %}{% assign fr = f.rating | minus: ff %}{% if fr >= 0.5 %}½{% endif %} · {{ f.year }}", date:"{{ f.watched_at }}", img:"{{ f.poster }}"}{% unless forloop.last %},{% endunless %}{% endfor %}
+      ];
+      var filmPerYear = [{% for s in site.data.watching_stats.per_year %}
+        {label:"'{{ s.year | append: '' | slice: 2, 2 }}", count:{{ s.count }}}{% unless forloop.last %},{% endunless %}{% endfor %}
+      ];
+      ReadingCharts.scatter('film-scatter-chart', filmTimeline, {yLabel:'rating', yMax:5, yStep:1});
+      ReadingCharts.bars('film-yearly-chart', filmPerYear, {yLabel:'films', yStep:20});
+      ReadingCharts.histogram('film-hist-chart', filmTimeline, {key:'y', edges:[0.5,1.5,2.5,3.5,4.5], xLabels:['1★','2★','3★','4★','5★'], xLabel:'rating'});
+      {% endif %}
     })();
     </script>
-    {% endif %}
   </article>
 </section>
 
