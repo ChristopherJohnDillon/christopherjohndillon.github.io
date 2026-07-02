@@ -6,6 +6,19 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+# Internal planning/dev docs and scripts — kept in git but never rendered or
+# published. Excluding docs/ also prevents GitHub Pages' optional-front-matter
+# plugin from parsing the Liquid code examples inside the spec/plan markdown.
+exclude:
+  - docs/
+  - scripts/
+  - Gemfile
+  - Gemfile.lock
+  - Makefile
+  - makesite.sh
+  - vendor
+  - node_modules
+
 
 
 url: "https://christopherdillon.me" # the base hostname & protocol for your site
