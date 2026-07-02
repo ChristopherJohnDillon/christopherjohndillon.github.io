@@ -418,19 +418,20 @@ nav a.active {
   margin: 0 -0.75rem;
   padding: 0.5rem 0.75rem;
 }
+.book-item { padding: 0.62rem 0; }
 .book-title {
-  font-size: 0.92rem;
+  font-size: 1rem;
   color: var(--instrument);
 }
 .book-author {
   font-family: var(--f-mono);
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   color: var(--mute);
   white-space: nowrap;
 }
 .book-more .book-title {
   color: var(--mute);
-  font-size: 0.8rem;
+  font-size: 0.88rem;
 }
 .book-more .book-author {
   color: var(--nanoflare);
@@ -466,13 +467,71 @@ nav a.active {
 /* films list */
 .film-year {
   font-family: var(--f-mono);
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   color: var(--dim);
 }
 .film-rating {
   color: var(--nanoflare);
   letter-spacing: 0.05em;
+  font-size: 0.9rem;
 }
+
+/* Reading / Watching visualisations — instrument-panel treatment */
+.viz-block { margin-top: 2.25rem; }
+.viz-block + .viz-block { margin-top: 2.75rem; }
+.viz-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-bottom: 0.55rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+.viz-title {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--nanoflare);
+}
+.viz-stats {
+  font-family: var(--f-mono);
+  font-size: 0.74rem;
+  color: var(--dim);
+}
+.viz-stats strong { color: var(--mute); font-weight: 500; }
+.chart-panel {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: rgba(232, 236, 242, 0.02);
+  padding: 0.65rem 0.8rem 0.55rem;
+}
+.chart-panel + .chart-panel,
+.viz-block .chart-panel + .chart-duo { margin-top: 0.75rem; }
+.chart-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+.chart-duo .chart-panel { margin: 0; }
+.chart-label {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  color: var(--mute);
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin-top: 0.4rem;
+}
+.chart-hint { color: var(--dim); }
+.chart-panel--wide .reading-chart { cursor: crosshair; }
+@media (max-width: 560px) {
+  .chart-duo { grid-template-columns: 1fr; }
+}
+
 /* scatter interactivity */
 .reading-chart { position: relative; }
 .chart-dot { cursor: pointer; transition: opacity 0.1s; }

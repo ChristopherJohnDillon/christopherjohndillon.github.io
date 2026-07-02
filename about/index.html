@@ -118,34 +118,54 @@ title: About
     </div>
     {% endif %}
     {% if site.data.reading_stats %}
-    <div class="reading-charts">
-      <div class="reading-chart" id="scatter-chart"></div>
-      <div class="reading-chart" id="yearly-chart"></div>
-      <div class="reading-chart" id="hist-chart"></div>
+    <div class="viz-block">
+      <div class="viz-head">
+        <span class="viz-title">Reading</span>
+        {% assign fun = site.data.reading_stats.fun %}
+        {% if fun %}
+        <span class="viz-stats"><strong>{{ fun.total_books }}</strong> books · <strong>{{ fun.total_pages | divided_by: 1000 }}k+</strong> pages · <strong>{{ fun.avg_pages }}pp</strong> avg</span>
+        {% endif %}
+      </div>
+      <figure class="chart-panel chart-panel--wide">
+        <div class="reading-chart" id="scatter-chart"></div>
+        <figcaption class="chart-label">pages per book, over time&ensp;·&ensp;<span class="chart-hint">hover a point · drag to zoom · double-click to reset</span></figcaption>
+      </figure>
+      <div class="chart-duo">
+        <figure class="chart-panel">
+          <div class="reading-chart" id="yearly-chart"></div>
+          <figcaption class="chart-label">books per year</figcaption>
+        </figure>
+        <figure class="chart-panel">
+          <div class="reading-chart" id="hist-chart"></div>
+          <figcaption class="chart-label">page-count distribution</figcaption>
+        </figure>
+      </div>
     </div>
-    {% assign fun = site.data.reading_stats.fun %}
-    {% if fun %}
-    <div class="reading-fun-stats">
-      <span><strong>{{ fun.total_books }}</strong> books</span>
-      <span><strong>{{ fun.total_pages | divided_by: 1000 }}k+</strong> pages</span>
-      <span><strong>{{ fun.avg_pages }}pp</strong> avg</span>
-    </div>
-    {% endif %}
     {% endif %}
     {% if site.data.watching_stats %}
-    <div class="reading-charts">
-      <div class="reading-chart" id="film-scatter-chart"></div>
-      <div class="reading-chart" id="film-yearly-chart"></div>
-      <div class="reading-chart" id="film-hist-chart"></div>
+    <div class="viz-block">
+      <div class="viz-head">
+        <span class="viz-title">Watching</span>
+        {% assign wfun = site.data.watching_stats.fun %}
+        {% if wfun %}
+        <span class="viz-stats"><strong>{{ wfun.total_films }}</strong> films · <strong>{{ wfun.avg_rating }}</strong> avg{% if wfun.highest_rated %} · top: <strong>{{ wfun.highest_rated.title | escape }}</strong>{% endif %}</span>
+        {% endif %}
+      </div>
+      <figure class="chart-panel chart-panel--wide">
+        <div class="reading-chart" id="film-scatter-chart"></div>
+        <figcaption class="chart-label">rating per film, over time&ensp;·&ensp;<span class="chart-hint">hover a point · drag to zoom · double-click to reset</span></figcaption>
+      </figure>
+      <div class="chart-duo">
+        <figure class="chart-panel">
+          <div class="reading-chart" id="film-yearly-chart"></div>
+          <figcaption class="chart-label">films per year</figcaption>
+        </figure>
+        <figure class="chart-panel">
+          <div class="reading-chart" id="film-hist-chart"></div>
+          <figcaption class="chart-label">rating distribution</figcaption>
+        </figure>
+      </div>
     </div>
-    {% assign wfun = site.data.watching_stats.fun %}
-    {% if wfun %}
-    <div class="reading-fun-stats watching-fun-stats">
-      <span><strong>{{ wfun.total_films }}</strong> films</span>
-      <span><strong>{{ wfun.avg_rating }}</strong> avg rating</span>
-      {% if wfun.highest_rated %}<span>top: <strong>{{ wfun.highest_rated.title }}</strong></span>{% endif %}
-    </div>
-    {% endif %}
     {% endif %}
     <script src="{{ '/assets/js/charts.js' | relative_url }}"></script>
     <script>
@@ -159,7 +179,7 @@ title: About
       ];
       ReadingCharts.scatter('scatter-chart', bookTimeline, {yLabel:'pages', yStep:400});
       ReadingCharts.bars('yearly-chart', bookPerYear, {yLabel:'books', yStep:10});
-      ReadingCharts.histogram('hist-chart', bookTimeline, {key:'y', edges:[0,100,200,300,400,500,600,700,800,900,1000], xLabels:['0','100','200','300','400','500','600','700','800','900','1000+'], xLabel:'pages'});
+      ReadingCharts.histogram('hist-chart', bookTimeline, {key:'y', edges:[0,200,400,600,800,1000], xLabels:['0','200','400','600','800','1k+'], xLabel:'pages'});
       {% endif %}
       {% if site.data.watching_stats %}
       var filmTimeline = [{% for f in site.data.watching_stats.timeline %}

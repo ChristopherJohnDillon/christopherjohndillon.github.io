@@ -61,8 +61,8 @@
     var drag = { on: false, startX: 0 };
 
     function render() {
-      var W = el.offsetWidth || 320, H = 160;
-      var pad = { top: 14, right: 12, bottom: 28, left: 38 };
+      var W = el.offsetWidth || 320, H = 220;
+      var pad = { top: 18, right: 16, bottom: 40, left: 48 };
       var pw = W - pad.left - pad.right, ph = H - pad.top - pad.bottom;
       var span = (domain.max - domain.min) || 1;
       function xPos(t) { return pad.left + (t - domain.min) / span * pw; }
@@ -71,21 +71,21 @@
       for (var t = 0; t <= yMax; t += (opts.yStep || Math.max(1, Math.round(yMax / 5)))) {
         var ty = yPos(t);
         svg += '<line x1="' + pad.left + '" y1="' + ty + '" x2="' + (W - pad.right) + '" y2="' + ty + '" stroke="' + DIM + '" stroke-opacity="0.3" stroke-width="0.5"/>';
-        svg += '<text x="' + (pad.left - 6) + '" y="' + (ty + 3) + '" text-anchor="end" font-size="8" font-family="' + MONO + '" fill="' + DIM + '">' + t + '</text>';
+        svg += '<text x="' + (pad.left - 8) + '" y="' + (ty + 4) + '" text-anchor="end" font-size="11" font-family="' + MONO + '" fill="' + DIM + '">' + t + '</text>';
       }
-      svg += '<text x="6" y="' + (pad.top + ph / 2) + '" text-anchor="middle" font-size="8" font-family="' + MONO + '" fill="' + MUTE + '" transform="rotate(-90,6,' + (pad.top + ph / 2) + ')">' + (opts.yLabel || '') + '</text>';
+      svg += '<text x="10" y="' + (pad.top + ph / 2) + '" text-anchor="middle" font-size="11" font-family="' + MONO + '" fill="' + MUTE + '" transform="rotate(-90,10,' + (pad.top + ph / 2) + ')">' + (opts.yLabel || '') + '</text>';
       var minY = new Date(domain.min).getFullYear(), maxY = new Date(domain.max).getFullYear();
       for (var yr = minY; yr <= maxY; yr++) {
         var xd = xPos(new Date(yr, 0, 1).getTime());
         if (xd >= pad.left && xd <= W - pad.right) {
           svg += '<line x1="' + xd + '" y1="' + pad.top + '" x2="' + xd + '" y2="' + (H - pad.bottom) + '" stroke="' + DIM + '" stroke-opacity="0.25" stroke-width="0.5"/>';
-          svg += '<text x="' + xd + '" y="' + (H - pad.bottom + 12) + '" text-anchor="middle" font-size="9" font-family="' + MONO + '" fill="' + DIM + '">' + yr + '</text>';
+          svg += '<text x="' + xd + '" y="' + (H - pad.bottom + 16) + '" text-anchor="middle" font-size="12" font-family="' + MONO + '" fill="' + DIM + '">' + yr + '</text>';
         }
       }
       for (var i = 0; i < points.length; i++) {
         var p = points[i];
         if (p.t < domain.min || p.t > domain.max) continue;
-        var r = 1.5 + Math.sqrt(p.y / yMax) * 3;
+        var r = 2 + Math.sqrt(p.y / yMax) * 4.5;
         svg += '<circle class="chart-dot" data-i="' + i + '" cx="' + xPos(p.t) + '" cy="' + yPos(p.y) + '" r="' + r + '" fill="' + ACCENT + '" opacity="0.85"/>';
       }
       svg += '<rect class="chart-zoom-band" x="0" y="' + pad.top + '" width="0" height="' + ph + '" style="display:none"/>';
@@ -103,7 +103,7 @@
     function wireDots(svgEl) {
       svgEl.querySelectorAll('.chart-dot').forEach(function (dot) {
         dot.addEventListener('mouseenter', function (e) {
-          dot.setAttribute('r', parseFloat(dot.getAttribute('r')) + 2);
+          dot.setAttribute('r', parseFloat(dot.getAttribute('r')) + 3);
           dot.setAttribute('opacity', '1');
           showCard(points[+dot.getAttribute('data-i')], e.clientX, e.clientY);
         });
@@ -111,7 +111,7 @@
           showCard(points[+dot.getAttribute('data-i')], e.clientX, e.clientY);
         });
         dot.addEventListener('mouseleave', function () {
-          dot.setAttribute('r', parseFloat(dot.getAttribute('r')) - 2);
+          dot.setAttribute('r', parseFloat(dot.getAttribute('r')) - 3);
           dot.setAttribute('opacity', '0.85');
           hideCard();
         });
@@ -168,24 +168,25 @@
     if (!el || !series.length) return;
     opts = opts || {};
     function render() {
-      var W = el.offsetWidth || 320, H = 110;
-      var pad = { top: 14, right: 12, bottom: 28, left: 38 };
+      var W = el.offsetWidth || 320, H = 155;
+      var pad = { top: 18, right: 16, bottom: 40, left: 48 };
       var pw = W - pad.left - pad.right, ph = H - pad.top - pad.bottom;
       var yMax = niceMax(Math.max.apply(null, series.map(function (d) { return d.count; })), opts.yStep || 10);
-      var barW = pw / series.length;
+      var slot = pw / series.length;
+      var barW = Math.min(slot - 6, 64);   // cap so a lone/sparse bar reads as a bar, not a block
       var svg = '<svg width="' + W + '" height="' + H + '" xmlns="http://www.w3.org/2000/svg">';
       for (var t = 0; t <= yMax; t += (opts.yStep || 10)) {
         var ty = pad.top + ph - (t / yMax * ph);
         svg += '<line x1="' + pad.left + '" y1="' + ty + '" x2="' + (W - pad.right) + '" y2="' + ty + '" stroke="' + DIM + '" stroke-opacity="0.3" stroke-width="0.5"/>';
-        svg += '<text x="' + (pad.left - 6) + '" y="' + (ty + 3) + '" text-anchor="end" font-size="8" font-family="' + MONO + '" fill="' + DIM + '">' + t + '</text>';
+        svg += '<text x="' + (pad.left - 8) + '" y="' + (ty + 4) + '" text-anchor="end" font-size="11" font-family="' + MONO + '" fill="' + DIM + '">' + t + '</text>';
       }
-      svg += '<text x="6" y="' + (pad.top + ph / 2) + '" text-anchor="middle" font-size="8" font-family="' + MONO + '" fill="' + MUTE + '" transform="rotate(-90,6,' + (pad.top + ph / 2) + ')">' + (opts.yLabel || '') + '</text>';
+      svg += '<text x="10" y="' + (pad.top + ph / 2) + '" text-anchor="middle" font-size="11" font-family="' + MONO + '" fill="' + MUTE + '" transform="rotate(-90,10,' + (pad.top + ph / 2) + ')">' + (opts.yLabel || '') + '</text>';
       for (var i = 0; i < series.length; i++) {
-        var bx = pad.left + i * barW;
+        var cx = pad.left + i * slot + slot / 2;   // centre of this slot
         var bh = series[i].count / yMax * ph, by = pad.top + ph - bh;
-        svg += '<rect x="' + (bx + 2) + '" y="' + by + '" width="' + (barW - 4) + '" height="' + bh + '" fill="' + ACCENT + '" opacity="0.75" rx="1"/>';
-        svg += '<text x="' + (bx + barW / 2) + '" y="' + (by - 4) + '" text-anchor="middle" font-size="8" font-family="' + MONO + '" fill="' + MUTE + '">' + series[i].count + '</text>';
-        svg += '<text x="' + (bx + barW / 2) + '" y="' + (H - pad.bottom + 12) + '" text-anchor="middle" font-size="9" font-family="' + MONO + '" fill="' + DIM + '">' + series[i].label + '</text>';
+        svg += '<rect x="' + (cx - barW / 2) + '" y="' + by + '" width="' + barW + '" height="' + bh + '" fill="' + ACCENT + '" opacity="0.75" rx="1"/>';
+        svg += '<text x="' + cx + '" y="' + (by - 5) + '" text-anchor="middle" font-size="11" font-family="' + MONO + '" fill="' + MUTE + '">' + series[i].count + '</text>';
+        svg += '<text x="' + cx + '" y="' + (H - pad.bottom + 16) + '" text-anchor="middle" font-size="12" font-family="' + MONO + '" fill="' + DIM + '">' + series[i].label + '</text>';
       }
       svg += '</svg>';
       el.innerHTML = svg;
@@ -202,23 +203,23 @@
     var counts = binCounts(values, opts.edges);
     var total = values.length || 1;
     function render() {
-      var W = el.offsetWidth || 320, H = 110;
-      var pad = { top: 14, right: 12, bottom: 28, left: 38 };
+      var W = el.offsetWidth || 320, H = 155;
+      var pad = { top: 18, right: 16, bottom: 42, left: 48 };
       var pw = W - pad.left - pad.right, ph = H - pad.top - pad.bottom;
       var barW = pw / counts.length;
       var svg = '<svg width="' + W + '" height="' + H + '" xmlns="http://www.w3.org/2000/svg">';
       for (var t = 0; t <= 1.001; t += 0.2) {
         var ty = pad.top + ph - (t * ph);
         svg += '<line x1="' + pad.left + '" y1="' + ty + '" x2="' + (W - pad.right) + '" y2="' + ty + '" stroke="' + DIM + '" stroke-opacity="0.3" stroke-width="0.5"/>';
-        svg += '<text x="' + (pad.left - 6) + '" y="' + (ty + 3) + '" text-anchor="end" font-size="8" font-family="' + MONO + '" fill="' + DIM + '">' + t.toFixed(1) + '</text>';
+        svg += '<text x="' + (pad.left - 8) + '" y="' + (ty + 4) + '" text-anchor="end" font-size="11" font-family="' + MONO + '" fill="' + DIM + '">' + t.toFixed(1) + '</text>';
       }
-      svg += '<text x="6" y="' + (pad.top + ph / 2) + '" text-anchor="middle" font-size="8" font-family="' + MONO + '" fill="' + MUTE + '" transform="rotate(-90,6,' + (pad.top + ph / 2) + ')">density</text>';
+      svg += '<text x="10" y="' + (pad.top + ph / 2) + '" text-anchor="middle" font-size="11" font-family="' + MONO + '" fill="' + MUTE + '" transform="rotate(-90,10,' + (pad.top + ph / 2) + ')">density</text>';
       for (var i = 0; i < counts.length; i++) {
         var bx = pad.left + i * barW, bh = (counts[i] / total) * ph, by = pad.top + ph - bh;
         if (counts[i] > 0) svg += '<rect x="' + (bx + 1) + '" y="' + by + '" width="' + (barW - 2) + '" height="' + bh + '" fill="' + ACCENT + '" opacity="0.75" rx="1"/>';
-        svg += '<text x="' + (bx + barW / 2) + '" y="' + (H - pad.bottom + 12) + '" text-anchor="middle" font-size="8" font-family="' + MONO + '" fill="' + DIM + '">' + opts.xLabels[i] + '</text>';
+        svg += '<text x="' + (bx + barW / 2) + '" y="' + (H - pad.bottom + 15) + '" text-anchor="middle" font-size="11" font-family="' + MONO + '" fill="' + DIM + '">' + opts.xLabels[i] + '</text>';
       }
-      svg += '<text x="' + (pad.left + pw / 2) + '" y="' + (H - 2) + '" text-anchor="middle" font-size="8" font-family="' + MONO + '" fill="' + MUTE + '">' + (opts.xLabel || '') + '</text>';
+      svg += '<text x="' + (pad.left + pw / 2) + '" y="' + (H - 4) + '" text-anchor="middle" font-size="11" font-family="' + MONO + '" fill="' + MUTE + '">' + (opts.xLabel || '') + '</text>';
       svg += '</svg>';
       el.innerHTML = svg;
     }
