@@ -1,5 +1,13 @@
 [
   {
+    "title": "The Drama",
+    "year": 2026,
+    "rating": 3.0,
+    "watched_at": "2026-07-03",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/1/2/0/5/4/9/4/1205494-the-drama-0-600-0-900-crop.jpg?v=2320acafd5",
+    "url": "https://letterboxd.com/chrisdillon/film/the-drama/"
+  },
+  {
     "title": "Dog Day Afternoon",
     "year": 1975,
     "rating": 5.0,
@@ -30,13 +38,5 @@
     "watched_at": "2026-06-20",
     "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/7/3/7/51737-mystic-river-0-600-0-900-crop.jpg?v=7c4cbb89ba",
     "url": "https://letterboxd.com/chrisdillon/film/mystic-river/"
-  },
-  {
-    "title": "The Batman",
-    "year": 2022,
-    "rating": 5.0,
-    "watched_at": "2026-06-14",
-    "poster": "https://a.ltrbxd.com/resized/film-poster/3/4/8/9/1/4/348914-the-batman-0-600-0-900-crop.jpg?v=ec12a8b7ce",
-    "url": "https://letterboxd.com/chrisdillon/film/the-batman/"
   }
 ]

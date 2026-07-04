@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 31
+      "count": 32
     }
   ],
   "fun": {
-    "total_films": 31,
-    "avg_rating": 3.45,
+    "total_films": 32,
+    "avg_rating": 3.43,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -216,6 +216,13 @@
       "rating": 5.0,
       "watched_at": "2026-06-30",
       "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/1/9/5/51195-dog-day-afternoon-0-600-0-900-crop.jpg?v=dcce1e7cbb"
+    },
+    {
+      "title": "The Drama",
+      "year": 2026,
+      "rating": 3.0,
+      "watched_at": "2026-07-03",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/1/2/0/5/4/9/4/1205494-the-drama-0-600-0-900-crop.jpg?v=2320acafd5"
     }
   ]
 }
