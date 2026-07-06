@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 33
+      "count": 34
     }
   ],
   "fun": {
-    "total_films": 33,
-    "avg_rating": 3.42,
+    "total_films": 34,
+    "avg_rating": 3.41,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -230,6 +230,13 @@
       "rating": 3.0,
       "watched_at": "2026-07-04",
       "poster": "https://a.ltrbxd.com/resized/film-poster/2/7/9/279-21-jump-street-0-600-0-900-crop.jpg?v=94d6b03998"
+    },
+    {
+      "title": "Ricky Stanicky",
+      "year": 2024,
+      "rating": 3.0,
+      "watched_at": "2026-07-05",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/9/2/1/5/2/7/921527-ricky-stanicky-0-600-0-900-crop.jpg?v=203d0c3794"
     }
   ]
 }

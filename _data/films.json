@@ -1,5 +1,13 @@
 [
   {
+    "title": "Ricky Stanicky",
+    "year": 2024,
+    "rating": 3.0,
+    "watched_at": "2026-07-05",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/9/2/1/5/2/7/921527-ricky-stanicky-0-600-0-900-crop.jpg?v=203d0c3794",
+    "url": "https://letterboxd.com/chrisdillon/film/ricky-stanicky/"
+  },
+  {
     "title": "21 Jump Street",
     "year": 2012,
     "rating": 3.0,
@@ -30,13 +38,5 @@
     "watched_at": "2026-06-28",
     "poster": "https://a.ltrbxd.com/resized/film-poster/4/5/7/3/9/45739-ripley-s-game-0-600-0-900-crop.jpg?v=01c5cb53c6",
     "url": "https://letterboxd.com/chrisdillon/film/ripleys-game/"
-  },
-  {
-    "title": "Dangerous Liaisons",
-    "year": 1988,
-    "rating": 3.0,
-    "watched_at": "2026-06-27",
-    "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/2/9/3/51293-dangerous-liaisons-0-600-0-900-crop.jpg?v=e67110dbfe",
-    "url": "https://letterboxd.com/chrisdillon/film/dangerous-liaisons/"
   }
 ]
