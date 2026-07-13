@@ -2,7 +2,7 @@
   "per_year": [
     {
       "year": 2021,
-      "count": 18
+      "count": 17
     },
     {
       "year": 2022,
@@ -22,13 +22,13 @@
     },
     {
       "year": 2026,
-      "count": 22
+      "count": 23
     }
   ],
   "fun": {
     "total_books": 192,
-    "total_pages": 70154,
-    "avg_pages": 365,
+    "total_pages": 70016,
+    "avg_pages": 364,
     "shortest": {
       "title": "Foster",
       "author": "Claire Keegan",
@@ -47,13 +47,6 @@
       "pages": 384,
       "read_at": "2021-01-24",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1311981708l/48004.jpg"
-    },
-    {
-      "title": "Care of Wooden Floors",
-      "author": "Will Wiles",
-      "pages": 295,
-      "read_at": "2021-08-01",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1363720984l/12391599.jpg"
     },
     {
       "title": "The Perfect Lie",
@@ -1209,6 +1202,13 @@
       "pages": 224,
       "read_at": "2026-07-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1753324008l/235992114._SY475_.jpg"
+    },
+    {
+      "title": "Breakfast at Tiffany's",
+      "author": "Truman Capote",
+      "pages": 157,
+      "read_at": "2026-07-12",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1495737324l/35224144._SY475_.jpg"
     }
   ]
 }
