@@ -1,5 +1,26 @@
 [
   {
+    "title": "Pale Rider: The Spanish Flu of 1918 and How It Changed the World",
+    "author": "Laura Spinney",
+    "rating": 3,
+    "read_at": "2026-07-19",
+    "url": "https://www.goodreads.com/book/show/30335530"
+  },
+  {
+    "title": "Breakfast at Tiffany's",
+    "author": "Truman Capote",
+    "rating": 3,
+    "read_at": "2026-07-12",
+    "url": "https://www.goodreads.com/book/show/35224144"
+  },
+  {
+    "title": "Murder Bimbo",
+    "author": "Rebecca Novack",
+    "rating": 3,
+    "read_at": "2026-07-04",
+    "url": "https://www.goodreads.com/book/show/235992114"
+  },
+  {
     "title": "Time After Time",
     "author": "Karl Alexander",
     "rating": 3,
@@ -12,26 +33,5 @@
     "rating": 4,
     "read_at": "2026-06-21",
     "url": "https://www.goodreads.com/book/show/89724"
-  },
-  {
-    "title": "Dancefloor",
-    "author": "Victor Jestin",
-    "rating": 4,
-    "read_at": "2026-06-14",
-    "url": "https://www.goodreads.com/book/show/221951178"
-  },
-  {
-    "title": "One Yellow Eye",
-    "author": "Leigh  Radford",
-    "rating": 5,
-    "read_at": "2026-06-06",
-    "url": "https://www.goodreads.com/book/show/220160134"
-  },
-  {
-    "title": "The Disappearance of Josef Mengele",
-    "author": "Olivier Guez",
-    "rating": 3,
-    "read_at": "2026-05-31",
-    "url": "https://www.goodreads.com/book/show/46002075"
   }
 ]
