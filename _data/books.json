@@ -1,5 +1,12 @@
 [
   {
+    "title": "Pale Rider: The Spanish Flu of 1918 and How It Changed the World",
+    "author": "Laura Spinney",
+    "rating": 3,
+    "read_at": "2026-07-19",
+    "url": "https://www.goodreads.com/book/show/30335530"
+  },
+  {
     "title": "Breakfast at Tiffany's",
     "author": "Truman Capote",
     "rating": 3,
@@ -26,12 +33,5 @@
     "rating": 4,
     "read_at": "2026-06-21",
     "url": "https://www.goodreads.com/book/show/89724"
-  },
-  {
-    "title": "Dancefloor",
-    "author": "Victor Jestin",
-    "rating": 4,
-    "read_at": "2026-06-14",
-    "url": "https://www.goodreads.com/book/show/221951178"
   }
 ]

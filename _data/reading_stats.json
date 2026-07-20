@@ -2,7 +2,7 @@
   "per_year": [
     {
       "year": 2021,
-      "count": 17
+      "count": 16
     },
     {
       "year": 2022,
@@ -22,12 +22,12 @@
     },
     {
       "year": 2026,
-      "count": 23
+      "count": 24
     }
   ],
   "fun": {
     "total_books": 192,
-    "total_pages": 70016,
+    "total_pages": 69948,
     "avg_pages": 364,
     "shortest": {
       "title": "Foster",
@@ -47,13 +47,6 @@
       "pages": 384,
       "read_at": "2021-01-24",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1311981708l/48004.jpg"
-    },
-    {
-      "title": "The Perfect Lie",
-      "author": "Jo Spain",
-      "pages": 400,
-      "read_at": "2021-08-03",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1590617603l/53517005._SY475_.jpg"
     },
     {
       "title": "Falling",
@@ -1209,6 +1202,13 @@
       "pages": 157,
       "read_at": "2026-07-12",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1495737324l/35224144._SY475_.jpg"
+    },
+    {
+      "title": "Pale Rider: The Spanish Flu of 1918 and How It Changed the World",
+      "author": "Laura Spinney",
+      "pages": 332,
+      "read_at": "2026-07-19",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1483639646l/30335530._SY475_.jpg"
     }
   ]
 }
