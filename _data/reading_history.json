@@ -1,68 +1,19 @@
 {
-  "per_year": [
-    {
-      "year": 2015,
-      "count": 32
-    },
-    {
-      "year": 2016,
-      "count": 33
-    },
-    {
-      "year": 2017,
-      "count": 49
-    },
-    {
-      "year": 2018,
-      "count": 47
-    },
-    {
-      "year": 2019,
-      "count": 58
-    },
-    {
-      "year": 2020,
-      "count": 57
-    },
-    {
-      "year": 2021,
-      "count": 49
-    },
-    {
-      "year": 2022,
-      "count": 41
-    },
-    {
-      "year": 2023,
-      "count": 20
-    },
-    {
-      "year": 2024,
-      "count": 25
-    },
-    {
-      "year": 2025,
-      "count": 46
-    },
-    {
-      "year": 2026,
-      "count": 24
-    }
-  ],
-  "fun": {
-    "total_books": 568,
-    "total_pages": 195329,
-    "avg_pages": 352,
-    "shortest": {
-      "title": "Without Fail",
-      "author": "Lee Child",
-      "pages": 14
-    },
-    "longest": {
-      "title": "Harry Potter and the Methods of Rationality",
-      "author": "Eliezer Yudkowsky",
-      "pages": 2184
-    }
+  "total_books": 544,
+  "page_books": 531,
+  "total_pages": 186879,
+  "per_year": {
+    "2021": 49,
+    "2025": 46,
+    "2022": 41,
+    "2019": 58,
+    "2020": 57,
+    "2024": 25,
+    "2023": 20,
+    "2018": 47,
+    "2016": 33,
+    "2017": 49,
+    "2015": 32
   },
   "timeline": [
     {
@@ -3186,167 +3137,6 @@
       "pages": 303,
       "read_at": "2025-12-29",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1714031079l/199793426._SY475_.jpg"
-    },
-    {
-      "title": "Apple in China: The Capture of the World's Greatest Company",
-      "author": "Patrick  McGee",
-      "pages": 448,
-      "read_at": "2026-01-01",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1740350739l/220161058._SY475_.jpg"
-    },
-    {
-      "title": "Children of Ruin",
-      "author": "Adrian Tchaikovsky",
-      "pages": 597,
-      "read_at": "2026-01-05",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1693752895l/40376072._SY475_.jpg"
-    },
-    {
-      "title": "Prestige Drama",
-      "author": "S\u00e9amas O'Reilly",
-      "pages": 154,
-      "read_at": "2026-01-18",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1770087704l/233026301._SY475_.jpg"
-    },
-    {
-      "title": "Traction: Get a Grip on Your Business",
-      "author": "Gino Wickman",
-      "pages": 246,
-      "read_at": "2026-01-24",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1385141177l/18886376.jpg"
-    },
-    {
-      "title": "The Count of Monte Cristo",
-      "author": "Alexandre Dumas",
-      "pages": 1276,
-      "read_at": "2026-02-15",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1724863997l/7126._SY475_.jpg"
-    },
-    {
-      "title": "How the Irish Saved Civilization: The Untold Story of Ireland's Heroic Role from the Fall of Rome to the Rise of Medieval Europe",
-      "author": "Thomas Cahill",
-      "pages": 246,
-      "read_at": "2026-02-21",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1706145092l/25669._SY475_.jpg"
-    },
-    {
-      "title": "Jumper",
-      "author": "Steven Gould",
-      "pages": 345,
-      "read_at": "2026-03-09",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1304981770l/47970.jpg"
-    },
-    {
-      "title": "Reflex",
-      "author": "Steven Gould",
-      "pages": 380,
-      "read_at": "2026-03-11",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1634004517l/64818._SY475_.jpg"
-    },
-    {
-      "title": "Impulse",
-      "author": "Steven Gould",
-      "pages": 368,
-      "read_at": "2026-03-15",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1342631587l/13614730.jpg"
-    },
-    {
-      "title": "The Truth About Ruby Cooper",
-      "author": "Liz Nugent",
-      "pages": 369,
-      "read_at": "2026-03-17",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1763451712l/238328226._SY475_.jpg"
-    },
-    {
-      "title": "Exo",
-      "author": "Steven Gould",
-      "pages": 464,
-      "read_at": "2026-03-22",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1403633075l/20518815.jpg"
-    },
-    {
-      "title": "Half His Age",
-      "author": "Jennette McCurdy",
-      "pages": 288,
-      "read_at": "2026-03-28",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1765907278l/240424526._SY475_.jpg"
-    },
-    {
-      "title": "The Secret History",
-      "author": "Donna Tartt",
-      "pages": 559,
-      "read_at": "2026-04-26",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1751820530l/29044._SY475_.jpg"
-    },
-    {
-      "title": "Few and Far Between",
-      "author": "Jan Carson",
-      "pages": 336,
-      "read_at": "2026-05-03",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1760892711l/242977777._SY475_.jpg"
-    },
-    {
-      "title": "Antihero",
-      "author": "Gregg Hurwitz",
-      "pages": 416,
-      "read_at": "2026-05-24",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1751384785l/231127208._SY475_.jpg"
-    },
-    {
-      "title": "The Disappearance of Josef Mengele",
-      "author": "Olivier Guez",
-      "pages": 224,
-      "read_at": "2026-05-31",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1657883688l/46002075._SY475_.jpg"
-    },
-    {
-      "title": "One Yellow Eye",
-      "author": "Leigh  Radford",
-      "pages": 352,
-      "read_at": "2026-06-06",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1729011609l/220160134._SY475_.jpg"
-    },
-    {
-      "title": "Dancefloor",
-      "author": "Victor Jestin",
-      "pages": 176,
-      "read_at": "2026-06-14",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1744040665l/221951178._SY475_.jpg"
-    },
-    {
-      "title": "We Have Always Lived in the Castle",
-      "author": "Shirley Jackson",
-      "pages": 152,
-      "read_at": "2026-06-21",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1746532708l/89724._SY475_.jpg"
-    },
-    {
-      "title": "Time After Time",
-      "author": "Karl Alexander",
-      "pages": 341,
-      "read_at": "2026-06-26",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1309640655l/2857588.jpg"
-    },
-    {
-      "title": "Murder Bimbo",
-      "author": "Rebecca Novack",
-      "pages": 224,
-      "read_at": "2026-07-04",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1753324008l/235992114._SY475_.jpg"
-    },
-    {
-      "title": "Breakfast at Tiffany's",
-      "author": "Truman Capote",
-      "pages": 157,
-      "read_at": "2026-07-12",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1495737324l/35224144._SY475_.jpg"
-    },
-    {
-      "title": "Pale Rider: The Spanish Flu of 1918 and How It Changed the World",
-      "author": "Laura Spinney",
-      "pages": 332,
-      "read_at": "2026-07-19",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1483639646l/30335530._SY475_.jpg"
     }
   ]
 }

@@ -178,7 +178,7 @@ title: About
         {label:"'{{ s.year | append: '' | slice: 2, 2 }}", count:{{ s.count }}}{% unless forloop.last %},{% endunless %}{% endfor %}
       ];
       ReadingCharts.scatter('scatter-chart', bookTimeline, {yLabel:'pages', yStep:400});
-      ReadingCharts.bars('yearly-chart', bookPerYear, {yLabel:'books', yStep:10});
+      ReadingCharts.bars('yearly-chart', bookPerYear, {yLabel:'books', yStep:20});
       ReadingCharts.histogram('hist-chart', bookTimeline, {key:'y', edges:[0,200,400,600,800,1000], xLabels:['0','200','400','600','800','1k+'], xLabel:'pages'});
       {% endif %}
       {% if site.data.watching_stats %}
