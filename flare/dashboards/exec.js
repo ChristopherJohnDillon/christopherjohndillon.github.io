@@ -46,33 +46,58 @@ window.FlareDashboards.exec = function (main, businessKey) {
     const annual = biz.annualRev * m;
     const monthlyBudget = annual / 12;
     const mtdBudget = monthlyBudget * monthFraction;
-    /* Pull a deterministic "actual" close to budget */
-    const seed = biz.seed + (division.charCodeAt(0) || 0) + (channel.charCodeAt(0) || 0);
-    const r = ((Math.sin(seed) + 1) / 2);
-    const mtdActual = mtdBudget * (0.91 + r * 0.14); /* between 91% and 105% of budget */
-    const mtdLY = mtdBudget * (0.93 + ((Math.sin(seed + 1.7) + 1) / 2) * 0.10);
+    /* Independent, salted draws per KPI. Each tile gets its own draw so tones
+       move independently (a realistic mix of green / amber / red rather than
+       one frozen colour), and FlareData.salt rotates every value on each
+       page-load, matching the rest of the data layer. Stable within a session
+       and per filter, so switching business/channel doesn't reshuffle. */
+    const filterOffset = (division.charCodeAt(0) || 0) + (channel.charCodeAt(0) || 0);
+    const gen = (function (seed) {
+      let a = seed >>> 0;
+      return function () {
+        a = (a + 0x6D2B79F5) >>> 0;
+        let t = a;
+        t = Math.imul(t ^ (t >>> 15), t | 1);
+        t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+    })((biz.seed + filterOffset + (FlareData.salt >>> 0)) >>> 0);
+    gen(); gen(); /* warm-up so the first pulls are well mixed */
+    const stream = Array.from({ length: 16 }, () => gen());
+    const draw = (n) => stream[n];
 
-    const projection = monthlyBudget * (0.94 + r * 0.08);
-    const orderCount = Math.floor(biz.ordersPerDay * day * (0.96 + r * 0.08));
-    const openOrdersTotal = Math.floor(biz.ordersPerDay * 2.4 * m * (0.92 + r * 0.16));
+    /* Revenue vs budget — green-leaning, with an occasional miss (93%–109%) */
+    const revRatio = 0.93 + draw(1) * 0.16;
+    const mtdActual = mtdBudget * revRatio;
+    const mtdLY = mtdBudget * (0.93 + draw(9) * 0.10);
+    /* Month-end projection — run-rate off actual, nudged by a pace factor */
+    const projection = monthlyBudget * revRatio * (0.97 + draw(2) * 0.07);
+
+    /* Open orders — neutral tile */
+    const openOrdersTotal = Math.floor(biz.ordersPerDay * 2.4 * m * (0.92 + draw(10) * 0.16));
     const openOrdersWholesale = Math.floor(openOrdersTotal * 0.62);
     const openOrdersDirect = openOrdersTotal - openOrdersWholesale;
     const openOrdersValue = (openOrdersTotal * biz.aov) / 1e6;
     const wholesaleValue = (openOrdersWholesale * biz.aov * 1.15) / 1e6;
     const directValue = openOrdersValue - wholesaleValue;
 
-    const marginPct = biz.gmTarget + (r - 0.5) * 1.8;
+    /* Product margin % — clusters around target, rarely far below */
+    const marginPct = biz.gmTarget + (draw(3) - 0.42) * 2.0;
     const marginPctBudget = biz.gmTarget;
     const marginMTD = mtdActual * marginPct / 100;
     const marginMTDBudget = mtdBudget * biz.gmTarget / 100;
 
-    const cashWeeks = (1.5 + r * 1.4); /* £M */
-    const otif = biz.otifTarget + (r - 0.45) * 1.8;
+    /* Cash — amber-leaning around the £3.0M threshold, occasional squeeze */
+    const cashWeeks = 1.8 + draw(5) * 1.8; /* £1.8M–£3.6M */
+    /* OTIF — around target, can dip below the critical line */
+    const otif = biz.otifTarget + (draw(6) - 0.55) * 3.0;
     const otifClass = otif >= biz.otifTarget ? "positive" : otif >= biz.otifTarget - 1.5 ? "warning" : "critical";
-    const invHealth = 76 + Math.floor(r * 18);
-    const stockDays = Math.floor(38 + r * 18);
+    /* Inventory health */
+    const invHealth = 74 + Math.floor(draw(7) * 20); /* 74%–93% */
+    const stockDays = Math.floor(38 + draw(11) * 18);
     const eoExposure = (biz.annualRev * 0.012 * m) / 1e6;
-    const activeStockouts = Math.max(2, Math.floor(8 + r * 18));
+    /* Active stockouts — lower is better (6–31) */
+    const activeStockouts = Math.max(2, Math.floor(6 + draw(8) * 26));
     const topSellerOos = Math.floor(activeStockouts * 0.4);
     const recoveryCostPerWeek = activeStockouts * 0.018;
 
@@ -84,7 +109,7 @@ window.FlareDashboards.exec = function (main, businessKey) {
 
     const mtdCls = cls(mtdActual, mtdBudget, 0.05);
     const projCls = cls(projection, monthlyBudget, 0.04);
-    const marginPctCls = cls(marginPct, marginPctBudget, 0.01);
+    const marginPctCls = cls(marginPct, marginPctBudget, 0.02);
     const cashCls = cashWeeks >= 3 ? "positive" : cashWeeks >= 2 ? "warning" : "critical";
     const invCls = invHealth >= 85 ? "positive" : invHealth >= 78 ? "warning" : "critical";
     const stockoutsCls = activeStockouts < 15 ? "positive" : activeStockouts < 25 ? "warning" : "critical";
