@@ -46,12 +46,12 @@
     },
     {
       "year": 2026,
-      "count": 24
+      "count": 25
     }
   ],
   "fun": {
-    "total_books": 568,
-    "total_pages": 195329,
+    "total_books": 569,
+    "total_pages": 195600,
     "avg_pages": 352,
     "shortest": {
       "title": "Without Fail",
@@ -3347,6 +3347,13 @@
       "pages": 332,
       "read_at": "2026-07-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1483639646l/30335530._SY475_.jpg"
+    },
+    {
+      "title": "The Talented Mr. Ripley",
+      "author": "Patricia Highsmith",
+      "pages": 271,
+      "read_at": "2026-07-27",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1746213953l/2247142._SY475_.jpg"
     }
   ]
 }
