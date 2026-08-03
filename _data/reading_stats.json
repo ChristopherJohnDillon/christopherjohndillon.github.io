@@ -46,12 +46,12 @@
     },
     {
       "year": 2026,
-      "count": 25
+      "count": 26
     }
   ],
   "fun": {
-    "total_books": 569,
-    "total_pages": 195600,
+    "total_books": 570,
+    "total_pages": 196018,
     "avg_pages": 352,
     "shortest": {
       "title": "Without Fail",
@@ -3354,6 +3354,13 @@
       "pages": 271,
       "read_at": "2026-07-27",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1746213953l/2247142._SY475_.jpg"
+    },
+    {
+      "title": "One of Us Is Guilty",
+      "author": "Steve Cavanagh",
+      "pages": 418,
+      "read_at": "2026-08-02",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1774317506l/240339295._SX318_.jpg"
     }
   ]
 }

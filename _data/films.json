@@ -1,5 +1,13 @@
 [
   {
+    "title": "Supergirl",
+    "year": 2026,
+    "rating": 3.5,
+    "watched_at": "2026-08-02",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/9/7/4/2/8/6/974286-supergirl-2026-0-600-0-900-crop.jpg?v=e85ddf39db",
+    "url": "https://letterboxd.com/chrisdillon/film/supergirl-2026/"
+  },
+  {
     "title": "Mystery Men",
     "year": 1999,
     "rating": 4.0,
@@ -30,13 +38,5 @@
     "watched_at": "2026-07-05",
     "poster": "https://a.ltrbxd.com/resized/film-poster/9/2/1/5/2/7/921527-ricky-stanicky-0-600-0-900-crop.jpg?v=203d0c3794",
     "url": "https://letterboxd.com/chrisdillon/film/ricky-stanicky/"
-  },
-  {
-    "title": "21 Jump Street",
-    "year": 2012,
-    "rating": 3.0,
-    "watched_at": "2026-07-04",
-    "poster": "https://a.ltrbxd.com/resized/film-poster/2/7/9/279-21-jump-street-0-600-0-900-crop.jpg?v=94d6b03998",
-    "url": "https://letterboxd.com/chrisdillon/film/21-jump-street/"
   }
 ]
