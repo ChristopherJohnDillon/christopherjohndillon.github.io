@@ -95,15 +95,29 @@ def recent_books(books, n=N_BOOKS):
 
 
 def summarize(books, min_year=MIN_YEAR):
-    """Per-year counts, page totals, and a dated timeline for a set of books.
+    """Per-year counts, page totals, author aggregates, ratings, and a dated
+    timeline for a set of books.
 
-    total_books counts every book (incl. undated / pre-min_year), while per_year
-    and timeline only cover dated reads from min_year onward.
+    total_books, authors, and ratings cover every book (incl. undated /
+    pre-min_year), while per_year and timeline only cover dated reads from
+    min_year onward. A rating of 0 means unrated and is excluded from ratings.
     """
     years = Counter()
+    ratings = Counter()
+    authors = {}
     timeline = []
     with_pages = [b for b in books if b["pages"] > 0]
     for b in books:
+        rating = b.get("rating", 0)
+        if b["author"]:
+            a = authors.setdefault(b["author"], {"count": 0, "pages": 0, "rating_sum": 0, "rated": 0})
+            a["count"] += 1
+            a["pages"] += b["pages"]
+            if rating:
+                a["rating_sum"] += rating
+                a["rated"] += 1
+        if rating:
+            ratings[rating] += 1
         if b["year"] and b["year"] >= min_year:
             years[b["year"]] += 1
             if b["read_at"] and b["pages"] > 0:
@@ -111,6 +125,7 @@ def summarize(books, min_year=MIN_YEAR):
                     "title": b["title"],
                     "author": b["author"],
                     "pages": b["pages"],
+                    "rating": rating,
                     "read_at": b["read_at"],
                     "cover": b["cover"],
                 })
@@ -120,8 +135,34 @@ def summarize(books, min_year=MIN_YEAR):
         "page_books": len(with_pages),
         "total_pages": sum(b["pages"] for b in with_pages),
         "per_year": {str(y): c for y, c in years.items()},
+        "ratings": {str(r): c for r, c in ratings.items()},
+        "authors": authors,
         "timeline": timeline,
     }
+
+
+MIN_RATED_BOOKS = 3   # an author needs this many rated books to be ranked by rating
+TOP_AUTHORS = 12      # rows shown in each author leaderboard
+
+
+def author_boards(history, ongoing):
+    """Merge the two author aggregates and rank them for the reading page."""
+    authors = {}
+    for src in (history.get("authors", {}), ongoing.get("authors", {})):
+        for name, a in src.items():
+            m = authors.setdefault(name, {"count": 0, "pages": 0, "rating_sum": 0, "rated": 0})
+            for k in m:
+                m[k] += a.get(k, 0)
+    most_read = [
+        {"author": name, "count": a["count"], "pages": a["pages"]}
+        for name, a in sorted(authors.items(), key=lambda kv: (-kv[1]["count"], kv[0]))
+    ][:TOP_AUTHORS]
+    rated = [(name, a) for name, a in authors.items() if a["rated"] >= MIN_RATED_BOOKS]
+    top_rated = [
+        {"author": name, "avg": round(a["rating_sum"] / a["rated"], 2), "rated": a["rated"]}
+        for name, a in sorted(rated, key=lambda kv: (-kv[1]["rating_sum"] / kv[1]["rated"], -kv[1]["rated"], kv[0]))
+    ][:TOP_AUTHORS]
+    return most_read, top_rated
 
 
 def merge(history, ongoing):
@@ -131,6 +172,14 @@ def merge(history, ongoing):
         for y, c in src.items():
             years[int(y)] += c
     per_year = [{"year": y, "count": years[y]} for y in sorted(years)]
+    ratings = Counter()
+    for src in (history.get("ratings", {}), ongoing.get("ratings", {})):
+        for r, c in src.items():
+            ratings[int(r)] += c
+    ratings_dist = [{"rating": r, "count": ratings.get(r, 0)} for r in range(1, 6)]
+    rated_books = sum(ratings.values())
+    rating_total = sum(r * c for r, c in ratings.items())
+    most_read, top_rated = author_boards(history, ongoing)
     timeline = sorted(history["timeline"] + ongoing["timeline"], key=lambda b: b["read_at"])
     total_books = history["total_books"] + ongoing["total_books"]
     page_books = history["page_books"] + ongoing["page_books"]
@@ -140,10 +189,20 @@ def merge(history, ongoing):
         "total_books": total_books,
         "total_pages": total_pages,
         "avg_pages": total_pages // page_books if page_books else 0,
+        "avg_rating": round(rating_total / rated_books, 2) if rated_books else 0,
+        "rated_books": rated_books,
+        "five_star": ratings.get(5, 0),
         "shortest": {"title": by_pages[0]["title"], "author": by_pages[0]["author"], "pages": by_pages[0]["pages"]} if by_pages else None,
         "longest": {"title": by_pages[-1]["title"], "author": by_pages[-1]["author"], "pages": by_pages[-1]["pages"]} if by_pages else None,
     }
-    return {"per_year": per_year, "fun": fun, "timeline": timeline}
+    return {
+        "per_year": per_year,
+        "fun": fun,
+        "most_read": most_read,
+        "top_rated": top_rated,
+        "ratings_dist": ratings_dist,
+        "timeline": timeline,
+    }
 
 
 if __name__ == "__main__":

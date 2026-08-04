@@ -16,7 +16,10 @@ def test_summary_has_cover():
     entry = timeline[0]
     assert entry["title"] == "Foster"          # trailing "(Something)" stripped
     assert entry["pages"] == 101
+    assert entry["rating"] == 5
     assert entry["cover"] == "https://i.gr-assets.com/large.jpg"  # prefers large
+    assert summary["ratings"] == {"5": 1}
+    assert summary["authors"] == {"Claire Keegan": {"count": 1, "pages": 101, "rating_sum": 5, "rated": 1}}
 
 
 def test_merge_totals_add_up():
@@ -29,6 +32,30 @@ def test_merge_totals_add_up():
     assert stats["fun"]["total_pages"] == 158000
     years = {row["year"]: row["count"] for row in stats["per_year"]}
     assert years == {2024: 25, 2026: 24}
+
+
+def test_merge_author_boards_and_ratings():
+    history = {"total_books": 5, "page_books": 5, "total_pages": 2000,
+               "per_year": {"2024": 5}, "timeline": [],
+               "ratings": {"4": 2, "5": 2},
+               "authors": {"Lee Child": {"count": 4, "pages": 1600, "rating_sum": 13, "rated": 3},
+                           "Claire Keegan": {"count": 1, "pages": 400, "rating_sum": 5, "rated": 1}}}
+    ongoing = {"total_books": 2, "page_books": 2, "total_pages": 600,
+               "per_year": {"2026": 2}, "timeline": [],
+               "ratings": {"5": 2},
+               "authors": {"Claire Keegan": {"count": 2, "pages": 600, "rating_sum": 10, "rated": 2}}}
+    stats = fb.merge(history, ongoing)
+    # most read: Lee Child (4) ahead of Claire Keegan (3)
+    assert [r["author"] for r in stats["most_read"]] == ["Lee Child", "Claire Keegan"]
+    assert stats["most_read"][1] == {"author": "Claire Keegan", "count": 3, "pages": 1000}
+    # top rated needs >= MIN_RATED_BOOKS rated books; Keegan avg 5.0 beats Child 13/3
+    assert [r["author"] for r in stats["top_rated"]] == ["Claire Keegan", "Lee Child"]
+    assert stats["top_rated"][0]["avg"] == 5.0
+    # ratings distribution always covers 1..5
+    dist = {r["rating"]: r["count"] for r in stats["ratings_dist"]}
+    assert dist == {1: 0, 2: 0, 3: 0, 4: 2, 5: 4}
+    assert stats["fun"]["five_star"] == 4
+    assert stats["fun"]["avg_rating"] == round(28 / 6, 2)
 
 
 if __name__ == "__main__":

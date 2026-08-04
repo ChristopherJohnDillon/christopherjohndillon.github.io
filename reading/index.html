@@ -1,0 +1,133 @@
+---
+layout: default
+title: Reading
+description: Reading stats for Chris Dillon — most-read authors, top-rated authors, ratings, and every book since 2015.
+---
+
+{% assign stats = site.data.reading_stats %}
+{% assign fun = stats.fun %}
+
+<!-- Header -->
+<div class="header">
+  <div class="header-content">
+    <h1>Reading</h1>
+    <p class="bio">What I read, how much of it, and who I keep going back to. Pulled nightly from my <a href="https://www.goodreads.com/user/show/17038700-chris-dillon">Goodreads</a> shelf.</p>
+  </div>
+</div>
+
+<div class="stat-grid">
+  <div class="stat-cell">
+    <span class="stat-num">{{ fun.total_books }}</span>
+    <span class="stat-label">Books read</span>
+  </div>
+  <div class="stat-cell">
+    <span class="stat-num">{{ fun.total_pages | divided_by: 1000 }}k+</span>
+    <span class="stat-label">Pages</span>
+  </div>
+  <div class="stat-cell">
+    <span class="stat-num">{{ fun.avg_rating }}<em>★</em></span>
+    <span class="stat-label">Avg rating</span>
+  </div>
+  <div class="stat-cell">
+    <span class="stat-num">{{ fun.five_star }}</span>
+    <span class="stat-label">Five-star reads</span>
+  </div>
+</div>
+
+<!-- Most read authors -->
+<section class="experience-section">
+  <div class="section-label">Most read authors</div>
+  <div class="author-list">
+    {% assign maxc = stats.most_read.first.count %}
+    {% for r in stats.most_read %}
+    <div class="author-row">
+      <span class="author-rank">{{ forloop.index | prepend: '00' | slice: -2, 2 }}</span>
+      <span class="author-name">{{ r.author | escape }}</span>
+      <span class="author-meta"><strong>{{ r.count }}</strong> books · {{ r.pages | plus: 500 | divided_by: 1000 }}k pages</span>
+      <span class="author-bar"><span style="width: {{ r.count | times: 100.0 | divided_by: maxc | round }}%"></span></span>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Top rated authors -->
+<section class="experience-section">
+  <div class="section-label">Top rated authors</div>
+  <p class="board-note">by average rating, among authors with 3+ rated books</p>
+  <div class="author-list">
+    {% for r in stats.top_rated %}
+    <div class="author-row">
+      <span class="author-rank">{{ forloop.index | prepend: '00' | slice: -2, 2 }}</span>
+      <span class="author-name">{{ r.author | escape }}</span>
+      <span class="author-meta"><strong>{{ r.avg }}★</strong> avg · {{ r.rated }} rated</span>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Recent five-star reads -->
+<section class="experience-section">
+  <div class="section-label">Recent five-star reads</div>
+  <div class="reading-list">
+    {% assign fives = stats.timeline | where: "rating", 5 | reverse %}
+    {% for b in fives limit: 10 %}
+    <a href="https://www.goodreads.com/search?q={{ b.title | url_encode }}" class="book-item">
+      <span class="book-title">{{ b.title | escape }}</span>
+      <span class="book-author">{{ b.author | escape }} · {{ b.read_at | slice: 0, 4 }}</span>
+    </a>
+    {% endfor %}
+    <a href="https://www.goodreads.com/user/show/17038700-chris-dillon" class="book-item book-more">
+      <span class="book-title">See everything on Goodreads</span>
+      <span class="book-author">&rsaquo;</span>
+    </a>
+  </div>
+</section>
+
+<!-- Charts -->
+<section class="experience-section">
+  <div class="section-label">The numbers</div>
+
+  <figure class="chart-panel">
+    <div class="reading-chart" id="yearly-chart"></div>
+    <figcaption class="chart-label">books per year</figcaption>
+  </figure>
+
+  <figure class="chart-panel chart-panel--wide" style="margin-top: 1.25rem">
+    <div class="reading-chart" id="scatter-chart"></div>
+    <figcaption class="chart-label">pages per book, over time&ensp;·&ensp;<span class="chart-hint">hover a point · drag to zoom · double-click to reset</span></figcaption>
+  </figure>
+
+  <div class="chart-duo">
+    <figure class="chart-panel">
+      <div class="reading-chart" id="rating-chart"></div>
+      <figcaption class="chart-label">how I rate — {{ fun.rated_books }} rated books</figcaption>
+    </figure>
+    <figure class="chart-panel">
+      <div class="reading-chart" id="hist-chart"></div>
+      <figcaption class="chart-label">page-count distribution</figcaption>
+    </figure>
+  </div>
+
+  {% if fun.longest and fun.shortest %}
+  <p class="board-note" style="margin-top: 1rem">avg {{ fun.avg_pages }}pp · longest: {{ fun.longest.title | escape }} ({{ fun.longest.pages }}pp) · shortest: {{ fun.shortest.title | escape }} ({{ fun.shortest.pages }}pp)</p>
+  {% endif %}
+</section>
+
+<script src="{{ '/assets/js/charts.js' | relative_url }}"></script>
+<script>
+(function () {
+  var timeline = [{% for b in stats.timeline %}
+    {t:new Date("{{ b.read_at }}").getTime(), y:{{ b.pages }}, title:"{{ b.title | escape }}", sub:"{{ b.pages }}pp{% if b.rating > 0 %} · {% for i in (1..b.rating) %}★{% endfor %}{% endif %} · {{ b.author | escape }}", date:"{{ b.read_at }}", img:"{{ b.cover }}"}{% unless forloop.last %},{% endunless %}{% endfor %}
+  ];
+  var perYear = [{% for s in stats.per_year %}
+    {label:"'{{ s.year | append: '' | slice: 2, 2 }}", count:{{ s.count }}}{% unless forloop.last %},{% endunless %}{% endfor %}
+  ];
+  var ratings = [{% for r in stats.ratings_dist %}
+    {label:"{{ r.rating }}★", count:{{ r.count }}}{% unless forloop.last %},{% endunless %}{% endfor %}
+  ];
+  ReadingCharts.bars('yearly-chart', perYear, {yLabel:'books', yStep:20});
+  ReadingCharts.scatter('scatter-chart', timeline, {yLabel:'pages', yStep:400});
+  ReadingCharts.bars('rating-chart', ratings, {yLabel:'books', yStep:50});
+  ReadingCharts.histogram('hist-chart', timeline, {key:'y', edges:[0,200,400,600,800,1000], xLabels:['0','200','400','600','800','1k+'], xLabel:'pages'});
+})();
+</script>

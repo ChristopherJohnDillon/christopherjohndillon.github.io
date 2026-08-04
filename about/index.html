@@ -48,6 +48,10 @@ title: About
     </figure>
 
     <p class="experience-description">You can't see them directly, so I built simulations and statistical models to pull their signals out of noisy data. I later adapted those techniques for biomedical imaging at Randox — turns out finding faint signals in noise is basically the same problem regardless of what you're pointing the detector at.</p>
+
+    <p class="experience-description">The open question behind all of it: the Sun's surface is ~5,800 K, but its corona is over a million. Nanoflares might be why. So — a game. Heat the corona yourself.</p>
+    <div class="corona-clicker" id="corona-clicker" aria-label="Corona Clicker — an incremental game about heating the Sun's corona with nanoflares"></div>
+    <script src="{{ '/assets/js/corona-clicker.js' | relative_url }}"></script>
   </article>
 </section>
 
@@ -140,6 +144,12 @@ title: About
           <figcaption class="chart-label">page-count distribution</figcaption>
         </figure>
       </div>
+      <a href="{{ '/reading/' | relative_url }}" class="reading-cta">
+        <span class="reading-cta-text">Full reading stats
+          <span class="reading-cta-sub">most-read authors · top-rated authors · five-star reads · {{ fun.total_books }} books</span>
+        </span>
+        <span class="reading-cta-arrow">&rarr;</span>
+      </a>
     </div>
     {% endif %}
     {% if site.data.watching_stats %}

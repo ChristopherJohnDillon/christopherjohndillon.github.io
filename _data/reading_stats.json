@@ -42,17 +42,20 @@
     },
     {
       "year": 2025,
-      "count": 46
+      "count": 45
     },
     {
       "year": 2026,
-      "count": 24
+      "count": 26
     }
   ],
   "fun": {
-    "total_books": 568,
-    "total_pages": 195329,
+    "total_books": 569,
+    "total_pages": 195747,
     "avg_pages": 352,
+    "avg_rating": 4.2,
+    "rated_books": 568,
+    "five_star": 248,
     "shortest": {
       "title": "Without Fail",
       "author": "Lee Child",
@@ -64,11 +67,158 @@
       "pages": 2184
     }
   },
+  "most_read": [
+    {
+      "author": "Lee Child",
+      "count": 30,
+      "pages": 11036
+    },
+    {
+      "author": "Patricia Highsmith",
+      "count": 22,
+      "pages": 5992
+    },
+    {
+      "author": "Lemony Snicket",
+      "count": 20,
+      "pages": 5041
+    },
+    {
+      "author": "Derek Landy",
+      "count": 13,
+      "pages": 6026
+    },
+    {
+      "author": "Brian McGilloway",
+      "count": 12,
+      "pages": 3901
+    },
+    {
+      "author": "Gregg Hurwitz",
+      "count": 12,
+      "pages": 4758
+    },
+    {
+      "author": "Robin Stevens",
+      "count": 12,
+      "pages": 4197
+    },
+    {
+      "author": "Steve Cavanagh",
+      "count": 12,
+      "pages": 4525
+    },
+    {
+      "author": "Sue Townsend",
+      "count": 11,
+      "pages": 2982
+    },
+    {
+      "author": "Claire Allan",
+      "count": 8,
+      "pages": 2954
+    },
+    {
+      "author": "J.K. Rowling",
+      "count": 8,
+      "pages": 4365
+    },
+    {
+      "author": "Douglas Adams",
+      "count": 7,
+      "pages": 2285
+    }
+  ],
+  "top_rated": [
+    {
+      "author": "Brian McGilloway",
+      "avg": 5.0,
+      "rated": 12
+    },
+    {
+      "author": "Steve Cavanagh",
+      "avg": 5.0,
+      "rated": 12
+    },
+    {
+      "author": "Douglas Adams",
+      "avg": 5.0,
+      "rated": 7
+    },
+    {
+      "author": "Piers Anthony",
+      "avg": 5.0,
+      "rated": 5
+    },
+    {
+      "author": "Erik Larson",
+      "avg": 5.0,
+      "rated": 4
+    },
+    {
+      "author": "Ira Levin",
+      "avg": 5.0,
+      "rated": 4
+    },
+    {
+      "author": "Catherine Ryan Howard",
+      "avg": 5.0,
+      "rated": 3
+    },
+    {
+      "author": "George Orwell",
+      "avg": 5.0,
+      "rated": 3
+    },
+    {
+      "author": "Robert Kirkman",
+      "avg": 5.0,
+      "rated": 3
+    },
+    {
+      "author": "Sir Poley",
+      "avg": 5.0,
+      "rated": 3
+    },
+    {
+      "author": "Lemony Snicket",
+      "avg": 4.85,
+      "rated": 20
+    },
+    {
+      "author": "Liz Nugent",
+      "avg": 4.83,
+      "rated": 6
+    }
+  ],
+  "ratings_dist": [
+    {
+      "rating": 1,
+      "count": 5
+    },
+    {
+      "rating": 2,
+      "count": 14
+    },
+    {
+      "rating": 3,
+      "count": 94
+    },
+    {
+      "rating": 4,
+      "count": 207
+    },
+    {
+      "rating": 5,
+      "count": 248
+    }
+  ],
   "timeline": [
     {
       "title": "Batman, Volume 3: Death of the Family",
       "author": "Scott Snyder",
       "pages": 176,
+      "rating": 3,
       "read_at": "2015-01-02",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1674320643l/17671913.jpg"
     },
@@ -76,6 +226,7 @@
       "title": "Look Who's Back",
       "author": "Timur Vermes",
       "pages": 313,
+      "rating": 4,
       "read_at": "2015-01-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1421762433l/17289087.jpg"
     },
@@ -83,6 +234,7 @@
       "title": "Ready Player One",
       "author": "Ernest Cline",
       "pages": 480,
+      "rating": 4,
       "read_at": "2015-01-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1500930947l/9969571._SY475_.jpg"
     },
@@ -90,6 +242,7 @@
       "title": "The Princess Bride",
       "author": "William Goldman",
       "pages": 317,
+      "rating": 5,
       "read_at": "2015-01-29",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1360089641l/17335509.jpg"
     },
@@ -97,6 +250,7 @@
       "title": "Becoming Johnny Vegas",
       "author": "Johnny  Vegas",
       "pages": 320,
+      "rating": 3,
       "read_at": "2015-02-11",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1394346093l/13649829.jpg"
     },
@@ -104,6 +258,7 @@
       "title": "The Selected Works of T.S. Spivet",
       "author": "Reif Larsen",
       "pages": 374,
+      "rating": 3,
       "read_at": "2015-02-17",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347784549l/6402352.jpg"
     },
@@ -111,6 +266,7 @@
       "title": "Perfume: The Story of a Murderer",
       "author": "Patrick S\u00fcskind",
       "pages": 263,
+      "rating": 4,
       "read_at": "2015-02-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1344095083l/7790524.jpg"
     },
@@ -118,6 +274,7 @@
       "title": "Harry Potter and the Methods of Rationality",
       "author": "Eliezer Yudkowsky",
       "pages": 2184,
+      "rating": 3,
       "read_at": "2015-03-14",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1659761696l/10016013._SY475_.jpg"
     },
@@ -125,6 +282,7 @@
       "title": "Al Capone Does My Shirts",
       "author": "Gennifer Choldenko",
       "pages": 225,
+      "rating": 4,
       "read_at": "2015-04-05",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1309198452l/89716.jpg"
     },
@@ -132,6 +290,7 @@
       "title": "Al Capone Shines My Shoes",
       "author": "Gennifer Choldenko",
       "pages": 274,
+      "rating": 4,
       "read_at": "2015-04-13",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388192228l/6137155.jpg"
     },
@@ -139,6 +298,7 @@
       "title": "Al Capone Does My Homework",
       "author": "Gennifer Choldenko",
       "pages": 256,
+      "rating": 4,
       "read_at": "2015-04-16",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1387548059l/19548953.jpg"
     },
@@ -146,6 +306,7 @@
       "title": "The Martian",
       "author": "Andy Weir",
       "pages": 369,
+      "rating": 4,
       "read_at": "2015-04-17",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1413706054l/18007564.jpg"
     },
@@ -153,6 +314,7 @@
       "title": "The Girl on the Train",
       "author": "Paula Hawkins",
       "pages": 336,
+      "rating": 4,
       "read_at": "2015-04-25",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1748242265l/22557272._SY475_.jpg"
     },
@@ -160,6 +322,7 @@
       "title": "The Bees",
       "author": "Laline Paull",
       "pages": 346,
+      "rating": 3,
       "read_at": "2015-06-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1420985809l/24441639.jpg"
     },
@@ -167,6 +330,7 @@
       "title": "The Picture of Dorian Gray",
       "author": "Oscar Wilde",
       "pages": 271,
+      "rating": 3,
       "read_at": "2015-06-21",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1658714449l/2338386._SY475_.jpg"
     },
@@ -174,6 +338,7 @@
       "title": "The Thirty-Nine Steps",
       "author": "John Buchan",
       "pages": 118,
+      "rating": 4,
       "read_at": "2015-06-22",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1370646788l/13617693.jpg"
     },
@@ -181,6 +346,7 @@
       "title": "Do You Think You're Clever?: The Oxford and Cambridge Questions",
       "author": "John Farndon",
       "pages": 220,
+      "rating": 2,
       "read_at": "2015-06-27",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347426958l/7155826.jpg"
     },
@@ -188,6 +354,7 @@
       "title": "Longitude: The True Story of a Lone Genius Who Solved the Greatest Scientific Problem of His Time",
       "author": "Dava Sobel",
       "pages": 184,
+      "rating": 4,
       "read_at": "2015-07-23",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388462711l/4806.jpg"
     },
@@ -195,6 +362,7 @@
       "title": "Gone Girl",
       "author": "Gillian Flynn",
       "pages": 466,
+      "rating": 4,
       "read_at": "2015-07-26",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1420576946l/15704174.jpg"
     },
@@ -202,6 +370,7 @@
       "title": "Murder Most Unladylike",
       "author": "Robin Stevens",
       "pages": 350,
+      "rating": 3,
       "read_at": "2015-08-08",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1394039050l/18070753.jpg"
     },
@@ -209,6 +378,7 @@
       "title": "Preserve The Dead",
       "author": "Brian McGilloway",
       "pages": 256,
+      "rating": 5,
       "read_at": "2015-08-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1435088398l/25509873._SY475_.jpg"
     },
@@ -216,6 +386,7 @@
       "title": "Arsenic for Tea",
       "author": "Robin Stevens",
       "pages": 339,
+      "rating": 4,
       "read_at": "2015-08-23",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1422630313l/22549636.jpg"
     },
@@ -223,6 +394,7 @@
       "title": "American Gods",
       "author": "Neil Gaiman",
       "pages": 635,
+      "rating": 3,
       "read_at": "2015-09-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1258417001l/4407.jpg"
     },
@@ -230,6 +402,7 @@
       "title": "Taran Wanderer",
       "author": "Lloyd Alexander",
       "pages": 222,
+      "rating": 4,
       "read_at": "2015-09-15",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1406315774l/24782.jpg"
     },
@@ -237,6 +410,7 @@
       "title": "The High King",
       "author": "Lloyd Alexander",
       "pages": 253,
+      "rating": 5,
       "read_at": "2015-09-17",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1407209964l/24781.jpg"
     },
@@ -244,6 +418,7 @@
       "title": "Old Man's War",
       "author": "John Scalzi",
       "pages": 355,
+      "rating": 4,
       "read_at": "2015-10-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1680461241l/51964._SY475_.jpg"
     },
@@ -251,6 +426,7 @@
       "title": "The Ghost Brigades",
       "author": "John Scalzi",
       "pages": 343,
+      "rating": 5,
       "read_at": "2015-10-08",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1403295928l/239399.jpg"
     },
@@ -258,6 +434,7 @@
       "title": "The Last Colony",
       "author": "John Scalzi",
       "pages": 320,
+      "rating": 4,
       "read_at": "2015-10-13",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1437660786l/88071._SY475_.jpg"
     },
@@ -265,6 +442,7 @@
       "title": "Seveneves",
       "author": "Neal Stephenson",
       "pages": 872,
+      "rating": 3,
       "read_at": "2015-10-24",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1449142000l/22816087.jpg"
     },
@@ -272,6 +450,7 @@
       "title": "Why Is This Night Different from All Other Nights?",
       "author": "Lemony Snicket",
       "pages": 291,
+      "rating": 3,
       "read_at": "2015-10-30",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1441297116l/25554979._SY475_.jpg"
     },
@@ -279,6 +458,7 @@
       "title": "The Man Who Couldn't Stop: OCD and the True Story of a Life Lost in Thought",
       "author": "David   Adam",
       "pages": 292,
+      "rating": 4,
       "read_at": "2015-11-16",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1426826220l/24586706.jpg"
     },
@@ -286,6 +466,7 @@
       "title": "Career of Evil",
       "author": "Robert Galbraith",
       "pages": 512,
+      "rating": 5,
       "read_at": "2015-11-16",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1540217110l/25735012.jpg"
     },
@@ -293,6 +474,7 @@
       "title": "The Queen's Nose",
       "author": "Dick King-Smith",
       "pages": 150,
+      "rating": 4,
       "read_at": "2016-01-08",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348812053l/838879.jpg"
     },
@@ -300,6 +482,7 @@
       "title": "Time Travelling with a Hamster",
       "author": "Ross Welford",
       "pages": 400,
+      "rating": 4,
       "read_at": "2016-02-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1451755957l/26079602.jpg"
     },
@@ -307,6 +490,7 @@
       "title": "The Second Book of Swords",
       "author": "Fred Saberhagen",
       "pages": 313,
+      "rating": 3,
       "read_at": "2016-02-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1331884978l/92796.jpg"
     },
@@ -314,6 +498,7 @@
       "title": "The Third Book of Swords",
       "author": "Fred Saberhagen",
       "pages": 323,
+      "rating": 3,
       "read_at": "2016-02-17",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1187029377l/1695356._SY475_.jpg"
     },
@@ -321,6 +506,7 @@
       "title": "First Class Murder",
       "author": "Robin Stevens",
       "pages": 288,
+      "rating": 4,
       "read_at": "2016-02-24",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1431348126l/23548125.jpg"
     },
@@ -328,6 +514,7 @@
       "title": "Time and Time Again",
       "author": "Ben Elton",
       "pages": 386,
+      "rating": 4,
       "read_at": "2016-03-01",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1411333773l/23164931.jpg"
     },
@@ -335,6 +522,7 @@
       "title": "Elric of Melnibon\u00e9",
       "author": "Michael Moorcock",
       "pages": 181,
+      "rating": 3,
       "read_at": "2016-04-06",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388345555l/30036.jpg"
     },
@@ -342,6 +530,7 @@
       "title": "The Prestige",
       "author": "Christopher Priest",
       "pages": 404,
+      "rating": 5,
       "read_at": "2016-04-16",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1414195709l/239239.jpg"
     },
@@ -349,6 +538,7 @@
       "title": "The Dumb House",
       "author": "John Burnside",
       "pages": 198,
+      "rating": 4,
       "read_at": "2016-04-24",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1356445518l/1429493.jpg"
     },
@@ -356,6 +546,7 @@
       "title": "Jolly Foul Play",
       "author": "Robin Stevens",
       "pages": 336,
+      "rating": 5,
       "read_at": "2016-05-05",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1444385191l/27030027._SY475_.jpg"
     },
@@ -363,6 +554,7 @@
       "title": "Madame Doubtfire",
       "author": "Anne Fine",
       "pages": 192,
+      "rating": 4,
       "read_at": "2016-06-05",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1633865640l/1230853._SY475_.jpg"
     },
@@ -370,6 +562,7 @@
       "title": "The Good Liar",
       "author": "Nicholas  Searle",
       "pages": 368,
+      "rating": 3,
       "read_at": "2016-08-07",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1463433711l/29776968._SY475_.jpg"
     },
@@ -377,6 +570,7 @@
       "title": "Attention All Shipping: A Journey Round the Shipping Forecast",
       "author": "Charlie Connelly",
       "pages": 384,
+      "rating": 4,
       "read_at": "2016-08-18",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1332074665l/1450050.jpg"
     },
@@ -384,6 +578,7 @@
       "title": "Trigger Mortis",
       "author": "Anthony Horowitz",
       "pages": 320,
+      "rating": 4,
       "read_at": "2016-09-01",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1464369089l/30302234._SY475_.jpg"
     },
@@ -391,6 +586,7 @@
       "title": "Prisoners of Geography: Ten Maps That Explain Everything About the World",
       "author": "Tim  Marshall",
       "pages": 464,
+      "rating": 4,
       "read_at": "2016-09-01",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1476029381l/29430757._SY475_.jpg"
     },
@@ -398,6 +594,7 @@
       "title": "The Secret Diary of Adrian Mole, Aged 13\u00be",
       "author": "Sue Townsend",
       "pages": 272,
+      "rating": 5,
       "read_at": "2016-09-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1285269220l/51070.jpg"
     },
@@ -405,6 +602,7 @@
       "title": "So You've Been Publicly Shamed",
       "author": "Jon Ronson",
       "pages": 306,
+      "rating": 4,
       "read_at": "2016-09-15",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1452685620l/28531969.jpg"
     },
@@ -412,6 +610,7 @@
       "title": "Harry Potter and the Sorcerer's Stone",
       "author": "J.K. Rowling",
       "pages": 309,
+      "rating": 5,
       "read_at": "2016-09-18",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1474154022l/3._SY475_.jpg"
     },
@@ -419,6 +618,7 @@
       "title": "Orphan X",
       "author": "Gregg Hurwitz",
       "pages": 356,
+      "rating": 5,
       "read_at": "2016-09-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1435262799l/25663888.jpg"
     },
@@ -426,6 +626,7 @@
       "title": "Harry Potter and the Chamber of Secrets",
       "author": "J.K. Rowling",
       "pages": 341,
+      "rating": 4,
       "read_at": "2016-09-22",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1474169725l/15881._SY475_.jpg"
     },
@@ -433,6 +634,7 @@
       "title": "The Talented Mr. Ripley",
       "author": "Patricia Highsmith",
       "pages": 249,
+      "rating": 5,
       "read_at": "2016-09-29",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327943279l/156024.jpg"
     },
@@ -440,6 +642,7 @@
       "title": "Harry Potter and the Goblet of Fire",
       "author": "J.K. Rowling",
       "pages": 734,
+      "rating": 5,
       "read_at": "2016-10-07",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1554006152l/6._SX318_.jpg"
     },
@@ -447,6 +650,7 @@
       "title": "Harry Potter and the Prisoner of Azkaban",
       "author": "J.K. Rowling",
       "pages": 547,
+      "rating": 5,
       "read_at": "2016-10-07",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1630547330l/5._SY475_.jpg"
     },
@@ -454,6 +658,7 @@
       "title": "Harry Potter and the Order of the Phoenix",
       "author": "J.K. Rowling",
       "pages": 800,
+      "rating": 5,
       "read_at": "2016-10-16",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1677124143l/22844196._SY475_.jpg"
     },
@@ -461,6 +666,7 @@
       "title": "Harry Potter and the Half-Blood Prince",
       "author": "J.K. Rowling",
       "pages": 652,
+      "rating": 5,
       "read_at": "2016-10-22",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1587697303l/1._SX318_.jpg"
     },
@@ -468,6 +674,7 @@
       "title": "The Queen and I",
       "author": "Sue Townsend",
       "pages": 271,
+      "rating": 5,
       "read_at": "2016-10-23",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1689683209l/54245._SY475_.jpg"
     },
@@ -475,6 +682,7 @@
       "title": "Harry Potter and the Deathly Hallows",
       "author": "J.K. Rowling",
       "pages": 759,
+      "rating": 5,
       "read_at": "2016-11-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1663805647l/136251.jpg"
     },
@@ -482,6 +690,7 @@
       "title": "The Golden Compass",
       "author": "Philip Pullman",
       "pages": 399,
+      "rating": 4,
       "read_at": "2016-11-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1505766203l/119322._SX318_.jpg"
     },
@@ -489,6 +698,7 @@
       "title": "The Subtle Knife",
       "author": "Philip Pullman",
       "pages": 326,
+      "rating": 3,
       "read_at": "2016-11-27",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1505766360l/119324._SX318_.jpg"
     },
@@ -496,6 +706,7 @@
       "title": "The Amber Spyglass",
       "author": "Philip Pullman",
       "pages": 465,
+      "rating": 3,
       "read_at": "2016-12-10",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1329189152l/18122.jpg"
     },
@@ -503,6 +714,7 @@
       "title": "The Hairy Bikers Blood, Sweat and Tyres: The Autobiography",
       "author": "Hairy Bikers",
       "pages": 320,
+      "rating": 4,
       "read_at": "2016-12-16",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1476204964l/30842472.jpg"
     },
@@ -510,6 +722,7 @@
       "title": "A Life in Parts",
       "author": "Bryan Cranston",
       "pages": 276,
+      "rating": 5,
       "read_at": "2016-12-27",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1476030398l/29868612._SY475_.jpg"
     },
@@ -517,6 +730,7 @@
       "title": "The 24-Hour Wine Expert",
       "author": "Jancis Robinson",
       "pages": 80,
+      "rating": 4,
       "read_at": "2017-01-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1456772757l/25853003._SY475_.jpg"
     },
@@ -524,6 +738,7 @@
       "title": "Toast: The Story of a Boy's Hunger",
       "author": "Nigel Slater",
       "pages": 238,
+      "rating": 3,
       "read_at": "2017-01-11",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1423713055l/71969.jpg"
     },
@@ -531,6 +746,7 @@
       "title": "Billy Connolly",
       "author": "Pamela Stephenson",
       "pages": 384,
+      "rating": 5,
       "read_at": "2017-01-27",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1180104754l/998367.jpg"
     },
@@ -538,6 +754,7 @@
       "title": "The Nowhere Man",
       "author": "Gregg Hurwitz",
       "pages": 368,
+      "rating": 4,
       "read_at": "2017-02-02",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1464822748l/29939343.jpg"
     },
@@ -545,6 +762,7 @@
       "title": "Leonard: My Fifty-Year Friendship with a Remarkable Man",
       "author": "William Shatner",
       "pages": 278,
+      "rating": 4,
       "read_at": "2017-02-06",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1449593516l/25819509.jpg"
     },
@@ -552,6 +770,7 @@
       "title": "The Professor and the Madman: A Tale of Murder, Insanity and the Making of the Oxford English Dictionary",
       "author": "Simon Winchester",
       "pages": 242,
+      "rating": 4,
       "read_at": "2017-02-25",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1407110918l/25019.jpg"
     },
@@ -559,6 +778,7 @@
       "title": "Where Am I Now?",
       "author": "Mara Wilson",
       "pages": 259,
+      "rating": 4,
       "read_at": "2017-02-27",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1460558453l/29429875.jpg"
     },
@@ -566,6 +786,7 @@
       "title": "Bridget Jones\u2019s Diary",
       "author": "Helen Fielding",
       "pages": 288,
+      "rating": 5,
       "read_at": "2017-03-05",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1659879886l/227443._SY475_.jpg"
     },
@@ -573,6 +794,7 @@
       "title": "Big Fish",
       "author": "Daniel Wallace",
       "pages": 208,
+      "rating": 4,
       "read_at": "2017-03-21",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1422372201l/20761665.jpg"
     },
@@ -580,6 +802,7 @@
       "title": "Borderlands",
       "author": "Brian McGilloway",
       "pages": 229,
+      "rating": 5,
       "read_at": "2017-04-12",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1356441662l/1667428.jpg"
     },
@@ -587,6 +810,7 @@
       "title": "Number Ten",
       "author": "Sue Townsend",
       "pages": 324,
+      "rating": 3,
       "read_at": "2017-04-12",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1349016600l/383064.jpg"
     },
@@ -594,6 +818,7 @@
       "title": "Gallows Lane",
       "author": "Brian McGilloway",
       "pages": 304,
+      "rating": 5,
       "read_at": "2017-04-14",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1362958632l/3760981.jpg"
     },
@@ -601,6 +826,7 @@
       "title": "Bleed a River Deep",
       "author": "Brian McGilloway",
       "pages": 297,
+      "rating": 5,
       "read_at": "2017-04-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1400177775l/6065915.jpg"
     },
@@ -608,6 +834,7 @@
       "title": "Limitless",
       "author": "Alan Glynn",
       "pages": 341,
+      "rating": 4,
       "read_at": "2017-04-20",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347960798l/10851228.jpg"
     },
@@ -615,6 +842,7 @@
       "title": "The Couple Next Door",
       "author": "Shari Lapena",
       "pages": 304,
+      "rating": 2,
       "read_at": "2017-04-23",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1468894219l/28261171._SY475_.jpg"
     },
@@ -622,6 +850,7 @@
       "title": "Deception Point",
       "author": "Dan    Brown",
       "pages": 574,
+      "rating": 3,
       "read_at": "2017-04-27",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1758071441l/11204367._SY475_.jpg"
     },
@@ -629,6 +858,7 @@
       "title": "The Rising",
       "author": "Brian McGilloway",
       "pages": 358,
+      "rating": 5,
       "read_at": "2017-04-30",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328478100l/7919996.jpg"
     },
@@ -636,6 +866,7 @@
       "title": "The Nameless Dead",
       "author": "Brian McGilloway",
       "pages": 381,
+      "rating": 5,
       "read_at": "2017-05-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1335070256l/13612068.jpg"
     },
@@ -643,6 +874,7 @@
       "title": "Skulduggery Pleasant",
       "author": "Derek Landy",
       "pages": 371,
+      "rating": 5,
       "read_at": "2017-05-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1357234419l/924062.jpg"
     },
@@ -650,6 +882,7 @@
       "title": "Bad Blood",
       "author": "Brian McGilloway",
       "pages": 371,
+      "rating": 5,
       "read_at": "2017-05-20",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1489329774l/34537369._SY475_.jpg"
     },
@@ -657,6 +890,7 @@
       "title": "The Immortal Life of Henrietta Lacks",
       "author": "Rebecca Skloot",
       "pages": 370,
+      "rating": 4,
       "read_at": "2017-05-25",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327878144l/6493208._SY475_.jpg"
     },
@@ -664,6 +898,7 @@
       "title": "The Defense",
       "author": "Steve Cavanagh",
       "pages": 308,
+      "rating": 5,
       "read_at": "2017-05-26",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1461532659l/26156988.jpg"
     },
@@ -671,6 +906,7 @@
       "title": "Unravelling Oliver",
       "author": "Liz Nugent",
       "pages": 240,
+      "rating": 4,
       "read_at": "2017-06-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1390908506l/19099368.jpg"
     },
@@ -678,6 +914,7 @@
       "title": "Can Anybody Help Me?",
       "author": "Sin\u00e9ad Crowley",
       "pages": 400,
+      "rating": 5,
       "read_at": "2017-06-10",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1396370799l/21818968.jpg"
     },
@@ -685,6 +922,7 @@
       "title": "The Rest of Us Just Live Here",
       "author": "Patrick Ness",
       "pages": 348,
+      "rating": 5,
       "read_at": "2017-06-10",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1429800081l/22910900.jpg"
     },
@@ -692,6 +930,7 @@
       "title": "Perfect Remains",
       "author": "Helen Sarah Fields",
       "pages": 418,
+      "rating": 5,
       "read_at": "2017-06-16",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1476210916l/32580398._SY475_.jpg"
     },
@@ -699,6 +938,7 @@
       "title": "The Liar",
       "author": "Steve Cavanagh",
       "pages": 337,
+      "rating": 5,
       "read_at": "2017-06-18",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1485826370l/34080217._SY475_.jpg"
     },
@@ -706,6 +946,7 @@
       "title": "Resurrection",
       "author": "Derek Landy",
       "pages": 424,
+      "rating": 5,
       "read_at": "2017-06-22",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1496347484l/33617257._SY475_.jpg"
     },
@@ -713,6 +954,7 @@
       "title": "The Plea",
       "author": "Steve Cavanagh",
       "pages": 400,
+      "rating": 5,
       "read_at": "2017-06-23",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1456157523l/28942137._SY475_.jpg"
     },
@@ -720,6 +962,7 @@
       "title": "Artemis Fowl",
       "author": "Eoin Colfer",
       "pages": 280,
+      "rating": 4,
       "read_at": "2017-07-26",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1345799806l/11849469.jpg"
     },
@@ -727,6 +970,7 @@
       "title": "The Arctic Incident",
       "author": "Eoin Colfer",
       "pages": 288,
+      "rating": 4,
       "read_at": "2017-07-29",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361446693l/45448.jpg"
     },
@@ -734,6 +978,7 @@
       "title": "Holding",
       "author": "Graham Norton",
       "pages": 273,
+      "rating": 4,
       "read_at": "2017-08-17",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1765100151l/32075392._SY475_.jpg"
     },
@@ -741,6 +986,7 @@
       "title": "Die Trying",
       "author": "Lee Child",
       "pages": 557,
+      "rating": 4,
       "read_at": "2017-08-25",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1510344359l/10169815._SY475_.jpg"
     },
@@ -748,6 +994,7 @@
       "title": "Perfect Prey",
       "author": "Helen Sarah Fields",
       "pages": 465,
+      "rating": 5,
       "read_at": "2017-08-27",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1497624451l/33820317.jpg"
     },
@@ -755,6 +1002,7 @@
       "title": "The Enemy",
       "author": "Lee Child",
       "pages": 560,
+      "rating": 4,
       "read_at": "2017-09-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1462210266l/614899.jpg"
     },
@@ -762,6 +1010,7 @@
       "title": "One Shot",
       "author": "Lee Child",
       "pages": 466,
+      "rating": 5,
       "read_at": "2017-09-11",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1425164069l/220968.jpg"
     },
@@ -769,6 +1018,7 @@
       "title": "The Eternity Code",
       "author": "Eoin Colfer",
       "pages": 329,
+      "rating": 5,
       "read_at": "2017-09-18",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327945417l/227865.jpg"
     },
@@ -776,6 +1026,7 @@
       "title": "Tripwire",
       "author": "Lee Child",
       "pages": 432,
+      "rating": 5,
       "read_at": "2017-09-18",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388251144l/220970.jpg"
     },
@@ -783,6 +1034,7 @@
       "title": "Running Blind",
       "author": "Lee Child",
       "pages": 512,
+      "rating": 4,
       "read_at": "2017-09-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1174926706l/455925._SY475_.jpg"
     },
@@ -790,6 +1042,7 @@
       "title": "The Opal Deception",
       "author": "Eoin Colfer",
       "pages": 528,
+      "rating": 3,
       "read_at": "2017-09-21",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1266475201l/114954.jpg"
     },
@@ -797,6 +1050,7 @@
       "title": "The Lost Colony",
       "author": "Eoin Colfer",
       "pages": 385,
+      "rating": 4,
       "read_at": "2017-09-27",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1522190376l/37586.jpg"
     },
@@ -804,6 +1058,7 @@
       "title": "The Time Paradox",
       "author": "Eoin Colfer",
       "pages": 391,
+      "rating": 4,
       "read_at": "2017-10-01",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1522190483l/2179276.jpg"
     },
@@ -811,6 +1066,7 @@
       "title": "Echo Burning",
       "author": "Lee Child",
       "pages": 432,
+      "rating": 5,
       "read_at": "2017-10-07",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388386347l/455930.jpg"
     },
@@ -818,6 +1074,7 @@
       "title": "Without Fail",
       "author": "Lee Child",
       "pages": 14,
+      "rating": 4,
       "read_at": "2017-10-17",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328000911l/21745.jpg"
     },
@@ -825,6 +1082,7 @@
       "title": "Persuader",
       "author": "Lee Child",
       "pages": 496,
+      "rating": 4,
       "read_at": "2017-10-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1174926770l/455941._SY475_.jpg"
     },
@@ -832,6 +1090,7 @@
       "title": "The Hard Way",
       "author": "Lee Child",
       "pages": 384,
+      "rating": 4,
       "read_at": "2017-11-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1440269806l/383028._SY475_.jpg"
     },
@@ -839,6 +1098,7 @@
       "title": "Bad Luck and Trouble",
       "author": "Lee Child",
       "pages": 378,
+      "rating": 4,
       "read_at": "2017-11-24",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1441133915l/108942._SY475_.jpg"
     },
@@ -846,6 +1106,7 @@
       "title": "Nothing to Lose",
       "author": "Lee Child",
       "pages": 416,
+      "rating": 4,
       "read_at": "2017-11-28",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1441312964l/2211221._SY475_.jpg"
     },
@@ -853,6 +1114,7 @@
       "title": "Keep Her Safe",
       "author": "Sophie Hannah",
       "pages": 352,
+      "rating": 3,
       "read_at": "2018-01-20",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1491589847l/33640231.jpg"
     },
@@ -860,6 +1122,7 @@
       "title": "Th1rt3en",
       "author": "Steve Cavanagh",
       "pages": 356,
+      "rating": 5,
       "read_at": "2018-01-28",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1505068558l/36217425._SY475_.jpg"
     },
@@ -867,6 +1130,7 @@
       "title": "Artemis",
       "author": "Andy Weir",
       "pages": 305,
+      "rating": 5,
       "read_at": "2018-02-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1776234222l/34928122._SY475_.jpg"
     },
@@ -874,6 +1138,7 @@
       "title": "The Break",
       "author": "Marian Keyes",
       "pages": 576,
+      "rating": 5,
       "read_at": "2018-02-23",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1507308724l/34511798.jpg"
     },
@@ -881,6 +1146,7 @@
       "title": "The 1,000 Year Old Boy",
       "author": "Ross Welford",
       "pages": 417,
+      "rating": 5,
       "read_at": "2018-02-27",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1507580966l/36382991._SY475_.jpg"
     },
@@ -888,6 +1154,7 @@
       "title": "Hellbent",
       "author": "Gregg Hurwitz",
       "pages": 406,
+      "rating": 4,
       "read_at": "2018-02-27",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1516867205l/34953104.jpg"
     },
@@ -895,6 +1162,7 @@
       "title": "The Confession",
       "author": "Jo Spain",
       "pages": 400,
+      "rating": 5,
       "read_at": "2018-02-28",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1549635418l/34941666._SY475_.jpg"
     },
@@ -902,6 +1170,7 @@
       "title": "A Pleasure and a Calling",
       "author": "Phil Hogan",
       "pages": 288,
+      "rating": 4,
       "read_at": "2018-03-01",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1427905704l/23346955.jpg"
     },
@@ -909,6 +1178,7 @@
       "title": "True Fiction",
       "author": "Lee Goldberg",
       "pages": 248,
+      "rating": 4,
       "read_at": "2018-03-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1509758816l/35920726._SY475_.jpg"
     },
@@ -916,6 +1186,7 @@
       "title": "Perfect Death",
       "author": "Helen Sarah Fields",
       "pages": 448,
+      "rating": 3,
       "read_at": "2018-03-07",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1508324829l/35478822._SY475_.jpg"
     },
@@ -923,6 +1194,7 @@
       "title": "The Fellowship of the Ring",
       "author": "J.R.R. Tolkien",
       "pages": 398,
+      "rating": 4,
       "read_at": "2018-03-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1298411339l/34.jpg"
     },
@@ -930,6 +1202,7 @@
       "title": "The Two Towers",
       "author": "J.R.R. Tolkien",
       "pages": 322,
+      "rating": 4,
       "read_at": "2018-04-05",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1661031399l/15241._SX318_.jpg"
     },
@@ -937,6 +1210,7 @@
       "title": "Skin Deep",
       "author": "Liz Nugent",
       "pages": 373,
+      "rating": 5,
       "read_at": "2018-04-07",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1515451914l/33255561.jpg"
     },
@@ -944,6 +1218,7 @@
       "title": "The History of Bees",
       "author": "Maja Lunde",
       "pages": 337,
+      "rating": 5,
       "read_at": "2018-05-06",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1519774837l/38830607._SY475_.jpg"
     },
@@ -951,6 +1226,7 @@
       "title": "The Return of the King",
       "author": "J.R.R. Tolkien",
       "pages": 404,
+      "rating": 4,
       "read_at": "2018-05-10",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1520258755l/18512._SY475_.jpg"
     },
@@ -958,6 +1234,7 @@
       "title": "The Speed of Sound",
       "author": "Eric Bernt",
       "pages": 419,
+      "rating": 4,
       "read_at": "2018-05-14",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1519857611l/36439321._SY475_.jpg"
     },
@@ -965,6 +1242,7 @@
       "title": "Mistletoe and Murder",
       "author": "Robin Stevens",
       "pages": 354,
+      "rating": 4,
       "read_at": "2018-05-31",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1468686562l/29979535._SY475_.jpg"
     },
@@ -972,6 +1250,7 @@
       "title": "Our House",
       "author": "Louise Candlish",
       "pages": 404,
+      "rating": 4,
       "read_at": "2018-06-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1511275498l/35924499.jpg"
     },
@@ -979,6 +1258,7 @@
       "title": "True Confessions of Adrian Albert Mole",
       "author": "Sue Townsend",
       "pages": 163,
+      "rating": 5,
       "read_at": "2018-06-06",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347430704l/76314.jpg"
     },
@@ -986,6 +1266,7 @@
       "title": "The Growing Pains of Adrian Mole",
       "author": "Sue Townsend",
       "pages": 304,
+      "rating": 5,
       "read_at": "2018-06-06",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1301643288l/51069.jpg"
     },
@@ -993,6 +1274,7 @@
       "title": "Those Who Walk Away",
       "author": "Patricia Highsmith",
       "pages": 264,
+      "rating": 4,
       "read_at": "2018-06-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1391389817l/385068.jpg"
     },
@@ -1000,6 +1282,7 @@
       "title": "Adrian Mole and the Small Amphibians",
       "author": "Sue Townsend",
       "pages": 46,
+      "rating": 4,
       "read_at": "2018-06-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1366048944l/6037433.jpg"
     },
@@ -1007,6 +1290,7 @@
       "title": "Adrian Mole: The Wilderness Years",
       "author": "Sue Townsend",
       "pages": 182,
+      "rating": 5,
       "read_at": "2018-06-10",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1314914870l/392786.jpg"
     },
@@ -1014,6 +1298,7 @@
       "title": "Midnight",
       "author": "Derek Landy",
       "pages": 432,
+      "rating": 5,
       "read_at": "2018-06-12",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1526820980l/38733752._SY475_.jpg"
     },
@@ -1021,6 +1306,7 @@
       "title": "The Glass Cell",
       "author": "Patricia Highsmith",
       "pages": 289,
+      "rating": 4,
       "read_at": "2018-06-17",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1428662200l/23890227.jpg"
     },
@@ -1028,6 +1314,7 @@
       "title": "Deep Water",
       "author": "Patricia Highsmith",
       "pages": 271,
+      "rating": 4,
       "read_at": "2018-06-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1644891647l/427281._SY475_.jpg"
     },
@@ -1035,6 +1322,7 @@
       "title": "Her Name Was Rose",
       "author": "Claire Allan",
       "pages": 352,
+      "rating": 5,
       "read_at": "2018-07-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1524986555l/36589624.jpg"
     },
@@ -1042,6 +1330,7 @@
       "title": "The Temptation to Be Happy",
       "author": "Lorenzo Marone",
       "pages": 241,
+      "rating": 3,
       "read_at": "2018-07-28",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1504531921l/36179926._SY475_.jpg"
     },
@@ -1049,6 +1338,7 @@
       "title": "Extremely Loud & Incredibly Close",
       "author": "Jonathan Safran Foer",
       "pages": 326,
+      "rating": 3,
       "read_at": "2018-07-30",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327879967l/4588.jpg"
     },
@@ -1056,6 +1346,7 @@
       "title": "Adrian Mole: The Cappuccino Years",
       "author": "Sue Townsend",
       "pages": 400,
+      "rating": 5,
       "read_at": "2018-08-02",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1312019905l/51071.jpg"
     },
@@ -1063,6 +1354,7 @@
       "title": "The Lost Diaries of Adrian Mole, 1999-2001",
       "author": "Sue Townsend",
       "pages": 283,
+      "rating": 4,
       "read_at": "2018-08-06",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1332814433l/4833175.jpg"
     },
@@ -1070,6 +1362,7 @@
       "title": "Seven Imperfect Rules Of Elvira Carr",
       "author": "Frances Maynard",
       "pages": 400,
+      "rating": 4,
       "read_at": "2018-08-14",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1586464004l/39794606.jpg"
     },
@@ -1077,6 +1370,7 @@
       "title": "Adrian Mole and the Weapons of Mass Destruction",
       "author": "Sue Townsend",
       "pages": 332,
+      "rating": 5,
       "read_at": "2018-08-20",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388368386l/51072.jpg"
     },
@@ -1084,6 +1378,7 @@
       "title": "Adrian Mole: The Prostrate Years",
       "author": "Sue Townsend",
       "pages": 405,
+      "rating": 5,
       "read_at": "2018-09-11",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348042201l/6619022.jpg"
     },
@@ -1091,6 +1386,7 @@
       "title": "Perfect Silence",
       "author": "Helen Sarah Fields",
       "pages": 434,
+      "rating": 5,
       "read_at": "2018-09-13",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1517842623l/38354205._SY475_.jpg"
     },
@@ -1098,6 +1394,7 @@
       "title": "What Not To Do If You Turn Invisible",
       "author": "Ross Welford",
       "pages": 416,
+      "rating": 4,
       "read_at": "2018-09-18",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1483035634l/32319486.jpg"
     },
@@ -1105,6 +1402,7 @@
       "title": "A Spoonful of Murder",
       "author": "Robin Stevens",
       "pages": 378,
+      "rating": 5,
       "read_at": "2018-09-25",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1509243276l/34410234._SY475_.jpg"
     },
@@ -1112,6 +1410,7 @@
       "title": "La Belle Sauvage",
       "author": "Philip Pullman",
       "pages": 449,
+      "rating": 4,
       "read_at": "2018-10-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1498930382l/34128219.jpg"
     },
@@ -1119,6 +1418,7 @@
       "title": "The Blunderer",
       "author": "Patricia Highsmith",
       "pages": 288,
+      "rating": 5,
       "read_at": "2018-11-12",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388190660l/276203.jpg"
     },
@@ -1126,6 +1426,7 @@
       "title": "The Devil in the White City",
       "author": "Erik Larson",
       "pages": 496,
+      "rating": 5,
       "read_at": "2018-11-12",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1312066724l/21996.jpg"
     },
@@ -1133,6 +1434,7 @@
       "title": "The Woman in Cabin 10",
       "author": "Ruth Ware",
       "pages": 341,
+      "rating": 5,
       "read_at": "2018-11-12",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1465878007l/28187230._SY475_.jpg"
     },
@@ -1140,6 +1442,7 @@
       "title": "Drive Your Plow Over the Bones of the Dead",
       "author": "Olga Tokarczuk",
       "pages": 270,
+      "rating": 4,
       "read_at": "2018-11-26",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1540019297l/36609308._SY475_.jpg"
     },
@@ -1147,6 +1450,7 @@
       "title": "I Am, I Am, I Am: Seventeen Brushes with Death",
       "author": "Maggie O'Farrell",
       "pages": 304,
+      "rating": 4,
       "read_at": "2018-12-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1517352695l/35137915._SY475_.jpg"
     },
@@ -1154,6 +1458,7 @@
       "title": "Death in the Spotlight",
       "author": "Robin Stevens",
       "pages": 400,
+      "rating": 5,
       "read_at": "2018-12-18",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1535937075l/39300354._SY475_.jpg"
     },
@@ -1161,6 +1466,7 @@
       "title": "If Cats Disappeared from the World",
       "author": "Genki Kawamura",
       "pages": 202,
+      "rating": 3,
       "read_at": "2018-12-20",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1542377525l/40740914._SY475_.jpg"
     },
@@ -1168,6 +1474,7 @@
       "title": "The Price of Salt",
       "author": "Patricia Highsmith",
       "pages": 262,
+      "rating": 5,
       "read_at": "2018-12-26",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1628139806l/52258._SY475_.jpg"
     },
@@ -1175,6 +1482,7 @@
       "title": "The Secret Lives of Color",
       "author": "Kassia St. Clair",
       "pages": 320,
+      "rating": 5,
       "read_at": "2019-01-02",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1498826320l/34122206.jpg"
     },
@@ -1182,6 +1490,7 @@
       "title": "Twisted",
       "author": "Steve Cavanagh",
       "pages": 339,
+      "rating": 5,
       "read_at": "2019-01-08",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1560760440l/40735214._SY475_.jpg"
     },
@@ -1189,6 +1498,7 @@
       "title": "The Castle of Llyr",
       "author": "Lloyd Alexander",
       "pages": 174,
+      "rating": 4,
       "read_at": "2019-01-12",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1405714238l/24779.jpg"
     },
@@ -1196,6 +1506,7 @@
       "title": "The Book of Three",
       "author": "Lloyd Alexander",
       "pages": 224,
+      "rating": 4,
       "read_at": "2019-01-12",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1405184012l/24780.jpg"
     },
@@ -1203,6 +1514,7 @@
       "title": "The Black Cauldron",
       "author": "Lloyd Alexander",
       "pages": 182,
+      "rating": 5,
       "read_at": "2019-01-14",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1405377996l/24784.jpg"
     },
@@ -1210,6 +1522,7 @@
       "title": "Apple of My Eye",
       "author": "Claire Allan",
       "pages": 400,
+      "rating": 5,
       "read_at": "2019-01-26",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1528084394l/39735717.jpg"
     },
@@ -1217,6 +1530,7 @@
       "title": "Trickery",
       "author": "Roald Dahl",
       "pages": 232,
+      "rating": 5,
       "read_at": "2019-01-28",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1504253449l/34879210.jpg"
     },
@@ -1224,6 +1538,7 @@
       "title": "Beautiful Shadow: A Life of Patricia Highsmith",
       "author": "Andrew    Wilson",
       "pages": 465,
+      "rating": 4,
       "read_at": "2019-02-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1312052177l/124860.jpg"
     },
@@ -1231,6 +1546,7 @@
       "title": "Good Me, Bad Me",
       "author": "Ali Land",
       "pages": 338,
+      "rating": 5,
       "read_at": "2019-02-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1468115492l/25365530.jpg"
     },
@@ -1238,6 +1554,7 @@
       "title": "The Dog Who Saved the World: A Gripping Time Travel Adventure About a Girl and Her Rescue Dog",
       "author": "Ross Welford",
       "pages": 385,
+      "rating": 4,
       "read_at": "2019-02-05",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1538993268l/42234554._SY475_.jpg"
     },
@@ -1245,6 +1562,7 @@
       "title": "The Tremor of Forgery",
       "author": "Patricia Highsmith",
       "pages": 249,
+      "rating": 4,
       "read_at": "2019-02-06",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1564755848l/391890.jpg"
     },
@@ -1252,6 +1570,7 @@
       "title": "The Perfect Child",
       "author": "Lucinda Berry",
       "pages": 371,
+      "rating": 4,
       "read_at": "2019-02-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1547060657l/40886917.jpg"
     },
@@ -1259,6 +1578,7 @@
       "title": "Moby-Dick or, The Whale",
       "author": "Herman Melville",
       "pages": 720,
+      "rating": 4,
       "read_at": "2019-03-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327940656l/153747.jpg"
     },
@@ -1266,6 +1586,7 @@
       "title": "The 7\u00bd Deaths of Evelyn Hardcastle",
       "author": "Stuart Turton",
       "pages": 432,
+      "rating": 4,
       "read_at": "2019-03-07",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1506896221l/36337550.jpg"
     },
@@ -1273,6 +1594,7 @@
       "title": "Plotting and Writing Suspense Fiction",
       "author": "Patricia Highsmith",
       "pages": 145,
+      "rating": 4,
       "read_at": "2019-03-17",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1312016063l/572046.jpg"
     },
@@ -1280,6 +1602,7 @@
       "title": "Rosemary\u2019s Baby",
       "author": "Ira Levin",
       "pages": 308,
+      "rating": 5,
       "read_at": "2019-03-18",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1711563977l/228296._SY475_.jpg"
     },
@@ -1287,6 +1610,7 @@
       "title": "A Suspension of Mercy",
       "author": "Patricia Highsmith",
       "pages": 235,
+      "rating": 5,
       "read_at": "2019-03-28",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347649970l/158885.jpg"
     },
@@ -1294,6 +1618,7 @@
       "title": "Psycho",
       "author": "Robert Bloch",
       "pages": 208,
+      "rating": 5,
       "read_at": "2019-04-01",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1664488529l/156427._SX318_.jpg"
     },
@@ -1301,6 +1626,7 @@
       "title": "Out of the Dark",
       "author": "Gregg Hurwitz",
       "pages": 388,
+      "rating": 5,
       "read_at": "2019-04-06",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1531214030l/39863167.jpg"
     },
@@ -1308,6 +1634,7 @@
       "title": "Killing It",
       "author": "Asia Mackay",
       "pages": 378,
+      "rating": 5,
       "read_at": "2019-04-08",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1523954862l/39869324._SY475_.jpg"
     },
@@ -1315,6 +1642,7 @@
       "title": "A Kiss Before Dying",
       "author": "Ira Levin",
       "pages": 304,
+      "rating": 5,
       "read_at": "2019-04-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388331398l/12770.jpg"
     },
@@ -1322,6 +1650,7 @@
       "title": "The Cry of the Owl",
       "author": "Patricia Highsmith",
       "pages": 270,
+      "rating": 5,
       "read_at": "2019-04-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1363582952l/160969.jpg"
     },
@@ -1329,6 +1658,7 @@
       "title": "Perfect Crime",
       "author": "Helen Sarah Fields",
       "pages": 400,
+      "rating": 4,
       "read_at": "2019-04-26",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1547597450l/40692656._SY475_.jpg"
     },
@@ -1336,6 +1666,7 @@
       "title": "Little Tales of Misogyny",
       "author": "Patricia Highsmith",
       "pages": 128,
+      "rating": 3,
       "read_at": "2019-05-02",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347974969l/327560.jpg"
     },
@@ -1343,6 +1674,7 @@
       "title": "Good Omens: The Nice and Accurate Prophecies of Agnes Nutter, Witch",
       "author": "Terry Pratchett",
       "pages": 491,
+      "rating": 3,
       "read_at": "2019-05-06",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1615552073l/12067.jpg"
     },
@@ -1350,6 +1682,7 @@
       "title": "The Outsider",
       "author": "Albert Camus",
       "pages": 111,
+      "rating": 5,
       "read_at": "2019-05-08",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1543535274l/18214704._SY475_.jpg"
     },
@@ -1357,6 +1690,7 @@
       "title": "The Mysterious Howling",
       "author": "Maryrose Wood",
       "pages": 288,
+      "rating": 4,
       "read_at": "2019-05-18",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347477255l/8520263.jpg"
     },
@@ -1364,6 +1698,7 @@
       "title": "The Chain",
       "author": "Adrian McKinty",
       "pages": 357,
+      "rating": 5,
       "read_at": "2019-05-18",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1601216004l/42779092._SY475_.jpg"
     },
@@ -1371,6 +1706,7 @@
       "title": "Dirty Little Secrets",
       "author": "Jo Spain",
       "pages": 375,
+      "rating": 5,
       "read_at": "2019-05-22",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1543176841l/38120306.jpg"
     },
@@ -1378,6 +1714,7 @@
       "title": "The Invisible Man",
       "author": "H.G. Wells",
       "pages": 148,
+      "rating": 4,
       "read_at": "2019-05-25",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1513187427l/36269613._SY475_.jpg"
     },
@@ -1385,6 +1722,7 @@
       "title": "Dr. Jekyll and Mr. Hyde",
       "author": "Robert Louis Stevenson",
       "pages": 139,
+      "rating": 2,
       "read_at": "2019-05-28",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1318116526l/51496.jpg"
     },
@@ -1392,6 +1730,7 @@
       "title": "Bedlam",
       "author": "Derek Landy",
       "pages": 584,
+      "rating": 3,
       "read_at": "2019-05-31",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1560640440l/43390795._SY475_.jpg"
     },
@@ -1399,6 +1738,7 @@
       "title": "Forget Me Not",
       "author": "Claire Allan",
       "pages": 352,
+      "rating": 5,
       "read_at": "2019-06-01",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1553180448l/43239333._SY475_.jpg"
     },
@@ -1406,6 +1746,7 @@
       "title": "Robin",
       "author": "Dave Itzkoff",
       "pages": 527,
+      "rating": 4,
       "read_at": "2019-06-18",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1510882564l/36609155._SY475_.jpg"
     },
@@ -1413,6 +1754,7 @@
       "title": "A Night to Remember",
       "author": "Walter Lord",
       "pages": 215,
+      "rating": 4,
       "read_at": "2019-06-25",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1335700517l/13568430.jpg"
     },
@@ -1420,6 +1762,7 @@
       "title": "Still Worlds Turning",
       "author": "Emma Warnock",
       "pages": 220,
+      "rating": 5,
       "read_at": "2019-07-08",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1565133837l/52250188._SX318_SY475_.jpg"
     },
@@ -1427,6 +1770,7 @@
       "title": "The Flatshare",
       "author": "Beth O'Leary",
       "pages": 394,
+      "rating": 5,
       "read_at": "2019-07-10",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1552471375l/36478784._SY475_.jpg"
     },
@@ -1434,6 +1778,7 @@
       "title": "Viral",
       "author": "Mike Jeavons",
       "pages": 369,
+      "rating": 4,
       "read_at": "2019-07-23",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1548198480l/43684414._SY475_.jpg"
     },
@@ -1441,6 +1786,7 @@
       "title": "Meddling Kids",
       "author": "Edgar Cantero",
       "pages": 338,
+      "rating": 3,
       "read_at": "2019-08-06",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1520109793l/38920891._SY475_.jpg"
     },
@@ -1448,6 +1794,7 @@
       "title": "Top Marks for Murder",
       "author": "Robin Stevens",
       "pages": 376,
+      "rating": 5,
       "read_at": "2019-08-13",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1556878695l/40720591._SY475_.jpg"
     },
@@ -1455,6 +1802,7 @@
       "title": "The Boys from Brazil",
       "author": "Ira Levin",
       "pages": 280,
+      "rating": 5,
       "read_at": "2019-08-25",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1751273767l/99894._SY475_.jpg"
     },
@@ -1462,6 +1810,7 @@
       "title": "The Time Machine",
       "author": "H.G. Wells",
       "pages": 118,
+      "rating": 4,
       "read_at": "2019-08-29",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327942880l/2493.jpg"
     },
@@ -1469,6 +1818,7 @@
       "title": "The Stepford Wives",
       "author": "Ira Levin",
       "pages": 123,
+      "rating": 5,
       "read_at": "2019-08-31",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1554371721l/52350._SY475_.jpg"
     },
@@ -1476,6 +1826,7 @@
       "title": "Edith's Diary",
       "author": "Patricia Highsmith",
       "pages": 368,
+      "rating": 5,
       "read_at": "2019-09-01",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1445900775l/27282871._SY475_.jpg"
     },
@@ -1483,6 +1834,7 @@
       "title": "Elevator Pitch",
       "author": "Linwood Barclay",
       "pages": 464,
+      "rating": 4,
       "read_at": "2019-09-14",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1563762430l/40651621.jpg"
     },
@@ -1490,6 +1842,7 @@
       "title": "The Turn of the Key",
       "author": "Ruth Ware",
       "pages": 337,
+      "rating": 5,
       "read_at": "2019-09-15",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1548204800l/42080142.jpg"
     },
@@ -1497,6 +1850,7 @@
       "title": "The Sword in the Stone",
       "author": "T.H. White",
       "pages": 352,
+      "rating": 4,
       "read_at": "2019-10-02",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1355212194l/316845.jpg"
     },
@@ -1504,6 +1858,7 @@
       "title": "The Secret Commonwealth",
       "author": "Philip Pullman",
       "pages": 784,
+      "rating": 5,
       "read_at": "2019-10-13",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1563043403l/19034943.jpg"
     },
@@ -1511,6 +1866,7 @@
       "title": "The Heavens",
       "author": "Sandra Newman",
       "pages": 272,
+      "rating": 3,
       "read_at": "2019-10-29",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1534433173l/41182168.jpg"
     },
@@ -1518,6 +1874,7 @@
       "title": "The House of Silk",
       "author": "Anthony Horowitz",
       "pages": 389,
+      "rating": 4,
       "read_at": "2019-11-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1536903769l/41826623._SY475_.jpg"
     },
@@ -1525,6 +1882,7 @@
       "title": "Personal",
       "author": "Lee Child",
       "pages": 353,
+      "rating": 5,
       "read_at": "2019-11-14",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1468705564l/20263040.jpg"
     },
@@ -1532,6 +1890,7 @@
       "title": "61 Hours",
       "author": "Lee Child",
       "pages": 383,
+      "rating": 5,
       "read_at": "2019-11-17",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320512665l/6977769.jpg"
     },
@@ -1539,6 +1898,7 @@
       "title": "Worth Dying For",
       "author": "Lee Child",
       "pages": 400,
+      "rating": 5,
       "read_at": "2019-11-18",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1356095648l/8357992.jpg"
     },
@@ -1546,6 +1906,7 @@
       "title": "The Affair",
       "author": "Lee Child",
       "pages": 427,
+      "rating": 5,
       "read_at": "2019-12-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327982045l/10428708.jpg"
     },
@@ -1553,6 +1914,7 @@
       "title": "Never Go Back",
       "author": "Lee Child",
       "pages": 400,
+      "rating": 4,
       "read_at": "2019-12-10",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1467947214l/17262159.jpg"
     },
@@ -1560,6 +1922,7 @@
       "title": "Guards! Guards!",
       "author": "Terry Pratchett",
       "pages": 412,
+      "rating": 3,
       "read_at": "2019-12-28",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1659764622l/233679._SY475_.jpg"
     },
@@ -1567,6 +1930,7 @@
       "title": "Kissing Doorknobs",
       "author": "Terry Spencer Hesser",
       "pages": 149,
+      "rating": 5,
       "read_at": "2019-12-30",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320422269l/296507.jpg"
     },
@@ -1574,6 +1938,7 @@
       "title": "Make Me",
       "author": "Lee Child",
       "pages": 428,
+      "rating": 5,
       "read_at": "2020-01-02",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1467905395l/23664710.jpg"
     },
@@ -1581,6 +1946,7 @@
       "title": "The Midnight Line",
       "author": "Lee Child",
       "pages": 368,
+      "rating": 4,
       "read_at": "2020-01-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1489630986l/33378951.jpg"
     },
@@ -1588,6 +1954,7 @@
       "title": "Past Tense",
       "author": "Lee Child",
       "pages": 382,
+      "rating": 5,
       "read_at": "2020-01-10",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1518445114l/34019122.jpg"
     },
@@ -1595,6 +1962,7 @@
       "title": "Blue Moon",
       "author": "Lee Child",
       "pages": 359,
+      "rating": 5,
       "read_at": "2020-01-12",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1549934981l/43662365.jpg"
     },
@@ -1602,6 +1970,7 @@
       "title": "Harry Potter and the Natural 20",
       "author": "Sir Poley",
       "pages": 464,
+      "rating": 5,
       "read_at": "2020-01-17",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1413441580l/16080742.jpg"
     },
@@ -1609,6 +1978,7 @@
       "title": "Harry Potter and the Confirmed Critical",
       "author": "Sir Poley",
       "pages": 248,
+      "rating": 5,
       "read_at": "2020-01-22",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1498080331l/17930553.jpg"
     },
@@ -1616,6 +1986,7 @@
       "title": "Flowers for Algernon",
       "author": "Daniel Keyes",
       "pages": 311,
+      "rating": 5,
       "read_at": "2020-01-23",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1689071681l/18373.jpg"
     },
@@ -1623,6 +1994,7 @@
       "title": "Forever and a Death",
       "author": "Donald E. Westlake",
       "pages": 463,
+      "rating": 4,
       "read_at": "2020-01-28",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1475825322l/32303196.jpg"
     },
@@ -1630,6 +2002,7 @@
       "title": "The Liar\u2019s Daughter",
       "author": "Claire Allan",
       "pages": 400,
+      "rating": 5,
       "read_at": "2020-02-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1606250679l/49484462._SY475_.jpg"
     },
@@ -1637,6 +2010,7 @@
       "title": "The Gentleman's Guide to Vice and Virtue",
       "author": "Mackenzi Lee",
       "pages": 533,
+      "rating": 3,
       "read_at": "2020-02-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1476364462l/32602219._SY475_.jpg"
     },
@@ -1644,6 +2018,7 @@
       "title": "The Likely Resolutions of Oliver Clock",
       "author": "Jane  Riley",
       "pages": 315,
+      "rating": 4,
       "read_at": "2020-02-10",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1568726657l/46194968.jpg"
     },
@@ -1651,6 +2026,7 @@
       "title": "Perfect Kill",
       "author": "Helen Sarah Fields",
       "pages": 396,
+      "rating": 4,
       "read_at": "2020-02-18",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1571427696l/51264497._SX318_SY475_.jpg"
     },
@@ -1658,6 +2034,7 @@
       "title": "Please Don't Come Back from the Moon",
       "author": "Dean Bakopoulos",
       "pages": 320,
+      "rating": 5,
       "read_at": "2020-02-22",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1677829505l/33154363._SY475_.jpg"
     },
@@ -1665,6 +2042,7 @@
       "title": "Big Girl, Small Town",
       "author": "Michelle Gallen",
       "pages": 320,
+      "rating": 5,
       "read_at": "2020-02-29",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1568069015l/53017517._SX318_SY475_.jpg"
     },
@@ -1672,6 +2050,7 @@
       "title": "Into the Fire",
       "author": "Gregg Hurwitz",
       "pages": 388,
+      "rating": 4,
       "read_at": "2020-03-08",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1560491315l/45046789.jpg"
     },
@@ -1679,6 +2058,7 @@
       "title": "The Case of the Drowned Pearl",
       "author": "Robin Stevens",
       "pages": 96,
+      "rating": 5,
       "read_at": "2020-03-16",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1573155033l/52092639._SX318_SY475_.jpg"
     },
@@ -1686,6 +2066,7 @@
       "title": "A Confederacy of Dunces",
       "author": "John Kennedy Toole",
       "pages": 338,
+      "rating": 4,
       "read_at": "2020-03-16",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1395845117l/24923.jpg"
     },
@@ -1693,6 +2074,7 @@
       "title": "Vertigo",
       "author": "Boileau-Narcejac",
       "pages": 170,
+      "rating": 4,
       "read_at": "2020-03-17",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1383402925l/141328.jpg"
     },
@@ -1700,6 +2082,7 @@
       "title": "The Fire Starters",
       "author": "Jan Carson",
       "pages": 304,
+      "rating": 5,
       "read_at": "2020-03-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1549357172l/40718354.jpg"
     },
@@ -1707,6 +2090,7 @@
       "title": "The Last Crossing",
       "author": "Brian McGilloway",
       "pages": 380,
+      "rating": 5,
       "read_at": "2020-03-25",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1572226905l/48594841._SY475_.jpg"
     },
@@ -1714,6 +2098,7 @@
       "title": "Nightshade",
       "author": "Anthony Horowitz",
       "pages": 442,
+      "rating": 5,
       "read_at": "2020-03-28",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1576035375l/52435447._SX318_SY475_.jpg"
     },
@@ -1721,6 +2106,7 @@
       "title": "Strangers on a Train",
       "author": "Patricia Highsmith",
       "pages": 262,
+      "rating": 3,
       "read_at": "2020-03-30",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1351170909l/933335.jpg"
     },
@@ -1728,6 +2114,7 @@
       "title": "Our Little Cruelties",
       "author": "Liz Nugent",
       "pages": 384,
+      "rating": 5,
       "read_at": "2020-04-01",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1573234814l/50784844._SX318_SY475_.jpg"
     },
@@ -1735,6 +2122,7 @@
       "title": "Seasons of War",
       "author": "Derek Landy",
       "pages": 592,
+      "rating": 5,
       "read_at": "2020-04-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1581694113l/52331179._SX318_SY475_.jpg"
     },
@@ -1742,6 +2130,7 @@
       "title": "Little",
       "author": "Edward Carey",
       "pages": 464,
+      "rating": 5,
       "read_at": "2020-04-16",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1547909649l/42996498.jpg"
     },
@@ -1749,6 +2138,7 @@
       "title": "Six Wicked Reasons",
       "author": "Jo Spain",
       "pages": 403,
+      "rating": 5,
       "read_at": "2020-04-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1563392144l/44154597._SY475_.jpg"
     },
@@ -1756,6 +2146,7 @@
       "title": "Flowers for Hitler",
       "author": "Leonard Cohen",
       "pages": 154,
+      "rating": 3,
       "read_at": "2020-04-21",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1204411651l/536385.jpg"
     },
@@ -1763,6 +2154,7 @@
       "title": "Found in the Street",
       "author": "Patricia Highsmith",
       "pages": 352,
+      "rating": 4,
       "read_at": "2020-04-25",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1535100216l/41446305._SY475_.jpg"
     },
@@ -1770,6 +2162,7 @@
       "title": "The Two Faces of January",
       "author": "Patricia Highsmith",
       "pages": 288,
+      "rating": 5,
       "read_at": "2020-04-29",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347671144l/385078.jpg"
     },
@@ -1777,6 +2170,7 @@
       "title": "Goodnight Mister Tom",
       "author": "Michelle Magorian",
       "pages": 358,
+      "rating": 5,
       "read_at": "2020-04-30",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1418082082l/23718102.jpg"
     },
@@ -1784,6 +2178,7 @@
       "title": "The Woman in the Window",
       "author": "A.J. Finn",
       "pages": 455,
+      "rating": 3,
       "read_at": "2020-05-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1528225499l/40389527._SY475_.jpg"
     },
@@ -1791,6 +2186,7 @@
       "title": "The Life of Poo: Or why you should think twice about shaking hands",
       "author": "Adam Hart-Davis",
       "pages": 256,
+      "rating": 3,
       "read_at": "2020-05-07",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1448471760l/27968724._SX318_.jpg"
     },
@@ -1798,6 +2194,7 @@
       "title": "Frankenstein",
       "author": "Mary Wollstonecraft Shelley",
       "pages": 288,
+      "rating": 4,
       "read_at": "2020-05-30",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1665008650l/18490.jpg"
     },
@@ -1805,6 +2202,7 @@
       "title": "Conviction",
       "author": "Denise Mina",
       "pages": 376,
+      "rating": 5,
       "read_at": "2020-05-31",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1559869724l/42283333.jpg"
     },
@@ -1812,6 +2210,7 @@
       "title": "Animal Farm / 1984",
       "author": "George Orwell",
       "pages": 400,
+      "rating": 5,
       "read_at": "2020-06-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327959366l/5472.jpg"
     },
@@ -1819,6 +2218,7 @@
       "title": "The Death of Mrs. Westaway",
       "author": "Ruth Ware",
       "pages": 368,
+      "rating": 4,
       "read_at": "2020-06-05",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1518710953l/36373481._SY475_.jpg"
     },
@@ -1826,6 +2226,7 @@
       "title": "Knots and Crosses",
       "author": "Ian Rankin",
       "pages": 228,
+      "rating": 4,
       "read_at": "2020-06-06",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388781809l/634407.jpg"
     },
@@ -1833,6 +2234,7 @@
       "title": "Circe",
       "author": "Madeline Miller",
       "pages": 337,
+      "rating": 5,
       "read_at": "2020-06-08",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1558525179l/41045102._SY475_.jpg"
     },
@@ -1840,6 +2242,7 @@
       "title": "My Sister, the Serial Killer",
       "author": "Oyinkan Braithwaite",
       "pages": 226,
+      "rating": 4,
       "read_at": "2020-06-14",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1671466835l/45679318._SY475_.jpg"
     },
@@ -1847,6 +2250,7 @@
       "title": "The Song of Achilles",
       "author": "Madeline Miller",
       "pages": 368,
+      "rating": 5,
       "read_at": "2020-06-18",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1585839557l/52892648._SY475_.jpg"
     },
@@ -1854,6 +2258,7 @@
       "title": "A Talented Man",
       "author": "Henrietta McKervey",
       "pages": 304,
+      "rating": 5,
       "read_at": "2020-06-20",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1586275247l/53026029._SY475_.jpg"
     },
@@ -1861,6 +2266,7 @@
       "title": "Fifty-Fifty",
       "author": "Steve Cavanagh",
       "pages": 394,
+      "rating": 5,
       "read_at": "2020-06-27",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1581426296l/51176073._SY475_.jpg"
     },
@@ -1868,6 +2274,7 @@
       "title": "A Thousand Ships",
       "author": "Natalie Haynes",
       "pages": 348,
+      "rating": 5,
       "read_at": "2020-08-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1540948281l/42595255._SY475_.jpg"
     },
@@ -1875,6 +2282,7 @@
       "title": "A Dog's Ransom: A Virago Modern Classic",
       "author": "Patricia Highsmith",
       "pages": 304,
+      "rating": 4,
       "read_at": "2020-08-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1451331576l/28375776._SY475_.jpg"
     },
@@ -1882,6 +2290,7 @@
       "title": "Death Sets Sail",
       "author": "Robin Stevens",
       "pages": 400,
+      "rating": 5,
       "read_at": "2020-08-24",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1589463567l/48722406.jpg"
     },
@@ -1889,6 +2298,7 @@
       "title": "People At Number 9",
       "author": "Felicity Everett",
       "pages": 315,
+      "rating": 3,
       "read_at": "2020-08-27",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1504862828l/36202971._SY475_.jpg"
     },
@@ -1896,6 +2306,7 @@
       "title": "Red Dragon",
       "author": "Thomas  Harris",
       "pages": 454,
+      "rating": 4,
       "read_at": "2020-09-01",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1593241110l/28877.jpg"
     },
@@ -1903,6 +2314,7 @@
       "title": "The Silence of the Lambs",
       "author": "Thomas  Harris",
       "pages": 421,
+      "rating": 4,
       "read_at": "2020-09-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1647930822l/23807.jpg"
     },
@@ -1910,6 +2322,7 @@
       "title": "The Hunting Party",
       "author": "Lucy Foley",
       "pages": 390,
+      "rating": 4,
       "read_at": "2020-09-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1548816466l/43786977._SY475_.jpg"
     },
@@ -1917,6 +2330,7 @@
       "title": "A Keeper",
       "author": "Graham Norton",
       "pages": 326,
+      "rating": 5,
       "read_at": "2020-10-01",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1532425696l/40934989.jpg"
     },
@@ -1924,6 +2338,7 @@
       "title": "Origin",
       "author": "Dan    Brown",
       "pages": 461,
+      "rating": 0,
       "read_at": "2020-10-10",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1576370917l/32283133.jpg"
     },
@@ -1931,6 +2346,7 @@
       "title": "The Perfect Girlfriend",
       "author": "Karen  Hamilton",
       "pages": 359,
+      "rating": 5,
       "read_at": "2020-10-27",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1521857351l/31113934._SY475_.jpg"
     },
@@ -1938,6 +2354,7 @@
       "title": "The Sentinel",
       "author": "Lee Child",
       "pages": 353,
+      "rating": 4,
       "read_at": "2020-11-16",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1585908032l/50537351.jpg"
     },
@@ -1945,6 +2362,7 @@
       "title": "The Great Gatsby",
       "author": "F. Scott Fitzgerald",
       "pages": 180,
+      "rating": 5,
       "read_at": "2020-11-22",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1738790966l/4671._SY475_.jpg"
     },
@@ -1952,6 +2370,7 @@
       "title": "The Gospel of the Eels",
       "author": "Patrik Svensson",
       "pages": 241,
+      "rating": 4,
       "read_at": "2020-11-22",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1588929031l/53348488._SY475_.jpg"
     },
@@ -1959,6 +2378,7 @@
       "title": "Haven't They Grown",
       "author": "Sophie Hannah",
       "pages": 337,
+      "rating": 5,
       "read_at": "2020-12-23",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1709409787l/42182331.jpg"
     },
@@ -1966,6 +2386,7 @@
       "title": "The Thief of Time",
       "author": "John Boyne",
       "pages": 384,
+      "rating": 1,
       "read_at": "2021-01-24",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1311981708l/48004.jpg"
     },
@@ -1973,6 +2394,7 @@
       "title": "How to Stop Time",
       "author": "Matt Haig",
       "pages": 339,
+      "rating": 3,
       "read_at": "2021-01-26",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1645729201l/45152372._SY475_.jpg"
     },
@@ -1980,6 +2402,7 @@
       "title": "Ask No Questions",
       "author": "Claire Allan",
       "pages": 336,
+      "rating": 5,
       "read_at": "2021-02-02",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1611004088l/54494962._SY475_.jpg"
     },
@@ -1987,6 +2410,7 @@
       "title": "The Splendid and the Vile: A Saga of Churchill, Family, and Defiance During the Blitz",
       "author": "Erik Larson",
       "pages": 546,
+      "rating": 5,
       "read_at": "2021-02-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1722528916l/51187948.jpg"
     },
@@ -1994,6 +2418,7 @@
       "title": "Home Stretch",
       "author": "Graham Norton",
       "pages": 320,
+      "rating": 5,
       "read_at": "2021-02-12",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1582782539l/51816539.jpg"
     },
@@ -2001,6 +2426,7 @@
       "title": "The Guest List",
       "author": "Lucy Foley",
       "pages": 375,
+      "rating": 5,
       "read_at": "2021-02-24",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1578780853l/50398953._SY475_.jpg"
     },
@@ -2008,6 +2434,7 @@
       "title": "The Recovery of Rose Gold",
       "author": "Stephanie Wrobel",
       "pages": 402,
+      "rating": 4,
       "read_at": "2021-03-01",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1613836018l/56155318._SY475_.jpg"
     },
@@ -2015,6 +2442,7 @@
       "title": "Churchill : A Life",
       "author": "John Keegan",
       "pages": 304,
+      "rating": 3,
       "read_at": "2021-03-02",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1408940594l/613829.jpg"
     },
@@ -2022,6 +2450,7 @@
       "title": "A Knock at the Door",
       "author": "T.W. Ellis",
       "pages": 306,
+      "rating": 3,
       "read_at": "2021-03-16",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1573157400l/48728539._SY475_.jpg"
     },
@@ -2029,6 +2458,7 @@
       "title": "The Catch",
       "author": "T.M. Logan",
       "pages": 416,
+      "rating": 5,
       "read_at": "2021-03-17",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1583946003l/51962594._SY475_.jpg"
     },
@@ -2036,6 +2466,7 @@
       "title": "Sweetpea",
       "author": "C.J. Skuse",
       "pages": 472,
+      "rating": 5,
       "read_at": "2021-03-21",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1487542972l/33847005._SY475_.jpg"
     },
@@ -2043,6 +2474,7 @@
       "title": "Blood Ties",
       "author": "Brian McGilloway",
       "pages": 352,
+      "rating": 5,
       "read_at": "2021-03-22",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1609292601l/54823934._SY475_.jpg"
     },
@@ -2050,6 +2482,7 @@
       "title": "In Bloom",
       "author": "C.J. Skuse",
       "pages": 384,
+      "rating": 4,
       "read_at": "2021-03-23",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1521503018l/39118282._SY475_.jpg"
     },
@@ -2057,6 +2490,7 @@
       "title": "Dead Head",
       "author": "C.J. Skuse",
       "pages": 384,
+      "rating": 3,
       "read_at": "2021-03-24",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1604141361l/55820688.jpg"
     },
@@ -2064,6 +2498,7 @@
       "title": "The Captive",
       "author": "Deborah O'Connor",
       "pages": 375,
+      "rating": 4,
       "read_at": "2021-03-30",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1608620131l/56378264._SY475_.jpg"
     },
@@ -2071,6 +2506,7 @@
       "title": "The Perfect Father",
       "author": "Charlotte Duckworth",
       "pages": 400,
+      "rating": 3,
       "read_at": "2021-03-31",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1608630374l/53084712.jpg"
     },
@@ -2078,6 +2514,7 @@
       "title": "The Shadow Man",
       "author": "Helen Sarah Fields",
       "pages": 379,
+      "rating": 4,
       "read_at": "2021-04-05",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1603141753l/53913990.jpg"
     },
@@ -2085,6 +2522,7 @@
       "title": "The Dinner Guest",
       "author": "B.P. Walter",
       "pages": 400,
+      "rating": 1,
       "read_at": "2021-04-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1605109916l/55773354._SY475_.jpg"
     },
@@ -2092,6 +2530,7 @@
       "title": "When They Find Her",
       "author": "Lia Middleton",
       "pages": 384,
+      "rating": 5,
       "read_at": "2021-04-11",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1612532997l/56155263._SY475_.jpg"
     },
@@ -2099,6 +2538,7 @@
       "title": "Girl A",
       "author": "Dan Scottow",
       "pages": 344,
+      "rating": 3,
       "read_at": "2021-04-12",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1616972435l/57557556._SY475_.jpg"
     },
@@ -2106,6 +2546,7 @@
       "title": "The Last Thing to Burn",
       "author": "Will Dean",
       "pages": 241,
+      "rating": 5,
       "read_at": "2021-04-13",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1616939470l/54303965.jpg"
     },
@@ -2113,6 +2554,7 @@
       "title": "The Lost World",
       "author": "Michael Crichton",
       "pages": 435,
+      "rating": 4,
       "read_at": "2021-04-20",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328340873l/11497790.jpg"
     },
@@ -2120,6 +2562,7 @@
       "title": "Chronicles of Narnia: The Magican's Nephew",
       "author": "C.S. Lewis",
       "pages": 251,
+      "rating": 4,
       "read_at": "2021-04-27",
       "cover": "https://s.gr-assets.com/assets/nophoto/book/111x148-675b3b2743c83e96e2540d2929d5f4d2.png"
     },
@@ -2127,6 +2570,7 @@
       "title": "The Lion, the Witch and the Wardrobe",
       "author": "C.S. Lewis",
       "pages": 206,
+      "rating": 3,
       "read_at": "2021-05-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1353029077l/100915.jpg"
     },
@@ -2134,6 +2578,7 @@
       "title": "Dead or Alive",
       "author": "Derek Landy",
       "pages": 608,
+      "rating": 4,
       "read_at": "2021-05-25",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1606527338l/53401474.jpg"
     },
@@ -2141,6 +2586,7 @@
       "title": "Thunderstruck",
       "author": "Erik Larson",
       "pages": 481,
+      "rating": 5,
       "read_at": "2021-06-06",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1436171482l/19299758._SY475_.jpg"
     },
@@ -2148,6 +2594,7 @@
       "title": "Prodigal Son",
       "author": "Gregg Hurwitz",
       "pages": 432,
+      "rating": 3,
       "read_at": "2021-06-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1590447247l/53138122.jpg"
     },
@@ -2155,6 +2602,7 @@
       "title": "When the Wind Blows",
       "author": "James  Patterson",
       "pages": 416,
+      "rating": 3,
       "read_at": "2021-06-13",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388179407l/13162.jpg"
     },
@@ -2162,6 +2610,7 @@
       "title": "The Holiday",
       "author": "T.M. Logan",
       "pages": 380,
+      "rating": 5,
       "read_at": "2021-07-11",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1547578843l/41973359._SY475_.jpg"
     },
@@ -2169,6 +2618,7 @@
       "title": "Boy Parts",
       "author": "Eliza  Clark",
       "pages": 304,
+      "rating": 5,
       "read_at": "2021-07-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1575377405l/49083140._SY475_.jpg"
     },
@@ -2176,6 +2626,7 @@
       "title": "Care of Wooden Floors",
       "author": "Will Wiles",
       "pages": 295,
+      "rating": 4,
       "read_at": "2021-08-01",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1363720984l/12391599.jpg"
     },
@@ -2183,6 +2634,7 @@
       "title": "The Perfect Lie",
       "author": "Jo Spain",
       "pages": 400,
+      "rating": 5,
       "read_at": "2021-08-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1590617603l/53517005._SY475_.jpg"
     },
@@ -2190,6 +2642,7 @@
       "title": "Falling",
       "author": "T.J. Newman",
       "pages": 304,
+      "rating": 4,
       "read_at": "2021-08-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1625673562l/56614951._SY475_.jpg"
     },
@@ -2197,6 +2650,7 @@
       "title": "Who Took Eden Mulligan?",
       "author": "Sharon Dempsey",
       "pages": 365,
+      "rating": 4,
       "read_at": "2021-08-17",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1612227886l/56922403._SY475_.jpg"
     },
@@ -2204,6 +2658,7 @@
       "title": "The Devil's Advocate",
       "author": "Steve Cavanagh",
       "pages": 403,
+      "rating": 5,
       "read_at": "2021-08-20",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1622522673l/56075874._SY475_.jpg"
     },
@@ -2211,6 +2666,7 @@
       "title": "Did Ye Hear Mammy Died? A Memoir",
       "author": "S\u00e9amas O'Reilly",
       "pages": 231,
+      "rating": 5,
       "read_at": "2021-08-22",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1572262075l/52588525.jpg"
     },
@@ -2218,6 +2674,7 @@
       "title": "What Lies Between Us",
       "author": "John Marrs",
       "pages": 363,
+      "rating": 4,
       "read_at": "2021-08-22",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1576829724l/53142315._SX318_SY475_.jpg"
     },
@@ -2225,6 +2682,7 @@
       "title": "The Nothing Man",
       "author": "Catherine Ryan Howard",
       "pages": 319,
+      "rating": 5,
       "read_at": "2021-08-30",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1590827688l/53653285._SY475_.jpg"
     },
@@ -2232,6 +2690,7 @@
       "title": "56 Days",
       "author": "Catherine Ryan Howard",
       "pages": 305,
+      "rating": 5,
       "read_at": "2021-09-01",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1623124494l/57628810.jpg"
     },
@@ -2239,6 +2698,7 @@
       "title": "Heatwave",
       "author": "Victor Jestin",
       "pages": 112,
+      "rating": 4,
       "read_at": "2021-09-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1622654640l/55711633.jpg"
     },
@@ -2246,6 +2706,7 @@
       "title": "Her Last Holiday",
       "author": "C.L. Taylor",
       "pages": 400,
+      "rating": 3,
       "read_at": "2021-09-23",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1617707252l/55576877.jpg"
     },
@@ -2253,6 +2714,7 @@
       "title": "Gideon the Ninth",
       "author": "Tamsyn Muir",
       "pages": 448,
+      "rating": 5,
       "read_at": "2021-10-25",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1546870952l/42036538.jpg"
     },
@@ -2260,6 +2722,7 @@
       "title": "Poison for Breakfast",
       "author": "Lemony Snicket",
       "pages": 158,
+      "rating": 5,
       "read_at": "2021-10-27",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1613788183l/56769614.jpg"
     },
@@ -2267,6 +2730,7 @@
       "title": "Better Off Dead",
       "author": "Lee Child",
       "pages": 336,
+      "rating": 3,
       "read_at": "2021-11-01",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1610609548l/56663329.jpg"
     },
@@ -2274,6 +2738,7 @@
       "title": "Rewind",
       "author": "Catherine Ryan Howard",
       "pages": 359,
+      "rating": 5,
       "read_at": "2021-11-06",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1554816857l/44132255.jpg"
     },
@@ -2281,6 +2746,7 @@
       "title": "December Stories",
       "author": "Ian Sansom",
       "pages": 128,
+      "rating": 5,
       "read_at": "2021-11-18",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1542669192l/42868279._SY475_.jpg"
     },
@@ -2288,6 +2754,7 @@
       "title": "Mother\u2019s Helper",
       "author": "Julia Crouch",
       "pages": 405,
+      "rating": 4,
       "read_at": "2022-01-06",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1626742647l/58592323._SY475_.jpg"
     },
@@ -2295,6 +2762,7 @@
       "title": "All Her Fault",
       "author": "Andrea Mara",
       "pages": 389,
+      "rating": 5,
       "read_at": "2022-01-07",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1620075242l/57937453._SY475_.jpg"
     },
@@ -2302,6 +2770,7 @@
       "title": "Termination Shock",
       "author": "Neal Stephenson",
       "pages": 708,
+      "rating": 4,
       "read_at": "2022-01-17",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1621245328l/57094295.jpg"
     },
@@ -2309,6 +2778,7 @@
       "title": "Genuine Fraud",
       "author": "E. Lockhart",
       "pages": 262,
+      "rating": 1,
       "read_at": "2022-01-23",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1503003099l/33843362._SY475_.jpg"
     },
@@ -2316,6 +2786,7 @@
       "title": "Star Wars: Revenge of the Sith",
       "author": "Matthew Woodring Stover",
       "pages": 418,
+      "rating": 4,
       "read_at": "2022-01-24",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388228249l/35458.jpg"
     },
@@ -2323,6 +2794,7 @@
       "title": "Fry's Ties",
       "author": "Stephen Fry",
       "pages": 255,
+      "rating": 4,
       "read_at": "2022-01-29",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1648981240l/58603386._SX318_.jpg"
     },
@@ -2330,6 +2802,7 @@
       "title": "Someone Like You",
       "author": "Roald Dahl",
       "pages": 355,
+      "rating": 3,
       "read_at": "2022-02-02",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327896713l/13324169.jpg"
     },
@@ -2337,6 +2810,7 @@
       "title": "Hostage",
       "author": "Clare Mackintosh",
       "pages": 357,
+      "rating": 5,
       "read_at": "2022-02-02",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1612384147l/56628286.jpg"
     },
@@ -2344,6 +2818,7 @@
       "title": "The Last Resort",
       "author": "Jan Carson",
       "pages": 101,
+      "rating": 5,
       "read_at": "2022-02-26",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1617889889l/56322963._SY475_.jpg"
     },
@@ -2351,6 +2826,7 @@
       "title": "The Raptures",
       "author": "Jan Carson",
       "pages": 336,
+      "rating": 5,
       "read_at": "2022-02-27",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1636418609l/59573884._SY475_.jpg"
     },
@@ -2358,6 +2834,7 @@
       "title": "The House of Ashes",
       "author": "Stuart Neville",
       "pages": 296,
+      "rating": 5,
       "read_at": "2022-03-01",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1624384011l/57660446._SY475_.jpg"
     },
@@ -2365,6 +2842,7 @@
       "title": "Killing Floor",
       "author": "Lee Child",
       "pages": 474,
+      "rating": 4,
       "read_at": "2022-03-02",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1399313258l/78129._SY475_.jpg"
     },
@@ -2372,6 +2850,7 @@
       "title": "Dark Horse",
       "author": "Gregg Hurwitz",
       "pages": 432,
+      "rating": 3,
       "read_at": "2022-03-12",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1636367823l/57693476.jpg"
     },
@@ -2379,6 +2858,7 @@
       "title": "Detransition, Baby",
       "author": "Torrey Peters",
       "pages": 337,
+      "rating": 4,
       "read_at": "2022-03-21",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1587480347l/48890225.jpg"
     },
@@ -2386,6 +2866,7 @@
       "title": "The Nurse",
       "author": "Claire Allan",
       "pages": 400,
+      "rating": 5,
       "read_at": "2022-04-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1637247321l/58990978._SY475_.jpg"
     },
@@ -2393,6 +2874,7 @@
       "title": "The Empty Room",
       "author": "Brian McGilloway",
       "pages": 323,
+      "rating": 5,
       "read_at": "2022-04-06",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1677851266l/58311092._SY475_.jpg"
     },
@@ -2400,6 +2882,7 @@
       "title": "The Goldfinch",
       "author": "Donna Tartt",
       "pages": 771,
+      "rating": 4,
       "read_at": "2022-04-21",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1378710146l/17333223.jpg"
     },
@@ -2407,6 +2890,7 @@
       "title": "Until the End",
       "author": "Derek Landy",
       "pages": 656,
+      "rating": 4,
       "read_at": "2022-05-14",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1642631998l/59521966._SY475_.jpg"
     },
@@ -2414,6 +2898,7 @@
       "title": "The Last to Disappear",
       "author": "Jo Spain",
       "pages": 400,
+      "rating": 4,
       "read_at": "2022-06-05",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1639592503l/59008128._SY475_.jpg"
     },
@@ -2421,6 +2906,7 @@
       "title": "Star Wars: Darth Vader - Dark Lord of the Sith, Vol. 1",
       "author": "Charles Soule",
       "pages": 267,
+      "rating": 4,
       "read_at": "2022-06-24",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1552619833l/44433494._SY475_.jpg"
     },
@@ -2428,6 +2914,7 @@
       "title": "Star Wars: Darth Vader - Dark Lord of the Sith, Vol. 2: Legacy's End",
       "author": "Charles Soule",
       "pages": 144,
+      "rating": 4,
       "read_at": "2022-06-24",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1525359658l/36040437._SY475_.jpg"
     },
@@ -2435,6 +2922,7 @@
       "title": "Batman: Year One",
       "author": "Frank Miller",
       "pages": 136,
+      "rating": 5,
       "read_at": "2022-06-25",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1574630214l/59980.jpg"
     },
@@ -2442,6 +2930,7 @@
       "title": "Batman: The Long Halloween",
       "author": "Jeph Loeb",
       "pages": 376,
+      "rating": 4,
       "read_at": "2022-06-26",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1350137101l/106069.jpg"
     },
@@ -2449,6 +2938,7 @@
       "title": "Girl A",
       "author": "Abigail Dean",
       "pages": 352,
+      "rating": 4,
       "read_at": "2022-07-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1599562435l/55271524.jpg"
     },
@@ -2456,6 +2946,7 @@
       "title": "Invisible Girl",
       "author": "Lisa Jewell",
       "pages": 403,
+      "rating": 4,
       "read_at": "2022-07-17",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1610215290l/53176765._SY475_.jpg"
     },
@@ -2463,6 +2954,7 @@
       "title": "Hannibal Rising",
       "author": "Thomas  Harris",
       "pages": 336,
+      "rating": 2,
       "read_at": "2022-07-30",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1394208690l/32416.jpg"
     },
@@ -2470,6 +2962,7 @@
       "title": "The Man in the Bunker",
       "author": "Rory Clements",
       "pages": 496,
+      "rating": 4,
       "read_at": "2022-08-14",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1650318727l/60839740._SY475_.jpg"
     },
@@ -2477,6 +2970,7 @@
       "title": "Corpus",
       "author": "Rory Clements",
       "pages": 352,
+      "rating": 4,
       "read_at": "2022-08-28",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1478028349l/26859967.jpg"
     },
@@ -2484,6 +2978,7 @@
       "title": "Project Hail Mary",
       "author": "Andy Weir",
       "pages": 476,
+      "rating": 5,
       "read_at": "2022-08-31",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1764703833l/54493401._SY475_.jpg"
     },
@@ -2491,6 +2986,7 @@
       "title": "Number 5",
       "author": "Glenn Patterson",
       "pages": 320,
+      "rating": 5,
       "read_at": "2022-09-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347463948l/1022641.jpg"
     },
@@ -2498,6 +2994,7 @@
       "title": "The Accomplice",
       "author": "Steve Cavanagh",
       "pages": 352,
+      "rating": 5,
       "read_at": "2022-09-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1650659645l/60189904._SY475_.jpg"
     },
@@ -2505,6 +3002,7 @@
       "title": "Factory Girls",
       "author": "Michelle Gallen",
       "pages": 294,
+      "rating": 5,
       "read_at": "2022-09-11",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1637957532l/59130111._SY475_.jpg"
     },
@@ -2512,6 +3010,7 @@
       "title": "Taste: My Life Through Food",
       "author": "Stanley Tucci",
       "pages": 291,
+      "rating": 5,
       "read_at": "2022-10-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1626644825l/55360284.jpg"
     },
@@ -2519,6 +3018,7 @@
       "title": "If We Were Villains",
       "author": "M.L. Rio",
       "pages": 354,
+      "rating": 3,
       "read_at": "2022-10-26",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1480717682l/30319086._SY475_.jpg"
     },
@@ -2526,6 +3026,7 @@
       "title": "No Plan B",
       "author": "Lee Child",
       "pages": 359,
+      "rating": 3,
       "read_at": "2022-10-30",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1642656280l/60166014.jpg"
     },
@@ -2533,6 +3034,7 @@
       "title": "The Catcher in the Rye",
       "author": "J.D. Salinger",
       "pages": 277,
+      "rating": 4,
       "read_at": "2022-11-06",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1398034300l/5107.jpg"
     },
@@ -2540,6 +3042,7 @@
       "title": "The Minotaur Takes a Cigarette Break",
       "author": "Steven Sherrill",
       "pages": 313,
+      "rating": 5,
       "read_at": "2022-11-12",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442800369l/603260.jpg"
     },
@@ -2547,6 +3050,7 @@
       "title": "The First Book of Swords",
       "author": "Fred Saberhagen",
       "pages": 309,
+      "rating": 4,
       "read_at": "2022-11-21",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1283631887l/16509.jpg"
     },
@@ -2554,6 +3058,7 @@
       "title": "At Bertram's Hotel",
       "author": "Agatha Christie",
       "pages": 223,
+      "rating": 3,
       "read_at": "2022-11-30",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1375949033l/16333.jpg"
     },
@@ -2561,6 +3066,7 @@
       "title": "Lying in Wait",
       "author": "Liz Nugent",
       "pages": 304,
+      "rating": 5,
       "read_at": "2022-12-10",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1463433735l/27405729.jpg"
     },
@@ -2568,6 +3074,7 @@
       "title": "Is Mother Dead",
       "author": "Vigdis Hjorth",
       "pages": 330,
+      "rating": 2,
       "read_at": "2023-02-21",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1660057454l/60059857.jpg"
     },
@@ -2575,6 +3082,7 @@
       "title": "Strange Sally Diamond",
       "author": "Liz Nugent",
       "pages": 384,
+      "rating": 5,
       "read_at": "2023-03-12",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1677749819l/62322008._SY475_.jpg"
     },
@@ -2582,6 +3090,7 @@
       "title": "Make Something Wonderful",
       "author": "Steve Jobs",
       "pages": 194,
+      "rating": 5,
       "read_at": "2023-04-15",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1773602394l/128533513._SY475_.jpg"
     },
@@ -2589,6 +3098,7 @@
       "title": "Lessons in Chemistry",
       "author": "Bonnie Garmus",
       "pages": 390,
+      "rating": 3,
       "read_at": "2023-05-15",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1634748496l/58065033._SY475_.jpg"
     },
@@ -2596,6 +3106,7 @@
       "title": "In the Dark",
       "author": "Claire Allan",
       "pages": 400,
+      "rating": 3,
       "read_at": "2023-05-26",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1665444741l/61653446.jpg"
     },
@@ -2603,6 +3114,7 @@
       "title": "The Last Passenger",
       "author": "Will Dean",
       "pages": 482,
+      "rating": 4,
       "read_at": "2023-05-28",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1694518251l/67356448.jpg"
     },
@@ -2610,6 +3122,7 @@
       "title": "I'm Glad My Mom Died",
       "author": "Jennette McCurdy",
       "pages": 320,
+      "rating": 5,
       "read_at": "2023-05-31",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1649286799l/59364173._SY475_.jpg"
     },
@@ -2617,6 +3130,7 @@
       "title": "The Future of Geography: How Power and Politics in Space Will Change Our World",
       "author": "Tim  Marshall",
       "pages": 256,
+      "rating": 4,
       "read_at": "2023-07-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1666195524l/62675564._SY475_.jpg"
     },
@@ -2624,6 +3138,7 @@
       "title": "A Wizard of Earthsea",
       "author": "Ursula K. Le Guin",
       "pages": 183,
+      "rating": 4,
       "read_at": "2023-07-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1353424536l/13642.jpg"
     },
@@ -2631,6 +3146,7 @@
       "title": "Dead Wake: The Last Crossing of the Lusitania",
       "author": "Erik Larson",
       "pages": 430,
+      "rating": 5,
       "read_at": "2023-07-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1408923747l/22551730.jpg"
     },
@@ -2638,6 +3154,7 @@
       "title": "Kill for Me Kill for You",
       "author": "Steve Cavanagh",
       "pages": 401,
+      "rating": 5,
       "read_at": "2023-08-13",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1682983289l/123113649._SY475_.jpg"
     },
@@ -2645,6 +3162,7 @@
       "title": "This Sweet Sickness",
       "author": "Patricia Highsmith",
       "pages": 288,
+      "rating": 5,
       "read_at": "2023-08-15",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348037826l/768987.jpg"
     },
@@ -2652,6 +3170,7 @@
       "title": "Starship Troopers",
       "author": "Robert A. Heinlein",
       "pages": 264,
+      "rating": 4,
       "read_at": "2023-08-27",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1614054412l/17214.jpg"
     },
@@ -2659,6 +3178,7 @@
       "title": "Eleanor Oliphant Is Completely Fine",
       "author": "Gail Honeyman",
       "pages": 390,
+      "rating": 4,
       "read_at": "2023-09-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1557858891l/35900387._SY475_.jpg"
     },
@@ -2666,6 +3186,7 @@
       "title": "The Last Orphan",
       "author": "Gregg Hurwitz",
       "pages": 300,
+      "rating": 3,
       "read_at": "2023-09-23",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1690695691l/62897680._SY475_.jpg"
     },
@@ -2673,6 +3194,7 @@
       "title": "A Gentleman in Moscow",
       "author": "Amor Towles",
       "pages": 495,
+      "rating": 4,
       "read_at": "2023-10-02",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1718915012l/34066798._SY475_.jpg"
     },
@@ -2680,6 +3202,7 @@
       "title": "Chip War: The Fight for the World's Most Critical Technology",
       "author": "Chris   Miller",
       "pages": 431,
+      "rating": 4,
       "read_at": "2023-10-20",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1662566820l/60321447.jpg"
     },
@@ -2687,6 +3210,7 @@
       "title": "The Secret",
       "author": "Lee Child",
       "pages": 295,
+      "rating": 4,
       "read_at": "2023-11-13",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1685363266l/123226695.jpg"
     },
@@ -2694,6 +3218,7 @@
       "title": "Close to Home",
       "author": "Michael  Magee",
       "pages": 288,
+      "rating": 5,
       "read_at": "2023-11-18",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1669911735l/62039294.jpg"
     },
@@ -2701,6 +3226,7 @@
       "title": "Penance",
       "author": "Eliza  Clark",
       "pages": 336,
+      "rating": 5,
       "read_at": "2023-11-21",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1682653172l/62898932._SY475_.jpg"
     },
@@ -2708,6 +3234,7 @@
       "title": "The Long Way to a Small, Angry Planet",
       "author": "Becky Chambers",
       "pages": 518,
+      "rating": 4,
       "read_at": "2024-01-22",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1405532474l/22733729.jpg"
     },
@@ -2715,6 +3242,7 @@
       "title": "In the Blink of an Eye",
       "author": "Jo  Callaghan",
       "pages": 416,
+      "rating": 4,
       "read_at": "2024-02-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1668617861l/62072146._SY475_.jpg"
     },
@@ -2722,6 +3250,7 @@
       "title": "The Shining",
       "author": "Stephen  King",
       "pages": 497,
+      "rating": 3,
       "read_at": "2024-02-12",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1353277730l/11588.jpg"
     },
@@ -2729,6 +3258,7 @@
       "title": "The Ministry of Unladylike Activity",
       "author": "Robin Stevens",
       "pages": 416,
+      "rating": 5,
       "read_at": "2024-02-25",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1677853658l/62084685._SY475_.jpg"
     },
@@ -2736,6 +3266,7 @@
       "title": "Lone Wolf",
       "author": "Gregg Hurwitz",
       "pages": 389,
+      "rating": 4,
       "read_at": "2024-04-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1686314822l/126919150.jpg"
     },
@@ -2743,6 +3274,7 @@
       "title": "A Mind Full of Murder",
       "author": "Derek Landy",
       "pages": 379,
+      "rating": 4,
       "read_at": "2024-04-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1696886966l/179302247._SY475_.jpg"
     },
@@ -2750,6 +3282,7 @@
       "title": "A Game of Birds and Wolves: The Secret Game that Revolutionised the War",
       "author": "Simon  Parkin",
       "pages": 321,
+      "rating": 5,
       "read_at": "2024-05-23",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1559433188l/46127746._SY475_.jpg"
     },
@@ -2757,6 +3290,7 @@
       "title": "Brainwyrms",
       "author": "Alison Rumfitt",
       "pages": 304,
+      "rating": 4,
       "read_at": "2024-05-25",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1683639959l/65212043.jpg"
     },
@@ -2764,6 +3298,7 @@
       "title": "Invincible Compendium Volume 2:",
       "author": "Robert Kirkman",
       "pages": 1707,
+      "rating": 5,
       "read_at": "2024-06-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1620805742l/58021519._SY475_.jpg"
     },
@@ -2771,6 +3306,7 @@
       "title": "Invincible, Compendium One",
       "author": "Robert Kirkman",
       "pages": 1092,
+      "rating": 5,
       "read_at": "2024-06-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1529797022l/11924046._SX318_.jpg"
     },
@@ -2778,6 +3314,7 @@
       "title": "Invincible Compendium Volume 3:",
       "author": "Robert Kirkman",
       "pages": 1080,
+      "rating": 5,
       "read_at": "2024-06-10",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1620805784l/58021522._SY475_.jpg"
     },
@@ -2785,6 +3322,7 @@
       "title": "Foster",
       "author": "Claire Keegan",
       "pages": 101,
+      "rating": 5,
       "read_at": "2024-07-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328146652l/8143909.jpg"
     },
@@ -2792,6 +3330,7 @@
       "title": "Quickly, While They Still Have Horses: Stories",
       "author": "Jan Carson",
       "pages": 288,
+      "rating": 5,
       "read_at": "2024-07-14",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1700075825l/199797939._SY475_.jpg"
     },
@@ -2799,6 +3338,7 @@
       "title": "Forever Home",
       "author": "Graham Norton",
       "pages": 336,
+      "rating": 4,
       "read_at": "2024-07-20",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1664905175l/60431085._SX318_.jpg"
     },
@@ -2806,6 +3346,7 @@
       "title": "The guest",
       "author": "B.A. Paris",
       "pages": 368,
+      "rating": 3,
       "read_at": "2024-08-01",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1721273097l/216604262._SY475_.jpg"
     },
@@ -2813,6 +3354,7 @@
       "title": "The Affair",
       "author": "Claire Allan",
       "pages": 314,
+      "rating": 4,
       "read_at": "2024-08-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1712965620l/203098345._SY475_.jpg"
     },
@@ -2820,6 +3362,7 @@
       "title": "Recursion",
       "author": "Blake Crouch",
       "pages": 329,
+      "rating": 4,
       "read_at": "2024-08-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1750526564l/42046112._SX318_.jpg"
     },
@@ -2827,6 +3370,7 @@
       "title": "The Plot Against America",
       "author": "Philip Roth",
       "pages": 391,
+      "rating": 4,
       "read_at": "2024-08-11",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1676325212l/114886364._SY475_.jpg"
     },
@@ -2834,6 +3378,7 @@
       "title": "Sea of Tranquility",
       "author": "Emily St. John Mandel",
       "pages": 259,
+      "rating": 3,
       "read_at": "2024-08-17",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1626710416l/58446227.jpg"
     },
@@ -2841,6 +3386,7 @@
       "title": "Witness 8",
       "author": "Steve Cavanagh",
       "pages": 417,
+      "rating": 5,
       "read_at": "2024-08-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1718865758l/209096547._SY475_.jpg"
     },
@@ -2848,6 +3394,7 @@
       "title": "The It Girl",
       "author": "Ruth Ware",
       "pages": 423,
+      "rating": 4,
       "read_at": "2024-09-15",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1671400977l/59345249._SY475_.jpg"
     },
@@ -2855,6 +3402,7 @@
       "title": "The Elements of Marie Curie: How the Glow of Radium Lit a Path for Women in Science",
       "author": "Dava Sobel",
       "pages": 318,
+      "rating": 4,
       "read_at": "2024-10-25",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1716500981l/208580608._SY475_.jpg"
     },
@@ -2862,6 +3410,7 @@
       "title": "Leonard Cohen: A Novel",
       "author": "Jeffrey Lewis",
       "pages": 156,
+      "rating": 4,
       "read_at": "2024-11-17",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1705072336l/199506238._SY475_.jpg"
     },
@@ -2869,6 +3418,7 @@
       "title": "When We Cease to Understand the World",
       "author": "Benjam\u00edn Labatut",
       "pages": 193,
+      "rating": 5,
       "read_at": "2024-12-22",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1661332705l/62069739._SX318_.jpg"
     },
@@ -2876,6 +3426,7 @@
       "title": "In Too Deep",
       "author": "Lee Child",
       "pages": 327,
+      "rating": 4,
       "read_at": "2024-12-27",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1715293370l/204432624._SY475_.jpg"
     },
@@ -2883,6 +3434,7 @@
       "title": "Wild Houses",
       "author": "Colin  Barrett",
       "pages": 272,
+      "rating": 1,
       "read_at": "2025-01-18",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1696101850l/128714412._SY475_.jpg"
     },
@@ -2890,6 +3442,7 @@
       "title": "The Island of Extraordinary Captives: A Painter, a Poet, an Heiress, and a Spy in a World War II British Internment Camp",
       "author": "Simon  Parkin",
       "pages": 448,
+      "rating": 5,
       "read_at": "2025-01-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1666195595l/59364152._SY475_.jpg"
     },
@@ -2897,6 +3450,7 @@
       "title": "A Serial Killer's Guide to Marriage",
       "author": "Asia Mackay",
       "pages": 352,
+      "rating": 3,
       "read_at": "2025-01-26",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1727378164l/211399774._SY475_.jpg"
     },
@@ -2904,6 +3458,7 @@
       "title": "She's Always Hungry",
       "author": "Eliza  Clark",
       "pages": 225,
+      "rating": 4,
       "read_at": "2025-01-29",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1714600043l/201033505._SY475_.jpg"
     },
@@ -2911,6 +3466,7 @@
       "title": "The Body in the Blitz",
       "author": "Robin Stevens",
       "pages": 464,
+      "rating": 5,
       "read_at": "2025-02-02",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1697830312l/200338987._SY475_.jpg"
     },
@@ -2918,6 +3474,7 @@
       "title": "Dark Matter",
       "author": "Blake Crouch",
       "pages": 342,
+      "rating": 4,
       "read_at": "2025-02-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1472119680l/27833670._SY475_.jpg"
     },
@@ -2925,6 +3482,7 @@
       "title": "Nemesis",
       "author": "Gregg Hurwitz",
       "pages": 456,
+      "rating": 3,
       "read_at": "2025-02-25",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1716838441l/211492842._SY475_.jpg"
     },
@@ -2932,6 +3490,7 @@
       "title": "A is for Arsenic: The Poisons of Agatha Christie",
       "author": "Kathryn Harkup",
       "pages": 320,
+      "rating": 4,
       "read_at": "2025-03-02",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1422904883l/23848320.jpg"
     },
@@ -2939,6 +3498,7 @@
       "title": "Upgrade",
       "author": "Blake Crouch",
       "pages": 352,
+      "rating": 4,
       "read_at": "2025-03-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1643994317l/59838811.jpg"
     },
@@ -2946,6 +3506,7 @@
       "title": "Beyond the Wall: East Germany, 1949-1990",
       "author": "Katja Hoyer",
       "pages": 496,
+      "rating": 4,
       "read_at": "2025-03-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1677147473l/61403418._SY475_.jpg"
     },
@@ -2953,6 +3514,7 @@
       "title": "Sociopath",
       "author": "Patric Gagne",
       "pages": 368,
+      "rating": 3,
       "read_at": "2025-03-15",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1710615468l/176443093._SY475_.jpg"
     },
@@ -2960,6 +3522,7 @@
       "title": "The Maniac",
       "author": "Benjam\u00edn Labatut",
       "pages": 368,
+      "rating": 5,
       "read_at": "2025-04-05",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1679411721l/75665931.jpg"
     },
@@ -2967,6 +3530,7 @@
       "title": "My Brilliant Friend",
       "author": "Elena Ferrante",
       "pages": 331,
+      "rating": 5,
       "read_at": "2025-04-13",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1493655783l/35036409.jpg"
     },
@@ -2974,6 +3538,7 @@
       "title": "Becoming Steve Jobs: The evolution of a reckless upstart into a visionary leader",
       "author": "Brent Schlender",
       "pages": 447,
+      "rating": 5,
       "read_at": "2025-05-02",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1482674268l/33564299._SY475_.jpg"
     },
@@ -2981,6 +3546,7 @@
       "title": "Death in the Air: The True Story of a Serial Killer, the Great London Smog, and the Strangling of a City",
       "author": "Kate Winkler Dawson",
       "pages": 352,
+      "rating": 4,
       "read_at": "2025-05-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1503335127l/34219897._SY475_.jpg"
     },
@@ -2988,6 +3554,7 @@
       "title": "The Man With the Golden Gun",
       "author": "Ian Fleming",
       "pages": 208,
+      "rating": 2,
       "read_at": "2025-05-10",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1436053981l/177193._SY475_.jpg"
     },
@@ -2995,6 +3562,7 @@
       "title": "The Remains of the Day",
       "author": "Kazuo Ishiguro",
       "pages": 258,
+      "rating": 5,
       "read_at": "2025-05-18",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327128714l/28921.jpg"
     },
@@ -3002,6 +3570,7 @@
       "title": "The One You Least Suspect",
       "author": "Brian McGilloway",
       "pages": 345,
+      "rating": 5,
       "read_at": "2025-06-08",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1729589222l/201622837._SY475_.jpg"
     },
@@ -3009,6 +3578,7 @@
       "title": "The Snack Hacker: Rule-Breaking Recipes for Cooks and Non-Cooks",
       "author": "George Egg",
       "pages": 396,
+      "rating": 5,
       "read_at": "2025-06-21",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1718193801l/214560389._SY475_.jpg"
     },
@@ -3016,6 +3586,7 @@
       "title": "All the Light We Cannot See",
       "author": "Anthony Doerr",
       "pages": 531,
+      "rating": 5,
       "read_at": "2025-06-28",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1451445646l/18143977.jpg"
     },
@@ -3023,6 +3594,7 @@
       "title": "Stoner",
       "author": "John  Williams",
       "pages": 292,
+      "rating": 5,
       "read_at": "2025-06-30",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1742326950l/166997._SY475_.jpg"
     },
@@ -3030,6 +3602,7 @@
       "title": "In Cold Blood",
       "author": "Truman Capote",
       "pages": 343,
+      "rating": 5,
       "read_at": "2025-07-13",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1424931136l/168642.jpg"
     },
@@ -3037,6 +3610,7 @@
       "title": "Me Talk Pretty One Day",
       "author": "David Sedaris",
       "pages": 272,
+      "rating": 4,
       "read_at": "2025-07-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1431013639l/4137.jpg"
     },
@@ -3044,6 +3618,7 @@
       "title": "Flesh & Blood",
       "author": "Andrew Shanahan",
       "pages": 245,
+      "rating": 2,
       "read_at": "2025-07-20",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1640721692l/59962104._SY475_.jpg"
     },
@@ -3051,6 +3626,7 @@
       "title": "Before and After",
       "author": "Andrew Shanahan",
       "pages": 234,
+      "rating": 4,
       "read_at": "2025-07-20",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1578067873l/50262048._SY475_.jpg"
     },
@@ -3058,20 +3634,15 @@
       "title": "Star Wars: The Rise and Fall of the Galactic Empire",
       "author": "Chris Kempshall",
       "pages": 395,
+      "rating": 4,
       "read_at": "2025-07-26",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1708142709l/208713594._SY475_.jpg"
-    },
-    {
-      "title": "The Talented Mr. Ripley",
-      "author": "Patricia Highsmith",
-      "pages": 271,
-      "read_at": "2025-07-27",
-      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1746213953l/2247142._SY475_.jpg"
     },
     {
       "title": "Ripley Under Ground",
       "author": "Patricia Highsmith",
       "pages": 285,
+      "rating": 5,
       "read_at": "2025-08-02",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327977334l/3845356.jpg"
     },
@@ -3079,6 +3650,7 @@
       "title": "Ripley's Game",
       "author": "Patricia Highsmith",
       "pages": 272,
+      "rating": 5,
       "read_at": "2025-08-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327977429l/3425503.jpg"
     },
@@ -3086,6 +3658,7 @@
       "title": "Two Kinds of Stranger",
       "author": "Steve Cavanagh",
       "pages": 400,
+      "rating": 5,
       "read_at": "2025-08-07",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1744695566l/216437528._SY475_.jpg"
     },
@@ -3093,6 +3666,7 @@
       "title": "Everything Is Tuberculosis: The History and Persistence of Our Deadliest Infection",
       "author": "John  Green",
       "pages": 198,
+      "rating": 3,
       "read_at": "2025-08-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1729825992l/220341389._SY475_.jpg"
     },
@@ -3100,6 +3674,7 @@
       "title": "And Then? And Then? What Else?",
       "author": "Daniel Handler",
       "pages": 240,
+      "rating": 5,
       "read_at": "2025-08-16",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1698195515l/200628690._SY475_.jpg"
     },
@@ -3107,6 +3682,7 @@
       "title": "The Forbidden Garden of Leningrad: A True Story of Science and Sacrifice in a City under Siege",
       "author": "Simon Parkin",
       "pages": 454,
+      "rating": 5,
       "read_at": "2025-08-26",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1718911416l/209693130._SY475_.jpg"
     },
@@ -3114,6 +3690,7 @@
       "title": "Korolev: How One Man Masterminded the Soviet Drive to Beat America to the Moon",
       "author": "James Harford",
       "pages": 432,
+      "rating": 4,
       "read_at": "2025-08-31",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1396226901l/213301.jpg"
     },
@@ -3121,6 +3698,7 @@
       "title": "The Boy Who Followed Ripley",
       "author": "Patricia Highsmith",
       "pages": 348,
+      "rating": 4,
       "read_at": "2025-09-12",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327977256l/3845354.jpg"
     },
@@ -3128,6 +3706,7 @@
       "title": "Ripley Under Water",
       "author": "Patricia Highsmith",
       "pages": 304,
+      "rating": 4,
       "read_at": "2025-09-13",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327977011l/3845355.jpg"
     },
@@ -3135,6 +3714,7 @@
       "title": "Blackout",
       "author": "Simon Scarrow",
       "pages": 386,
+      "rating": 4,
       "read_at": "2025-10-12",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1584599376l/48918693._SY475_.jpg"
     },
@@ -3142,6 +3722,7 @@
       "title": "The Secret of Secrets",
       "author": "Dan    Brown",
       "pages": 677,
+      "rating": 1,
       "read_at": "2025-11-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1761313537l/223889699._SY475_.jpg"
     },
@@ -3149,6 +3730,7 @@
       "title": "Exit Strategy",
       "author": "Lee Child",
       "pages": 304,
+      "rating": 5,
       "read_at": "2025-11-06",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1737694119l/223927256._SY475_.jpg"
     },
@@ -3156,6 +3738,7 @@
       "title": "The Rose Field",
       "author": "Philip Pullman",
       "pages": 657,
+      "rating": 2,
       "read_at": "2025-12-07",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1752160654l/228587642._SX318_.jpg"
     },
@@ -3163,6 +3746,7 @@
       "title": "Children of Time",
       "author": "Adrian Tchaikovsky",
       "pages": 600,
+      "rating": 5,
       "read_at": "2025-12-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1431014197l/25499718.jpg"
     },
@@ -3170,6 +3754,7 @@
       "title": "Superior Spider-Man 01",
       "author": "Dan Slott",
       "pages": 70,
+      "rating": 4,
       "read_at": "2025-12-14",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1516650697l/17844707._SX318_.jpg"
     },
@@ -3177,6 +3762,7 @@
       "title": "A Heart Full of Hatred",
       "author": "Derek Landy",
       "pages": 417,
+      "rating": 4,
       "read_at": "2025-12-20",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1734845197l/222868423._SY475_.jpg"
     },
@@ -3184,6 +3770,7 @@
       "title": "Polostan",
       "author": "Neal Stephenson",
       "pages": 303,
+      "rating": 2,
       "read_at": "2025-12-29",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1714031079l/199793426._SY475_.jpg"
     },
@@ -3191,6 +3778,7 @@
       "title": "Apple in China: The Capture of the World's Greatest Company",
       "author": "Patrick  McGee",
       "pages": 448,
+      "rating": 5,
       "read_at": "2026-01-01",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1740350739l/220161058._SY475_.jpg"
     },
@@ -3198,6 +3786,7 @@
       "title": "Children of Ruin",
       "author": "Adrian Tchaikovsky",
       "pages": 597,
+      "rating": 4,
       "read_at": "2026-01-05",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1693752895l/40376072._SY475_.jpg"
     },
@@ -3205,6 +3794,7 @@
       "title": "Prestige Drama",
       "author": "S\u00e9amas O'Reilly",
       "pages": 154,
+      "rating": 5,
       "read_at": "2026-01-18",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1770087704l/233026301._SY475_.jpg"
     },
@@ -3212,6 +3802,7 @@
       "title": "Traction: Get a Grip on Your Business",
       "author": "Gino Wickman",
       "pages": 246,
+      "rating": 4,
       "read_at": "2026-01-24",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1385141177l/18886376.jpg"
     },
@@ -3219,6 +3810,7 @@
       "title": "The Count of Monte Cristo",
       "author": "Alexandre Dumas",
       "pages": 1276,
+      "rating": 5,
       "read_at": "2026-02-15",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1724863997l/7126._SY475_.jpg"
     },
@@ -3226,6 +3818,7 @@
       "title": "How the Irish Saved Civilization: The Untold Story of Ireland's Heroic Role from the Fall of Rome to the Rise of Medieval Europe",
       "author": "Thomas Cahill",
       "pages": 246,
+      "rating": 3,
       "read_at": "2026-02-21",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1706145092l/25669._SY475_.jpg"
     },
@@ -3233,6 +3826,7 @@
       "title": "Jumper",
       "author": "Steven Gould",
       "pages": 345,
+      "rating": 5,
       "read_at": "2026-03-09",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1304981770l/47970.jpg"
     },
@@ -3240,6 +3834,7 @@
       "title": "Reflex",
       "author": "Steven Gould",
       "pages": 380,
+      "rating": 4,
       "read_at": "2026-03-11",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1634004517l/64818._SY475_.jpg"
     },
@@ -3247,6 +3842,7 @@
       "title": "Impulse",
       "author": "Steven Gould",
       "pages": 368,
+      "rating": 4,
       "read_at": "2026-03-15",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1342631587l/13614730.jpg"
     },
@@ -3254,6 +3850,7 @@
       "title": "The Truth About Ruby Cooper",
       "author": "Liz Nugent",
       "pages": 369,
+      "rating": 5,
       "read_at": "2026-03-17",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1763451712l/238328226._SY475_.jpg"
     },
@@ -3261,6 +3858,7 @@
       "title": "Exo",
       "author": "Steven Gould",
       "pages": 464,
+      "rating": 4,
       "read_at": "2026-03-22",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1403633075l/20518815.jpg"
     },
@@ -3268,6 +3866,7 @@
       "title": "Half His Age",
       "author": "Jennette McCurdy",
       "pages": 288,
+      "rating": 4,
       "read_at": "2026-03-28",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1765907278l/240424526._SY475_.jpg"
     },
@@ -3275,6 +3874,7 @@
       "title": "The Secret History",
       "author": "Donna Tartt",
       "pages": 559,
+      "rating": 5,
       "read_at": "2026-04-26",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1751820530l/29044._SY475_.jpg"
     },
@@ -3282,6 +3882,7 @@
       "title": "Few and Far Between",
       "author": "Jan Carson",
       "pages": 336,
+      "rating": 4,
       "read_at": "2026-05-03",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1760892711l/242977777._SY475_.jpg"
     },
@@ -3289,6 +3890,7 @@
       "title": "Antihero",
       "author": "Gregg Hurwitz",
       "pages": 416,
+      "rating": 2,
       "read_at": "2026-05-24",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1751384785l/231127208._SY475_.jpg"
     },
@@ -3296,6 +3898,7 @@
       "title": "The Disappearance of Josef Mengele",
       "author": "Olivier Guez",
       "pages": 224,
+      "rating": 3,
       "read_at": "2026-05-31",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1657883688l/46002075._SY475_.jpg"
     },
@@ -3303,6 +3906,7 @@
       "title": "One Yellow Eye",
       "author": "Leigh  Radford",
       "pages": 352,
+      "rating": 5,
       "read_at": "2026-06-06",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1729011609l/220160134._SY475_.jpg"
     },
@@ -3310,6 +3914,7 @@
       "title": "Dancefloor",
       "author": "Victor Jestin",
       "pages": 176,
+      "rating": 4,
       "read_at": "2026-06-14",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1744040665l/221951178._SY475_.jpg"
     },
@@ -3317,6 +3922,7 @@
       "title": "We Have Always Lived in the Castle",
       "author": "Shirley Jackson",
       "pages": 152,
+      "rating": 4,
       "read_at": "2026-06-21",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1746532708l/89724._SY475_.jpg"
     },
@@ -3324,6 +3930,7 @@
       "title": "Time After Time",
       "author": "Karl Alexander",
       "pages": 341,
+      "rating": 3,
       "read_at": "2026-06-26",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1309640655l/2857588.jpg"
     },
@@ -3331,6 +3938,7 @@
       "title": "Murder Bimbo",
       "author": "Rebecca Novack",
       "pages": 224,
+      "rating": 3,
       "read_at": "2026-07-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1753324008l/235992114._SY475_.jpg"
     },
@@ -3338,6 +3946,7 @@
       "title": "Breakfast at Tiffany's",
       "author": "Truman Capote",
       "pages": 157,
+      "rating": 3,
       "read_at": "2026-07-12",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1495737324l/35224144._SY475_.jpg"
     },
@@ -3345,8 +3954,25 @@
       "title": "Pale Rider: The Spanish Flu of 1918 and How It Changed the World",
       "author": "Laura Spinney",
       "pages": 332,
+      "rating": 3,
       "read_at": "2026-07-19",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1483639646l/30335530._SY475_.jpg"
+    },
+    {
+      "title": "The Talented Mr. Ripley",
+      "author": "Patricia Highsmith",
+      "pages": 271,
+      "rating": 5,
+      "read_at": "2026-07-27",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1746213953l/2247142._SY475_.jpg"
+    },
+    {
+      "title": "One of Us Is Guilty",
+      "author": "Steve Cavanagh",
+      "pages": 418,
+      "rating": 5,
+      "read_at": "2026-08-02",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1774317506l/240339295._SX318_.jpg"
     }
   ]
 }
