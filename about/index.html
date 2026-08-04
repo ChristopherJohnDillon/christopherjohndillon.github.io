@@ -100,6 +100,10 @@ title: About
         <span class="book-author">{{ book.author }}{% if book.rating > 0 %} <span class="film-rating">{% for i in (1..book.rating) %}★{% endfor %}</span>{% endif %}</span>
       </a>
       {% endfor %}
+      <a href="{{ '/reading/' | relative_url }}" class="book-item book-more">
+        <span class="book-title">Full reading stats — most-read authors, ratings &amp; more</span>
+        <span class="book-author">&rsaquo;</span>
+      </a>
       <a href="https://www.goodreads.com/user/show/17038700-chris-dillon" class="book-item book-more">
         <span class="book-title">See more on Goodreads</span>
         <span class="book-author">&rsaquo;</span>
