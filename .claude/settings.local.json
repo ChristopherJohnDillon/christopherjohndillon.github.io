@@ -59,7 +59,8 @@
       "Bash(grep -n \"render\\(\\);$\\\\|};$\" /Users/chrisdillon/christopherjohndillon.github.io/flare/dashboards/bundle.js)",
       "Bash(grep -n \"render\\(\\);$\" /Users/chrisdillon/christopherjohndillon.github.io/flare/dashboards/nps.js)",
       "Bash(grep *)",
-      "Bash(gh run *)"
+      "Bash(gh run *)",
+      "WebFetch(domain:lindseylynch.me)"
     ]
   }
 }
