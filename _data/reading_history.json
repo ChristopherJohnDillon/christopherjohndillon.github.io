@@ -27,1585 +27,1849 @@
       "count": 1,
       "pages": 384,
       "rating_sum": 1,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Dan    Brown": {
       "count": 6,
       "pages": 3417,
       "rating_sum": 13,
-      "rated": 5
+      "rated": 5,
+      "fives": 0
     },
     "Colin  Barrett": {
       "count": 1,
       "pages": 272,
       "rating_sum": 1,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "E. Lockhart": {
       "count": 1,
       "pages": 262,
       "rating_sum": 1,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Derek Landy": {
       "count": 12,
       "pages": 6026,
       "rating_sum": 50,
-      "rated": 12
+      "rated": 12,
+      "fives": 4
     },
     "Gregg Hurwitz": {
       "count": 11,
       "pages": 4342,
       "rating_sum": 41,
-      "rated": 11
+      "rated": 11,
+      "fives": 2
     },
     "Arthur Conan Doyle": {
       "count": 5,
       "pages": 2118,
       "rating_sum": 19,
-      "rated": 5
+      "rated": 5,
+      "fives": 0
     },
     "J.K. Rowling": {
       "count": 8,
       "pages": 4365,
       "rating_sum": 37,
-      "rated": 8
+      "rated": 8,
+      "fives": 6
     },
     "Lee Child": {
       "count": 30,
       "pages": 11036,
       "rating_sum": 127,
-      "rated": 30
+      "rated": 30,
+      "fives": 11
     },
     "Jeff Lindsay": {
       "count": 3,
       "pages": 887,
       "rating_sum": 10,
-      "rated": 3
+      "rated": 3,
+      "fives": 0
     },
     "C.S. Lewis": {
       "count": 4,
       "pages": 857,
       "rating_sum": 12,
-      "rated": 4
+      "rated": 4,
+      "fives": 0
     },
     "Agatha Christie": {
       "count": 4,
       "pages": 799,
       "rating_sum": 15,
-      "rated": 4
+      "rated": 4,
+      "fives": 0
     },
     "Gennifer Choldenko": {
       "count": 4,
       "pages": 980,
       "rating_sum": 15,
-      "rated": 4
+      "rated": 4,
+      "fives": 0
     },
     "Anthony Horowitz": {
       "count": 4,
       "pages": 1565,
       "rating_sum": 16,
-      "rated": 4
+      "rated": 4,
+      "fives": 1
     },
     "Horowitz": {
       "count": 1,
       "pages": 372,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Gillian Cross": {
       "count": 1,
       "pages": 158,
       "rating_sum": 2,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Charlie Higson": {
       "count": 1,
       "pages": 400,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Alan Moore": {
       "count": 3,
       "pages": 480,
       "rating_sum": 12,
-      "rated": 3
+      "rated": 3,
+      "fives": 1
     },
     "Neal Stephenson": {
       "count": 3,
       "pages": 1883,
       "rating_sum": 9,
-      "rated": 3
+      "rated": 3,
+      "fives": 0
     },
     "Dan Slott": {
       "count": 1,
       "pages": 70,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Adrian Tchaikovsky": {
       "count": 1,
       "pages": 600,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Philip Pullman": {
       "count": 6,
       "pages": 3080,
       "rating_sum": 21,
-      "rated": 6
+      "rated": 6,
+      "fives": 1
     },
     "Michelle Magorian": {
       "count": 1,
       "pages": 358,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Unknown": {
       "count": 1,
       "pages": 117,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "B.A. Paris": {
       "count": 1,
       "pages": 368,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Simon Scarrow": {
       "count": 1,
       "pages": 386,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Patricia Highsmith": {
       "count": 21,
       "pages": 5721,
       "rating_sum": 92,
-      "rated": 21
+      "rated": 21,
+      "fives": 10
     },
     "James Harford": {
       "count": 1,
       "pages": 432,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Simon Parkin": {
       "count": 1,
       "pages": 454,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Daniel Handler": {
       "count": 1,
       "pages": 240,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "John  Green": {
       "count": 1,
       "pages": 198,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Steve Cavanagh": {
       "count": 11,
       "pages": 4107,
       "rating_sum": 55,
-      "rated": 11
+      "rated": 11,
+      "fives": 11
     },
     "Chris Kempshall": {
       "count": 1,
       "pages": 395,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Andrew Shanahan": {
       "count": 2,
       "pages": 479,
       "rating_sum": 6,
-      "rated": 2
+      "rated": 2,
+      "fives": 0
     },
     "David Sedaris": {
       "count": 1,
       "pages": 272,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Truman Capote": {
       "count": 1,
       "pages": 343,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "John  Williams": {
       "count": 1,
       "pages": 292,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Anthony Doerr": {
       "count": 1,
       "pages": 531,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "George Egg": {
       "count": 1,
       "pages": 396,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Cecil Burns": {
       "count": 1,
       "pages": 0,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Brian McGilloway": {
       "count": 12,
       "pages": 3901,
       "rating_sum": 60,
-      "rated": 12
+      "rated": 12,
+      "fives": 12
     },
     "Jim Lovell": {
       "count": 1,
       "pages": 0,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Kazuo Ishiguro": {
       "count": 1,
       "pages": 258,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Ian Fleming": {
       "count": 1,
       "pages": 208,
       "rating_sum": 2,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Kate Winkler Dawson": {
       "count": 1,
       "pages": 352,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Brent Schlender": {
       "count": 1,
       "pages": 447,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Elena Ferrante": {
       "count": 1,
       "pages": 331,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Benjam\u00edn Labatut": {
       "count": 2,
       "pages": 561,
       "rating_sum": 10,
-      "rated": 2
+      "rated": 2,
+      "fives": 2
     },
     "Patric Gagne": {
       "count": 1,
       "pages": 368,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Blake Crouch": {
       "count": 3,
       "pages": 1023,
       "rating_sum": 12,
-      "rated": 3
+      "rated": 3,
+      "fives": 0
     },
     "Katja Hoyer": {
       "count": 1,
       "pages": 496,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Robert Kirkman": {
       "count": 3,
       "pages": 3879,
       "rating_sum": 15,
-      "rated": 3
+      "rated": 3,
+      "fives": 3
     },
     "Kathryn Harkup": {
       "count": 1,
       "pages": 320,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Robin Stevens": {
       "count": 12,
       "pages": 4197,
       "rating_sum": 55,
-      "rated": 12
+      "rated": 12,
+      "fives": 8
     },
     "Eliza  Clark": {
       "count": 3,
       "pages": 865,
       "rating_sum": 14,
-      "rated": 3
+      "rated": 3,
+      "fives": 2
     },
     "Asia Mackay": {
       "count": 2,
       "pages": 730,
       "rating_sum": 8,
-      "rated": 2
+      "rated": 2,
+      "fives": 1
     },
     "Simon  Parkin": {
       "count": 2,
       "pages": 769,
       "rating_sum": 10,
-      "rated": 2
+      "rated": 2,
+      "fives": 2
     },
     "Jeffrey Lewis": {
       "count": 1,
       "pages": 156,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Dava Sobel": {
       "count": 2,
       "pages": 502,
       "rating_sum": 8,
-      "rated": 2
+      "rated": 2,
+      "fives": 0
     },
     "Ruth Ware": {
       "count": 4,
       "pages": 1469,
       "rating_sum": 18,
-      "rated": 4
+      "rated": 4,
+      "fives": 2
     },
     "Emily St. John Mandel": {
       "count": 1,
       "pages": 259,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Philip Roth": {
       "count": 1,
       "pages": 391,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Claire Keegan": {
       "count": 1,
       "pages": 101,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Claire Allan": {
       "count": 8,
       "pages": 2954,
       "rating_sum": 37,
-      "rated": 8
+      "rated": 8,
+      "fives": 6
     },
     "Graham Norton": {
       "count": 4,
       "pages": 1255,
       "rating_sum": 18,
-      "rated": 4
+      "rated": 4,
+      "fives": 2
     },
     "Jan Carson": {
       "count": 4,
       "pages": 1029,
       "rating_sum": 20,
-      "rated": 4
+      "rated": 4,
+      "fives": 4
     },
     "Alison Rumfitt": {
       "count": 1,
       "pages": 304,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Stephen  King": {
       "count": 1,
       "pages": 497,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Jo  Callaghan": {
       "count": 1,
       "pages": 416,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Becky Chambers": {
       "count": 1,
       "pages": 518,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Michael  Magee": {
       "count": 1,
       "pages": 288,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Chris   Miller": {
       "count": 1,
       "pages": 431,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Amor Towles": {
       "count": 1,
       "pages": 495,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Gail Honeyman": {
       "count": 1,
       "pages": 390,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Robert A. Heinlein": {
       "count": 1,
       "pages": 264,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Daniel Keyes": {
       "count": 1,
       "pages": 311,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Andrew    Wilson": {
       "count": 1,
       "pages": 465,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Ursula K. Le Guin": {
       "count": 1,
       "pages": 183,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Erik Larson": {
       "count": 4,
       "pages": 1953,
       "rating_sum": 20,
-      "rated": 4
+      "rated": 4,
+      "fives": 4
     },
     "Tim  Marshall": {
       "count": 2,
       "pages": 720,
       "rating_sum": 8,
-      "rated": 2
+      "rated": 2,
+      "fives": 0
     },
     "Jennette McCurdy": {
       "count": 1,
       "pages": 320,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Will Dean": {
       "count": 2,
       "pages": 723,
       "rating_sum": 9,
-      "rated": 2
+      "rated": 2,
+      "fives": 1
     },
     "Bonnie Garmus": {
       "count": 1,
       "pages": 390,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Steve Jobs": {
       "count": 1,
       "pages": 194,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Liz Nugent": {
       "count": 5,
       "pages": 1685,
       "rating_sum": 24,
-      "rated": 5
+      "rated": 5,
+      "fives": 4
     },
     "Vigdis Hjorth": {
       "count": 1,
       "pages": 330,
       "rating_sum": 2,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Fred Saberhagen": {
       "count": 3,
       "pages": 945,
       "rating_sum": 10,
-      "rated": 3
+      "rated": 3,
+      "fives": 0
     },
     "Steven Sherrill": {
       "count": 1,
       "pages": 313,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "J.D. Salinger": {
       "count": 1,
       "pages": 277,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "M.L. Rio": {
       "count": 1,
       "pages": 354,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Albert Camus": {
       "count": 1,
       "pages": 111,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Stanley Tucci": {
       "count": 1,
       "pages": 291,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Michelle Gallen": {
       "count": 2,
       "pages": 614,
       "rating_sum": 10,
-      "rated": 2
+      "rated": 2,
+      "fives": 2
     },
     "Glenn Patterson": {
       "count": 1,
       "pages": 320,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Andy Weir": {
       "count": 3,
       "pages": 1150,
       "rating_sum": 14,
-      "rated": 3
+      "rated": 3,
+      "fives": 2
     },
     "Rory Clements": {
       "count": 2,
       "pages": 848,
       "rating_sum": 8,
-      "rated": 2
+      "rated": 2,
+      "fives": 0
     },
     "Thomas  Harris": {
       "count": 5,
       "pages": 2617,
       "rating_sum": 18,
-      "rated": 5
+      "rated": 5,
+      "fives": 1
     },
     "Lisa Jewell": {
       "count": 1,
       "pages": 403,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Abigail Dean": {
       "count": 1,
       "pages": 352,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Jeph Loeb": {
       "count": 1,
       "pages": 376,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Frank Miller": {
       "count": 1,
       "pages": 136,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Charles Soule": {
       "count": 2,
       "pages": 411,
       "rating_sum": 8,
-      "rated": 2
+      "rated": 2,
+      "fives": 0
     },
     "Bernie Mcgill": {
       "count": 1,
       "pages": 0,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Jo Spain": {
       "count": 5,
       "pages": 1978,
       "rating_sum": 24,
-      "rated": 5
+      "rated": 5,
+      "fives": 4
     },
     "Sandra Newman": {
       "count": 1,
       "pages": 272,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Donna Tartt": {
       "count": 1,
       "pages": 771,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Jon Ronson": {
       "count": 1,
       "pages": 306,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Torrey Peters": {
       "count": 1,
       "pages": 337,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Stuart Neville": {
       "count": 1,
       "pages": 296,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Roald Dahl": {
       "count": 4,
       "pages": 883,
       "rating_sum": 18,
-      "rated": 4
+      "rated": 4,
+      "fives": 3
     },
     "Clare Mackintosh": {
       "count": 1,
       "pages": 357,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Stephen Fry": {
       "count": 1,
       "pages": 255,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Matthew Woodring Stover": {
       "count": 1,
       "pages": 418,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Andrea Mara": {
       "count": 1,
       "pages": 389,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Julia Crouch": {
       "count": 1,
       "pages": 405,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Ian Sansom": {
       "count": 2,
       "pages": 128,
       "rating_sum": 10,
-      "rated": 2
+      "rated": 2,
+      "fives": 2
     },
     "Catherine Ryan Howard": {
       "count": 3,
       "pages": 983,
       "rating_sum": 15,
-      "rated": 3
+      "rated": 3,
+      "fives": 3
     },
     "Lemony Snicket": {
       "count": 20,
       "pages": 5041,
       "rating_sum": 97,
-      "rated": 20
+      "rated": 20,
+      "fives": 18
     },
     "Tamsyn Muir": {
       "count": 1,
       "pages": 448,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "C.L. Taylor": {
       "count": 1,
       "pages": 400,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Victor Jestin": {
       "count": 1,
       "pages": 112,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "S\u00e9amas O'Reilly": {
       "count": 1,
       "pages": 231,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "John Marrs": {
       "count": 1,
       "pages": 363,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Sharon Dempsey": {
       "count": 1,
       "pages": 365,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "T.J. Newman": {
       "count": 1,
       "pages": 304,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Will Wiles": {
       "count": 1,
       "pages": 295,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "T.M. Logan": {
       "count": 2,
       "pages": 796,
       "rating_sum": 10,
-      "rated": 2
+      "rated": 2,
+      "fives": 2
     },
     "James  Patterson": {
       "count": 1,
       "pages": 416,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Michael Crichton": {
       "count": 1,
       "pages": 435,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Dan Scottow": {
       "count": 1,
       "pages": 344,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Lia Middleton": {
       "count": 1,
       "pages": 384,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "B.P. Walter": {
       "count": 1,
       "pages": 400,
       "rating_sum": 1,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Helen Sarah Fields": {
       "count": 7,
       "pages": 2940,
       "rating_sum": 30,
-      "rated": 7
+      "rated": 7,
+      "fives": 3
     },
     "Charlotte Duckworth": {
       "count": 1,
       "pages": 400,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Deborah O'Connor": {
       "count": 1,
       "pages": 375,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "C.J. Skuse": {
       "count": 3,
       "pages": 1240,
       "rating_sum": 12,
-      "rated": 3
+      "rated": 3,
+      "fives": 1
     },
     "T.W. Ellis": {
       "count": 1,
       "pages": 306,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Alan Glynn": {
       "count": 2,
       "pages": 341,
       "rating_sum": 8,
-      "rated": 2
+      "rated": 2,
+      "fives": 0
     },
     "John Keegan": {
       "count": 1,
       "pages": 304,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Stephanie Wrobel": {
       "count": 1,
       "pages": 402,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Lucy Foley": {
       "count": 2,
       "pages": 765,
       "rating_sum": 9,
-      "rated": 2
+      "rated": 2,
+      "fives": 1
     },
     "Liza Costello": {
       "count": 1,
       "pages": 0,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Lloyd Alexander": {
       "count": 5,
       "pages": 1055,
       "rating_sum": 22,
-      "rated": 5
+      "rated": 5,
+      "fives": 2
     },
     "Matt Haig": {
       "count": 1,
       "pages": 339,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Sophie Hannah": {
       "count": 2,
       "pages": 689,
       "rating_sum": 8,
-      "rated": 2
+      "rated": 2,
+      "fives": 1
     },
     "F. Scott Fitzgerald": {
       "count": 1,
       "pages": 180,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Patrik Svensson": {
       "count": 1,
       "pages": 241,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Karen  Hamilton": {
       "count": 1,
       "pages": 359,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Felicity Everett": {
       "count": 1,
       "pages": 315,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Natalie Haynes": {
       "count": 1,
       "pages": 348,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Henrietta McKervey": {
       "count": 1,
       "pages": 304,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Madeline Miller": {
       "count": 2,
       "pages": 705,
       "rating_sum": 10,
-      "rated": 2
+      "rated": 2,
+      "fives": 2
     },
     "Oyinkan Braithwaite": {
       "count": 1,
       "pages": 226,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Ian Rankin": {
       "count": 1,
       "pages": 228,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "George Orwell": {
       "count": 3,
       "pages": 857,
       "rating_sum": 15,
-      "rated": 3
+      "rated": 3,
+      "fives": 3
     },
     "Denise Mina": {
       "count": 1,
       "pages": 376,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Mary Wollstonecraft Shelley": {
       "count": 1,
       "pages": 288,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Adam Hart-Davis": {
       "count": 1,
       "pages": 256,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "A.J. Finn": {
       "count": 1,
       "pages": 455,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Leonard Cohen": {
       "count": 1,
       "pages": 154,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Edward Carey": {
       "count": 1,
       "pages": 464,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Boileau-Narcejac": {
       "count": 1,
       "pages": 170,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "John Kennedy Toole": {
       "count": 1,
       "pages": 338,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Emma Warnock": {
       "count": 1,
       "pages": 220,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Dean Bakopoulos": {
       "count": 1,
       "pages": 320,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Jane  Riley": {
       "count": 1,
       "pages": 315,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Mackenzi Lee": {
       "count": 1,
       "pages": 533,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Donald E. Westlake": {
       "count": 1,
       "pages": 463,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Sir Poley": {
       "count": 3,
       "pages": 712,
       "rating_sum": 15,
-      "rated": 3
+      "rated": 3,
+      "fives": 3
     },
     "Terry Spencer Hesser": {
       "count": 1,
       "pages": 149,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Terry Pratchett": {
       "count": 3,
       "pages": 1131,
       "rating_sum": 10,
-      "rated": 3
+      "rated": 3,
+      "fives": 0
     },
     "T.H. White": {
       "count": 1,
       "pages": 352,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Linwood Barclay": {
       "count": 1,
       "pages": 464,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Ira Levin": {
       "count": 4,
       "pages": 1015,
       "rating_sum": 20,
-      "rated": 4
+      "rated": 4,
+      "fives": 4
     },
     "H.G. Wells": {
       "count": 2,
       "pages": 266,
       "rating_sum": 8,
-      "rated": 2
+      "rated": 2,
+      "fives": 0
     },
     "Edgar Cantero": {
       "count": 1,
       "pages": 338,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Mike Jeavons": {
       "count": 1,
       "pages": 369,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Beth O'Leary": {
       "count": 1,
       "pages": 394,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Walter Lord": {
       "count": 1,
       "pages": 215,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Dave Itzkoff": {
       "count": 1,
       "pages": 527,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Robert Louis Stevenson": {
       "count": 1,
       "pages": 139,
       "rating_sum": 2,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Maryrose Wood": {
       "count": 1,
       "pages": 288,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Adrian McKinty": {
       "count": 1,
       "pages": 357,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Ross Welford": {
       "count": 4,
       "pages": 1618,
       "rating_sum": 17,
-      "rated": 4
+      "rated": 4,
+      "fives": 1
     },
     "Robert Bloch": {
       "count": 1,
       "pages": 208,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Stuart Turton": {
       "count": 1,
       "pages": 432,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Herman Melville": {
       "count": 1,
       "pages": 720,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Genki Kawamura": {
       "count": 1,
       "pages": 202,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Lucinda Berry": {
       "count": 1,
       "pages": 371,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Ali Land": {
       "count": 1,
       "pages": 338,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Kassia St. Clair": {
       "count": 1,
       "pages": 320,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Maggie O'Farrell": {
       "count": 1,
       "pages": 304,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Olga Tokarczuk": {
       "count": 1,
       "pages": 270,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Sue Townsend": {
       "count": 11,
       "pages": 2982,
       "rating_sum": 51,
-      "rated": 11
+      "rated": 11,
+      "fives": 8
     },
     "Frances Maynard": {
       "count": 1,
       "pages": 400,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Jonathan Safran Foer": {
       "count": 1,
       "pages": 326,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Lorenzo Marone": {
       "count": 1,
       "pages": 241,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Louise Candlish": {
       "count": 1,
       "pages": 404,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Eric Bernt": {
       "count": 1,
       "pages": 419,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "J.R.R. Tolkien": {
       "count": 3,
       "pages": 1124,
       "rating_sum": 12,
-      "rated": 3
+      "rated": 3,
+      "fives": 0
     },
     "Maja Lunde": {
       "count": 1,
       "pages": 337,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Lee Goldberg": {
       "count": 1,
       "pages": 248,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Phil Hogan": {
       "count": 1,
       "pages": 288,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Marian Keyes": {
       "count": 1,
       "pages": 576,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "David   Mitchell": {
       "count": 1,
       "pages": 0,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Hairy Bikers": {
       "count": 1,
       "pages": 320,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Eoin Colfer": {
       "count": 6,
       "pages": 2201,
       "rating_sum": 24,
-      "rated": 6
+      "rated": 6,
+      "fives": 1
     },
     "Sin\u00e9ad Crowley": {
       "count": 1,
       "pages": 400,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Patrick Ness": {
       "count": 1,
       "pages": 348,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Mark Vanhoenacker": {
       "count": 1,
       "pages": 0,
       "rating_sum": 2,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Rebecca Skloot": {
       "count": 1,
       "pages": 370,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Shari Lapena": {
       "count": 1,
       "pages": 304,
       "rating_sum": 2,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Daniel Wallace": {
       "count": 1,
       "pages": 208,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Helen Fielding": {
       "count": 1,
       "pages": 288,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Kurt Vonnegut Jr.": {
       "count": 1,
       "pages": 296,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Mara Wilson": {
       "count": 1,
       "pages": 259,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Simon Winchester": {
       "count": 1,
       "pages": 242,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "William Shatner": {
       "count": 1,
       "pages": 278,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "William Shakespeare": {
       "count": 1,
       "pages": 249,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Anthony Burgess": {
       "count": 1,
       "pages": 192,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Nicholas  Searle": {
       "count": 1,
       "pages": 368,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Gillian Flynn": {
       "count": 1,
       "pages": 466,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "John Buchan": {
       "count": 1,
       "pages": 118,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Oscar Wilde": {
       "count": 1,
       "pages": 271,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Laline Paull": {
       "count": 1,
       "pages": 346,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Patrick S\u00fcskind": {
       "count": 1,
       "pages": 263,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Reif Larsen": {
       "count": 1,
       "pages": 374,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Johnny  Vegas": {
       "count": 1,
       "pages": 320,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "William Goldman": {
       "count": 1,
       "pages": 317,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Pamela Stephenson": {
       "count": 1,
       "pages": 384,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Nigel Slater": {
       "count": 1,
       "pages": 238,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Jancis Robinson": {
       "count": 1,
       "pages": 80,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Bryan Cranston": {
       "count": 1,
       "pages": 276,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Charlie Connelly": {
       "count": 1,
       "pages": 384,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Anne Fine": {
       "count": 1,
       "pages": 192,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "John Burnside": {
       "count": 1,
       "pages": 198,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Christopher Priest": {
       "count": 1,
       "pages": 404,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Michael Moorcock": {
       "count": 1,
       "pages": 181,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Ben Elton": {
       "count": 1,
       "pages": 386,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Dick King-Smith": {
       "count": 1,
       "pages": 150,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Kyle Macdonald": {
       "count": 1,
       "pages": 310,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "David   Adam": {
       "count": 1,
       "pages": 292,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Robert Galbraith": {
       "count": 2,
       "pages": 968,
       "rating_sum": 10,
-      "rated": 2
+      "rated": 2,
+      "fives": 2
     },
     "Aury Wallington": {
       "count": 1,
       "pages": 272,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "John Scalzi": {
       "count": 4,
       "pages": 1338,
       "rating_sum": 17,
-      "rated": 4
+      "rated": 4,
+      "fives": 1
     },
     "Neil Gaiman": {
       "count": 1,
       "pages": 635,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Philip K. Dick": {
       "count": 1,
       "pages": 112,
       "rating_sum": 2,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Mark Haddon": {
       "count": 1,
       "pages": 226,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "John Farndon": {
       "count": 1,
       "pages": 220,
       "rating_sum": 2,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Paula Hawkins": {
       "count": 1,
       "pages": 336,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Eliezer Yudkowsky": {
       "count": 1,
       "pages": 2184,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Suzanne Collins": {
       "count": 1,
       "pages": 374,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Ernest Cline": {
       "count": 1,
       "pages": 480,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Nick Hornby": {
       "count": 1,
       "pages": 307,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Timur Vermes": {
       "count": 1,
       "pages": 313,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Ken Grimwood": {
       "count": 1,
       "pages": 311,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     },
     "Ursula Moray Williams": {
       "count": 1,
       "pages": 160,
       "rating_sum": 4,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Scott Snyder": {
       "count": 1,
       "pages": 176,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Jill Murphy": {
       "count": 1,
       "pages": 107,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Dav Pilkey": {
       "count": 1,
       "pages": 125,
       "rating_sum": 3,
-      "rated": 1
+      "rated": 1,
+      "fives": 0
     },
     "Paul Stewart": {
       "count": 2,
       "pages": 672,
       "rating_sum": 10,
-      "rated": 2
+      "rated": 2,
+      "fives": 2
     },
     "Piers Anthony": {
       "count": 5,
       "pages": 1730,
       "rating_sum": 25,
-      "rated": 5
+      "rated": 5,
+      "fives": 5
     },
     "Douglas Adams": {
       "count": 7,
       "pages": 2285,
       "rating_sum": 35,
-      "rated": 7
+      "rated": 7,
+      "fives": 7
     },
     "Philip Ardagh": {
       "count": 1,
       "pages": 119,
       "rating_sum": 5,
-      "rated": 1
+      "rated": 1,
+      "fives": 1
     }
   },
   "timeline": [

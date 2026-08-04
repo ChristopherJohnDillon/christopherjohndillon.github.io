@@ -110,12 +110,14 @@ def summarize(books, min_year=MIN_YEAR):
     for b in books:
         rating = b.get("rating", 0)
         if b["author"]:
-            a = authors.setdefault(b["author"], {"count": 0, "pages": 0, "rating_sum": 0, "rated": 0})
+            a = authors.setdefault(b["author"], {"count": 0, "pages": 0, "rating_sum": 0, "rated": 0, "fives": 0})
             a["count"] += 1
             a["pages"] += b["pages"]
             if rating:
                 a["rating_sum"] += rating
                 a["rated"] += 1
+                if rating == 5:
+                    a["fives"] += 1
         if rating:
             ratings[rating] += 1
         if b["year"] and b["year"] >= min_year:
@@ -141,8 +143,12 @@ def summarize(books, min_year=MIN_YEAR):
     }
 
 
-MIN_RATED_BOOKS = 3   # an author needs this many rated books to be ranked by rating
 TOP_AUTHORS = 12      # rows shown in each author leaderboard
+
+
+def fav_score(a):
+    """Favourite-author score: one point per book read, two more per five-star."""
+    return a["count"] + 2 * a.get("fives", 0)
 
 
 def author_boards(history, ongoing):
@@ -150,19 +156,20 @@ def author_boards(history, ongoing):
     authors = {}
     for src in (history.get("authors", {}), ongoing.get("authors", {})):
         for name, a in src.items():
-            m = authors.setdefault(name, {"count": 0, "pages": 0, "rating_sum": 0, "rated": 0})
+            m = authors.setdefault(name, {"count": 0, "pages": 0, "rating_sum": 0, "rated": 0, "fives": 0})
             for k in m:
                 m[k] += a.get(k, 0)
     most_read = [
         {"author": name, "count": a["count"], "pages": a["pages"]}
         for name, a in sorted(authors.items(), key=lambda kv: (-kv[1]["count"], kv[0]))
     ][:TOP_AUTHORS]
-    rated = [(name, a) for name, a in authors.items() if a["rated"] >= MIN_RATED_BOOKS]
-    top_rated = [
-        {"author": name, "avg": round(a["rating_sum"] / a["rated"], 2), "rated": a["rated"]}
-        for name, a in sorted(rated, key=lambda kv: (-kv[1]["rating_sum"] / kv[1]["rated"], -kv[1]["rated"], kv[0]))
+    favourites = [
+        {"author": name, "score": fav_score(a), "fives": a["fives"], "count": a["count"],
+         "avg": round(a["rating_sum"] / a["rated"], 2) if a["rated"] else 0}
+        for name, a in sorted(authors.items(), key=lambda kv: (-fav_score(kv[1]), -kv[1]["fives"], kv[0]))
+        if a["fives"] > 0
     ][:TOP_AUTHORS]
-    return most_read, top_rated
+    return most_read, favourites
 
 
 def merge(history, ongoing):
@@ -179,7 +186,7 @@ def merge(history, ongoing):
     ratings_dist = [{"rating": r, "count": ratings.get(r, 0)} for r in range(1, 6)]
     rated_books = sum(ratings.values())
     rating_total = sum(r * c for r, c in ratings.items())
-    most_read, top_rated = author_boards(history, ongoing)
+    most_read, favourites = author_boards(history, ongoing)
     timeline = sorted(history["timeline"] + ongoing["timeline"], key=lambda b: b["read_at"])
     total_books = history["total_books"] + ongoing["total_books"]
     page_books = history["page_books"] + ongoing["page_books"]
@@ -199,7 +206,7 @@ def merge(history, ongoing):
         "per_year": per_year,
         "fun": fun,
         "most_read": most_read,
-        "top_rated": top_rated,
+        "favourites": favourites,
         "ratings_dist": ratings_dist,
         "timeline": timeline,
     }

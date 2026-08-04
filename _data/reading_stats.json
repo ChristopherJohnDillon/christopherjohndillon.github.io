@@ -129,66 +129,90 @@
       "pages": 2285
     }
   ],
-  "top_rated": [
+  "favourites": [
+    {
+      "author": "Lemony Snicket",
+      "score": 56,
+      "fives": 18,
+      "count": 20,
+      "avg": 4.85
+    },
+    {
+      "author": "Lee Child",
+      "score": 52,
+      "fives": 11,
+      "count": 30,
+      "avg": 4.23
+    },
+    {
+      "author": "Patricia Highsmith",
+      "score": 44,
+      "fives": 11,
+      "count": 22,
+      "avg": 4.41
+    },
     {
       "author": "Brian McGilloway",
-      "avg": 5.0,
-      "rated": 12
+      "score": 36,
+      "fives": 12,
+      "count": 12,
+      "avg": 5.0
     },
     {
       "author": "Steve Cavanagh",
-      "avg": 5.0,
-      "rated": 12
+      "score": 36,
+      "fives": 12,
+      "count": 12,
+      "avg": 5.0
+    },
+    {
+      "author": "Robin Stevens",
+      "score": 28,
+      "fives": 8,
+      "count": 12,
+      "avg": 4.58
+    },
+    {
+      "author": "Sue Townsend",
+      "score": 27,
+      "fives": 8,
+      "count": 11,
+      "avg": 4.64
     },
     {
       "author": "Douglas Adams",
-      "avg": 5.0,
-      "rated": 7
+      "score": 21,
+      "fives": 7,
+      "count": 7,
+      "avg": 5.0
     },
     {
-      "author": "Piers Anthony",
-      "avg": 5.0,
-      "rated": 5
+      "author": "Derek Landy",
+      "score": 21,
+      "fives": 4,
+      "count": 13,
+      "avg": 4.15
     },
     {
-      "author": "Erik Larson",
-      "avg": 5.0,
-      "rated": 4
+      "author": "Claire Allan",
+      "score": 20,
+      "fives": 6,
+      "count": 8,
+      "avg": 4.62
     },
     {
-      "author": "Ira Levin",
-      "avg": 5.0,
-      "rated": 4
-    },
-    {
-      "author": "Catherine Ryan Howard",
-      "avg": 5.0,
-      "rated": 3
-    },
-    {
-      "author": "George Orwell",
-      "avg": 5.0,
-      "rated": 3
-    },
-    {
-      "author": "Robert Kirkman",
-      "avg": 5.0,
-      "rated": 3
-    },
-    {
-      "author": "Sir Poley",
-      "avg": 5.0,
-      "rated": 3
-    },
-    {
-      "author": "Lemony Snicket",
-      "avg": 4.85,
-      "rated": 20
+      "author": "J.K. Rowling",
+      "score": 20,
+      "fives": 6,
+      "count": 8,
+      "avg": 4.62
     },
     {
       "author": "Liz Nugent",
-      "avg": 4.83,
-      "rated": 6
+      "score": 16,
+      "fives": 5,
+      "count": 6,
+      "avg": 4.83
     }
   ],
   "ratings_dist": [

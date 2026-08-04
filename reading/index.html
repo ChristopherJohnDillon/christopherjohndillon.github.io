@@ -50,16 +50,18 @@ description: Reading stats for Chris Dillon — most-read authors, top-rated aut
   </div>
 </section>
 
-<!-- Top rated authors -->
+<!-- Favourite authors -->
 <section class="experience-section">
-  <div class="section-label">Top rated authors</div>
-  <p class="board-note">by average rating, among authors with 3+ rated books</p>
+  <div class="section-label">Favourite authors</div>
+  <p class="board-note">weighted score — one point per book read, two more per five-star</p>
   <div class="author-list">
-    {% for r in stats.top_rated %}
+    {% assign maxs = stats.favourites.first.score %}
+    {% for r in stats.favourites %}
     <div class="author-row">
       <span class="author-rank">{{ forloop.index | prepend: '00' | slice: -2, 2 }}</span>
       <span class="author-name">{{ r.author | escape }}</span>
-      <span class="author-meta"><strong>{{ r.avg }}★</strong> avg · {{ r.rated }} rated</span>
+      <span class="author-meta"><strong>{{ r.fives }}</strong>×5★ · {{ r.count }} books · {{ r.avg }} avg</span>
+      <span class="author-bar"><span style="width: {{ r.score | times: 100.0 | divided_by: maxs | round }}%"></span></span>
     </div>
     {% endfor %}
   </div>
