@@ -97,7 +97,7 @@ title: About
       {% for book in site.data.books %}
       <a href="{{ book.url }}" class="book-item">
         <span class="book-title">{{ book.title | escape }}</span>
-        <span class="book-author">{{ book.author }}</span>
+        <span class="book-author">{{ book.author }}{% if book.rating > 0 %} <span class="film-rating">{% for i in (1..book.rating) %}★{% endfor %}</span>{% endif %}</span>
       </a>
       {% endfor %}
       <a href="https://www.goodreads.com/user/show/17038700-chris-dillon" class="book-item book-more">

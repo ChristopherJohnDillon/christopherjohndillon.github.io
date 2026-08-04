@@ -26,11 +26,11 @@
 
   --f-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --f-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --max-width: 760px;
+  --max-width: 950px;
 }
 
-/* Base */
-html { font-size: 16px; }
+/* Base — 20px root ≈ 125% browser zoom; everything is rem-based so it scales */
+html { font-size: 20px; }
 
 body {
   font-family: var(--f-mono);
