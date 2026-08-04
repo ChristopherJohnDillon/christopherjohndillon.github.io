@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 35
+      "count": 38
     }
   ],
   "fun": {
-    "total_films": 35,
-    "avg_rating": 3.36,
+    "total_films": 38,
+    "avg_rating": 3.4,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -244,6 +244,27 @@
       "rating": 2.0,
       "watched_at": "2026-07-11",
       "poster": "https://a.ltrbxd.com/resized/sm/upload/qq/wx/vh/dy/tPnw9oqIvIMoYjVozkDkxm3xR8r-0-600-0-900-crop.jpg?v=28856a9f35"
+    },
+    {
+      "title": "Don't Move",
+      "year": 2024,
+      "rating": 4.0,
+      "watched_at": "2026-07-25",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/9/5/9/4/4/1/959441-dont-move-2024-0-600-0-900-crop.jpg?v=fdb87ee6cb"
+    },
+    {
+      "title": "Mystery Men",
+      "year": 1999,
+      "rating": 4.0,
+      "watched_at": "2026-07-26",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/4/6/7/9/0/46790-mystery-men-0-600-0-900-crop.jpg?v=c140c7ee89"
+    },
+    {
+      "title": "Supergirl",
+      "year": 2026,
+      "rating": 3.5,
+      "watched_at": "2026-08-02",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/9/7/4/2/8/6/974286-supergirl-2026-0-600-0-900-crop.jpg?v=e85ddf39db"
     }
   ]
 }
