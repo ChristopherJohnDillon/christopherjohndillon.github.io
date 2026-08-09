@@ -46,16 +46,16 @@
     },
     {
       "year": 2026,
-      "count": 26
+      "count": 27
     }
   ],
   "fun": {
-    "total_books": 569,
-    "total_pages": 195747,
+    "total_books": 570,
+    "total_pages": 196019,
     "avg_pages": 352,
     "avg_rating": 4.2,
-    "rated_books": 568,
-    "five_star": 248,
+    "rated_books": 569,
+    "five_star": 249,
     "shortest": {
       "title": "Without Fail",
       "author": "Lee Child",
@@ -75,8 +75,8 @@
     },
     {
       "author": "Patricia Highsmith",
-      "count": 22,
-      "pages": 5992
+      "count": 23,
+      "pages": 6264
     },
     {
       "author": "Lemony Snicket",
@@ -146,10 +146,10 @@
     },
     {
       "author": "Patricia Highsmith",
-      "score": 44,
-      "fives": 11,
-      "count": 22,
-      "avg": 4.41
+      "score": 47,
+      "fives": 12,
+      "count": 23,
+      "avg": 4.43
     },
     {
       "author": "Brian McGilloway",
@@ -234,7 +234,7 @@
     },
     {
       "rating": 5,
-      "count": 248
+      "count": 249
     }
   ],
   "timeline": [
@@ -3997,6 +3997,14 @@
       "rating": 5,
       "read_at": "2026-08-02",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1774317506l/240339295._SX318_.jpg"
+    },
+    {
+      "title": "Ripley's Game",
+      "author": "Patricia Highsmith",
+      "pages": 272,
+      "rating": 5,
+      "read_at": "2026-08-08",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327977429l/3425503.jpg"
     }
   ]
 }

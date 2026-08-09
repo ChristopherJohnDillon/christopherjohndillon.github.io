@@ -1,5 +1,12 @@
 [
   {
+    "title": "Ripley's Game",
+    "author": "Patricia Highsmith",
+    "rating": 5,
+    "read_at": "2026-08-08",
+    "url": "https://www.goodreads.com/book/show/3425503"
+  },
+  {
     "title": "One of Us Is Guilty",
     "author": "Steve Cavanagh",
     "rating": 5,
@@ -26,12 +33,5 @@
     "rating": 3,
     "read_at": "2026-07-12",
     "url": "https://www.goodreads.com/book/show/35224144"
-  },
-  {
-    "title": "Murder Bimbo",
-    "author": "Rebecca Novack",
-    "rating": 3,
-    "read_at": "2026-07-04",
-    "url": "https://www.goodreads.com/book/show/235992114"
   }
 ]
