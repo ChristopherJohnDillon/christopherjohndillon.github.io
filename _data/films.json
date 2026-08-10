@@ -1,5 +1,13 @@
 [
   {
+    "title": "Spider-Man: Brand New Day",
+    "year": 2026,
+    "rating": 2.5,
+    "watched_at": "2026-08-09",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/8/7/2/8/7/1/872871-spider-man-brand-new-day-0-600-0-900-crop.jpg?v=ebe6beb4fc",
+    "url": "https://letterboxd.com/chrisdillon/film/spider-man-brand-new-day/"
+  },
+  {
     "title": "Supergirl",
     "year": 2026,
     "rating": 3.5,
@@ -30,13 +38,5 @@
     "watched_at": "2026-07-11",
     "poster": "https://a.ltrbxd.com/resized/sm/upload/qq/wx/vh/dy/tPnw9oqIvIMoYjVozkDkxm3xR8r-0-600-0-900-crop.jpg?v=28856a9f35",
     "url": "https://letterboxd.com/chrisdillon/film/22-jump-street/"
-  },
-  {
-    "title": "Ricky Stanicky",
-    "year": 2024,
-    "rating": 3.0,
-    "watched_at": "2026-07-05",
-    "poster": "https://a.ltrbxd.com/resized/film-poster/9/2/1/5/2/7/921527-ricky-stanicky-0-600-0-900-crop.jpg?v=203d0c3794",
-    "url": "https://letterboxd.com/chrisdillon/film/ricky-stanicky/"
   }
 ]
