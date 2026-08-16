@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 39
+      "count": 40
     }
   ],
   "fun": {
-    "total_films": 39,
-    "avg_rating": 3.38,
+    "total_films": 40,
+    "avg_rating": 3.39,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -272,6 +272,13 @@
       "rating": 2.5,
       "watched_at": "2026-08-09",
       "poster": "https://a.ltrbxd.com/resized/film-poster/8/7/2/8/7/1/872871-spider-man-brand-new-day-0-600-0-900-crop.jpg?v=ebe6beb4fc"
+    },
+    {
+      "title": "Kiki's Delivery Service",
+      "year": 1989,
+      "rating": 4.0,
+      "watched_at": "2026-08-15",
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/5e/rk/0e/99/C70E830B-E641-4CD4-87B3-8DFB91383E20-0-600-0-900-crop.jpg?v=359a791d0d"
     }
   ]
 }
