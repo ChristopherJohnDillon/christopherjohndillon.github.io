@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 40
+      "count": 41
     }
   ],
   "fun": {
-    "total_films": 40,
-    "avg_rating": 3.39,
+    "total_films": 41,
+    "avg_rating": 3.4,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -279,6 +279,13 @@
       "rating": 4.0,
       "watched_at": "2026-08-15",
       "poster": "https://a.ltrbxd.com/resized/sm/upload/5e/rk/0e/99/C70E830B-E641-4CD4-87B3-8DFB91383E20-0-600-0-900-crop.jpg?v=359a791d0d"
+    },
+    {
+      "title": "Joy Ride",
+      "year": 2001,
+      "rating": 3.5,
+      "watched_at": "2026-08-16",
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/nw/2c/8o/8i/q8y2T2LvJV0mvia1RA9pS1K33GR-0-600-0-900-crop.jpg?v=5c133deeae"
     }
   ]
 }
