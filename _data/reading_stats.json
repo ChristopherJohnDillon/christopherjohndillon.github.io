@@ -51,7 +51,7 @@
   ],
   "fun": {
     "total_books": 570,
-    "total_pages": 196019,
+    "total_pages": 196006,
     "avg_pages": 352,
     "avg_rating": 4.2,
     "rated_books": 569,
@@ -96,7 +96,7 @@
     {
       "author": "Gregg Hurwitz",
       "count": 12,
-      "pages": 4758
+      "pages": 4745
     },
     {
       "author": "Robin Stevens",
@@ -3913,7 +3913,7 @@
     {
       "title": "Antihero",
       "author": "Gregg Hurwitz",
-      "pages": 416,
+      "pages": 403,
       "rating": 2,
       "read_at": "2026-05-24",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1751384785l/231127208._SY475_.jpg"
