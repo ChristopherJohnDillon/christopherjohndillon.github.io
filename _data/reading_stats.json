@@ -46,15 +46,15 @@
     },
     {
       "year": 2026,
-      "count": 27
+      "count": 28
     }
   ],
   "fun": {
-    "total_books": 570,
-    "total_pages": 196006,
+    "total_books": 571,
+    "total_pages": 196278,
     "avg_pages": 352,
-    "avg_rating": 4.2,
-    "rated_books": 569,
+    "avg_rating": 4.19,
+    "rated_books": 570,
     "five_star": 249,
     "shortest": {
       "title": "Without Fail",
@@ -226,7 +226,7 @@
     },
     {
       "rating": 3,
-      "count": 94
+      "count": 95
     },
     {
       "rating": 4,
@@ -4005,6 +4005,14 @@
       "rating": 5,
       "read_at": "2026-08-08",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327977429l/3425503.jpg"
+    },
+    {
+      "title": "The Good Liar",
+      "author": "Denise Mina",
+      "pages": 272,
+      "rating": 3,
+      "read_at": "2026-08-18",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1740797114l/220175349._SY475_.jpg"
     }
   ]
 }

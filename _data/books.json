@@ -1,5 +1,12 @@
 [
   {
+    "title": "The Good Liar",
+    "author": "Denise Mina",
+    "rating": 3,
+    "read_at": "2026-08-18",
+    "url": "https://www.goodreads.com/book/show/220175349"
+  },
+  {
     "title": "Ripley's Game",
     "author": "Patricia Highsmith",
     "rating": 5,
@@ -26,12 +33,5 @@
     "rating": 3,
     "read_at": "2026-07-19",
     "url": "https://www.goodreads.com/book/show/30335530"
-  },
-  {
-    "title": "Breakfast at Tiffany's",
-    "author": "Truman Capote",
-    "rating": 3,
-    "read_at": "2026-07-12",
-    "url": "https://www.goodreads.com/book/show/35224144"
   }
 ]
