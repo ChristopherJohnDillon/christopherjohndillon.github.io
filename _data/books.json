@@ -1,5 +1,12 @@
 [
   {
+    "title": "Culpability",
+    "author": "Bruce Holsinger",
+    "rating": 5,
+    "read_at": "2026-08-22",
+    "url": "https://www.goodreads.com/book/show/222259253"
+  },
+  {
     "title": "The Good Liar",
     "author": "Denise Mina",
     "rating": 3,
@@ -26,12 +33,5 @@
     "rating": 5,
     "read_at": "2026-07-27",
     "url": "https://www.goodreads.com/book/show/2247142"
-  },
-  {
-    "title": "Pale Rider: The Spanish Flu of 1918 and How It Changed the World",
-    "author": "Laura Spinney",
-    "rating": 3,
-    "read_at": "2026-07-19",
-    "url": "https://www.goodreads.com/book/show/30335530"
   }
 ]

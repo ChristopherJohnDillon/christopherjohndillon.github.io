@@ -46,16 +46,16 @@
     },
     {
       "year": 2026,
-      "count": 28
+      "count": 29
     }
   ],
   "fun": {
-    "total_books": 571,
-    "total_pages": 196278,
+    "total_books": 572,
+    "total_pages": 196628,
     "avg_pages": 352,
-    "avg_rating": 4.19,
-    "rated_books": 570,
-    "five_star": 249,
+    "avg_rating": 4.2,
+    "rated_books": 571,
+    "five_star": 250,
     "shortest": {
       "title": "Without Fail",
       "author": "Lee Child",
@@ -234,7 +234,7 @@
     },
     {
       "rating": 5,
-      "count": 249
+      "count": 250
     }
   ],
   "timeline": [
@@ -4013,6 +4013,14 @@
       "rating": 3,
       "read_at": "2026-08-18",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1740797114l/220175349._SY475_.jpg"
+    },
+    {
+      "title": "Culpability",
+      "author": "Bruce Holsinger",
+      "pages": 350,
+      "rating": 5,
+      "read_at": "2026-08-22",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1751998652l/222259253._SY475_.jpg"
     }
   ]
 }
