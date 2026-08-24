@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 43
+      "count": 44
     }
   ],
   "fun": {
-    "total_films": 43,
-    "avg_rating": 3.35,
+    "total_films": 44,
+    "avg_rating": 3.32,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -300,6 +300,13 @@
       "rating": 2.0,
       "watched_at": "2026-08-22",
       "poster": "https://a.ltrbxd.com/resized/film-poster/4/7/5/5/2/47552-wayne-s-world-0-600-0-900-crop.jpg?v=1af467682a"
+    },
+    {
+      "title": "Thunderbolts*",
+      "year": 2025,
+      "rating": 2.0,
+      "watched_at": "2026-08-23",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/8/8/7/6/5/3/887653-thunderbolts-0-600-0-900-crop.jpg?v=80380bc773"
     }
   ]
 }
