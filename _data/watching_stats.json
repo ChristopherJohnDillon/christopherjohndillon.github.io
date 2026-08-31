@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 44
+      "count": 45
     }
   ],
   "fun": {
-    "total_films": 44,
-    "avg_rating": 3.32,
+    "total_films": 45,
+    "avg_rating": 3.26,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -307,6 +307,13 @@
       "rating": 2.0,
       "watched_at": "2026-08-23",
       "poster": "https://a.ltrbxd.com/resized/film-poster/8/8/7/6/5/3/887653-thunderbolts-0-600-0-900-crop.jpg?v=80380bc773"
+    },
+    {
+      "title": "The Whisper Man",
+      "year": 2026,
+      "rating": 0.5,
+      "watched_at": "2026-08-30",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/7/7/4/6/0/8/774608-the-whisper-man-0-600-0-900-crop.jpg?v=ceba3ed52e"
     }
   ]
 }

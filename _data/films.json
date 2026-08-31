@@ -1,5 +1,13 @@
 [
   {
+    "title": "The Whisper Man",
+    "year": 2026,
+    "rating": 0.5,
+    "watched_at": "2026-08-30",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/7/7/4/6/0/8/774608-the-whisper-man-0-600-0-900-crop.jpg?v=ceba3ed52e",
+    "url": "https://letterboxd.com/chrisdillon/film/the-whisper-man/"
+  },
+  {
     "title": "Thunderbolts*",
     "year": 2025,
     "rating": 2.0,
@@ -30,13 +38,5 @@
     "watched_at": "2026-08-16",
     "poster": "https://a.ltrbxd.com/resized/sm/upload/nw/2c/8o/8i/q8y2T2LvJV0mvia1RA9pS1K33GR-0-600-0-900-crop.jpg?v=5c133deeae",
     "url": "https://letterboxd.com/chrisdillon/film/joy-ride/"
-  },
-  {
-    "title": "Kiki's Delivery Service",
-    "year": 1989,
-    "rating": 4.0,
-    "watched_at": "2026-08-15",
-    "poster": "https://a.ltrbxd.com/resized/sm/upload/5e/rk/0e/99/C70E830B-E641-4CD4-87B3-8DFB91383E20-0-600-0-900-crop.jpg?v=359a791d0d",
-    "url": "https://letterboxd.com/chrisdillon/film/kikis-delivery-service/"
   }
 ]
