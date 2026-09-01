@@ -1,5 +1,13 @@
 [
   {
+    "title": "Marty Supreme",
+    "year": 2025,
+    "rating": 3.5,
+    "watched_at": "2026-08-31",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/1/1/9/7/4/9/9/1197499-marty-supreme-0-600-0-900-crop.jpg?v=b14a26bb43",
+    "url": "https://letterboxd.com/chrisdillon/film/marty-supreme/"
+  },
+  {
     "title": "The Whisper Man",
     "year": 2026,
     "rating": 0.5,
@@ -30,13 +38,5 @@
     "watched_at": "2026-08-22",
     "poster": "https://a.ltrbxd.com/resized/film-poster/4/7/5/5/2/47552-wayne-s-world-0-600-0-900-crop.jpg?v=1af467682a",
     "url": "https://letterboxd.com/chrisdillon/film/waynes-world/"
-  },
-  {
-    "title": "Joy Ride",
-    "year": 2001,
-    "rating": 3.5,
-    "watched_at": "2026-08-16",
-    "poster": "https://a.ltrbxd.com/resized/sm/upload/nw/2c/8o/8i/q8y2T2LvJV0mvia1RA9pS1K33GR-0-600-0-900-crop.jpg?v=5c133deeae",
-    "url": "https://letterboxd.com/chrisdillon/film/joy-ride/"
   }
 ]
