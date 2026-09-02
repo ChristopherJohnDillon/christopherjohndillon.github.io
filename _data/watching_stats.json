@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 38
+      "count": 46
     }
   ],
   "fun": {
-    "total_films": 38,
-    "avg_rating": 3.4,
+    "total_films": 46,
+    "avg_rating": 3.26,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -265,6 +265,62 @@
       "rating": 3.5,
       "watched_at": "2026-08-02",
       "poster": "https://a.ltrbxd.com/resized/film-poster/9/7/4/2/8/6/974286-supergirl-2026-0-600-0-900-crop.jpg?v=e85ddf39db"
+    },
+    {
+      "title": "Spider-Man: Brand New Day",
+      "year": 2026,
+      "rating": 2.5,
+      "watched_at": "2026-08-09",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/8/7/2/8/7/1/872871-spider-man-brand-new-day-0-600-0-900-crop.jpg?v=ebe6beb4fc"
+    },
+    {
+      "title": "Kiki's Delivery Service",
+      "year": 1989,
+      "rating": 4.0,
+      "watched_at": "2026-08-15",
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/5e/rk/0e/99/C70E830B-E641-4CD4-87B3-8DFB91383E20-0-600-0-900-crop.jpg?v=359a791d0d"
+    },
+    {
+      "title": "Joy Ride",
+      "year": 2001,
+      "rating": 3.5,
+      "watched_at": "2026-08-16",
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/nw/2c/8o/8i/q8y2T2LvJV0mvia1RA9pS1K33GR-0-600-0-900-crop.jpg?v=5c133deeae"
+    },
+    {
+      "title": "Venom: The Last Dance",
+      "year": 2024,
+      "rating": 3.0,
+      "watched_at": "2026-08-22",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/8/1/9/3/2/0/819320-venom-the-last-dance-0-600-0-900-crop.jpg?v=6a049e8f65"
+    },
+    {
+      "title": "Wayne's World",
+      "year": 1992,
+      "rating": 2.0,
+      "watched_at": "2026-08-22",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/4/7/5/5/2/47552-wayne-s-world-0-600-0-900-crop.jpg?v=1af467682a"
+    },
+    {
+      "title": "Thunderbolts*",
+      "year": 2025,
+      "rating": 2.0,
+      "watched_at": "2026-08-23",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/8/8/7/6/5/3/887653-thunderbolts-0-600-0-900-crop.jpg?v=80380bc773"
+    },
+    {
+      "title": "The Whisper Man",
+      "year": 2026,
+      "rating": 0.5,
+      "watched_at": "2026-08-30",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/7/7/4/6/0/8/774608-the-whisper-man-0-600-0-900-crop.jpg?v=ceba3ed52e"
+    },
+    {
+      "title": "Marty Supreme",
+      "year": 2025,
+      "rating": 3.5,
+      "watched_at": "2026-08-31",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/1/1/9/7/4/9/9/1197499-marty-supreme-0-600-0-900-crop.jpg?v=b14a26bb43"
     }
   ]
 }
