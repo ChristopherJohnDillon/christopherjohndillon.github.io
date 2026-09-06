@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 46
+      "count": 47
     }
   ],
   "fun": {
-    "total_films": 46,
-    "avg_rating": 3.26,
+    "total_films": 47,
+    "avg_rating": 3.23,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -321,6 +321,13 @@
       "rating": 3.5,
       "watched_at": "2026-08-31",
       "poster": "https://a.ltrbxd.com/resized/film-poster/1/1/9/7/4/9/9/1197499-marty-supreme-0-600-0-900-crop.jpg?v=b14a26bb43"
+    },
+    {
+      "title": "The Hangover",
+      "year": 2009,
+      "rating": 2.0,
+      "watched_at": "2026-09-05",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/4/0/1/0/0/40100-the-hangover-0-600-0-900-crop.jpg?v=6464871bf5"
     }
   ]
 }
