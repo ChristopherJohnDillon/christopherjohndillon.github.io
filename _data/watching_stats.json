@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 47
+      "count": 49
     }
   ],
   "fun": {
-    "total_films": 47,
-    "avg_rating": 3.23,
+    "total_films": 49,
+    "avg_rating": 3.28,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -328,6 +328,20 @@
       "rating": 2.0,
       "watched_at": "2026-09-05",
       "poster": "https://a.ltrbxd.com/resized/film-poster/4/0/1/0/0/40100-the-hangover-0-600-0-900-crop.jpg?v=6464871bf5"
+    },
+    {
+      "title": "Training Day",
+      "year": 2001,
+      "rating": 4.0,
+      "watched_at": "2026-09-06",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/5/0/5/8/0/50580-training-day-0-600-0-900-crop.jpg?v=5ce5342625"
+    },
+    {
+      "title": "Star Trek IV: The Voyage Home",
+      "year": 1986,
+      "rating": 4.5,
+      "watched_at": "2026-09-06",
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/oe/je/mz/72/xyTWTsh9Opfg5HX5hevLY8G7lEg-0-600-0-900-crop.jpg?v=fcf1793943"
     }
   ]
 }
