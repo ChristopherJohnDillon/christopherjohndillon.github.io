@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 49
+      "count": 50
     }
   ],
   "fun": {
-    "total_films": 49,
-    "avg_rating": 3.28,
+    "total_films": 50,
+    "avg_rating": 3.3,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -342,6 +342,13 @@
       "rating": 4.5,
       "watched_at": "2026-09-06",
       "poster": "https://a.ltrbxd.com/resized/sm/upload/oe/je/mz/72/xyTWTsh9Opfg5HX5hevLY8G7lEg-0-600-0-900-crop.jpg?v=fcf1793943"
+    },
+    {
+      "title": "Withnail & I",
+      "year": 1987,
+      "rating": 4.5,
+      "watched_at": "2026-09-11",
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/hu/x4/yt/14/lXD5UR2dvXJF54AIBt8G2kDvYGk-0-600-0-900-crop.jpg?v=f4e1c2a522"
     }
   ]
 }
