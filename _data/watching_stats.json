@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 50
+      "count": 51
     }
   ],
   "fun": {
-    "total_films": 50,
-    "avg_rating": 3.3,
+    "total_films": 51,
+    "avg_rating": 3.26,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -349,6 +349,13 @@
       "rating": 4.5,
       "watched_at": "2026-09-11",
       "poster": "https://a.ltrbxd.com/resized/sm/upload/hu/x4/yt/14/lXD5UR2dvXJF54AIBt8G2kDvYGk-0-600-0-900-crop.jpg?v=f4e1c2a522"
+    },
+    {
+      "title": "So I Married an Axe Murderer",
+      "year": 1993,
+      "rating": 1.0,
+      "watched_at": "2026-09-12",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/4/6/2/2/6/46226-so-i-married-an-axe-murderer-0-600-0-900-crop.jpg?v=e0ad96e4f1"
     }
   ]
 }
