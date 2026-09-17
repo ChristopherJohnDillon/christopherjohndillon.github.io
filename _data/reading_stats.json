@@ -208,11 +208,11 @@
       "avg": 4.62
     },
     {
-      "author": "Liz Nugent",
+      "author": "Gregg Hurwitz",
       "score": 16,
-      "fives": 5,
-      "count": 6,
-      "avg": 4.83
+      "fives": 2,
+      "count": 12,
+      "avg": 3.58
     }
   ],
   "ratings_dist": [
@@ -3872,7 +3872,7 @@
     },
     {
       "title": "The Truth About Ruby Cooper",
-      "author": "Liz Nugent",
+      "author": "Penguin Books Ltd",
       "pages": 369,
       "rating": 5,
       "read_at": "2026-03-17",
