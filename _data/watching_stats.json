@@ -2,11 +2,11 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 52
+      "count": 53
     }
   ],
   "fun": {
-    "total_films": 52,
+    "total_films": 53,
     "avg_rating": 3.23,
     "highest_rated": {
       "title": "Spider-Man 2",
@@ -363,6 +363,13 @@
       "rating": 2.0,
       "watched_at": "2026-09-13",
       "poster": "https://a.ltrbxd.com/resized/film-poster/1/1/1/1/0/7/3/1111073-star-wars-the-mandalorian-and-grogu-0-600-0-900-crop.jpg?v=5da24e2cba"
+    },
+    {
+      "title": "The Man from U.N.C.L.E.",
+      "year": 2015,
+      "rating": 3.0,
+      "watched_at": "2026-09-26",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/1/4/5/8/2/2/145822-the-man-from-u-n-c-l-e--0-600-0-900-crop.jpg?v=2cc57633aa"
     }
   ]
 }
