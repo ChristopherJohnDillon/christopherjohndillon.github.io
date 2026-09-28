@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 53
+      "count": 54
     }
   ],
   "fun": {
-    "total_films": 53,
-    "avg_rating": 3.23,
+    "total_films": 54,
+    "avg_rating": 3.24,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -370,6 +370,13 @@
       "rating": 3.0,
       "watched_at": "2026-09-26",
       "poster": "https://a.ltrbxd.com/resized/film-poster/1/4/5/8/2/2/145822-the-man-from-u-n-c-l-e--0-600-0-900-crop.jpg?v=2cc57633aa"
+    },
+    {
+      "title": "Sleepers",
+      "year": 1996,
+      "rating": 4.0,
+      "watched_at": "2026-09-27",
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/h4/8g/nz/gt/80LV2GvhvMEuOutxgQwbRYpo0Vv-0-600-0-900-crop.jpg?v=2e6a0b782e"
     }
   ]
 }
