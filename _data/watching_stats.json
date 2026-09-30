@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 54
+      "count": 55
     }
   ],
   "fun": {
-    "total_films": 54,
-    "avg_rating": 3.24,
+    "total_films": 55,
+    "avg_rating": 3.22,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -377,6 +377,13 @@
       "rating": 4.0,
       "watched_at": "2026-09-27",
       "poster": "https://a.ltrbxd.com/resized/sm/upload/h4/8g/nz/gt/80LV2GvhvMEuOutxgQwbRYpo0Vv-0-600-0-900-crop.jpg?v=2e6a0b782e"
+    },
+    {
+      "title": "Iron Man",
+      "year": 2008,
+      "rating": 2.0,
+      "watched_at": "2026-09-29",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/5/0/8/2/5/50825-iron-man-0-600-0-900-crop.jpg?v=f03c15122c"
     }
   ]
 }
