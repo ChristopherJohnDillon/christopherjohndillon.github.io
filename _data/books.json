@@ -1,5 +1,12 @@
 [
   {
+    "title": "Invincible, Compendium Three",
+    "author": "Robert Kirkman",
+    "rating": 5,
+    "read_at": "",
+    "url": "https://www.goodreads.com/book/show/37491885"
+  },
+  {
     "title": "Culpability",
     "author": "Bruce Holsinger",
     "rating": 5,
@@ -26,12 +33,5 @@
     "rating": 5,
     "read_at": "2026-08-02",
     "url": "https://www.goodreads.com/book/show/240339295"
-  },
-  {
-    "title": "The Talented Mr. Ripley",
-    "author": "Patricia Highsmith",
-    "rating": 5,
-    "read_at": "2026-07-27",
-    "url": "https://www.goodreads.com/book/show/2247142"
   }
 ]
