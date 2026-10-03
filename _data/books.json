@@ -1,5 +1,12 @@
 [
   {
+    "title": "The Feather Thief: Beauty, Obsession, and the Natural History Heist of the Century",
+    "author": "Kirk Wallace Johnson",
+    "rating": 5,
+    "read_at": "2026-10-02",
+    "url": "https://www.goodreads.com/book/show/44153387"
+  },
+  {
     "title": "The Only One Left",
     "author": "Riley Sager",
     "rating": 4,
@@ -26,12 +33,5 @@
     "rating": 3,
     "read_at": "2026-08-18",
     "url": "https://www.goodreads.com/book/show/220175349"
-  },
-  {
-    "title": "Ripley's Game",
-    "author": "Patricia Highsmith",
-    "rating": 5,
-    "read_at": "2026-08-08",
-    "url": "https://www.goodreads.com/book/show/3425503"
   }
 ]
