@@ -46,15 +46,15 @@
     },
     {
       "year": 2026,
-      "count": 31
+      "count": 32
     }
   ],
   "fun": {
-    "total_books": 574,
-    "total_pages": 197347,
+    "total_books": 575,
+    "total_pages": 197651,
     "avg_pages": 352,
     "avg_rating": 4.2,
-    "rated_books": 573,
+    "rated_books": 574,
     "five_star": 251,
     "shortest": {
       "title": "Without Fail",
@@ -226,7 +226,7 @@
     },
     {
       "rating": 3,
-      "count": 95
+      "count": 96
     },
     {
       "rating": 4,
@@ -4037,6 +4037,14 @@
       "rating": 5,
       "read_at": "2026-10-02",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1551792197l/44153387.jpg"
+    },
+    {
+      "title": "Truly, Darkly, Deeply",
+      "author": "Victoria Selman",
+      "pages": 304,
+      "rating": 3,
+      "read_at": "2026-10-04",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1673707258l/63284431.jpg"
     }
   ]
 }
