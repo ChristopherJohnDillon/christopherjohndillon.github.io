@@ -1,5 +1,21 @@
 [
   {
+    "title": "Jack Reacher",
+    "year": 2012,
+    "rating": 3.0,
+    "watched_at": "2026-10-04",
+    "poster": "https://a.ltrbxd.com/resized/sm/upload/ir/bx/ah/ew/3VoVKGVmU7S0a9yMVJo4H5siVw7-0-600-0-900-crop.jpg?v=4633deb45d",
+    "url": "https://letterboxd.com/chrisdillon/film/jack-reacher/"
+  },
+  {
+    "title": "Mechanic: Resurrection",
+    "year": 2016,
+    "rating": 3.0,
+    "watched_at": "2026-10-04",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/2/0/3/0/8/1/203081-mechanic-resurrection-0-600-0-900-crop.jpg?v=1aef7f640a",
+    "url": "https://letterboxd.com/chrisdillon/film/mechanic-resurrection/"
+  },
+  {
     "title": "Iron Man",
     "year": 2008,
     "rating": 2.0,
@@ -22,21 +38,5 @@
     "watched_at": "2026-09-26",
     "poster": "https://a.ltrbxd.com/resized/film-poster/1/4/5/8/2/2/145822-the-man-from-u-n-c-l-e--0-600-0-900-crop.jpg?v=2cc57633aa",
     "url": "https://letterboxd.com/chrisdillon/film/the-man-from-uncle/"
-  },
-  {
-    "title": "The Mandalorian and Grogu",
-    "year": 2026,
-    "rating": 2.0,
-    "watched_at": "2026-09-13",
-    "poster": "https://a.ltrbxd.com/resized/film-poster/1/1/1/1/0/7/3/1111073-star-wars-the-mandalorian-and-grogu-0-600-0-900-crop.jpg?v=5da24e2cba",
-    "url": "https://letterboxd.com/chrisdillon/film/the-mandalorian-and-grogu/"
-  },
-  {
-    "title": "So I Married an Axe Murderer",
-    "year": 1993,
-    "rating": 1.0,
-    "watched_at": "2026-09-12",
-    "poster": "https://a.ltrbxd.com/resized/film-poster/4/6/2/2/6/46226-so-i-married-an-axe-murderer-0-600-0-900-crop.jpg?v=e0ad96e4f1",
-    "url": "https://letterboxd.com/chrisdillon/film/so-i-married-an-axe-murderer/"
   }
 ]

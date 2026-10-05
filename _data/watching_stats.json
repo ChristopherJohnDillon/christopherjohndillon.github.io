@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 55
+      "count": 57
     }
   ],
   "fun": {
-    "total_films": 55,
-    "avg_rating": 3.22,
+    "total_films": 57,
+    "avg_rating": 3.21,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -384,6 +384,20 @@
       "rating": 2.0,
       "watched_at": "2026-09-29",
       "poster": "https://a.ltrbxd.com/resized/film-poster/5/0/8/2/5/50825-iron-man-0-600-0-900-crop.jpg?v=f03c15122c"
+    },
+    {
+      "title": "Jack Reacher",
+      "year": 2012,
+      "rating": 3.0,
+      "watched_at": "2026-10-04",
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/ir/bx/ah/ew/3VoVKGVmU7S0a9yMVJo4H5siVw7-0-600-0-900-crop.jpg?v=4633deb45d"
+    },
+    {
+      "title": "Mechanic: Resurrection",
+      "year": 2016,
+      "rating": 3.0,
+      "watched_at": "2026-10-04",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/2/0/3/0/8/1/203081-mechanic-resurrection-0-600-0-900-crop.jpg?v=1aef7f640a"
     }
   ]
 }
