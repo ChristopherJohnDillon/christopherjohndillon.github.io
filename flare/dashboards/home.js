@@ -7,20 +7,15 @@ window.FlareDashboards = window.FlareDashboards || {};
 window.FlareDashboards.home = function (main) {
   main.innerHTML = `
     <div class="main-inner">
-      <h1 class="page-title" style="margin-bottom: 2rem;">Welcome to FLARE</h1>
-
-      <div style="display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 2rem;">
-        <img src="/flare/flare-logo.svg" alt="" style="width: 80px; height: 70px; flex: 0 0 auto;" />
-        <div>
-          <h2 style="font-size: 1.7rem; margin-bottom: 0.3rem;">FLARE</h2>
-          <div style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mute); margin-bottom: 1rem;">Flexible, Lightweight Analytics &amp; Reporting Engine</div>
-          <p style="color: var(--instrument); font-size: 0.98rem; line-height: 1.7; max-width: 75ch;">FLARE is the analytics and reporting platform for Helios Brands Co. It provides real-time dashboards covering sales performance, supply chain operations, customer sentiment, e-commerce marketing, and executive scorecards. All data is refreshed automatically via scheduled ETL pipelines so teams always have the latest numbers without manual intervention.</p>
-        </div>
+      <div class="home-hero">
+        <div class="home-kicker">Flexible, Lightweight Analytics &amp; Reporting Engine</div>
+        <h1 class="page-title">Welcome to FLARE</h1>
+        <p class="home-lede">Dashboards for Helios Brands Co. — sales, operations, customers and the exec scorecard, refreshed automatically by scheduled pipelines. Pick a dashboard below, switch brands from the top bar, or <button class="row-link" id="homeTour">take the 90-second tour</button>.</p>
       </div>
 
       <hr class="divider" />
 
-      <h2 style="font-size: 1.05rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--white); margin-bottom: 1.5rem;">Dashboard Directory</h2>
+      <h2 class="sec-h" style="margin-bottom: 1.5rem;">Dashboard directory</h2>
 
       <div class="dir-grid" id="dirGrid"></div>
 
@@ -31,6 +26,9 @@ window.FlareDashboards.home = function (main) {
       </div>
     </div>
   `;
+
+  const tourLink = document.getElementById("homeTour");
+  if (tourLink) tourLink.addEventListener("click", () => window.FlareTour && window.FlareTour.start());
 
   const dir = document.getElementById("dirGrid");
   const groups = [

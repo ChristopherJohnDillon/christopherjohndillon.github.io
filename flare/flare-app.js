@@ -170,7 +170,18 @@
     const ico = document.querySelector("#sbToggle .ms");
     if (ico) ico.textContent = state.collapsed ? "menu" : "menu_open";
   }
+  /* Mobile: the sidebar is a drawer opened from the topbar menu button */
+  const mobileNav = window.matchMedia("(max-width: 760px)");
+  function setNavOpen(open) {
+    document.getElementById("appShell").classList.toggle("nav-open", open);
+    document.getElementById("menuBtn").setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  document.getElementById("menuBtn").addEventListener("click", () => setNavOpen(true));
+  document.getElementById("navScrim").addEventListener("click", () => setNavOpen(false));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") setNavOpen(false); });
+
   document.getElementById("sbToggle").addEventListener("click", () => {
+    if (mobileNav.matches) { setNavOpen(false); return; }
     state.collapsed = !state.collapsed;
     localStorage.setItem("flare:collapsed", state.collapsed ? "1" : "0");
     applyCollapsed();
@@ -197,6 +208,7 @@
   });
 
   function render() {
+    setNavOpen(false);
     renderSidebar();
     const meta = ROUTES[state.route];
     if (meta) {

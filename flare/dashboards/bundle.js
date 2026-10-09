@@ -100,7 +100,7 @@ window.FlareDashboards.bundle = function (main, businessKey) {
       <div style="color: var(--read); font-size: 0.9rem; margin-bottom: 1rem;">
         <strong style="color: var(--white);">${ps}</strong> — <strong style="color: var(--white);">${pe}</strong>
         vs same period ly: 01 Apr 2025 — 30 Apr 2025 ·
-        Values with <span style="color: var(--positive); font-weight: 600;">green</span>/<span style="color: var(--critical); font-weight: 600;">red</span> YoY % beneath
+        Values with <span style="color: var(--pos-text); font-weight: 600;">green</span>/<span style="color: var(--crit-text); font-weight: 600;">red</span> YoY % beneath
       </div>
       <h2 style="font-size: 1.4rem; margin-bottom: 0.4rem;">Summary <span style="color: var(--mute); font-weight: 400; font-size: 0.9rem; margin-left: 0.5rem;">Click any column header to view its historical trend</span></h2>
       <table class="tbl tbl-flare tbl-customer" style="margin-top: 1rem;">

@@ -113,9 +113,9 @@ window.FlareDashboards.sku = function (main, businessKey) {
           <span style="font-size: 1.5rem; font-weight: 700; color: var(--white);">Product Margin Tracker</span>
           <span style="color: var(--mute); font-size: 0.95rem; font-weight: 400;"> — Actual margin vs target by business &amp; channel</span>
           <div style="margin-top: 0.45rem; font-size: 0.85rem;">
-            <span style="color: var(--positive); font-weight: 500;">Green = over target</span>
+            <span style="color: var(--pos-text); font-weight: 500;">Green = over target</span>
             <span style="color: var(--mute); margin: 0 0.4rem;">·</span>
-            <span style="color: var(--critical); font-weight: 500;">Red = under target</span>
+            <span style="color: var(--crit-text); font-weight: 500;">Red = under target</span>
           </div>
         </div>
 

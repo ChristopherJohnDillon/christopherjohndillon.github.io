@@ -25,7 +25,7 @@ const T = {
 };
 
 if (window.Chart) {
-  Chart.defaults.font.family = "IBM Plex Mono, ui-monospace, monospace";
+  Chart.defaults.font.family = "Inter, -apple-system, BlinkMacSystemFont, sans-serif";
   Chart.defaults.font.size = 11;
   Chart.defaults.color = T.mute;
   Chart.defaults.borderColor = T.rule;
@@ -36,7 +36,7 @@ if (window.Chart) {
   Chart.defaults.plugins.tooltip.borderColor = T.ruleStrong;
   Chart.defaults.plugins.tooltip.borderWidth = 1;
   Chart.defaults.plugins.tooltip.padding = 8;
-  Chart.defaults.plugins.tooltip.titleFont = { family: "IBM Plex Sans", weight: "500" };
+  Chart.defaults.plugins.tooltip.titleFont = { family: "Inter, sans-serif", weight: "600" };
 }
 
 const FlareCharts = (function () {
@@ -116,7 +116,7 @@ const FlareCharts = (function () {
             label: "Revenue",
             yAxisID: "y",
             data: series.map((p) => p.revenue / 1000),
-            backgroundColor: T.surfaceAlt,
+            backgroundColor: "rgba(184,192,208,0.32)",
             borderColor: accentColor || T.accent,
             borderWidth: 0,
             borderRadius: 2,

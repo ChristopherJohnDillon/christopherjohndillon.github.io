@@ -139,45 +139,46 @@ window.FlareDashboards.exec = function (main, businessKey) {
 
         <div class="kpi-grid">
           <div class="kpi-card ${mtdCls}">
-            <h3>REVENUE MTD</h3>
+            <h3>Revenue MTD</h3>
             <h1>${fmtM(mtdActual)}</h1>
             <p>Budget MTD: ${fmtM(mtdBudget)}</p>
             <p>LY MTD: ${fmtM(mtdLY)} (${pp(mtdActual / mtdLY - 1)})</p>
             <p>${(mtdActual / monthlyBudget * 100).toFixed(0)}% of full-month budget (${fmtM(monthlyBudget)})</p>
-            <p class="detail">${pp(mtdActual / mtdBudget - 1)} vs MTD budget · ${(mtdActual / monthlyBudget * 100).toFixed(0)}% of full-month</p>
+            <p class="detail">${pp(mtdActual / mtdBudget - 1)} vs MTD budget</p>
           </div>
           <div class="kpi-card ${projCls}">
-            <h3>MONTH-END PROJECTION</h3>
+            <h3>Month-end projection</h3>
             <h1>${fmtM(projection)}</h1>
-            <p>Run-rate forecast<br>Budget: ${fmtM(monthlyBudget)}</p>
-            <p>WD progress: ${day}/${daysInMonth} (${Math.round(monthFraction * 100)}%) · Avg/day: ${fmtK(mtdActual / day)}</p>
+            <p>Run-rate forecast · budget ${fmtM(monthlyBudget)}</p>
+            <p>Day ${day} of ${daysInMonth} · ${fmtK(mtdActual / day)}/day</p>
             <p class="detail">${pp(projection / monthlyBudget - 1)} vs full-month budget</p>
           </div>
           <div class="kpi-card neutral">
-            <h3>OPEN ORDERS (TOTAL)</h3>
-            <h1>£${openOrdersValue.toFixed(2)}M (${openOrdersTotal.toLocaleString()})</h1>
+            <h3>Open orders</h3>
+            <h1>£${openOrdersValue.toFixed(2)}M</h1>
+            <p>${openOrdersTotal.toLocaleString()} orders open</p>
             <p>Wholesale £${wholesaleValue.toFixed(2)}M (${openOrdersWholesale.toLocaleString()})</p>
             <p>Direct £${directValue.toFixed(2)}M (${openOrdersDirect.toLocaleString()})</p>
-            <p class="detail"><a href="#/openorders" style="color: var(--accent); border-bottom: 1px dotted var(--accent);">View pipeline →</a></p>
+            <p class="detail"><a href="#/openorders">View pipeline →</a></p>
           </div>
         </div>
         <div class="kpi-grid">
           <div class="kpi-card ${marginPctCls}">
-            <h3>PRODUCT MARGIN %</h3>
+            <h3>Product margin %</h3>
             <h1>${marginPct.toFixed(1)}%</h1>
             <p>Budget: ${marginPctBudget.toFixed(1)}%</p>
             <p>LY: ${(marginPctBudget - 0.8).toFixed(1)}%</p>
             <p class="detail">${pp((marginPct - marginPctBudget) / 100)} vs budget</p>
           </div>
           <div class="kpi-card ${cls(marginMTD, marginMTDBudget, 0.05)}">
-            <h3>MARGIN MTD</h3>
+            <h3>Margin MTD</h3>
             <h1>${fmtM(marginMTD)}</h1>
             <p>Budget: ${fmtM(marginMTDBudget)}</p>
             <p>LY: ${fmtM(marginMTDBudget * 0.95)}</p>
             <p class="detail">${marginMTD >= marginMTDBudget ? "+" : ""}${fmtM(marginMTD - marginMTDBudget)} vs budget</p>
           </div>
           <div class="kpi-card ${cashCls}">
-            <h3>CASH LIQUIDITY (PRIOR WEEK)</h3>
+            <h3>Cash · prior week</h3>
             <h1>£${cashWeeks.toFixed(2)}M</h1>
             <p>Operating cash position</p>
             <p>Week ending ${new Date(Date.now() - 7 * 86400000).toLocaleDateString("en-GB", { day: "2-digit", month: "short" })}</p>
@@ -193,14 +194,14 @@ window.FlareDashboards.exec = function (main, businessKey) {
             <p class="detail">${pp((otif - biz.otifTarget) / 100)} vs target</p>
           </div>
           <div class="kpi-card ${invCls}">
-            <h3>INVENTORY HEALTH</h3>
+            <h3>Inventory health</h3>
             <h1>${invHealth}%</h1>
             <p>Stock cover days: ${stockDays}</p>
             <p>E&amp;O exposure: £${eoExposure.toFixed(2)}M</p>
             <p class="detail">${invHealth >= 85 ? "On target" : "Near target"}</p>
           </div>
           <div class="kpi-card ${stockoutsCls}">
-            <h3>ACTIVE STOCKOUTS</h3>
+            <h3>Active stockouts</h3>
             <h1>${activeStockouts}</h1>
             <p>SKUs currently out of stock</p>
             <p>Of which top sellers: ${topSellerOos}</p>

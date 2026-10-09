@@ -89,7 +89,7 @@ window.FlareDashboards.openorders = function (main, businessKey) {
               ${d.queue.length === 0 ? `<tr><td colspan="6" style="text-align: center; color: var(--mute); padding: 1.5rem;">No orders match the current filter.</td></tr>` :
               d.queue.map((o) => {
                 const ageCls = o.ageDays >= 7 ? "neg" : o.ageDays >= 4 ? "" : "";
-                const ageStyle = o.ageDays >= 7 ? "color: var(--critical);" : o.ageDays >= 4 ? "color: var(--warning);" : "";
+                const ageStyle = o.ageDays >= 7 ? "color: var(--crit-text);" : o.ageDays >= 4 ? "color: var(--warn-text);" : "";
                 return `<tr>
                   <td class="mono">${o.id}</td>
                   <td>${o.stage}</td>

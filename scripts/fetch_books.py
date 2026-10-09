@@ -81,8 +81,10 @@ def items_from(root):
 
 def recent_books(books, n=N_BOOKS):
     """The n most-recent reads, shaped for books.json."""
+    # feed order follows shelf edits, not reads; undated books sort last
+    by_read = sorted(books, key=lambda b: b["read_at"] or "", reverse=True)
     out = []
-    for b in books[:n]:
+    for b in by_read[:n]:
         url = f"https://www.goodreads.com/book/show/{b['book_id']}" if b["book_id"] else ""
         out.append({
             "title": b["title"],

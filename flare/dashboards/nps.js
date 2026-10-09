@@ -54,13 +54,13 @@ window.FlareDashboards.nps = function (main, businessKey) {
 
         <h2 style="font-size: 1.6rem; margin-bottom: 1.25rem;">NPS Scorecard</h2>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
-          <div class="kpi-card positive" style="min-height: 220px;">
+          <div class="kpi-card positive">
             <h3>NPS MTD</h3>
             <h1>${npsMTD.toFixed(2)}</h1>
             <p>Target: ${target.toFixed(1)} | n=${nResponsesMTD}</p>
             <p class="detail">+${(npsMTD - target).toFixed(2)} vs target</p>
           </div>
-          <div class="kpi-card positive" style="min-height: 220px;">
+          <div class="kpi-card positive">
             <h3>NPS YTD</h3>
             <h1>${npsYTD.toFixed(2)}</h1>
             <p>Target: ${target.toFixed(1)} | n=${nResponsesYTD}</p>

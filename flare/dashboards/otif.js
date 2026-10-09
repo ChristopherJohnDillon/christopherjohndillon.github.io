@@ -66,7 +66,7 @@ window.FlareDashboards.otif = function (main, businessKey) {
       <h2 style="font-size: 1.4rem; margin-bottom: 1.25rem;">Key Performance Indicators</h2>
 
       <div style="display: grid; grid-template-columns: 1fr 3fr; gap: 1.5rem; align-items: stretch; margin-bottom: 2rem;">
-        <div class="kpi-card ${overallCls}" style="min-height: 200px;">
+        <div class="kpi-card ${overallCls}">
           <h3>Overall OTIF %</h3>
           <h1>${overall.toFixed(1)}%</h1>
           <p>Target: ${target}%</p>

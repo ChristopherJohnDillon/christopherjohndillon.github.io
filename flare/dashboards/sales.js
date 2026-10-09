@@ -57,11 +57,11 @@ window.FlareDashboards.sales = function (main, businessKey) {
             <div class="value">${fmtMoneyShort(s.actual)}</div>
             <div class="sub">
               Forecast ${fmtMoneyShort(s.forecast)} ·
-              <span style="color: ${delta >= 0 ? "var(--positive)" : "var(--critical)"};">
+              <span style="color: ${delta >= 0 ? "var(--pos-text)" : "var(--crit-text)"};">
                 ${delta >= 0 ? "+" : ""}${fmtMoneyShort(delta)} (${deltaPct >= 0 ? "+" : ""}${deltaPct.toFixed(1)}%)
               </span>
             </div>
-            <div class="attain-bar"><span style="width: ${Math.min(100, attainment * 100).toFixed(1)}%; background: ${attainment >= 1 ? "var(--positive)" : attainment >= 0.95 ? "var(--accent)" : "var(--critical)"};"></span></div>
+            <div class="attain-bar"><span style="width: ${Math.min(100, attainment * 100).toFixed(1)}%; background: ${attainment >= 1 ? "var(--positive)" : attainment >= 0.95 ? "var(--warning)" : "var(--critical)"};"></span></div>
           </div>
           ${metric("Orders", s.orders.toLocaleString(), "", "neutral", false)}
           ${metric("AOV", "£" + (s.actual / Math.max(1, s.orders)).toFixed(2), "", "neutral", false)}
@@ -113,7 +113,8 @@ window.FlareDashboards.sales = function (main, businessKey) {
           labels: points.map((p) => p.hour),
           datasets: [{
             data: points.map((p) => p.revenue / 1000),
-            backgroundColor: FLARE_T.surfaceAlt,
+            backgroundColor: "rgba(255,79,0,0.72)",
+            hoverBackgroundColor: FLARE_T.accent,
             borderColor: FLARE_T.accent,
             borderWidth: 0,
             borderRadius: 2,
@@ -151,8 +152,8 @@ function summaryView(biz, businessKey, s, periodLabel) {
       <div class="brand-strip">
         ${s.perBrand.map((b) => {
           const atn = b.actual / b.forecast;
-          const cls = atn >= 1 ? "pos" : "neg";
-          const barCol = atn >= 1 ? "var(--positive)" : atn >= 0.95 ? "var(--accent)" : "var(--critical)";
+          const cls = atn >= 1 ? "pos" : atn >= 0.95 ? "warn" : "neg";
+          const barCol = atn >= 1 ? "var(--positive)" : atn >= 0.95 ? "var(--warning)" : "var(--critical)";
           return `
             <div class="bs-cell">
               <div class="bs-name"><span class="swatch" style="background: ${b.color};"></span>${b.name}</div>

@@ -64,3 +64,19 @@ if __name__ == "__main__":
             fn()
             print(f"ok  {name}")
     print("all passed")
+
+
+def test_recent_books_ordered_by_read_date():
+    # feed order follows shelf edits, so an old read can arrive first
+    books = [
+        {"title": "Old", "author": "A", "rating": 5, "read_at": "2024-06-09", "book_id": "1"},
+        {"title": "Newest", "author": "B", "rating": 3, "read_at": "2026-10-04", "book_id": "2"},
+        {"title": "Undated", "author": "C", "rating": 0, "read_at": "", "book_id": "3"},
+        {"title": "Middle", "author": "D", "rating": 4, "read_at": "2026-10-01", "book_id": "4"},
+    ]
+    assert [b["title"] for b in fb.recent_books(books, n=3)] == ["Newest", "Middle", "Old"]
+
+
+
+
+#

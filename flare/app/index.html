@@ -9,7 +9,7 @@ robots: noindex, nofollow
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>F.L.A.R.E</title>
+  <title>FLARE · Public demo</title>
   <link rel="stylesheet" href="{{ '/flare/flare.css' | relative_url }}" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   {% include analytics.html %}
@@ -22,7 +22,7 @@ robots: noindex, nofollow
       <div class="sb-header">
         <a class="flare-wordmark" href="#/home">
           <img class="glyph" src="{{ '/flare/flare-logo.svg' | relative_url }}" alt="" />
-          <span>F.L.A.R.E</span>
+          <span>FLARE</span>
         </a>
         <button class="sb-toggle" id="sbToggle" aria-label="Toggle sidebar" title="Toggle sidebar">
           <span class="ms ms-sm">menu_open</span>
@@ -35,7 +35,7 @@ robots: noindex, nofollow
 
       <div class="sb-foot">
         <div class="version-chip" id="versionChip" tabindex="0">
-          <span class="accent">VISUAL CLONE · v1.1</span>
+          <span class="accent">DEMO · v1.2</span>
           <span class="ms ms-sm" style="color: var(--mute);">history</span>
           <div class="version-pop" id="versionPop" aria-hidden="true">
             <div class="vp-head">Recent commits</div>
@@ -55,14 +55,19 @@ robots: noindex, nofollow
       </div>
     </nav>
 
+    <div class="nav-scrim" id="navScrim"></div>
+
     <header class="topbar">
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-controls="sbBody" aria-expanded="false">
+        <span class="ms">menu</span>
+      </button>
       <div class="crumbs">
         <span>FLARE</span>
         <span class="sep">/</span>
         <span class="current" id="crumbSection">Home</span>
       </div>
       <div class="right">
-        <button class="tour-pill" id="tourPill" title="Take a guided tour of FLARE">
+        <button class="tour-pill" id="tourPill" title="Take a guided tour of FLARE" aria-label="Take the tour">
           <span class="ms ms-sm">play_circle</span>
           <span>Take the tour</span>
         </button>

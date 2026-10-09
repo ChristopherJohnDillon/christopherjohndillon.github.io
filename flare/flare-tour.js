@@ -259,7 +259,7 @@
     if (state.active && e.key === "Escape") exitTour();
   });
 
-  /* Wire the topbar pill once DOM ready, and auto-start for first-time visitors. */
+  /* Wire the topbar pill once DOM ready. */
   function init() {
     const pill = document.getElementById("tourPill");
     if (pill) pill.addEventListener("click", () => startTour());
@@ -272,14 +272,7 @@
       return;
     }
 
-    /* Auto-start on first visit — once dismissed/completed, never auto-shows again.
-       Only triggers on the Home route so it doesn't hijack deep-links. */
-    const seen = localStorage.getItem(STORAGE_DISMISSED) === "1";
-    const onHome = !window.location.hash || window.location.hash === "#/home" || (window.FlareApp && window.FlareApp.bareRoute(window.location.hash) === "#/home");
-    if (!seen && onHome) {
-      /* Wait for the home dashboard to finish rendering before measuring targets */
-      setTimeout(() => startTour(), 600);
-    }
+    /* No auto-start: the tour sits behind the topbar pill so it never covers the page on arrival. */
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
