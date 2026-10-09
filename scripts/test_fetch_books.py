@@ -58,14 +58,6 @@ def test_merge_author_boards_and_ratings():
     assert stats["fun"]["avg_rating"] == round(28 / 6, 2)
 
 
-if __name__ == "__main__":
-    for name, fn in sorted(globals().items()):
-        if name.startswith("test_") and callable(fn):
-            fn()
-            print(f"ok  {name}")
-    print("all passed")
-
-
 def test_recent_books_ordered_by_read_date():
     # feed order follows shelf edits, so an old read can arrive first
     books = [
@@ -75,6 +67,15 @@ def test_recent_books_ordered_by_read_date():
         {"title": "Middle", "author": "D", "rating": 4, "read_at": "2026-10-01", "book_id": "4"},
     ]
     assert [b["title"] for b in fb.recent_books(books, n=3)] == ["Newest", "Middle", "Old"]
+
+
+if __name__ == "__main__":
+    for name, fn in sorted(globals().items()):
+        if name.startswith("test_") and callable(fn):
+            fn()
+            print(f"ok  {name}")
+    print("all passed")
+
 
 
 
