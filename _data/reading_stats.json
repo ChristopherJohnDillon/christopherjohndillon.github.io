@@ -46,15 +46,15 @@
     },
     {
       "year": 2026,
-      "count": 32
+      "count": 33
     }
   ],
   "fun": {
-    "total_books": 575,
-    "total_pages": 197651,
+    "total_books": 576,
+    "total_pages": 197879,
     "avg_pages": 352,
-    "avg_rating": 4.2,
-    "rated_books": 574,
+    "avg_rating": 4.19,
+    "rated_books": 575,
     "five_star": 251,
     "shortest": {
       "title": "Without Fail",
@@ -230,7 +230,7 @@
     },
     {
       "rating": 4,
-      "count": 208
+      "count": 209
     },
     {
       "rating": 5,
@@ -4045,6 +4045,14 @@
       "rating": 3,
       "read_at": "2026-10-04",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1673707258l/63284431.jpg"
+    },
+    {
+      "title": "How Brands Grow: What Marketers Don't Know",
+      "author": "Byron Sharp",
+      "pages": 228,
+      "rating": 4,
+      "read_at": "2026-10-11",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442517555l/9128288._SX318_.jpg"
     }
   ]
 }

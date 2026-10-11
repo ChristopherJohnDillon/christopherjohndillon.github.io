@@ -1,5 +1,12 @@
 [
   {
+    "title": "How Brands Grow: What Marketers Don't Know",
+    "author": "Byron Sharp",
+    "rating": 4,
+    "read_at": "2026-10-11",
+    "url": "https://www.goodreads.com/book/show/9128288"
+  },
+  {
     "title": "Truly, Darkly, Deeply",
     "author": "Victoria Selman",
     "rating": 3,
@@ -26,12 +33,5 @@
     "rating": 5,
     "read_at": "2026-08-22",
     "url": "https://www.goodreads.com/book/show/222259253"
-  },
-  {
-    "title": "The Good Liar",
-    "author": "Denise Mina",
-    "rating": 3,
-    "read_at": "2026-08-18",
-    "url": "https://www.goodreads.com/book/show/220175349"
   }
 ]
