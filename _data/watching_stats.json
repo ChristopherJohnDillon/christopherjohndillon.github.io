@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 58
+      "count": 59
     }
   ],
   "fun": {
-    "total_films": 58,
-    "avg_rating": 3.24,
+    "total_films": 59,
+    "avg_rating": 3.25,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -405,6 +405,13 @@
       "rating": 5.0,
       "watched_at": "2026-10-10",
       "poster": "https://a.ltrbxd.com/resized/film-poster/5/0/8/4/5/50845-con-air-0-600-0-900-crop.jpg?v=207f257fec"
+    },
+    {
+      "title": "Inception",
+      "year": 2010,
+      "rating": 3.5,
+      "watched_at": "2026-10-11",
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/sv/95/s9/4j/inception-0-600-0-900-crop.jpg?v=30d7224316"
     }
   ]
 }
