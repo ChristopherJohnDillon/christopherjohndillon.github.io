@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 59
+      "count": 61
     }
   ],
   "fun": {
-    "total_films": 59,
-    "avg_rating": 3.25,
+    "total_films": 61,
+    "avg_rating": 3.22,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -412,6 +412,20 @@
       "rating": 3.5,
       "watched_at": "2026-10-11",
       "poster": "https://a.ltrbxd.com/resized/sm/upload/sv/95/s9/4j/inception-0-600-0-900-crop.jpg?v=30d7224316"
+    },
+    {
+      "title": "Ripley Under Ground",
+      "year": 2005,
+      "rating": 2.0,
+      "watched_at": "2026-10-17",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/2/5/5/2/8/25528-ripley-under-ground-0-600-0-900-crop.jpg?v=2b2f796395"
+    },
+    {
+      "title": "Van Helsing",
+      "year": 2004,
+      "rating": 3.0,
+      "watched_at": "2026-10-17",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/4/8/1/1/3/48113-van-helsing-0-600-0-900-crop.jpg?v=13d139835c"
     }
   ]
 }

@@ -46,15 +46,15 @@
     },
     {
       "year": 2026,
-      "count": 33
+      "count": 34
     }
   ],
   "fun": {
-    "total_books": 576,
-    "total_pages": 197879,
+    "total_books": 577,
+    "total_pages": 198487,
     "avg_pages": 352,
     "avg_rating": 4.19,
-    "rated_books": 575,
+    "rated_books": 576,
     "five_star": 251,
     "shortest": {
       "title": "Without Fail",
@@ -230,7 +230,7 @@
     },
     {
       "rating": 4,
-      "count": 209
+      "count": 210
     },
     {
       "rating": 5,
@@ -4053,6 +4053,14 @@
       "rating": 4,
       "read_at": "2026-10-11",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442517555l/9128288._SX318_.jpg"
+    },
+    {
+      "title": "Apple: The First 50 Years",
+      "author": "David Pogue",
+      "pages": 608,
+      "rating": 4,
+      "read_at": "2026-10-17",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1753889483l/239495879._SX318_.jpg"
     }
   ]
 }
