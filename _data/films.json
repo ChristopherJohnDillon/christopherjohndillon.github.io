@@ -1,5 +1,21 @@
 [
   {
+    "title": "The Mask of Zorro",
+    "year": 1998,
+    "rating": 3.0,
+    "watched_at": "2026-10-18",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/4/7/2/5/2/47252-the-mask-of-zorro-0-600-0-900-crop.jpg?v=c77adbef9e",
+    "url": "https://letterboxd.com/chrisdillon/film/the-mask-of-zorro/"
+  },
+  {
+    "title": "The Mechanic",
+    "year": 1972,
+    "rating": 3.5,
+    "watched_at": "2026-10-18",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/3/9/6/5/2/39652-the-mechanic-0-600-0-900-crop.jpg?v=1986a75ed8",
+    "url": "https://letterboxd.com/chrisdillon/film/the-mechanic/"
+  },
+  {
     "title": "Ripley Under Ground",
     "year": 2005,
     "rating": 2.0,
@@ -22,21 +38,5 @@
     "watched_at": "2026-10-11",
     "poster": "https://a.ltrbxd.com/resized/sm/upload/sv/95/s9/4j/inception-0-600-0-900-crop.jpg?v=30d7224316",
     "url": "https://letterboxd.com/chrisdillon/film/inception/"
-  },
-  {
-    "title": "Con Air",
-    "year": 1997,
-    "rating": 5.0,
-    "watched_at": "2026-10-10",
-    "poster": "https://a.ltrbxd.com/resized/film-poster/5/0/8/4/5/50845-con-air-0-600-0-900-crop.jpg?v=207f257fec",
-    "url": "https://letterboxd.com/chrisdillon/film/con-air/"
-  },
-  {
-    "title": "Jack Reacher",
-    "year": 2012,
-    "rating": 3.0,
-    "watched_at": "2026-10-04",
-    "poster": "https://a.ltrbxd.com/resized/sm/upload/ir/bx/ah/ew/3VoVKGVmU7S0a9yMVJo4H5siVw7-0-600-0-900-crop.jpg?v=4633deb45d",
-    "url": "https://letterboxd.com/chrisdillon/film/jack-reacher/"
   }
 ]

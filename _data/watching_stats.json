@@ -2,11 +2,11 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 61
+      "count": 63
     }
   ],
   "fun": {
-    "total_films": 61,
+    "total_films": 63,
     "avg_rating": 3.22,
     "highest_rated": {
       "title": "Spider-Man 2",
@@ -426,6 +426,20 @@
       "rating": 3.0,
       "watched_at": "2026-10-17",
       "poster": "https://a.ltrbxd.com/resized/film-poster/4/8/1/1/3/48113-van-helsing-0-600-0-900-crop.jpg?v=13d139835c"
+    },
+    {
+      "title": "The Mask of Zorro",
+      "year": 1998,
+      "rating": 3.0,
+      "watched_at": "2026-10-18",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/4/7/2/5/2/47252-the-mask-of-zorro-0-600-0-900-crop.jpg?v=c77adbef9e"
+    },
+    {
+      "title": "The Mechanic",
+      "year": 1972,
+      "rating": 3.5,
+      "watched_at": "2026-10-18",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/3/9/6/5/2/39652-the-mechanic-0-600-0-900-crop.jpg?v=1986a75ed8"
     }
   ]
 }
