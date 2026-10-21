@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 63
+      "count": 64
     }
   ],
   "fun": {
-    "total_films": 63,
-    "avg_rating": 3.22,
+    "total_films": 64,
+    "avg_rating": 3.19,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -440,6 +440,13 @@
       "rating": 3.5,
       "watched_at": "2026-10-18",
       "poster": "https://a.ltrbxd.com/resized/film-poster/3/9/6/5/2/39652-the-mechanic-0-600-0-900-crop.jpg?v=1986a75ed8"
+    },
+    {
+      "title": "Verity",
+      "year": 2026,
+      "rating": 1.5,
+      "watched_at": "2026-10-20",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/1/1/6/7/1/5/1/1167151-verity-2026-0-600-0-900-crop.jpg?v=3169444893"
     }
   ]
 }
