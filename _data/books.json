@@ -1,5 +1,12 @@
 [
   {
+    "title": "Chain Reaction",
+    "author": "Lee Child",
+    "rating": 4,
+    "read_at": "2026-10-25",
+    "url": "https://www.goodreads.com/book/show/247032676"
+  },
+  {
     "title": "Apple: The First 50 Years",
     "author": "David Pogue",
     "rating": 4,
@@ -26,12 +33,5 @@
     "rating": 5,
     "read_at": "2026-10-02",
     "url": "https://www.goodreads.com/book/show/44153387"
-  },
-  {
-    "title": "The Only One Left",
-    "author": "Riley Sager",
-    "rating": 4,
-    "read_at": "2026-10-01",
-    "url": "https://www.goodreads.com/book/show/62703226"
   }
 ]

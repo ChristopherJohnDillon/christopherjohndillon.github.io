@@ -46,15 +46,15 @@
     },
     {
       "year": 2026,
-      "count": 34
+      "count": 35
     }
   ],
   "fun": {
-    "total_books": 577,
-    "total_pages": 198487,
+    "total_books": 578,
+    "total_pages": 198888,
     "avg_pages": 352,
     "avg_rating": 4.19,
-    "rated_books": 576,
+    "rated_books": 577,
     "five_star": 251,
     "shortest": {
       "title": "Without Fail",
@@ -70,8 +70,8 @@
   "most_read": [
     {
       "author": "Lee Child",
-      "count": 30,
-      "pages": 11036
+      "count": 31,
+      "pages": 11437
     },
     {
       "author": "Patricia Highsmith",
@@ -139,9 +139,9 @@
     },
     {
       "author": "Lee Child",
-      "score": 52,
+      "score": 53,
       "fives": 11,
-      "count": 30,
+      "count": 31,
       "avg": 4.23
     },
     {
@@ -230,7 +230,7 @@
     },
     {
       "rating": 4,
-      "count": 210
+      "count": 211
     },
     {
       "rating": 5,
@@ -4061,6 +4061,14 @@
       "rating": 4,
       "read_at": "2026-10-17",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1753889483l/239495879._SX318_.jpg"
+    },
+    {
+      "title": "Chain Reaction",
+      "author": "Lee Child",
+      "pages": 401,
+      "rating": 4,
+      "read_at": "2026-10-25",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1769490227l/247032676._SY475_.jpg"
     }
   ]
 }
