@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 64
+      "count": 65
     }
   ],
   "fun": {
-    "total_films": 64,
-    "avg_rating": 3.19,
+    "total_films": 65,
+    "avg_rating": 3.21,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -447,6 +447,13 @@
       "rating": 1.5,
       "watched_at": "2026-10-20",
       "poster": "https://a.ltrbxd.com/resized/film-poster/1/1/6/7/1/5/1/1167151-verity-2026-0-600-0-900-crop.jpg?v=3169444893"
+    },
+    {
+      "title": "Phantom of the Paradise",
+      "year": 1974,
+      "rating": 4.0,
+      "watched_at": "2026-10-25",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/3/4/6/1/5/34615-phantom-of-the-paradise-0-600-0-900-crop.jpg?v=3c231dd1ff"
     }
   ]
 }

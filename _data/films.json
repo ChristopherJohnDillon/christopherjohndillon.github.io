@@ -1,5 +1,13 @@
 [
   {
+    "title": "Phantom of the Paradise",
+    "year": 1974,
+    "rating": 4.0,
+    "watched_at": "2026-10-25",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/3/4/6/1/5/34615-phantom-of-the-paradise-0-600-0-900-crop.jpg?v=3c231dd1ff",
+    "url": "https://letterboxd.com/chrisdillon/film/phantom-of-the-paradise/"
+  },
+  {
     "title": "Verity",
     "year": 2026,
     "rating": 1.5,
@@ -30,13 +38,5 @@
     "watched_at": "2026-10-17",
     "poster": "https://a.ltrbxd.com/resized/film-poster/2/5/5/2/8/25528-ripley-under-ground-0-600-0-900-crop.jpg?v=2b2f796395",
     "url": "https://letterboxd.com/chrisdillon/film/ripley-under-ground/"
-  },
-  {
-    "title": "Van Helsing",
-    "year": 2004,
-    "rating": 3.0,
-    "watched_at": "2026-10-17",
-    "poster": "https://a.ltrbxd.com/resized/film-poster/4/8/1/1/3/48113-van-helsing-0-600-0-900-crop.jpg?v=13d139835c",
-    "url": "https://letterboxd.com/chrisdillon/film/van-helsing/"
   }
 ]
