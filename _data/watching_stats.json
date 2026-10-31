@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 65
+      "count": 66
     }
   ],
   "fun": {
-    "total_films": 65,
-    "avg_rating": 3.21,
+    "total_films": 66,
+    "avg_rating": 3.16,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -454,6 +454,13 @@
       "rating": 4.0,
       "watched_at": "2026-10-25",
       "poster": "https://a.ltrbxd.com/resized/film-poster/3/4/6/1/5/34615-phantom-of-the-paradise-0-600-0-900-crop.jpg?v=3c231dd1ff"
+    },
+    {
+      "title": "Anchorman: The Legend of Ron Burgundy",
+      "year": 2004,
+      "rating": 0.5,
+      "watched_at": "2026-10-28",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/4/7/6/3/7/47637-anchorman-the-legend-of-ron-burgundy-0-600-0-900-crop.jpg?v=afdb4fa667"
     }
   ]
 }

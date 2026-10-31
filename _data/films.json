@@ -1,5 +1,13 @@
 [
   {
+    "title": "Anchorman: The Legend of Ron Burgundy",
+    "year": 2004,
+    "rating": 0.5,
+    "watched_at": "2026-10-28",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/4/7/6/3/7/47637-anchorman-the-legend-of-ron-burgundy-0-600-0-900-crop.jpg?v=afdb4fa667",
+    "url": "https://letterboxd.com/chrisdillon/film/anchorman-the-legend-of-ron-burgundy/"
+  },
+  {
     "title": "Phantom of the Paradise",
     "year": 1974,
     "rating": 4.0,
@@ -30,13 +38,5 @@
     "watched_at": "2026-10-18",
     "poster": "https://a.ltrbxd.com/resized/film-poster/3/9/6/5/2/39652-the-mechanic-0-600-0-900-crop.jpg?v=1986a75ed8",
     "url": "https://letterboxd.com/chrisdillon/film/the-mechanic/"
-  },
-  {
-    "title": "Ripley Under Ground",
-    "year": 2005,
-    "rating": 2.0,
-    "watched_at": "2026-10-17",
-    "poster": "https://a.ltrbxd.com/resized/film-poster/2/5/5/2/8/25528-ripley-under-ground-0-600-0-900-crop.jpg?v=2b2f796395",
-    "url": "https://letterboxd.com/chrisdillon/film/ripley-under-ground/"
   }
 ]
