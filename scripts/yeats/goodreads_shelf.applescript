@@ -13,7 +13,9 @@ on run argv
 	set stopYear to "0"
 	if (count of argv) > 1 then set stopYear to item 2 of argv
 	tell application "Safari"
-		make new document with properties {URL:"https://www.goodreads.com/"}
+		-- a static same-origin page: the homepage redirects, aborting in-flight fetches
+		make new document with properties {URL:"https://www.goodreads.com/robots.txt"}
+		delay 1
 		set w to id of front window
 	end tell
 	try
