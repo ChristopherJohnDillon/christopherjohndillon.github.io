@@ -7,6 +7,7 @@ Books read in CUTOFF_YEAR or later are "ongoing" and refreshed here every run.
 """
 import json
 import re
+import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
 from collections import Counter
@@ -218,7 +219,12 @@ if __name__ == "__main__":
     if not HISTORY.exists():
         raise SystemExit(f"missing {HISTORY} — run build_reading_history.py once to seed it")
     history = json.loads(HISTORY.read_text())
-    books = items_from(fetch_page(1))
+    try:
+        books = items_from(fetch_page(1))
+    except (urllib.error.URLError, ET.ParseError) as e:
+        # keep last good data rather than failing the whole workflow
+        print(f"::warning::Goodreads fetch failed ({e}); keeping existing reading data")
+        raise SystemExit(0)
     ongoing = summarize([b for b in books if b["year"] and b["year"] >= CUTOFF_YEAR])
     stats = merge(history, ongoing)
     OUT.parent.mkdir(exist_ok=True)
