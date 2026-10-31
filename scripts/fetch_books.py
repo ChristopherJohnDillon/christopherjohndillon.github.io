@@ -1,83 +1,98 @@
-"""Daily Goodreads pull: fetch page 1 (recent reads) and merge with the frozen
+"""Daily Goodreads refresh from a library CSV export, merged with the frozen
 historical baseline in _data/reading_history.json to produce reading_stats.json.
+
+Goodreads retired its RSS feeds in Oct 2026, so the export CSV (My Books ->
+Import & Export) is now the source; yeats/goodreads_sync.sh grabs it daily via
+Safari and runs this script with its path.
 
 Books read in years < CUTOFF_YEAR are "historical" and frozen — build them once
 with build_reading_history.py; this script never rewrites reading_history.json.
 Books read in CUTOFF_YEAR or later are "ongoing" and refreshed here every run.
 """
+import csv
 import json
 import re
+import sys
 import urllib.error
 import urllib.request
-import xml.etree.ElementTree as ET
 from collections import Counter
-from datetime import datetime
 from pathlib import Path
 
-USER_ID = "17038700"
-FEED_URL = f"https://www.goodreads.com/review/list_rss/{USER_ID}?shelf=read&per_page=200"
 DATA = Path(__file__).resolve().parent.parent / "_data"
 OUT = DATA / "books.json"
 STATS_OUT = DATA / "reading_stats.json"
 HISTORY = DATA / "reading_history.json"
 N_BOOKS = 5
 MIN_YEAR = 2015     # earliest year shown in per-year chart / scatter timeline
-CUTOFF_YEAR = 2026  # years >= CUTOFF_YEAR are pulled fresh daily; earlier = frozen
+CUTOFF_YEAR = 2026  # years >= CUTOFF_YEAR are refreshed every run; earlier = frozen
+COVER_URL = "https://covers.openlibrary.org/b/isbn/{isbn}-M.jpg?default=false"
 
 
 def clean(text):
-    """Strip CDATA whitespace."""
-    return (text or "").strip()
+    """Strip whitespace and the ="..." wrapper Goodreads puts round ISBNs."""
+    text = (text or "").strip()
+    m = re.fullmatch(r'="(.*)"', text)
+    return m.group(1).strip() if m else text
 
 
 def parse_date(raw):
-    """Extract YYYY-MM-DD from a Goodreads date string."""
+    """Extract YYYY-MM-DD from a Goodreads YYYY/MM/DD date string."""
     m = re.search(r"(\d{4})/(\d{2})/(\d{2})", raw or "")
-    if m:
-        return f"{m.group(1)}-{m.group(2)}-{m.group(3)}"
-    m = re.search(r"(\d{1,2}) (\w{3}) (\d{4})", raw or "")
-    if m:
-        dt = datetime.strptime(f"{m.group(1)} {m.group(2)} {m.group(3)}", "%d %b %Y")
-        return dt.strftime("%Y-%m-%d")
-    return ""
+    return f"{m.group(1)}-{m.group(2)}-{m.group(3)}" if m else ""
 
 
-def parse_item(item):
-    """Flatten one RSS <item> into a plain dict."""
-    title = clean(item.findtext("title", ""))
+def parse_row(row):
+    """Flatten one export CSV row into a plain dict."""
     # drop trailing "(Series #n)" style parenthetical
-    title = re.sub(r"\s*\(.+?\)\s*$", "", title)
-    author = clean(item.findtext("author_name", ""))
-    read_raw = clean(item.findtext("user_read_at", ""))
-    date_str = parse_date(read_raw) if read_raw else ""
+    title = re.sub(r"\s*\(.+?\)\s*$", "", clean(row.get("Title")))
+    read_raw = clean(row.get("Date Read"))
     ym = re.search(r"(\d{4})", read_raw)
-    year = int(ym.group(1)) if ym else None
-    pages_el = item.find(".//book/num_pages")
-    pages = int(pages_el.text) if pages_el is not None and pages_el.text and pages_el.text != "0" else 0
-    cover = clean(item.findtext("book_large_image_url", "")) or clean(item.findtext("book_image_url", ""))
+    pages = clean(row.get("Number of Pages"))
     return {
         "title": title,
-        "author": author,
-        "pages": pages,
-        "read_at": date_str,
-        "year": year,
-        "cover": cover,
-        "book_id": clean(item.findtext("book_id", "")),
-        "rating": int(item.findtext("user_rating", "0") or "0"),
+        "author": clean(row.get("Author")),
+        "pages": int(pages) if pages.isdigit() else 0,
+        "read_at": parse_date(read_raw),
+        "year": int(ym.group(1)) if ym else None,
+        "cover": "",
+        "isbn": clean(row.get("ISBN13")) or clean(row.get("ISBN")),
+        "book_id": clean(row.get("Book Id")),
+        "rating": int(clean(row.get("My Rating")) or "0"),
     }
 
 
-def fetch_page(page):
-    """Fetch one RSS page and return its parsed root element."""
-    url = f"{FEED_URL}&page={page}"
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return ET.fromstring(resp.read())
+def items_from_csv(path):
+    """Every book on the read shelf of a Goodreads export CSV."""
+    with open(path, newline="", encoding="utf-8-sig") as f:
+        return [parse_row(r) for r in csv.DictReader(f) if clean(r.get("Exclusive Shelf")) == "read"]
 
 
-def items_from(root):
-    """Parse every <item> in an RSS root into dicts."""
-    return [parse_item(it) for it in root.findall(".//item")]
+def lookup_cover(isbn):
+    """Open Library cover URL for an ISBN, or "" if it has none."""
+    if not isbn:
+        return ""
+    url = COVER_URL.format(isbn=isbn)
+    req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "Mozilla/5.0"})
+    try:
+        with urllib.request.urlopen(req, timeout=15):
+            return url
+    except (urllib.error.URLError, TimeoutError):
+        return ""
+
+
+def add_covers(books, known, lookup=lookup_cover):
+    """Fill covers from the last stats run (keyed by title + read date), and
+    look up only books we haven't seen before — the export carries no images."""
+    for b in books:
+        b["cover"] = known.get((b["title"], b["read_at"])) or lookup(b["isbn"])
+
+
+def known_covers(stats_path=STATS_OUT):
+    """(title, read_at) -> cover from the previous reading_stats.json."""
+    if not stats_path.exists():
+        return {}
+    timeline = json.loads(stats_path.read_text()).get("timeline", [])
+    return {(b["title"], b["read_at"]): b["cover"] for b in timeline if b.get("cover")}
 
 
 def recent_books(books, n=N_BOOKS):
@@ -216,16 +231,15 @@ def merge(history, ongoing):
 
 
 if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        raise SystemExit("usage: fetch_books.py <goodreads_library_export.csv>")
     if not HISTORY.exists():
         raise SystemExit(f"missing {HISTORY} — run build_reading_history.py once to seed it")
     history = json.loads(HISTORY.read_text())
-    try:
-        books = items_from(fetch_page(1))
-    except (urllib.error.URLError, ET.ParseError) as e:
-        # keep last good data rather than failing the whole workflow
-        print(f"::warning::Goodreads fetch failed ({e}); keeping existing reading data")
-        raise SystemExit(0)
-    ongoing = summarize([b for b in books if b["year"] and b["year"] >= CUTOFF_YEAR])
+    books = items_from_csv(sys.argv[1])
+    ongoing_books = [b for b in books if b["year"] and b["year"] >= CUTOFF_YEAR]
+    add_covers(ongoing_books, known_covers())
+    ongoing = summarize(ongoing_books)
     stats = merge(history, ongoing)
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(recent_books(books), indent=2) + "\n")

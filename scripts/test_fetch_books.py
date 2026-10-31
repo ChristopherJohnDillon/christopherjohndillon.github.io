@@ -1,25 +1,33 @@
-"""Offline test for fetch_books item parsing and summary."""
-import xml.etree.ElementTree as ET
+"""Offline test for fetch_books CSV parsing and summary."""
 from pathlib import Path
 import fetch_books as fb
 
-FIXTURE = Path(__file__).resolve().parent / "fixtures" / "goodreads_sample.xml"
+FIXTURE = Path(__file__).resolve().parent / "fixtures" / "goodreads_sample.csv"
 
 
-def test_summary_has_cover():
-    root = ET.parse(FIXTURE).getroot()
-    books = fb.items_from(root)
+def test_csv_parse_and_summary():
+    books = fb.items_from_csv(FIXTURE)
+    assert len(books) == 1                      # to-read shelf excluded
+    b = books[0]
+    assert b["title"] == "Foster"               # trailing "(Something)" stripped
+    assert b["isbn"] == "9780802160874"         # ="..." wrapper removed, ISBN13 preferred
+    assert (b["read_at"], b["year"], b["pages"], b["rating"]) == ("2022-01-24", 2022, 101, 5)
+    fb.add_covers(books, {}, lookup=lambda isbn: f"cover:{isbn}")
     summary = fb.summarize(books)
     assert summary["total_books"] == 1
-    timeline = summary["timeline"]
-    assert len(timeline) == 1
-    entry = timeline[0]
-    assert entry["title"] == "Foster"          # trailing "(Something)" stripped
-    assert entry["pages"] == 101
-    assert entry["rating"] == 5
-    assert entry["cover"] == "https://i.gr-assets.com/large.jpg"  # prefers large
+    assert summary["timeline"][0]["cover"] == "cover:9780802160874"
     assert summary["ratings"] == {"5": 1}
     assert summary["authors"] == {"Claire Keegan": {"count": 1, "pages": 101, "rating_sum": 5, "rated": 1, "fives": 1}}
+
+
+def test_add_covers_reuses_known_before_lookup():
+    books = [{"title": "Seen", "read_at": "2026-01-02", "isbn": "1"},
+             {"title": "New", "read_at": "2026-02-03", "isbn": "2"}]
+    looked_up = []
+    fb.add_covers(books, {("Seen", "2026-01-02"): "old.jpg"},
+                  lookup=lambda isbn: looked_up.append(isbn) or "new.jpg")
+    assert [b["cover"] for b in books] == ["old.jpg", "new.jpg"]
+    assert looked_up == ["2"]
 
 
 def test_merge_totals_add_up():

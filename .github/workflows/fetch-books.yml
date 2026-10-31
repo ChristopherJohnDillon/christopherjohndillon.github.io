@@ -6,6 +6,8 @@ on:
   workflow_dispatch:
 
 jobs:
+  # Goodreads data is pushed by yeats (scripts/yeats/goodreads_sync.sh) since
+  # Goodreads retired RSS; this job only refreshes Letterboxd now.
   fetch-books:
     runs-on: ubuntu-latest
     permissions:
@@ -22,9 +24,6 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Fetch books from Goodreads
-        run: python scripts/fetch_books.py
-
       - name: Fetch films from Letterboxd
         run: python scripts/fetch_films.py
 
@@ -38,6 +37,6 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add _data/books.json _data/reading_stats.json _data/films.json _data/watching_stats.json _data/films_archive.json
+          git add _data/films.json _data/watching_stats.json _data/films_archive.json
           git commit -m "Update reading & watching lists [skip ci]"
           git push
