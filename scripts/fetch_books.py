@@ -1,21 +1,19 @@
-"""Daily Goodreads refresh from a library CSV export, merged with the frozen
+"""Daily Goodreads refresh from a scraped "read" shelf, merged with the frozen
 historical baseline in _data/reading_history.json to produce reading_stats.json.
 
-Goodreads retired its RSS feeds in Oct 2026, so the export CSV (My Books ->
-Import & Export) is now the source; yeats/goodreads_sync.sh grabs it daily via
-Safari and runs this script with its path.
+Goodreads retired its RSS feeds in Oct 2026, so yeats scrapes the shelf through
+its logged-in Safari (yeats/goodreads_shelf.applescript -> JSON) and runs this
+script on the result via yeats/goodreads_sync.sh.
 
 Books read in years < CUTOFF_YEAR are "historical" and frozen — build them once
 with build_reading_history.py; this script never rewrites reading_history.json.
 Books read in CUTOFF_YEAR or later are "ongoing" and refreshed here every run.
 """
-import csv
 import json
 import re
 import sys
-import urllib.error
-import urllib.request
 from collections import Counter
+from datetime import datetime
 from pathlib import Path
 
 DATA = Path(__file__).resolve().parent.parent / "_data"
@@ -25,74 +23,53 @@ HISTORY = DATA / "reading_history.json"
 N_BOOKS = 5
 MIN_YEAR = 2015     # earliest year shown in per-year chart / scatter timeline
 CUTOFF_YEAR = 2026  # years >= CUTOFF_YEAR are refreshed every run; earlier = frozen
-COVER_URL = "https://covers.openlibrary.org/b/isbn/{isbn}-M.jpg?default=false"
-
-
-def clean(text):
-    """Strip whitespace and the ="..." wrapper Goodreads puts round ISBNs."""
-    text = (text or "").strip()
-    m = re.fullmatch(r'="(.*)"', text)
-    return m.group(1).strip() if m else text
 
 
 def parse_date(raw):
-    """Extract YYYY-MM-DD from a Goodreads YYYY/MM/DD date string."""
-    m = re.search(r"(\d{4})/(\d{2})/(\d{2})", raw or "")
-    return f"{m.group(1)}-{m.group(2)}-{m.group(3)}" if m else ""
+    """YYYY-MM-DD from a shelf date like "Oct 25, 2026"; month-only dates
+    ("Oct 2026") take the 1st, as the old RSS feed did; year-only gives ""."""
+    for fmt in ("%b %d, %Y", "%b %Y"):
+        try:
+            return datetime.strptime(raw.strip(), fmt).strftime("%Y-%m-%d")
+        except ValueError:
+            pass
+    return ""
+
+
+def author_name(raw):
+    """Shelf pages list authors "Last, First"; flip to "First Last"."""
+    last, _, first = raw.partition(", ")
+    return f"{first} {last}" if first else last
 
 
 def parse_row(row):
-    """Flatten one export CSV row into a plain dict."""
-    # drop trailing "(Series #n)" style parenthetical
-    title = re.sub(r"\s*\(.+?\)\s*$", "", clean(row.get("Title")))
-    read_raw = clean(row.get("Date Read"))
-    ym = re.search(r"(\d{4})", read_raw)
-    pages = clean(row.get("Number of Pages"))
+    """Normalise one scraped shelf row into a plain dict."""
+    ym = re.search(r"(\d{4})", row.get("read_at", ""))
+    pages = re.search(r"\d+", row.get("pages", "").replace(",", ""))
     return {
-        "title": title,
-        "author": clean(row.get("Author")),
-        "pages": int(pages) if pages.isdigit() else 0,
-        "read_at": parse_date(read_raw),
+        # drop trailing "(Series #n)" style parenthetical
+        "title": re.sub(r"\s*\(.+?\)\s*$", "", row.get("title", "").strip()),
+        "author": author_name(row.get("author", "").strip()),
+        "pages": int(pages.group()) if pages else 0,
+        "read_at": parse_date(row.get("read_at", "")),
         "year": int(ym.group(1)) if ym else None,
-        "cover": "",
-        "isbn": clean(row.get("ISBN13")) or clean(row.get("ISBN")),
-        "book_id": clean(row.get("Book Id")),
-        "rating": int(clean(row.get("My Rating")) or "0"),
+        # shelf thumbnails are 75px; same image is served at 475px
+        "cover": re.sub(r"\._SY\d+_\.", "._SY475_.", row.get("cover", "")),
+        "book_id": row.get("book_id", ""),
+        "rating": int(row.get("rating") or 0),
     }
 
 
-def items_from_csv(path):
-    """Every book on the read shelf of a Goodreads export CSV."""
-    with open(path, newline="", encoding="utf-8-sig") as f:
-        return [parse_row(r) for r in csv.DictReader(f) if clean(r.get("Exclusive Shelf")) == "read"]
+def items_from_scrape(path):
+    """Every book in a goodreads_shelf.applescript JSON dump."""
+    return [parse_row(r) for r in json.loads(Path(path).read_text())]
 
 
-def lookup_cover(isbn):
-    """Open Library cover URL for an ISBN, or "" if it has none."""
-    if not isbn:
-        return ""
-    url = COVER_URL.format(isbn=isbn)
-    req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "Mozilla/5.0"})
-    try:
-        with urllib.request.urlopen(req, timeout=15):
-            return url
-    except (urllib.error.URLError, TimeoutError):
-        return ""
-
-
-def add_covers(books, known, lookup=lookup_cover):
-    """Fill covers from the last stats run (keyed by title + read date), and
-    look up only books we haven't seen before — the export carries no images."""
-    for b in books:
-        b["cover"] = known.get((b["title"], b["read_at"])) or lookup(b["isbn"])
-
-
-def known_covers(stats_path=STATS_OUT):
-    """(title, read_at) -> cover from the previous reading_stats.json."""
+def stored_ongoing(history, stats_path=STATS_OUT):
+    """How many ongoing books the last published stats counted."""
     if not stats_path.exists():
-        return {}
-    timeline = json.loads(stats_path.read_text()).get("timeline", [])
-    return {(b["title"], b["read_at"]): b["cover"] for b in timeline if b.get("cover")}
+        return 0
+    return json.loads(stats_path.read_text())["fun"]["total_books"] - history["total_books"]
 
 
 def recent_books(books, n=N_BOOKS):
@@ -231,22 +208,26 @@ def merge(history, ongoing):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        raise SystemExit("usage: fetch_books.py <goodreads_library_export.csv>")
+    args = [a for a in sys.argv[1:] if a != "--force"]
+    if len(args) != 1:
+        raise SystemExit("usage: fetch_books.py <shelf.json> [--force]")
     if not HISTORY.exists():
         raise SystemExit(f"missing {HISTORY} — run build_reading_history.py once to seed it")
     history = json.loads(HISTORY.read_text())
-    books = items_from_csv(sys.argv[1])
-    ongoing_books = [b for b in books if b["year"] and b["year"] >= CUTOFF_YEAR]
-    add_covers(ongoing_books, known_covers())
-    ongoing = summarize(ongoing_books)
+    books = items_from_scrape(args[0])
+    ongoing = summarize([b for b in books if b["year"] and b["year"] >= CUTOFF_YEAR])
+    # reads only accumulate, so fewer than last time means a broken scrape
+    before = stored_ongoing(history)
+    if ongoing["total_books"] < before and "--force" not in sys.argv:
+        raise SystemExit(f"scrape found {ongoing['total_books']} books since {CUTOFF_YEAR}, "
+                         f"fewer than the {before} stored — not overwriting (use --force)")
     stats = merge(history, ongoing)
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(recent_books(books), indent=2) + "\n")
     STATS_OUT.write_text(json.dumps(stats, indent=2) + "\n")
     print(f"Wrote {N_BOOKS} recent books to {OUT}")
     print(f"Merged {history['total_books']} historical + {ongoing['total_books']} ongoing "
-          f"= {stats['fun']['total_books']} books ({stats['fun']['total_pages']} pages)")
+          f"(was {before}) = {stats['fun']['total_books']} books ({stats['fun']['total_pages']} pages)")
 
 
 

@@ -1,33 +1,35 @@
-"""Offline test for fetch_books CSV parsing and summary."""
+"""Offline test for fetch_books shelf parsing and summary."""
+import json
+import tempfile
 from pathlib import Path
 import fetch_books as fb
 
-FIXTURE = Path(__file__).resolve().parent / "fixtures" / "goodreads_sample.csv"
+FIXTURE = Path(__file__).resolve().parent / "fixtures" / "goodreads_shelf_sample.json"
 
 
-def test_csv_parse_and_summary():
-    books = fb.items_from_csv(FIXTURE)
-    assert len(books) == 1                      # to-read shelf excluded
-    b = books[0]
-    assert b["title"] == "Foster"               # trailing "(Something)" stripped
-    assert b["isbn"] == "9780802160874"         # ="..." wrapper removed, ISBN13 preferred
-    assert (b["read_at"], b["year"], b["pages"], b["rating"]) == ("2022-01-24", 2022, 101, 5)
-    fb.add_covers(books, {}, lookup=lambda isbn: f"cover:{isbn}")
+def test_scrape_parse_and_summary():
+    books = fb.items_from_scrape(FIXTURE)
+    foster, undated, partial = books
+    assert foster["title"] == "Foster"            # trailing "(Something)" stripped
+    assert foster["author"] == "Claire Keegan"    # "Last, First" flipped
+    assert (foster["read_at"], foster["year"], foster["pages"], foster["rating"]) == ("2022-01-24", 2022, 101, 5)
+    assert foster["cover"] == "https://i.gr-assets.com/images/S/x/12345._SY475_.jpg"
+    assert (undated["author"], undated["year"], undated["pages"]) == ("Plato", None, 0)
+    assert (partial["author"], partial["read_at"], partial["year"], partial["pages"]) == ("Ursula K. Le Guin", "", 2021, 1024)
+    assert fb.parse_date("Oct 2026") == "2026-10-01"
     summary = fb.summarize(books)
-    assert summary["total_books"] == 1
-    assert summary["timeline"][0]["cover"] == "cover:9780802160874"
-    assert summary["ratings"] == {"5": 1}
-    assert summary["authors"] == {"Claire Keegan": {"count": 1, "pages": 101, "rating_sum": 5, "rated": 1, "fives": 1}}
+    assert summary["total_books"] == 3
+    assert [b["title"] for b in summary["timeline"]] == ["Foster"]   # needs full date + pages
+    assert summary["ratings"] == {"5": 1, "3": 1}
+    assert summary["authors"]["Claire Keegan"] == {"count": 1, "pages": 101, "rating_sum": 5, "rated": 1, "fives": 1}
 
 
-def test_add_covers_reuses_known_before_lookup():
-    books = [{"title": "Seen", "read_at": "2026-01-02", "isbn": "1"},
-             {"title": "New", "read_at": "2026-02-03", "isbn": "2"}]
-    looked_up = []
-    fb.add_covers(books, {("Seen", "2026-01-02"): "old.jpg"},
-                  lookup=lambda isbn: looked_up.append(isbn) or "new.jpg")
-    assert [b["cover"] for b in books] == ["old.jpg", "new.jpg"]
-    assert looked_up == ["2"]
+def test_stored_ongoing():
+    with tempfile.TemporaryDirectory() as d:
+        stats = Path(d) / "stats.json"
+        assert fb.stored_ongoing({"total_books": 500}, stats) == 0
+        stats.write_text(json.dumps({"fun": {"total_books": 535}}))
+        assert fb.stored_ongoing({"total_books": 500}, stats) == 35
 
 
 def test_merge_totals_add_up():

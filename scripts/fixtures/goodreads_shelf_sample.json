@@ -1,0 +1,5 @@
+[
+  {"book_id": "12345", "title": "Foster (Something)", "author": "Keegan, Claire", "pages": "101 pp", "rating": 5, "read_at": "Jan 24, 2022", "cover": "https://i.gr-assets.com/images/S/x/12345._SY75_.jpg"},
+  {"book_id": "678", "title": "Undated", "author": "Plato", "pages": "", "rating": 0, "read_at": "", "cover": ""},
+  {"book_id": "910", "title": "Partial Date", "author": "Le Guin, Ursula K.", "pages": "1,024 pp", "rating": 3, "read_at": "2021", "cover": ""}
+]

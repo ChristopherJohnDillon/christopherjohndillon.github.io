@@ -1,19 +1,18 @@
 #!/bin/zsh
-# Daily on yeats (launchd): export the Goodreads library via Safari, rebuild the
-# reading data and push it. The raw CSV stays on yeats — it holds private notes.
+# Daily on yeats (launchd): scrape the Goodreads read shelf via Safari, rebuild
+# the reading data and push it if anything changed.
 set -euo pipefail
 REPO="$HOME/code/christopherjohndillon.github.io"
 STATE="$HOME/Library/Application Support/goodreads-sync"
-CSV="$STATE/goodreads_library_export.csv"
+SHELF="$STATE/shelf_17038700.json"
 mkdir -p "$STATE"
 cd "$REPO"
 git pull --rebase -q
 #
-osascript scripts/yeats/goodreads_export.applescript > "$CSV.tmp"
-head -1 "$CSV.tmp" | grep -q '^Book Id,' || { echo "export is not a Goodreads CSV" >&2; exit 1; }
-mv "$CSV.tmp" "$CSV"
+osascript scripts/yeats/goodreads_shelf.applescript 17038700 2026 > "$SHELF.tmp"
+mv "$SHELF.tmp" "$SHELF"
 #
-/usr/bin/python3 scripts/fetch_books.py "$CSV"
+/usr/bin/python3 scripts/fetch_books.py "$SHELF"
 git add _data/books.json _data/reading_stats.json
 if git diff --cached --quiet; then
   echo "$(date '+%F %T') no reading changes"
