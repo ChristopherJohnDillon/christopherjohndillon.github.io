@@ -1,5 +1,12 @@
 [
   {
+    "title": "One for Sorrow",
+    "author": "Helen Sarah Fields",
+    "rating": 3,
+    "read_at": "2026-10-31",
+    "url": "https://www.goodreads.com/book/show/58823339"
+  },
+  {
     "title": "Chain Reaction",
     "author": "Lee Child",
     "rating": 4,
@@ -26,12 +33,5 @@
     "rating": 3,
     "read_at": "2026-10-04",
     "url": "https://www.goodreads.com/book/show/63284431"
-  },
-  {
-    "title": "The Feather Thief: Beauty, Obsession, and the Natural History Heist of the Century",
-    "author": "Kirk W. Johnson",
-    "rating": 5,
-    "read_at": "2026-10-02",
-    "url": "https://www.goodreads.com/book/show/44153387"
   }
 ]

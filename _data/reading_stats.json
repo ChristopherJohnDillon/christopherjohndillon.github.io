@@ -46,15 +46,15 @@
     },
     {
       "year": 2026,
-      "count": 35
+      "count": 36
     }
   ],
   "fun": {
-    "total_books": 578,
-    "total_pages": 198888,
+    "total_books": 579,
+    "total_pages": 199258,
     "avg_pages": 352,
     "avg_rating": 4.19,
-    "rated_books": 577,
+    "rated_books": 578,
     "five_star": 251,
     "shortest": {
       "title": "Without Fail",
@@ -119,14 +119,14 @@
       "pages": 2954
     },
     {
+      "author": "Helen Sarah Fields",
+      "count": 8,
+      "pages": 3310
+    },
+    {
       "author": "J.K. Rowling",
       "count": 8,
       "pages": 4365
-    },
-    {
-      "author": "Douglas Adams",
-      "count": 7,
-      "pages": 2285
     }
   ],
   "favourites": [
@@ -226,7 +226,7 @@
     },
     {
       "rating": 3,
-      "count": 96
+      "count": 97
     },
     {
       "rating": 4,
@@ -4069,6 +4069,14 @@
       "rating": 4,
       "read_at": "2026-10-25",
       "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1769490227l/247032676._SY475_.jpg"
+    },
+    {
+      "title": "One for Sorrow",
+      "author": "Helen Sarah Fields",
+      "pages": 370,
+      "rating": 3,
+      "read_at": "2026-10-31",
+      "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1633355834l/58823339._SY475_.jpg"
     }
   ]
 }
