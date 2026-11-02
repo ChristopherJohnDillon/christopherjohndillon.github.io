@@ -1,5 +1,21 @@
 [
   {
+    "title": "Heist",
+    "year": 2001,
+    "rating": 2.5,
+    "watched_at": "2026-11-01",
+    "poster": "https://a.ltrbxd.com/resized/sm/upload/3a/4n/hb/9j/pxn4PMxyNatJhliQEGGhssnvEEW-0-600-0-900-crop.jpg?v=d7ce66d6ea",
+    "url": "https://letterboxd.com/chrisdillon/film/heist/"
+  },
+  {
+    "title": "Tony",
+    "year": 2026,
+    "rating": 4.0,
+    "watched_at": "2026-11-01",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/1/2/0/9/0/0/1/1209001-tony-2026-0-600-0-900-crop.jpg?v=63ce7b9234",
+    "url": "https://letterboxd.com/chrisdillon/film/tony-2026/"
+  },
+  {
     "title": "Anchorman: The Legend of Ron Burgundy",
     "year": 2004,
     "rating": 0.5,
@@ -22,21 +38,5 @@
     "watched_at": "2026-10-20",
     "poster": "https://a.ltrbxd.com/resized/film-poster/1/1/6/7/1/5/1/1167151-verity-2026-0-600-0-900-crop.jpg?v=3169444893",
     "url": "https://letterboxd.com/chrisdillon/film/verity-2026/"
-  },
-  {
-    "title": "The Mask of Zorro",
-    "year": 1998,
-    "rating": 3.0,
-    "watched_at": "2026-10-18",
-    "poster": "https://a.ltrbxd.com/resized/film-poster/4/7/2/5/2/47252-the-mask-of-zorro-0-600-0-900-crop.jpg?v=c77adbef9e",
-    "url": "https://letterboxd.com/chrisdillon/film/the-mask-of-zorro/"
-  },
-  {
-    "title": "The Mechanic",
-    "year": 1972,
-    "rating": 3.5,
-    "watched_at": "2026-10-18",
-    "poster": "https://a.ltrbxd.com/resized/film-poster/3/9/6/5/2/39652-the-mechanic-0-600-0-900-crop.jpg?v=1986a75ed8",
-    "url": "https://letterboxd.com/chrisdillon/film/the-mechanic/"
   }
 ]

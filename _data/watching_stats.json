@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 66
+      "count": 68
     }
   ],
   "fun": {
-    "total_films": 66,
-    "avg_rating": 3.16,
+    "total_films": 68,
+    "avg_rating": 3.17,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -461,6 +461,20 @@
       "rating": 0.5,
       "watched_at": "2026-10-28",
       "poster": "https://a.ltrbxd.com/resized/film-poster/4/7/6/3/7/47637-anchorman-the-legend-of-ron-burgundy-0-600-0-900-crop.jpg?v=afdb4fa667"
+    },
+    {
+      "title": "Heist",
+      "year": 2001,
+      "rating": 2.5,
+      "watched_at": "2026-11-01",
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/3a/4n/hb/9j/pxn4PMxyNatJhliQEGGhssnvEEW-0-600-0-900-crop.jpg?v=d7ce66d6ea"
+    },
+    {
+      "title": "Tony",
+      "year": 2026,
+      "rating": 4.0,
+      "watched_at": "2026-11-01",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/1/2/0/9/0/0/1/1209001-tony-2026-0-600-0-900-crop.jpg?v=63ce7b9234"
     }
   ]
 }
