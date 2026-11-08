@@ -1,5 +1,21 @@
 [
   {
+    "title": "Harry Potter and the Philosopher's Stone",
+    "year": 2001,
+    "rating": 3.0,
+    "watched_at": "2026-11-08",
+    "poster": "https://a.ltrbxd.com/resized/sm/upload/5t/cj/6w/6e/harrypotter2-0-600-0-900-crop.jpg?v=0053b4ed93",
+    "url": "https://letterboxd.com/chrisdillon/film/harry-potter-and-the-philosophers-stone/"
+  },
+  {
+    "title": "While You Were Sleeping",
+    "year": 1995,
+    "rating": 2.0,
+    "watched_at": "2026-11-07",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/5/0/5/5/7/50557-while-you-were-sleeping-0-600-0-900-crop.jpg?v=83ec42bc7d",
+    "url": "https://letterboxd.com/chrisdillon/film/while-you-were-sleeping/"
+  },
+  {
     "title": "Saturday Night",
     "year": 2024,
     "rating": 3.0,
@@ -22,21 +38,5 @@
     "watched_at": "2026-11-01",
     "poster": "https://a.ltrbxd.com/resized/film-poster/1/2/0/9/0/0/1/1209001-tony-2026-0-600-0-900-crop.jpg?v=63ce7b9234",
     "url": "https://letterboxd.com/chrisdillon/film/tony-2026/"
-  },
-  {
-    "title": "Anchorman: The Legend of Ron Burgundy",
-    "year": 2004,
-    "rating": 0.5,
-    "watched_at": "2026-10-28",
-    "poster": "https://a.ltrbxd.com/resized/film-poster/4/7/6/3/7/47637-anchorman-the-legend-of-ron-burgundy-0-600-0-900-crop.jpg?v=afdb4fa667",
-    "url": "https://letterboxd.com/chrisdillon/film/anchorman-the-legend-of-ron-burgundy/"
-  },
-  {
-    "title": "Phantom of the Paradise",
-    "year": 1974,
-    "rating": 4.0,
-    "watched_at": "2026-10-25",
-    "poster": "https://a.ltrbxd.com/resized/film-poster/3/4/6/1/5/34615-phantom-of-the-paradise-0-600-0-900-crop.jpg?v=3c231dd1ff",
-    "url": "https://letterboxd.com/chrisdillon/film/phantom-of-the-paradise/"
   }
 ]
