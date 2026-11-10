@@ -8,6 +8,22 @@
     "url": "https://letterboxd.com/chrisdillon/film/harry-potter-and-the-philosophers-stone/"
   },
   {
+    "title": "Before the Devil Knows You're Dead",
+    "year": 2007,
+    "rating": 4.5,
+    "watched_at": "2026-11-08",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/4/7/9/4/8/47948-before-the-devil-knows-you-re-dead-0-600-0-900-crop.jpg?v=22d8c0f78d",
+    "url": "https://letterboxd.com/chrisdillon/film/before-the-devil-knows-youre-dead/"
+  },
+  {
+    "title": "Assault on Precinct 13",
+    "year": 1976,
+    "rating": 4.5,
+    "watched_at": "2026-11-08",
+    "poster": "https://a.ltrbxd.com/resized/sm/upload/ju/cb/fl/5q/z77jBn1j78W8px9lEjBlG5JibpM-0-600-0-900-crop.jpg?v=1ec4fa9596",
+    "url": "https://letterboxd.com/chrisdillon/film/assault-on-precinct-13/"
+  },
+  {
     "title": "While You Were Sleeping",
     "year": 1995,
     "rating": 2.0,
@@ -22,21 +38,5 @@
     "watched_at": "2026-11-06",
     "poster": "https://a.ltrbxd.com/resized/film-poster/1/0/1/0/6/8/3/1010683-saturday-night-0-600-0-900-crop.jpg?v=f4857efc36",
     "url": "https://letterboxd.com/chrisdillon/film/saturday-night-2024/"
-  },
-  {
-    "title": "Heist",
-    "year": 2001,
-    "rating": 2.5,
-    "watched_at": "2026-11-01",
-    "poster": "https://a.ltrbxd.com/resized/sm/upload/3a/4n/hb/9j/pxn4PMxyNatJhliQEGGhssnvEEW-0-600-0-900-crop.jpg?v=d7ce66d6ea",
-    "url": "https://letterboxd.com/chrisdillon/film/heist/"
-  },
-  {
-    "title": "Tony",
-    "year": 2026,
-    "rating": 4.0,
-    "watched_at": "2026-11-01",
-    "poster": "https://a.ltrbxd.com/resized/film-poster/1/2/0/9/0/0/1/1209001-tony-2026-0-600-0-900-crop.jpg?v=63ce7b9234",
-    "url": "https://letterboxd.com/chrisdillon/film/tony-2026/"
   }
 ]
