@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 73
+      "count": 74
     }
   ],
   "fun": {
-    "total_films": 73,
-    "avg_rating": 3.18,
+    "total_films": 74,
+    "avg_rating": 3.17,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -510,6 +510,13 @@
       "rating": 4.5,
       "watched_at": "2026-11-08",
       "poster": "https://a.ltrbxd.com/resized/sm/upload/ju/cb/fl/5q/z77jBn1j78W8px9lEjBlG5JibpM-0-600-0-900-crop.jpg?v=1ec4fa9596"
+    },
+    {
+      "title": "The Social Network",
+      "year": 2010,
+      "rating": 2.5,
+      "watched_at": "2026-11-13",
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/nw/cm/pa/ai/sGQv3ZMZBDBnl3z42Q0mEQ5uiDe-0-600-0-900-crop.jpg?v=54ee59f7cd"
     }
   ]
 }
