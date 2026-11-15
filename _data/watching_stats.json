@@ -2,12 +2,12 @@
   "per_year": [
     {
       "year": 2026,
-      "count": 74
+      "count": 76
     }
   ],
   "fun": {
-    "total_films": 74,
-    "avg_rating": 3.17,
+    "total_films": 76,
+    "avg_rating": 3.16,
     "highest_rated": {
       "title": "Spider-Man 2",
       "rating": 5.0
@@ -517,6 +517,20 @@
       "rating": 2.5,
       "watched_at": "2026-11-13",
       "poster": "https://a.ltrbxd.com/resized/sm/upload/nw/cm/pa/ai/sGQv3ZMZBDBnl3z42Q0mEQ5uiDe-0-600-0-900-crop.jpg?v=54ee59f7cd"
+    },
+    {
+      "title": "Home Alone 2: Lost in New York",
+      "year": 1992,
+      "rating": 2.0,
+      "watched_at": "2026-11-14",
+      "poster": "https://a.ltrbxd.com/resized/sm/upload/i5/04/e8/7t/home%20alone%202-0-600-0-900-crop.jpg?v=03abfa6a99"
+    },
+    {
+      "title": "When Harry Met Sally...",
+      "year": 1989,
+      "rating": 3.0,
+      "watched_at": "2026-11-14",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/5/1/4/8/5/51485-when-harry-met-sally--0-600-0-900-crop.jpg?v=2f277e2fe7"
     }
   ]
 }
