@@ -1,5 +1,13 @@
 [
   {
+    "title": "A Talent for Murder",
+    "year": 2026,
+    "rating": 1.0,
+    "watched_at": "2026-11-22",
+    "poster": "https://a.ltrbxd.com/resized/film-poster/9/7/7/6/0/2/977602-a-talent-for-murder-2026-0-600-0-900-crop.jpg?v=43addda2b4",
+    "url": "https://letterboxd.com/chrisdillon/film/a-talent-for-murder-2026/"
+  },
+  {
     "title": "Awakenings",
     "year": 1990,
     "rating": 3.0,
@@ -30,13 +38,5 @@
     "watched_at": "2026-11-13",
     "poster": "https://a.ltrbxd.com/resized/sm/upload/nw/cm/pa/ai/sGQv3ZMZBDBnl3z42Q0mEQ5uiDe-0-600-0-900-crop.jpg?v=54ee59f7cd",
     "url": "https://letterboxd.com/chrisdillon/film/the-social-network/"
-  },
-  {
-    "title": "Harry Potter and the Philosopher's Stone",
-    "year": 2001,
-    "rating": 3.0,
-    "watched_at": "2026-11-08",
-    "poster": "https://a.ltrbxd.com/resized/sm/upload/5t/cj/6w/6e/harrypotter2-0-600-0-900-crop.jpg?v=0053b4ed93",
-    "url": "https://letterboxd.com/chrisdillon/film/harry-potter-and-the-philosophers-stone/"
   }
 ]
